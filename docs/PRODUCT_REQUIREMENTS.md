@@ -6,10 +6,11 @@ Vanilla Graveyard Keeper teaches enough of farming/fertilizer progression for th
 
 `I need product X -> what should I investigate -> what experiment should I run -> what did that result teach me -> why should the next experiment move me toward X?`
 
-Failed alchemy experiments and slime-like outputs may encode useful information, but two gaps must be distinguished:
+Failed alchemy experiments and slime-like outputs may encode useful information, but three gaps must be distinguished:
 
 1. **interpretation gap** — the player is not adequately taught what a failed result means as information;
-2. **targeting gap** — even after understanding failed-result semantics, the player may lack a reasoned way to investigate one particular required unknown product.
+2. **targeting gap** — even after understanding failed-result semantics, the player may lack a reasoned way to investigate one particular required unknown product;
+3. **continuity gap** — Graveyard Keeper naturally interrupts alchemy with energy, day/NPC schedules, corpse handling, farming, production and other systems, while vanilla does not preserve enough investigation context for the player to resume a multi-step deduction without reconstructing it from memory.
 
 The project exists to close those gaps without replacing discovery with recipe disclosure.
 
@@ -32,6 +33,9 @@ For an unknown vanilla product within the supported scope, the final design shou
 - the player has a comprehensible reason to begin investigating that specific product;
 - the player understands the rules needed to interpret experimental outcomes;
 - each meaningful experiment can reduce uncertainty or establish a useful constraint;
+- controlled changes in an experiment produce feedback that is locally interpretable enough to support controlled reasoning;
+- the information gained from an experiment is reasonable relative to its material cost and the gameplay interruption required to replace consumed reagents;
+- the player can leave alchemy, engage with normal Graveyard Keeper systems, and later recover the established facts/open hypotheses without reconstructing the investigation from human memory alone;
 - the next experiment can be chosen for a reason the player can articulate;
 - blind full enumeration is not required;
 - a wiki or external recipe list is not required;
@@ -40,6 +44,8 @@ For an unknown vanilla product within the supported scope, the final design shou
 - after success, the player can explain why the decisive experiments were informative.
 
 A good solution should normally converge in a small number of **meaningful** experiments after a useful initial clue. The exact target count is intentionally not fixed before the real search space is measured.
+
+The cognitive and record-keeping burden should also fit Graveyard Keeper's broader, interruption-heavy game loop. The design must not assume the uninterrupted concentration or manual note-taking expected from a dedicated hardcore logic-puzzle game.
 
 ## Design quality ladder and fallback policy
 
@@ -86,6 +92,8 @@ A candidate fails the **target deductive standard** if it:
 - reduces random search but still leaves no route toward a requested product;
 - encodes the answer behind a fixed sequence of clicks rather than inference; this may still be retained and evaluated as a level-2 fallback rather than discarded outright;
 - requires dozens of low-information experiments in ordinary cases;
+- consumes significant reagents or forces substantial reacquisition/context switching for low-information checks;
+- depends on the player remembering prior attempts, inferred constraints or pending hypotheses across normal gameplay interruptions;
 - teaches special-case exceptions instead of a coherent rule system;
 - solves only a few hand-picked recipes while failing structurally on the rest of the corpus;
 - relies on exact formula disclosure to explain why it works.
