@@ -53,6 +53,87 @@ Do not force the runtime corpus through the previously discussed candidate famil
 
 Then formalize the promising rulesets and test them against the concealed corpus. The quality ladder in `docs/PRODUCT_REQUIREMENTS.md` keeps guided/staged disclosure as a legitimate fallback improvement, while the intended target remains genuine deduction.
 
+## Player-model exercise checkpoint — 2026-10-04
+
+Status: **accepted product/UX evidence; not new host/runtime evidence**.
+
+A guided answer-blind walkthrough was performed with fictional reagent names while preserving the verified vanilla failure-selection rules. The user began from the realistic position of having experimented with alchemy but never successfully discovered a vanilla mixed recipe. The purpose was not to solve a particular real formula, but to determine what a player can understand, infer, remember and resume.
+
+### Two-slot result
+
+Once the hidden vanilla algorithm was explicitly explained, a failed two-slot mixture could be interpreted as two competing local hypotheses: either the first attempted ingredient is the correctly positioned anchor and the goo describes the required second-slot class, or vice versa.
+
+That loop can produce genuine deduction:
+- observe a goo result;
+- form two local hypotheses;
+- test one exact candidate;
+- reject it on failure or accept it on success;
+- if rejected, test the remaining candidate.
+
+However, this is only usable after the player is taught a rule close to the internal algorithm. It remains stochastic, consumes real reagents, and discovers **some structurally nearby valid recipe**, not a player-requested product.
+
+### Three-slot result
+
+The three-slot case exposed a more severe usability problem. A failed attempt can encode two non-anchor positions even when more than one attempted ingredient was already correct. Therefore:
+- changing one slot can legitimately return the same apparent goo result;
+- repeated controlled one-variable experiments need not yield locally legible evidence about the changed variable;
+- a rational player may end up ignoring the goo signal and brute-forcing the changed slot around an accidentally good partial mixture.
+
+In the walkthrough, this strategy reached success only because the initial mixture happened to contain two correct positional ingredients. The success therefore demonstrated local enumeration around a lucky partial match, not a robust deduction path.
+
+### Resource and interruption cost
+
+Alchemy attempts are not abstract free guesses. Reagents are acquired and processed through the wider Graveyard Keeper loop. Running out of a reagent can interrupt the reasoning chain with energy recovery, farming, corpse handling, NPC schedules, production, church activity and other tasks.
+
+The cost of an experiment is therefore:
+- consumed alchemical components;
+- acquisition/processing work to replace them;
+- **context-switch cost**: the player may return later without remembering the experiment history, previous inference or intended next test.
+
+This is a first-class product constraint, not merely QoL polish.
+
+### Persistence / external-memory requirement
+
+Vanilla Study-gated alchemy metadata can preserve some ingredient/decomposition knowledge, but it does not preserve the player's experimental investigation as a usable reasoning state.
+
+The final design must therefore provide enough persistent external memory for the player to recover:
+- what was tried;
+- what was observed;
+- what facts have actually been established or excluded;
+- what uncertainty remains.
+
+This requirement does **not** select a recipe journal, automatic solver or next-step recommendation. The implementation mechanism remains open. A valid memory surface must preserve the player's reasoning rather than replace it.
+
+### Genre-fit conclusion
+
+Graveyard Keeper is not presented as a dedicated hardcore logic-puzzle game. In that context, opaque stochastic clues that require uninterrupted note-taking are likely to read as broken/noisy UX rather than as intentionally difficult puzzle design.
+
+The desired alchemy puzzle can still require thought, but its rules, feedback, experiment economics and resumability must fit the interruption-heavy management/adventure loop around it.
+
+### What vanilla is worth preserving
+
+The walkthrough does not justify replacing all of vanilla alchemy. Potentially valuable foundations remain:
+- the real vanilla formulas and normal alchemy-table success interaction;
+- positional Powder/Fluid/Essence structure;
+- native goo semantic classes as a possible taught information substrate;
+- experimental discovery as the decisive act rather than automatic formula unlock.
+
+What should not be relied on as the sole puzzle path:
+- undisclosed knowledge of the internal failure-selection algorithm;
+- stochastic goo from an arbitrary nearby recipe;
+- human working memory across gameplay interruptions;
+- repeated expensive low-information attempts;
+- blind slot enumeration around accidental partial matches;
+- forward discovery as a substitute for target-directed investigation.
+
+### Updated design contract
+
+A complete candidate loop must now demonstrate all of the following:
+
+`target X -> useful starting constraint -> affordable meaningful experiment -> locally interpretable observation -> player inference -> persistable reasoning state -> justified next experiment -> vanilla verification`.
+
+The next design phase should build small player-facing paper prototypes against this contract before choosing a production architecture.
+
 
 ## Current competitor / overlap audit
 
