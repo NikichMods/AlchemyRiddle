@@ -135,6 +135,38 @@ A complete candidate loop must now demonstrate all of the following:
 The next design phase should build small player-facing paper prototypes against this contract before choosing a production architecture.
 
 
+## External deduction-system reference study — 2026-10-04
+
+Comparative design research covered Alchemists / Little Alchemists, Turing Machine, The Search for Planet X, Black Box, Mastermind / Wordle, Zendo, Outer Wilds, Return of the Obra Dinn and Potion Craft.
+
+The strongest recurring pattern was:
+
+`fixed investigation target -> player-selected query/probe -> deterministic bounded observation -> persistent evidence -> player inference -> explicit hypothesis test`.
+
+Useful transferable principles:
+
+- **Stable subject:** feedback remains about the same hidden target/rule/state until the player changes the investigation.
+- **Known query semantics:** before paying for an experiment, the player knows what kind of fact it can reveal.
+- **Deterministic evidence:** repeating the same state/query does not randomly refer to a different hidden solution.
+- **Externalized knowledge:** attempts, observations and established constraints persist outside human working memory.
+- **Layered complexity:** players learn simple rules first; harder deductions combine already-known rules.
+- **Proportionate information economy:** stronger/more precise tests may cost more, but low-information experiments should not impose substantial resource or context-switch cost.
+
+Most relevant inspiration roles:
+
+- **Alchemists / Little Alchemists:** stable hidden ingredient properties, deduction grid, information-bearing experiments, progressive teaching.
+- **Turing Machine / Black Box:** player-chosen well-defined tests of hidden structure.
+- **The Search for Planet X:** multiple research actions with explicit information scope/cost and a final hypothesis test.
+- **Outer Wilds / Obra Dinn:** persistent evidence organization without automatically choosing the conclusion.
+- **Mastermind / Wordle:** fixed-target deterministic feedback; position-local feedback reduces cognitive load.
+- **Zendo:** reusable-law induction and a direct warning that hidden rules must be simpler for players than designers tend to expect.
+- **Potion Craft:** legible ingredient behavior lets players intentionally steer toward a desired effect and preserve discovered routes, but its spatial-navigation architecture would exceed the current preserved-invariant envelope.
+
+Important mismatch: Graveyard Keeper's success formulas are authored sparse tuples; current evidence does not establish a universal property-combination law that generates them. Therefore Alchemists-like property deduction cannot simply be copied without an added semantic/target-information layer.
+
+No architecture is selected. The next design step remains paper-prototyping several complete player loops using different subsets of these principles.
+
+
 ## Current competitor / overlap audit
 
 Checked current public descriptions and the current source tree rather than relying on remembered behavior.
