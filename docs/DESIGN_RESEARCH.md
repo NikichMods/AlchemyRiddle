@@ -12,7 +12,8 @@ Establish whether Graveyard Keeper 1.407's vanilla alchemy can support a coheren
 - Required entry points: `AGENTS.md` and `docs/RESEARCH_INDEX.md`.
 - Bootstrap began with no canonical shared alchemy-system entry.
 - Static 1.407 host research has now been promoted to `NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md` (shared-research commit `330087a2419c430e4baa3e31ae0477905cab0f4c`).
-- Exact balance-corpus quantities and answer-blind solver statistics remain open until a current loaded-`GameBalance` corpus is captured or an equivalent exact artifact is recovered.
+- The current loaded-`GameBalance` corpus has now been captured with `AlchemyRiddle Corpus Probe 0.1.0` from source `88287548f0095c0d8ddecd2d490c410401d43a93`; aggregate results are canonical in `docs/RUNTIME_CORPUS_ANALYSIS.md`.
+- Answer-blind solver statistics and architecture-specific information-gain measurements remain open.
 
 ## Current verified vanilla findings
 
@@ -31,6 +32,27 @@ Verified against the accepted 1.407 decompile reference `Kupie/GYK_DECOMP@6abf79
 **Explaining the goo rule is insufficient as the complete product.** It can repair the interpretation gap, but the static vanilla algorithm contains no target-output channel that answers: “why should this experiment move me toward product X?”
 
 That does not yet choose a replacement architecture. It establishes a required capability for any accepted architecture: some coherent target-specific information path must exist in addition to, or on top of, vanilla forward-discovery feedback.
+
+## Accepted runtime corpus checkpoint — 2026-10-04
+
+The anonymized read-only runtime probe completed successfully on Graveyard Keeper 1.407. See `docs/RUNTIME_CORPUS_ANALYSIS.md` for evidence identity, aggregate counts and caveats.
+
+Key product-level facts:
+- 44 records satisfy the probe's success-formula syntax classifier, but only **43** conform to the standard alchemy picker contract; one three-slot definition is a structural exception whose role remains open.
+- The ordinary picker-compatible working corpus contains **43 formulas for 34 outputs**.
+- Seven ordinary outputs have alternative formulas, so the target problem is generally “find a valid formula for X”, not “recover one unique canonical tuple”.
+- The loaded category/filter envelope is vastly larger than the success corpus, so blind enumeration remains a poor intended path.
+- The native goo conversion exposes **19 semantic classes** across the 35 ingredients used by ordinary success formulas; eight classes span Powder/Fluid/Essence forms.
+- The auxiliary failure-definition table is regular and combinatorial rather than ad hoc.
+
+### Design sequencing decision
+
+Do not force the runtime corpus through the previously discussed candidate families. First design several complete player-facing loops from a clean slate:
+
+`target X -> initial clue -> chosen experiment -> interpretable observation -> player inference -> next experiment/hypothesis -> vanilla verification`.
+
+Then formalize the promising rulesets and test them against the concealed corpus. The quality ladder in `docs/PRODUCT_REQUIREMENTS.md` keeps guided/staged disclosure as a legitimate fallback improvement, while the intended target remains genuine deduction.
+
 
 ## Current competitor / overlap audit
 
