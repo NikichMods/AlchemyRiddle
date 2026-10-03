@@ -10,8 +10,59 @@ Establish whether Graveyard Keeper 1.407's vanilla alchemy can support a coheren
 
 - Canonical shared source: `NikichMods/GraveyardKeeperResearch`.
 - Required entry points: `AGENTS.md` and `docs/RESEARCH_INDEX.md`.
-- The shared index currently contains reusable crafting, farming/fertilizer, UI, dialogue, perk and other runtime research, but no canonical alchemy-system entry.
-- Therefore exact alchemy mechanics, formula-space structure and recipe-discovery ownership remain **open research questions** for this project until directly established.
+- Bootstrap began with no canonical shared alchemy-system entry.
+- Static 1.407 host research has now been promoted to `NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md` (shared-research commit `330087a2419c430e4baa3e31ae0477905cab0f4c`).
+- Exact balance-corpus quantities and answer-blind solver statistics remain open until a current loaded-`GameBalance` corpus is captured or an equivalent exact artifact is recovered.
+
+## Current verified vanilla findings
+
+Verified against the accepted 1.407 decompile reference `Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9`; reusable host facts are canonical in the shared alchemy document.
+
+- Mixed alchemy is owned by `MixedCraftGUI` / `CraftType.MixedCraft`, not the ordinary fixed-recipe card path.
+- Native positional ingredient classes are Powder, Fluid and Essence; Universal items are accepted by the slot filter as an override.
+- Exact ingredient identity **and position** are part of the mixed-craft recipe key.
+- When an exact formula is absent, the failure path searches same-arity mixed-craft definitions sharing at least one ingredient in the same position, randomly chooses a qualifying definition, then derives goo identities from its other positions.
+- Therefore vanilla goo is a real information signal, but it is stochastic and structurally points toward some qualifying mixed-craft definition rather than toward a player-selected desired output.
+- The save tracks completed exact mixed crafts separately from simplified unlocked mixed-craft keys; scripted `UnlockRandomAlchemy` / `UnlockAlchemy` paths can mark formulas known without experimental discovery.
+- Native Study-gated alchemy metadata already exists for decomposition classes and per-tier slot compatibility.
+
+### Design implication already established
+
+**Explaining the goo rule is insufficient as the complete product.** It can repair the interpretation gap, but the static vanilla algorithm contains no target-output channel that answers: “why should this experiment move me toward product X?”
+
+That does not yet choose a replacement architecture. It establishes a required capability for any accepted architecture: some coherent target-specific information path must exist in addition to, or on top of, vanilla forward-discovery feedback.
+
+## Current competitor / overlap audit
+
+Checked current public descriptions and the current source tree rather than relying on remembered behavior.
+
+### Alchemy Research Redux
+
+Current source-tree changelog declares **0.1.9 (2 October 2026)**. The Nexus detail page can lag at 0.1.8 even while current Nexus listings show a 2 October update, so source is the stronger version-state signal for behavior comparison.
+
+Observed capability:
+- result preview for ingredient combinations that the mod considers known;
+- current code records exact successful mixes and loads known recipes into its own persisted recipe list;
+- 0.1.8 added last-mix refill / optional auto-refill;
+- 0.1.9 fixes preview refresh behavior.
+
+Overlap with AlchemyRiddle: **known-result presentation / repetition QoL**, not target-directed discovery of an unknown product.
+
+### Decomp Delight / Item Description — Display Element
+
+These expose the decomposition element of researched items. This overlaps with **ingredient/property legibility** and may be compatible with a future property/signature solution family, but it does not provide a route from an unknown desired mixed product to its formula.
+
+### Useful Alchemy
+
+This is effectively a visual external recipe reference. It solves recall/look-up by showing recipe schemes and is intentionally outside AlchemyRiddle's desired discovery model.
+
+### Current overlap conclusion
+
+No inspected current mod provides the whole capability:
+
+`unknown required product -> target-specific investigation -> interpretable experiments -> deductively justified vanilla formula`.
+
+This conclusion is provisional only with respect to the broader ecosystem search; repeat the audit before release if scope materially changes.
 
 ## Phase A — reconstruct vanilla mechanics
 
