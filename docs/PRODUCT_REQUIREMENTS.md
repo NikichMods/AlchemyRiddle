@@ -35,11 +35,24 @@ For an unknown vanilla product within the supported scope, the final design shou
 - the next experiment can be chosen for a reason the player can articulate;
 - blind full enumeration is not required;
 - a wiki or external recipe list is not required;
-- the system does not simply drip-feed a hidden recipe one ingredient at a time;
+- for the target deductive architecture, the system does not simply drip-feed a hidden recipe one ingredient at a time;
 - successful discovery still occurs through the real alchemy interaction;
 - after success, the player can explain why the decisive experiments were informative.
 
 A good solution should normally converge in a small number of **meaningful** experiments after a useful initial clue. The exact target count is intentionally not fixed before the real search space is measured.
+
+## Design quality ladder and fallback policy
+
+The project target remains a genuine deductive puzzle, but design quality is not binary. Use this ladder when comparing candidates:
+
+1. **Opaque / vanilla-like** — information may exist internally, but the player is not taught enough to use it and has no reliable route toward a requested product.
+2. **Guided disclosure** — the system deliberately narrows or reveals bounded parts of the hidden formula (for example, reducing one slot to a small explicit candidate set). This is not the target architecture, but it is a legitimate **fallback quality floor** because it can still remove wiki dependence and blind enumeration.
+3. **Deductive narrowing** — the system gives facts or experiment outcomes and the player performs the inference that narrows the formula.
+4. **Experimental deduction** — the player can choose informative experiments, interpret their consequences, form the next hypothesis, and ultimately verify a formula through real alchemy.
+
+Levels 3–4 satisfy the intended product direction much better than level 2. Level 2 must not be rejected merely because it is staged disclosure; instead, retain it as a fallback if stronger designs prove disproportionate, incoherent across the real corpus, or mechanically worse.
+
+Choosing a level-2 production architecture instead of the deductive target requires an explicit product decision after the solution-space trade study.
 
 ## Preserved invariants by default
 
@@ -67,11 +80,11 @@ None is accepted architecture at bootstrap.
 
 ## Design quality tests
 
-Reject or redesign a candidate if it:
+A candidate fails the **target deductive standard** if it:
 
 - works only when the player already knows roughly what the answer is;
 - reduces random search but still leaves no route toward a requested product;
-- encodes the answer behind a fixed sequence of clicks rather than inference;
+- encodes the answer behind a fixed sequence of clicks rather than inference; this may still be retained and evaluated as a level-2 fallback rather than discarded outright;
 - requires dozens of low-information experiments in ordinary cases;
 - teaches special-case exceptions instead of a coherent rule system;
 - solves only a few hand-picked recipes while failing structurally on the rest of the corpus;
