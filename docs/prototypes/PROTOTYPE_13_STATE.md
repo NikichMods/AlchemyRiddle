@@ -2,7 +2,7 @@
 
 **FACILITATOR SPOILERS — DO NOT SURFACE DURING BLIND PLAY**
 
-Status: active blind prototype.
+Status: completed blind prototype.
 
 ## Purpose
 
@@ -174,3 +174,34 @@ Record:
 - retain/revise/reject/fallback.
 
 Blind integrity requires this state to be committed before the player's first action.
+
+
+## Completed play sequence
+
+Player experiments:
+
+1. Powder of Death + Solution of Death + Extract of Death -> resonance 0/3.
+   - Player intentionally created a null reference so later single-variable changes would be attributable.
+2. White Powder + Solution of Death + Extract of Death -> resonance 0/3.
+3. Graphite Powder + Solution of Death + Extract of Death -> resonance 1/3.
+4. Graphite Powder + Solution of Death + Extract of Life -> resonance 2/3.
+5. Graphite Powder + Solution of Order + Extract of Life -> exact success.
+
+Hidden formula integrity remained valid throughout.
+
+## Observed play behavior
+
+- The property layer gave the player an immediately understandable first objective: determine which of the three mineral powders was correct.
+- The player independently designed a strong control experiment: a deliberately all-Death 0/3 baseline, then changed one variable at a time.
+- This is genuine experiment design, not a facilitator-supplied path.
+- After identifying the powder, the player used the “exactly one Life-family component” clue together with a controlled essence substitution to locate Life in the essence slot.
+- Once powder and essence were established, the remaining liquid problem reduced to ordinary sequential candidate testing. The player explicitly noticed this and described the remaining step as brute-force search among the non-Life/non-Death liquid candidates.
+- The player also spontaneously flagged the material cost / repetition issue: every test consumes three reagents, including one high-cost essence, so even logically clean controlled experiments can feel long and expensive.
+- The compendium created no memory-recall obstacle during the paper test; properties were available directly and the reasoning operated on visible information.
+
+Meaningful synthesis attempts: 5.
+
+Disposition pending explicit player evaluation, but the observed structural result is:
+- property gating materially improves orientation and supports a good first controlled experiment;
+- aggregate resonance still tends to collapse into coordinate search once only one slot remains unresolved;
+- experiment economy may become a major UX constraint for a production version.
