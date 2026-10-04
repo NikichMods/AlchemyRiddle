@@ -212,6 +212,35 @@ The next entry-point research question is therefore narrow:
 3. only if those fail, define the smallest product fallback for targets with no natural vanilla lead.
 
 
+## Accepted research-lead creation rule — 2026-10-04
+
+Status: **product direction accepted; exact UI presentation remains provisional**.
+
+The primary way an AlchemyRiddle research task is created is:
+
+> **When vanilla first exposes a visible need for an alchemical product whose formula is not already known to the player, that product becomes an available research lead.**
+
+The mod must not expose a global catalog of undiscovered products. It reacts to knowledge vanilla has already legitimately surfaced.
+
+The trigger should be based on the resulting visible vanilla need, not narrowly on one progression mechanism. A need may become visible because a Technology unlock exposes a downstream recipe, a quest/progression path unlocks a craft separately, or another vanilla path makes the requirement visible.
+
+Scope boundary:
+- If vanilla explicitly teaches/gives the formula as part of the same progression path, the product is not an AlchemyRiddle unknown-formula puzzle merely because it is crafted at an alchemy station.
+- If vanilla creates a need but also offers a non-crafting solution such as purchasing the product, AlchemyRiddle may record the product as a research lead but must not present research/crafting as the only correct solution.
+
+### Provisional journal UX
+
+A persistent alchemy journal is the working UX direction for choosing among discovered research leads and resuming interrupted investigations.
+
+When a new unknown-product lead is created, a native-style transient notification is desirable in principle, conceptually like:
+
+- “New entry added to the alchemy journal”
+- “Unknown alchemical product added to the journal”
+
+Exact wording/presentation is **not selected** and should be tested later against spoiler/steering risk. In particular, an early product need may intentionally be solvable by finding or buying the item; a notification should not falsely imply that the player is required to synthesize it.
+
+The journal/notification mechanism remains a presentation hypothesis, not a production architecture decision. Do not research the exact popup host seam until that UI is selected as implementation work.
+
 ## Current competitor / overlap audit
 
 Checked current public descriptions and the current source tree rather than relying on remembered behavior.
