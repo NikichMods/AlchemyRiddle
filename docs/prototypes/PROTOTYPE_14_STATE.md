@@ -277,3 +277,34 @@ Journal:
 1. Compare target vs R-2 (reference pair RELATED) -> 0/1 relation states match.
 
 No fresh deduction has been performed by the facilitator. Await the player's interpretation.
+
+
+## Live blind-play checkpoint — Stage 1, first synthesis attempt
+
+Player interpretation / UX feedback before synthesis:
+- player initially experienced the 0/1 comparison result as almost no information;
+- player explicitly questioned why the composition of the already-known reference elixir was not shown in the interface;
+- this exposes a presentation flaw: if known-formula comparison is supposed to make accumulated knowledge useful, the interface should show the known reference formula / visible reagent marks and let the player see why its relation state follows, rather than presenting only a precomputed “RELATED” label;
+- player began enumerating candidate pairs from the aggregate target profile and described the intended next action as going through the possibility matrix in order;
+- player proposed Growth Powder + Root Solution as the first synthesis candidate.
+
+Facilitator correction before resolving the action:
+- Growth Powder {Plant} and Root Solution {Plant, Corpse} share Plant, so their pair relation is RELATED;
+- the prior raw comparison result was 0/1 against a RELATED reference, so this proposed pair already conflicts with the established comparison observation.
+This correction uses only pre-existing rules/observations after the player stated their inference; it does not add a new clue.
+
+Player action still treated as the explicitly selected synthesis:
+- Growth Powder + Root Solution.
+
+Deterministic raw outcome:
+- **failure**.
+
+Resources/state:
+- Research Charges remain 2 / 3;
+- selected synthesis reagents are consumed for this prototype attempt.
+
+Journal:
+1. Compare target vs R-2 (reference pair RELATED) -> 0/1 relation states match.
+2. Synthesis Growth Powder + Root Solution -> failure.
+
+Do not identify the remaining unique formula for the player. Await their interpretation.
