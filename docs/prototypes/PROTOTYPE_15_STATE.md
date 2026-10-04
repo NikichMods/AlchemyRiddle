@@ -242,3 +242,23 @@ Observed usability findings during play:
 - despite those UX problems, the two assay results combined cleanly into a non-enumerative final deduction.
 
 Explicit subjective evaluation is still pending before assigning final disposition.
+
+
+## Player subjective evaluation
+
+Overall rating: **~3/5**.
+
+Strong positive:
+- the final deduction was described as **exemplary / exactly the desired shape**;
+- the player explicitly enjoyed the moment where two independently obtained cross-slot facts combined with the initial constraints and collapsed to one exact answer;
+- the artificial way those facts had been obtained did **not** invalidate the satisfaction of the final reasoning itself;
+- the player strongly likes situations where properties interact, constrain one another and produce a unique resolution.
+
+Strong negative:
+- the route to those facts felt artificial, high-level and non-native;
+- paired-control machinery and compound property questions were too constructed and cognitively heavy;
+- the player wants the same quality of final deduction but with facts acquired through a more natural, native, lightweight investigative interaction.
+
+Known-recipe comparison remains attractive only as an optional/simple source of evidence. It should not be forced into a layered meta-comparison system merely because accumulated recipe knowledge is thematically appealing.
+
+Final disposition: **REVISE, retain the deduction shape; reject the current fact-acquisition wrapper as core.**
