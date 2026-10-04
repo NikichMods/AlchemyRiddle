@@ -819,3 +819,11 @@ Additional prototype 9 finding — implicit inference rule and hidden-state prec
 - The live prototype did not actually state that inheritance rule. It therefore oscillated between two different models: (a) target phenotype merely resembles a known reaction, which does not imply ingredient membership; and (b) target phenotype identifies a constituent reaction pair, which does. This ambiguity is a prototype-specification defect.
 - A short residual synthesis search is not automatically a product failure. The product contract permits final crafting to serve as hypothesis verification, and even logical exhaustion can resolve the answer. What matters is whether prior research did meaningful target-specific narrowing and whether the remaining attempts feel like a bounded verification step rather than the primary discovery method.
 - Future blind prototypes must precommit all hidden state before player interaction: the hidden formula / valid-answer set, observation model, inference rules, experiment outcomes, costs, and stopping/resolution conditions. Do not select or adapt the hidden answer after seeing player choices. If that precommitment was not made, stop the blind test rather than retrofitting outcomes.
+
+
+Prototype 9 experience assessment — viable but weak:
+
+- The player accepted the core logic: a meaningful research step may narrow a large formula space to a small residual set, and vanilla crafting may then verify the remaining hypotheses.
+- However, **logical viability is not sufficient**. In this instance the experience felt weak/boring: one obvious diagnostic test did most of the narrowing, then the remaining essence slot would be resolved by up to three straightforward synthesis attempts.
+- This likely satisfies “works” but only weakly satisfies the intended competence fantasy. The player is not building or testing a rich enough chain of reasoning to strongly feel “I worked that out”; instead the interaction risks feeling like one gate followed by bounded cleanup enumeration.
+- Therefore retain this pattern as a viable fallback/control structure, not as a leading design. Future prototypes should seek a similarly short loop while giving the player at least one genuinely meaningful intermediate hypothesis choice or inference, without increasing working-memory burden.
