@@ -205,3 +205,34 @@ Disposition pending explicit player evaluation, but the observed structural resu
 - property gating materially improves orientation and supports a good first controlled experiment;
 - aggregate resonance still tends to collapse into coordinate search once only one slot remains unresolved;
 - experiment economy may become a major UX constraint for a production version.
+
+
+## Player evaluation
+
+Subjective rating: approximately **2 / 5**.
+
+Player feedback:
+- the final unresolved slot became a boring sequential candidate sweep;
+- five full attempts is not excessive, but fewer would be preferable;
+- the overall loop is still clearly better than vanilla blind experimentation;
+- the substance compendium felt natural and acceptable as part of the game, especially if integrated cleanly into the research UI;
+- reagent expenditure was acceptable overall, but reducing experiment cost would improve the experience;
+- one possible future economy mechanism is a craftable universal testing medium / reagent kit that converts ordinary reagents into many research attempts; this is only an economy/UX idea, not an accepted core mechanic;
+- the genuinely interesting moment was inventing the initial all-Death null reference;
+- after that, the play pattern was too deterministic: first sweep the powder candidates, then localize the Life component, then sweep the remaining liquid candidates;
+- desired improvement: a more elegant rule or inference step should resolve the final ambiguity instead of another slot-by-slot scan.
+
+Final disposition:
+**REVISE / RETAIN INGREDIENTS, NOT ARCHITECTURE AS-IS.**
+
+Retain:
+- inspectable substance compendium as external memory;
+- world-grounded property gating;
+- simple quantitative experimental feedback;
+- controlled-reference / controlled-variable reasoning;
+- short total experiment budget.
+
+Revise:
+- avoid a design where optimal play decomposes into independent slot enumeration;
+- add a cross-slot or relational inference opportunity so the final phase can be solved rather than scanned;
+- treat experiment economy as a separate UX layer after the deduction loop is strong enough.
