@@ -2234,3 +2234,19 @@ Therefore adjacent compatibility has a promising information envelope: strong en
 Disposition: **selected for Prototype 16 as a 3-slot mechanism candidate**. Known recipes are demoted from comparison objects to a possible source of already-learned compatibility facts.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 16 — direct adjacent compatibility blind test
+
+Status: **precommitted; blind play ready**.
+
+Prototype 16 tests the simplest natural-evidence variant after Prototype 15:
+- direct micro-mixing of adjacent reagent pairs only;
+- raw result is STABLE / INCOMPATIBLE;
+- previously successful work may seed remembered pair outcomes in the journal;
+- no recipe-reference comparison, control pair, hidden similarity score or non-adjacent Powder–Essence relation;
+- the candidate pool is intentionally small because this test isolates whether fact acquisition itself feels natural.
+
+Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_16_STATE.md`.
+
+Production mutation remains **BLOCKED**.
