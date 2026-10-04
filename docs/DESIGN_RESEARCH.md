@@ -2138,3 +2138,18 @@ Prototype 15 tests Variant 3 from the concrete-reference redesign pass:
 Complete immutable facilitator state is in \`docs/prototypes/PROTOTYPE_15_STATE.md\`.
 
 Production mutation remains **BLOCKED**.
+
+
+### Prototype 15 — observed completion
+
+Status: **completed blind play; subjective evaluation pending**.
+
+Observed solve:
+- Assay B positive -> player established Powder and Liquid both carry Insect.
+- Assay A positive -> player established Liquid and Essence both carry Insect.
+- Player combined those cross-slot facts with the initial Plant-count and Corpse-count constraints and derived the unique hidden formula.
+- No failed synthesis attempts occurred; the final answer was deduced before synthesis.
+
+This is the first post-Prototype-13 candidate in which the player reached the final formula through a genuine multi-fact cross-slot inference rather than sequentially scanning the last unresolved slot.
+
+However, the presentation/mechanism has serious UX objections already observed during play: high information load, artificial/high-level control framing, unclear value of negative controls, and assay choice driven mostly by slot order rather than hypothesis quality. Do not promote the mechanism until the player's explicit subjective evaluation is recorded.
