@@ -167,3 +167,20 @@ Record:
 ## Integrity rule
 
 All target facts, prior observations, compatibility results, resource limits and hidden formula are immutable for the blind run.
+
+
+## Live checkpoint after first microtest
+
+Player reasoning:
+- used Plant x1 / Corpse x1 to see that the known stable Hive Powder + Nectar Solution branch can be continued only by an Essence carrying Corpse;
+- chose Carrion Essence as the first concrete continuation to test;
+- selection was hypothesis-driven from an already-known viable first stage, not matrix filling.
+
+Player action:
+- microtest Nectar Solution + Carrion Essence.
+
+Raw outcome: **STABLE**.
+
+Resources: 2 / 3 Research Charges remain.
+
+No facilitator deduction; await player inference.
