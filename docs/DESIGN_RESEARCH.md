@@ -1355,3 +1355,238 @@ Acceptance evidence still required:
 - returned full BepInEx log for property/provenance analysis.
 
 No production behavior becomes READY from this candidate.
+
+
+## Native-property runtime screen — 2026-10-04
+
+Status: **accepted property/provenance evidence; property layer is viable enough for a hybrid blind prototype. Production remains BLOCKED.**
+
+### Probe 0.3.0 acceptance
+
+Installed-runtime evidence from Graveyard Keeper 1.407 completed the exact research candidate recorded above:
+
+- \`AR_PROPERTY_BEGIN\` and \`AR_PROPERTY_DONE\` both present;
+- \`ordinary_formulas=43\`;
+- \`ingredients=35\`;
+- \`targets=34\`;
+- \`formula_rows_logged=0\`;
+- no \`AR_PROPERTY_ERROR\`.
+
+The 0.3.0 runtime candidate is therefore **accepted for its bounded property/provenance question**.
+
+Shared reusable host facts were promoted to \`NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md\` at shared commit \`9ec5234322e14ddc72d015dd23268fa82a528d19\`.
+
+#### Loaded-mod contamination control
+
+The runtime contained other mods, so do not promote arbitrary timing/economy values as pristine vanilla merely because the probe saw them.
+
+The fields used for the property screen are nevertheless accepted:
+
+- exact installed Alchemy Research Redux 0.1.8 source state (\`p1xel8ted/Graveyard-Keeper-Mods@85a88e96cd5c3864f772a03d461a9ac4935df310\`) reads mixed-alchemy definitions for preview/recipe memory and changes UI/inventory interaction; it does not rewrite \`craft_data\`, decomposition definitions, item definitions, vendors or drops;
+- exact historical Decomp Delight 0.1.9 source (\`p1xel8ted/Graveyard-Keeper-Mods@0e6aa4e67dda0c9eeaef8f0effea72253a327eb5\`) reads \`AlchemyDecompose\` records and appends a tooltip row only;
+- Queue Everything did run in the supplied environment, but its runtime diagnostic for this load was \`converted=0 halved=0 fireAdjusted=0\`; the active forced-multicraft mutation does not affect the identity/source/decomposition fields used below.
+
+Therefore ingredient identity, alchemy form, goo family, authored decomposition-source relations, target presentation and the bounded provenance classifications below are accepted. Craft time/energy and unrelated producer-economy details are not used as vanilla balance evidence.
+
+### Native presentation result
+
+The hoped-for ordinary description channel is effectively absent for ingredients:
+
+- **35/35** ordinary success-corpus ingredients have empty base descriptions in the tested Russian localization.
+- Only **8/34** ordinary targets have non-empty base descriptions, all in the consumable-elixir/effect family.
+
+Therefore free-text vanilla descriptions do **not** provide a general property language for AlchemyRiddle. No further description-mining pass is justified.
+
+Icon keys remain available structural evidence, but the provenance signal below is already strong enough that a visual-asset/perceptual pass is not the next cheapest research step.
+
+### Provenance vocabulary
+
+The useful native-derived relation is not “this reagent has hidden property X”. It is:
+
+> **this reagent can be obtained from at least one studied/source material of class X**
+
+A reagent may belong to more than one provenance class because vanilla can decompose different source materials into the same reagent. This overlap is intentional and must be taught explicitly if the mechanic uses it.
+
+Candidate world-grounded vocabulary:
+
+- **botanical** — at least one plant/crop/fungus/plant-product source;
+- **anatomical** — at least one corpse/anatomy source or direct anatomy-derived producer;
+- **mineral** — at least one stone/ore/mineral/gem source;
+- **creature** — at least one animal/insect/animal-product source;
+- **slime/jelly** — at least one ordinary slime/jelly source (distinct from the universal goo fallback vocabulary);
+- **combustion** — obtained through the cremation/pyre channel;
+- **universal form** — native \`AlchemyType.Universal\`; this is structural rather than provenance, but the player can learn it from the fact that these reagents fit any normal alchemy slot.
+
+The classification used for the hidden quantitative screen is:
+
+| Ingredient | Form | Coarse properties |
+| --- | --- | --- |
+| Alcohol | Universal | universal |
+| White powder | Powder | anatomical, mineral |
+| Water | Universal | universal |
+| Gold powder | Powder | mineral |
+| Blood | Universal | anatomical, universal |
+| Oil | Universal | anatomical, universal |
+| Ash | Powder | combustion |
+| Graphite powder | Powder | mineral |
+| Life powder | Powder | anatomical, mineral |
+| Slowing powder | Powder | botanical, mineral, creature |
+| Health powder | Powder | botanical |
+| Order powder | Powder | mineral, creature |
+| Death powder | Powder | anatomical |
+| Acceleration powder | Powder | botanical, creature |
+| Chaos powder | Powder | creature |
+| Life solution | Fluid | botanical, anatomical, creature |
+| Slowing solution | Fluid | botanical, anatomical, creature |
+| Health solution | Fluid | botanical |
+| Order solution | Fluid | botanical, creature, slime/jelly |
+| Death solution | Fluid | anatomical, slime/jelly |
+| Toxic solution | Fluid | botanical, slime/jelly |
+| Acceleration solution | Fluid | creature, slime/jelly |
+| Chaos solution | Fluid | creature |
+| Silver powder | Powder | mineral |
+| Salt | Powder | combustion |
+| Toxic powder | Powder | botanical |
+| Life extract | Essence | botanical, anatomical, creature |
+| Slowing extract | Essence | creature |
+| Health extract | Essence | botanical |
+| Order extract | Essence | botanical, slime/jelly |
+| Death extract | Essence | anatomical, slime/jelly |
+| Toxic extract | Essence | botanical, slime/jelly |
+| Acceleration extract | Essence | botanical, slime/jelly |
+| Chaos extract | Essence | creature |
+| Electric powder | Powder | creature |
+
+This table is **not** a recipe table and contains no target formula mapping.
+
+### Property distribution / non-oracularity
+
+Within the 35 ordinary formula-participating ingredients, the normal slot-compatible pools are:
+
+- slot 1: 19 candidates (15 Powder + 4 Universal);
+- slot 2: 12 candidates (8 Fluid + 4 Universal);
+- slot 3: 12 candidates (8 Essence + 4 Universal).
+
+Positive coarse-property group sizes:
+
+| Property | Slot 1 | Slot 2 | Slot 3 |
+| --- | ---: | ---: | ---: |
+| botanical | 4 | 5 | 5 |
+| anatomical | 5 | 5 | 4 |
+| mineral | 7 | 0 | 0 |
+| creature | 5 | 5 | 3 |
+| slime/jelly | 0 | 4 | 4 |
+| combustion | 2 | 0 | 0 |
+| universal form | 4 | 4 | 4 |
+
+A **single** such property is therefore generally useful but not an exact-name oracle. The strongest ordinary slot split in this vocabulary still leaves multiple candidates.
+
+However, exposing the **complete property vector** for every reagent would overfit:
+- slot 1 produces 11 distinct signatures among 19 candidates, including 4 singleton signatures;
+- slot 2 produces 9 signatures among 12 candidates, including 6 singletons;
+- slot 3 produces 7 signatures among 12 candidates, including 3 singletons.
+
+Therefore the accepted design constraint is:
+
+**use one or two properties as observations/constraints; do not expose a complete static “property dossier” as the puzzle solution layer.**
+
+### Target-level aggregate clue screen
+
+The old accepted anonymized 0.2 formula corpus was cross-walked internally to the 0.3 property identities using stable alchemy form / goo-family structure and then validated against the normal picker contract for all 43 ordinary formulas. Exact formulas remain unpersisted/unpublished here; only aggregate results follow.
+
+For outputs with alternative valid formulas, a target-level property count is usable only when that count is identical for **every valid formula for that output**. Invariance across all 34 outputs:
+
+- botanical count invariant: **29/34**;
+- anatomical: **28/34**;
+- mineral: **30/34**;
+- creature: **30/34**;
+- slime/jelly: **33/34**;
+- combustion: **33/34**;
+- Universal-ingredient count: **34/34**.
+
+Every one of the 34 outputs has at least **three** invariant properties in this seven-property vocabulary.
+
+Using only the six world-origin properties (excluding Universal form), **32/34** outputs have at least one invariant **positive** property count. The remaining two multi-formula outputs can still receive a non-oracular aggregate constraint through Universal count or an invariant zero-count origin constraint.
+
+Thus the real corpus needs **no authored exception merely to obtain one consistent coarse starting constraint**.
+
+### Aggregate reduction power
+
+For a bounded structural screen, use only the 35 ordinary formula-participating ingredients. This is deliberately **not** claimed to be the player's progression-specific search space.
+
+Picker-compatible distinct-item envelopes inside that scope:
+- two-slot: **224** candidate mixtures;
+- three-slot: **2,572** candidate mixtures.
+
+For each target, select its strongest invariant single aggregate property-count clue:
+- two-slot residual: min **23**, median **84**, max **103**;
+- three-slot residual: min **75**, median **540**, max **960**.
+
+For the strongest pair of invariant property-count clues:
+- two-slot residual: min **10**, median **28**, max **76**;
+- three-slot residual: min **16**, median **158**, max **448**.
+
+Interpretation:
+- the property layer can remove a large amount of uncertainty without naming the answer;
+- it is **not sufficient by itself**, especially for three-slot formulas;
+- this is exactly the desired role for Layer A: reduce the domain before a simpler experimental discriminator;
+- even two strongest clues remain non-oracular in this bounded corpus.
+
+Important limit: these numbers are optimistic with respect to a real player because the native picker has additional eligible ingredients that never participate in an ordinary success formula, and progression-specific availability is still unresolved. Do not present 224 / 2,572 as the player's actual candidate counts or silently discard eligible decoys in production.
+
+### Exact identity of the earlier exposure gap
+
+Combining the accepted 0.2 exposure signatures with the 0.3 target presentation resolves the former anonymous 8-target gap.
+
+The **seven blueprint-only unresolved targets** are:
+- Yellow paint;
+- Green paint;
+- Brown paint;
+- Red paint;
+- Dark-green paint;
+- Dark-violet paint;
+- Violet paint.
+
+The single target with **no counted downstream ordinary consumer, blueprint consumer, Technology/default-visible entry or static vendor sample candidate** is:
+- **Spices**.
+
+This changes the target-entry research problem from “8 unknown targets” to:
+- one repeated **paint-family visibility/progression** problem covering seven targets;
+- one genuine **Spices orphan** requiring a separate legitimate discovery trigger or an explicit product decision.
+
+Do not treat the seven paints as seven independent mechanism problems unless later progression evidence proves they differ materially.
+
+### Property-screen disposition
+
+The native-derived provenance vocabulary **passes the viability screen**:
+
+- it is materially grounded in real GK source/decomposition relationships;
+- single properties create useful multi-candidate groups;
+- complete signatures are too revealing and are rejected;
+- every ordinary output can receive at least one invariant coarse aggregate constraint without choosing a privileged formula;
+- one/two such clues materially reduce, but do not solve, the real formula space;
+- the remaining uncertainty is large enough that a second deduction layer is still necessary.
+
+Main conceptual weakness to test next:
+- provenance is a statement about **how a reagent can be obtained**, not an intrinsic physical property of the final reagent;
+- a clue such as “two components can be obtained from plant material” is world-grounded but may still feel like a database constraint unless its presentation/research fiction is convincing;
+- the next prototype must therefore test both deduction value and whether this provenance language feels naturally alchemical.
+
+No additional runtime probe is justified before that UX test.
+
+### Solution-space checkpoint after property screen
+
+Two previously retained hybrids remain useful:
+
+1. **property-gated aggregate resonance** — combine the successful clarity/control-of-variables grammar of Prototype 10 with the now-verified coarse provenance layer;
+2. **property-guided known-recipe differential** — combine Prototype 11's stronger alchemical/world fit with provenance-based reference selection.
+
+Select **property-gated aggregate resonance first** for the next blind test because:
+- its universal discrimination rule is already proven clear;
+- the property screen directly addresses its known scale failure;
+- it requires no assumption about what reference recipes are already known at a target's progression point;
+- it therefore tests the new property layer with fewer moving parts.
+
+Known-recipe differential remains the next comparison candidate if the property layer itself survives.
+
+Production mutation remains **BLOCKED**.
