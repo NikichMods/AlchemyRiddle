@@ -40,7 +40,7 @@ For an unknown vanilla product within the supported scope, the final design shou
 - blind full enumeration is not required;
 - a wiki or external recipe list is not required;
 - for the target deductive architecture, the system does not simply drip-feed a hidden recipe one ingredient at a time;
-- successful discovery still occurs through the real alchemy interaction;
+- successful discovery should preferably culminate in the real alchemy interaction, but this is **not a hard requirement**: if the research/minigame has logically exhausted all alternatives and uniquely determined the formula, it may explicitly resolve/reveal that formula rather than forcing a ceremonial final craft;
 - after success, the player can explain why the decisive experiments were informative.
 
 A good solution should normally converge in a small number of **meaningful** experiments after a useful initial clue. The exact target count is intentionally not fixed before the real search space is measured.
@@ -68,7 +68,7 @@ Until evidence and an explicit product decision justify otherwise:
 - keep vanilla recipe success/failure semantics unchanged;
 - keep progression, economy and save behavior unchanged;
 - do not auto-unlock unknown recipes;
-- do not expose exact unknown formulas;
+- do not expose exact unknown formulas **by default**; however, this anti-spoiler constraint is subordinate to finding the best player experience during design research. If hiding real formulas materially constrains solution-space analysis, the constraint may be relaxed explicitly rather than allowing spoiler protection to distort the design;
 - do not require a parallel external encyclopedia;
 - do not make arbitrary lore/flavor text carry mechanical meaning unless the rule is taught consistently.
 
@@ -103,3 +103,18 @@ A candidate fails the **target deductive standard** if it:
 Technical research may inspect the real recipe corpus privately as test data. Reports to the user and public-facing design discussion should default to aggregate evidence: recipe counts, candidate-space sizes, ambiguity classes, information gain, exceptional-case counts and path lengths.
 
 Do not reveal exact ingredients or effectively reconstruct an unknown formula unless the user explicitly asks for that recipe.
+
+
+## Clarifications accepted 2026-10-04
+
+### Final craft is a preference, not a hard gate
+
+The strongest experience is still expected to be one in which the player gathers enough direct and indirect evidence to form a justified hypothesis and then confirms it through ordinary alchemy.
+
+However, the project must not artificially preserve uncertainty merely to force one more vanilla craft. If the investigation has legitimately eliminated every alternative and the formula is already uniquely determined, the research/minigame may acknowledge the solved recipe directly. A forced craft at that point would be ceremonial rather than deductive.
+
+### Anti-spoiler policy is subordinate to product quality during research
+
+Avoiding unnecessary recipe spoilers remains the default reporting discipline. It must not become a design constraint that prevents rigorous analysis of the real corpus or narrows the solution space.
+
+If exact-formula inspection or explicit discussion becomes necessary to evaluate a candidate design properly, prefer the stronger research/design result. Relax the spoiler constraint explicitly and minimally rather than preserving it at the cost of a worse game.
