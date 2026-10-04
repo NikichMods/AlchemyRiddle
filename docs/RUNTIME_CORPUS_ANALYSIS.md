@@ -191,3 +191,73 @@ Before production architecture is selected:
 - inspect auxiliary output multiplicity only if the chosen design needs exact vanilla failure presentation.
 
 The runtime corpus is a **test oracle and design constraint**, not a reason to force one of the previously discussed architecture families.
+
+
+## Property / provenance corpus — Probe 0.3.0
+
+Status: **accepted runtime research evidence; no production architecture selected**
+
+### Evidence identity
+
+Runtime capture:
+- Graveyard Keeper **1.407**;
+- `AlchemyRiddle Corpus Probe 0.3.0`;
+- probe source: `research/vanilla-alchemy-model@163f07939701cff70b3a90565e125c0107d245a9`;
+- CI build run: `37207458475`, conclusion **success**;
+- handoff DLL SHA-256: `981ffda9dce0b223cfcb993d376762d81e4d1e7063b321f3c2e5c500be121af8`;
+- returned runtime block completed from `AR_PROPERTY_BEGIN` through `AR_PROPERTY_DONE` with no `AR_PROPERTY_ERROR`;
+- the probe reported **43 ordinary formulas, 35 participating ingredients and 34 ordinary targets**, and intentionally emitted **zero formula rows**.
+
+The raw returned log remains evidence input and is not committed.
+
+### Player-facing presentation population
+
+For the 35 ordinary success-corpus ingredients:
+- **0 / 35** have non-empty base item-description text in the loaded Russian localization returned by `GetItemDescription`;
+- names and icon keys are populated;
+- the 24 regular semantic alchemy forms constitute eight Powder / Fluid / Essence triplets with player-facing family names corresponding to the native goo semantics;
+- the remaining 11 participants are singleton/special material identities rather than members of those eight three-form families.
+
+For the 34 ordinary target outputs:
+- **8 / 34** have non-empty base descriptions in this capture, concentrated in consumable elixir/effect text;
+- therefore vanilla item-description prose is not a corpus-wide starting-clue source.
+
+### Provenance population
+
+The loaded authored data provides materially richer provenance than item descriptions:
+
+- **29 / 35** participating ingredients have at least one non-goo `AlchemyDecompose` source in addition to any same-family goo source;
+- examples of authored source relations include plant/crop materials, insects/animal products, anatomical remains and minerals;
+- several of the six remaining special ingredients still have ordinary non-decomposition producer paths (for example autopsy, press or pyre-style production), so “29 decomposition-backed” must not be read as “only 29 have meaningful provenance”;
+- provenance remains a graph rather than one authoritative source tag.
+
+This validates provenance as a real research substrate. It does **not** validate any particular broad category label as vanilla semantics; broad categories used by AlchemyRiddle are product-design abstractions over these authored source relations.
+
+### Cross-probe identity join
+
+Probe 0.1.0 assigned its `N....` symbols from the lexicographically sorted raw mixed-craft need IDs. Probe 0.3.0 intentionally used a fresh presentation-oriented symbol namespace.
+
+For analysis only, the 35 ordinary success ingredients were joined across the captures by the verified native ID/family structure and the 0.3 presentation records. The reconstructed join was checked against:
+- `AlchemyType`: **0 mismatches**;
+- the equivalence partition induced by the old `AR_GOO_MAP` rows versus the 0.3 native goo identities: **0 mismatches**.
+
+The exact de-anonymizing symbol map is intentionally not committed because it would turn the previously anonymized formula corpus into a public recipe mapping. Only aggregate derived results are persisted.
+
+### Exposure-audit identity refinement
+
+Probe 0.3.0 supplies player-facing identities for the previously anonymous target records.
+
+The eight targets left uncovered by the 0.2.0 measured structural/vendor entry channels are:
+- seven paint products that have authored blueprint consumers but whose visibility/unlock source was not established by that pass;
+- **Spices**, which has no measured ordinary downstream consumer, blueprint consumer or static vendor candidate.
+
+The seven blueprint-only cases are the yellow, green, brown, red, dark-green, dark-violet and violet paints.
+
+This refines target identity only; it does not close their real first-exposure chronology or FlowCanvas/dialogue unlock path.
+
+### Limits
+
+- The property probe intentionally captured only the 35 ingredients that participate in ordinary successful formulas, not all 52 globally eligible Powder / Fluid / Essence / Universal definitions.
+- Therefore candidate-space measurements built from the 35-item matrix are **structural design screens**, not progression-specific player search spaces.
+- Icon keys are not perceptual evidence of what color/shape a human player sees.
+- Broad provenance categories are AlchemyRiddle design hypotheses, not native fields.
