@@ -2387,3 +2387,14 @@ The compatibility core has now passed both:
 Next core evidence target is **scaling robustness**, not another binary failure case. A follow-up prototype should use a broader candidate pool and preserve simple local observations while testing whether the player can still choose informative experiments without drifting into pair-matrix completion.
 
 UI, economy and production integration remain separate open questions. Production architecture remains BLOCKED.
+
+
+### Scaling is a design variable, not a requirement
+
+Accepted product/design clarification before Prototype 19:
+- the compatibility grammar does **not** need to expose the player's entire currently known reagent universe for every target;
+- if broad candidate pools turn a good micro-deduction into bookkeeping or pair-matrix search, the research system may deliberately surface a bounded, target-relevant candidate set;
+- such a bounded solve can be near-authored / semi-authored as long as the constraints are world-grounded and the player still performs the deduction rather than receiving the formula;
+- therefore scalability testing is diagnostic: find the comfortable complexity envelope, not prove unbounded scaling.
+
+Prototype 19 should test a broader field than 17/18, but failure at that scale would justify constraining the field rather than rejecting pair compatibility outright.
