@@ -368,3 +368,104 @@ Production mutation is **BLOCKED** until the design phase establishes:
 - a solution-space comparison and user-selected direction.
 
 After direction selection, each materially independent production behavior change still requires its normal DevRules READY/BLOCKED evidence gate.
+
+
+## Paper prototype round 1 — 2026-10-04
+
+Status: **accepted player-facing UX evidence; all five tested cores rejected in their current form**.
+
+Five deliberately different paper prototypes were walked answer-blind from the common entry point:
+
+`visible need for unknown product X -> journal entry -> player selects X -> first meaningful investigation`.
+
+The prototypes used fictional products/reagents and did not disclose real vanilla formulas. The purpose was to test player reasoning and subjective legibility before formal corpus simulation.
+
+### Prototype 1 — purchased progressive constraints
+
+The journal offered paid research actions that progressively disclosed positional/property constraints, with stronger or different clues carrying different resource costs.
+
+Observed player behavior:
+- resource price materially affected choice; forgetting to display the price invalidated one decision and required rollback;
+- once a cheap action had a predictable information payoff, the rational strategy became to keep buying information until concrete ingredients emerged;
+- the player described the loop as buying the answer piece by piece rather than solving it;
+- multiple intermediate steps felt like grind when they did not require inference.
+
+Conclusion: **reject as core deductive loop**. It can function as guided disclosure/fallback, but in its tested form it is effectively staged answer purchase.
+
+### Prototype 2 — global property-count queries
+
+The player selected a known reagent as a sample, but the test actually answered a global question such as how many target ingredients shared that reagent's property family.
+
+Observed player behavior:
+- the first query had no evidence-based reason to prefer one family over another, so the player invented thematic/lore justification merely to choose;
+- selecting a concrete item but receiving only an abstract family-level answer felt semantically misleading;
+- after receiving a global result, the player's natural next question was local/positional, but the offered query language did not let the player ask it.
+
+Conclusion: **reject in tested form**. A valid query system must make the first query meaningfully choosable and let newly produced questions be investigated directly.
+
+### Prototype 3 — per-slot compatibility oracle
+
+The player could cheaply ask whether a concrete ingredient was compatible with a concrete slot for the selected product.
+
+Observed player behavior:
+- the player immediately recognized the finite slot-filtered search space and began testing candidates in list order;
+- independent positive compatibility marks naturally implied that the marked ingredients would compose a valid recipe;
+- when three individually compatible ingredients failed together, the result felt deceptive rather than revelatory;
+- after that failure the rational strategy became systematic enumeration of remaining candidates.
+
+Conclusion: **reject as core**. A deduction-grid presentation does not create deduction when the underlying action is a yes/no membership oracle. Independent local truths must not imply a whole-recipe relation that the system then violates without prior rule support.
+
+### Prototype 4 — compositional property algebra
+
+The target exposed a property/signature and known ingredients had visible properties. Pair experiments plus transformation rules were intended to let the player derive the recipe through a small algebra.
+
+Observed player behavior:
+- this was the first prototype that caused genuine attempts to reason rather than merely buy/query candidates;
+- however, the player repeatedly had to reread the rule system and was uncertain what symbols/arrows meant;
+- ambiguity over whether interactions were ordered, whether pair results collapsed state, and how three ingredients composed dominated the task;
+- the player eventually wanted to test all three ingredients together because the pair grammar was not sufficient to form a reliable mental model.
+
+Conclusion: **promising principle, rejected complexity level**. Genuine inference appeared, but the tested transformation grammar was too close to a standalone logic game for Graveyard Keeper's broader management loop. If property composition survives, its rule set must be drastically simpler and locally obvious.
+
+### Prototype 5 — two explicit competing hypotheses
+
+A free initial clue reduced a two-slot recipe to exactly two candidate formulas. The player could perform a cheap discriminating test on either side before committing real ingredients.
+
+Observed player behavior:
+- the player immediately saw that either test had identical information value;
+- the choice between tests was therefore a choice in presentation only, not a reasoning decision;
+- the cheap test still had economic value because it avoided risking two real ingredients;
+- once one hypothesis was rejected, the remaining formula was perceived as already fully known; the required final vanilla synthesis felt ceremonial;
+- the player compared the interaction to choosing between two buttons where either button necessarily resolves the problem.
+
+Conclusion: **reject as core deductive puzzle**. Efficient binary discrimination is not sufficient when the player has no substantive reason to choose one experiment over another and no inference beyond executing the forced discriminator.
+
+### Cross-prototype findings
+
+The round established several stronger design constraints:
+
+1. **Information gain alone is not enough.** A mechanically efficient test can still be boring if the player has no reasoned choice of what to test.
+2. **The experiment-selection decision must matter.** Two actions with identical expected consequences are not meaningful agency merely because their labels differ.
+3. **Do not make the journal a recipe vending machine.** Repeatedly purchasing finer constraints converges to staged disclosure even when no exact ingredient is directly printed.
+4. **Do not disguise enumeration as deduction.** A yes/no oracle over candidates remains brute-force search with cheaper steps.
+5. **Local positive facts must compose predictably.** If several individually positive slot facts do not imply a viable combined hypothesis, the system must make the missing relation explicit before the player is encouraged to combine them.
+6. **Some genuine rule application is desirable, but the grammar must fit Graveyard Keeper.** Prototype 4 produced the most actual reasoning but exceeded the acceptable teaching/working-memory burden.
+7. **Final vanilla synthesis should be evidential, not ceremonial.** The player should reach it with a justified hypothesis that still benefits from real verification, rather than after the system has already proved the exact formula beyond reasonable doubt.
+8. **Experiment cost is part of the puzzle.** The player consistently considered cheap diagnostic cost versus risking real ingredients. Resource economics can make a test worthwhile, but cannot substitute for intellectual content.
+9. **Every action surface must show cost at decision time.** Omitted cost materially changes behavior.
+10. **Candidate completeness must be knowable.** Across all prototypes, the player identified a global uncertainty: if an undiscovered/unprocessed reagent could still be required, no closed candidate-space deduction is trustworthy. A future design must either:
+   - guarantee and communicate that the currently relevant candidate pool is complete for target X;
+   - base reasoning on properties/laws that remain valid even when unseen reagents exist; or
+   - explicitly surface “insufficient reagent knowledge” as a legitimate research state rather than allowing false closure.
+
+### Resulting design target
+
+The next candidate should not start from “what clue can we sell?” or “what yes/no question can the journal answer?”
+
+It should instead aim for:
+
+`visible need X -> useful but incomplete starting observation -> player forms more than one plausible explanation -> player chooses an experiment because different possible outcomes would discriminate between those explanations -> result is locally interpretable -> journal preserves the evidence -> player revises the explanation -> vanilla synthesis tests a still-player-owned hypothesis`.
+
+The key unresolved challenge is to create **meaningful experiment selection without a heavy bespoke logic algebra**.
+
+No production architecture is selected. Production mutation remains **BLOCKED**.
