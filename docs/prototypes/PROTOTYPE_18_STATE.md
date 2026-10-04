@@ -166,3 +166,14 @@ Record:
 ## Integrity rule
 
 All target facts, hidden formula, prior observation, compatibility outcomes and resource limits are immutable for the blind run.
+
+
+## Live checkpoint 1
+
+Player chose Nectar Solution + Stonebone Essence because the known stable Hive Powder + Nectar Solution branch would need Stonebone Essence to satisfy Mineral x1.
+
+Raw outcome: **INCOMPATIBLE / SEPARATES**.
+
+Resources: 1 / 2 Research Charges remain.
+
+No facilitator deduction; await player inference.
