@@ -158,3 +158,22 @@ Presentation note:
 - subsequent player-facing screens should use more broadly supported display glyphs (🐞 Насекомое, 💎 Минерал) without changing any prototype semantics.
 
 No facilitator deduction from the fresh result. Await player inference / next action.
+
+
+## Live checkpoint 2
+
+Player inference after the first microtest:
+- treated the P1 + L2 incompatibility as rejecting the conditional P1 target branch;
+- decided not to spend more tests on P1;
+- moved to P2 Хитиновый порошок;
+- reasoned that with P2 + L1 Янтарный раствор, the target facts Растение ×1 / Труп ×1 allow either E1 Падальная эссенция or E2 Ископаемая эссенция as conditional continuations.
+
+Player action:
+- microtest P2 Хитиновый порошок + L1 Янтарный раствор.
+
+Raw outcome: **STABLE / СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **2 / 4**.
+
+No facilitator deduction from the fresh result. Await player inference / next action.
