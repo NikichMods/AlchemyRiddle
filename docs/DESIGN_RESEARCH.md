@@ -980,3 +980,93 @@ Facilitator/test-method caveat:
 - Future blind prototypes must present **observations and previously established facts only**. New deductions must remain player work until the player states them; the facilitator may then verify/correct them. This applies even when prior prototypes had simpler deductions where the contamination was less noticeable.
 
 Disposition: **do not promote Prototype 12 as-is.** Retain the useful concept that vanilla-like semantic families can carry target-relevant evidence, but treat the current target-bound-goo rule as too opaque / cognitively muddy for a leading architecture without substantial simplification.
+
+
+## Post-prototype synthesis — prototypes 1–12 and external puzzle-design comparison
+
+Status: **working synthesis / next-research hypothesis, not selected production architecture**.
+
+### What the 12 prototypes now establish
+
+The failed and surviving prototypes separate four distinct design jobs that should not be forced into one mechanic:
+
+1. **Candidate-domain reduction** — turn the real alchemy inventory into a small enough set that choosing an experiment is tractable.
+2. **Experimental discrimination** — let the player test a hypothesis in a way whose result supports a local, understandable inference.
+3. **World grounding** — make clues feel like observations about Graveyard Keeper substances and known alchemy, rather than queries against an abstract hidden database.
+4. **External memory** — preserve observations, established facts and live hypotheses without performing the deduction for the player.
+
+The strongest evidence from the prototypes:
+- Prototype 4 showed that stable ingredient properties can create genuine reasoning, but a multi-rule algebra exceeds the intended working-memory envelope.
+- Prototype 7 produced the strongest “I am investigating” feeling through concrete assays and observable reactions, but its fixed assay-to-slot mapping would routinize later recipes.
+- Prototype 10 showed that a single aggregate whole-mixture rule is unusually clear and naturally induces controlled-variable experiments. Its failure is scale: with realistic candidate counts it becomes coordinate search.
+- Prototype 11 showed that comparison to already-known recipes feels more naturally alchemical and makes prior knowledge useful, but the tested reference set created an almost forced linear sequence rather than meaningful experiment selection.
+- Prototype 12 showed that target-binding can rescue relevance of vanilla-style goo, but an opaque anchor/trace interpretation rule adds the wrong kind of cognitive burden.
+- Prototypes 1/3/5/6 reinforce that cheap information, binary discrimination, or directed improvement are not enough when the player's rational action is still “query candidates until the answer appears.”
+
+### Working design convergence: two-layer deduction
+
+The most promising general structure after prototypes 1–12 is:
+
+**Layer A — world-grounded coarse evidence**
+- use a small, taught vocabulary of substance properties / observable behavior;
+- clues should reduce the candidate domain materially but should not identify an exact ingredient in an exact slot;
+- properties should preferably come from vanilla presentation, real-world intuition, existing semantic families, Study/decomposition knowledge, or a consistently taught assay vocabulary;
+- target observations may be authored/selected per output because the real corpus is bounded.
+
+**Layer B — one simple universal discrimination rule**
+- after the property layer has reduced the search space, use a very low-complexity experimental rule such as whole-mixture aggregate matching or carefully chosen reference-recipe comparison;
+- controlled changes should allow strong local conclusions;
+- the player, not the journal, performs the new deduction;
+- final synthesis is used when it still tests a justified hypothesis, and may be skipped when logical exhaustion has already made the formula unique.
+
+This structure directly addresses the main weakness of Prototype 10: the simple rule is retained, but it is no longer responsible for searching a large raw ingredient space.
+
+### Property-layer constraints from the real 1.407 corpus
+
+The native goo taxonomy is a useful source vocabulary but cannot simply be exposed positionally:
+- eight semantic classes span Powder / Fluid / Essence forms;
+- within a normal positional slot, goo identity is effectively one-to-one among ingredients participating in ordinary success formulas;
+- therefore a clue equivalent to “slot 2 has goo class G” is too close to directly naming the ingredient.
+
+Promising property clues must therefore be **coarser, cross-slot, aggregate, relational, or compound-level**. Examples of the design shape (not accepted literal rules):
+- the target contains exactly one ingredient from a semantic family, without saying which slot;
+- the target exhibits a visible/thermal/dilution behavior shared by several reagents;
+- two ingredients share/opppose a broad property;
+- a known recipe is relevant because it shares an observable property pattern, not because the system directly reveals a matching slot.
+
+### External-design principles that fit the evidence
+
+Relevant transferable patterns:
+- Mastermind / control-of-variables reasoning: controlled one-factor changes produce strong attributable conclusions; this explains why Prototype 10 felt better than sequential candidate probing.
+- Zendo: prediction and counterexample construction can be satisfying, but rule authors systematically underestimate difficulty; use fewer/easier rules than initially seems necessary.
+- Alchemists: stable hidden properties plus experiments and a deduction record can create genuine scientific reasoning, but its full formal grid is much too heavy for the intended Graveyard Keeper micro-puzzle.
+- The Case of the Golden Idol: bounded vocabularies and deliberately limited relevant information can support player-owned deduction while reducing brute-force validation; playtesting must tune the path between triviality and confusion.
+- Strange Horticulture: world-grounded identification can vary which observable feature matters (shape, description, smell/feel) while keeping the task intuitive; this is a particularly close reference for a possible Graveyard Keeper property layer.
+- Outer Wilds: player discoveries naturally require an external knowledge record; its prototype testing directly motivated an in-game computer because testers began taking their own notes.
+- The Search for Planet X: research actions can have explicit scopes and results that combine with persistent notes, but its hour-scale formal deduction is a complexity ceiling rather than a pacing model for this project.
+- Baba Is You / The Witness: a small stable rule language can support deep reasoning, but too many simultaneously active rules or too much supporting setup quickly becomes overwhelming; AlchemyRiddle should favor one reusable discrimination rule plus target-specific evidence rather than stacking several abstract laws.
+
+### Next research checkpoint
+
+Before another fictional hybrid prototype, test whether a useful **Graveyard-Keeper-native property vocabulary actually exists**.
+
+For the 35 ordinary success-corpus ingredient definitions, inspect non-spoiler metadata that a player could plausibly know or be taught:
+- native semantic/goo family;
+- Powder/Fluid/Essence/Universal form;
+- Study/decomposition relationships;
+- ingredient/source/material family;
+- existing names/descriptions and visible presentation where legally/reliably inspectable;
+- any other already-verified vanilla attributes with clear player-facing meaning.
+
+Then propose a very small property vocabulary and quantify, without exposing formulas:
+- distribution of each property across slots;
+- candidate-set reduction from target-level aggregate clues;
+- ambiguity / collision rates;
+- whether all 34 ordinary outputs can receive at least one useful non-oracular starting clue;
+- how many targets would need authored exceptions.
+
+Only if that screen is promising should the next blind round test:
+1. **property-gated aggregate resonance** (Prototype 10 core + world-grounded candidate reduction);
+2. **property-guided known-recipe differential** (Prototype 11 core + world-grounded selection of useful references).
+
+Production mutation remains **BLOCKED**.
