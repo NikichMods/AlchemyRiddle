@@ -195,10 +195,12 @@ A future persistent research surface may also preserve **why** a lead exists (fo
 Read-only anonymized loaded-`GameBalance` probe 0.2.0 completed successfully.
 
 Across the **34 ordinary picker-compatible mixed-alchemy outputs**:
-- 18 have a measured structural entry through a Technology-owned or default-visible downstream recipe/blueprint;
+- 25 are consumed by at least one authored downstream ordinary recipe or build blueprint;
+- 18 already have a measured structural entry through a Technology-owned or default-visible downstream recipe/blueprint;
 - 17 have a static vendor-stock candidate;
-- the union covers 26 outputs;
-- 8 remain uncovered by this first pass.
+- the union of measured structural/vendor channels covers 26 outputs;
+- 8 remain uncovered by this first pass;
+- among the 9 outputs with no downstream craft/build consumer, 8 have a vendor-stock candidate and only 1 has neither measured demand nor vendor sample channel.
 
 The uncovered set is informative rather than simply missing data: seven have authored blueprint consumers whose actual non-Technology unlock/visibility source is not yet classified, while one has no measured ordinary consumer, blueprint consumer, vendor-stock candidate or direct visible `QuestDefinition` expression reference.
 
