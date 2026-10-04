@@ -836,3 +836,10 @@ Prototype 9 final disposition:
 - **Experience signal:** weak/boring relative to the product target. One obvious discriminator performed most of the research work, leaving a short cleanup search.
 - **Retain/reject:** retain as a fallback/control structure, not a leading architecture.
 - **Next prototype:** whole-mixture aggregate resonance, with facilitator state fully precommitted and persisted before the first player choice.
+
+
+### Prototype 10 — active blind test
+
+Status: **active**. Complete facilitator state was precommitted before the player's first action under the paper-prototype protocol. Do not expose its hidden contents during blind play.
+
+Prototype 10 begins only after commit identity of that state exists. Player-facing observations must be generated from the precommitted model without adaptation.
