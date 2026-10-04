@@ -14,7 +14,7 @@ namespace NikichMods.AlchemyRiddle.Research
     {
         public const string Guid = "nikich.graveyardkeeper.alchemyriddle.corpusprobe";
         public const string Name = "AlchemyRiddle Corpus Probe";
-        public const string Version = "0.1.0";
+        public const string Version = "0.2.0";
 
         private static readonly BindingFlags Inst =
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
@@ -31,7 +31,7 @@ namespace NikichMods.AlchemyRiddle.Research
 
         private void Awake()
         {
-            Logger.LogInfo("AlchemyRiddle Corpus Probe 0.1.0 loaded. Read-only research probe.");
+            Logger.LogInfo("AlchemyRiddle Corpus Probe 0.2.0 loaded. Read-only research probe.");
             StartCoroutine(DumpWhenReady());
         }
 
@@ -162,7 +162,7 @@ namespace NikichMods.AlchemyRiddle.Research
             }
 
             Logger.LogInfo(
-                "AR_CORPUS_BEGIN|probe=0.1.0|target=GraveyardKeeper-1.407|source=loaded-GameBalance");
+                "AR_CORPUS_BEGIN|probe=0.2.0|target=GraveyardKeeper-1.407|source=loaded-GameBalance");
             Logger.LogInfo(
                 "AR_CORPUS_SOURCE|decompile_reference=Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9");
             Logger.LogInfo(
@@ -310,10 +310,390 @@ namespace NikichMods.AlchemyRiddle.Research
                     "|item_definitions=" + count.ToString(CultureInfo.InvariantCulture));
             }
 
+            DumpExposure(balance, items, crafts, successCrafts, itemById);
+
             Logger.LogInfo(
-                "AR_CORPUS_DONE|probe=0.1.0" +
+                "AR_CORPUS_DONE|probe=0.2.0" +
                 "|success_records=" + successIndex.ToString(CultureInfo.InvariantCulture) +
                 "|aux_records=" + auxIndex.ToString(CultureInfo.InvariantCulture));
+        }
+
+        private void DumpExposure(
+            object balance,
+            IList items,
+            IList crafts,
+            List<object> successCrafts,
+            Dictionary<string, object> itemById)
+        {
+            IList objectCrafts = Get(balance, "craft_obj_data") as IList;
+            IList techs = Get(balance, "techs_data") as IList;
+            IList vendors = Get(balance, "vendors_data") as IList;
+            IList quests = Get(balance, "quests_data") as IList;
+
+            if (objectCrafts == null || techs == null || vendors == null || quests == null)
+                throw new InvalidOperationException("Exposure probe requires craft_obj_data, techs_data, vendors_data and quests_data.");
+
+            List<object> ordinarySuccess = successCrafts
+                .Where(delegate(object c) { return IsPickerCompatible(c, itemById); })
+                .ToList();
+
+            List<string> targets = ordinarySuccess
+                .Select(PrimaryOutput)
+                .Where(delegate(string x) { return x.Length > 0; })
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(delegate(string x) { return x; }, StringComparer.Ordinal)
+                .ToList();
+
+            Dictionary<string, string> targetSymbols = Symbols(targets, "T");
+            Dictionary<string, object> craftById = IndexById(crafts);
+            Dictionary<string, object> objectCraftById = IndexById(objectCrafts);
+
+            int techTargets = 0;
+            int defaultTargets = 0;
+            int structuralTargets = 0;
+            int vendorTargets = 0;
+            int questTargets = 0;
+            int anyTargets = 0;
+            int uncoveredTargets = 0;
+
+            Logger.LogInfo(
+                "AR_EXPOSURE_BEGIN|probe=0.2.0" +
+                "|ordinary_formulas=" + ordinarySuccess.Count.ToString(CultureInfo.InvariantCulture) +
+                "|ordinary_outputs=" + targets.Count.ToString(CultureInfo.InvariantCulture) +
+                "|scope=authored-demand-plus-static-sample-candidates");
+
+            foreach (string target in targets)
+            {
+                object itemDef;
+                itemById.TryGetValue(target, out itemDef);
+
+                HashSet<string> ordinaryConsumers = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> blueprintConsumers = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> defaultVisibleConsumers = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> techVisibleConsumers = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> techPublicNodes = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> techGatedNodes = new HashSet<string>(StringComparer.Ordinal);
+                HashSet<string> hiddenTechUnlockConsumers = new HashSet<string>(StringComparer.Ordinal);
+
+                foreach (object craft in crafts)
+                {
+                    if (craft == null || !IsDownstreamConsumerCraft(craft) || !NeedsItem(craft, target))
+                        continue;
+
+                    string id = Id(craft);
+                    if (id.Length == 0)
+                        continue;
+
+                    ordinaryConsumers.Add(id);
+                    if (!Bool(Get(craft, "hidden")) && !Bool(Get(craft, "needs_unlock")))
+                        defaultVisibleConsumers.Add(id);
+                }
+
+                foreach (object craft in objectCrafts)
+                {
+                    if (craft == null || !NeedsItem(craft, target))
+                        continue;
+
+                    string id = Id(craft);
+                    if (id.Length == 0)
+                        continue;
+
+                    blueprintConsumers.Add(id);
+                    if (!Bool(Get(craft, "hidden")) && !Bool(Get(craft, "needs_unlock")))
+                        defaultVisibleConsumers.Add(id);
+                }
+
+                foreach (object tech in techs)
+                {
+                    if (tech == null)
+                        continue;
+
+                    string techId = Id(tech);
+                    IList refs = Get(tech, "crafts") as IList;
+                    if (refs == null)
+                        continue;
+
+                    foreach (object rawObj in refs)
+                    {
+                        string raw = Convert.ToString(rawObj, CultureInfo.InvariantCulture) ?? string.Empty;
+                        if (raw.Length == 0)
+                            continue;
+
+                        bool visibleUnlock = raw[0] != '@';
+                        string refId = visibleUnlock ? raw : raw.Substring(1);
+
+                        object consumer;
+                        if (!craftById.TryGetValue(refId, out consumer))
+                            objectCraftById.TryGetValue(refId, out consumer);
+
+                        if (consumer == null || Bool(Get(consumer, "hidden")) || !NeedsItem(consumer, target))
+                            continue;
+
+                        if (!visibleUnlock)
+                        {
+                            hiddenTechUnlockConsumers.Add(refId);
+                            continue;
+                        }
+
+                        techVisibleConsumers.Add(refId);
+                        if (techId.Length > 0)
+                        {
+                            if (Bool(Get(tech, "hidden")) || Bool(Get(tech, "invisible")))
+                                techGatedNodes.Add(techId);
+                            else
+                                techPublicNodes.Add(techId);
+                        }
+                    }
+                }
+
+                int vendorCandidates = 0;
+                if (itemDef != null)
+                {
+                    foreach (object vendor in vendors)
+                    {
+                        if (vendor != null && StaticVendorCanStock(vendor, itemDef, target))
+                            vendorCandidates++;
+                    }
+                }
+
+                int questRefs = 0;
+                foreach (object quest in quests)
+                {
+                    if (quest != null && Bool(Get(quest, "quest_visible")) && QuestReferencesItem(quest, target))
+                        questRefs++;
+                }
+
+                int formulas = ordinarySuccess.Count(delegate(object c)
+                {
+                    return string.Equals(PrimaryOutput(c), target, StringComparison.Ordinal);
+                });
+
+                bool hasTech = techVisibleConsumers.Count > 0;
+                bool hasDefault = defaultVisibleConsumers.Count > 0;
+                bool hasStructural = hasTech || hasDefault;
+                bool hasVendor = vendorCandidates > 0;
+                bool hasQuest = questRefs > 0;
+                bool hasAny = hasStructural || hasVendor || hasQuest;
+
+                if (hasTech) techTargets++;
+                if (hasDefault) defaultTargets++;
+                if (hasStructural) structuralTargets++;
+                if (hasVendor) vendorTargets++;
+                if (hasQuest) questTargets++;
+                if (hasAny) anyTargets++; else uncoveredTargets++;
+
+                Logger.LogInfo(
+                    "AR_EXPOSURE" +
+                    "|target=" + targetSymbols[target] +
+                    "|formulas=" + formulas.ToString(CultureInfo.InvariantCulture) +
+                    "|ordinary_consumers=" + ordinaryConsumers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|blueprint_consumers=" + blueprintConsumers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|default_visible_consumers=" + defaultVisibleConsumers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|tech_visible_consumers=" + techVisibleConsumers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|tech_public_nodes=" + techPublicNodes.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|tech_gated_nodes=" + techGatedNodes.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|tech_hidden_unlock_consumers=" + hiddenTechUnlockConsumers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|vendor_static_stock_candidates=" + vendorCandidates.ToString(CultureInfo.InvariantCulture) +
+                    "|visible_quest_expression_refs=" + questRefs.ToString(CultureInfo.InvariantCulture) +
+                    "|structural_entry=" + hasStructural.ToString().ToLowerInvariant() +
+                    "|any_candidate_entry=" + hasAny.ToString().ToLowerInvariant());
+            }
+
+            Logger.LogInfo(
+                "AR_EXPOSURE_SUMMARY" +
+                "|targets=" + targets.Count.ToString(CultureInfo.InvariantCulture) +
+                "|tech_entry_targets=" + techTargets.ToString(CultureInfo.InvariantCulture) +
+                "|default_recipe_entry_targets=" + defaultTargets.ToString(CultureInfo.InvariantCulture) +
+                "|structural_entry_targets=" + structuralTargets.ToString(CultureInfo.InvariantCulture) +
+                "|vendor_candidate_targets=" + vendorTargets.ToString(CultureInfo.InvariantCulture) +
+                "|quest_expression_candidate_targets=" + questTargets.ToString(CultureInfo.InvariantCulture) +
+                "|any_candidate_targets=" + anyTargets.ToString(CultureInfo.InvariantCulture) +
+                "|uncovered_targets=" + uncoveredTargets.ToString(CultureInfo.InvariantCulture));
+
+            Logger.LogInfo("AR_EXPOSURE_DONE|probe=0.2.0");
+        }
+
+        private static bool IsPickerCompatible(
+            object craft,
+            Dictionary<string, object> itemById)
+        {
+            string[] needs = ItemIds(Get(craft, "needs") as IList).ToArray();
+            if (needs.Length != 2 && needs.Length != 3)
+                return false;
+
+            string[] expected = { "Powder", "Fluid", "Essence" };
+            HashSet<string> seen = new HashSet<string>(StringComparer.Ordinal);
+
+            for (int i = 0; i < needs.Length; i++)
+            {
+                if (!seen.Add(needs[i]))
+                    return false;
+
+                object def;
+                if (!itemById.TryGetValue(needs[i], out def) || def == null)
+                    return false;
+
+                string type = Str(Get(def, "alch_type"));
+                if (type != expected[i] && type != "Universal")
+                    return false;
+            }
+
+            return true;
+        }
+
+        private static bool IsDownstreamConsumerCraft(object craft)
+        {
+            string type = Str(Get(craft, "craft_type"));
+            return type != "MixedCraft"
+                   && type != "AlchemyDecompose"
+                   && type != "Survey";
+        }
+
+        private static bool NeedsItem(object craft, string itemId)
+        {
+            return ItemIds(Get(craft, "needs") as IList)
+                .Any(delegate(string x) { return string.Equals(x, itemId, StringComparison.Ordinal); });
+        }
+
+        private static Dictionary<string, object> IndexById(IList list)
+        {
+            Dictionary<string, object> result =
+                new Dictionary<string, object>(StringComparer.Ordinal);
+
+            if (list == null)
+                return result;
+
+            foreach (object obj in list)
+            {
+                string id = Id(obj);
+                if (id.Length > 0 && !result.ContainsKey(id))
+                    result[id] = obj;
+            }
+
+            return result;
+        }
+
+        private static bool StaticVendorCanStock(object vendor, object itemDef, string itemId)
+        {
+            HashSet<string> itemTypes = StringSet(Get(itemDef, "product_types") as IList);
+            HashSet<string> vendorTypes = StringSet(Get(vendor, "product_types") as IList);
+            if (itemTypes.Count == 0 || vendorTypes.Count == 0 || !itemTypes.Overlaps(vendorTypes))
+                return false;
+
+            int productTier = Int(Get(itemDef, "product_tier"));
+            int baseCount = Int(Get(itemDef, "base_count"));
+
+            for (int tier = Math.Max(1, productTier); tier <= 3; tier++)
+            {
+                if (VendorBlocksSelling(vendor, itemId, tier))
+                    continue;
+
+                int count = baseCount;
+                IList modifiers = Get(vendor, "count_modificators") as IList;
+                if (modifiers != null)
+                {
+                    foreach (object modifier in modifiers)
+                    {
+                        if (modifier == null)
+                            continue;
+
+                        if (string.Equals(Str(Get(modifier, "item_name")), itemId, StringComparison.Ordinal)
+                            && Int(Get(modifier, "tier")) <= tier)
+                        {
+                            count = Int(Get(modifier, "base_count"));
+                        }
+                    }
+                }
+
+                if (count != 0)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static bool VendorBlocksSelling(object vendor, string itemId, int tier)
+        {
+            IList list = Get(vendor, "not_selling") as IList;
+            if (list == null)
+                return false;
+
+            foreach (object modifier in list)
+            {
+                if (modifier == null
+                    || !string.Equals(Str(Get(modifier, "item_name")), itemId, StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                int blockedTier = Int(Get(modifier, "tier"));
+                if (blockedTier < 1 || blockedTier == tier)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static bool QuestReferencesItem(object quest, string itemId)
+        {
+            if (ExpressionReferencesItem(Get(quest, "start_trigger"), itemId)
+                || ExpressionReferencesItem(Get(quest, "success_trigger"), itemId)
+                || ExpressionReferencesItem(Get(quest, "fail_trigger"), itemId))
+            {
+                return true;
+            }
+
+            foreach (string field in new[] { "success_expressions", "fail_expressions" })
+            {
+                IList list = Get(quest, field) as IList;
+                if (list == null)
+                    continue;
+
+                foreach (object expression in list)
+                {
+                    if (ExpressionReferencesItem(expression, itemId))
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool ExpressionReferencesItem(object expression, string itemId)
+        {
+            string raw = Str(Get(expression, "_expression"));
+            if (raw.Length == 0)
+                return false;
+
+            return raw.IndexOf(""" + itemId + """, StringComparison.Ordinal) >= 0;
+        }
+
+        private static HashSet<string> StringSet(IList list)
+        {
+            HashSet<string> result = new HashSet<string>(StringComparer.Ordinal);
+            if (list == null)
+                return result;
+
+            foreach (object value in list)
+            {
+                string text = Convert.ToString(value, CultureInfo.InvariantCulture) ?? string.Empty;
+                if (text.Length > 0)
+                    result.Add(text);
+            }
+
+            return result;
+        }
+
+        private static int Int(object obj)
+        {
+            try
+            {
+                return obj == null ? 0 : Convert.ToInt32(obj, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private static bool IsSuccessFormula(object craft)
