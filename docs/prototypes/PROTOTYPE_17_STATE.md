@@ -222,3 +222,22 @@ Observed solve character:
 - this fits the accepted product rule that final craft may remain a hypothesis test when uncertainty is small, but it also proves adjacent compatibility alone is **not target identity evidence**.
 
 Subjective evaluation pending.
+
+
+## Player subjective evaluation
+
+Overall rating for the **core play pattern**: approximately **4+ / 5**.
+
+Positive:
+- the process felt simple and sequential rather than cognitively heavy;
+- each individual step was easy to understand, but the player still had to think;
+- the steps accumulated into a successful result naturally;
+- the core compatibility mechanic is considered extremely promising.
+
+Why not 5/5:
+- this run was a clear **happy path**: the chosen branch worked immediately and the final hypothesis succeeded on the first real synthesis;
+- failure behavior is not yet tested;
+- it remains unknown whether the loop stays satisfying when a microtest fails, a branch must be abandoned, or the solve takes longer;
+- economy, resource replenishment and interface are also still open, but the player explicitly treats those as separate implementation/product questions rather than objections to the puzzle core.
+
+Final disposition: **STRONG PROMISE / test unhappy path next**.
