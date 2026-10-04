@@ -90,3 +90,25 @@ Record:
 - retain / revise / reject / fallback-only judgment and why.
 
 Do not generalize a family-wide conclusion from a prototype whose facilitator model was underspecified or changed during play.
+
+
+## Blind-play facilitator inference boundary
+
+During a live blind prototype, the facilitator must not perform the player's new deduction for them.
+
+After an experiment, the player-facing response may show:
+- the raw observation/result;
+- resource changes;
+- the persistent experiment journal;
+- facts that were already established before this experiment;
+- the legal next actions.
+
+It must **not** automatically add a section equivalent to “therefore this means…” that derives new recipe constraints from the fresh observation.
+
+The player should first state their own inference. The facilitator may then:
+- confirm deductions that are justified;
+- correct a logical error;
+- distinguish established fact from hypothesis;
+- update the persistent state with conclusions the player has actually earned.
+
+This boundary applies even to apparently simple deductions. Simple cases can make facilitator assistance seem harmless, but the same habit invalidates cognitive-load and “I worked it out” measurements once the reasoning becomes nontrivial.
