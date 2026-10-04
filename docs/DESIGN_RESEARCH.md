@@ -2184,3 +2184,53 @@ New primary design question:
 This supersedes the narrower question of how to improve known-formula comparison.
 
 Production architecture remains **BLOCKED**.
+
+
+### Post-Prototype-15 natural-evidence pass — adjacent compatibility
+
+The player evaluation of Prototype 15 sharpened the target: preserve its exemplary final fact-intersection deduction, but acquire the facts through simple direct observations rather than meta-properties of reference formulas.
+
+#### Selected candidate: direct adjacent compatibility
+
+Universal empirical primitive:
+- a reagent pair can be tested directly in a small research mixture;
+- the observation is simple and physical: the pair forms a stable intermediate / is compatible, or it does not;
+- successful prior recipes can contribute already-observed pair compatibility to the journal automatically, so accumulated experience remains useful without explicit recipe-to-recipe comparison.
+
+For 3-slot alchemy, use only the natural mixing sequence:
+1. Powder + Liquid -> intermediate compatibility;
+2. Liquid/base + Essence -> second compatibility.
+
+Do **not** add a Powder–Essence cross-edge merely for information gain. That pair is not part of the natural staged mixing sequence and risks turning the compatibility graph into a hidden recipe book.
+
+#### Real-corpus structural sanity check
+
+Using the 19 ordinary picker-compatible 3-slot vanilla formulas and only slot-participating ingredients:
+- 10 Powder participants x 9 Liquid participants x 9 Essence participants = **810** structural triples;
+- the corpus contains **19** observed Powder–Liquid success adjacencies;
+- the corpus contains **18** observed Liquid–Essence success adjacencies;
+- requiring both adjacent pairs to be compatible leaves **47** structural triples;
+- only **19** of those 47 are actual formulas, so adjacent compatibility is informative but not formula-equivalent;
+- adding the non-adjacent Powder–Essence compatibility would reduce the same field to **22** triples, only three more than the 19 real formulas, which is too close to reconstructing the recipe table.
+
+Therefore adjacent compatibility has a promising information envelope: strong enough to support deduction, weak enough to require target-specific/coarse evidence as a second layer.
+
+#### Why this is more natural than Prototype 15
+
+- the player acts on substances, not on a proposition about a known recipe;
+- the result is an observable property of the tested pair;
+- no positive/negative control explanation is needed in the ordinary UI;
+- previous recipes matter naturally because the journal can remember pair behavior already encountered;
+- choosing a pair can be hypothesis-driven: test one of two remaining candidate pairs and the result can eliminate an entire branch;
+- the final reasoning can still have the accepted Prototype-15 shape, where two simple facts intersect with initial target constraints and force one formula.
+
+#### Open risks
+
+- compatibility is a mod-defined empirical layer and must feel chemically/alchemically plausible in presentation;
+- unrestricted pair testing could become another enumeration table if starting constraints are weak;
+- the journal must record learned pair behavior without automatically solving the current target;
+- 2-slot alchemy should not automatically use the same grammar: a successful 2-slot pair is much closer to a complete recipe, so early 2-slot design remains a separate problem.
+
+Disposition: **selected for Prototype 16 as a 3-slot mechanism candidate**. Known recipes are demoted from comparison objects to a possible source of already-learned compatibility facts.
+
+Production architecture remains **BLOCKED**.
