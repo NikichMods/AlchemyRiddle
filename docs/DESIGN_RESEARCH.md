@@ -169,7 +169,7 @@ No architecture is selected. The next design step remains paper-prototyping seve
 
 ## Entry-point hypothesis — 2026-10-04
 
-Status: **accepted direction for research; corpus coverage still open**.
+Status: **accepted direction for research; first runtime coverage pass complete, unresolved progression channels remain**.
 
 Do not expose a global catalog of all undiscovered alchemical products. AlchemyRiddle should remain silent about a product until vanilla gameplay has already given the player a legitimate reason to know that product exists.
 
@@ -190,13 +190,24 @@ Technology-tree presentation must not be conflated with workstation recipe prese
 
 A future persistent research surface may also preserve **why** a lead exists (for example, needed by a known recipe/task or obtained as a sample), which helps both targetability and continuity without revealing the hidden formula.
 
-### Open coverage question
+### Runtime coverage result
 
-For the **34 ordinary picker-compatible mixed-alchemy outputs**, determine how many have at least one natural pre-formula vanilla exposure channel and classify those channels without publishing item/formula identities.
+Read-only anonymized loaded-`GameBalance` probe 0.2.0 completed successfully.
 
-The first pass intentionally measures channel existence/coverage rather than reconstructing the exact chronological first exposure across the whole progression graph.
+Across the **34 ordinary picker-compatible mixed-alchemy outputs**:
+- 18 have a measured structural entry through a Technology-owned or default-visible downstream recipe/blueprint;
+- 17 have a static vendor-stock candidate;
+- the union covers 26 outputs;
+- 8 remain uncovered by this first pass.
 
-A read-only anonymized loaded-`GameBalance` probe 0.2.0 has been prepared on `research/vanilla-alchemy-model` for this question. Runtime evidence is pending.
+The uncovered set is informative rather than simply missing data: seven have authored blueprint consumers whose actual non-Technology unlock/visibility source is not yet classified, while one has no measured ordinary consumer, blueprint consumer, vendor-stock candidate or direct visible `QuestDefinition` expression reference.
+
+Do not interpret the first-pass counts as chronological progression proof. Vendor availability timing is unresolved, direct `QuestDefinition` expression scanning does not cover arbitrary FlowCanvas/dialogue content, and blueprint-only consumers can be unlocked by separate `UnlockCraft` paths.
+
+The next entry-point research question is therefore narrow:
+1. classify the real unlock/visibility source for the seven blueprint-only targets;
+2. then inspect the single no-consumer/no-vendor target for dialogue/FlowCanvas/sample/progression channels;
+3. only if those fail, define the smallest product fallback for targets with no natural vanilla lead.
 
 
 ## Current competitor / overlap audit
