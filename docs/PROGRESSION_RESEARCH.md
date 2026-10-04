@@ -195,3 +195,91 @@ Requested runtime action:
 - replace 0.1.0 with this exact DLL;
 - load any existing save into the game world once;
 - return \`LogOutput.log\`.
+
+
+## Progression Probe 0.1.1 — accepted runtime capture
+
+Runtime evidence: user capture \`LogOutput(6).log\`, Graveyard Keeper 1.407.
+
+Acceptance:
+- exact probe 0.1.1 loaded successfully;
+- \`AR_PROGRESSION_BEGIN\` and \`AR_PROGRESSION_DONE\` are present;
+- no \`AR_PROGRESSION_ERROR\` occurred;
+- summary: 114 controllers, 104 unique serialized graphs, 28 \`Flow_UnlockTech\` rows, 62 \`Flow_UnlockCraft\` rows, 13 bounded Clotho answer rows;
+- privacy contract held: \`formula_rows_logged=0\`.
+
+Authored unlock census:
+- none of the 28 resolved \`Flow_UnlockTech\` nodes owns an ordinary picker-compatible mixed-alchemy target;
+- none of the 62 \`Flow_UnlockCraft\` nodes directly unlocks an ordinary picker-compatible mixed-alchemy formula;
+- Clotho's early \`Flow_UnlockTech\` is exactly **The Beginning Of Alchemy** and owns only the 2-slot bench, hand mixer and alchemy mill construction unlocks, not a finished mixed formula;
+- the previously accepted Astrologer/Acid forced discovery therefore remains a special scripted-recipe channel rather than evidence that \`Flow_UnlockTech\` normally distributes mixed formulas.
+
+Existing full GameBalance evidence additionally contains only:
+- one item-level explicit \`UnlockAlchemy(...)\` owner: the Memory Tincture recipe item;
+- one item-level \`UnlockRandomAlchemy()\` owner: the random alchemy recipe item.
+
+### Early Clotho branch — now internally pinned
+
+The initial Clotho answer set contains:
+- \`сlotho_pot\`: requires 1 **Heal Potion**, rewards +20 relation;
+- \`сlotho_vat\`: requires 1 Cauldron, rewards +10 relation;
+- \`@сlotho_bee\`: requires 1 Bee, rewards +5 relation;
+- \`@сlotho_intence\`: requires 1 **Life Powder**, rewards +5 relation.
+
+This is the native authored split between:
+- bringing the finished two-component alchemy product, or
+- completing the reagent-side route with concrete precursor requirements.
+
+No ordinary mixed formula is attached to Clotho's early \`Flow_UnlockTech\` / \`Flow_UnlockCraft\` path.
+
+## Accepted progression anchors for puzzle prototyping
+
+These anchors define representative **clean progression states**, not a claim that Graveyard Keeper has one global linear chronology. Actual save-state recipe knowledge always wins: if a formula is already known through prior crafting, a random recipe, or a specific authored reveal, AlchemyRiddle must bypass research for that formula.
+
+### Onboarding / reagent anchor: Life Powder
+
+Use Clotho's early **Life Powder** requirement as the native-grounded reagent-learning anchor.
+
+Why:
+- it is explicitly requested inside the same initial alchemy-introduction interaction;
+- The Beginning Of Alchemy opens the decomposition/mixing infrastructure;
+- it naturally teaches Study -> decomposition -> reagent identity before requiring the player to reason about a full formula;
+- it is optional in vanilla because the finished Heal Potion route can bypass it, so the mod must not pretend this tutorial is globally mandatory.
+
+### First clean two-slot target anchor: Heal Potion
+
+Use **Heal Potion** as the first clean 2-slot unknown-formula prototype anchor.
+
+Why:
+- Clotho explicitly requests the finished product in the initial alchemy quest;
+- it is an ordinary 2-component mixed-alchemy output;
+- Clotho's early technology/craft unlock path does not hand out an ordinary mixed formula;
+- therefore it provides exactly the desired product shape: visible authored need first, unknown formula second.
+
+The target has alternate valid vanilla formulas, so the design goal is **discover a valid formula for Heal Potion**, not reconstruct a privileged canonical formula.
+
+### First clean guaranteed-actionable three-slot anchor: Glue
+
+There is no single globally well-defined chronological “first 3-slot formula” because Technology branches can be taken in different orders and several needs unlock together.
+
+For prototyping, use **Glue** as the clean guaranteed-actionable 3-slot anchor:
+- \`Embalm 2\` requires both \`Embalm 1\` and **Advanced alchemy**;
+- therefore normal 3-component synthesis capability is structurally available before this need can be unlocked;
+- the first \`Embalm 2\` authored recipe in loaded balance consumes Glue, while the same technology also exposes Preservative-class and another 3-slot-product need;
+- no accepted ordinary-formula \`Flow_UnlockTech\` / \`Flow_UnlockCraft\` disclosure applies to Glue;
+- unlike Acid, Glue is not currently a proved special scripted-reveal exception.
+
+This is a **prototype anchor**, not a universal chronology claim. At runtime, if Glue is already known in the save, choose another still-unknown target from the same eligible progression state rather than creating a fake puzzle.
+
+## Progression research checkpoint
+
+The progression question is sufficiently closed for the next design phase.
+
+No further runtime probe is required before resuming paper prototypes.
+
+Current representative sequence:
+1. **Life Powder** — teach/rehearse reagent research and decomposition;
+2. **Heal Potion** — first clean 2-slot unknown-target deduction;
+3. **Glue** — first clean guaranteed-actionable 3-slot deduction.
+
+The next unknown belongs to puzzle design, not progression reconstruction: how the selected property vocabulary plus universal experiment grammar should make each of these states solvable, short, non-oracular and non-enumerative.
