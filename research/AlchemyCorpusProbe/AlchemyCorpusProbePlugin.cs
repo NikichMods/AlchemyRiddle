@@ -14,7 +14,7 @@ namespace NikichMods.AlchemyRiddle.Research
     {
         public const string Guid = "nikich.graveyardkeeper.alchemyriddle.corpusprobe";
         public const string Name = "AlchemyRiddle Corpus Probe";
-        public const string Version = "0.2.0";
+        public const string Version = "0.3.0";
 
         private static readonly BindingFlags Inst =
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
@@ -27,11 +27,13 @@ namespace NikichMods.AlchemyRiddle.Research
                 StringComparer.Ordinal);
 
         private Assembly _gameAssembly;
+        private Type _gjlType;
+        private MethodInfo _localize;
         private bool _dumped;
 
         private void Awake()
         {
-            Logger.LogInfo("AlchemyRiddle Corpus Probe 0.2.0 loaded. Read-only research probe.");
+            Logger.LogInfo("AlchemyRiddle Corpus Probe 0.3.0 loaded. Read-only property/provenance research probe.");
             StartCoroutine(DumpWhenReady());
         }
 
@@ -51,11 +53,12 @@ namespace NikichMods.AlchemyRiddle.Research
                         {
                             try
                             {
+                                InitLocalization();
                                 Dump(balance);
                             }
                             catch (Exception ex)
                             {
-                                Logger.LogError("AR_CORPUS_ERROR|" + Esc(ex.ToString()));
+                                Logger.LogError("AR_PROPERTY_ERROR|" + Esc(ex.ToString()));
                             }
 
                             _dumped = true;
@@ -72,12 +75,22 @@ namespace NikichMods.AlchemyRiddle.Research
         {
             IList items = Get(balance, "items_data") as IList;
             IList crafts = Get(balance, "craft_data") as IList;
+            IList objects = Get(balance, "objs_data") as IList;
+            IList vendors = Get(balance, "vendors_data") as IList;
+            IList objectCrafts = Get(balance, "craft_obj_data") as IList;
+            IList techs = Get(balance, "techs_data") as IList;
+            IList quests = Get(balance, "quests_data") as IList;
 
-            if (items == null || crafts == null)
-                throw new InvalidOperationException("GameBalance items_data/craft_data not available.");
+            if (items == null || crafts == null || objects == null || vendors == null
+                || objectCrafts == null || techs == null || quests == null)
+            {
+                throw new InvalidOperationException(
+                    "Required loaded GameBalance lists are not available.");
+            }
 
-            List<object> alchemyCrafts = new List<object>();
+            Dictionary<string, object> itemById = IndexById(items);
 
+            List<object> mixedAlchemy = new List<object>();
             foreach (object craft in crafts)
             {
                 if (craft == null)
@@ -87,30 +100,30 @@ namespace NikichMods.AlchemyRiddle.Research
                     continue;
 
                 string id = Id(craft);
-                if (!id.StartsWith("mix:mf_alchemy", StringComparison.Ordinal))
-                    continue;
-
-                alchemyCrafts.Add(craft);
+                if (id.StartsWith("mix:mf_alchemy", StringComparison.Ordinal))
+                    mixedAlchemy.Add(craft);
             }
 
-            List<object> successCrafts = alchemyCrafts.Where(IsSuccessFormula).ToList();
-            List<object> auxCrafts = alchemyCrafts.Where(delegate(object x) { return !IsSuccessFormula(x); }).ToList();
-
-            List<string> stations = alchemyCrafts
-                .Select(StationId)
-                .Where(delegate(string x) { return x.Length > 0; })
-                .Distinct(StringComparer.Ordinal)
-                .OrderBy(delegate(string x) { return x; }, StringComparer.Ordinal)
+            List<object> ordinarySuccess = mixedAlchemy
+                .Where(IsSuccessFormula)
+                .Where(delegate(object c) { return IsPickerCompatible(c, itemById); })
                 .ToList();
 
-            Dictionary<string, string> stationSymbols = Symbols(stations, "W");
+            List<string> ingredientIds = ordinarySuccess
+                .SelectMany(delegate(object c) { return ItemIds(Get(c, "needs") as IList); })
+                .Distinct(StringComparer.Ordinal)
+                .ToList();
 
-            SortedSet<string> needIds = new SortedSet<string>(StringComparer.Ordinal);
-            foreach (object craft in alchemyCrafts)
-            {
-                foreach (string id in ItemIds(Get(craft, "needs") as IList))
-                    needIds.Add(id);
-            }
+            List<string> targetIds = ordinarySuccess
+                .Select(PrimaryOutput)
+                .Where(delegate(string x) { return x.Length > 0; })
+                .Distinct(StringComparer.Ordinal)
+                .ToList();
+
+            Dictionary<string, string> ingredientSymbols =
+                PresentationSymbols(ingredientIds, itemById, "P");
+            Dictionary<string, string> targetSymbols =
+                PresentationSymbols(targetIds, itemById, "Q");
 
             Type itemDefinitionType = GameType("ItemDefinition");
             MethodInfo gooMethod = itemDefinitionType == null
@@ -122,250 +135,135 @@ namespace NikichMods.AlchemyRiddle.Research
                     new[] { typeof(string) },
                     null);
 
-            List<Tuple<string, string>> gooPairs = new List<Tuple<string, string>>();
-            string[] needSnapshot = needIds.ToArray();
-
-            foreach (string raw in needSnapshot)
-            {
-                string goo = gooMethod == null
-                    ? string.Empty
-                    : Str(gooMethod.Invoke(null, new object[] { raw }));
-
-                if (goo.Length == 0)
-                    continue;
-
-                needIds.Add(goo);
-                gooPairs.Add(Tuple.Create(raw, goo));
-            }
-
-            Dictionary<string, string> needSymbols = Symbols(needIds.ToList(), "N");
-
-            SortedSet<string> outputIds = new SortedSet<string>(StringComparer.Ordinal);
-            foreach (object craft in alchemyCrafts)
-            {
-                string output = PrimaryOutput(craft);
-                if (output.Length > 0)
-                    outputIds.Add(output);
-            }
-
-            Dictionary<string, string> outputSymbols = Symbols(outputIds.ToList(), "O");
-
-            Dictionary<string, object> itemById = new Dictionary<string, object>(StringComparer.Ordinal);
-            foreach (object def in items)
-            {
-                if (def == null)
-                    continue;
-
-                string id = Id(def);
-                if (id.Length > 0 && !itemById.ContainsKey(id))
-                    itemById[id] = def;
-            }
-
             Logger.LogInfo(
-                "AR_CORPUS_BEGIN|probe=0.2.0|target=GraveyardKeeper-1.407|source=loaded-GameBalance");
+                "AR_PROPERTY_BEGIN|probe=0.3.0|target=GraveyardKeeper-1.407|source=loaded-GameBalance");
             Logger.LogInfo(
-                "AR_CORPUS_SOURCE|decompile_reference=Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9");
+                "AR_PROPERTY_SOURCE|decompile_reference=Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9");
             Logger.LogInfo(
-                "AR_CORPUS_SUMMARY" +
-                "|alchemy_mixed_defs=" + alchemyCrafts.Count.ToString(CultureInfo.InvariantCulture) +
-                "|success_formulas=" + successCrafts.Count.ToString(CultureInfo.InvariantCulture) +
-                "|aux_failure_defs=" + auxCrafts.Count.ToString(CultureInfo.InvariantCulture) +
-                "|stations=" + stations.Count.ToString(CultureInfo.InvariantCulture) +
-                "|need_symbols=" + needSymbols.Count.ToString(CultureInfo.InvariantCulture) +
-                "|output_symbols=" + outputSymbols.Count.ToString(CultureInfo.InvariantCulture));
-
-            foreach (string station in stations)
-            {
-                List<object> scoped = alchemyCrafts
-                    .Where(delegate(object c) { return StationId(c) == station; })
-                    .ToList();
-
-                List<object> scopedSuccess = scoped.Where(IsSuccessFormula).ToList();
-
-                List<int> outputMultiplicity = scopedSuccess
-                    .GroupBy(PrimaryOutput, StringComparer.Ordinal)
-                    .Where(delegate(IGrouping<string, object> g) { return g.Key.Length > 0; })
-                    .Select(delegate(IGrouping<string, object> g) { return g.Count(); })
-                    .ToList();
-
-                string[] arities = scopedSuccess
-                    .GroupBy(delegate(object c) { return Count(Get(c, "needs") as IList); })
-                    .OrderBy(delegate(IGrouping<int, object> g) { return g.Key; })
-                    .Select(delegate(IGrouping<int, object> g)
-                    {
-                        return g.Key.ToString(CultureInfo.InvariantCulture) + ":" +
-                               g.Count().ToString(CultureInfo.InvariantCulture);
-                    })
-                    .ToArray();
-
-                Logger.LogInfo(
-                    "AR_STATION" +
-                    "|station=" + stationSymbols[station] +
-                    "|defs=" + scoped.Count.ToString(CultureInfo.InvariantCulture) +
-                    "|success=" + scopedSuccess.Count.ToString(CultureInfo.InvariantCulture) +
-                    "|aux=" + (scoped.Count - scopedSuccess.Count).ToString(CultureInfo.InvariantCulture) +
-                    "|arities=" + string.Join(",", arities) +
-                    "|distinct_outputs=" + outputMultiplicity.Count.ToString(CultureInfo.InvariantCulture) +
-                    "|multi_formula_outputs=" + outputMultiplicity.Count(delegate(int x) { return x > 1; }).ToString(CultureInfo.InvariantCulture) +
-                    "|max_formulas_per_output=" +
-                    (outputMultiplicity.Count == 0 ? 0 : outputMultiplicity.Max()).ToString(CultureInfo.InvariantCulture));
-            }
-
-            HashSet<string> successNeedIds =
-                new HashSet<string>(
-                    successCrafts.SelectMany(delegate(object c)
-                    {
-                        return ItemIds(Get(c, "needs") as IList);
-                    }),
-                    StringComparer.Ordinal);
+                "AR_PROPERTY_SUMMARY" +
+                "|ordinary_formulas=" + ordinarySuccess.Count.ToString(CultureInfo.InvariantCulture) +
+                "|ingredients=" + ingredientIds.Count.ToString(CultureInfo.InvariantCulture) +
+                "|targets=" + targetIds.Count.ToString(CultureInfo.InvariantCulture) +
+                "|formula_rows_logged=0");
 
             foreach (KeyValuePair<string, string> pair in
-                needSymbols.OrderBy(delegate(KeyValuePair<string, string> x) { return x.Value; }, StringComparer.Ordinal))
+                ingredientSymbols.OrderBy(delegate(KeyValuePair<string, string> x) { return x.Value; }, StringComparer.Ordinal))
             {
+                string itemId = pair.Key;
+                string symbol = pair.Value;
                 object def;
-                itemById.TryGetValue(pair.Key, out def);
-
-                Logger.LogInfo(
-                    "AR_ITEM" +
-                    "|item=" + pair.Value +
-                    "|alchemy_type=" + Esc(Str(Get(def, "alch_type"))) +
-                    "|used_in_success=" + (successNeedIds.Contains(pair.Key) ? "true" : "false"));
-            }
-
-            foreach (Tuple<string, string> pair in gooPairs
-                .Where(delegate(Tuple<string, string> p)
-                {
-                    return needSymbols.ContainsKey(p.Item1) && needSymbols.ContainsKey(p.Item2);
-                })
-                .OrderBy(delegate(Tuple<string, string> p) { return needSymbols[p.Item1]; }, StringComparer.Ordinal))
-            {
-                Logger.LogInfo(
-                    "AR_GOO_MAP|from=" + needSymbols[pair.Item1] +
-                    "|to=" + needSymbols[pair.Item2]);
-            }
-
-            int successIndex = 0;
-            int auxIndex = 0;
-
-            foreach (object craft in alchemyCrafts
-                .OrderBy(StationId, StringComparer.Ordinal)
-                .ThenBy(Id, StringComparer.Ordinal))
-            {
-                bool success = IsSuccessFormula(craft);
-                int index = success ? ++successIndex : ++auxIndex;
-
-                string[] needs = ItemIds(Get(craft, "needs") as IList)
-                    .Select(delegate(string x)
-                    {
-                        return needSymbols.ContainsKey(x) ? needSymbols[x] : "?";
-                    })
-                    .ToArray();
-
-                string rawOutput = PrimaryOutput(craft);
-                string output = outputSymbols.ContainsKey(rawOutput)
-                    ? outputSymbols[rawOutput]
-                    : string.Empty;
-
-                string station = StationId(craft);
-                string stationSymbol = stationSymbols.ContainsKey(station)
-                    ? stationSymbols[station]
-                    : "?";
-
-                Logger.LogInfo(
-                    "AR_RECIPE" +
-                    "|kind=" + (success ? "success" : "aux") +
-                    "|recipe=" + (success ? "S" : "A") + index.ToString("D4", CultureInfo.InvariantCulture) +
-                    "|station=" + stationSymbol +
-                    "|arity=" + needs.Length.ToString(CultureInfo.InvariantCulture) +
-                    "|needs=" + string.Join(",", needs) +
-                    "|output=" + output +
-                    "|needs_unlock=" + Bool(Get(craft, "needs_unlock")).ToString().ToLowerInvariant() +
-                    "|hidden=" + Bool(Get(craft, "hidden")).ToString().ToLowerInvariant());
-            }
-
-            Dictionary<string, int> eligibleCounts =
-                new Dictionary<string, int>(StringComparer.Ordinal);
-
-            foreach (object def in items)
-            {
+                itemById.TryGetValue(itemId, out def);
                 if (def == null)
                     continue;
 
-                string type = Str(Get(def, "alch_type"));
-                if (type != "Powder" && type != "Fluid" && type != "Essence" && type != "Universal")
-                    continue;
+                string gooId = gooMethod == null
+                    ? string.Empty
+                    : Str(gooMethod.Invoke(null, new object[] { itemId }));
 
-                int count;
-                eligibleCounts.TryGetValue(type, out count);
-                eligibleCounts[type] = count + 1;
-            }
+                object gooDef;
+                itemById.TryGetValue(gooId, out gooDef);
 
-            foreach (string type in new[] { "Powder", "Fluid", "Essence", "Universal" })
-            {
-                int count;
-                eligibleCounts.TryGetValue(type, out count);
+                List<object> producers = ProducerCrafts(crafts, itemId);
+                List<object> drops = DropObjects(objects, itemId);
+                List<object> sellerDefs = VendorCandidates(vendors, def, itemId);
 
                 Logger.LogInfo(
-                    "AR_ELIGIBLE|alchemy_type=" + type +
-                    "|item_definitions=" + count.ToString(CultureInfo.InvariantCulture));
+                    "AR_PROPERTY_ITEM" +
+                    "|item=" + symbol +
+                    "|name=" + Esc(ItemName(def)) +
+                    "|description=" + Esc(ItemDescription(def)) +
+                    "|icon=" + Esc(ItemIcon(def)) +
+                    "|alchemy_type=" + Esc(Str(Get(def, "alch_type"))) +
+                    "|goo=" + Esc(gooId) +
+                    "|goo_name=" + Esc(gooDef == null ? Localize(gooId) : ItemName(gooDef)) +
+                    "|tooltip_stations=" + Esc(string.Join(";", TooltipStations(def))) +
+                    "|product_types=" + Esc(string.Join(";", Strings(Get(def, "product_types") as IList))) +
+                    "|product_tier=" + Int(Get(def, "product_tier")).ToString(CultureInfo.InvariantCulture) +
+                    "|base_price=" + Float(Get(def, "base_price")).ToString("0.###", CultureInfo.InvariantCulture) +
+                    "|base_count=" + Int(Get(def, "base_count")).ToString(CultureInfo.InvariantCulture) +
+                    "|producer_crafts=" + producers.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|drop_sources=" + drops.Count.ToString(CultureInfo.InvariantCulture) +
+                    "|vendor_candidates=" + sellerDefs.Count.ToString(CultureInfo.InvariantCulture));
+
+                foreach (object craft in producers
+                    .OrderBy(delegate(object x) { return Str(Get(x, "craft_type")); }, StringComparer.Ordinal)
+                    .ThenBy(Id, StringComparer.Ordinal))
+                {
+                    string craftType = Str(Get(craft, "craft_type"));
+                    string[] needs = ItemIds(Get(craft, "needs") as IList)
+                        .Select(delegate(string x) { return DisplayItemName(x, itemById); })
+                        .ToArray();
+
+                    Logger.LogInfo(
+                        "AR_PROPERTY_PRODUCER" +
+                        "|item=" + symbol +
+                        "|kind=" + Esc(craftType) +
+                        "|stations=" + Esc(string.Join(";", CraftStations(craft))) +
+                        "|needs=" + Esc(string.Join(";", needs)) +
+                        "|hidden=" + Bool(Get(craft, "hidden")).ToString().ToLowerInvariant() +
+                        "|needs_unlock=" + Bool(Get(craft, "needs_unlock")).ToString().ToLowerInvariant() +
+                        "|dont_show_in_hint=" + Bool(Get(craft, "dont_show_in_hint")).ToString().ToLowerInvariant() +
+                        "|craft_time_expr=" + Esc(ExpressionRaw(Get(craft, "craft_time"))) +
+                        "|energy_expr=" + Esc(ExpressionRaw(Get(craft, "energy"))));
+
+                    if (craftType == "AlchemyDecompose")
+                    {
+                        string sourceId = ItemIds(Get(craft, "needs") as IList).FirstOrDefault() ?? string.Empty;
+                        object sourceDef;
+                        itemById.TryGetValue(sourceId, out sourceDef);
+
+                        if (sourceDef != null)
+                        {
+                            List<object> sourceProducers = ProducerCrafts(crafts, sourceId);
+                            List<object> sourceDrops = DropObjects(objects, sourceId);
+                            List<object> sourceSellers = VendorCandidates(vendors, sourceDef, sourceId);
+                            object survey = Invoke(sourceDef, "GetSurveyCraft");
+
+                            Logger.LogInfo(
+                                "AR_PROPERTY_DECOMP_SOURCE" +
+                                "|item=" + symbol +
+                                "|source_name=" + Esc(ItemName(sourceDef)) +
+                                "|source_description=" + Esc(ItemDescription(sourceDef)) +
+                                "|source_icon=" + Esc(ItemIcon(sourceDef)) +
+                                "|source_tooltip_stations=" + Esc(string.Join(";", TooltipStations(sourceDef))) +
+                                "|source_survey_exists=" + (survey != null).ToString().ToLowerInvariant() +
+                                "|source_producer_stations=" + Esc(string.Join(";", sourceProducers.SelectMany(CraftStations).Distinct(StringComparer.Ordinal))) +
+                                "|source_drop_objects=" + Esc(string.Join(";", sourceDrops.Select(ObjectLabel).Distinct(StringComparer.Ordinal))) +
+                                "|source_vendor_candidates=" + sourceSellers.Count.ToString(CultureInfo.InvariantCulture));
+                        }
+                    }
+                }
+
+                foreach (object obj in drops.OrderBy(Id, StringComparer.Ordinal))
+                {
+                    Logger.LogInfo(
+                        "AR_PROPERTY_DROP" +
+                        "|item=" + symbol +
+                        "|object=" + Esc(ObjectLabel(obj)) +
+                        "|object_type=" + Esc(Str(Get(obj, "type"))) +
+                        "|zone_id=" + Esc(Str(Get(obj, "zone_id"))));
+                }
+
+                foreach (object vendor in sellerDefs.OrderBy(Id, StringComparer.Ordinal))
+                {
+                    Logger.LogInfo(
+                        "AR_PROPERTY_VENDOR" +
+                        "|item=" + symbol +
+                        "|vendor=" + Esc(Localize(Id(vendor))) +
+                        "|start_tier=" + Int(Get(vendor, "start_tire")).ToString(CultureInfo.InvariantCulture));
+                }
             }
 
-            DumpExposure(balance, items, crafts, successCrafts, itemById);
-
-            Logger.LogInfo(
-                "AR_CORPUS_DONE|probe=0.2.0" +
-                "|success_records=" + successIndex.ToString(CultureInfo.InvariantCulture) +
-                "|aux_records=" + auxIndex.ToString(CultureInfo.InvariantCulture));
-        }
-
-        private void DumpExposure(
-            object balance,
-            IList items,
-            IList crafts,
-            List<object> successCrafts,
-            Dictionary<string, object> itemById)
-        {
-            IList objectCrafts = Get(balance, "craft_obj_data") as IList;
-            IList techs = Get(balance, "techs_data") as IList;
-            IList vendors = Get(balance, "vendors_data") as IList;
-            IList quests = Get(balance, "quests_data") as IList;
-
-            if (objectCrafts == null || techs == null || vendors == null || quests == null)
-                throw new InvalidOperationException("Exposure probe requires craft_obj_data, techs_data, vendors_data and quests_data.");
-
-            List<object> ordinarySuccess = successCrafts
-                .Where(delegate(object c) { return IsPickerCompatible(c, itemById); })
-                .ToList();
-
-            List<string> targets = ordinarySuccess
-                .Select(PrimaryOutput)
-                .Where(delegate(string x) { return x.Length > 0; })
-                .Distinct(StringComparer.Ordinal)
-                .OrderBy(delegate(string x) { return x; }, StringComparer.Ordinal)
-                .ToList();
-
-            Dictionary<string, string> targetSymbols = Symbols(targets, "T");
             Dictionary<string, object> craftById = IndexById(crafts);
             Dictionary<string, object> objectCraftById = IndexById(objectCrafts);
 
-            int techTargets = 0;
-            int defaultTargets = 0;
-            int structuralTargets = 0;
-            int vendorTargets = 0;
-            int questTargets = 0;
-            int anyTargets = 0;
-            int uncoveredTargets = 0;
-
-            Logger.LogInfo(
-                "AR_EXPOSURE_BEGIN|probe=0.2.0" +
-                "|ordinary_formulas=" + ordinarySuccess.Count.ToString(CultureInfo.InvariantCulture) +
-                "|ordinary_outputs=" + targets.Count.ToString(CultureInfo.InvariantCulture) +
-                "|scope=authored-demand-plus-static-sample-candidates");
-
-            foreach (string target in targets)
+            foreach (KeyValuePair<string, string> pair in
+                targetSymbols.OrderBy(delegate(KeyValuePair<string, string> x) { return x.Value; }, StringComparer.Ordinal))
             {
-                object itemDef;
-                itemById.TryGetValue(target, out itemDef);
+                string target = pair.Key;
+                string symbol = pair.Value;
+                object def;
+                itemById.TryGetValue(target, out def);
 
                 HashSet<string> ordinaryConsumers = new HashSet<string>(StringComparer.Ordinal);
                 HashSet<string> blueprintConsumers = new HashSet<string>(StringComparer.Ordinal);
@@ -373,7 +271,6 @@ namespace NikichMods.AlchemyRiddle.Research
                 HashSet<string> techVisibleConsumers = new HashSet<string>(StringComparer.Ordinal);
                 HashSet<string> techPublicNodes = new HashSet<string>(StringComparer.Ordinal);
                 HashSet<string> techGatedNodes = new HashSet<string>(StringComparer.Ordinal);
-                HashSet<string> hiddenTechUnlockConsumers = new HashSet<string>(StringComparer.Ordinal);
 
                 foreach (object craft in crafts)
                 {
@@ -416,26 +313,17 @@ namespace NikichMods.AlchemyRiddle.Research
                     foreach (object rawObj in refs)
                     {
                         string raw = Convert.ToString(rawObj, CultureInfo.InvariantCulture) ?? string.Empty;
-                        if (raw.Length == 0)
+                        if (raw.Length == 0 || raw[0] == '@')
                             continue;
 
-                        bool visibleUnlock = raw[0] != '@';
-                        string refId = visibleUnlock ? raw : raw.Substring(1);
-
                         object consumer;
-                        if (!craftById.TryGetValue(refId, out consumer))
-                            objectCraftById.TryGetValue(refId, out consumer);
+                        if (!craftById.TryGetValue(raw, out consumer))
+                            objectCraftById.TryGetValue(raw, out consumer);
 
                         if (consumer == null || Bool(Get(consumer, "hidden")) || !NeedsItem(consumer, target))
                             continue;
 
-                        if (!visibleUnlock)
-                        {
-                            hiddenTechUnlockConsumers.Add(refId);
-                            continue;
-                        }
-
-                        techVisibleConsumers.Add(refId);
+                        techVisibleConsumers.Add(raw);
                         if (techId.Length > 0)
                         {
                             if (Bool(Get(tech, "hidden")) || Bool(Get(tech, "invisible")))
@@ -446,16 +334,7 @@ namespace NikichMods.AlchemyRiddle.Research
                     }
                 }
 
-                int vendorCandidates = 0;
-                if (itemDef != null)
-                {
-                    foreach (object vendor in vendors)
-                    {
-                        if (vendor != null && StaticVendorCanStock(vendor, itemDef, target))
-                            vendorCandidates++;
-                    }
-                }
-
+                int vendorCandidates = def == null ? 0 : VendorCandidates(vendors, def, target).Count;
                 int questRefs = 0;
                 foreach (object quest in quests)
                 {
@@ -463,54 +342,175 @@ namespace NikichMods.AlchemyRiddle.Research
                         questRefs++;
                 }
 
-                int formulas = ordinarySuccess.Count(delegate(object c)
-                {
-                    return string.Equals(PrimaryOutput(c), target, StringComparison.Ordinal);
-                });
-
-                bool hasTech = techVisibleConsumers.Count > 0;
-                bool hasDefault = defaultVisibleConsumers.Count > 0;
-                bool hasStructural = hasTech || hasDefault;
-                bool hasVendor = vendorCandidates > 0;
-                bool hasQuest = questRefs > 0;
-                bool hasAny = hasStructural || hasVendor || hasQuest;
-
-                if (hasTech) techTargets++;
-                if (hasDefault) defaultTargets++;
-                if (hasStructural) structuralTargets++;
-                if (hasVendor) vendorTargets++;
-                if (hasQuest) questTargets++;
-                if (hasAny) anyTargets++; else uncoveredTargets++;
-
                 Logger.LogInfo(
-                    "AR_EXPOSURE" +
-                    "|target=" + targetSymbols[target] +
-                    "|formulas=" + formulas.ToString(CultureInfo.InvariantCulture) +
+                    "AR_PROPERTY_TARGET" +
+                    "|target=" + symbol +
+                    "|name=" + Esc(def == null ? string.Empty : ItemName(def)) +
+                    "|description=" + Esc(def == null ? string.Empty : ItemDescription(def)) +
+                    "|icon=" + Esc(def == null ? string.Empty : ItemIcon(def)) +
+                    "|formulas=" + ordinarySuccess.Count(delegate(object c)
+                    {
+                        return string.Equals(PrimaryOutput(c), target, StringComparison.Ordinal);
+                    }).ToString(CultureInfo.InvariantCulture) +
                     "|ordinary_consumers=" + ordinaryConsumers.Count.ToString(CultureInfo.InvariantCulture) +
                     "|blueprint_consumers=" + blueprintConsumers.Count.ToString(CultureInfo.InvariantCulture) +
                     "|default_visible_consumers=" + defaultVisibleConsumers.Count.ToString(CultureInfo.InvariantCulture) +
                     "|tech_visible_consumers=" + techVisibleConsumers.Count.ToString(CultureInfo.InvariantCulture) +
                     "|tech_public_nodes=" + techPublicNodes.Count.ToString(CultureInfo.InvariantCulture) +
                     "|tech_gated_nodes=" + techGatedNodes.Count.ToString(CultureInfo.InvariantCulture) +
-                    "|tech_hidden_unlock_consumers=" + hiddenTechUnlockConsumers.Count.ToString(CultureInfo.InvariantCulture) +
                     "|vendor_static_stock_candidates=" + vendorCandidates.ToString(CultureInfo.InvariantCulture) +
                     "|visible_quest_expression_refs=" + questRefs.ToString(CultureInfo.InvariantCulture) +
-                    "|structural_entry=" + hasStructural.ToString().ToLowerInvariant() +
-                    "|any_candidate_entry=" + hasAny.ToString().ToLowerInvariant());
+                    "|product_tier=" + Int(Get(def, "product_tier")).ToString(CultureInfo.InvariantCulture) +
+                    "|base_price=" + Float(Get(def, "base_price")).ToString("0.###", CultureInfo.InvariantCulture));
             }
 
             Logger.LogInfo(
-                "AR_EXPOSURE_SUMMARY" +
-                "|targets=" + targets.Count.ToString(CultureInfo.InvariantCulture) +
-                "|tech_entry_targets=" + techTargets.ToString(CultureInfo.InvariantCulture) +
-                "|default_recipe_entry_targets=" + defaultTargets.ToString(CultureInfo.InvariantCulture) +
-                "|structural_entry_targets=" + structuralTargets.ToString(CultureInfo.InvariantCulture) +
-                "|vendor_candidate_targets=" + vendorTargets.ToString(CultureInfo.InvariantCulture) +
-                "|quest_expression_candidate_targets=" + questTargets.ToString(CultureInfo.InvariantCulture) +
-                "|any_candidate_targets=" + anyTargets.ToString(CultureInfo.InvariantCulture) +
-                "|uncovered_targets=" + uncoveredTargets.ToString(CultureInfo.InvariantCulture));
+                "AR_PROPERTY_DONE|probe=0.3.0" +
+                "|ingredient_records=" + ingredientIds.Count.ToString(CultureInfo.InvariantCulture) +
+                "|target_records=" + targetIds.Count.ToString(CultureInfo.InvariantCulture) +
+                "|formula_rows_logged=0");
+        }
 
-            Logger.LogInfo("AR_EXPOSURE_DONE|probe=0.2.0");
+        private List<object> ProducerCrafts(IList crafts, string itemId)
+        {
+            List<object> result = new List<object>();
+            foreach (object craft in crafts)
+            {
+                if (craft == null)
+                    continue;
+
+                string type = Str(Get(craft, "craft_type"));
+                if (type == "MixedCraft" || type == "Survey")
+                    continue;
+
+                if (ContainsItem(Get(craft, "output") as IList, itemId))
+                    result.Add(craft);
+            }
+            return result;
+        }
+
+        private static List<object> DropObjects(IList objects, string itemId)
+        {
+            List<object> result = new List<object>();
+            foreach (object obj in objects)
+            {
+                if (obj != null && ContainsItem(Get(obj, "drop_items") as IList, itemId))
+                    result.Add(obj);
+            }
+            return result;
+        }
+
+        private List<object> VendorCandidates(IList vendors, object itemDef, string itemId)
+        {
+            List<object> result = new List<object>();
+            if (itemDef == null)
+                return result;
+
+            foreach (object vendor in vendors)
+            {
+                if (vendor != null && StaticVendorCanStock(vendor, itemDef, itemId))
+                    result.Add(vendor);
+            }
+            return result;
+        }
+
+        private string[] TooltipStations(object def)
+        {
+            object details = Invoke(def, "GetItemDetails");
+            IList craftsIn = Get(details, "crafts_in") as IList;
+            if (craftsIn == null)
+                return new string[0];
+
+            return craftsIn.Cast<object>()
+                .Where(delegate(object x) { return x != null; })
+                .Select(delegate(object x) { return Localize(Id(x)); })
+                .Where(delegate(string x) { return x.Length > 0; })
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+        }
+
+        private string[] CraftStations(object craft)
+        {
+            IList stations = Get(craft, "craft_in") as IList;
+            if (stations == null)
+                return new string[0];
+
+            return Strings(stations)
+                .Where(delegate(string x) { return x.Length > 0; })
+                .Select(Localize)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+        }
+
+        private string ObjectLabel(object obj)
+        {
+            string id = Id(obj);
+            string localized = Localize(id);
+            return string.IsNullOrEmpty(localized) ? id : localized;
+        }
+
+        private string DisplayItemName(string id, Dictionary<string, object> itemById)
+        {
+            object def;
+            return itemById.TryGetValue(id, out def) && def != null
+                ? ItemName(def)
+                : Localize(id);
+        }
+
+        private string ItemName(object def)
+        {
+            return Str(Invoke(def, "GetItemName", true));
+        }
+
+        private string ItemDescription(object def)
+        {
+            return Str(Invoke(def, "GetItemDescription", new object[] { null }));
+        }
+
+        private string ItemIcon(object def)
+        {
+            return Str(Invoke(def, "GetIcon"));
+        }
+
+        private static string ExpressionRaw(object expression)
+        {
+            if (expression == null)
+                return string.Empty;
+
+            object raw = Invoke(expression, "GetRawExpressionString");
+            return Str(raw);
+        }
+
+        private Dictionary<string, string> PresentationSymbols(
+            IList<string> ids,
+            Dictionary<string, object> itemById,
+            string prefix)
+        {
+            List<string> ordered = ids
+                .OrderBy(delegate(string x)
+                {
+                    object def;
+                    return itemById.TryGetValue(x, out def) && def != null
+                        ? ItemName(def)
+                        : x;
+                }, StringComparer.CurrentCulture)
+                .ThenBy(delegate(string x)
+                {
+                    object def;
+                    return itemById.TryGetValue(x, out def) && def != null
+                        ? ItemIcon(def)
+                        : x;
+                }, StringComparer.Ordinal)
+                .ThenBy(delegate(string x) { return x; }, StringComparer.Ordinal)
+                .ToList();
+
+            Dictionary<string, string> result =
+                new Dictionary<string, string>(StringComparer.Ordinal);
+
+            for (int i = 0; i < ordered.Count; i++)
+                result[ordered[i]] = prefix + (i + 1).ToString("D4", CultureInfo.InvariantCulture);
+
+            return result;
         }
 
         private static bool IsPickerCompatible(
@@ -541,6 +541,49 @@ namespace NikichMods.AlchemyRiddle.Research
             return true;
         }
 
+        private static bool IsSuccessFormula(object craft)
+        {
+            string id = Id(craft);
+            return id.StartsWith("mix:", StringComparison.Ordinal)
+                   && id.IndexOf("goo", StringComparison.Ordinal) < 0
+                   && id.IndexOf(":_:", StringComparison.Ordinal) < 0;
+        }
+
+        private static string PrimaryOutput(object craft)
+        {
+            IList output = Get(craft, "output") as IList;
+            if (output == null)
+                return string.Empty;
+
+            foreach (object item in output)
+            {
+                string id = Id(item);
+                if (id.Length > 0 && !TechOutputs.Contains(id))
+                    return id;
+            }
+
+            return string.Empty;
+        }
+
+        private static IEnumerable<string> ItemIds(IList list)
+        {
+            if (list == null)
+                yield break;
+
+            foreach (object item in list)
+            {
+                string id = Id(item);
+                if (id.Length > 0 && !TechOutputs.Contains(id))
+                    yield return id;
+            }
+        }
+
+        private static bool ContainsItem(IList list, string itemId)
+        {
+            return ItemIds(list)
+                .Any(delegate(string x) { return string.Equals(x, itemId, StringComparison.Ordinal); });
+        }
+
         private static bool IsDownstreamConsumerCraft(object craft)
         {
             string type = Str(Get(craft, "craft_type"));
@@ -551,8 +594,7 @@ namespace NikichMods.AlchemyRiddle.Research
 
         private static bool NeedsItem(object craft, string itemId)
         {
-            return ItemIds(Get(craft, "needs") as IList)
-                .Any(delegate(string x) { return string.Equals(x, itemId, StringComparison.Ordinal); });
+            return ContainsItem(Get(craft, "needs") as IList, itemId);
         }
 
         private static Dictionary<string, object> IndexById(IList list)
@@ -571,6 +613,26 @@ namespace NikichMods.AlchemyRiddle.Research
             }
 
             return result;
+        }
+
+        private static string[] Strings(IList list)
+        {
+            if (list == null)
+                return new string[0];
+
+            List<string> result = new List<string>();
+            foreach (object value in list)
+            {
+                string text = Convert.ToString(value, CultureInfo.InvariantCulture) ?? string.Empty;
+                if (text.Length > 0)
+                    result.Add(text);
+            }
+            return result.ToArray();
+        }
+
+        private static HashSet<string> StringSet(IList list)
+        {
+            return new HashSet<string>(Strings(list), StringComparer.Ordinal);
         }
 
         private static bool StaticVendorCanStock(object vendor, object itemDef, string itemId)
@@ -665,90 +727,7 @@ namespace NikichMods.AlchemyRiddle.Research
             if (raw.Length == 0)
                 return false;
 
-            return raw.IndexOf("\"" + itemId + "\"", StringComparison.Ordinal) >= 0;
-        }
-
-        private static HashSet<string> StringSet(IList list)
-        {
-            HashSet<string> result = new HashSet<string>(StringComparer.Ordinal);
-            if (list == null)
-                return result;
-
-            foreach (object value in list)
-            {
-                string text = Convert.ToString(value, CultureInfo.InvariantCulture) ?? string.Empty;
-                if (text.Length > 0)
-                    result.Add(text);
-            }
-
-            return result;
-        }
-
-        private static int Int(object obj)
-        {
-            try
-            {
-                return obj == null ? 0 : Convert.ToInt32(obj, CultureInfo.InvariantCulture);
-            }
-            catch
-            {
-                return 0;
-            }
-        }
-
-        private static bool IsSuccessFormula(object craft)
-        {
-            string id = Id(craft);
-            return id.StartsWith("mix:", StringComparison.Ordinal)
-                   && id.IndexOf("goo", StringComparison.Ordinal) < 0
-                   && id.IndexOf(":_:", StringComparison.Ordinal) < 0;
-        }
-
-        private static string StationId(object craft)
-        {
-            string[] parts = Id(craft).Split(':');
-            return parts.Length > 1 ? parts[1] : string.Empty;
-        }
-
-        private static string PrimaryOutput(object craft)
-        {
-            IList output = Get(craft, "output") as IList;
-            if (output == null)
-                return string.Empty;
-
-            foreach (object item in output)
-            {
-                string id = Id(item);
-                if (id.Length > 0 && !TechOutputs.Contains(id))
-                    return id;
-            }
-
-            return string.Empty;
-        }
-
-        private static IEnumerable<string> ItemIds(IList list)
-        {
-            if (list == null)
-                yield break;
-
-            foreach (object item in list)
-            {
-                string id = Id(item);
-                if (id.Length > 0 && !TechOutputs.Contains(id))
-                    yield return id;
-            }
-        }
-
-        private static Dictionary<string, string> Symbols(IList<string> values, string prefix)
-        {
-            Dictionary<string, string> result =
-                new Dictionary<string, string>(StringComparer.Ordinal);
-
-            for (int i = 0; i < values.Count; i++)
-                result[values[i]] =
-                    prefix + (i + 1).ToString("D4", CultureInfo.InvariantCulture);
-
-            return result;
+            return raw.IndexOf(""" + itemId + """, StringComparison.Ordinal) >= 0;
         }
 
         private bool BindGame()
@@ -791,6 +770,95 @@ namespace NikichMods.AlchemyRiddle.Research
             }
         }
 
+        private void InitLocalization()
+        {
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type type = assembly.GetType("GJL", false);
+                if (type == null)
+                {
+                    try
+                    {
+                        type = assembly.GetTypes().FirstOrDefault(delegate(Type t)
+                        {
+                            return t != null && t.Name == "GJL";
+                        });
+                    }
+                    catch (ReflectionTypeLoadException ex)
+                    {
+                        type = ex.Types.FirstOrDefault(delegate(Type t)
+                        {
+                            return t != null && t.Name == "GJL";
+                        });
+                    }
+                }
+
+                if (type == null)
+                    continue;
+
+                MethodInfo method = type.GetMethods(Stat)
+                    .FirstOrDefault(delegate(MethodInfo m)
+                    {
+                        ParameterInfo[] p = m.GetParameters();
+                        return m.Name == "L"
+                               && m.ReturnType == typeof(string)
+                               && p.Length == 1
+                               && p[0].ParameterType == typeof(string);
+                    });
+
+                if (method != null)
+                {
+                    _gjlType = type;
+                    _localize = method;
+                    return;
+                }
+            }
+        }
+
+        private string Localize(string key)
+        {
+            if (string.IsNullOrEmpty(key) || _gjlType == null || _localize == null)
+                return key ?? string.Empty;
+
+            try
+            {
+                return Str(_localize.Invoke(null, new object[] { key }));
+            }
+            catch
+            {
+                return key;
+            }
+        }
+
+        private static object Invoke(object obj, string name, params object[] args)
+        {
+            if (obj == null)
+                return null;
+
+            for (Type type = obj.GetType(); type != null; type = type.BaseType)
+            {
+                foreach (MethodInfo method in type.GetMethods(Inst))
+                {
+                    if (method.Name != name || method.GetParameters().Length != args.Length)
+                        continue;
+
+                    try
+                    {
+                        return method.Invoke(obj, args);
+                    }
+                    catch (TargetInvocationException)
+                    {
+                        throw;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+
+            return null;
+        }
+
         private static object Get(object obj, string name)
         {
             if (obj == null)
@@ -829,9 +897,28 @@ namespace NikichMods.AlchemyRiddle.Research
             return null;
         }
 
-        private static int Count(IList list)
+        private static int Int(object obj)
         {
-            return list == null ? 0 : list.Count;
+            try
+            {
+                return obj == null ? 0 : Convert.ToInt32(obj, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        private static float Float(object obj)
+        {
+            try
+            {
+                return obj == null ? 0f : Convert.ToSingle(obj, CultureInfo.InvariantCulture);
+            }
+            catch
+            {
+                return 0f;
+            }
         }
 
         private static string Id(object obj)
