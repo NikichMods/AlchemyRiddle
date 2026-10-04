@@ -1802,3 +1802,104 @@ Constraints:
 - known-product comparison should plug into the same journal/compendium information system and remain understandable without wiki memory.
 
 This primitive should be considered alongside other cross-slot mechanisms when selecting Prototype 14. It may be used, combined, or omitted depending on which rule produces the cleanest deduction.
+
+
+## Post-Prototype-13 cross-slot solution-space pass
+
+Status: **exploratory; no Prototype 14 mechanism selected yet**.
+
+The purpose is broader than fixing Prototype 13's final-slot cleanup. A candidate should be evaluated as a possible new puzzle grammar.
+
+Evaluation dimensions:
+- can the complete rule be explained in one short player-facing statement;
+- can the player justify *why this experiment now* before seeing its result;
+- does one observation constrain more than one slot;
+- can late-stage ambiguity be resolved by inference rather than sequential candidate scanning;
+- is the evidence world-grounded rather than a disguised correctness oracle;
+- does accumulated alchemical knowledge become more useful over time;
+- does the journal/compendium keep working-memory burden low;
+- does the mechanism avoid reconstructing a hidden recipe book;
+- can the rule plausibly cover the bounded vanilla corpus without heavy per-recipe exception authoring.
+
+### Family A — overlapping section resonance
+
+Candidate experiment:
+- submit a complete powder + liquid + essence mixture;
+- the analyzer has two overlapping sections: powder/liquid and liquid/essence;
+- each section reports whether **at least one selected ingredient in that section is exactly correct for the target**.
+
+Example inference shape:
+- right section is negative -> both selected liquid and essence are wrong;
+- left section is positive -> because the selected liquid is now known wrong, the selected powder must be correct.
+
+Strengths:
+- one-sentence rule;
+- genuinely overlapping information; the middle slot participates in both observations;
+- candidate-driven experiments and clean controlled-variable reasoning.
+
+Weaknesses:
+- still an exact-correctness oracle in disguise, with weak world grounding;
+- a late single-slot ambiguity can still collapse into sequential scanning;
+- known recipes do not naturally become more useful.
+
+Disposition: useful **control candidate**, but unlikely to be the desired final grammar unless a much more natural in-world interpretation appears.
+
+### Family B — target relation assay
+
+Candidate rule:
+- reagents expose a small set of inspectable properties in the compendium;
+- an assay reveals **one relationship between two target slots**, rather than a property of one slot;
+- representative relation: “these two components share at least one provenance class” / “these two do not”.
+
+Example inference shape:
+- if powder is already established and the assay says powder and essence share provenance, the known powder properties immediately constrain the essence domain;
+- later knowledge about the essence also constrains the powder, so the clue is symmetric and cross-slot.
+
+Strengths:
+- directly attacks Prototype 13's final-slot scan;
+- reuses world-grounded properties and the accepted compendium;
+- one relation can remain useful at several stages of the solve;
+- does not need exact ingredient-match feedback.
+
+Weaknesses:
+- if the player simply chooses from a menu of equally priced relation queries, this risks becoming “buy a clue” again, reproducing the weakness of Prototype 2;
+- the assay menu must make experiment choice hypothesis-driven rather than arbitrary;
+- the property relation must stay extremely small/simple to avoid Prototype 4/8 rule-grammar overload.
+
+Disposition: **strongest candidate for a new core grammar**, provided experiment selection itself can be made meaningful.
+
+### Family C — relational comparison with a known formula
+
+Candidate rule:
+- choose an already-known potion as a reference;
+- comparison does **not** report exact ingredient matches;
+- it reports a coarse relationship between the target's structure and the reference's structure, using the same small relational vocabulary as Family B.
+
+Representative implementation:
+- every formula has two adjacent “bonds” (powder-liquid and liquid-essence) defined by a simple visible relation such as whether the pair shares provenance;
+- comparing target residue with a known potion reports whether neither, one, or both of those relation states are shared, without identifying an unknown ingredient.
+
+Strengths:
+- prior recipe discovery becomes analytical capability rather than passive completion;
+- reference choice can be meaningful when known formulas have genuinely different relation patterns;
+- evidence is cross-slot by construction;
+- fits the fantasy of an experienced alchemist reasoning by analogy;
+- can coexist with direct property clues instead of replacing them.
+
+Weaknesses:
+- if many known recipes have equivalent relational signatures, reference choice becomes fake choice as in Prototype 11;
+- if the relational signature is made too rich to avoid equivalence, cognitive load can climb toward Prototype 4;
+- as a standalone mechanism it may identify only a structural signature, not enough to finish a recipe.
+
+Disposition: **high-value companion primitive, not yet proven as a standalone core**. Most promising use is as one way of obtaining/triangulating Family-B-style relational facts.
+
+### Current synthesis
+
+Do not evaluate these families only by “does it remove the last scan from Prototype 13”. The broader acceptance question is whether the mechanism creates a clear, interpretable experimental puzzle.
+
+Current preference:
+1. test **Family B** as the cleanest new grammar;
+2. preserve **Family C** as the most promising way to make accumulated known recipes matter;
+3. keep **Family A** as a simple control because it proves whether cross-slot feedback alone is enough even without semantic grounding.
+
+A Prototype 14 candidate should not be precommitted until its experiment-choice problem is solved. In particular, a menu of arbitrary relation assays is not acceptable merely because the resulting clues are logically useful.
