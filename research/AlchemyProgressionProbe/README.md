@@ -1,11 +1,13 @@
-# AlchemyRiddle Progression Probe 0.1.0
+# AlchemyRiddle Progression Probe 0.1.1
 
 Read-only research probe for Graveyard Keeper 1.407.
 
 Purpose:
 - confirm the alchemy Technology backbone in loaded GameBalance;
-- census explicit UnlockAlchemy / UnlockRandomAlchemy disclosure channels in loaded FlowCanvas graphs and item on-use expressions;
-- capture bounded structural neighborhoods around the early Clotho / Merchant alchemy paths;
+- census explicit UnlockAlchemy / UnlockRandomAlchemy disclosure channels in item expressions;
+- census Flow_UnlockTech and Flow_UnlockCraft nodes without logging formula ingredients;
+- record exact SmartRes price/lock/reward semantics for the early Clotho answer sets;
+- retain bounded structural neighborhoods around the early Clotho / Merchant alchemy paths;
 - never log exact mixed-alchemy formula IDs or ingredient rows.
 
 Expected log markers:
