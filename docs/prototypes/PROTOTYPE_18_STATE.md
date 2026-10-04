@@ -177,3 +177,30 @@ Raw outcome: **INCOMPATIBLE / SEPARATES**.
 Resources: 1 / 2 Research Charges remain.
 
 No facilitator deduction; await player inference.
+
+
+## Live blind-play completion
+
+After Nectar Solution + Stonebone Essence returned INCOMPATIBLE, the player revised the hypothesis rather than testing another random pair.
+
+Player reasoning:
+- rejected the Hive Powder + Nectar Solution branch because its target-compatible continuation required Stonebone Essence, which was now known incompatible with Nectar Solution;
+- recombined the Plant x1 / Mineral x1 constraints;
+- derived the alternative branch Bloom Powder + Shell Solution;
+- selected Carrion Essence because Stonebone Essence would repeat Mineral while Carrion supplies Corpse without adding Mineral;
+- final answer: Bloom Powder + Shell Solution + Carrion Essence.
+
+Deterministic synthesis outcome: **SUCCESS**.
+
+Resources:
+- Research Charges used: 1 / 2;
+- one negative microtest;
+- no failed synthesis attempts.
+
+Observed design finding:
+- the negative result was immediately informative and caused a clean branch revision;
+- the player did not fall into pair-matrix completion;
+- the failed branch improved the deduction rather than feeling punitive;
+- this directly closes the main happy-path concern from Prototype 17 at small scale.
+
+Subjective evaluation pending.
