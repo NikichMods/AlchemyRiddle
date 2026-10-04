@@ -665,7 +665,7 @@ namespace NikichMods.AlchemyRiddle.Research
             if (raw.Length == 0)
                 return false;
 
-            return raw.IndexOf("\\"" + itemId + "\\"", StringComparison.Ordinal) >= 0;
+            return raw.IndexOf("\"" + itemId + "\"", StringComparison.Ordinal) >= 0;
         }
 
         private static HashSet<string> StringSet(IList list)
