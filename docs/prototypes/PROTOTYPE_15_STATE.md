@@ -191,3 +191,24 @@ Raw outcome: **MATCHES POSITIVE CONTROL**.
 Resources: 1 / 2 Research Charges remain.
 
 No fresh deduction by facilitator; await player inference.
+
+
+## Live checkpoint after second assay
+
+Player inference after Assay B: Powder and Liquid both carry Insect. This was correctly derived by the player and may now be treated as established.
+
+Player briefly explored whether Essence could also carry Insect, corrected their own confusion about the candidate Essences, and chose the remaining Assay A. The player also noted that the presentation/interface made it harder than necessary to keep straight which slots each assay tests.
+
+Player action: run Assay A (Liquid + Essence both Insect).
+
+Raw outcome: **MATCHES POSITIVE CONTROL**.
+
+Resources: 0 / 2 Research Charges remain.
+
+Journal:
+1. Initial: Plant occurs in exactly one component.
+2. Initial: Corpse occurs in exactly one component.
+3. Assay B: Powder + Liquid both Insect -> positive.
+4. Assay A: Liquid + Essence both Insect -> positive.
+
+No fresh deduction by facilitator; await player inference.
