@@ -139,3 +139,35 @@ Acceptance evidence requested:
 - return the resulting \`LogOutput.log\`;
 - expected terminal markers: \`AR_PROGRESSION_BEGIN\`, \`AR_PROGRESSION_SUMMARY\`, \`AR_PROGRESSION_DONE\`;
 - any \`AR_PROGRESSION_ERROR\` blocks acceptance.
+
+
+## Progression Probe 0.1.0 — accepted runtime capture
+
+Runtime evidence: user capture \`LogOutput(5).log\`, Graveyard Keeper 1.407.
+
+Acceptance:
+- probe loaded successfully;
+- \`AR_PROGRESSION_BEGIN\` and \`AR_PROGRESSION_DONE\` are present;
+- no \`AR_PROGRESSION_ERROR\` occurred;
+- summary: 114 controllers seen, 104 unique serialized graphs, 5 focus graphs;
+- formula privacy contract held: \`formula_rows_logged=0\`.
+
+Observed disclosure census:
+- item-level channels: one \`UnlockRandomAlchemy\` item and the dedicated Memory Tincture recipe item;
+- serialized FlowCanvas text search found zero literal \`UnlockAlchemy\` / \`UnlockRandomAlchemy\` calls.
+
+**Important limitation:** zero literal FlowCanvas \`UnlockAlchemy\` calls is **not** evidence that authored dialogue never reveals recipes. Earlier accepted runtime evidence showed Acid being presented through \`TechUnlockDialogGUI\`. Static decompile proves \`Flow_UnlockTech\` opens that same \`TechUnlockDialogGUI\` and can therefore be the owning mechanism for authored recipe/technology disclosure without any literal \`UnlockAlchemy\` expression in the serialized graph.
+
+The 0.1.0 focus capture also proves:
+- Clotho's loaded graph contains a \`Flow_UnlockTech\` on the \`npc_clotho_task_1\` path;
+- the same graph contains explicit early AnswerData/SmartRes nodes whose serialized windows contain \`pot_heal\`, \`alchemy_1_yellow\`, and \`The Beginning Of Alchemy\`;
+- the Merchant graph makes \`merchant_curse\` visible and unlocks the Clotho-directed phrase \`@сlotho_merch\`.
+
+Do **not** yet infer exact early requirements or recipe disclosure from these windows: 0.1.0 did not log the actual SmartRes fields or the \`Flow_UnlockTech.tech id\`.
+
+Residual question is now narrowed to:
+1. exact SmartRes values attached to Clotho's first alchemy-related answers;
+2. exact \`tech id\` values for all \`Flow_UnlockTech\` nodes, and whether those technologies own ordinary mixed-alchemy crafts;
+3. any direct \`Flow_UnlockCraft\` channels that unlock ordinary mixed-alchemy crafts.
+
+A 0.1.1 probe, if required, should log only those bounded fields and no exact ingredient formulas.
