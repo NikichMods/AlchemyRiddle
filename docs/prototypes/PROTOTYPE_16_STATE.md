@@ -155,3 +155,31 @@ After play record:
 ## Integrity rule
 
 All candidate marks, prior observations, hidden compatibility outcomes, hidden formula and resource limits are immutable for this blind run.
+
+
+## Live blind-play completion
+
+Player reasoning before any new microtest:
+- player initially explored whether the provenance-count facts alone fixed slot roles, then correctly noticed multiple branches remain;
+- direct STABLE/INCOMPATIBLE pair testing felt immediately simpler and more natural than Prototype 15's control/assay wrapper;
+- player correctly understood compatibility as a universal empirical fact about a reagent pair that can carry forward to future investigations;
+- however, the two already-known stable observations formed a complete adjacent path: Hive Powder + Nectar Solution and Nectar Solution + Carrion Essence;
+- because the initial Plant/Corpse count facts are also satisfied by that path, the player saw no compelling reason to spend a Research Charge on an exclusion test;
+- instead of designing a discriminating experiment, the player chose the already-known fully compatible chain for immediate final synthesis.
+
+Player action:
+- synthesize Hive Powder + Nectar Solution + Carrion Essence.
+
+Deterministic outcome: **SUCCESS**.
+
+Resources:
+- Research Charges used: 0 / 2;
+- no microtests were performed;
+- no failed synthesis attempts occurred.
+
+Observed design finding:
+- the empirical compatibility primitive itself was experienced as simple, pleasant and potentially attractive;
+- but seeding both adjacent compatibilities from prior experience can collapse the target directly into a candidate recipe path, turning accumulated knowledge into near-answer disclosure rather than a reason to investigate;
+- Prototype 16 therefore does not yet test whether choosing a compatibility microtest is satisfying, because the player rationally bypassed the experiment layer.
+
+Subjective evaluation pending.
