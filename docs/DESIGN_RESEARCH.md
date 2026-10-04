@@ -2313,3 +2313,27 @@ Prototype 17 keeps the direct adjacent compatibility primitive but corrects Prot
 Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_17_STATE.md`.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 17 — observed completion
+
+Status: **completed blind play; subjective evaluation pending**.
+
+Observed path:
+- one prior stable Powder+Liquid edge seeded a promising branch;
+- the player chose a natural continuation test on that branch rather than filling a compatibility matrix;
+- the tested Liquid+Essence pair was stable;
+- this yielded a complete stable adjacent chain;
+- the player correctly distinguished **structural viability** from **target identity**: compatibility can show that a triple should make some working alchemical product, but does not by itself prove which product it will be;
+- with one unresolved theoretical continuation still possible, the player used final vanilla synthesis as bounded hypothesis verification rather than spending the second Research Charge;
+- the synthesis produced the target.
+
+Important consequence:
+- adjacent compatibility is promising as a natural experimental grammar, but it is not sufficient as target-specific evidence by itself;
+- therefore the likely architecture needs two layers with distinct roles:
+  1. compatibility constrains which ingredient combinations are chemically viable;
+  2. sparse target-specific evidence distinguishes which viable combination corresponds to the selected unknown product.
+
+This is compatible with the product contract because final synthesis may remain the decisive hypothesis check when the remaining uncertainty is small and reasoned, rather than blind enumeration.
+
+Production architecture remains **BLOCKED**.
