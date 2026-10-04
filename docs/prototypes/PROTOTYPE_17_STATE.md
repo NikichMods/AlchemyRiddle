@@ -194,3 +194,31 @@ Journal:
 2. New: Nectar Solution + Carrion Essence -> STABLE.
 
 No fresh deduction by facilitator; await player inference.
+
+
+## Live blind-play completion
+
+After the first microtest returned STABLE, the player chose immediate final synthesis:
+- Hive Powder + Nectar Solution + Carrion Essence.
+
+Player explicitly identified an important semantic limitation before committing:
+- two stable adjacent pairs prove that the triple is physically/structurally viable under the compatibility rule;
+- they do **not by themselves** prove that the resulting viable elixir is the specific target being investigated;
+- the player therefore treated final synthesis as a hypothesis check rather than claiming complete logical identification in advance.
+
+This distinction is correct and materially important for architecture evaluation.
+
+Deterministic synthesis outcome: **SUCCESS — target product obtained**.
+
+Resources:
+- Research Charges used: 1 / 2;
+- one microtest performed;
+- no failed synthesis attempts.
+
+Observed solve character:
+- the player selected a natural continuation test from an already-known stable first-stage pair;
+- one positive result produced a complete stable chain;
+- instead of spending the final charge to eliminate the remaining theoretical target-compatible continuation, the player rationally used vanilla synthesis as bounded verification;
+- this fits the accepted product rule that final craft may remain a hypothesis test when uncertainty is small, but it also proves adjacent compatibility alone is **not target identity evidence**.
+
+Subjective evaluation pending.
