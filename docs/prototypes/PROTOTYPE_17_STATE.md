@@ -170,3 +170,27 @@ Record:
 ## Integrity rule
 
 The hidden formula, candidate facts, prior observation, compatibility table and resource model are immutable for this blind run.
+
+
+## Live checkpoint after first microtest
+
+Player reasoning:
+- correctly noticed the Corpse x1 fact is non-discriminating in this candidate pool because both Essence candidates carry Corpse;
+- used Plant x1 to understand how Powder/Liquid choices constrain one another;
+- treated the pre-known Hive Powder + Nectar Solution stable pair as a promising first-stage branch;
+- chose to test whether that branch can continue through Carrion Essence, i.e. Nectar Solution + Carrion Essence.
+
+This is the intended kind of hypothesis-driven compatibility test: extend a promising partial chain rather than fill the pair matrix.
+
+Player action:
+- microtest Nectar Solution + Carrion Essence.
+
+Raw outcome: **STABLE**.
+
+Resources: 1 / 2 Research Charges remain.
+
+Journal:
+1. Prior: Hive Powder + Nectar Solution -> STABLE.
+2. New: Nectar Solution + Carrion Essence -> STABLE.
+
+No fresh deduction by facilitator; await player inference.
