@@ -212,3 +212,33 @@ Journal:
 4. Assay A: Liquid + Essence both Insect -> positive.
 
 No fresh deduction by facilitator; await player inference.
+
+
+## Live blind-play completion
+
+Player final deduction:
+- Assay B established Powder and Liquid both carry Insect.
+- Assay A established Liquid and Essence both carry Insect.
+- Therefore all three selected ingredients must carry Insect.
+- This fixes Powder to Hive Powder and Essence to Carrion Essence.
+- Liquid is then resolved by the initial target facts: Plant must occur exactly once and Corpse exactly once.
+- The player first momentarily considered Shell Solution, then self-corrected after checking the Plant-count constraint.
+- Final answer: Hive Powder + Nectar Solution + Carrion Essence.
+
+Deterministic synthesis outcome: **SUCCESS**.
+
+Prototype 15 completion state:
+- 2 / 2 Research Charges used;
+- no synthesis failures before the final answer;
+- final formula was deduced rather than enumerated through trial synthesis;
+- the player did perform a genuine cross-slot inference chain from both assay results plus initial aggregate facts.
+
+Observed usability findings during play:
+- raw information load was high;
+- paired-control framing felt artificial/high-level;
+- the negative control had no intuitive value to the player;
+- assay choice was driven mainly by slot order, not by an explicit discriminating hypothesis;
+- keeping track of which slots each assay applied to was harder than necessary;
+- despite those UX problems, the two assay results combined cleanly into a non-enumerative final deduction.
+
+Explicit subjective evaluation is still pending before assigning final disposition.
