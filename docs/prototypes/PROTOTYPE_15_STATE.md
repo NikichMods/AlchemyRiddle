@@ -1,0 +1,180 @@
+# Prototype 15 Facilitator State
+
+**FACILITATOR SPOILERS — DO NOT SURFACE DURING BLIND PLAY**
+
+Status: precommitted before first player action.
+
+## Purpose
+
+Test whether explicit **positive/negative known-formula controls** make a cross-slot relation query feel like a designed experiment rather than purchased information.
+
+This is a bounded fictional 3-slot mid-progression test. It does not claim that the required known controls are guaranteed at the real Glue progression point.
+
+## Spoiler boundary
+
+All target/control formulas and reagent names are fictional. Do not expose the hidden answer or facilitator candidate table during blind play.
+
+## Player-visible substance rule
+
+Every candidate reagent has inspectable provenance marks:
+- Plant
+- Insect
+- Mineral
+- Corpse
+
+A reagent may have more than one mark.
+
+There is no abstract RELATED/UNRELATED state.
+
+## Experimental rule
+
+A control assay asks one explicit named question about **two target slots**, for example:
+
+“Do the target Liquid and Essence both have the Insect mark?”
+
+The player is shown two already-known formulas:
+- a **positive control** in which the selected pair visibly satisfies the question;
+- a **negative control** in which the selected pair visibly does not.
+
+The analyzer is calibrated from those known mixtures, then tests the unknown target residue under the same condition.
+
+Raw result:
+- MATCHES POSITIVE CONTROL; or
+- MATCHES NEGATIVE CONTROL.
+
+The known control formulas and their reagent marks are always visible. The player never has to trust a hidden relation label.
+
+Each assay costs 1 Research Charge. Candidate reagents are not consumed by an assay.
+A synthesis attempt consumes its selected candidate reagents.
+
+## Candidate pool
+
+Powders:
+- P1 Bloom Powder — {Plant}
+- P2 Hive Powder — {Insect}
+- P3 Slate Powder — {Mineral}
+
+Liquids:
+- L1 Nectar Solution — {Plant, Insect}
+- L2 Grave Solution — {Plant, Corpse}
+- L3 Shell Solution — {Insect, Mineral}
+
+Essences:
+- E1 Sprout Essence — {Plant}
+- E2 Carrion Essence — {Insect, Corpse}
+- E3 Stonebone Essence — {Mineral, Corpse}
+
+## Initial target research
+
+The unknown target:
+- contains the Plant mark in exactly **one** of its three components;
+- contains the Corpse mark in exactly **one** of its three components.
+
+No slot is identified by either fact.
+
+Applying only these facts leaves six legal hypotheses. Do not enumerate them for the player.
+
+## Available assay A — Insect bridge, Liquid–Essence
+
+Question:
+**Do the target Liquid and Essence both have the Insect mark?**
+
+Positive control: Buzzing Tonic
+- Powder: Chalk Powder — {Mineral}
+- Liquid: Meadow Solution — {Plant, Insect}
+- Essence: Carrion Essence C — {Insect, Corpse}
+- therefore the tested Liquid–Essence pair visibly answers YES.
+
+Negative control: Garden Draught
+- Powder: Bark Powder — {Plant}
+- Liquid: Gravewater — {Plant, Corpse}
+- Essence: Crystal Essence — {Mineral}
+- therefore the tested Liquid–Essence pair visibly answers NO.
+
+Among the six hidden hypotheses this assay partitions 3 / 3.
+
+## Available assay B — Insect bridge, Powder–Liquid
+
+Question:
+**Do the target Powder and Liquid both have the Insect mark?**
+
+Positive control: Carapace Elixir
+- Powder: Moth Powder — {Insect}
+- Liquid: Meadow Solution B — {Plant, Insect}
+- Essence: Crystal Essence B — {Mineral}
+- therefore the tested Powder–Liquid pair visibly answers YES.
+
+Negative control: Stone Draught
+- Powder: Chalk Powder B — {Mineral}
+- Liquid: Gravewater B — {Plant, Corpse}
+- Essence: Carrion Essence D — {Insect, Corpse}
+- therefore the tested Powder–Liquid pair visibly answers NO.
+
+Among the six hidden hypotheses this assay partitions 2 / 4.
+
+The A and B partitions cross-cut; neither result can be inferred from the other before testing.
+
+## Hidden answer
+
+P2 Hive Powder {Insect}
++ L1 Nectar Solution {Plant, Insect}
++ E2 Carrion Essence {Insect, Corpse}
+
+It satisfies:
+- Plant count = 1 (L1 only)
+- Corpse count = 1 (E2 only)
+
+Deterministic outcomes:
+- Assay A: MATCHES POSITIVE CONTROL.
+- Assay B: MATCHES POSITIVE CONTROL.
+
+After both positive outcomes, the hidden answer is the unique surviving hypothesis.
+
+If A is run first, three hypotheses remain.
+If B is run first, two hypotheses remain.
+The second assay then makes the formula unique.
+
+The facilitator must not announce candidate counts or deductions unless the player derives them.
+
+## Resources
+
+Start:
+- 2 Research Charges.
+- both assays cost 1.
+- no automatic recharge during the prototype.
+
+This deliberately allows both available control experiments but not arbitrary repeated querying.
+
+## Legal actions
+
+At each decision:
+- run Assay A if not already used and a Research Charge remains;
+- run Assay B if not already used and a Research Charge remains;
+- attempt synthesis with one Powder + one Liquid + one Essence.
+
+## Journal / inference boundary
+
+After an assay show only:
+- chosen assay/question;
+- both visible controls;
+- raw positive/negative match;
+- remaining charges;
+- prior established target facts.
+
+Do not say what candidates are excluded until the player states their inference.
+
+## Evaluation targets
+
+After completion ask:
+- Was the explicit assay question immediately understandable?
+- Did positive/negative controls make the known recipes feel useful, or merely decorate a yes/no clue?
+- Could the player articulate why they chose A vs B?
+- Did choosing an assay feel like experimental design or like selecting a query from a menu?
+- Did cross-slot information actually feel different from testing one ingredient at a time?
+- Was two-charge bounded research appropriate?
+- Did showing full known-control compositions help or overload?
+- Does this mechanism deserve another iteration, optional-tool status, fallback status, or rejection?
+
+## Integrity rule
+
+All candidate marks, target facts, control formulas, hidden answer, assay partitions and outcomes are immutable for this blind run.
