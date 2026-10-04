@@ -15,7 +15,8 @@ Before substantive technical work:
 2. read the current global contract in `NikichMods/DevRules`: `ENGINEERING_RULES.md`, `CI_POLICY.md`, `GIT_WORKFLOW.md`, `PROJECT_BOOTSTRAP.md`, and `RUNTIME_TEST_HARNESS.md` when runtime evidence is relevant;
 3. read this repository's current `AGENTS.md`;
 4. read `docs/PRODUCT_REQUIREMENTS.md`, `docs/DESIGN_RESEARCH.md`, and task-relevant local evidence;
-5. before fresh Graveyard Keeper internals research, read `NikichMods/GraveyardKeeperResearch/AGENTS.md`, then `docs/RESEARCH_INDEX.md` and relevant canonical shared docs.
+5. when paper prototypes are active or resumed, read `docs/PAPER_PROTOTYPE_PROTOCOL.md` and recover the exact persisted prototype state before continuing;
+6. before fresh Graveyard Keeper internals research, read `NikichMods/GraveyardKeeperResearch/AGENTS.md`, then `docs/RESEARCH_INDEX.md` and relevant canonical shared docs.
 
 Repository state and accepted evidence outrank chat memory and old handoffs.
 
@@ -33,9 +34,9 @@ Vanilla formulas, progression, economy and save behavior are preserved by defaul
 
 ## Working behavior
 
-Follow DevRules evidence-first workflow, solution-space selection checkpoint, research-method checkpoint, and per-change production evidence gate.
+Follow DevRules evidence-first workflow, solution-space selection checkpoint, research-method checkpoint, per-change production evidence gate, and continuous decision capture.
 
-Before substantial implementation or deep mechanism-specific research, compare the useful solution families and prefer the least-complex mechanism that fully satisfies the acceptance envelope. Re-open the choice if a path fails, materially expands host/runtime uncertainty, or exposes a simpler adequate alternative.
+Before substantial implementation or deep mechanism-specific research, compare useful solution families and prefer the least-complex mechanism that fully satisfies the acceptance envelope. Re-open the choice if a path fails, materially expands host/runtime uncertainty, or exposes a simpler adequate alternative.
 
 Before the first production-source mutation for every materially independent behavior change, make the DevRules gate reviewable:
 - observable property;
@@ -50,11 +51,27 @@ There is no exception for small, obvious, presentation-only or follow-up changes
 
 Gate granularity and candidate/build granularity are separate. Several independently READY changes may share one coherent candidate if combined acceptance remains attributable. Do not bundle BLOCKED or independent unverified mechanisms merely to reduce builds/test cycles.
 
-Before creating new probe/harness code, state the exact unknown and check whether accepted local/shared evidence, direct inspection, an existing exact artifact, or a short real-runtime action answers it more cleanly. Prefer fewer assumptions/moving parts over fewer user clicks.
+Before creating new probe/harness code, state the exact unknown and check whether accepted local/shared evidence, direct inspection, an existing exact artifact, or a short runtime action answers it more cleanly. Prefer fewer assumptions/moving parts over fewer user clicks.
 
 Do not guess APIs, IDs, lifecycle, formulas, state ownership, final writers or UI semantics when evidence can establish them.
 
 Immediately before any downloadable artifact handoff, re-read applicable DevRules handoff rules and verify the exact intended file, filename/version/identity and real downloadable path.
+
+## Continuous decision capture
+
+Treat chat as a working surface, not durable project memory.
+
+Whenever the conversation produces a fact, constraint, product/UX behavior, architecture choice, accepted default, rejected alternative, evidence interpretation, or other state that later work will materially rely on, decide whether it has become canonical and, if so, persist it in the owning repository document **within the same working segment**. Do not wait for chat end or a planned handoff.
+
+Keep this lightweight:
+- do not record every brainstorm, option list or tentative suggestion;
+- prefer updating an existing canonical document over creating transcript-style ledgers;
+- batch closely related accepted micro-decisions into one coherent update;
+- do not interrupt the user with bookkeeping unless review is useful.
+
+Do not require ceremonial confirmation for every proposal. Treat a bounded proposal/detail as accepted when the user explicitly approves it, asks to implement it, continues the design using it as a premise, or otherwise clearly adopts it. Ask one concise confirmation only when acceptance is materially ambiguous, several important options remain live, or the choice changes an expensive-to-reverse product/architecture/compatibility/save/release contract.
+
+Before a planned chat migration, persist any remaining material uncheckpointed state first. If a chat ends unexpectedly, recover from repository/canonical evidence and ask rather than guess a missing material decision.
 
 ## Research ownership
 
@@ -69,12 +86,6 @@ Use available GitHub/tools/CI/research capabilities directly rather than asking 
 Ask the user only for product/design decisions, credentials/consent tools cannot provide, or installed-runtime/perceptual evidence that genuinely requires the real game.
 
 This repository is public; do not conserve standard GitHub-hosted runner minutes artificially.
-
-## Conversation continuity
-
-No special handoff prompt is required inside this ChatGPT Project. Recover current state from GitHub/canonical evidence before substantive work.
-
-Checkpoint decision-bearing state at natural boundaries. Before a planned chat migration, persist material uncheckpointed state first. If an unexpected cutoff leaves a material decision unavailable, recover from canonical evidence and ask rather than guess.
 
 ## Iteration report
 
