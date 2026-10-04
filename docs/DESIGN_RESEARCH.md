@@ -1989,3 +1989,39 @@ A complete non-puzzle fallback can now be stated clearly:
 This would replace blind discovery with a coherent chain of research/crafting/resource tasks that already fits Graveyard Keeper's general gameplay grammar.
 
 It would not satisfy the project's ideal “I deduced the formula” goal, but it is a credible minimum viable redesign and should remain available as the explicit level-2 fallback rather than being rediscovered later.
+
+
+### Prototype 14 — selected blind candidate
+
+Status: **precommitted; blind play ready**.
+
+After progression research pinned representative Life Powder -> Heal Potion -> Glue states, the post-Prototype-13 solution-space pass selected a minimal **Family B + Family C hybrid** for the next blind test.
+
+Universal grammar under test:
+- every known reagent exposes a small world-grounded origin-mark set in the substance compendium;
+- two formula components are **related** when their origin-mark sets overlap;
+- a 2-slot formula therefore has one pair relation;
+- a 3-slot formula has a three-edge relation triangle across all component pairs;
+- comparing an unknown target with an already-known reference mixture reports only **how many pair-relation states match**, never exact ingredient matches and never which pair matched.
+
+Why select this over pure Family B:
+- it preserves the cross-slot relational inference needed after Prototype 13;
+- the reference mixture gives experiment selection an object the player can choose for a reason instead of presenting a flat menu of paid relation queries;
+- already-known formulas can become future analytical capability;
+- one rule scales naturally from 2-slot to 3-slot;
+- comparison operates on relationship structure rather than hidden ingredient correctness, reducing recipe-book/oracle risk.
+
+Why not promote it yet:
+- reference choice may still feel like choosing among clue buttons;
+- the three-pair triangle may be too cognitively dense;
+- relation signatures can collide, so aggregate target evidence must do real work as the first layer;
+- progression/runtime integration and exact economy remain unselected.
+
+The blind test uses fictional/isomorphic formulas so no real vanilla recipe is revealed. Complete immutable facilitator state is precommitted in \`docs/prototypes/PROTOTYPE_14_STATE.md\`.
+
+Prototype 14 is a progression slice:
+1. reagent-information onboarding is assumed from the accepted goal-first / compendium model;
+2. a short 2-slot tutorial analogue tests whether the relation rule is legible;
+3. a 3-slot main analogue tests whether reference selection plus aggregate origin evidence removes Prototype 13's late slot scan.
+
+Production mutation remains **BLOCKED**.
