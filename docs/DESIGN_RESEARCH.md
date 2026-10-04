@@ -2250,3 +2250,23 @@ Prototype 16 tests the simplest natural-evidence variant after Prototype 15:
 Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_16_STATE.md`.
 
 Production mutation remains **BLOCKED**.
+
+
+### Prototype 16 — observed completion
+
+Status: **completed blind play; subjective evaluation pending**.
+
+Observed path:
+- the player immediately found the direct STABLE/INCOMPATIBLE primitive substantially simpler and more natural than Prototype 15's paired-control abstraction;
+- they understood compatibility as reusable empirical knowledge about reagent pairs;
+- however, the two pre-seeded stable observations already formed a full adjacent path through one Powder, one Liquid and one Essence;
+- that full path also satisfied the initial Plant/Corpse count facts, so the player rationally skipped all new microtests and attempted the complete path directly;
+- the synthesis succeeded with 0/2 Research Charges used.
+
+Interpretation:
+- direct pair compatibility survives as a promising **fact language**;
+- prior compatibility knowledge must be dosed carefully: if both adjacent edges of one candidate formula are already known, the journal can effectively hand the player a ready recipe path;
+- the next iteration, if pursued, should pre-seed at most one useful adjacent compatibility and force the player to choose at least one genuinely discriminating new pair test;
+- this is not evidence that the primitive itself failed, because the experiment-selection layer was bypassed rather than exercised.
+
+Production architecture remains **BLOCKED**.
