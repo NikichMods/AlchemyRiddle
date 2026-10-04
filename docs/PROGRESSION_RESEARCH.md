@@ -105,3 +105,37 @@ The next runtime/static census should answer only the remaining progression ques
 4. Which early 2-slot and 3-slot target needs remain genuinely unknown at their earliest actionable state after those scripted disclosures are accounted for?
 
 Do not emit exact ingredient formulas in the research output. Named outputs, arity, graph ownership, task/phrase anchors and whether a disclosure occurs are sufficient.
+
+
+## Progression Probe 0.1.0 — runtime candidate
+
+Status: **built; runtime evidence pending**.
+
+Research-method checkpoint:
+- exact unknown: authored early Clotho/Merchant alchemy disclosure semantics and the corpus-wide set of explicit scripted alchemy formula unlock channels;
+- accepted static/runtime evidence already closes Technology ownership, mixed-craft arity, decomposition ownership, Merchant Spices goal existence and the Astrologer Acid scripted-unlock example;
+- direct static repository inspection cannot enumerate the serialized live FlowCanvas graphs available only in the installed game;
+- existing DayWheelQuestMarkers 1.1.14 provides accepted parser lineage for serialized node/connection and CustomFunctionCall UID topology;
+- therefore the least-assumption residual method is one read-only loaded-graph census, not a new gameplay walkthrough.
+
+Candidate identity:
+- source branch: \`research/vanilla-alchemy-model\`;
+- exact source / workflow head: \`3b0b112dcdbf749990b3e8b281a45c46e1c4a2de\`;
+- CI run: \`37233252401\`, conclusion **success**;
+- artifact ID: \`11314855758\`;
+- handoff DLL: \`AlchemyProgressionProbe-0.1.0.dll\`;
+- DLL SHA-256: \`002351ad4ae31172c96c31c6c4a0573ee8f5bc1a37f346043ae35bc68843c217\`;
+- target: Graveyard Keeper 1.407.
+
+Probe contract:
+- read-only; no save/balance/inventory/craft-unlock mutation;
+- scans loaded GameBalance plus loaded \`FlowCanvas.FlowScriptController\` serialized graphs;
+- records named output / arity / owner for explicit \`UnlockAlchemy\` and \`UnlockRandomAlchemy\` channels;
+- records bounded node/edge neighborhoods around the early Clotho/Merchant focus terms;
+- logs **zero exact mixed-formula IDs and zero ingredient-formula rows**.
+
+Acceptance evidence requested:
+- load any existing save into the game world once with the exact DLL installed;
+- return the resulting \`LogOutput.log\`;
+- expected terminal markers: \`AR_PROGRESSION_BEGIN\`, \`AR_PROGRESSION_SUMMARY\`, \`AR_PROGRESSION_DONE\`;
+- any \`AR_PROGRESSION_ERROR\` blocks acceptance.
