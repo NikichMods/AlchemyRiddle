@@ -47,6 +47,22 @@ A good solution should normally converge in a small number of **meaningful** exp
 
 The cognitive and record-keeping burden should also fit Graveyard Keeper's broader, interruption-heavy game loop. The design must not assume the uninterrupted concentration or manual note-taking expected from a dedicated hardcore logic-puzzle game.
 
+
+
+### Accepted target experience and investigation entry point
+
+The intended alchemy interaction is a **short micro-deduction**, not a standalone hardcore puzzle. As a working UX target, an ordinary investigation should often fit roughly **1–3 minutes** of focused reasoning: enough friction for the player to feel briefly clever and competent, but not enough to become exhausting or dominate Graveyard Keeper's wider loop. This is a design target, not a rigid timer.
+
+The preferred investigation entry point is the first **visible vanilla need for a specific unknown alchemical product X**. The intended flow is:
+
+`visible need for X -> journal records X as an unknown research topic -> player chooses X -> first meaningful research step`
+
+The notification for a newly recorded unknown product should be neutral, e.g. that a new journal entry was added. It should not itself explain the formula or direct the player toward a specific answer path.
+
+Before creating an investigation topic, check whether vanilla has already legitimately revealed/unlocked the formula. Already-known formulas bypass the research loop rather than becoming fake mysteries.
+
+The journal is part of the product, not merely convenience UI. It must function as external memory for experiments, observations, established/excluded facts, live hypotheses and the reason the investigation exists, so returning after normal gameplay interruption is easier than resorting to an external wiki.
+
 ## Design quality ladder and fallback policy
 
 The project target remains a genuine deductive puzzle, but design quality is not binary. Use this ladder when comparing candidates:
