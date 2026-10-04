@@ -843,3 +843,34 @@ Prototype 9 final disposition:
 Status: **active**. Complete facilitator state was precommitted before the player's first action under the paper-prototype protocol. Do not expose its hidden contents during blind play.
 
 Prototype 10 begins only after commit identity of that state exists. Player-facing observations must be generated from the precommitted model without adaptation.
+
+
+### Prototype 10 — result
+
+Status: **completed blind prototype**.
+
+Player-facing sequence:
+1. Initial calibration: White Ash + Dew + Echo -> resonance 1/3.
+2. Player changed only the powder: Black Chalk + Dew + Echo -> 0/3.
+   - Deduction: White Ash is the correct powder; Dew and Echo are excluded.
+3. Player kept White Ash/Echo and changed the liquid: White Ash + Brine + Echo -> 2/3.
+   - Deduction: Brine is the correct liquid.
+4. Player tested White Ash + Brine + Spark -> 2/3.
+   - Since White Ash and Brine were already established correct, Spark is excluded and Shadow is uniquely determined as the essence.
+
+Meaningful paid resonance tests: **3**.
+
+Player-experience findings:
+- The rules were immediately described as simple, clear and understandable.
+- The player naturally used controlled one-variable changes without prompting.
+- Each result supported an immediate local deduction.
+- The interaction stayed within a very small working-memory envelope.
+- The formula was uniquely determined without brute-force enumeration and without needing a ceremonial final craft.
+- However, the interaction pattern is structurally close to systematic coordinate/slot isolation: once the aggregate-score rule is understood, the natural strategy is to change one slot at a time and infer that slot from score deltas.
+- This means the prototype is mechanically cleaner and more satisfying than prototype 9, but it may still become routine quickly across many recipes rather than sustaining an "alchemical investigation" fantasy.
+
+Blind-test integrity:
+- hidden formula, scoring semantics, legal actions, costs and stopping rules were precommitted before the player's first move;
+- no outcome or rule was changed during play.
+
+Disposition: **retain for comparison; promising on clarity and deduction, but flag routinization/coordinate-isolation risk for post-play evaluation before promoting it as a leading architecture.**
