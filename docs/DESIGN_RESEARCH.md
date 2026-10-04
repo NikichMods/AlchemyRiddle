@@ -2358,3 +2358,14 @@ Next evidence target:
 Keep UI/economy questions separate for this next prototype. First prove that the reasoning loop survives a negative experimental result.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 18 — unhappy-path compatibility test
+
+Status: precommitted and blind-play ready.
+
+Prototype 18 keeps the Prototype-17 compatibility core but makes the attractive first branch fail. One old Powder+Liquid edge is known stable; the natural continuation test returns INCOMPATIBLE; a second charge remains for optional confirmation of the alternative. The purpose is to test whether negative evidence feels informative and compact rather than punitive or enumerative.
+
+Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_18_STATE.md`.
+
+Production architecture remains BLOCKED.
