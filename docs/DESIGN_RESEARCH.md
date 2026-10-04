@@ -765,3 +765,15 @@ The next blind paper-prototype round should contain four orthogonal candidates:
 The prototypes should stay answer-blind and fictional. Their first purpose is **player-experience discrimination**, not proving corpus-wide mechanics. Only families that survive that pass should receive a formal solver/information-gain implementation against all 34 targets.
 
 No production architecture is selected. Production mutation remains **BLOCKED**.
+
+
+### Prototype 9 — authored micro-case: live observations
+
+Status: **in progress; player-facing blind prototype**.
+
+Early findings before the first experiment resolves:
+
+- Any experiment that consumes a limited target sample must show **current sample count**, **whether the sample is replenishable**, and **the practical replacement path/cost** before the player commits.
+- The same applies symmetrically to reagent-consuming tests. A player's rational experiment choice depends on the relative acquisition/replacement burden of target samples versus ordinary reagents.
+- Therefore prototype evaluation must not assume “sample expensive, reagents cheap” (or the reverse) without defining it. If actual Graveyard Keeper progression makes that relation target-dependent, the production design must either expose the relevant costs clearly or avoid relying on hidden acquisition economics to create meaningful choice.
+- Irrecoverable loss of the only research sample is undesirable for the intended broad-player experience. Current prototype assumption: depleted samples can be reacquired, though potentially at a nontrivial cost.
