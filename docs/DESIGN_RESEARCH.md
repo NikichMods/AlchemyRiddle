@@ -2569,3 +2569,14 @@ The leading architecture hypothesis is now more concrete:
 Compatibility is the common experimental grammar; puzzle shaping supplies enough target-specific context to make that grammar actionable.
 
 Production architecture remains **BLOCKED**. The next blind test should specifically exercise a **no-preknown-stable-anchor** state whose starting information has been calibrated to a small branch envelope, because that is the main remaining core-UX uncertainty exposed by this screen.
+
+
+### Prototype 20 — calibrated no-anchor 3×3×3 test
+
+Status: **active blind play; awaiting the first player microtest**.
+
+Purpose: close the main remaining core-UX uncertainty from Prototype 19 and the real-corpus adaptive-budget screen: whether a 3×3×3 target-relevant field remains approachable **without any pre-known stable compatibility anchor** when starting target facts reduce the actionable first-stage space to three meaningful Powder+Liquid branches.
+
+The hidden facilitator model was precommitted before the first player choice. Current live state, resources and exact next interaction point are persisted in `docs/prototypes/PROTOTYPE_20_STATE.md`.
+
+This test is player-cognition evidence only. It does not establish how production candidate surfaces are selected, and production architecture remains **BLOCKED**.
