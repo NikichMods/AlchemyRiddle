@@ -906,3 +906,34 @@ Do not pivot the active research plan around this yet. Finish the remaining orth
 Status: **active**. Hidden formula, known-reference library, deterministic comparison outcomes, costs and stopping rules were precommitted before the player's first action in `docs/prototypes/PROTOTYPE_11_STATE.md`.
 
 Purpose: test whether reasoning from already-known recipes feels more naturally alchemical and less like slot-by-slot probing than freely constructed aggregate tests.
+
+
+### Prototype 11 — result
+
+Status: **completed blind prototype**.
+
+Player-facing sequence:
+1. Free opening comparison: target vs Clear Solution (White Ash + Dew + Echo) -> 1/3.
+2. Player chose Dry Fixative (White Ash + Brine + Spark) -> 2/3.
+   - Deduction: White Ash is confirmed; exactly one of Brine / Spark is correct.
+3. Player chose Chalk Tincture (Black Chalk + Dew + Spark) -> 0/3.
+   - Because Black Chalk and Dew were already excluded, Spark is excluded.
+   - Therefore Brine is confirmed.
+4. Player chose Dark Extract (Crystal Dust + Spirit + Shadow) -> 1/3.
+   - Crystal Dust and Spirit are already excluded, so Shadow is confirmed.
+   - Unique target formula is therefore White Ash + Brine + Shadow.
+
+Meaningful paid comparisons: **3**.
+
+Player-experience findings:
+- The comparison concept itself felt appealing / "прикольная система": reasoning from already-known recipes felt more naturally alchemical than arbitrary free-form probing.
+- Keeping the full formulas of known reference products visible is necessary UI state; names alone are insufficient because the player must reason from their ingredient overlap.
+- The specific prototype path was too straightforward. After the opening clue, every remaining reference recipe was useful and the player essentially progressed through the available comparison set. There was little real experimental-selection pressure beyond ordering.
+- In particular, the player did not face a meaningful choice among a richer set containing weak, redundant, dominated or differently informative references. The scenario therefore demonstrated the deduction grammar but did **not** prove that selecting the next comparison can itself be an interesting decision.
+- The final Dark Extract comparison became a binary check of Shadow because the other two ingredients were already excluded. This cleanly completes the deduction but is effectively a forced final step.
+
+Blind-test integrity:
+- hidden target, reference library, comparison outcomes, costs and stopping rules were precommitted before play;
+- no rule or result was adapted after player choices.
+
+Disposition: **retain as promising for world fit and clarity, but prototype 11 is insufficient evidence for experiment-choice quality.** A stronger future version would need a richer reference library where several comparisons are legal but differ meaningfully in expected information, without requiring the player to compute a large optimization problem.
