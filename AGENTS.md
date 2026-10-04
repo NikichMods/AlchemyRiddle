@@ -27,6 +27,8 @@ Canonical product requirements and acceptance envelope: `docs/PRODUCT_REQUIREMEN
 
 Canonical design/research status and open questions: `docs/DESIGN_RESEARCH.md`.
 
+When blind/player-facing paper prototypes are active, `docs/PAPER_PROTOTYPE_PROTOCOL.md` is mandatory execution guidance. Read it before starting or resuming a prototype, including after a chat migration.
+
 Production code must not begin merely because a plausible hook or UI design is found. First establish the vanilla information model, search-space behavior, targetability problem, and solution-family trade study.
 
 ## Mandatory project-specific start-of-work checks
@@ -40,6 +42,8 @@ Before substantive work:
 6. keep research/probes clearly separate from production behavior.
 
 Repository evidence and accepted runtime evidence outrank chat memory.
+
+For active paper prototypes, operational test semantics are decision-bearing state. Before play, persist the precommitted facilitator model; before a planned chat migration or at a material checkpoint, persist the exact current player-facing state and next interaction point. A future chat must recover these rather than reconstructing them from conversational memory.
 
 ## Shared Graveyard Keeper research
 
@@ -98,6 +102,7 @@ Do not scaffold production build machinery by assumption during the design phase
 - `AGENTS.md`
 - `docs/PRODUCT_REQUIREMENTS.md`
 - `docs/DESIGN_RESEARCH.md`
+- `docs/PAPER_PROTOTYPE_PROTOCOL.md` while prototype research is active
 - `docs/CHATGPT_PROJECT_INSTRUCTIONS.md`
 - `docs/TEST_BUILD_LOG.md` once numbered handoff builds exist
 - `README.md`
