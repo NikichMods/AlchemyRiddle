@@ -2453,3 +2453,119 @@ Working acceptance target to test next:
 - if a target fails this screen, add another coarse target fact, expose one prior compatibility, or shrink the target-relevant candidate pool.
 
 This makes bounded/semi-authored puzzle shaping an explicit feature, not a fallback. Production architecture remains BLOCKED.
+
+
+### Real-corpus adaptive information-budget screen — 2026-10-05
+
+Status: **accepted design-analysis result; no new runtime probe required**.
+
+Purpose: test the Prototype-19 hypothesis that puzzle setup should be calibrated by residual **actionable branches**, not by a fixed clue count or by the raw number of known reagents.
+
+#### Method
+
+The screen reuses the accepted 1.407 ordinary three-slot corpus:
+- **19** picker-compatible formulas;
+- **16** outputs;
+- slot-participating structural universe: **10 Powder × 9 Liquid × 9 Essence = 810** triples;
+- accepted adjacent-compatibility graph: **19** Powder–Liquid stable edges and **18** Liquid–Essence stable edges.
+
+No new host/runtime fact was assumed and no new probe was justified.
+
+Target-side facts were allowed only when they are true for **every valid formula** of that output. The bounded vocabulary was:
+- the already-screened four broad provenance categories, either as a positive slot fact or an exact whole-formula occurrence count;
+- at most **one** cautious native semantic-family fact of the previously accepted form “exactly one component belongs to family X”.
+
+The reconstructed broad-provenance grouping reproduces the earlier accepted **31 / 34** positive slot-invariant coverage result, which is used as a sanity check that this pass is operating on the same property interpretation.
+
+Primary cognitive metric:
+- number of distinct surviving **Powder+Liquid first-stage branches**, not raw triple count.
+
+Secondary metrics:
+- remaining triples;
+- known-stable first-stage anchors;
+- number of Essence continuations from an anchor;
+- number of full chains that would satisfy both adjacent compatibility relations.
+
+Exact formulas remain hidden; results below are aggregate.
+
+#### Full structural field, no useful prior compatibility anchor
+
+With the full 10×9×9 participant field and at most one semantic-family fact:
+- with **up to 2** target facts, **3 / 16** outputs can be shaped to the working **2–4 Powder+Liquid branch** envelope;
+- with **up to 3** target facts, **12 / 16** fit that envelope;
+- with **up to 4** target facts, **14 / 16** fit;
+- the remaining **2 / 16** are multi-formula outputs whose valid-answer structure stays too broad under this vocabulary.
+
+Therefore a fixed “two clues per target” rule is not viable. Three facts are enough for most ordinary three-slot targets, but not all.
+
+Broad provenance alone is weaker: only **6 / 16** outputs reach 2–4 branches with three or fewer broad facts. The one-family-fact allowance materially expands coverage without exposing the complete semantic-family signature that the earlier screen rejected as too oracular.
+
+#### One useful known stable first-stage edge
+
+This scenario is conditional: the player's journal already happens to contain a **stable Powder+Liquid edge used by at least one valid formula of the target**. A stable edge is an experimental **anchor**, not proof that the target uses it.
+
+Under the full field, after target facts are applied, ask how many Essence candidates can still extend that known target-relevant anchor:
+- **11 / 16** outputs can be reduced to at most three continuations with **one** target fact;
+- **12 / 16** with up to **two** target facts;
+- **14 / 16** with up to **three** target facts;
+- the same two multi-formula classes remain resistant on the unrestricted field.
+
+This quantifies the Prototype-17/19 player experience: one useful stable first-stage observation can reduce the *actionable* problem dramatically even though it does not logically eliminate all other branches.
+
+#### Why “0 / 1 / 2 known compatibilities” is not a sufficient scalar
+
+Compatibility history has topology and polarity:
+
+- a known **INCOMPATIBLE** Powder+Liquid pair truly removes that first-stage branch;
+- a known **STABLE** pair does not eliminate other branches, but gives a cheap hypothesis anchor;
+- a known Liquid+Essence result may affect several candidate chains sharing that Liquid;
+- two stable observations that share the same Liquid may form a complete stable chain and can over-direct the player, reproducing Prototype 16;
+- two observations on unrelated branches may provide much less useful guidance.
+
+Therefore there is no safe fixed exchange rate such as “one known compatibility replaces two target clues”. Puzzle setup must evaluate the player's **actual learned compatibility graph**.
+
+#### Bounded candidate-space result
+
+The user explicitly accepted bounded / semi-authored target-relevant candidate spaces as a legitimate architecture rather than an emergency fallback.
+
+Existence screen:
+- restrict each slot to a target-relevant **3×3×3** candidate surface that still contains every valid formula ingredient for that output;
+- then search the same invariant target-fact vocabulary.
+
+Result:
+- **16 / 16** ordinary three-slot outputs can be shaped to **2–4 Powder+Liquid branches with at most one target fact**;
+- **15 / 16** can do so using a broad-provenance fact alone;
+- the last class requires the single cautious semantic-family fact;
+- when a useful target-relevant stable Powder+Liquid anchor is already known, all **16 / 16** can likewise be shaped so the overall field remains 2–4 first-stage branches and the anchor has at most three target-consistent Essence continuations with at most one target fact.
+
+This is an **existence proof**, not yet an accepted rule for how the production mod chooses the 3×3×3 surface. Candidate-set selection itself carries information and must have a legitimate in-world/research justification rather than silently deriving a near-answer from the hidden formula.
+
+#### Working adaptive-budget model
+
+Do not balance by “number of clues”. Evaluate a knowledge-state vector:
+
+- **B** — live Powder+Liquid branches after target facts and already-known incompatibilities;
+- **A** — known-stable Powder+Liquid anchors among those branches;
+- **E(a)** — target-fact-consistent Essence continuations from each anchor;
+- **K** — complete already-known stable chains, which are a potential over-disclosure risk rather than unconditionally beneficial;
+- **D** — estimated meaningful new pair tests before a confident synthesis.
+
+Current working envelope:
+- ordinary puzzles should expose roughly **2–4** meaningful first-stage branches;
+- if a useful stable anchor exists, prefer an anchor with roughly **1–3** plausible continuations rather than exposing the whole field;
+- avoid presenting a complete known stable chain with zero target-specific context;
+- if the full field cannot satisfy the envelope with a small fact package, shrink the target-relevant candidate surface instead of stacking increasingly artificial clues.
+
+The exact no-anchor threshold and the test-count term **D** still require blind play. Prototype 19 suggests that 3×3×3 without an anchor may exceed comfortable working memory even when the mathematical branch count looks acceptable.
+
+#### Design consequence
+
+The real corpus supports the **adaptive information-budget** direction.
+
+The leading architecture hypothesis is now more concrete:
+
+\`visible target -> target-relevant candidate surface -> sparse target facts -> reuse actual learned compatibility graph -> direct adjacent microtests -> reasoned final synthesis\`
+
+Compatibility is the common experimental grammar; puzzle shaping supplies enough target-specific context to make that grammar actionable.
+
+Production architecture remains **BLOCKED**. The next blind test should specifically exercise a **no-preknown-stable-anchor** state whose starting information has been calibrated to a small branch envelope, because that is the main remaining core-UX uncertainty exposed by this screen.
