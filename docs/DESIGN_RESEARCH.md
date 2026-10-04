@@ -1731,3 +1731,24 @@ This strengthens rather than weakens the property-layer direction: provenance ca
 Status: **active**. Hidden formula, player-visible compendium, residue observations, aggregate-resonance rule, resource model and deterministic outcomes were precommitted before the player's first action in \`docs/prototypes/PROTOTYPE_13_STATE.md\`.
 
 Purpose: test the leading two-layer hypothesis on a larger, uneven candidate surface: inspectable world-grounded property evidence first, then one simple whole-mixture exact-match score. The substance compendium is explicitly external memory and may match visible properties, but must not perform new recipe deductions for the player.
+
+
+### Prototype 13 — observed completion
+
+Status: **completed blind play; explicit subjective evaluation still pending**.
+
+Play sequence:
+- all-Death reference -> 0/3;
+- White Powder substitution -> 0/3;
+- Graphite Powder substitution -> 1/3;
+- Life Extract substitution -> 2/3;
+- Order Solution substitution -> exact success.
+
+Observed findings:
+- The two-layer structure successfully gave the player a clear first research goal from the property layer.
+- The player independently invented a null-reference/control experiment and then used one-variable substitutions, strongly supporting the value of controlled-variable reasoning seen in Prototype 10.
+- The inspectable substance reference avoided any need to remember provenance/family facts from prior gameplay.
+- After the powder and Life position were resolved, the remaining liquid slot became straightforward sequential candidate search; the player identified this explicitly before the final test.
+- The player also raised reagent-burn cost as a likely gameplay problem because every logical test consumes a full three-component mixture and always includes an essence.
+
+Do not yet promote Prototype 13 to a selected architecture. Record the player's explicit evaluation before assigning retain/revise/reject disposition.
