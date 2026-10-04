@@ -247,3 +247,33 @@ Record:
 ## Integrity rule
 
 The hidden answers, profiles, reference signatures, outcomes and resource model above are immutable for this blind run. If any missing rule materially affects reasoning, stop and start a new prototype rather than improvising.
+
+
+## Live blind-play checkpoint — Stage 1, after first player action
+
+Player feedback before acting:
+- the term **related / родственные** was not immediately legible; the player reread the rule and struggled to form a mental model;
+- “the reference elixir's two components are related” was initially ambiguous: the player wondered whether they were related to each other or to the unknown target;
+- “matching relation state” also felt abstract/heavy;
+- the player correctly reconstructed the intended semantics only after effort;
+- action choice felt nearly forced: compare against the only reference or synthesize essentially at random.
+
+Clarification given by facilitator:
+- “related” means two ingredients **within the same formula** share at least one origin mark;
+- the known reference's two ingredients are related to each other;
+- comparison checks whether the unknown formula's pair has the same yes/no relation state as the reference.
+This is a rephrasing of the precommitted rule, not a new mechanic.
+
+Player action:
+- compare the unknown 2-slot target against reference R-2 for 1 Research Charge.
+
+Deterministic raw outcome:
+- **0 / 1 relation states match**.
+
+Resource state:
+- Research Charges remaining: 2 / 3.
+
+Journal:
+1. Compare target vs R-2 (reference pair RELATED) -> 0/1 relation states match.
+
+No fresh deduction has been performed by the facilitator. Await the player's interpretation.
