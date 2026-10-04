@@ -189,3 +189,20 @@ Record:
 ## Integrity rule
 
 All target facts, candidate properties, hidden formula, compatibility outcomes and resource limits are immutable for the blind run.
+
+
+## Live activation checkpoint
+
+Status: **active blind play; awaiting the player's first microtest choice**.
+
+Exact current player-facing state:
+- target: one unknown three-component product using Powder + Liquid + Essence;
+- visible candidates: the full precommitted 3×3×3 candidate pool above;
+- known target facts: Plant occurs in exactly one component; Corpse occurs in exactly one component;
+- known compatibility observations: **none**;
+- Research Charges: **4 / 4**;
+- completed actions: none;
+- journal: empty apart from the target facts and universal two-stage compatibility law;
+- legal next action: choose any one adjacent Powder+Liquid or Liquid+Essence pair for a microtest, costing 1 Research Charge; full synthesis is also legal if the player chooses to commit.
+
+No facilitator inference has been supplied. Hidden answer, properties, compatibility table, costs and resource limits remain unchanged from the precommit.
