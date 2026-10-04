@@ -2025,3 +2025,100 @@ Prototype 14 is a progression slice:
 3. a 3-slot main analogue tests whether reference selection plus aggregate origin evidence removes Prototype 13's late slot scan.
 
 Production mutation remains **BLOCKED**.
+
+
+### Prototype 14 — stopped after 2-slot tutorial
+
+Disposition: **STOP / REVISE. Do not run the precommitted 3-slot stage.**
+
+The 2-slot tutorial exposed a grammar failure before the main test:
+- “related” was not immediately legible;
+- the player naturally interpreted comparison as checking a **specific shared origin identity** (for example Corpse+Corpse), not an abstract boolean “has any overlap / has no overlap” state;
+- showing only a precomputed relation label for the known reference hid the known formula that was supposed to make accumulated knowledge useful;
+- the first action was nearly forced because the only meaningful choices were “compare against the sole reference” or “synthesize essentially at random”;
+- after the comparison, the player's natural strategy drifted toward matrix enumeration.
+
+This is not treated as fatigue-only evidence. The player produced a coherent alternative interpretation of the rule, demonstrating that the abstraction itself was under-specified from a natural player perspective.
+
+Retain:
+- cross-slot relations remain promising;
+- known formulas remain promising as accumulated analytical knowledge;
+- the strongest Prototype-13 moment remains **constructing a control/reference and reasoning from a controlled difference**.
+
+Reject from Prototype 14:
+- anonymous “RELATED / UNRELATED” relation state;
+- hidden structural-signature score against one reference;
+- references presented without their actual known composition.
+
+### Concrete-reference redesign pass
+
+Goal: preserve relational reasoning and known-formula value while making the object of comparison explicit and player-chosen.
+
+#### Variant 1 — one-reference named motif
+
+A known formula is shown in full. The player selects one concrete visible relation from it, e.g. “both selected components have botanical provenance”, and assays whether the target has that same named relation.
+
+Strengths:
+- matches the player's intuitive interpretation of Prototype 14;
+- very easy to explain;
+- known formula composition matters directly.
+
+Weakness:
+- mechanically close to buying a yes/no property clue;
+- with only one useful reference, action choice can again be forced.
+
+Disposition: **retain as a minimal/fallback assay, not preferred core**.
+
+#### Variant 2 — native same-principle relation
+
+Use the vanilla semantic families directly: two components either express the same alchemical principle across forms or different principles.
+
+Strengths:
+- much more native and legible than overlapping provenance tags;
+- no invented “related” vocabulary is required;
+- known formula composition makes the relation self-evident.
+
+Real-corpus screen:
+- equality-pattern information is much coarser than exposing the full semantic-family signature, so it is not automatically oracular;
+- however, the ordinary formula corpus is strongly dominated by “different principle” relations, particularly in two-slot formulas;
+- therefore this relation is too structurally imbalanced to serve as the universal discrimination grammar.
+
+Disposition: **retain as occasional clue/relation where useful, reject as universal core**.
+
+#### Variant 3 — paired positive/negative controls
+
+A concrete question is calibrated using **two already-known formulas**:
+- positive control visibly demonstrates the named relation;
+- negative control visibly lacks it;
+- the target is assayed under the same condition and reports which control behavior it matches.
+
+Example shape:
+- question: “Do the target's Powder and Liquid both have botanical provenance?”
+- known formula A visibly supplies a positive control;
+- known formula B visibly supplies a negative control;
+- target outcome is “matches positive” or “matches negative”.
+
+The known compositions are always shown. The player is never asked to trust a hidden summary like “reference is RELATED”.
+
+Strengths:
+- experiment semantics are explicit before paying the cost;
+- uses known formulas as real laboratory knowledge rather than passive unlock count;
+- naturally implements the player's successful null/control reasoning from Prototype 13;
+- several possible control questions can partition current hypotheses differently, creating a reason to choose one experiment over another;
+- one observation constrains two slots together.
+
+Risks:
+- it is still fundamentally a query system and may still feel like purchasing a clue;
+- suitable positive/negative controls may not always exist in the actual save state;
+- auto-selecting the best controls would turn the journal into a solver;
+- requiring the player to hunt manually through many known recipes could become bookkeeping.
+
+Disposition: **selected for the next bounded blind test** because it isolates the exact open question: does explicit experimental control turn a relation query into satisfying player-owned deduction?
+
+### Prototype 15 scope decision
+
+Do not force one grammar across progression merely for elegance.
+
+Known-recipe comparison is not guaranteed to be available for the very first 2-slot target. Prototype 15 therefore tests the paired-control idea directly as a **3-slot mid-progression mechanism**, where accumulated known formulas are plausible. The early reagent and first 2-slot experiences remain separate open design jobs.
+
+Production architecture remains **BLOCKED**.
