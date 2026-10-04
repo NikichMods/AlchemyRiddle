@@ -16,7 +16,7 @@ namespace NikichMods.AlchemyRiddle.Research
     {
         public const string Guid = "nikich.graveyardkeeper.alchemyriddle.progressionprobe";
         public const string Name = "AlchemyRiddle Progression Probe";
-        public const string Version = "0.1.0";
+        public const string Version = "0.1.1";
 
         private static readonly BindingFlags Inst =
             BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
@@ -61,7 +61,7 @@ namespace NikichMods.AlchemyRiddle.Research
 
         private void Awake()
         {
-            Logger.LogInfo("AlchemyRiddle Progression Probe 0.1.0 loaded. Read-only progression/FlowCanvas research probe.");
+            Logger.LogInfo("AlchemyRiddle Progression Probe 0.1.1 loaded. Read-only progression/FlowCanvas research probe.");
             StartCoroutine(DumpWhenReady());
         }
 
@@ -113,7 +113,7 @@ namespace NikichMods.AlchemyRiddle.Research
             Dictionary<string, object> craftById = IndexById(crafts);
             Dictionary<string, object> techById = IndexById(techs);
 
-            Logger.LogInfo("AR_PROGRESSION_BEGIN|probe=0.1.0|target=GraveyardKeeper-1.407|source=loaded-GameBalance+loaded-FlowCanvas");
+            Logger.LogInfo("AR_PROGRESSION_BEGIN|probe=0.1.1|target=GraveyardKeeper-1.407|source=loaded-GameBalance+loaded-FlowCanvas");
             Logger.LogInfo("AR_PROGRESSION_SOURCE|flow_parser_lineage=NikichMods/DayWheelQuestMarkers-1.1.14|decompile_reference=Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9");
             Logger.LogInfo("AR_PROGRESSION_POLICY|read_only=true|formula_rows_logged=0|exact_formula_ids_logged=0");
 
@@ -134,6 +134,9 @@ namespace NikichMods.AlchemyRiddle.Research
             int unlockRows = 0;
             int randomRows = 0;
             int focusGraphs = 0;
+            int techUnlockRows = 0;
+            int craftUnlockRows = 0;
+            int clothoAnswerRows = 0;
             var seenGraphs = new HashSet<string>(StringComparer.Ordinal);
 
             foreach (UnityEngine.Object rawController in controllers)
@@ -162,6 +165,13 @@ namespace NikichMods.AlchemyRiddle.Research
                     graphName, serialized, nodes, craftById, itemById, "UnlockAlchemy", false);
                 randomRows += DumpUnlockOccurrences(
                     graphName, serialized, nodes, craftById, itemById, "UnlockRandomAlchemy", true);
+                techUnlockRows += DumpUnlockTechNodes(
+                    graphName, serialized, nodes, techById, craftById, itemById);
+                craftUnlockRows += DumpUnlockCraftNodes(
+                    graphName, serialized, nodes, craftById, itemById);
+                if (graphName.IndexOf("npc_witch", StringComparison.OrdinalIgnoreCase) >= 0)
+                    clothoAnswerRows += DumpClothoAnswerData(
+                        graphName, serialized, nodes, connections, itemById);
 
                 if (IsFocusGraph(graphName, serialized))
                 {
@@ -177,10 +187,329 @@ namespace NikichMods.AlchemyRiddle.Research
                 "|scripted_unlock_rows=" + unlockRows.ToString(CultureInfo.InvariantCulture) +
                 "|random_unlock_rows=" + randomRows.ToString(CultureInfo.InvariantCulture) +
                 "|item_unlock_rows=" + itemUnlocks.ToString(CultureInfo.InvariantCulture) +
+                "|tech_unlock_rows=" + techUnlockRows.ToString(CultureInfo.InvariantCulture) +
+                "|craft_unlock_rows=" + craftUnlockRows.ToString(CultureInfo.InvariantCulture) +
+                "|clotho_answer_rows=" + clothoAnswerRows.ToString(CultureInfo.InvariantCulture) +
                 "|focus_graphs=" + focusGraphs.ToString(CultureInfo.InvariantCulture) +
                 "|formula_rows_logged=0");
 
-            Logger.LogInfo("AR_PROGRESSION_DONE|probe=0.1.0|formula_rows_logged=0");
+            Logger.LogInfo("AR_PROGRESSION_DONE|probe=0.1.1|formula_rows_logged=0");
+        }
+
+
+        private int DumpUnlockTechNodes(
+            string graphName,
+            string serialized,
+            Dictionary<string, Node> nodes,
+            Dictionary<string, object> techById,
+            Dictionary<string, object> craftById,
+            Dictionary<string, object> itemById)
+        {
+            int rows = 0;
+            foreach (Node node in nodes.Values)
+            {
+                if (!node.Type.EndsWith("Flow_UnlockTech", StringComparison.Ordinal))
+                    continue;
+
+                string techId =
+                    ReadNodeContent(serialized, node, "tech id") ??
+                    ReadNodeContent(serialized, node, "Tech id") ??
+                    ReadNodeContent(serialized, node, "tech_id") ??
+                    string.Empty;
+
+                bool silent;
+                bool showTech;
+                TryReadNodeBool(serialized, node, "silent?", out silent);
+                TryReadNodeBool(serialized, node, "show tech", out showTech);
+
+                object tech;
+                bool resolved = techById.TryGetValue(techId, out tech) && tech != null;
+                var targets = new List<string>();
+
+                if (resolved)
+                {
+                    IList craftIds = Get(tech, "crafts") as IList;
+                    if (craftIds != null)
+                    {
+                        foreach (object raw in craftIds)
+                        {
+                            string craftId = Str(raw);
+                            object craft;
+                            if (!craftById.TryGetValue(craftId, out craft) || craft == null)
+                                continue;
+                            if (!IsSuccessFormula(craft) || !IsPickerCompatible(craft, itemById))
+                                continue;
+
+                            string targetId = PrimaryOutput(craft);
+                            object targetDef;
+                            itemById.TryGetValue(targetId, out targetDef);
+                            string targetName = targetDef == null ? Localize(targetId) : ItemName(targetDef);
+                            int arity = ItemIds(Get(craft, "needs") as IList).Count();
+                            targets.Add(targetName + "~" + arity.ToString(CultureInfo.InvariantCulture));
+                        }
+                    }
+                }
+
+                Logger.LogInfo(
+                    "AR_PROGRESSION_TECH_UNLOCK" +
+                    "|graph=" + Esc(graphName) +
+                    "|node=" + Esc(node.Id) +
+                    "|tech_id=" + Esc(techId) +
+                    "|tech_name=" + Esc(Localize(techId)) +
+                    "|resolved=" + resolved.ToString().ToLowerInvariant() +
+                    "|silent=" + silent.ToString().ToLowerInvariant() +
+                    "|show_tech=" + showTech.ToString().ToLowerInvariant() +
+                    "|ordinary_mixed_targets=" + Esc(string.Join(";", targets.Distinct().ToArray())));
+                rows++;
+            }
+
+            return rows;
+        }
+
+        private int DumpUnlockCraftNodes(
+            string graphName,
+            string serialized,
+            Dictionary<string, Node> nodes,
+            Dictionary<string, object> craftById,
+            Dictionary<string, object> itemById)
+        {
+            int rows = 0;
+            foreach (Node node in nodes.Values)
+            {
+                if (!node.Type.EndsWith("Flow_UnlockCraft", StringComparison.Ordinal))
+                    continue;
+
+                string craftId =
+                    ReadNodeContent(serialized, node, "Craft id") ??
+                    ReadNodeContent(serialized, node, "craft id") ??
+                    string.Empty;
+
+                object craft;
+                bool resolved = craftById.TryGetValue(craftId, out craft) && craft != null;
+                bool ordinary = resolved && IsSuccessFormula(craft) && IsPickerCompatible(craft, itemById);
+
+                string targetName = string.Empty;
+                int arity = 0;
+                if (ordinary)
+                {
+                    string targetId = PrimaryOutput(craft);
+                    object targetDef;
+                    itemById.TryGetValue(targetId, out targetDef);
+                    targetName = targetDef == null ? Localize(targetId) : ItemName(targetDef);
+                    arity = ItemIds(Get(craft, "needs") as IList).Count();
+                }
+
+                Logger.LogInfo(
+                    "AR_PROGRESSION_CRAFT_UNLOCK" +
+                    "|graph=" + Esc(graphName) +
+                    "|node=" + Esc(node.Id) +
+                    "|resolved=" + resolved.ToString().ToLowerInvariant() +
+                    "|ordinary_mixed=" + ordinary.ToString().ToLowerInvariant() +
+                    "|target=" + Esc(targetName) +
+                    "|arity=" + arity.ToString(CultureInfo.InvariantCulture));
+                rows++;
+            }
+
+            return rows;
+        }
+
+        private int DumpClothoAnswerData(
+            string graphName,
+            string serialized,
+            Dictionary<string, Node> nodes,
+            List<Connection> connections,
+            Dictionary<string, object> itemById)
+        {
+            int rows = 0;
+            foreach (Node multi in nodes.Values)
+            {
+                if (!multi.Type.EndsWith("Flow_MultiAnswer", StringComparison.Ordinal))
+                    continue;
+
+                List<string> answers = ReadMultiAnswers(serialized, multi);
+                bool relevant = answers.Any(delegate(string a)
+                {
+                    return a == "сlotho_vat" ||
+                           a == "сlotho_pot" ||
+                           a == "@сlotho_intence" ||
+                           a == "@сlotho_bee" ||
+                           a == "сlotho_need_help" ||
+                           a == "@clotho_give_food" ||
+                           a == "@сlotho_merch" ||
+                           a == "@сlotho_merch_again";
+                });
+                if (!relevant)
+                    continue;
+
+                foreach (Connection answerLink in connections)
+                {
+                    if (answerLink.TargetNode != multi.Id)
+                        continue;
+
+                    int answerIndex = ParseAnswerPortIndex(answerLink.TargetPort);
+                    if (answerIndex < 0 || answerIndex >= answers.Count)
+                        continue;
+
+                    Node answerNode;
+                    if (!nodes.TryGetValue(answerLink.SourceNode, out answerNode) ||
+                        answerNode.Type.IndexOf("Flow_Answer", StringComparison.Ordinal) < 0)
+                        continue;
+
+                    string price = string.Empty;
+                    string gate = string.Empty;
+                    string reward = string.Empty;
+
+                    foreach (Connection valueLink in connections)
+                    {
+                        if (valueLink.TargetNode != answerNode.Id)
+                            continue;
+
+                        Node smartRes;
+                        if (!nodes.TryGetValue(valueLink.SourceNode, out smartRes) ||
+                            smartRes.Type.IndexOf("Flow_SmartRes", StringComparison.Ordinal) < 0)
+                            continue;
+
+                        string summary = DescribeSmartRes(serialized, smartRes, itemById);
+                        if (string.Equals(valueLink.TargetPort, "price", StringComparison.OrdinalIgnoreCase))
+                            price = summary;
+                        else if (string.Equals(valueLink.TargetPort, "lock", StringComparison.OrdinalIgnoreCase))
+                            gate = summary;
+                        else if (string.Equals(valueLink.TargetPort, "reward", StringComparison.OrdinalIgnoreCase))
+                            reward = summary;
+                    }
+
+                    Logger.LogInfo(
+                        "AR_PROGRESSION_CLOTHO_ANSWER" +
+                        "|graph=" + Esc(graphName) +
+                        "|multi=" + Esc(multi.Id) +
+                        "|index=" + answerIndex.ToString(CultureInfo.InvariantCulture) +
+                        "|answer=" + Esc(answers[answerIndex]) +
+                        "|price=" + Esc(price) +
+                        "|lock=" + Esc(gate) +
+                        "|reward=" + Esc(reward));
+                    rows++;
+                }
+            }
+
+            return rows;
+        }
+
+        private string DescribeSmartRes(
+            string serialized,
+            Node node,
+            Dictionary<string, object> itemById)
+        {
+            string type =
+                ReadNodeContent(serialized, node, "res_type") ??
+                ReadNodeContent(serialized, node, "Res type") ??
+                string.Empty;
+            string id =
+                ReadNodeContent(serialized, node, "id") ??
+                ReadNodeContent(serialized, node, "Id") ??
+                string.Empty;
+            float value;
+            bool hasValue = TryReadNodeNumber(serialized, node, "v", out value) ||
+                            TryReadNodeNumber(serialized, node, "V", out value);
+
+            object itemDef;
+            string name = itemById.TryGetValue(id, out itemDef) && itemDef != null
+                ? ItemName(itemDef)
+                : Localize(id);
+
+            return type + ":" + id + ":" + name + ":" +
+                   (hasValue ? value.ToString("0.###", CultureInfo.InvariantCulture) : "?");
+        }
+
+        private static int ParseAnswerPortIndex(string port)
+        {
+            if (string.IsNullOrEmpty(port))
+                return -1;
+
+            int hash = port.LastIndexOf('#');
+            if (hash < 0 || hash + 1 >= port.Length)
+                return -1;
+
+            int i = hash + 1;
+            int value = 0;
+            int digits = 0;
+            while (i < port.Length && char.IsDigit(port[i]))
+            {
+                value = value * 10 + (port[i] - '0');
+                digits++;
+                i++;
+            }
+
+            return digits == 0 ? -1 : value;
+        }
+
+        private static bool TryReadNodeBool(string serialized, Node node, string key, out bool value)
+        {
+            value = false;
+            if (node == null)
+                return false;
+
+            string window = NodeWindow(serialized, node, 3000);
+            string marker = "\"" + key + "\":{\"$content\":";
+            int pos = window.LastIndexOf(marker, StringComparison.Ordinal);
+            if (pos < 0)
+                return false;
+
+            pos += marker.Length;
+            while (pos < window.Length && char.IsWhiteSpace(window[pos]))
+                pos++;
+
+            if (window.IndexOf("true", pos, StringComparison.Ordinal) == pos)
+            {
+                value = true;
+                return true;
+            }
+            if (window.IndexOf("false", pos, StringComparison.Ordinal) == pos)
+            {
+                value = false;
+                return true;
+            }
+
+            return false;
+        }
+
+        private static bool TryReadNodeNumber(
+            string serialized,
+            Node node,
+            string key,
+            out float value)
+        {
+            value = 0f;
+            if (node == null)
+                return false;
+
+            string window = NodeWindow(serialized, node, 3000);
+            string marker = "\"" + key + "\":{\"$content\":";
+            int pos = window.LastIndexOf(marker, StringComparison.Ordinal);
+            if (pos < 0)
+                return false;
+
+            pos += marker.Length;
+            while (pos < window.Length && char.IsWhiteSpace(window[pos]))
+                pos++;
+
+            int end = pos;
+            while (end < window.Length)
+            {
+                char ch = window[end];
+                if (char.IsDigit(ch) || ch == '-' || ch == '+' || ch == '.' || ch == 'e' || ch == 'E')
+                {
+                    end++;
+                    continue;
+                }
+                break;
+            }
+
+            return end > pos &&
+                   float.TryParse(
+                       window.Substring(pos, end - pos),
+                       NumberStyles.Float,
+                       CultureInfo.InvariantCulture,
+                       out value);
         }
 
         private void DumpTechAnchor(Dictionary<string, object> techById, string techId)
