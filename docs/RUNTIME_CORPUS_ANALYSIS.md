@@ -132,6 +132,8 @@ Evidence identity:
 The probe evaluated the **34 ordinary picker-compatible mixed-alchemy outputs** and asked whether loaded vanilla data already contains an authored pre-formula exposure candidate without publishing target identities.
 
 Measured coverage:
+- **25 / 34** outputs are used by at least one authored downstream ordinary recipe or build blueprint;
+- **9 / 34** have no downstream craft/build consumer in the loaded balance;
 - **16 / 34** outputs have at least one visible Technology-owned downstream consumer recipe;
 - **5 / 34** have at least one downstream recipe/blueprint visible without a craft unlock;
 - the union of those structural channels covers **18 / 34** outputs;
@@ -152,6 +154,10 @@ The 8 currently uncovered anonymous targets are not one homogeneous class:
 
 - **7 / 8** are consumed by one or more authored build blueprints, but those blueprints are neither default-visible nor linked to a counted visible Technology craft unlock in this pass;
 - **1 / 8** has no ordinary downstream consumer, no blueprint consumer, no static vendor-stock candidate, and no direct visible `QuestDefinition` expression reference.
+
+Looking at downstream demand before visibility classification gives an even cleaner partition:
+- **25** outputs have an authored downstream craft/build consumer;
+- of the remaining **9**, **8** have a static vendor-stock candidate and **1** has neither measured demand nor vendor sample channel.
 
 Therefore **8 uncovered does not mean 8 proven impossible vanilla entry points**. The seven blueprint-only cases may be unlocked by non-Technology progression such as `UnlockCraft` from FlowCanvas/SmartExpression or another authored path. The one no-consumer/no-vendor case is the strongest current candidate for a genuinely missing natural target entry, but dialogue/FlowCanvas/sample channels remain unproven.
 
