@@ -135,3 +135,26 @@ Current state:
 - Research Charges: 4/4;
 - completed actions: none;
 - legal next action: any adjacent pair microtest or full synthesis.
+
+
+## Live checkpoint 1
+
+Player reasoning before the first microtest:
+- noticed that P1 Порошок коры is the only Powder candidate carrying Растение;
+- reasoned conditionally that if P1 belongs to the target, the Liquid cannot also carry Растение, so L2 Ржавый раствор is the target-compatible Liquid continuation;
+- reasoned that the Essence would then need to supply Труп without adding another Растение, leaving E1 Падальная эссенция or E2 Ископаемая эссенция as conditional continuations;
+- chose the concrete first-stage microtest P1 + L2.
+
+Player action:
+- microtest P1 Порошок коры + L2 Ржавый раствор.
+
+Raw outcome: **INCOMPATIBLE / НЕСОВМЕСТИМО**.
+
+Resources:
+- Research Charges remaining: **3 / 4**.
+
+Presentation note:
+- the player's client rendered the Растение and Труп glyphs but not the previous Насекомое and Минерал glyphs;
+- subsequent player-facing screens should use more broadly supported display glyphs (🐞 Насекомое, 💎 Минерал) without changing any prototype semantics.
+
+No facilitator deduction from the fresh result. Await player inference / next action.
