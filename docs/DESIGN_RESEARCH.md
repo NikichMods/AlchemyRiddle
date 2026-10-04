@@ -874,3 +874,28 @@ Blind-test integrity:
 - no outcome or rule was changed during play.
 
 Disposition: **retain for comparison; promising on clarity and deduction, but flag routinization/coordinate-isolation risk for post-play evaluation before promoting it as a leading architecture.**
+
+
+### Post-prototype-10 player preference / hybrid hypothesis
+
+Player evaluation of prototype 10:
+
+- It felt **better than the earlier straightforward enumeration-style prototypes**, even though the player also agreed that the natural strategy risks becoming algorithmic slot-by-slot isolation.
+- The clean aggregate rule was a positive: it was easy to understand, locally interpretable, and gave a stronger sense of deduction than simply trying candidates in sequence.
+- The current weakness becomes much more serious at realistic Graveyard Keeper candidate counts. With many eligible powders/liquids/essences, a pure “change one slot and watch the score” loop would require too much candidate scanning and would feel like systematic coordinate search.
+
+A promising **hypothesis to revisit after the current blind-prototype round**, not an accepted architecture, is to keep one very simple universal deduction rule (such as whole-mixture match/resonance) and add **one additional information layer grounded in legible in-world substance properties**.
+
+Desired character of that second layer:
+- materially reduce the candidate set rather than disclose an exact ingredient;
+- feel connected to Graveyard Keeper’s alchemy/material world instead of like an abstract solver UI;
+- preferably use properties that are intuitive from real-world expectations, vanilla presentation, or consistently taught in-game semantics;
+- examples of the desired *kind* of clue include visible color/family, ordered/symmetric behavior suggesting an “order”-like property, thermal/solubility/reaction behavior, smell/appearance, or another physically legible observation;
+- avoid arbitrary authored flavor text whose mechanical meaning exists only because the mod says so;
+- avoid turning the extra layer into a second hidden recipe book or a fixed one-click discriminator.
+
+The appeal is a two-layer structure:
+1. a simple global rule that supports clean deduction;
+2. a world-grounded clue that narrows which candidates are worth testing.
+
+Do not pivot the active research plan around this yet. Finish the remaining orthogonal blind prototypes first, then compare whether this hybrid deserves a dedicated prototype against the survivors.
