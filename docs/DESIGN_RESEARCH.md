@@ -777,3 +777,10 @@ Early findings before the first experiment resolves:
 - The same applies symmetrically to reagent-consuming tests. A player's rational experiment choice depends on the relative acquisition/replacement burden of target samples versus ordinary reagents.
 - Therefore prototype evaluation must not assume “sample expensive, reagents cheap” (or the reverse) without defining it. If actual Graveyard Keeper progression makes that relation target-dependent, the production design must either expose the relevant costs clearly or avoid relying on hidden acquisition economics to create meaningful choice.
 - Irrecoverable loss of the only research sample is undesirable for the intended broad-player experience. Current prototype assumption: depleted samples can be reacquired, though potentially at a nontrivial cost.
+
+
+Additional live finding after the first comparative test:
+
+- The prototype must present the currently legal research actions explicitly in the UI after every observation. Keeping the action set only in tutorial text or in the player's memory is unacceptable for the intended low-working-memory experience.
+- Recipe arity and unresolved slots must remain visually explicit. After confirming a two-reagent phenomenon inside a three-slot recipe problem, the player may naturally feel that they have an “obvious recipe candidate” even though the third slot is still completely unconstrained.
+- Therefore observations about a pair must not visually collapse into a near-complete recipe unless there is a justified rule connecting that observation to all remaining recipe slots. The UI should distinguish “confirmed phenomenon/relation” from “complete formula hypothesis.”
