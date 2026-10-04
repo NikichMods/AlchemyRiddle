@@ -116,6 +116,59 @@ That is a design opportunity, not an architecture decision.
 
 A normal rule system should not be distorted around the single success-classified definition that the normal alchemy picker cannot construct. Establish its role separately if the final supported scope would otherwise include it.
 
+
+## Pre-formula exposure audit — Probe 0.2.0
+
+Status: **accepted runtime research evidence; coverage is partial rather than a full progression proof**.
+
+Evidence identity:
+- Graveyard Keeper **1.407**, Steam, BuildGUID `f96cf41d85547064385631ec4c2e6977`;
+- BepInEx **5.4.23.5**;
+- `AlchemyRiddle Corpus Probe 0.2.0`;
+- probe source: `research/vanilla-alchemy-model@ed295d6ba1dd2b29f20ff265623d594c3c7b773f`;
+- CI build run: `37164012120`, conclusion **success**;
+- DLL SHA-256 `29a6cf946459761c1e3b8d61a7b82338ec1f4b943826b6eb5dadccd5f0ad15e6`.
+
+The probe evaluated the **34 ordinary picker-compatible mixed-alchemy outputs** and asked whether loaded vanilla data already contains an authored pre-formula exposure candidate without publishing target identities.
+
+Measured coverage:
+- **16 / 34** outputs have at least one visible Technology-owned downstream consumer recipe;
+- **5 / 34** have at least one downstream recipe/blueprint visible without a craft unlock;
+- the union of those structural channels covers **18 / 34** outputs;
+- **17 / 34** have at least one static vendor-stock candidate;
+- structural and vendor candidates together cover **26 / 34** outputs;
+- **8 / 34** are not covered by the measured channels;
+- direct exact quoted item-ID references in visible serialized `QuestDefinition` expressions were **0 / 34**.
+
+Overlap structure:
+- 9 outputs have both a structural entry and a vendor-stock candidate;
+- 9 have a structural entry but no vendor candidate;
+- 8 have a vendor candidate but no structural entry;
+- 8 have neither measured entry type.
+
+### Uncovered-output structure
+
+The 8 currently uncovered anonymous targets are not one homogeneous class:
+
+- **7 / 8** are consumed by one or more authored build blueprints, but those blueprints are neither default-visible nor linked to a counted visible Technology craft unlock in this pass;
+- **1 / 8** has no ordinary downstream consumer, no blueprint consumer, no static vendor-stock candidate, and no direct visible `QuestDefinition` expression reference.
+
+Therefore **8 uncovered does not mean 8 proven impossible vanilla entry points**. The seven blueprint-only cases may be unlocked by non-Technology progression such as `UnlockCraft` from FlowCanvas/SmartExpression or another authored path. The one no-consumer/no-vendor case is the strongest current candidate for a genuinely missing natural target entry, but dialogue/FlowCanvas/sample channels remain unproven.
+
+### Interpretation limits
+
+- A static vendor-stock candidate proves only that the loaded vendor/item rules can support a sample channel; it does **not** prove the exact progression moment at which the player can first see or buy that product.
+- The zero `QuestDefinition` count is intentionally narrow. It does not inspect arbitrary FlowCanvas/dialogue graph content and must not be reported as “no quest/dialogue mentions”.
+- This pass measures **channel existence**, not exact chronological first exposure.
+- Blueprint consumer presence by itself does not establish visibility; authored `needs_unlock` blueprints require their real unlock source to be classified.
+
+### Product consequence
+
+The “do not reveal a global catalog; create a research lead when vanilla first gives the player a reason to know the product” direction is structurally plausible for a majority of the ordinary corpus. A universal implementation still needs a fallback or additional vanilla-channel discovery for the unresolved cases.
+
+The immediate research priority is narrower than another whole-corpus scan: classify the unlock/visibility source for the **seven blueprint-only uncovered targets**, then investigate the **single no-consumer/no-vendor target** separately.
+
+
 ## What remains open
 
 Before production architecture is selected:
