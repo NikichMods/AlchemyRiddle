@@ -899,3 +899,10 @@ The appeal is a two-layer structure:
 2. a world-grounded clue that narrows which candidates are worth testing.
 
 Do not pivot the active research plan around this yet. Finish the remaining orthogonal blind prototypes first, then compare whether this hybrid deserves a dedicated prototype against the survivors.
+
+
+### Prototype 11 — active blind test
+
+Status: **active**. Hidden formula, known-reference library, deterministic comparison outcomes, costs and stopping rules were precommitted before the player's first action in `docs/prototypes/PROTOTYPE_11_STATE.md`.
+
+Purpose: test whether reasoning from already-known recipes feels more naturally alchemical and less like slot-by-slot probing than freely constructed aggregate tests.
