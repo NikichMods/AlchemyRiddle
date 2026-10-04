@@ -2297,3 +2297,19 @@ Current leading architecture hypothesis:
 **goal-first target research + substance compendium + adjacent pair compatibility + sparse target-specific coarse facts + journaled evidence**.
 
 This is still a hypothesis, not selected production architecture. Production mutation remains **BLOCKED**.
+
+
+### Prototype 17 — sparse compatibility blind test
+
+Status: **precommitted; blind play ready**.
+
+Prototype 17 keeps the direct adjacent compatibility primitive but corrects Prototype 16's information-dosing failure:
+- exactly one useful prior compatibility is pre-seeded;
+- initial target facts leave two viable Powder+Liquid branches and two Essence continuations;
+- the player may microtest any adjacent pair, but the journal does not expose a pair checklist or candidate enumeration;
+- two Research Charges are enough for a clean hypothesis-driven path but insufficient to brute-force the matrix;
+- the intended test is whether the player naturally chooses a rival branch to falsify, then resolves the Essence through a second concrete pair test.
+
+Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_17_STATE.md`.
+
+Production architecture remains **BLOCKED**.
