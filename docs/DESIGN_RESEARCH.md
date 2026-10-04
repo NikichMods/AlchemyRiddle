@@ -937,3 +937,10 @@ Blind-test integrity:
 - no rule or result was adapted after player choices.
 
 Disposition: **retain as promising for world fit and clarity, but prototype 11 is insufficient evidence for experiment-choice quality.** A stronger future version would need a richer reference library where several comparisons are legal but differ meaningfully in expected information, without requiring the player to compute a large optimization problem.
+
+
+### Prototype 12 — active blind test
+
+Status: **active**. Hidden formula, target clue, goo-family system, deterministic target-bound failure outcomes, costs and stopping rules were precommitted before the player's first action in `docs/prototypes/PROTOTYPE_12_STATE.md`.
+
+Purpose: test whether a minimal target-specific anchor can make vanilla-style goo evidence into a useful target-directed puzzle without turning it into an answer oracle.
