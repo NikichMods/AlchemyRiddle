@@ -2369,3 +2369,21 @@ Prototype 18 keeps the Prototype-17 compatibility core but makes the attractive 
 Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_18_STATE.md`.
 
 Production architecture remains BLOCKED.
+
+
+### Prototype 18 — final evaluation
+
+Player rating for the core rose slightly to approximately **4++ / 5**.
+
+Accepted finding:
+- INCOMPATIBLE is not experienced as a wasted resource when the tested pair follows from a real hypothesis;
+- negative evidence can improve the solve by killing an obvious branch and forcing a clean reinterpretation of the remaining constraints;
+- the player explicitly preferred this over an overly trivial happy-path solve.
+
+The compatibility core has now passed both:
+1. a small happy path (Prototype 17);
+2. a small unhappy path with branch revision (Prototype 18).
+
+Next core evidence target is **scaling robustness**, not another binary failure case. A follow-up prototype should use a broader candidate pool and preserve simple local observations while testing whether the player can still choose informative experiments without drifting into pair-matrix completion.
+
+UI, economy and production integration remain separate open questions. Production architecture remains BLOCKED.
