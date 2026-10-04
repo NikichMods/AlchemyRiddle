@@ -1903,3 +1903,89 @@ Current preference:
 3. keep **Family A** as a simple control because it proves whether cross-slot feedback alone is enough even without semantic grounding.
 
 A Prototype 14 candidate should not be precommitted until its experiment-choice problem is solved. In particular, a menu of arbitrary relation assays is not acceptable merely because the resulting clues are logically useful.
+
+
+## Goal-first research projects — retained fallback / onboarding family
+
+Accepted exploratory design family after the cross-slot pass.
+
+### Core idea
+
+Even if the final product retains a stronger deductive puzzle for formula discovery, Graveyard Keeper's reagent-acquisition layer can be made substantially more coherent by reversing the direction of research:
+
+\`need reagent R -> create research topic R -> pay research cost / perform research work -> learn authored source routes for R -> obtain/study/process a suitable source\`
+
+This contrasts with the vanilla-feeling direction:
+
+\`find source item S -> spend faith to Study S without knowing why -> unlock decomposition -> process S -> discover which reagent appeared\`.
+
+The goal-first flow removes the major targeting gap. It turns research into a player-chosen project anchored in an actual need.
+
+### Representative interaction
+
+A journal/research-station entry may say:
+- required reagent: known by name, production route unknown;
+- action: “Research preparation of R”;
+- cost may use Graveyard Keeper-native research currencies such as faith, paper, ink or energy/time;
+- execution may use the ordinary hold-to-work/progress-bar interaction;
+- result: the journal records the valid source item(s) / preparation station(s) for that reagent.
+
+The exact cost and whether all sources or only one practical source are revealed remain open.
+
+### Relationship to vanilla Study
+
+This is **not** just tooltip enrichment. If it replaces source-first Study gating, it materially changes vanilla progression semantics:
+- today the source item is studied first and then its decomposition route becomes available;
+- the proposed direction may instead research the desired reagent first and then reveal and/or authorize a source route.
+
+Therefore production adoption would require an explicit product decision because progression/economy are preserved by default.
+
+Possible implementations to compare later:
+1. **informational only** — target research reveals source routes, but vanilla Study is still required before decomposition;
+2. **target research substitutes for Study** — completing the reagent project marks relevant decomposition knowledge as learned;
+3. **hybrid** — research identifies sources, then studying one selected source completes practical unlock.
+
+The hybrid may preserve the fantasy of examining a material while eliminating blind Study.
+
+### Design classification
+
+If research directly reveals how to make a reagent or even a finished formula, this is **guided disclosure (quality level 2)** rather than deductive discovery.
+
+That is acceptable as:
+- an onboarding layer;
+- a reagent-acquisition subsystem;
+- a deliberately simple fallback architecture if the stronger puzzle system fails;
+- a solution for early scripted cases where the game already names one or more formula components and the remaining problem is only “how do I obtain this reagent?”
+
+It should not be mislabeled as the level-3/4 deductive target.
+
+### Progression hypothesis
+
+Do not assume two-slot and three-slot alchemy require entirely different systems yet.
+
+A promising difficulty ladder is:
+1. **goal-first reagent research** — teaches target-driven investigation with almost no deduction;
+2. **two-component formula discovery** — first short micro-deductions using the same journal/compendium and possibly known-formula comparison;
+3. **three-component formula discovery** — introduces the richer cross-slot / relational grammar only when the player already understands the information system.
+
+This could make the puzzle system itself part of progression instead of exposing the full rule set at once.
+
+### Why two-slot recipes deserve separate evaluation, not automatic separate architecture
+
+Existing corpus analysis already showed that ordinary two-slot formulas have much stronger nearest-known-formula overlap than ordinary three-slot formulas. This makes two-slot recipes especially promising for:
+- simple analogy with an already-known formula;
+- one-relation comparisons;
+- one known/strongly constrained component plus deduction of the other;
+- tutorial cases for the compendium/reference system.
+
+Therefore Prototype 14 selection should consider the player's **progression stage and recipe arity**, not only one generic three-slot end-state puzzle.
+
+### Simplest-mod fallback
+
+A complete non-puzzle fallback can now be stated clearly:
+
+\`visible need for product/reagent X -> journal research project -> pay bounded research resources/work -> reveal the next required production knowledge -> craft it normally\`.
+
+This would replace blind discovery with a coherent chain of research/crafting/resource tasks that already fits Graveyard Keeper's general gameplay grammar.
+
+It would not satisfy the project's ideal “I deduced the formula” goal, but it is a credible minimum viable redesign and should remain available as the explicit level-2 fallback rather than being rediscovered later.
