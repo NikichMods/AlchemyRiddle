@@ -2580,3 +2580,14 @@ Purpose: close the main remaining core-UX uncertainty from Prototype 19 and the 
 The hidden facilitator model was precommitted before the first player choice. Current live state, resources and exact next interaction point are persisted in `docs/prototypes/PROTOTYPE_20_STATE.md`.
 
 This test is player-cognition evidence only. It does not establish how production candidate surfaces are selected, and production architecture remains **BLOCKED**.
+
+
+### Prototype 20R — Russian-localized restart
+
+The first Prototype 20 activation was aborted before any player action because the Russian interface still exposed English reagent display names. No experimental evidence was collected from that run.
+
+Prototype 20R restarts the identical no-anchor cognitive test with Russian player-facing reagent names precommitted in advance. Hidden compatibility structure, target facts, resource budget and evaluation purpose are unchanged.
+
+Canonical live state: `docs/prototypes/PROTOTYPE_20R_STATE.md`.
+
+Production architecture remains **BLOCKED**.
