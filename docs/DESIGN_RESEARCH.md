@@ -1333,3 +1333,25 @@ Expected result after the returned runtime log:
 - decide whether property-gated resonance / property-guided known-recipe comparison deserve the next blind prototypes.
 
 No production behavior is READY. This is research-only work.
+
+
+### Property/provenance probe 0.3.0 — runtime candidate
+
+Status: **compiled research candidate; runtime evidence pending**.
+
+Identity:
+- research branch: `research/vanilla-alchemy-model`;
+- source: `163f07939701cff70b3a90565e125c0107d245a9`;
+- GitHub Actions run: `37207458475`, conclusion **success**;
+- handoff DLL: `AlchemyCorpusProbe-0.3.0.dll`;
+- DLL SHA-256: `981ffda9dce0b223cfcb993d376762d81e4d1e7063b321f3c2e5c500be121af8`;
+- CI artifact ZIP SHA-256: `d4db4bd4b3e7d7a47c6ebc88b7accaeb8401ab06f360e288c211081fd9d31d48`.
+
+The probe is research-only and read-only. It emits no `AR_RECIPE` formula rows; it captures bounded `AR_PROPERTY_*` presentation/provenance records for the 35 ordinary success-corpus ingredients plus non-formula target context for the 34 ordinary outputs.
+
+Acceptance evidence still required:
+- one installed-runtime launch on Graveyard Keeper 1.407;
+- successful `AR_PROPERTY_BEGIN ... AR_PROPERTY_DONE` completion without `AR_PROPERTY_ERROR`;
+- returned full BepInEx log for property/provenance analysis.
+
+No production behavior becomes READY from this candidate.
