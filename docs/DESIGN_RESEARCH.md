@@ -1752,3 +1752,32 @@ Observed findings:
 - The player also raised reagent-burn cost as a likely gameplay problem because every logical test consumes a full three-component mixture and always includes an essence.
 
 Do not yet promote Prototype 13 to a selected architecture. Record the player's explicit evaluation before assigning retain/revise/reject disposition.
+
+
+### Prototype 13 — final evaluation
+
+Player rating: approximately **2 / 5**.
+
+Disposition: **REVISE; retain components, reject the tested loop as the final architecture.**
+
+The prototype is a meaningful improvement over vanilla because the player always had a rational next action and never needed external memory or a wiki. However, the optimal path still decomposed into coordinate search:
+1. establish a null/control reference;
+2. enumerate the small powder domain;
+3. use the Life-family invariant to localize the Life component;
+4. enumerate the remaining liquid domain.
+
+The strongest positive moment was not the resonance score itself but the player's independent decision to create a **null reference** and then reason from controlled substitutions.
+
+The substance compendium was accepted as a natural in-game support surface. It should remain a standing product requirement if future puzzles use provenance/family facts.
+
+Experiment cost did not invalidate the prototype, but full-mixture consumption on every information-gathering action is a real friction. Possible future mitigation may include a dedicated research consumable / testing medium that amortizes vanilla reagents into multiple experiment charges. This is an economy/UX question and should not be used to excuse a weak deduction loop.
+
+Design requirement opened by Prototype 13:
+**the next candidate must create at least one cross-slot or relational deduction that can resolve late-stage ambiguity without simply scanning the last remaining slot.**
+
+Prototype 10 comparison recovered from prior evidence:
+- Prototype 10 tested whole-mixture aggregate resonance alone.
+- The player used controlled one-variable changes and solved the case in three paid tests after calibration.
+- It was praised for clarity and low working-memory load, but already showed the same structural risk: the natural strategy is coordinate isolation / slot-by-slot scanning.
+
+Therefore Prototype 13 confirms rather than fixes Prototype 10's main weakness. Property gating improves orientation and scale, but does not by itself make aggregate resonance non-enumerative.
