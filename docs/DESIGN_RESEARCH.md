@@ -2337,3 +2337,24 @@ Important consequence:
 This is compatible with the product contract because final synthesis may remain the decisive hypothesis check when the remaining uncertainty is small and reasoned, rather than blind enumeration.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 17 — final evaluation
+
+Player rating for the core loop: **~4+ / 5**.
+
+Accepted core:
+- sparse prior compatibility + one concrete microtest + reasoned hypothesis + real synthesis is the strongest play pattern tested so far;
+- each step can remain individually simple while the combined reasoning still feels earned;
+- compatibility is now the leading candidate for the experimental core.
+
+Important caveat:
+- Prototype 17 exercised only the **happy path**. The selected partial chain extended successfully and the first real synthesis produced the target.
+- This is insufficient evidence for production selection.
+
+Next evidence target:
+**unhappy-path robustness** — deliberately test a case where an apparently sensible compatibility experiment returns INCOMPATIBLE, forcing the player to revise the branch and still reach a short, satisfying deduction without matrix completion or punitive resource failure.
+
+Keep UI/economy questions separate for this next prototype. First prove that the reasoning loop survives a negative experimental result.
+
+Production architecture remains **BLOCKED**.
