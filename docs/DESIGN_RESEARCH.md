@@ -1724,3 +1724,10 @@ Working product requirement:
 - the reference surface is external memory, not an auto-solver: it may show facts and matching known substances, but must not infer the target formula or mark newly deduced recipe constraints before the player establishes them.
 
 This strengthens rather than weakens the property-layer direction: provenance can be used as a puzzle language only if the information system makes that language inspectable and self-contained.
+
+
+### Prototype 13 — active blind test
+
+Status: **active**. Hidden formula, player-visible compendium, residue observations, aggregate-resonance rule, resource model and deterministic outcomes were precommitted before the player's first action in \`docs/prototypes/PROTOTYPE_13_STATE.md\`.
+
+Purpose: test the leading two-layer hypothesis on a larger, uneven candidate surface: inspectable world-grounded property evidence first, then one simple whole-mixture exact-match score. The substance compendium is explicitly external memory and may match visible properties, but must not perform new recipe deductions for the player.
