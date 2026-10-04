@@ -183,3 +183,16 @@ Observed design finding:
 - Prototype 16 therefore does not yet test whether choosing a compatibility microtest is satisfying, because the player rationally bypassed the experiment layer.
 
 Subjective evaluation pending.
+
+
+## Player subjective evaluation
+
+Player reaction to the **pair compatibility** primitive was strongly positive:
+- described as simple and immediately understandable;
+- seen as potentially complex/deep despite the simple rule;
+- judged highly promising as a direction;
+- the main concern is no longer the primitive itself, but execution quality around it: information dosing, experiment choice, progression integration and final deduction structure.
+
+Final disposition for Prototype 16: **PROMISING / ITERATE**.
+
+Do not treat the easy solve as evidence that compatibility is too weak; the test was underconstrained because two pre-seeded stable edges formed a complete candidate path. The next iteration must preserve the primitive while fixing the information economy.
