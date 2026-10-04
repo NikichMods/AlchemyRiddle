@@ -2422,3 +2422,34 @@ The visible field expanded to 3x3x3, but the player did not begin pair-matrix co
 This is positive evidence that a bounded 3x3x3 field can remain lightweight on a favorable branch. It does not yet prove robustness when the first continuation fails or when several viable branches survive longer.
 
 Production architecture remains BLOCKED.
+
+
+### Prototype 19 — final evaluation
+
+Player rating remains approximately **4+ / 5**.
+
+Scaling result:
+- 3x3x3 is viable on a favorable branch but noticeably heavier in working memory than 2x2x2;
+- the decisive usability factor was not raw reagent count alone, but whether the initial evidence exposed a **promising stable branch** that allowed most of the field to be ignored;
+- without such an anchor, the player expects the same field to become difficult enough to require notes.
+
+### Adaptive information-budget principle
+
+Accepted design direction:
+- do not define puzzle difficulty by a fixed number of clues or a fixed candidate-pool size;
+- instead calibrate each target by the **residual actionable hypothesis space** after all legitimately available starting evidence is applied;
+- prior learned compatibility and target-specific facts are interchangeable only in the sense that both reduce uncertainty; their quantities should therefore be adaptive, not fixed.
+
+A practical pre-generation / authoring screen should evaluate at least:
+1. how many candidate formulas remain after starting evidence;
+2. how many distinct first-stage branches remain (Powder+Liquid branches), because this is closer to player working-memory load than raw formula count;
+3. whether at least one available pair test meaningfully partitions or falsifies a current branch;
+4. the worst-case number of live branches after one sensible experiment;
+5. whether a short path exists to a confident synthesis without filling a compatibility matrix.
+
+Working acceptance target to test next:
+- expose enough starting evidence that the player faces roughly **2–4 meaningful branches**, not dozens of raw combinations;
+- at least one natural experiment should reduce or eliminate a branch substantially;
+- if a target fails this screen, add another coarse target fact, expose one prior compatibility, or shrink the target-relevant candidate pool.
+
+This makes bounded/semi-authored puzzle shaping an explicit feature, not a fallback. Production architecture remains BLOCKED.
