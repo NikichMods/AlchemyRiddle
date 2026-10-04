@@ -2398,3 +2398,16 @@ Accepted product/design clarification before Prototype 19:
 - therefore scalability testing is diagnostic: find the comfortable complexity envelope, not prove unbounded scaling.
 
 Prototype 19 should test a broader field than 17/18, but failure at that scale would justify constraining the field rather than rejecting pair compatibility outright.
+
+
+### Prototype 19 — bounded 3x3x3 scaling test
+
+Status: precommitted; blind-play ready.
+
+Prototype 19 expands the visible candidate field to three Powders, three Liquids and three Essences while preserving the same adjacent-compatibility grammar. Two old pair observations seed prior experience; three Research Charges provide one recovery slot beyond the clean two-test route.
+
+The test is diagnostic only: if this scale becomes bookkeeping-heavy, the accepted response is to bound target-relevant candidate spaces rather than require global scaling.
+
+Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_19_STATE.md`.
+
+Production architecture remains BLOCKED.
