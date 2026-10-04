@@ -2270,3 +2270,30 @@ Interpretation:
 - this is not evidence that the primitive itself failed, because the experiment-selection layer was bypassed rather than exercised.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 16 — final evaluation
+
+Player disposition: **strongly promising**.
+
+Accepted:
+- direct pair compatibility (`stable / separates`) is the clearest experimental grammar tested so far;
+- it feels like a property of substances rather than a purchased clue about the target;
+- learned compatibility can persist as genuine accumulated alchemical experience;
+- the rule is simple enough for onboarding but can support multi-step deduction later.
+
+Critical design constraint:
+- compatibility knowledge must be **dosed**, not dumped. If both adjacent edges of a candidate 3-slot formula are already known, the journal effectively reveals a ready path;
+- therefore previously learned compatibility is useful context, not a completeness table.
+
+Next design target:
+- retain exactly one or zero pre-known useful edges;
+- ensure at least two plausible branches remain after initial target evidence;
+- make one new pair test genuinely discriminating rather than matrix-filling;
+- aim for a Prototype-15-quality final intersection where compatibility facts combine with one or two coarse target properties and force a unique formula;
+- avoid exposing non-adjacent Powder–Essence compatibility.
+
+Current leading architecture hypothesis:
+**goal-first target research + substance compendium + adjacent pair compatibility + sparse target-specific coarse facts + journaled evidence**.
+
+This is still a hypothesis, not selected production architecture. Production mutation remains **BLOCKED**.
