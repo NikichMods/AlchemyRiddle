@@ -171,3 +171,27 @@ Residual question is now narrowed to:
 3. any direct \`Flow_UnlockCraft\` channels that unlock ordinary mixed-alchemy crafts.
 
 A 0.1.1 probe, if required, should log only those bounded fields and no exact ingredient formulas.
+
+
+## Progression Probe 0.1.1 — runtime candidate
+
+Status: **built; runtime evidence pending**.
+
+0.1.1 exists only to close the bounded residual left by accepted 0.1.0:
+- enumerate \`Flow_UnlockTech\` and classify any ordinary mixed-alchemy targets owned by the unlocked tech;
+- enumerate \`Flow_UnlockCraft\` and classify direct ordinary mixed-alchemy craft unlocks;
+- record exact SmartRes price/lock/reward semantics for the early Clotho answer sets, including the menu answer they attach to;
+- preserve the spoiler boundary by logging target names/arity only, never ingredient formulas.
+
+Candidate identity:
+- source branch: \`research/vanilla-alchemy-model\`;
+- exact source / workflow head: \`18d4ad9ffc10b7a9e83d9178514f817a80277c58\`;
+- CI run: \`37234084616\`, conclusion **success**;
+- artifact ID: \`11314956708\`;
+- handoff DLL: \`AlchemyProgressionProbe-0.1.1.dll\`;
+- target: Graveyard Keeper 1.407.
+
+Requested runtime action:
+- replace 0.1.0 with this exact DLL;
+- load any existing save into the game world once;
+- return \`LogOutput.log\`.
