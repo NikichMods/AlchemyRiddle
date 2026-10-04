@@ -167,6 +167,38 @@ Important mismatch: Graveyard Keeper's success formulas are authored sparse tupl
 No architecture is selected. The next design step remains paper-prototyping several complete player loops using different subsets of these principles.
 
 
+## Entry-point hypothesis — 2026-10-04
+
+Status: **accepted direction for research; corpus coverage still open**.
+
+Do not expose a global catalog of all undiscovered alchemical products. AlchemyRiddle should remain silent about a product until vanilla gameplay has already given the player a legitimate reason to know that product exists.
+
+Working knowledge states:
+
+- **unknown product** — no AlchemyRiddle research entry;
+- **known existence / open lead** — vanilla has exposed the product or created a visible need for it, but the formula is unknown;
+- **known recipe** — the formula has been completed/unlocked through the normal game path.
+
+Candidate vanilla lead sources include:
+
+- a Technology-unlocked downstream recipe that becomes visible at its workstation and requires an unknown alchemical product;
+- an already-visible ordinary recipe or blueprint that requires the product;
+- acquiring or being able to acquire a physical sample;
+- a quest/dialogue/progression requirement or mention.
+
+Technology-tree presentation must not be conflated with workstation recipe presentation: the tree can unlock a recipe without showing its ingredient needs; the research lead may arise when that unlocked recipe is later viewed at the relevant station.
+
+A future persistent research surface may also preserve **why** a lead exists (for example, needed by a known recipe/task or obtained as a sample), which helps both targetability and continuity without revealing the hidden formula.
+
+### Open coverage question
+
+For the **34 ordinary picker-compatible mixed-alchemy outputs**, determine how many have at least one natural pre-formula vanilla exposure channel and classify those channels without publishing item/formula identities.
+
+The first pass intentionally measures channel existence/coverage rather than reconstructing the exact chronological first exposure across the whole progression graph.
+
+A read-only anonymized loaded-`GameBalance` probe 0.2.0 has been prepared on `research/vanilla-alchemy-model` for this question. Runtime evidence is pending.
+
+
 ## Current competitor / overlap audit
 
 Checked current public descriptions and the current source tree rather than relying on remembered behavior.
