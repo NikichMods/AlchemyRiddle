@@ -184,3 +184,16 @@ Raw outcome: **STABLE**.
 Resources: 2 / 3 Research Charges remain.
 
 No facilitator deduction; await player inference.
+
+
+## Live completion
+
+After the first new microtest returned STABLE, the player rechecked the target facts and chose immediate final synthesis rather than spending more charges.
+
+Final synthesis: Hive Powder + Nectar Solution + Carrion Essence.
+
+Deterministic outcome: **SUCCESS**.
+
+Research Charges used: 1 / 3.
+
+Observed scaling note: even with a visible 3x3x3 candidate field, the player followed one known stable branch and one continuation test, then committed to synthesis without matrix completion. Subjective evaluation pending.
