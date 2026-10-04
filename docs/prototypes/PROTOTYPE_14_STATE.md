@@ -308,3 +308,32 @@ Journal:
 2. Synthesis Growth Powder + Root Solution -> failure.
 
 Do not identify the remaining unique formula for the player. Await their interpretation.
+
+
+## Live blind-play checkpoint — Stage 1 completion
+
+Player clarified their interpretation of the comparison rule:
+- they understood the reference as carrying a **specific shared origin identity** (for example Corpse+Corpse);
+- they therefore interpreted 0/1 as excluding that specific shared-origin pattern only, while still allowing some different shared-origin pattern such as Plant+Plant;
+- this differs materially from the precommitted rule, where comparison checks only the boolean relation state RELATED vs UNRELATED, independent of *which* origin mark creates the overlap.
+
+This is strong evidence that the abstraction “same relation state” is not naturally legible from the current wording / mental model. The player constructed a more specific and arguably more intuitive semantic than the intended one.
+
+Player next action:
+- synthesize Growth Powder {Plant} + Swarm Solution {Insect}.
+
+Deterministic raw outcome:
+- **exact success**.
+
+Stage 1 resolution:
+- fictional 2-slot target obtained;
+- meaningful actions: 1 comparison, 2 synthesis attempts;
+- Research Charges remaining: 2 / 3.
+
+Observed Stage 1 design findings:
+- the reference comparison was initially experienced as nearly information-free because the player interpreted it as matching a specific shared property rather than generic overlap state;
+- showing only a precomputed reference relation label hid the known formula knowledge that was supposed to make the reference meaningful;
+- the player naturally drifted toward candidate-pair enumeration;
+- after clarification, the intended boolean relation rule can eliminate a class of pairs, but the representation is not yet intuitive enough to trust as a tutorial grammar.
+
+Do not yet assign final Prototype 14 disposition; Stage 2 remains the main 3-slot test.
