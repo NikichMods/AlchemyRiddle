@@ -562,3 +562,206 @@ The strongest ingredient discovered so far is the **reference-sample / concrete-
 The strongest unresolved problem is **repeatability without routinization**: how to give each target a tiny distinct inference without introducing a heavy formal rule system or reverting to candidate enumeration.
 
 No production architecture is selected. Production mutation remains **BLOCKED**.
+
+
+## Broad design-space survey and corpus screening — 2026-10-04
+
+Status: **accepted research/design checkpoint; no production architecture selected**.
+
+This pass deliberately widened the solution space after paper-prototype round 2 instead of iterating immediately on the reference-sample idea. The purpose was to prevent the strongest current prototype ingredient from becoming architecture by momentum.
+
+### Frozen target experience for this survey
+
+The candidate core should aim for a short micro-deduction, roughly on the order of a few minutes rather than a standalone logic-game session:
+
+- one currently relevant thought/rule at a time;
+- a natural target-specific starting observation;
+- the player can predict what an experiment might distinguish before paying for it;
+- concrete, preferably diegetic/alchemical feedback;
+- a meaningful choice of experiment rather than a forced information button;
+- persistent external memory with low rereading burden;
+- target-specific variation so solving the general system once does not routinize every later recipe;
+- a justified player-owned hypothesis before final synthesis when possible;
+- final vanilla synthesis remains preferred evidence, but direct resolution is allowed after genuine logical exhaustion.
+
+### Morphological map
+
+The design space is better described by independent axes than by one monolithic "alchemy puzzle" idea:
+
+1. **Investigation anchor** — visible downstream need, physical target sample, a known reference product/recipe, a prior failed mixture, or a discovered relation to another known recipe.
+2. **Hidden object of reasoning** — exact tuple, relation to a known tuple, whole-mixture signature, ingredient-role relation, latent property relation, or a small target-specific reaction law.
+3. **Player intervention** — substitute one component, compare full mixtures, apply a diagnostic condition/probe, perturb a known recipe, construct a counterexample, or use vanilla synthesis.
+4. **Observation shape** — aggregate match/strength, categorical phenotype, directional difference, relational outcome, native goo evidence, or a bounded positive/negative example.
+5. **Inference unit** — eliminate a whole hypothesis, attribute a difference, infer a relation, infer one causal role, or revise a small rule.
+6. **Repetition model** — one universal law, universal test vocabulary with target-specific cases, authored per-target cases, or a hybrid.
+7. **External memory** — compact facts/hypotheses in the journal rather than a raw chronological log.
+8. **Resolution** — final craft while uncertainty remains small, or explicit resolution when the evidence has already made the formula unique.
+
+This map exposes an important degree of freedom that earlier prototypes underused: the project does **not** require one elegant universal algorithm that automatically generates every puzzle. The corpus is bounded enough that a common experimental grammar may coexist with target-specific authored/selected cases.
+
+### Anti-tunnel-vision reference findings
+
+External design references reinforce several distinctions:
+
+- **Mastermind** is useful less for its colored pegs than for controlled hypothesis testing: changing one factor between experiments can make the comparison itself carry the inference. Scientific-reasoning literature explicitly uses it to teach controlled experiments, hypothesis discrimination and severe testing.
+- **Zendo** demonstrates player-authored counterexamples against a hidden rule, but its own guidance also highlights the difficulty of choosing rules that are actually pleasant to infer. For AlchemyRiddle, the transferable part is "build a focused experiment for the current hypothesis", not an open-ended secret-law system.
+- **Alchemists** shows the strength of stable hidden properties plus persistent deduction notes, while also illustrating a complexity level that would be too large to copy directly into Graveyard Keeper.
+- **The Search for Planet X** shows explicit-scope research actions and externalized notes, but its hour-scale formal deduction loop is not the desired pacing.
+- **Black Box** shows how a small deterministic interaction law can make probes meaningful because every result constrains the same stable hidden object.
+
+Reference sources consulted in this pass:
+- https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1000578
+- https://www.looneylabs.com/games/zendo
+- https://www.looneylabs.com/sites/default/files/literature/Zendo%20Rules%20Book%202.pdf
+- https://alchemists.czechgames.com/rules/
+- https://renegadegamestudios.com/the-search-for-planet-x/
+- https://www.theblackbox.games/
+
+### Hidden-corpus structural screening
+
+The accepted anonymous 43-formula / 34-output corpus was re-used directly rather than asking for another runtime capture.
+
+#### Reference-formula proximity
+
+Comparing exact same-arity tuples:
+
+- **23 / 24** ordinary two-slot formulas have another ordinary formula at Hamming distance 1;
+- the remaining two-slot formula's nearest neighbor is distance 2;
+- only **2 / 19** ordinary three-slot formulas have a distance-1 neighbor;
+- **17 / 19** three-slot formulas have nearest distance 2.
+
+Consequence: "modify a known neighboring recipe" is structurally attractive for two-slot alchemy but cannot be the sole universal mechanism for three-slot alchemy without adding a stronger abstraction or accepting two simultaneous unknown changes.
+
+#### Shared-motif density
+
+Among three-slot formulas, exact two-ingredient overlap with a formula for a different output is rare:
+
+- only **2 / 19** three-slot formulas have such a two-ingredient neighbor;
+- the other **17 / 19** share at most one ingredient with every different-output three-slot formula.
+
+All 43 ordinary formulas nevertheless belong to one connected graph when a single shared ingredient is sufficient for an edge. Single-ingredient relations are therefore broadly available but usually too weak by themselves to provide a short target-specific deduction.
+
+#### Goo-class disclosure strength
+
+Within each normal positional slot, goo identity is one-to-one among ingredients that participate in the ordinary success corpus.
+
+Consequence: a clue of the form "slot 2 uses goo class G" is, for the current corpus, effectively a disguised exact-ingredient reveal. Goo remains useful as a semantic alphabet, but target-level clues should prefer relations, aggregate effects or controlled comparisons if the intended quality is deductive narrowing rather than staged disclosure.
+
+#### Multiple valid formulas
+
+Seven ordinary outputs have alternative formulas. Any target-sample comparison, scoring or hypothesis system must treat the hidden answer as a **set of valid formulas** and avoid penalizing the player for converging on a different vanilla-valid formula.
+
+### Solution-family survey
+
+#### 1. Whole-mixture aggregate comparison
+
+A complete trial mixture is compared with the selected target and returns a deterministic **aggregate** observation about the mixture as a whole rather than slot-local membership. A Mastermind-like match/resonance count is the simplest abstract form; a more diegetic version could express the same information as reaction strength or number of matching phases.
+
+Strengths:
+- one-screen rule;
+- target remains stable;
+- controlled substitution can support real comparative inference;
+- final craft can remain a genuine hypothesis test.
+
+Risks:
+- without a useful starting state or bounded candidate pool, it degrades into coordinate search;
+- numeric feedback can feel like an oracle/minigame unless strongly integrated into alchemical presentation.
+
+**Retain for prototype.**
+
+#### 2. Known-recipe differential / analogy
+
+Start from a recipe the player already knows and investigate how the target differs from that reference. Experiments identify which part of the known reaction must change and why.
+
+Strengths:
+- natural starting hypothesis rather than an arbitrary first mixture;
+- strongly supports "change one thing, observe the difference";
+- especially good structural fit for the two-slot corpus.
+
+Risks:
+- weak universal coverage for three-slot formulas;
+- actual progression must provide an appropriate known reference at the time the target becomes relevant.
+
+**Retain for prototype, explicitly as a possible station-specific/hybrid mechanism rather than a presumed universal core.**
+
+#### 3. Common assay vocabulary + target-specific micro-cases
+
+Use a small stable set of experiment verbs/observations, but author or select a short case for each target so the relevant comparison and hypothesis structure varies by product. The rule vocabulary stays learnable; the content does not collapse into one solved routine.
+
+Strengths:
+- directly attacks the round-2 repeatability/routinization problem;
+- the bounded 34-output corpus makes per-target validation realistic;
+- difficulty and experiment count can be tuned to the desired competence arc;
+- does not require inventing one deep universal algebra that happens to generate the authored vanilla tuples.
+
+Risks:
+- higher content/localization/testing burden;
+- bad authoring could become arbitrary flavor-text trivia or a hidden fixed click sequence;
+- case clues must be grounded in stable, taught experiment semantics rather than unexplained bespoke lore.
+
+**Retain as the strongest broad family to prototype.**
+
+#### 4. Target-bound vanilla-goo hybrid
+
+Keep native failed-mixture/goo evidence as a meaningful part of the loop, but add a target-specific anchor so the player has a reason to run a particular experiment and can interpret the resulting evidence in relation to X.
+
+Strengths:
+- maximizes continuity with vanilla;
+- reuses a real existing semantic layer;
+- may require less wholly new puzzle vocabulary.
+
+Risks:
+- the verified vanilla three-slot failure path is stochastic and not locally attributable enough on its own;
+- a target anchor strong enough to repair that may simply become a new oracle layered on top;
+- per-slot goo hints are too revealing under the current corpus.
+
+**Retain for one prototype as the "least replacement" control, but do not assume it will survive.**
+
+#### 5. Stable property/signature algebra
+
+Give ingredients stable traits and derive target behavior compositionally.
+
+**Do not prioritize another full prototype yet.** Round 1 prototype 4 and round 2 prototype 8 already show that even concise multi-rule composition exceeds the desired working-memory envelope. Reopen only if a one-rule formulation emerges.
+
+#### 6. Pair-compatibility / membership probing
+
+Ask whether ingredient A, pair A+B, or slot candidate A is compatible with target X.
+
+**Reject as core.** This remains enumeration with a cheaper oracle unless a richer relation changes the inference structure.
+
+#### 7. Explicit whole-formula hypothesis cards + discriminating tests
+
+Present a few complete candidate formulas and let the player choose a discriminator.
+
+**Do not prioritize.** Prototype 5 showed that a small explicitly enumerated hypothesis set easily becomes a forced binary button press, while also disclosing too much of the answer surface.
+
+#### 8. Downstream-use / lore-derived clue system
+
+Infer ingredients from what the target is used for or from authored flavor associations.
+
+**Supplement only.** The vanilla formula corpus is authored and current evidence does not establish a universal semantic law tying downstream use to recipe composition. Such context can motivate an investigation but should not silently become arbitrary mechanical truth.
+
+#### 9. Pure vanilla-goo teaching
+
+Teach the existing failure rule and preserve vanilla experimentation.
+
+**Supplement only.** Already disproved as a complete targetability solution and particularly weak for three-slot local inference.
+
+#### 10. Progressive research disclosure
+
+Pay/time-gate increasingly precise clues until the answer is effectively known.
+
+**Fallback quality floor only.** It can remove wiki dependence but remains level-2 guided disclosure rather than the target deductive experience.
+
+### Prototype shortlist after the survey
+
+The next blind paper-prototype round should contain four orthogonal candidates:
+
+1. **Authored micro-case with a common assay vocabulary** — test whether curated target-specific setup can provide variety without feeling arbitrary.
+2. **Whole-mixture aggregate resonance** — test a Mastermind-like controlled-comparison loop with a deliberately useful starting observation, not a random first guess.
+3. **Known-recipe differential** — test the strong two-slot structural opportunity and whether "modify what I already know" feels naturally alchemical.
+4. **Target-bound vanilla-goo hybrid** — test the least-replacement design and determine whether a target anchor can rescue native feedback without becoming an oracle.
+
+The prototypes should stay answer-blind and fictional. Their first purpose is **player-experience discrimination**, not proving corpus-wide mechanics. Only families that survive that pass should receive a formal solver/information-gain implementation against all 34 targets.
+
+No production architecture is selected. Production mutation remains **BLOCKED**.
