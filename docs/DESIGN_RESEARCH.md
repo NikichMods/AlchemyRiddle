@@ -784,3 +784,22 @@ Additional live finding after the first comparative test:
 - The prototype must present the currently legal research actions explicitly in the UI after every observation. Keeping the action set only in tutorial text or in the player's memory is unacceptable for the intended low-working-memory experience.
 - Recipe arity and unresolved slots must remain visually explicit. After confirming a two-reagent phenomenon inside a three-slot recipe problem, the player may naturally feel that they have an “obvious recipe candidate” even though the third slot is still completely unconstrained.
 - Therefore observations about a pair must not visually collapse into a near-complete recipe unless there is a justified rule connecting that observation to all remaining recipe slots. The UI should distinguish “confirmed phenomenon/relation” from “complete formula hypothesis.”
+
+
+### Paper-prototype interface discipline
+
+Blind paper prototypes must simulate a usable player-facing interface rather than relying on conversation history or the facilitator's memory. Otherwise the test measures the user's ability to remember the chat, not the proposed game mechanic.
+
+For every decision point, present a compact but complete state panel containing at least:
+
+- **Current research target** and recipe arity/station where relevant.
+- **Available candidate reagents**, grouped by slot/category.
+- **Current resources and costs** that materially affect the decision: target-sample portions, reagent costs/consumption, and whether/how depleted resources can be reacquired.
+- **Known rules / research model** needed to interpret experiments. Rules introduced earlier must remain accessible; do not require the player to remember tutorial prose from previous turns.
+- **Research notebook / established findings**: a persistent summary of experiments already performed and the observations/inferences actually established. Preserve the distinction between raw observation, supported hypothesis, and confirmed formula fact.
+- **Unresolved state**: e.g. unknown recipe slots or live competing explanations.
+- **Currently legal actions**, including their costs and required selections.
+
+After every experiment, update this same state panel before asking for the next choice. The prototype should behave as though the player can inspect this information at any time in the real UI.
+
+Do not omit interface information merely because it appeared earlier in the chat. If a prototype only works when the player scrolls back through the conversation, treat that as an interface/test-design defect rather than player error.
