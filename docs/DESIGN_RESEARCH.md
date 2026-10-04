@@ -2122,3 +2122,19 @@ Do not force one grammar across progression merely for elegance.
 Known-recipe comparison is not guaranteed to be available for the very first 2-slot target. Prototype 15 therefore tests the paired-control idea directly as a **3-slot mid-progression mechanism**, where accumulated known formulas are plausible. The early reagent and first 2-slot experiences remain separate open design jobs.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 15 — paired-control blind test
+
+Status: **precommitted; blind play ready**.
+
+Prototype 15 tests Variant 3 from the concrete-reference redesign pass:
+- known formulas are shown in full as positive/negative controls;
+- each paid assay asks one explicit named two-slot question;
+- two available assays cross-cut the current hidden hypothesis set differently;
+- no abstract relation state or hidden similarity score is used;
+- the test is intentionally 3-slot-only; early 2-slot design remains open rather than being forced into the same grammar.
+
+Complete immutable facilitator state is in \`docs/prototypes/PROTOTYPE_15_STATE.md\`.
+
+Production mutation remains **BLOCKED**.
