@@ -803,3 +803,11 @@ For every decision point, present a compact but complete state panel containing 
 After every experiment, update this same state panel before asking for the next choice. The prototype should behave as though the player can inspect this information at any time in the real UI.
 
 Do not omit interface information merely because it appeared earlier in the chat. If a prototype only works when the player scrolls back through the conversation, treat that as an interface/test-design defect rather than player error.
+
+
+Additional prototype 9 finding — dominated experiment choice:
+
+- The initial comparative trial `Iron Dust + Brine` was informationally redundant because the player was already told that this pair produces mechanism A's film. Re-performing a known reaction consumed resources without discriminating the live hypotheses.
+- Meanwhile the target-sample heat test was an explicit direct discriminator between A and B. Therefore the action menu contained a **strictly dominated experiment**: one option spent resources for no new information while another directly resolved the stated ambiguity.
+- This is a prototype-design failure, not a player mistake. Meaningful research choice requires each offered experiment to have a plausible information role under the player's current knowledge; known-outcome demonstrations should not masquerade as investigative options.
+- Future blind prototypes should be checked before play for obvious dominance/redundancy among available experiments. If one action cleanly partitions all live hypotheses and another cannot change belief state, the latter should either be removed, repurposed, or have a different justified objective.
