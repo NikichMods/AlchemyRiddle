@@ -194,3 +194,31 @@ Resources:
 - Research Charges remaining: **1 / 4**.
 
 No facilitator deduction from the fresh result. Await player inference / next action.
+
+
+## Live completion
+
+Clarification:
+- the player briefly misspoke `P1 + L1 + E2`, immediately corrected it before any synthesis result was resolved;
+- no action was taken for the misspoken formula and no state/resource change occurred.
+
+Player final action:
+- synthesize P2 Хитиновый порошок + L1 Янтарный раствор + E2 Ископаемая эссенция.
+
+Deterministic outcome: **SUCCESS / УСПЕХ**.
+
+Resources:
+- Research Charges used: **3 / 4**;
+- Research Charges remaining: **1 / 4**;
+- microtests: 3;
+- failed synthesis attempts: 0.
+
+Observed blind-play path:
+1. P1 + L2 -> INCOMPATIBLE, eliminating the player's first conditional branch.
+2. P2 + L1 -> STABLE, establishing a viable first-stage anchor.
+3. L1 + E1 -> INCOMPATIBLE, falsifying one of the two target-compatible continuations.
+4. Player synthesized P2 + L1 + E2 and succeeded.
+
+Facilitator did not supply the player's new deductions after fresh observations.
+
+Subjective evaluation pending.
