@@ -1708,3 +1708,19 @@ Use a realistically uneven candidate structure informed by this screen:
 - valid-answer-set semantics precommitted.
 
 The purpose is to test whether the two-layer structure actually feels like **“I understood the substance, designed an experiment, and worked it out”** rather than merely reducing a search tree.
+
+
+### Information-support consequence — accepted before Prototype 13
+
+The player must **not** be expected to remember where every alchemical reagent came from or reconstruct provenance/semantic classifications from long-term memory.
+
+If a puzzle clue relies on a property such as provenance, semantic family, preparation method or another taught classification, the mod must make the relevant known information directly inspectable at puzzle time.
+
+Working product requirement:
+- the journal/research UI should include a compact **substance reference / compendium** for already-known alchemical reagents;
+- for each known reagent, expose only information the player has legitimately learned or the mod consistently teaches (for example broad provenance, semantic family, preparation relation, and later any accepted assay properties);
+- the clue UI should support filtering or visually grouping candidates by those properties so the challenge is **deduction**, not remembering inventory trivia or consulting a wiki;
+- expanded item tooltips may duplicate the same facts contextually, but tooltip enrichment alone is insufficient because the player also needs a consolidated cross-reagent view;
+- the reference surface is external memory, not an auto-solver: it may show facts and matching known substances, but must not infer the target formula or mark newly deduced recipe constraints before the player establishes them.
+
+This strengthens rather than weakens the property-layer direction: provenance can be used as a puzzle language only if the information system makes that language inspectable and self-contained.
