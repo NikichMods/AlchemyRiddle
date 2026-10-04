@@ -2591,3 +2591,20 @@ Prototype 20R restarts the identical no-anchor cognitive test with Russian playe
 Canonical live state: `docs/prototypes/PROTOTYPE_20R_STATE.md`.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 20R — observed completion
+
+Status: completed blind play; subjective evaluation pending.
+
+The no-anchor 3×3×3 run completed successfully without matrix completion or external notes. The player used three hypothesis-driven microtests:
+- one negative first-stage result rejected the first conditional branch;
+- one positive first-stage result created a stable anchor;
+- one negative continuation test rejected one of the two target-compatible Essences;
+- the player then committed to the remaining synthesis hypothesis and succeeded.
+
+Research Charges used: **3 / 4**. Failed synthesis attempts: **0**.
+
+This is positive evidence that a calibrated three-branch no-anchor start can remain manageable at 3×3×3. Final strength of that conclusion depends on the player's subjective evaluation, especially perceived working-memory load and whether the route felt deductive rather than procedural.
+
+Production architecture remains **BLOCKED**.
