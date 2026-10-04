@@ -944,3 +944,39 @@ Disposition: **retain as promising for world fit and clarity, but prototype 11 i
 Status: **active**. Hidden formula, target clue, goo-family system, deterministic target-bound failure outcomes, costs and stopping rules were precommitted before the player's first action in `docs/prototypes/PROTOTYPE_12_STATE.md`.
 
 Purpose: test whether a minimal target-specific anchor can make vanilla-style goo evidence into a useful target-directed puzzle without turning it into an answer oracle.
+
+
+### Prototype 12 — result
+
+Status: **completed blind prototype**, with one facilitator-contamination caveat.
+
+Player-facing sequence:
+1. Initial target research stated that the three recipe ingredients belong to three different goo families and exactly one family is Death.
+2. The player initially tried to design a clean experiment to locate Death, found the interaction cognitively awkward, and deliberately chose a mixed probe instead:
+   - Bone Powder + Pure Water + Order Essence.
+   - Result: failed synthesis with target trace {Order, Life}.
+3. From that observation, the player independently reconstructed:
+   - the trace implies one attempted non-Order/non-Life reagent was the positional anchor;
+   - therefore Bone Powder is the correct powder;
+   - the remaining liquid/essence families are Order and Life in unknown assignment;
+   - only two formulas remain: Bone Powder + Pure Water + Life Essence, or Bone Powder + Plant Juice + Order Essence.
+4. The player chose the first remaining formula:
+   - Bone Powder + Pure Water + Life Essence.
+   - Result: **successful synthesis**.
+
+Meaningful ordinary alchemy attempts: **2**.
+
+Player-experience findings:
+- The first experimental-choice problem felt cognitively muddy. The player spent noticeable effort trying to construct a clean diagnostic and then gave up on a principled test, choosing a mixed probe partly to see what would happen.
+- The first informative trace did support a real multi-step deduction. The player had to reason through what the unordered goo pair implied, nearly reintroduced Chaos by mistake, corrected the reasoning, and reached the two remaining formulas.
+- This is evidence of genuine reasoning effort, but the subjective quality was not clearly satisfying: the player described the mechanic/prototype/game as “мутненькая” and “not quite right / not ideal.”
+- Target-bound goo therefore improves target relevance relative to vanilla failure goo, but the current rule imposes a comparatively opaque interpretation burden and does not naturally suggest a good first experiment.
+- Once the first trace is interpreted, the endgame collapses to choosing between two formulas and synthesizing one; this part is straightforward.
+- The mechanism reuses the vanilla-style goo vocabulary in a meaningful way, but the added target-binding semantics are sufficiently non-obvious that they risk feeling like bespoke puzzle logic rather than intuitive alchemy.
+
+Facilitator/test-method caveat:
+- After the first target trace, the facilitator prematurely supplied the full logical consequence before the player had independently worked it out.
+- The player explicitly identified this as invalidating part of the blind cognitive test, then intentionally ignored that explanation and reconstructed the reasoning independently.
+- Future blind prototypes must present **observations and previously established facts only**. New deductions must remain player work until the player states them; the facilitator may then verify/correct them. This applies even when prior prototypes had simpler deductions where the contamination was less noticeable.
+
+Disposition: **do not promote Prototype 12 as-is.** Retain the useful concept that vanilla-like semantic families can carry target-relevant evidence, but treat the current target-bound-goo rule as too opaque / cognitively muddy for a leading architecture without substantial simplification.
