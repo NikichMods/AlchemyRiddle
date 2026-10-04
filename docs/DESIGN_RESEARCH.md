@@ -1781,3 +1781,24 @@ Prototype 10 comparison recovered from prior evidence:
 - It was praised for clarity and low working-memory load, but already showed the same structural risk: the natural strategy is coordinate isolation / slot-by-slot scanning.
 
 Therefore Prototype 13 confirms rather than fixes Prototype 10's main weakness. Property gating improves orientation and scale, but does not by itself make aggregate resonance non-enumerative.
+
+
+### Known-formula comparison as a retained design primitive
+
+Accepted design note after Prototype 13:
+
+Comparison against already-known alchemical products remains a **high-value optional primitive**, not a selected architecture and not something the next prototype must be built around.
+
+Why retain it:
+- it makes prior discovery compound into future investigative capability;
+- known formulas/products can act as in-world references rather than passive completion records;
+- a comparison can potentially express **relations across multiple slots at once**, which is exactly the weakness exposed by aggregate-resonance coordinate search;
+- it fits the product fantasy that an experienced alchemist reasons from accumulated knowledge.
+
+Constraints:
+- do not make “number of known recipes” the progression currency by itself;
+- a reference is useful only when it offers a meaningful relation to the current target, not just another button;
+- avoid exposing exact unknown ingredients through overly specific similarity counts;
+- known-product comparison should plug into the same journal/compendium information system and remain understandable without wiki memory.
+
+This primitive should be considered alongside other cross-slot mechanisms when selecting Prototype 14. It may be used, combined, or omitted depending on which rule produces the cleanest deduction.
