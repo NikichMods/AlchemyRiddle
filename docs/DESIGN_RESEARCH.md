@@ -1070,3 +1070,151 @@ Only if that screen is promising should the next blind round test:
 2. **property-guided known-recipe differential** (Prototype 11 core + world-grounded selection of useful references).
 
 Production mutation remains **BLOCKED**.
+
+
+## Native-property vocabulary research method checkpoint
+
+Status: **accepted next research step; research/probe only, production remains BLOCKED**.
+
+### Core research question
+
+Determine whether existing Graveyard Keeper 1.407 information can support, for each unknown alchemy target, one or two player-legible **world-grounded starting constraints** that:
+- materially shrink the plausible ingredient/formula domain;
+- do not identify an exact ingredient in an exact slot;
+- can reasonably be known or learned at the target's progression point;
+- help the player choose a meaningful next experiment;
+- fit the short micro-deduction / low-working-memory product target.
+
+The goal is not to inventory all game metadata. Collect only information that could plausibly become:
+1. a candidate-grouping property;
+2. a target-side clue;
+3. an experiment-selection reason;
+4. a progression/completeness constraint;
+5. a resource-cost constraint.
+
+### Evidence classes to distinguish
+
+Every potential clue/property must be classified by how the player could know it:
+
+1. **Native-visible** — already shown directly by vanilla UI/presentation at the relevant state.
+2. **Native-derived / player-learned** — not one tooltip field, but naturally inferable from normal play (source/provenance, decomposition relation, previously observed reaction, known recipe).
+3. **Mod-taught but world-grounded** — the mod introduces a consistent label/assay vocabulary derived from stable vanilla substance relationships.
+4. **Pure authored puzzle semantics** — mechanically invented per-target meaning with weak grounding. Keep as last resort and do not let it silently become the main property layer.
+
+System-only metadata that the player could not plausibly know is research input, not automatically a valid clue.
+
+### Data domains to inspect
+
+#### A. Ingredient presentation / identity
+For the 35 ordinary success-corpus ingredients:
+- localized display name and ordinary tooltip content;
+- item icon / visible color / silhouette / material presentation where reliably inspectable;
+- Powder / Fluid / Essence / Universal form;
+- standard crafting-location presentation and other player-visible item metadata;
+- Study-complete versus unstudied presentation differences.
+
+Purpose: find characteristics that are legible without requiring the player to memorize internal IDs or hidden taxonomies.
+
+#### B. Native alchemical relations
+- goo/semantic family;
+- Study-gated decomposition information;
+- decomposition source/result relationships;
+- native per-tier alchemy/slot metadata;
+- relationships between different forms that arise from the same underlying semantic material.
+
+Purpose: identify a small reusable vocabulary that is genuinely connected to vanilla alchemy.
+
+Constraint already known: positional goo-class disclosure is effectively oracular in the ordinary success corpus, so useful clues must be coarser/cross-slot/aggregate/relational.
+
+#### C. Acquisition and provenance
+For each relevant ingredient:
+- whether it is crafted, decomposed, gathered/dropped, bought, quest/granted, or obtainable through another native path;
+- immediate source material(s) and processing station;
+- relevant object/location/station family;
+- technology/unlock dependency where established;
+- whether several reagents form an intuitively recognizable provenance group.
+
+Purpose: test clues such as plant/mineral/corpse-derived or “obtained through the same material chain” only when those distinctions are actually supported and player-legible.
+
+Do not equate an internal source relation with player knowledge automatically.
+
+#### D. Progression / candidate completeness
+At the point a target becomes a legitimate research topic:
+- which alchemical ingredients can plausibly already be known/possessed/studied;
+- which relevant ingredient forms are still undiscovered or progression-inaccessible;
+- whether the UI can truthfully present a closed candidate set;
+- whether “insufficient reagent knowledge” must be an explicit state.
+
+Purpose: avoid puzzles whose logical closure depends on ingredients the player does not yet know exist.
+
+#### E. Acquisition burden / experiment economics
+Classify relevant reagents coarsely by replacement burden:
+- trivial/common;
+- processed but readily reproducible;
+- time/schedule/growth gated;
+- scarce/expensive/otherwise disruptive.
+
+Purpose: an intellectually valid experiment can still be bad gameplay if it burns disproportionately costly materials for little information. Do not infer exact subjective cost from sell price alone.
+
+#### F. Target-side evidence
+For each of the 34 ordinary target outputs:
+- how/where the player can first have a reason to know the target exists;
+- what is visible at that point: name, icon, downstream use, technology context, vendor sample, dialogue/context, etc.;
+- whether a **physical sample of the target actually exists** before the formula is known;
+- if not, what legitimate object supplies the observation: downstream use, trace/sample supplied by progression, comparison target, known reference, or an explicitly mod-created research abstraction.
+
+Purpose: prevent designs that assume the player can smell, heat, inspect or color-read a product they do not possess.
+
+Accepted exposure audit already proves only channel existence for much of the corpus, not chronological first exposure, and leaves unresolved cases. Reuse that evidence before creating new probes.
+
+#### G. Known-recipe / knowledge network
+At plausible target-entry states:
+- what already-known formulas or known alchemical materials can serve as references;
+- whether several references differ meaningfully in expected discriminatory value;
+- whether prior knowledge can make the next experiment more informed rather than simply add more buttons.
+
+Purpose: evaluate the Prototype-11 hybrid without assuming an unrealistically convenient known-recipe library.
+
+### Property-quality screen
+
+A candidate property/clue is promising only if it scores well on all of these dimensions:
+
+- **legibility** — player can understand what the property means without decoding hidden implementation semantics;
+- **grounding** — the property feels like a fact about the substance/world, not a database query;
+- **availability** — the player can legitimately know it at the relevant progression point;
+- **reduction power** — it removes a meaningful amount of uncertainty;
+- **non-oracularity** — it does not collapse to one exact ingredient/slot by itself;
+- **consistency** — the same vocabulary behaves coherently across targets;
+- **experimental usefulness** — it suggests or differentiates reasonable next tests;
+- **memory fit** — it can be represented compactly in the journal;
+- **coverage** — enough of the 34-output corpus can use it without many arbitrary exceptions.
+
+No fixed numeric threshold is accepted yet. Measure the distributions first.
+
+### Research output
+
+The desired research artifact is not a recipe dump. It is a bounded hidden feature model plus aggregate results:
+
+- ingredient-property matrix for the 35 ordinary success ingredients;
+- target-entry/evidence matrix for the 34 ordinary outputs;
+- provenance/progression/cost classifications where evidence supports them;
+- candidate-set partition sizes for each plausible property;
+- collision and over-specificity rates;
+- coverage of one-property and two-property starting clues;
+- count of targets needing authored exceptions;
+- representative anonymized examples of strong/weak clue shapes.
+
+Exact formulas remain hidden in user-facing reporting.
+
+### Research sequence / anti-probe rule
+
+1. First inspect static schema/control flow and existing accepted research to identify the real owners of candidate metadata.
+2. Reuse the existing Corpus Probe and accepted exposure evidence where possible.
+3. Only then define the exact residual unknowns that require loaded balance/runtime data.
+4. If a new probe is required, prefer **one bounded read-only extension** that captures the needed ingredient/target feature matrix rather than several exploratory probes.
+5. Visual/perceptual claims that cannot be established reliably from metadata should be evaluated separately from structural data; do not pretend an asset field proves what a player visually perceives.
+
+Likely next candidate research families after this screen:
+- property-gated aggregate resonance;
+- property-guided known-recipe differential;
+- target-specific observable assay vocabulary if native properties support it.
