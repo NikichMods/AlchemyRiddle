@@ -1590,3 +1590,121 @@ Select **property-gated aggregate resonance first** for the next blind test beca
 Known-recipe differential remains the next comparison candidate if the property layer itself survives.
 
 Production mutation remains **BLOCKED**.
+
+
+## Native-property vocabulary screen — accepted 0.3.0 results
+
+Status: **property layer is promising enough for the next paper-prototype round; architecture still unselected**.
+
+This screen joins the hidden ordinary-formula corpus with Probe 0.3.0 presentation/provenance evidence without publishing exact vanilla formulas.
+
+### What vanilla gives us, and what it does not
+
+**Weak / insufficient by itself**
+- Base ingredient descriptions: empty for all 35 ordinary success ingredients.
+- Base target descriptions: populated for only 8/34 targets.
+- Crafting station: useful as presentation/provenance evidence, but for the regular alchemical forms it mostly tracks Powder / Fluid / Essence production and does not create a rich independent semantic partition.
+- Price/vendor metadata: supporting economy evidence only, not a substance property.
+- Icon keys: potential pointer for a later perceptual pass, not proof of visible color/shape semantics.
+
+**Strong**
+- Native semantic families are explicitly reflected in the regular reagent names and goo identities.
+- Authored decomposition/producer relations connect reagents to concrete world materials: plants/crops, creatures/insects and their products, anatomical remains, minerals, jellies/slimes and special production paths.
+
+### Candidate broad provenance vocabulary
+
+For design screening only, immediate non-goo source relations were grouped into four deliberately coarse, player-legible candidate properties:
+
+- **botanical / growing material**;
+- **creature / insect-derived**;
+- **anatomical / remains-derived**;
+- **mineral / inorganic source**.
+
+An ingredient may have more than one property because vanilla can provide several production routes.
+
+These are **not claimed to be native fields**. They are candidate mod-taught labels derived from actual authored source relationships. Their wording and category boundaries remain open to playtest.
+
+### Non-oracularity warning for native semantic families
+
+The complete unordered multiset of native goo/semantic families is too informative.
+
+Across the 43 ordinary formulas:
+- **37 / 43** formulas have a semantic-family multiset that no other ordinary formula shares;
+- the remaining six formulas fall into three collisions of size two;
+- maximum ambiguity after revealing the complete family multiset is therefore only **2 formulas**.
+
+Conclusion: exposing the whole target family signature would behave too much like a hidden recipe book. Family evidence must be partial/coarse.
+
+A single “exactly one component belongs to family X” fact is much safer. Inside the 35-participant structural universe it leaves:
+- **29** legal two-slot mixtures from 224;
+- **505** legal three-slot mixtures from 2,572.
+
+Two distinct exact-family-presence facts leave 2 two-slot assignments or 74 three-slot assignments; this is already very strong evidence and should not be stacked casually.
+
+### Broad provenance clue power
+
+Using only the four broad provenance properties above, and requiring a target-side clue to remain true for **every valid formula of that output**:
+
+- **31 / 34** ordinary outputs have at least one positive slot-level provenance fact that is invariant across their entire valid-answer set;
+- choosing the strongest such fact narrows the affected slot to **3–6 candidate ingredients**, median **4**, inside the 35-participant structural universe;
+- every single-formula target is covered;
+- most alternate-formula targets are also covered.
+
+Adding one cautious native semantic-family invariant (“exactly one component is family X”) raises simple positive-property coverage to **32 / 34** outputs.
+
+The only two outputs not covered by this minimal invariant vocabulary are the two outputs with **three alternative formulas**. Probe 0.3.0 identifies the only three-formula ordinary targets as **White Paint** and **Black Paint**. Treat these as an explicit exception class rather than weakening the common rule system around them.
+
+### Full-mixture candidate-space screen
+
+This is intentionally **not** a progression-specific search-space claim. It uses only the 35 success-participating ingredients as a common structural comparison universe.
+
+Legal positional mixtures over those 35 participants:
+- two-slot: **224**;
+- three-slot: **2,572**.
+
+For the 32 outputs covered by the minimal provenance/semantic vocabulary, allowing the best **up to two** invariant positive clues from:
+- one broad provenance property tied to a slot; and/or
+- one exact native-family presence count of 1;
+
+gives:
+- covered two-slot outputs: **16 / 18**, median **14** surviving mixtures, range **2–29**;
+- covered three-slot outputs: **16 / 16**, median **74** surviving mixtures, range **74–480**.
+
+Interpretation:
+- for two-slot alchemy, a small property layer can plausibly put aggregate resonance into the intended short-deduction regime;
+- for three-slot alchemy, two simple starting facts are usually helpful but not sufficient by themselves to guarantee a very short aggregate-score solve.
+
+Information-theory sanity check:
+- a two-slot exact-match score has three outcomes (0/1/2), so 14 candidates require at least 3 observations in the worst case;
+- a three-slot score has four outcomes (0/1/2/3), so 74 candidates require at least 4 observations in the worst case.
+
+This is a lower bound, not a predicted player path. Actual progression may shrink the candidate set, while the globally eligible inventory may enlarge it.
+
+### Design consequence
+
+The property hypothesis survives the real-corpus screen.
+
+The emerging architecture shape is stronger than “add more hints”:
+
+1. **world-grounded property evidence** reduces one or more ingredient domains to a tractable set;
+2. **one simple experimental grammar** then supports controlled-variable deduction;
+3. the journal preserves evidence but does not infer the answer.
+
+The screen specifically strengthens **property-gated aggregate resonance** as the next blind prototype family.
+
+It does **not** yet prove property-guided known-recipe differential, because that design additionally depends on which reference formulas the player plausibly knows at each target's entry point. Keep that family live, but defer its next prototype until reference/progression availability is characterized or a bounded fictional test is clearly useful.
+
+### Next blind-prototype requirement
+
+Prototype 13 should no longer use a toy 3x3x3 candidate table.
+
+Use a realistically uneven candidate structure informed by this screen:
+- a larger raw slot pool;
+- one or two world-grounded starting observations that create groups on the order of 3–6 candidates rather than naming a reagent;
+- one simple universal experiment rule;
+- no facilitator deductions;
+- at least one plausible but non-dominant experiment choice;
+- explicit ingredient cost/replenishment;
+- valid-answer-set semantics precommitted.
+
+The purpose is to test whether the two-layer structure actually feels like **“I understood the substance, designed an experiment, and worked it out”** rather than merely reducing a search tree.
