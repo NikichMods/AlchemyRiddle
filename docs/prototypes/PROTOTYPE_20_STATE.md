@@ -206,3 +206,16 @@ Exact current player-facing state:
 - legal next action: choose any one adjacent Powder+Liquid or Liquid+Essence pair for a microtest, costing 1 Research Charge; full synthesis is also legal if the player chooses to commit.
 
 No facilitator inference has been supplied. Hidden answer, properties, compatibility table, costs and resource limits remain unchanged from the precommit.
+
+
+## Aborted presentation run
+
+The initial player-facing activation is **ABORTED BEFORE ANY PLAYER ACTION**.
+
+Reason:
+- the facilitator presented the interface in Russian but left reagent display names in English;
+- this is a presentation/readability defect that could affect the intended cognitive-load evidence.
+
+No microtest, synthesis, inference, resource expenditure, or hidden-state change occurred.
+
+Per the paper-prototype integrity rule, do not silently mutate the already-presented run. Restart the same logical test as a new precommitted Russian-localized presentation variant with unchanged hidden compatibility structure and evaluation purpose.
