@@ -197,3 +197,21 @@ Deterministic outcome: **SUCCESS**.
 Research Charges used: 1 / 3.
 
 Observed scaling note: even with a visible 3x3x3 candidate field, the player followed one known stable branch and one continuation test, then committed to synthesis without matrix completion. Subjective evaluation pending.
+
+
+## Player subjective evaluation
+
+The 3x3x3 field felt materially heavier than 2x2x2. The player could still solve the happy path, but reported that a worse branch structure would likely exceed comfortable working memory and might require external notes.
+
+Key observation:
+- the run remained manageable mainly because one useful stable Powder+Liquid pair was already known;
+- that fact let the player mentally discard the other Powder/Liquid candidates and focus only on continuing one branch;
+- without such a stable anchor, the player expects the 3x3x3 field to feel difficult to approach.
+
+Core rating remains approximately **4+ / 5**: still strong, but lower than the 4++ small-field unhappy-path result because broader fields increase working-memory load.
+
+Player design hypothesis:
+- starting information should be calibrated to the amount of uncertainty left in the current candidate space;
+- one known stable pair may allow fewer target-specific clues;
+- with no known stable pair, more target-specific information may be required;
+- sufficiency should ideally be computed from how much each fact reduces the actionable hypothesis space rather than from a fixed clue count.
