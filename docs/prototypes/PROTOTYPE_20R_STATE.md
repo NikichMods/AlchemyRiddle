@@ -177,3 +177,20 @@ Resources:
 - Research Charges remaining: **2 / 4**.
 
 No facilitator deduction from the fresh result. Await player inference / next action.
+
+
+## Live checkpoint 3
+
+Player inference before the third microtest:
+- accepted P2 + L1 as a stable first-stage branch;
+- chose to test one of its two target-compatible Essence continuations directly.
+
+Player action:
+- microtest L1 Янтарный раствор + E1 Падальная эссенция.
+
+Raw outcome: **INCOMPATIBLE / НЕСОВМЕСТИМО**.
+
+Resources:
+- Research Charges remaining: **1 / 4**.
+
+No facilitator deduction from the fresh result. Await player inference / next action.
