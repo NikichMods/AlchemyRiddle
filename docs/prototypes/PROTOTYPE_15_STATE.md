@@ -178,3 +178,16 @@ After completion ask:
 ## Integrity rule
 
 All candidate marks, target facts, control formulas, hidden answer, assay partitions and outcomes are immutable for this blind run.
+
+
+## Live checkpoint after first assay
+
+Player feedback: information load felt high; the paired-control construction felt artificial/high-level; it was unclear why one named mark relation is selected while other visible marks are ignored; the negative control had no intuitive role; the mechanic did not feel suitable for onboarding. The player nevertheless reconstructed Assay B correctly as testing whether Powder and Liquid both carry Insect, and chose it mainly because it covers slots 1+2 first rather than because of a discriminating hypothesis.
+
+Player action: run Assay B.
+
+Raw outcome: **MATCHES POSITIVE CONTROL**.
+
+Resources: 1 / 2 Research Charges remain.
+
+No fresh deduction by facilitator; await player inference.
