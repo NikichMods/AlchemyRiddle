@@ -51,24 +51,24 @@ jobs:
           $dll = Resolve-Path 'research/AlchemyCorpusProbe/bin/Release/AlchemyCorpusProbe.dll'
           $out = Join-Path $PWD 'artifact'
           New-Item -ItemType Directory -Force -Path $out | Out-Null
-          $handoff = Join-Path $out 'AlchemyCorpusProbe-0.2.0.dll'
+          $handoff = Join-Path $out 'AlchemyCorpusProbe-0.3.0.dll'
           Copy-Item $dll $handoff
           Copy-Item 'research/AlchemyCorpusProbe/README.md' (Join-Path $out 'README.txt')
           $hash = (Get-FileHash $handoff -Algorithm SHA256).Hash.ToLowerInvariant()
           @(
-            "probe_version=0.2.0"
+            "probe_version=0.3.0"
             "source_sha=${{ github.sha }}"
             "sha256=$hash"
             "target=GraveyardKeeper-1.407"
-            "artifact=AlchemyCorpusProbe-0.2.0.dll"
-            "purpose=read-only anonymized mixed-alchemy corpus and pre-formula exposure capture"
+            "artifact=AlchemyCorpusProbe-0.3.0.dll"
+            "purpose=read-only alchemy ingredient property and provenance capture"
           ) | Set-Content -Encoding UTF8 (Join-Path $out 'BUILD_IDENTITY.txt')
           Get-Content (Join-Path $out 'BUILD_IDENTITY.txt')
 
       - name: Upload research artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AlchemyCorpusProbe-0.2.0-${{ github.sha }}
+          name: AlchemyCorpusProbe-0.3.0-${{ github.sha }}
           path: artifact/*
           if-no-files-found: error
           retention-days: 14
