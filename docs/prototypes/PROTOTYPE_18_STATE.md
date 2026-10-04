@@ -204,3 +204,12 @@ Observed design finding:
 - this directly closes the main happy-path concern from Prototype 17 at small scale.
 
 Subjective evaluation pending.
+
+
+## Player subjective evaluation
+
+The negative result felt positive and informative rather than punitive. The player explicitly reacted with interest: the obvious branch failing made the puzzle better, not worse, because it prevented the solve from being too trivial and clearly established where not to continue.
+
+The core compatibility loop still rates approximately **4++ / 5**, slightly stronger than after Prototype 17.
+
+Final disposition: **STRONG PROMISE**. The happy-path and small unhappy-path behaviors both passed. The next core risk is scaling beyond a tiny binary branch structure.
