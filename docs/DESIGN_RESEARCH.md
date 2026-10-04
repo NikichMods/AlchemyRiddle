@@ -2411,3 +2411,14 @@ The test is diagnostic only: if this scale becomes bookkeeping-heavy, the accept
 Complete immutable facilitator state is in `docs/prototypes/PROTOTYPE_19_STATE.md`.
 
 Production architecture remains BLOCKED.
+
+
+### Prototype 19 — observed completion
+
+Status: completed blind play; subjective evaluation pending.
+
+The visible field expanded to 3x3x3, but the player did not begin pair-matrix completion. They selected a known viable first-stage branch, tested one concrete continuation, received STABLE, rechecked the target constraints, and synthesized the target successfully after only one new microtest.
+
+This is positive evidence that a bounded 3x3x3 field can remain lightweight on a favorable branch. It does not yet prove robustness when the first continuation fails or when several viable branches survive longer.
+
+Production architecture remains BLOCKED.
