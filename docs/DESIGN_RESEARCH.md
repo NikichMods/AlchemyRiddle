@@ -1218,3 +1218,118 @@ Likely next candidate research families after this screen:
 - property-gated aggregate resonance;
 - property-guided known-recipe differential;
 - target-specific observable assay vocabulary if native properties support it.
+
+
+## Native-property static owner audit — 2026-10-04
+
+Status: **static owner map closed; one bounded loaded-balance capture is justified next**.
+
+Pinned host reference: `Kupie/GYK_DECOMP@6abf79199d92482af1c7573870dd9a20ec2270b9`.
+
+Shared reusable corrections/facts were promoted to `NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md` at shared commit `324ee9b2b91988a02d648a4bdcc9bc38ec2dd0fe`.
+
+### What static inspection can already prove
+
+#### Player-facing identity / presentation
+- Item name: `ItemDefinition.GetItemName(true)` -> localized item ID.
+- Base description: `GetItemDescription(...)` -> localized `<item_id>_d`, with base-ID fallback for quality-suffixed variants.
+- Standard tooltip: name + description are always the first rows; Study/crafting-location rows may follow.
+- Icon owner: `ItemDefinition.GetIcon()` -> explicit `icon` or default `i_<item_id>`; standard item cells resolve it through `EasySpritesCollection`.
+- Crafting-location tooltip: `GameBalance.GetItemCraftsIn`, built from non-hidden, non-`dont_show_in_hint` output-producing crafts and localized `craft_in` objects.
+
+Implication: names, descriptions, icon keys and vanilla crafting-station exposure are valid structural inputs. Icon **appearance** remains a perceptual question; an icon key alone is not evidence of color/shape semantics.
+
+#### Study / decomposition
+- `GetSurveyCraft()` resolves `surv:<base-id>` / `surv:<id>`.
+- `GameSave.IsSurveyComplete` is backed by `completed_one_time_crafts`.
+- `BaseCraftGUI.CommonOpen(... AlchemyDecompose)` shows an authored decomposition craft only after Study of its input source.
+- `ItemDefinition.GetItemDetails()` builds alchemy details only for source items whose own `alch_type == None`, then derives `decomposes` from authored `AlchemyDecompose` crafts.
+- For an item already typed Powder / Fluid / Essence / Universal, `GetItemDetails()` returns before constructing an alchemy-details block.
+- Although `BubbleWidgetAlchemyItem` contains a `DetailsType.Slots` renderer, the pinned 1.407 decompile contains no writer for `DetailsType.Slots` or `ItemDetailsAlchemy.slots`.
+
+Implication: the verified native knowledge relation is **studied source material -> available decomposition type(s)**. Do not design around a presumed populated per-tier slot-compatibility table.
+
+#### Semantic/goo family
+- `GetGooFromAlchemyIngridient` normalizes quality suffixes and known alchemy/decomposition prefixes, then maps the remaining semantic identity to `goo_<identity>`.
+- Existing runtime evidence already proves 19 goo identities among 35 ordinary success ingredients, including eight cross-form Powder/Fluid/Essence families.
+
+Implication: the semantic family is structurally tied to material identity rather than being a decorative result label. It remains too specific when revealed together with a fixed slot.
+
+#### Provenance / acquisition graph
+There is no single authoritative `source` field. Relevant owners are:
+- ordinary / decomposition producers: `GameBalance.craft_data -> CraftDefinition.output / needs / craft_in / craft_type`;
+- direct world-object drops: `GameBalance.objs_data -> ObjectDefinition.drop_items`;
+- vendor eligibility: `ItemDefinition.product_types / product_tier / base_count` plus `VendorDefinition` product types and modifiers;
+- technology unlock ownership: `TechDefinition.crafts`, plus `hidden / invisible`;
+- scripted/quest grants and exact world placement are separate channels and cannot be inferred completely from those balance tables.
+
+`CraftDefinition` also owns `craft_time`, `energy`, `hidden`, `needs_unlock` and `dont_show_in_hint`, which are useful inputs for a coarse replacement-burden model.
+
+Implication: provenance should be modeled as a graph of production/acquisition relationships. A station ID, internal product tag or object `zone_id` must not automatically be promoted to a player-facing provenance label.
+
+#### Candidate completeness / progression
+- actual craft visibility is save-dependent through `GameSave.IsCraftVisible`;
+- Study completion is save-dependent;
+- `unlocked_crafts`, `unlocked_techs`, `completed_one_time_crafts` and other progression state are persistent owners;
+- one arbitrary runtime save cannot prove a universal progression order.
+
+Implication: the next property capture should characterize the **authored global vocabulary**, not pretend to solve chronological candidate completeness. Exact target-entry progression remains a later graph/flow question, reusing the accepted 0.2.0 exposure audit.
+
+### Static dead ends / downgraded candidates
+
+- `product_types` is primarily a vendor/filter taxonomy. It may help discover clusters, but is not itself a demonstrated player-legible material property.
+- `ItemDetailsAlchemy.slots` is not currently a verified populated metadata source.
+- `ObjectDefinition.zone_id` / object IDs are not sufficient evidence of the location a player associates with an ingredient.
+- `base_price` alone is not a valid replacement-cost metric; acquisition processing, growth/schedule gating and context switching matter.
+- icon IDs do not prove visual color/shape semantics.
+
+### Exact residual loaded-balance question
+
+For the **35 ordinary success-corpus ingredients**, capture enough non-formula metadata to answer:
+
+1. What does the player-facing item identity look like in the loaded game?
+   - localized name;
+   - localized base description;
+   - icon key;
+   - alchemy form.
+2. What native semantic/material relations exist?
+   - goo family;
+   - authored `AlchemyDecompose` source item(s);
+   - Survey craft existence for those source items.
+3. What immediate acquisition/provenance relationships exist?
+   - non-Mixed producer crafts and their stations;
+   - direct object-drop producer definitions;
+   - static vendor-stock candidacy;
+   - product tier / base price / base count as supporting—not decisive—cost inputs.
+4. Which of those relationships are already surfaced by the standard tooltip?
+   - `GetItemCraftsIn` station set;
+   - description presence.
+
+For the **34 ordinary target outputs**, capture:
+- localized name / base description / icon key;
+- the already-measured structural/vendor entry counts and representative context categories, without any formula ingredients.
+
+Do **not** log target formulas in this pass.
+
+### Proposed one-pass research probe
+
+A single read-only `AlchemyCorpusProbe 0.3.0` extension is justified because the authored 1.407 balance/localization population is not present in the public decompile or current repository evidence.
+
+The probe should:
+- run once after normal game start;
+- make no Harmony patches and mutate no save/balance/UI/inventory;
+- recompute the ordinary 35-ingredient / 34-output scope internally;
+- log a dedicated bounded `AR_PROPERTY_* ` section;
+- avoid `AR_RECIPE` formula rows entirely in 0.3.0;
+- use a fresh property-symbol namespace not intended to correlate with earlier formula symbols;
+- include localized names/descriptions only as transient runtime research input; do not commit bulk game text to the repository;
+- log relationships needed for provenance, but not extract or persist image assets;
+- leave visual icon interpretation for a later perceptual pass if structural/property screening says it is worth doing.
+
+Expected result after the returned runtime log:
+- build the hidden 35-ingredient feature/provenance matrix;
+- propose a small player-legible property vocabulary;
+- quantify partition/reduction quality against the hidden 34-output corpus without publishing formulas;
+- decide whether property-gated resonance / property-guided known-recipe comparison deserve the next blind prototypes.
+
+No production behavior is READY. This is research-only work.
