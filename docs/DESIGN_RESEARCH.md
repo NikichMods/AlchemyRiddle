@@ -2153,3 +2153,34 @@ Observed solve:
 This is the first post-Prototype-13 candidate in which the player reached the final formula through a genuine multi-fact cross-slot inference rather than sequentially scanning the last unresolved slot.
 
 However, the presentation/mechanism has serious UX objections already observed during play: high information load, artificial/high-level control framing, unclear value of negative controls, and assay choice driven mostly by slot order rather than hypothesis quality. Do not promote the mechanism until the player's explicit subjective evaluation is recorded.
+
+
+### Prototype 15 — final evaluation
+
+Overall player rating: **~3/5**.
+
+Accepted design finding:
+- the **final deduction structure is a major success**: multiple cross-slot facts can combine with coarse initial constraints to produce a unique formula without slot-by-slot scanning or synthesis enumeration;
+- the player described this resolution as exemplary and exactly the kind of reasoning the mod should create;
+- therefore the post-Prototype-13 requirement is now sharper: target **fact interaction**, not merely cross-slot feedback. The desirable solve has several individually simple facts whose intersection suddenly collapses the recipe space.
+
+Rejected wrapper:
+- paired positive/negative controls;
+- compound assay questions over selected slot pairs;
+- heavy meta-reasoning about properties of already-known formulas;
+- any design where the laboratory fiction is more complicated than the deduction it is meant to support.
+
+Updated architecture direction:
+1. keep the goal-first / compendium layer for targetable investigation and external memory;
+2. keep coarse world-grounded properties because they are useful inputs to deduction;
+3. seek **natural evidence sources** that each yield one small fact, preferably through direct observation / ordinary GK actions;
+4. allow those facts to constrain multiple slots or interact across the formula;
+5. aim for the Prototype-15 endgame shape: two or three understandable observations combine into one forced answer;
+6. known recipes may contribute one such observation, but are optional evidence primitives rather than the core grammar.
+
+New primary design question:
+**What simple, natural, Graveyard-Keeper-native actions can yield the cross-slot facts needed for a Prototype-15-quality final deduction without feeling like a menu of abstract queries?**
+
+This supersedes the narrower question of how to improve known-formula comparison.
+
+Production architecture remains **BLOCKED**.
