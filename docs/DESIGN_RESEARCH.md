@@ -469,3 +469,96 @@ It should instead aim for:
 The key unresolved challenge is to create **meaningful experiment selection without a heavy bespoke logic algebra**.
 
 No production architecture is selected. Production mutation remains **BLOCKED**.
+
+
+## Paper prototype round 2 and target experience refinement — 2026-10-04
+
+Status: **accepted player-facing UX evidence; no production architecture selected**.
+
+Three second-generation prototypes were tested after round 1. The design target was simultaneously refined by the user: alchemy should make a broad Graveyard Keeper player feel like a **successful researcher/alchemist** after a small amount of thought, without becoming a standalone hardcore logic game or consuming disproportionate time/attention.
+
+### Target player experience
+
+The desired experience is not maximal puzzle depth. It is:
+
+- a brief role-play of doing real alchemical investigation;
+- a small, legible reasoning step;
+- a satisfying moment of “I worked that out” / “I am clever”;
+- low rule-reading and working-memory burden;
+- little or no grind-like enumeration;
+- short enough to fit among Graveyard Keeper's many other systems.
+
+The design should bias toward **competence and insight**, not difficulty for its own sake.
+
+### Prototype 6 — comparative “warmer/colder” substitution
+
+A trial mixture could be compared against a target after changing one component; feedback reported whether the reaction moved closer, farther away, or preserved character with changed strength.
+
+Observed:
+- the substitution rule itself was immediately understandable and well received;
+- however, there was still no evidence-based starting mixture;
+- the player therefore chose the first listed mixture and then performed coordinate search: change one variable, keep the warmer result, move to the next candidate;
+- after several moves the interaction remained directed enumeration rather than hypothesis-driven inference.
+
+Conclusion: **reject as core**. Simple comparative feedback solves legibility but not meaningful experiment selection.
+
+### Prototype 7 — reference sample with orthogonal observable reactions
+
+The player possessed a small sample of target product and could compare trial mixtures against three concrete reactions: heating, water dilution, and salt contact.
+
+Observed:
+- the player initially had to discover what each test meant;
+- controlled substitutions produced a real hypothesis that heating primarily tracked powder, water tracked fluid, and salt tracked essence;
+- the player then used that hypothesis to select informative tests and successfully chose a final formula before all observations were filled in;
+- the final vanilla synthesis functioned as genuine verification of a player-owned hypothesis;
+- this was the strongest “I am investigating” loop so far.
+
+However:
+- once the mapping from tests to slots was inferred, subsequent recipes would collapse into three independent candidate searches;
+- the system therefore contains an interesting **one-time meta-discovery**, but risks becoming organized slot-by-slot enumeration afterward.
+
+Conclusion: **retain as a promising design ingredient, not yet a reusable core**. Concrete observable experiments and an exemplar/sample create good role-play and legibility; repeated recipes need target-specific interaction so the same solved diagnostic routine does not trivialize every case.
+
+### Prototype 8 — simple universal adjacency rule plus target-specific constraint
+
+Known ingredient signs and a universal rule (“adjacent components in a stable mixture must have different signs”) were combined with one target-specific fact (“exactly two signs occur in the formula”) and a comparative link test.
+
+Observed before the first experiment completed:
+- although each individual rule was simple, the combined representation felt mentally bulky;
+- the user explicitly noted that Graveyard Keeper players are generally more casual than a dedicated puzzle audience and that alchemy should provide a brief competence high rather than demand sustained formal reasoning;
+- while choosing the first trial, the player immediately selected two adjacent reagents with the same sign, violating the just-restated universal rule;
+- the rule had therefore already fallen out of working memory during ordinary choice construction.
+
+Conclusion: **reject this complexity envelope**. “Only a few simple rules” is not enough if several dimensions must be held simultaneously during candidate construction. The practical test is whether the rule remains naturally usable while acting, not whether it is concise on paper.
+
+### Additional vanilla-legibility observations
+
+The player identified several pre-puzzle uncertainties that may need separate UX treatment:
+
+- vanilla does not make the powder/fluid/essence positional grammar sufficiently obvious at first glance;
+- candidate semantics for “fluid” are broader than decomposition-derived alchemical fluids and may include ordinary liquids such as water, oil, alcohol or blood, increasing perceived search space;
+- a future puzzle must distinguish what counts as a relevant candidate without falsely rewriting vanilla mechanics.
+
+These are research/design questions, not accepted production changes.
+
+### Updated core-design criterion
+
+A promising core should satisfy all of the following simultaneously:
+
+1. **One-screen mental model:** the currently relevant rule and evidence should remain usable without rereading several interacting rules.
+2. **Small initial choice set:** the first meaningful experiment should not begin from a large arbitrary Cartesian product.
+3. **Predict before observing:** the player should be able to state a simple expectation before paying for an experiment.
+4. **Concrete observation:** prefer visible/alchemical phenomena over abstract oracle language where possible.
+5. **Target-specific inference:** solving the general system once must not reduce every later recipe to the same slot-by-slot routine.
+6. **Short competence arc:** a typical investigation should produce useful understanding quickly enough to feel clever rather than diligent.
+7. **Final synthesis retains uncertainty:** the real craft should confirm a justified hypothesis, not merely enact an answer already fully disclosed by the research UI.
+8. **External memory, low reading burden:** the journal should preserve evidence compactly, but the player should not need to reread a large experiment log to continue.
+9. **Candidate-space trust:** the player must know whether current reagent knowledge is sufficient to solve the target.
+
+### Current direction after round 2
+
+The strongest ingredient discovered so far is the **reference-sample / concrete-observation** pattern from prototype 7, especially controlled comparison and a final synthesis performed before exhaustive proof.
+
+The strongest unresolved problem is **repeatability without routinization**: how to give each target a tiny distinct inference without introducing a heavy formal rule system or reverting to candidate enumeration.
+
+No production architecture is selected. Production mutation remains **BLOCKED**.
