@@ -769,7 +769,7 @@ No production architecture is selected. Production mutation remains **BLOCKED**.
 
 ### Prototype 9 — authored micro-case: live observations
 
-Status: **in progress; player-facing blind prototype**.
+Status: **closed as a blind prototype; retain only as a viable but experientially weak fallback/control pattern**.
 
 Early findings before the first experiment resolves:
 
@@ -827,3 +827,12 @@ Prototype 9 experience assessment — viable but weak:
 - However, **logical viability is not sufficient**. In this instance the experience felt weak/boring: one obvious diagnostic test did most of the narrowing, then the remaining essence slot would be resolved by up to three straightforward synthesis attempts.
 - This likely satisfies “works” but only weakly satisfies the intended competence fantasy. The player is not building or testing a rich enough chain of reasoning to strongly feel “I worked that out”; instead the interaction risks feeling like one gate followed by bounded cleanup enumeration.
 - Therefore retain this pattern as a viable fallback/control structure, not as a leading design. Future prototypes should seek a similarly short loop while giving the player at least one genuinely meaningful intermediate hypothesis choice or inference, without increasing working-memory burden.
+
+
+Prototype 9 final disposition:
+
+- **Logic:** viable in the stronger explicitly specified form where a diagnostic mechanism legitimately maps to a constituent reagent relation.
+- **Blind-test integrity:** compromised by underspecified inference semantics and failure to precommit the hidden formula before play; do not treat the specific playthrough as clean comparative evidence.
+- **Experience signal:** weak/boring relative to the product target. One obvious discriminator performed most of the research work, leaving a short cleanup search.
+- **Retain/reject:** retain as a fallback/control structure, not a leading architecture.
+- **Next prototype:** whole-mixture aggregate resonance, with facilitator state fully precommitted and persisted before the first player choice.
