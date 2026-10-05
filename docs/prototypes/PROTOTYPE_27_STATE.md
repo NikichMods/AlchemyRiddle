@@ -407,3 +407,35 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 3 — Investigation I
+
+Player design observation before acting:
+- the player notes a possible meta-pattern: the first obvious well-formed hypothesis can start to feel predictably wrong if prototypes repeatedly use it as a decoy;
+- future cases should avoid making “first elegant hypothesis = designed false branch” into a learnable facilitator pattern.
+
+Player reasoning:
+- P2 is excluded for the current L2+E2 bridge because E2 already supplies the one allowed Corpse and P2 also has Corpse;
+- after P1+L2+E2 proved to be a compatible non-target, the player tests the remaining plausible Powder continuation P3+L2.
+
+Player action:
+- microtest P3 + L2.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **6 / 8**.
+
+Journal now contains:
+- prior: L2 + E2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: P1 + L2 -> STABLE;
+- P1 + L2 + E2 -> NOT the current target;
+- new: P3 + L2 -> INCOMPATIBLE.
+
+No facilitator deduction supplied beyond confirming the player-stated branch logic.
+
+Current interaction point:
+- awaiting player's inference / next action.
