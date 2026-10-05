@@ -656,3 +656,47 @@ Observed reasoning path:
 11. Synthesize P2+L1+E2 -> TARGET.
 
 Matched pair is now complete. Proceed to comparative player evaluation per the precommitted protocol.
+
+
+## Final player evaluation
+
+Disposition: **REJECT CURRENT SPARSE-START FLOOR GRAMMAR**.
+
+Player comparative evaluation:
+- Investigation I (2x2x2) was clearly boring;
+- the experience felt like mechanically checking possibilities until the answer remained, closer to something to get through than a satisfying discovery;
+- the single target fact "Mineral appears exactly once" was too simple and too weak as an opening structure;
+- Investigation II (2x3x2) was somewhat more engaging, but only modestly so;
+- the fact "Mineral appears exactly twice" still left the player feeling that the puzzle began from an almost blank search space;
+- the earlier vertical-table presentation worsened Investigation II and is a confound, but correcting layout would not solve the deeper engagement problem.
+
+Primary design insight:
+- field size is **not** the main unresolved variable;
+- the important issue is the **amount and shape of structure present at the start**;
+- the player does not want to begin from a nearly unworked possibility block and repeatedly carve away options;
+- the preferred experience is analogous to receiving a sculpture that is already partly formed, then making the final meaningful deductions that complete it;
+- therefore the opening state should already contain several mutually useful constraints / known relations / target facts that form recognizable structure before the first experiment.
+
+Interpretation:
+- 2x2x2 should **not** be accepted as a normal production-quality floor under the tested sparse-start grammar;
+- 2x3x2 is not validated merely because it was slightly better;
+- increasing field size alone does not address the core problem;
+- the next design work should focus on richer prestructured starting states, not on simply enlarging the candidate grid.
+
+Relation to prior evidence:
+- this is consistent with Prototype 23's stronger experience, where prior stable/incompatible relations plus a target fact created a partially solved landscape and the player investigated a few justified hypotheses;
+- Prototype 23's seven surfaced old relations were visually too many, while one target fact alone felt sparse;
+- the next target is therefore a **middle-information opening**: enough pre-existing structure to make the candidate space feel partially carved, but not so much journal clutter that the player is scanning a wall of facts.
+
+New research question:
+> What minimum opening information package makes the player feel they are completing a meaningful deduction rather than reducing a blank combinatorial space?
+
+Candidate families to compare next:
+- 2 target-specific facts + a small number of neutral prior relations;
+- 1 target-specific fact + 2-4 carefully surfaced neutral prior relations;
+- a compact derived structural clue plus 1-2 prior relations;
+- equivalent-information presentations that differ in whether the structure is target-centric or relation-centric.
+
+Do not assume one family is accepted architecture yet. Compare them before implementation.
+
+Production implementation remains **BLOCKED**.
