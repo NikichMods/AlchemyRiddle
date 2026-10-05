@@ -616,6 +616,14 @@ Investigation II full syntheses: 1; compatible non-target syntheses: 1.
 Awaiting next player action.
 
 
+
+## Live checkpoint 9 — Investigation II
+
+Action: P2 + L3 microtest.
+Outcome: STABLE.
+Research Charges: 5 / 8.
+Note: facilitator corrected only the scope of an already-visible slot-local clue before resolving the test.
+
 ## Live completion — Investigation II
 
 Player action:
