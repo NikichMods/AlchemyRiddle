@@ -167,3 +167,13 @@ Readiness principle:
   puzzle;
 - if a true component is still unknown, a hard readiness gate may be legitimate,
   but the eventual guidance must not simply reveal that missing component.
+
+
+### Recipe-variant visibility
+
+For products with multiple vanilla formulas, it is acceptable for the UI to
+reveal **how many recipe variants exist**. This count is not considered a
+meaningful recipe spoiler.
+
+Unknown variants may remain individually researchable until each is discovered.
+Exact labels and presentation remain open.
