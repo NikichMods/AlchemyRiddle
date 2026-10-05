@@ -278,4 +278,27 @@ Protocol intervention:
 Resources remain 5/6.
 Awaiting player's next action.
 
+
+
+## Live checkpoint 4
+
+Player UX note:
+- when a player attempts an already-known pair test, the UI should explicitly
+  surface that the result is already in the journal instead of silently doing
+  nothing; this preserves clarity and helps recover overlooked knowledge.
+
+Player action:
+- microtest L3 Бледный раствор + E3 Тёмная эссенция.
+
+Raw outcome:
+- **СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **4 / 6**.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
+
 Production architecture remains **BLOCKED**.
