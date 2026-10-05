@@ -4788,3 +4788,30 @@ Current interaction point:
 - awaiting first player action.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 28 result — composite clues retained
+
+Status: **blind test complete; composite clue grammar retained; production remains BLOCKED**.
+
+Result:
+- positive implication, XOR/exact-one-of-two, and implication-with-negative-consequent all felt natural in live play;
+- three composite clues together initially look dense but played at approximately medium difficulty once inactive conditions were discarded locally;
+- this vocabulary should not be introductory, but it does not need to be reserved only for the highest difficulty;
+- clue-led solutions with zero microtests are valid and can improve variety; do not force experiments when known relations plus target constraints already support a reasoned synthesis;
+- vary investigation shape so clue-led, experiment-led, and mixed solutions all occur.
+
+### Clue-direction as difficulty cost
+
+The visual slot order is currently Powder -> Liquid -> Essence. In a left-to-right reading culture, cross-slot clues are easier when their linguistic direction follows the same order.
+
+Therefore:
+- Powder -> Liquid, Powder -> Essence, and Liquid -> Essence relations are usually cognitively cheaper;
+- Liquid -> Powder, Essence -> Liquid, and Essence -> Powder relations introduce a backward-reference cost;
+- backward clues are allowed, but should count against the investigation's difficulty budget rather than being treated as equivalent wording;
+- easier/mid investigations should generally prefer forward-oriented relations;
+- reverse-oriented relations can be used deliberately for later or denser cases.
+
+This is a presentation and cognitive-load principle, not a semantic restriction. Exact UI remains open.
+
+Production remains **BLOCKED**.
