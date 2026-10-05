@@ -4349,3 +4349,15 @@ Implications to test, not yet production rules:
 A notable interruption-resilience observation occurred in the same live test. After an extended design discussion, the player resumed the puzzle almost immediately by recognizing the currently open stable branch and which continuation had already been tested. They did not need to reconstruct the full prior reasoning chain. This is evidence that a branch/bridge-shaped journal may serve the project's external-memory requirement more effectively than a flat fact list.
 
 This remains a single-player blind-prototype observation and requires further testing before generalization. Production remains **BLOCKED**.
+
+
+### Journal-chain reconstruction note
+
+Prototype 26 produced positive external-memory evidence from the journal itself. After learning L2+E2 as stable, the player looked only at the journal, recognized that an earlier stable pair also used L2, recalled P1+L2, and reconstructed the complete candidate chain P1-L2-E2 without consulting the candidate grid or re-deriving the target-property logic.
+
+This suggests:
+- relation records can naturally compose through shared reagent nodes;
+- even a compact flat journal may support resumption and chain reconstruction if stable relations are visually easy to scan;
+- a later UI should consider grouping, highlighting, or visually linking records that share a reagent, but a full graph visualization is not yet justified.
+
+Production remains **BLOCKED**.
