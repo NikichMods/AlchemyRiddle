@@ -296,3 +296,24 @@ Possible dispositions:
 - no relation records;
 - no synthesis exclusions;
 - awaiting the player's first action.
+
+
+## Live checkpoint 1 — Investigation I
+
+Player inference:
+- the single-Mineral target fact was applied to the visible candidate properties;
+- player chose microtest P1 Пепельный порошок + L1 Тихий раствор.
+
+Raw outcome:
+- **СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Journal now contains:
+- P1 + L1 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
