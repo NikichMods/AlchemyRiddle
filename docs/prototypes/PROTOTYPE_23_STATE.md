@@ -238,10 +238,11 @@ verbatim enough to preserve these two separate facts:
 ## Starting checkpoint
 
 - active prototype: **23**;
-- player-facing state not yet shown;
+- player-facing state activated in the current chat;
 - Research Charges: **6 / 6**;
 - no new actions;
 - no synthesis exclusions;
-- legal next action: any adjacent microtest or any full synthesis.
+- legal next action: any adjacent microtest or any full synthesis;
+- awaiting the player's first action.
 
 Production architecture remains **BLOCKED**.
