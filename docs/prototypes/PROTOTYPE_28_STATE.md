@@ -226,3 +226,26 @@ Resources:
 - successful target syntheses: 1.
 
 Prototype 28 blind play complete.
+
+
+## Final player evaluation
+
+Disposition: **COMPOSITE CLUES RETAIN**.
+
+Player evaluation:
+- all three tested clue families felt natural:
+  - implication A -> B;
+  - exact-one-of-two / XOR;
+  - implication A -> not B;
+- no clue family felt intrinsically awkward or confusing;
+- composite clues are suitable after the player already understands the basic clue language;
+- three composite clues together feel visually dense at first, but in play resolve to roughly medium difficulty because inactive implications can be ignored locally;
+- clue-led investigations that require zero microtests are desirable as one valid solution pattern, provided they do not become the dominant meta-pattern.
+
+New presentation/difficulty principle:
+- with slot order Powder -> Liquid -> Essence, clue wording that reasons in the same left-to-right direction is cognitively cheaper;
+- a clue that begins from a later slot and refers backward to an earlier slot (for example Liquid -> Powder) is not invalid, but it carries extra cognitive cost because it runs against the visual/read order;
+- clue direction should therefore be treated as part of the puzzle's difficulty budget;
+- easier/mid cases should preferentially use left-to-right relations, while reverse-direction relations can be used deliberately to raise complexity.
+
+Prototype 28 complete. Production remains BLOCKED.
