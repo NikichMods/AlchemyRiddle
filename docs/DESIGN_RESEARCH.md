@@ -3893,3 +3893,141 @@ This screen should define a **minimum interesting-puzzle envelope**, not merely
 count surviving combinations.
 
 Production implementation remains **BLOCKED**.
+
+
+## Chat migration checkpoint — 2026-10-05
+
+Status: **canonical recovery point for the next chat**.
+
+The user explicitly confirmed the full current direction after the progression-aware
+variable-field discussion. The following points should be treated as accepted
+premises on recovery, not reopened from chat-memory uncertainty.
+
+### Product framing confirmed
+
+AlchemyRiddle is allowed to be an overtly designed puzzle layer rather than a
+simulation of unconstrained natural science.
+
+The mod may:
+- internally know the hidden vanilla formula;
+- deliberately curate a compact candidate field around that answer;
+- choose distractors for puzzle quality;
+- present a bounded research surface instead of asking the player to manually
+  filter the entire known reagent universe.
+
+This is acceptable because the user-facing product goal is a compact, enjoyable,
+wiki-free deduction mechanic that fits Graveyard Keeper, not maximal scientific
+simulation fidelity.
+
+### Progression-sensitive difficulty confirmed
+
+The user explicitly wants early investigations to be naturally smaller/easier
+and later investigations to become richer/more complex if the player's growing
+reagent knowledge supports that curve.
+
+This is now a desired product property, not merely an incidental possibility.
+
+Fixed 3x3x3 is not a production invariant. Variable bounded field sizes are
+accepted in principle, subject to a minimum interesting-puzzle quality floor.
+
+### Minimum puzzle-quality concern confirmed
+
+Graceful simplification is preferred over blocking when the true recipe is
+already representable, but simplification must not collapse into trivial
+enumeration.
+
+A field can remain technically ambiguous yet still fail the product standard.
+For example, a tiny shape such as 2x2x1 with little or no meaningful evidence
+may reduce to checking a few combinations and may not constitute a satisfying
+puzzle.
+
+The next quantitative work must therefore identify a **minimum interesting-puzzle
+envelope**, not merely a minimum number of surviving combinations.
+
+### Recipe-variant semantics confirmed
+
+For vanilla products with multiple valid recipes:
+- each unknown recipe variant may be researched independently;
+- discovering one recipe does not suppress the others;
+- the player may choose which unresolved recipe variant to investigate;
+- the puzzle generator may target that one hidden formula rather than preserving
+  every alternative formula for the product in one field.
+
+The user also explicitly accepts revealing the **number of recipe variants** for
+a product. Showing, for example, that a product has 1/2/3 recipe variants is not
+considered a meaningful spoiler.
+
+Exact UI wording/visual treatment remains open.
+
+### Hard readiness gate confirmed
+
+If the selected hidden recipe variant is fully representable from the player's
+legitimate reagent knowledge, the preferred behavior is:
+- generate the best puzzle current knowledge allows;
+- shrink the field or otherwise simplify within the quality floor if needed;
+- do **not** block only because ideal distractors are missing;
+- do **not** require learning irrelevant decoy reagents to pad the puzzle.
+
+A hard "insufficient alchemical knowledge" gate is legitimate only when at least
+one true component of the selected hidden recipe variant is still outside the
+player's legitimate alchemical knowledge.
+
+### Guidance triangle at the hard gate
+
+The user explicitly confirmed that the current guidance problem and its traps are
+real:
+
+1. Naming the exact missing reagent gives away a true recipe component.
+2. Naming an irrelevant reagent, or padding the instruction with arbitrary
+   irrelevant reagents, creates forced busywork and damages trust.
+3. Saying only "learn more substances" is honest but gives the player almost no
+   actionable direction.
+
+A broader research lead may be promising, for example:
+- source/provenance category;
+- activity/progression direction;
+- bounded class of substances containing the missing reagent.
+
+But this is not selected yet because broad guidance has two opposite failure
+modes:
+- if the category has only one unresolved member, it becomes an indirect exact
+  answer;
+- if the category is broad, it may force several irrelevant discoveries.
+
+Do not solve this by intuition before measuring how often the hard gate occurs
+under variable-field / recipe-variant generation.
+
+### Exact next research step
+
+Do **not** reopen the accepted three-slot core architecture.
+
+The next quantitative screen should:
+- treat each concrete vanilla recipe variant as an independent hidden research
+  target;
+- model progression-limited known-reagent pools;
+- allow variable bounded field dimensions, including sub-3 sizes;
+- retain Adaptive Knowledge-Aware semantics;
+- score whether a generated state is actually an interesting deduction puzzle,
+  not merely ambiguous;
+- measure the minimum per-slot knowledge needed to clear that quality bar;
+- measure how often a representable recipe variant can be served without a hard
+  readiness gate;
+- test whether early limited knowledge naturally yields simpler puzzles and later
+  knowledge richer ones;
+- identify where graceful simplification becomes too trivial;
+- measure how prior compatibility knowledge interacts with smaller fields.
+
+Only after this screen should the project decide how much hard-gate guidance is
+needed and how specific it should be.
+
+### Recovery state
+
+Accepted three-slot core: **Adaptive Knowledge-Aware**.
+
+Production source implementation remains **BLOCKED**.
+
+No runtime test is currently required from the user.
+
+The next chat should recover from repository state and continue with the
+progression-limited variable-field quantitative screen unless new evidence
+changes the priority.
