@@ -489,15 +489,14 @@ Mechanical observations:
 
 Current active investigation:
 - **Investigation I**;
-- player has not yet seen its state in this chat;
+- player-facing state activated in the current chat;
 - Research Charges: 4 / 4;
 - completed actions: none;
-- legal next action after activation: any adjacent microtest or any full
-  synthesis.
+- legal next action: any adjacent microtest or any full synthesis.
 
-Exact next interaction:
-- present Investigation I player-facing panel only;
-- do not mention its architecture identity;
-- ask the player for the first action.
+Exact current interaction point:
+- Investigation I panel has been presented;
+- architecture identity remains hidden;
+- awaiting the player's first action.
 
 Production architecture remains **BLOCKED**.
