@@ -260,6 +260,243 @@ def bounded_three_by_three_report(formulas, tags_by_name, vocabulary):
     }
 
 
+
+def dosed_three_by_three_report(formulas, tags_by_name, vocabulary):
+    """Screen whether clue strength can be distributed across weak facts.
+
+    Two-fact criterion:
+    - each individual fact leaves 6-8 Powder+Fluid branches out of 9;
+    - their conjunction leaves 3-4 branches.
+
+    Three-fact criterion:
+    - each individual fact leaves 6-8 branches;
+    - every two-fact conjunction leaves 3-6 branches;
+    - all three facts leave 2-4 branches;
+    - each fact is necessary: removing it increases branch count.
+
+    Positive-only variants reject zero-count facts.
+    """
+    powders = sorted({x["powder"] for x in formulas})
+    fluids = sorted({x["fluid"] for x in formulas})
+    essences = sorted({x["essence"] for x in formulas})
+    essence_index = {name: i for i, name in enumerate(essences)}
+
+    by_output = defaultdict(list)
+    for row in formulas:
+        by_output[row["output"]].append(row)
+
+    triple_counts = {}
+    for p in powders:
+        for f in fluids:
+            for e in essences:
+                triple_counts[(p, f, e)] = aggregate(
+                    (p, f, e), tags_by_name, vocabulary
+                )
+
+    output_report = {}
+    aggregate_counts = Counter()
+
+    for output, rows in sorted(by_output.items()):
+        true_triples = {
+            (r["powder"], r["fluid"], r["essence"])
+            for r in rows
+        }
+        required_p = {x[0] for x in true_triples}
+        required_f = {x[1] for x in true_triples}
+        required_e = {x[2] for x in true_triples}
+
+        p_surfaces = choose_supersets(powders, required_p, 3)
+        f_surfaces = choose_supersets(fluids, required_f, 3)
+        e_surfaces = choose_supersets(essences, required_e, 3)
+
+        true_count_vectors = [triple_counts[x] for x in sorted(true_triples)]
+        invariant_facts = {
+            tag: true_count_vectors[0][tag]
+            for tag in vocabulary
+            if all(v[tag] == true_count_vectors[0][tag]
+                   for v in true_count_vectors)
+        }
+        facts = list(sorted(invariant_facts.items()))
+
+        fact_masks = {}
+        for fact in facts:
+            tag, value = fact
+            pair_masks = {}
+            for p in powders:
+                for f in fluids:
+                    mask = 0
+                    for e in essences:
+                        if triple_counts[(p, f, e)][tag] == value:
+                            mask |= 1 << essence_index[e]
+                    pair_masks[(p, f)] = mask
+            fact_masks[fact] = pair_masks
+
+        surface_count = 0
+        two_fact_surfaces = 0
+        two_positive_surfaces = 0
+        three_fact_surfaces = 0
+        three_positive_surfaces = 0
+        max_two_fact_surviving_triples = 0
+        max_two_positive_surviving_triples = 0
+
+        for p_surface in p_surfaces:
+            for f_surface in f_surfaces:
+                pl_pairs = [
+                    (p, f)
+                    for p in p_surface
+                    for f in f_surface
+                ]
+                for e_surface in e_surfaces:
+                    surface_count += 1
+                    e_mask = sum(
+                        1 << essence_index[e]
+                        for e in e_surface
+                    )
+
+                    single = {
+                        fact: sum(
+                            1
+                            for pair in pl_pairs
+                            if fact_masks[fact][pair] & e_mask
+                        )
+                        for fact in facts
+                    }
+
+                    weak_facts = [
+                        fact for fact in facts
+                        if 6 <= single[fact] <= 8
+                    ]
+
+                    pair_counts = {}
+                    has_two = False
+                    has_two_positive = False
+                    for a, b in itertools.combinations(weak_facts, 2):
+                        surviving_masks = [
+                            fact_masks[a][pair]
+                            & fact_masks[b][pair]
+                            & e_mask
+                            for pair in pl_pairs
+                        ]
+                        count = sum(bool(mask) for mask in surviving_masks)
+                        pair_counts[(a, b)] = count
+                        if 3 <= count <= 4:
+                            surviving_triples = sum(
+                                mask.bit_count()
+                                for mask in surviving_masks
+                            )
+                            has_two = True
+                            max_two_fact_surviving_triples = max(
+                                max_two_fact_surviving_triples,
+                                surviving_triples,
+                            )
+                            if a[1] > 0 and b[1] > 0:
+                                has_two_positive = True
+                                max_two_positive_surviving_triples = max(
+                                    max_two_positive_surviving_triples,
+                                    surviving_triples,
+                                )
+
+                    if has_two:
+                        two_fact_surfaces += 1
+                    if has_two_positive:
+                        two_positive_surfaces += 1
+
+                    has_three = False
+                    has_three_positive = False
+                    for combo in itertools.combinations(weak_facts, 3):
+                        pair_values = []
+                        for a, b in itertools.combinations(combo, 2):
+                            key = (a, b) if (a, b) in pair_counts else (b, a)
+                            if key in pair_counts:
+                                pair_value = pair_counts[key]
+                            else:
+                                pair_value = sum(
+                                    1
+                                    for pair in pl_pairs
+                                    if (
+                                        fact_masks[a][pair]
+                                        & fact_masks[b][pair]
+                                        & e_mask
+                                    )
+                                )
+                                pair_counts[(a, b)] = pair_value
+                            pair_values.append(pair_value)
+
+                        if not all(3 <= x <= 6 for x in pair_values):
+                            continue
+
+                        full = sum(
+                            1
+                            for pair in pl_pairs
+                            if (
+                                fact_masks[combo[0]][pair]
+                                & fact_masks[combo[1]][pair]
+                                & fact_masks[combo[2]][pair]
+                                & e_mask
+                            )
+                        )
+                        if not 2 <= full <= 4:
+                            continue
+                        if not all(x > full for x in pair_values):
+                            continue
+
+                        has_three = True
+                        if all(fact[1] > 0 for fact in combo):
+                            has_three_positive = True
+
+                    if has_three:
+                        three_fact_surfaces += 1
+                    if has_three_positive:
+                        three_positive_surfaces += 1
+
+        result = {
+            "formula_count": len(rows),
+            "invariant_fact_count": len(facts),
+            "surface_count": surface_count,
+            "two_fact_surfaces": two_fact_surfaces,
+            "two_positive_surfaces": two_positive_surfaces,
+            "three_fact_surfaces": three_fact_surfaces,
+            "three_positive_surfaces": three_positive_surfaces,
+            "max_two_fact_surviving_triples": max_two_fact_surviving_triples,
+            "max_two_positive_surviving_triples": (
+                max_two_positive_surviving_triples
+            ),
+        }
+        output_report[output] = result
+
+        aggregate_counts["outputs"] += 1
+        aggregate_counts["surfaces"] += surface_count
+        aggregate_counts["two_fact_surfaces"] += two_fact_surfaces
+        aggregate_counts["two_positive_surfaces"] += two_positive_surfaces
+        aggregate_counts["three_fact_surfaces"] += three_fact_surfaces
+        aggregate_counts["three_positive_surfaces"] += three_positive_surfaces
+
+        if two_fact_surfaces:
+            aggregate_counts["outputs_with_two_fact_surface"] += 1
+        if two_positive_surfaces:
+            aggregate_counts["outputs_with_two_positive_surface"] += 1
+        if three_fact_surfaces:
+            aggregate_counts["outputs_with_three_fact_surface"] += 1
+        if three_positive_surfaces:
+            aggregate_counts["outputs_with_three_positive_surface"] += 1
+
+    return {
+        "surface_shape": "3x3x3",
+        "two_fact_criterion": {
+            "single_branch_range": [6, 8],
+            "combined_branch_range": [3, 4],
+        },
+        "three_fact_criterion": {
+            "single_branch_range": [6, 8],
+            "pair_branch_range": [3, 6],
+            "combined_branch_range": [2, 4],
+            "each_fact_required": True,
+        },
+        "aggregate": dict(aggregate_counts),
+        "targets": output_report,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("input_json")
@@ -274,6 +511,14 @@ def main():
         help=(
             "Enumerate every 3x3x3 candidate surface containing all valid "
             "formula ingredients for each output and screen invariant tag facts."
+        ),
+    )
+    ap.add_argument(
+        "--dosing-screen",
+        action="store_true",
+        help=(
+            "Screen 3x3x3 surfaces for balanced two- and three-fact clue sets "
+            "whose individual facts remain weak."
         ),
     )
     args = ap.parse_args()
@@ -426,6 +671,11 @@ def main():
         "bounded_3x3": (
             bounded_three_by_three_report(formulas, tags_by_name, vocabulary)
             if args.bounded_3x3
+            else None
+        ),
+        "dosing_screen": (
+            dosed_three_by_three_report(formulas, tags_by_name, vocabulary)
+            if args.dosing_screen
             else None
         ),
     }
