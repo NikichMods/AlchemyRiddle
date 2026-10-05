@@ -428,3 +428,26 @@ UX evidence:
 
 Current interaction point:
 - awaiting player's next action.
+
+
+## Live checkpoint 4 — Investigation I
+
+Player action:
+- microtest P1 + L2. (User utterance transcribed as “B1 L2”; interpreted as P1 L2 from current slot notation.)
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **6 / 8**.
+
+Journal now contains:
+- P2 + L3 -> STABLE;
+- L3 + E1 -> STABLE;
+- P2 + L3 + E1 -> NOT the current target;
+- P1 + L2 -> INCOMPATIBLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
