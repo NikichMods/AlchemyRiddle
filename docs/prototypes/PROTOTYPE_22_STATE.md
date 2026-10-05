@@ -499,4 +499,35 @@ Exact current interaction point:
 - architecture identity remains hidden;
 - awaiting the player's first action.
 
+
+
+## Investigation I — live checkpoint 1
+
+Player reasoning before the first microtest:
+- explicitly noticed the 4-charge budget as potential meta-information only because
+  of prior prototype experience, and judged it likely irrelevant to a first-time
+  player;
+- started from the known STABLE pair P2 Тусклый порошок + L3 Тёплый раствор;
+- applied the target fact Растение ×1;
+- observed that P2 contributes no Растение while L3 contributes one, so E3
+  Искристая эссенция would add a second Растение and was rejected as a
+  continuation;
+- identified E1 Тихая эссенция and E2 Холодная эссенция as the two plausible
+  continuations of that stable pair;
+- chose to test L3 + E1 first.
+
+Player action:
+- microtest L3 Тёплый раствор + E1 Тихая эссенция.
+
+Raw outcome:
+- **СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **3 / 4**.
+
+Facilitator supplied no deduction from the fresh observation.
+
+Current interaction point:
+- awaiting the player's inference / next action.
+
 Production architecture remains **BLOCKED**.
