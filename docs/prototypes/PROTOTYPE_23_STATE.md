@@ -245,4 +245,14 @@ verbatim enough to preserve these two separate facts:
 - legal next action: any adjacent microtest or any full synthesis;
 - awaiting the player's first action.
 
+
+
+## Live checkpoint 1-2
+
+The player followed the pre-known P1+L1 stable anchor, applied the single-Mineral target fact, and chose L1+E2 as the only target-consistent untested continuation. The microtest result was STABLE; charges are 5/6.
+
+The player then chose full synthesis P1+L1+E2 because both adjacent links are established STABLE and the triple satisfies the target property constraint.
+
+Deterministic synthesis result: both adjacent links remain STABLE, but the requested target effect is absent. Record the exact triple P1+L1+E2 as NOT the recipe for the current target. Pair facts P1+L1 and L1+E2 remain true. No facilitator deduction has been supplied after the synthesis result.
+
 Production architecture remains **BLOCKED**.
