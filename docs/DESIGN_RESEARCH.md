@@ -3075,3 +3075,175 @@ feasibility:
 Two-slot alchemy remains a separate puzzle-design problem.
 
 Production architecture remains **BLOCKED**.
+
+
+## Secondary-branch integration checkpoint — 2026-10-05
+
+Status: **canonical continuation state after integrating the useful results of
+`research/secondary-chat-2026-10-05`; do not merge that branch wholesale**.
+
+The secondary chat branch began as an intentionally non-canonical parallel
+exploration. Its useful evidence has now been promoted individually into the
+main research line:
+- fixed final-reagent property ownership/model;
+- the 35-reagent property screen;
+- bounded 3x3x3 information-sufficiency evidence;
+- clue-power dosing evidence;
+- the current three-slot puzzle-core feasibility checkpoint.
+
+The secondary branch itself remains historical exploratory material and is now
+behind the canonical main line. Future work should recover from `main`, not
+resume from that branch's notes.
+
+### Current three-slot architecture comparison
+
+The recent work exposes **two legitimate competing puzzle architectures**.
+Do not silently treat the richer one as an automatic upgrade.
+
+#### A. Baseline: bounded tag-centric puzzle
+
+Shape:
+
+`bounded 3x3x3 surface -> 2-3 dosed invariant property facts -> new adjacent compatibility microtests -> justified formula`
+
+Properties:
+- mathematically well characterized;
+- relatively easy to balance deterministically per target;
+- prior player history is not required for the puzzle to be well shaped;
+- accumulated alchemy knowledge has limited effect on later investigations.
+
+This is the current robust baseline.
+
+#### B. Adaptive knowledge-aware puzzle
+
+Shape:
+
+`bounded 3x3x3 surface -> dosed target properties + all already-known adjacent compatibility facts relevant to that surface -> only the missing new microtests -> justified formula`
+
+The player's accumulated knowledge state may include both:
+- `STABLE` Powder-Liquid / Liquid-Essence relations;
+- `INCOMPATIBLE` relations learned from prior experiments.
+
+Successful earlier formulas naturally contribute their observed adjacent stable
+pairs to the journal. Earlier failed/research pair tests may contribute known
+incompatibilities.
+
+This architecture has a strong product advantage: **past discoveries change
+future puzzles**. Different recipe-discovery orders can therefore produce
+different legitimate reasoning paths for the same target, creating a personal
+history of becoming a more knowledgeable alchemist.
+
+It also has real costs:
+- puzzle shape becomes state-dependent;
+- generation/balancing and testing are more complex;
+- a highly knowledgeable player may arrive with a nearly solved field;
+- a low-knowledge player may arrive with little relational structure;
+- selecting only conspicuously useful old relations risks turning authorial
+  curation into meta-information.
+
+Therefore adaptive knowledge-awareness is a **competitor to the baseline**, not
+yet the selected production architecture.
+
+### How prior relations should be surfaced in the adaptive candidate
+
+Do not default to an answer-aware UI that tells the player which known relation
+"is useful for this target."
+
+A more neutral current candidate is:
+
+> Once the working 3x3x3 surface is chosen, show **all previously learned
+> adjacent pair relations whose ingredients are both present on that surface**.
+
+This behaves like external memory rather than an auto-solver:
+- the system filters the player's own laboratory history to the current working
+  substances;
+- it does not declare which relation is relevant to the target;
+- useful, neutral and dead-end known facts may coexist;
+- the player still performs the cross-constraint reasoning.
+
+This rule is a research candidate, not yet final UI policy.
+
+### Existing evidence for tags + known compatibility
+
+Prior work already gives partial support:
+- the unrestricted adaptive information-budget screen showed that one useful
+  known stable Powder-Liquid anchor materially improves continuation counts;
+- the bounded 3x3x3 existence screen showed all 16 outputs can remain within a
+  small target-consistent continuation envelope when a useful target-relevant
+  stable anchor exists;
+- Prototype 21 showed that richer pre-known relational structure is comfortable
+  and clearer than a no-anchor start, while also exposing the
+  friendliness/meta-information risk.
+
+However, this is **not yet a proof of the full adaptive architecture** because
+those screens did not model arbitrary player-specific knowledge states and did
+not require the system to work without hand-selecting a useful known relation.
+
+### Next canonical research task
+
+Before the final three-slot end-to-end closure/playtest, compare the two
+architectures quantitatively.
+
+For each of the 16 ordinary picker-compatible three-slot outputs, evaluate many
+possible accumulated-knowledge states over the real adjacent compatibility
+graph, including both known stable and known incompatible pairs.
+
+At minimum, model several knowledge densities / progression histories (for
+example approximately 0%, 20%, 40%, 60%, 80% of learnable adjacent relations),
+with multiple valid histories at each density rather than one convenient graph.
+
+For each target/state, ask whether the system can choose:
+- an admissible 3x3x3 surface preserving every valid vanilla formula;
+- 1-3 individually weak invariant target-property facts;
+- while surfacing all known relations internal to that field;
+
+such that:
+- no already-known complete adjacent chain trivially reveals the answer unless
+  that is accepted as a legitimate consequence of expertise;
+- the starting state is neither empty enumeration nor effectively solved;
+- a small number of new hypothesis-driven microtests remains;
+- full intended investigation can reach a unique valid formula, or the accepted
+  final 1-2 justified hypotheses before synthesis.
+
+Compare this directly against the baseline tag-centric generator on:
+- solvability / corpus coverage;
+- number of new microtests;
+- frequency of pre-solved or under-structured starts;
+- sensitivity to discovery order;
+- amount of candidate-surface curation required;
+- complexity of the generator/scorer.
+
+Important: do not optimize the adaptive generator by secretly selecting only
+answer-helpful old relations. The default screen should treat the player's
+known graph as state and the current surface as the only relevance filter.
+
+### Decision checkpoint after that screen
+
+If the adaptive system is robust across varied knowledge histories without
+requiring excessive answer-aware curation, retain it for blind comparison
+against the baseline because its accumulated-knowledge payoff is a major
+product benefit.
+
+If it is fragile, frequently pre-solves puzzles, or requires heavy hidden
+curation, keep the fixed tag-centric architecture as the primary system and
+treat accumulated compatibility knowledge as an optional bonus/fallback rather
+than a generator input.
+
+Only after this architecture comparison should the project perform the final
+end-to-end three-slot closure test and blind player validation described in the
+previous checkpoint.
+
+### Other project questions remain open
+
+This integration does **not** collapse the rest of the project into the current
+three-slot thread. After the three-slot architecture decision/closure, recover
+the broader canonical backlog, including:
+- two-slot alchemy grammar/tutorial;
+- progression and target-entry knowledge;
+- final candidate-surface policy;
+- property wording/presentation and Study/journal integration;
+- experiment economy and persistence;
+- exceptional picker-incompatible success definition;
+- production UI/runtime ownership and implementation gates.
+
+Production architecture remains **BLOCKED**.
