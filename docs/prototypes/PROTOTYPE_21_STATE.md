@@ -187,3 +187,25 @@ Current state:
 - Research Charges: 2/2;
 - completed new microtests: none;
 - legal next action: any adjacent pair microtest or full synthesis.
+
+
+## Live checkpoint 1
+
+Player observation before the first microtest:
+- noticed that differing Research Charge budgets across prototypes can itself act as meta-information about expected solve length;
+- explicitly asked not to treat that as the main issue for this run.
+
+Player reasoning before the first microtest:
+- considered the known stable P2 Панцирный порошок + L1 Медовый раствор edge;
+- applied the target facts and identified E3 Костяная эссенция as a natural continuation because L1 supplies Растение, while E3 supplies Минерал + Труп;
+- chose to test whether L1 + E3 is stable.
+
+Player action:
+- microtest L1 Медовый раствор + E3 Костяная эссенция.
+
+Raw outcome: **INCOMPATIBLE / НЕСОВМЕСТИМО**.
+
+Resources:
+- Research Charges remaining: **1 / 2**.
+
+No facilitator deduction from the fresh result. Await player inference / next action.
