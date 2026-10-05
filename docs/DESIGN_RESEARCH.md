@@ -4460,3 +4460,16 @@ Current interaction point:
 - awaiting first player action.
 
 Production source implementation remains **BLOCKED**.
+
+
+### Prototype 27 early clue-language signal
+
+The opening of Prototype 27 produced a strong early UX signal before the first experiment:
+- mixing clue forms (global absence + exact count + slot-local absence) felt markedly more engaging than repeated “tag X exactly once” statements;
+- the player immediately used the clue set to reason about how to complete a known stable bridge;
+- working-memory burden remained acceptable despite having three constraints;
+- this supports the hypothesis that tag-clue **variety**, not merely clue count, matters materially to perceived puzzle quality.
+
+The slot-local negative clue also exposed a wording issue. Its semantics were clear and useful, but the literal phrasing equivalent to “Powder does not belong to Corpse” sounded unnatural. Keep the clue family under test, but treat final player-facing phrasing as unresolved.
+
+Production remains **BLOCKED**.
