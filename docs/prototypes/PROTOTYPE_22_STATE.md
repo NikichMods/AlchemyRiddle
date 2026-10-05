@@ -530,4 +530,38 @@ Facilitator supplied no deduction from the fresh observation.
 Current interaction point:
 - awaiting the player's inference / next action.
 
+
+
+## Investigation I — live completion
+
+Player inference after the first microtest:
+- recognized that P2 + L3 was already known STABLE and L3 + E1 had now tested
+  STABLE;
+- treated the resulting two-edge stable chain as sufficient confidence to
+  attempt the full formula immediately;
+- did not spend a second microtest on L3 + E2.
+
+Player action:
+- synthesize P2 Тусклый порошок + L3 Тёплый раствор + E1 Тихая эссенция.
+
+Deterministic outcome:
+- **SUCCESS / УСПЕХ**.
+
+Resources:
+- Research Charges used: **1 / 4**;
+- Research Charges remaining: **3 / 4**;
+- microtests: **1**;
+- failed synthesis attempts: **0**.
+
+Observed blind-play path:
+1. Start from a pre-known stable P2 + L3 relation.
+2. Apply the target fact Растение ×1 to reject E3 as a continuation.
+3. Test L3 + E1 -> STABLE.
+4. Immediately synthesize P2 + L3 + E1 -> SUCCESS.
+
+Facilitator supplied no new deduction before the player's synthesis choice.
+
+Investigation I is complete.
+Architecture identity remains hidden pending completion/evaluation of Investigation II.
+
 Production architecture remains **BLOCKED**.
