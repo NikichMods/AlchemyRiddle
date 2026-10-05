@@ -614,3 +614,38 @@ Exact triple P3+L2+E2 excluded.
 Charges remain: 6/8.
 Investigation II full syntheses: 1; compatible non-target syntheses: 1.
 Awaiting next player action.
+
+
+## Live completion — Investigation II
+
+Player action:
+- full synthesis P2 + L3 + E1.
+
+Outcome:
+- TARGET EFFECT OBTAINED.
+
+Investigation II solved.
+
+Resources:
+- charges used: 3/8;
+- charges remaining: 5/8;
+- full syntheses: 2;
+- compatible non-target syntheses: 1;
+- target syntheses: 1.
+
+Observed path:
+1. Start with mixed anchors P3+L2 and L3+E1 plus three target constraints.
+2. L2+E1 -> INCOMPATIBLE.
+3. L2+E2 -> STABLE.
+4. P3+L2+E2 -> compatible non-target.
+5. Move to L3+E1.
+6. Player temporarily misreads the slot-local Liquid/Corpse restriction as global and excludes P1; facilitator corrects the visible-rule interpretation.
+7. P2+L3 -> STABLE.
+8. P2+L3+E1 -> TARGET.
+
+UX evidence:
+- ordinary player mistakes are part of the prototype evidence, not noise;
+- slot-local constraints can be logically useful yet vulnerable to scope confusion, especially after digressions;
+- future presentation should make clue scope visually explicit rather than relying only on sentence wording.
+
+Matched pair complete. Comparative evaluation may now begin.
