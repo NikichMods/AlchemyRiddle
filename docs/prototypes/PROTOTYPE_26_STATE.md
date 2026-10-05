@@ -615,3 +615,31 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 10 — Investigation II
+
+Player UX observation:
+- the player reconstructed a full candidate chain directly from the journal without re-reading the candidate table or re-deriving the target constraints;
+- seeing the newly learned L2+E2 stable pair prompted recall of the prior P1+L2 stable pair through the shared L2 node;
+- this suggests that even a compact flat journal can support bridge reconstruction when relation entries are visually scannable, though explicit grouping by shared reagent may strengthen this further.
+
+Player action:
+- full synthesis P1 + L2 + E2.
+
+Deterministic outcome:
+- both adjacent links are **STABLE**;
+- **TARGET EFFECT ABSENT**.
+
+Triple exclusion:
+- P1 + L2 + E2 is not the current target recipe.
+
+Resources:
+- Research Charges remaining: **7 / 8**;
+- full synthesis attempts in Investigation II: 1;
+- compatible non-target syntheses: 1.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
