@@ -604,3 +604,13 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 8 — Investigation II
+
+Action: full synthesis P3 + L2 + E2.
+Outcome: adjacent links stable; target absent.
+Exact triple P3+L2+E2 excluded.
+Charges remain: 6/8.
+Investigation II full syntheses: 1; compatible non-target syntheses: 1.
+Awaiting next player action.
