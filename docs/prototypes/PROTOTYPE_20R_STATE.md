@@ -222,3 +222,21 @@ Observed blind-play path:
 Facilitator did not supply the player's new deductions after fresh observations.
 
 Subjective evaluation pending.
+
+
+## Player subjective evaluation
+
+The run was manageable and did not feel like blind brute force. The player used target properties to discard impossible combinations, then tested only plausible branches.
+
+However, the starting state felt under-structured. With only two target properties and no prior relational information, the early interaction still felt too much like sequentially checking admissible pairs.
+
+Accepted player-experience finding:
+- do not increase difficulty merely by increasing cognitive load;
+- lower working-memory burden is acceptable and may be preferable;
+- the preferred improvement is richer legitimate starting structure: constraints or pair relationships that intersect, reinforce, or rule one another out;
+- the interesting part should be reasoning inside an already-shaped space, not building the whole useful structure by pair testing.
+
+Disposition:
+- calibrated no-anchor 3x3x3 is viable;
+- it is not the preferred ordinary presentation when richer starting knowledge can be supplied legitimately;
+- the next prototype should test a similarly bounded field with richer starting relational structure without pre-solving the target.
