@@ -437,3 +437,32 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 5 — Investigation I
+
+Player reasoning:
+- explicitly closes the P2 branch from visible target constraints plus the failed L1+E3 continuation;
+- identifies P3+L1 as the next plausible branch: Mineral + Plant leaves Corpse still required.
+
+Player action:
+- microtest P3 + L1.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **4 / 8**.
+
+Journal now contains:
+- prior: P1 + L3 -> STABLE;
+- new: L3 + E2 -> STABLE;
+- P2 + L3 + E2 -> NOT the current target;
+- new: P2 + L1 -> STABLE;
+- new: L1 + E3 -> INCOMPATIBLE;
+- new: P3 + L1 -> INCOMPATIBLE.
+
+No facilitator deduction beyond confirming the player-stated P2 branch closure.
+
+Current interaction point:
+- awaiting player's inference / next action.
