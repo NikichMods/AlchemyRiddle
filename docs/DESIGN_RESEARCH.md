@@ -4907,3 +4907,106 @@ Manual annotation remains a separate UI hypothesis:
 With Prototype 29, the current bridge+constraint family now has validated variety across orientation, clue-led vs experiment-led solving, composite clue grammar, and residual-answer topology.
 
 Production remains **BLOCKED**.
+
+
+## Post-Prototype-29 research checkpoint — move to two-slot grammar
+
+Status: **canonical next-work decision; production remains BLOCKED**.
+
+### What the three-slot research has now established
+
+The ordinary three-slot puzzle core is no longer waiting on proof that the bridge+constraint grammar can produce satisfying deduction. The accepted adaptive knowledge-aware architecture now has blind-play evidence for meaningful variety across:
+
+- direct Powder+Liquid anchors completed toward Essence;
+- mirrored Liquid+Essence anchors completed backward toward Powder;
+- mixed anchor orientation within one investigation;
+- target formulas that lie on a starting bridge;
+- target formulas that lie on **none** of the starting bridges, provided resolving the bridges proves a small residual branch;
+- simple target-property clues;
+- composite clues including positive implication, exact-one-of-two/XOR, and implication with a negative consequent;
+- experiment-led paths, clue-led paths, and mixed paths;
+- investigations that legitimately use zero microtests when existing knowledge already supports a reasoned synthesis.
+
+Do not impose a minimum experiment count merely for ceremony. An occasional immediately correct first reasoned synthesis is also acceptable, but should not become a frequent generator pattern that teaches a meta-rule.
+
+Starting stable relations are **chemical knowledge, not privileged answer carriers**. A STABLE bridge may:
+- lead to the target;
+- lead to a compatible non-target hypothesis whose failure is informative;
+- be disqualified immediately by target-specific clues.
+
+Presentation must keep **STABLE** distinct from **relevant to this target**.
+
+### Difficulty and presentation signals now accepted
+
+- Three simultaneous composite clues initially look denser than they play; after basic clue forms are learned, this density is approximately **medium difficulty**, not automatically high difficulty.
+- Clue direction contributes to cognitive cost. With visual order Powder -> Liquid -> Essence, forward linguistic relations are cheaper than reverse references such as Liquid -> Powder. Reverse-direction clues are allowed but should count against difficulty.
+- Slot-local scope must eventually be visually explicit enough that it is not accidentally promoted to a global rule.
+- Logical/linguistic variety is desirable; repeated “property X occurs exactly once” should not dominate the clue vocabulary.
+- Each surfaced clue should earn its place by affecting an intended branch at some point; decorative facts are poor information design.
+
+### Journal / external-memory signals
+
+The current paper UI continues to benefit from:
+- three explicit reagent columns: Powder | Liquid | Essence;
+- a visible distinction between prior accumulated knowledge and facts learned during the current investigation;
+- persistent recording of tested full hypotheses as well as pair facts.
+
+A new promising UI hypothesis is **player-controlled candidate annotation**, especially strike-through/exclusion marks. This may externalize the player's own deduction without the system auto-solving. It is not yet accepted implementation architecture; feasibility, input model, persistence and ownership remain open.
+
+### Do not build the full three-slot difficulty/generation system yet
+
+The next fundamental project risk is no longer “can three-slot alchemy work?” It is whether the overall AlchemyRiddle experience can form one coherent progression from early two-slot alchemy into the accepted three-slot system.
+
+Formalizing a complete three-slot difficulty generator now would be premature because the early tutorial grammar may change what concepts should be shared, introduced first, or counted as difficulty later.
+
+Therefore **pause full three-slot difficulty/generator formalization**.
+
+### Next fundamental research question: two-slot alchemy
+
+Two-slot alchemy remains architecturally open and must **not** be implemented by mechanically shrinking the three-slot grammar.
+
+Key structural problem:
+- in a three-slot recipe, a known STABLE adjacent pair is an unfinished bridge;
+- in a two-slot recipe, a STABLE Powder+Liquid pair is already essentially the complete formula.
+
+Therefore a pair-compatibility oracle would risk collapsing the puzzle immediately rather than supporting deduction.
+
+At the same time, the verified ordinary corpus gives two-slot alchemy a potentially valuable structure:
+- **23 / 24** ordinary two-slot formulas have another ordinary formula at Hamming distance 1;
+- this makes “reason from a nearby known reaction / what changed?” structurally much more promising for two-slot than for three-slot alchemy.
+
+This opportunity is not yet accepted architecture. Earlier known-recipe-comparison attempts had legibility/choice problems and must not simply be resurrected unchanged.
+
+### Next research step
+
+Run a fresh **two-slot solution-space checkpoint** before another blind prototype or implementation.
+
+Compare approximately 3–4 complete player-facing two-slot investigation grammars from a clean slate. Candidate families may reuse accepted ingredients such as:
+- target-specific coarse properties;
+- accumulated knowledge from known recipes;
+- controlled experiments;
+- differential reasoning from a nearby known formula;
+- bounded combinations of those mechanisms.
+
+Selection criteria:
+1. the player must perform a real inference rather than receive the pair through a compatibility check;
+2. the first two-slot investigations must be suitable for onboarding and low working-memory cost;
+3. concepts learned in two-slot play should transfer naturally into the later Powder -> Liquid -> Essence system where possible;
+4. the system should preserve the feeling “I worked out this recipe”;
+5. the grammar must remain targetable from a visible need for an unknown product;
+6. ordinary success should not depend on wiki lookup or blind enumeration;
+7. do not force one grammar across both arities merely for elegance if evidence shows two-slot needs a distinct mechanism.
+
+### Planned order after the two-slot checkpoint
+
+Current preferred sequence:
+
+1. **Two-slot grammar / tutorial architecture.**
+2. **Two-slot -> three-slot conceptual progression:** identify which learned concepts carry forward and how the later system becomes a richer form of alchemical reasoning rather than an unrelated minigame.
+3. **Progression-specific candidate availability / knowledge state:** characterize what reagents, properties and accumulated relations are legitimately available when each target first appears.
+4. **Unified difficulty and generation policy:** only then formalize early/mid/late complexity, clue density/direction, bridge topology, experiment demand, field size, and anti-meta-pattern variation across the whole supported alchemy progression.
+5. Resume surrounding-system/UI/runtime architecture after the puzzle grammar and progression inputs are sufficiently closed.
+
+This sequencing is now the canonical plan for the next chat unless new evidence contradicts it.
+
+Production remains **BLOCKED**. No runtime test is currently required.
