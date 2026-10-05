@@ -252,3 +252,32 @@ Current interaction point:
 - both starting bridge hypotheses are closed as compatible non-targets;
 - Research Charges: 7/8;
 - awaiting player's residual deduction / next action.
+
+
+## Live completion
+
+Player UX observation before final synthesis:
+- seeing logically impossible candidates visually struck out was strongly positive;
+- player suggests optional manual annotation such as strike-through / exclusion marking could support external memory and active deduction;
+- this is a UI hypothesis only; implementation cost and ownership are not yet researched.
+
+Residual reasoning:
+- P1 and E3 are eliminated by Slime absence;
+- the two bridge-based target-consistent hypotheses P2+L2+E1 and P3+L1+E1 were already ruled out by full synthesis;
+- the player identifies the remaining off-bridge candidate P3+L3+E2 and chooses to synthesize it directly.
+
+Player action:
+- full synthesis P3 + L3 + E2.
+
+Outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Resources:
+- Research Charges used: 1 / 8;
+- Research Charges remaining: **7 / 8**;
+- microtests: 1;
+- full syntheses: 3;
+- compatible non-target syntheses: 2;
+- successful target syntheses: 1.
+
+Prototype 29 blind play complete.
