@@ -497,3 +497,43 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live completion — Investigation I
+
+Player action:
+- full synthesis P3 + L3 + E1.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation I is solved.
+
+Resources:
+- Research Charges used: 4 / 8;
+- Research Charges remaining: **4 / 8**;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Start with two prior L+E stable bridges and three varied target constraints.
+2. P1+L2 -> STABLE.
+3. P1+L2+E2 -> compatible non-target.
+4. P3+L2 -> INCOMPATIBLE, closing the first bridge.
+5. Move to second bridge L3+E1.
+6. P1+L3 -> INCOMPATIBLE.
+7. P3+L3 -> STABLE.
+8. P3+L3+E1 -> TARGET.
+
+Experiential signal:
+- reverse-orientation bridge completion was used naturally; player repeatedly treated L+E pairs as unfinished structures to be completed backward with a Powder.
+- varied clue forms were positively received before any action and used directly during branch filtering.
+
+Matched-pair transition:
+- activate Investigation II;
+- reset Research Charges to **8 / 8**;
+- do not transfer relation knowledge from Investigation I;
+- Investigation II starts with exactly its two precommitted stable anchors and three target-property constraints.
+
+No comparative evaluation yet.
