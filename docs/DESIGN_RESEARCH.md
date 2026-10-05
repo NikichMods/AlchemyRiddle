@@ -4858,3 +4858,17 @@ Risk:
 Treat this as a candidate variety pattern, not yet a default.
 
 Production remains **BLOCKED**.
+
+
+### Prototype 29 manual annotation signal
+
+During the residual phase, visually striking out candidates already proven impossible was immediately useful to the player.
+
+New UI hypothesis:
+- allow the player to manually mark or strike through candidate reagents / branches as excluded;
+- this could strengthen the journal's role as external memory without the system itself solving the puzzle;
+- manual annotation is preferable to automatic over-explanation when the player wants to preserve their own reasoning state.
+
+Do not treat this as accepted implementation architecture yet. UI feasibility, persistence, input model, and ownership remain unresearched.
+
+Production remains **BLOCKED**.
