@@ -4309,3 +4309,26 @@ The same live reasoning produced a useful teaching principle:
 - later investigations can require deeper branching once the rule language is learned.
 
 These are candidate UX/grammar refinements for the adaptive information-budget direction. Production remains **BLOCKED**.
+
+
+### Compatible non-target reward and structure-decay note
+
+Prototype 26 adds two design hypotheses and one negative experiential signal.
+
+**Compatible non-target reward hypothesis**
+- when the player constructs a full chain whose adjacent relations are stable but the target effect is absent, the result already proves that the player found a chemically coherent hypothesis;
+- a small reward may prevent this from reading as pure failure and reinforce "your reasoning was good; the hidden target simply was not this one";
+- the simplest candidate is restoring Research Charge capacity, but exact reward type, magnitude, exploit resistance and presentation are unresolved;
+- do not accept this economy rule without later testing because free synthesis plus renewable charges could create degenerate probing loops.
+
+**Prior-vs-new knowledge presentation**
+- visually distinguishing starting journal facts from newly discovered facts was explicitly judged useful in live play;
+- retain this as a UI direction for later mockups.
+
+**Structure-decay signal**
+- the sparse-history compensated opening produced a strong first deduction from one prior stable anchor plus three target-property constraints;
+- once that compatible hypothesis failed, the player reported that no comparable second structure was visible and explicitly shifted to simple enumeration of unexplored pairs;
+- therefore richer tag information may compensate for sparse history at the **opening hook** without necessarily sustaining the whole deduction arc;
+- the next comparison must evaluate not only first-move quality but whether enough relational structure survives after a wrong-but-valid hypothesis.
+
+Production remains **BLOCKED**.
