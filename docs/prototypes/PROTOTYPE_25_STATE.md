@@ -406,3 +406,25 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 3 — Investigation I
+
+Player attempted microtest:
+- P2 + L3.
+
+Protocol handling:
+- this relation is already present in the prior journal as **STABLE**;
+- no duplicate experiment is performed;
+- no Research Charge is consumed.
+
+Resources remain:
+- Research Charges: **7 / 8**.
+
+Journal remains unchanged.
+
+UX evidence:
+- repeat-test interception remains relevant; already-known relation should be surfaced explicitly at selection time.
+
+Current interaction point:
+- awaiting player's next action.
