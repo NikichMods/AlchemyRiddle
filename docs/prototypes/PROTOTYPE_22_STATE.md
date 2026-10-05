@@ -583,4 +583,41 @@ Exact current interaction point:
 - Investigation II player-facing panel is being presented;
 - awaiting the player's first action.
 
+
+
+## Investigation II — live checkpoint 1
+
+Player reasoning before the first microtest:
+- rules were understood and the absence of prior compatibility knowledge was
+  immediately felt as a disadvantage from the player perspective;
+- separately scanned the distribution of Минерал and Труп properties across
+  all three slots;
+- reported that intersecting the two target constraints materially increased
+  working-memory load;
+- explicitly wanted to write down / mark / cross out candidates;
+- reported difficulty choosing a good first experiment without first mentally
+  enumerating many possible branches;
+- described the eventual first test as partly random / a convenient starting
+  branch rather than clearly information-optimal;
+- then formed a concrete conditional branch from P1 Серый порошок:
+  because P1 already supplies the single allowed Минерал, later components must
+  avoid Минерал while supplying two Труп occurrences;
+- identified L3 Молочный раствор plus either E2 Тёмная эссенция or E3
+  Стеклянная эссенция as plausible continuations;
+- chose to test P1 + L3.
+
+Player action:
+- microtest P1 Серый порошок + L3 Молочный раствор.
+
+Raw outcome:
+- **СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **3 / 4**.
+
+Facilitator supplied no deduction from the fresh observation.
+
+Current interaction point:
+- awaiting the player's inference / next action.
+
 Production architecture remains **BLOCKED**.
