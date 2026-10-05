@@ -611,3 +611,36 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 10 — Investigation II
+
+Player UX observation:
+- current on-screen information density feels **ideal**;
+- all relevant candidates, target fact, journal entries and resources are visible and easy to parse;
+- the player explicitly reports that nothing important feels hidden and nothing feels extraneous;
+- preserve approximately this density/layout as a strong presentation reference for later prototypes.
+
+Player action:
+- full synthesis P3 + L3 + E1.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation II is solved.
+
+Resources:
+- Research Charges used: 2 / 8;
+- Research Charges remaining: **6 / 8**;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Start with one target fact + three prior relations.
+2. L2 + E2 -> STABLE.
+3. P1 + L2 + E2 -> compatible non-target.
+4. L3 + E1 -> STABLE.
+5. P3 + L3 + E1 -> TARGET.
+
+Matched pair is now complete. Proceed to comparative player evaluation per the precommitted protocol.
