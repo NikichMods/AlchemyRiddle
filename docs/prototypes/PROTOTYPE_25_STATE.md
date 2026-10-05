@@ -536,3 +536,26 @@ Matched-pair transition:
 - Investigation II starts with exactly its precommitted three prior relations and one target-specific fact.
 
 No comparative evaluation yet.
+
+
+## Live checkpoint 7 — Investigation II
+
+Player action:
+- microtest L2 + E2.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Investigation II journal now contains:
+- prior: P1 + L2 -> STABLE;
+- prior: P3 + L3 -> STABLE;
+- prior: L2 + E1 -> INCOMPATIBLE;
+- new: L2 + E2 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
