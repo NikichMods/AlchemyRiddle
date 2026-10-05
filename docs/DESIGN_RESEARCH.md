@@ -3013,3 +3013,65 @@ balanced two-fact pattern; the richer three-fact pattern is available for
 14/16 outputs and can be used where it improves the reasoning shape.
 
 Production architecture remains **BLOCKED**.
+
+
+## Three-slot puzzle-core feasibility — status checkpoint (2026-10-05)
+
+Status: **core feasibility established; one end-to-end closure screen remains before declaring the three-slot puzzle grammar fully closed**.
+
+The combined real-corpus and prototype evidence now establishes the central
+existence claim for ordinary picker-compatible three-slot alchemy:
+
+- a bounded 3x3x3 field can preserve every valid vanilla formula for a target;
+- the accepted fixed, world-grounded final-reagent property vocabulary has
+  enough information capacity inside such a field;
+- clue power can be deliberately **dosed**, rather than minimized:
+  - two individually weak invariant facts can, for 16/16 outputs, reduce nine
+    first-stage Powder+Fluid branches to 3-4;
+  - a stricter progressive three-fact cross-constraint shape exists for 14/16;
+  - the two remaining multi-formula classes still support the universal
+    two-fact shape and can hand the next deduction step to compatibility;
+- the property layer can be stopped while leaving substantial full-triple
+  ambiguity (including 4 first-stage branches / 12 triples for every output),
+  so compatibility retains genuine independent work;
+- prior prototypes establish that adjacent compatibility is understandable,
+  informative and capable of supporting player-owned elimination without
+  becoming identical to the hidden recipe table.
+
+Under the project's operational notion of an interesting micro-puzzle —
+several simple constraints that are weak in isolation but become useful through
+intersection, followed by a small number of meaningful hypothesis tests — the
+real three-slot corpus therefore **supports the desired puzzle shape**.
+
+This closes the former high-level feasibility question. Do not reopen
+"can three-slot vanilla alchemy support deduction at all?" without new contrary
+evidence.
+
+### Remaining core closure question
+
+One puzzle-core proof is still worth doing before calling the three-slot grammar
+fully closed:
+
+> For every ordinary three-slot output, can one admissible dosed-property
+> surface be paired with the available adjacent-compatibility observations /
+> microtests so that an adaptive player path reaches either a unique valid
+> formula, or the explicitly allowed final 1-2 justified hypotheses, within the
+> intended short experiment budget?
+
+Earlier compatibility screens and Prototypes 20R/21 strongly support this, but
+the exact **dosed-property + compatibility end-to-end combination** has not yet
+been exhaustively screened across all 16 outputs.
+
+If that final combined screen passes, the remaining open work around
+three-slot alchemy is primarily surrounding-system design rather than puzzle
+feasibility:
+- candidate-surface selection policy / degree of answer-aware curation;
+- progression and first-entry knowledge;
+- how known compatibility relations are selected and presented;
+- UI / journal / Study presentation;
+- experiment economy and persistence;
+- exceptional picker-incompatible formula handling.
+
+Two-slot alchemy remains a separate puzzle-design problem.
+
+Production architecture remains **BLOCKED**.
