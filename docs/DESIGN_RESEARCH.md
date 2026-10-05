@@ -2640,3 +2640,22 @@ The 3x3x3 field begins with three reusable pair observations. They shape the rem
 Canonical state: `docs/prototypes/PROTOTYPE_21_STATE.md`.
 
 Production architecture remains BLOCKED.
+
+
+### Prototype 21 — completion and friendliness/meta-information finding
+
+Prototype 21 completed successfully with two new microtests and no failed synthesis.
+
+The structured start was comfortable and legible, but it exposed a new design variable: **friendliness itself becomes meta-information**. When the puzzle presents a small number of salient pre-known stable relations, the player may rationally assume that one of them is intended to lead to the target. This can reduce independent search pressure and produce a simple strategy of checking the obvious continuations in turn.
+
+This is not automatically a defect. For Graveyard Keeper, the player explicitly considered the resulting low-pressure, friendly deduction loop appropriate and potentially desirable.
+
+Design consequence:
+- do not equate stronger deduction only with higher uncertainty;
+- some authored benevolence is acceptable if the player still performs real local reasoning and experiments;
+- however, avoid making 'the highlighted old relations always contain the answer' into a predictable meta-rule;
+- future designs should distinguish **useful salience** from **guaranteed relevance** so starting structure helps orientation without becoming a hidden promise about the answer path.
+
+Prototype 21 therefore supports richer starting relational structure, but introduces a new robustness question: how much irrelevant-but-legitimate prior knowledge is needed before the system stops feeling authored toward the answer without becoming noisy or burdensome?
+
+Production architecture remains BLOCKED.
