@@ -4473,3 +4473,44 @@ The opening of Prototype 27 produced a strong early UX signal before the first e
 The slot-local negative clue also exposed a wording issue. Its semantics were clear and useful, but the literal phrasing equivalent to “Powder does not belong to Corpse” sounded unnatural. Keep the clue family under test, but treat final player-facing phrasing as unresolved.
 
 Production remains **BLOCKED**.
+
+
+### Prototype 27 diversity philosophy and external-validation note
+
+Prototype 27 produced a broader design synthesis while the blind test was still in progress.
+
+#### Useful-information principle
+A surfaced target-property clue should not be **perfectly decorative**. It may be weak and need not dominate the puzzle, but the intended path should normally include at least one moment where that clue materially excludes, permits, or disambiguates a branch. Prototype I exposed that an absence-of-Slime clue can feel wasted if Slime never becomes a live candidate choice.
+
+This is not a requirement that every clue fire constantly. The goal is to avoid UI information that appears mechanically meaningful but contributes nothing to the actual investigation.
+
+#### Bridges are scaffolding, not guaranteed answer carriers
+Stable prior relations should remain the main constructive scaffold, but the target should not always lie on one of the obvious starting bridges. A promising medium/high-difficulty topology is:
+1. several visible stable bridges provide natural research directions;
+2. each bridge is resolved/closed using tags and a small number of tests;
+3. their elimination leaves a very small residual branch that was not itself a starting bridge;
+4. the player can articulate why that residual branch is the answer, without beginning a fresh brute-force search.
+
+This could prevent the meta-rule “the answer is always hidden inside a starting bridge” while preserving the low-working-memory benefits of bridge-guided reasoning.
+
+#### Clue-language diversity should be structural, not decorative
+Promising clue families now include:
+- exact global counts;
+- global absence;
+- slot-local presence/absence;
+- conditional/composite constraints that couple properties or slots, e.g. a property being forbidden/required in one place only when another property is present elsewhere;
+- intersections of several individually weak facts.
+
+The specific wording/formulas remain open. Composite clues should be introduced sparingly because they raise reasoning depth and UI complexity. The key principle is to diversify **logical roles**, not merely wording.
+
+#### Maturity signal
+The player explicitly reports that the base system now feels stable enough that ideation is shifting from repairing the core toward inventing richer variants. Treat this as qualitative evidence that the current bridge+constraint grammar is becoming a viable foundation, not as production acceptance.
+
+#### External validation direction
+A later standalone web demo is a promising research tool. It could present bounded AlchemyRiddle puzzles independently of Graveyard Keeper and collect anonymized interaction-path statistics from multiple players, including which anchor is chosen first, test count, backtracking, resumptions, and whether players naturally follow stable bridges. This would directly test whether the current single-player cognitive model generalizes.
+
+Before building such a demo, define the exact research questions and minimal telemetry; do not let the demo become a production-architecture commitment by accident.
+
+After Prototype 27, perform a fresh broad solution-space/literature/game-mechanics scan from the now-stable bridge+constraint foundation to identify additional deduction patterns that may transfer cleanly.
+
+Production remains **BLOCKED**.
