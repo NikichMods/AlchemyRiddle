@@ -4405,3 +4405,58 @@ Current presentation evidence remains positive:
 Next research should test **bridge topology and clue variety**, not return to raw field-size comparison. At minimum include mirrored anchor orientation and more varied weak target-property statements while holding the successful information density roughly constant.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 27 — bridge topology and clue variety
+
+Status: **precommitted; matched player test active; production remains BLOCKED**.
+
+Prototype 26 established a provisional cognitive grammar:
+- prior STABLE relations provide constructive scaffold / unfinished bridges;
+- target/reagent properties constrain continuations;
+- newly discovered INCOMPATIBLE relations close active branches.
+
+The next uncertainty is topology repetition, not information quantity.
+
+### Solution-space checkpoint
+
+Compared topology families:
+1. mirrored Liquid+Essence anchors requiring backward Powder completion;
+2. mixed orientation with one Powder+Liquid and one Liquid+Essence anchor;
+3. a pre-completed stable chain at start;
+4. denser fork/star relation networks.
+
+Selected first comparison: **(1) vs (2)**.
+- A pre-completed chain is deferred because it is too close to a finished hypothesis for the current question.
+- Denser fork/star graphs are deferred until simple orientation symmetry is tested, to avoid simultaneously adding relation density and layout burden.
+
+### Research-method checkpoint
+
+No new runtime or host-internals uncertainty exists. Existing corpus/tag/compatibility evidence proves the relevant information sources. The unresolved question is experiential: orientation symmetry, readability, repetition risk and clue-language variety. A matched synthetic blind paper prototype is therefore the least-complex adequate method; no new harness/probe is justified.
+
+### Matched controls
+
+Both investigations use:
+- 3x3x3 field;
+- exactly three target-property constraints;
+- exactly two prior STABLE relations;
+- zero prior INCOMPATIBLE relations;
+- the established three-column presentation;
+- prior/new journal distinction;
+- 8 charges, 1 per adjacent microtest, 0 per synthesis.
+
+Investigation I uses two **Liquid+Essence** starting bridges. Investigation II uses one **Powder+Liquid** and one **Liquid+Essence** bridge.
+
+Both use varied clue forms: exact count, global absence, and a non-oracular slot-local absence statement. Each starting bridge has two target-consistent continuation candidates, so the tag layer does not turn either bridge into a direct slot answer.
+
+Complete facilitator state is precommitted in:
+`docs/prototypes/PROTOTYPE_27_STATE.md`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- two prior L+E stable bridges;
+- three target-property constraints;
+- awaiting first player action.
+
+Production source implementation remains **BLOCKED**.
