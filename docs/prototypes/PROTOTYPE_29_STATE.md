@@ -281,3 +281,20 @@ Resources:
 - successful target syntheses: 1.
 
 Prototype 29 blind play complete.
+
+
+## Final player evaluation
+
+Disposition: **RESIDUAL ANSWER RETAIN**.
+
+Player evaluation:
+- the final transition from the two failed bridge-based hypotheses to the off-bridge target felt exactly right;
+- it was experienced as deduction / “this is what remains,” not as brute-force residue;
+- the starting bridges did not feel like bait because each supported a real target-consistent hypothesis and their failure materially reduced the solution space;
+- the residual answer therefore succeeds as a legitimate topology variant for investigation diversity.
+
+Additional UX signal:
+- visually striking out impossible candidates was immediately helpful;
+- optional player-controlled exclusion marking remains a promising external-memory aid, pending UI feasibility research.
+
+Prototype 29 complete. Production remains BLOCKED.
