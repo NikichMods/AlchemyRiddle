@@ -4585,3 +4585,167 @@ Next research:
 - compare those patterns against the existing AlchemyRiddle acceptance envelope before adopting any.
 
 Production remains **BLOCKED**.
+
+
+## Broad deduction-pattern scan after Prototype 27
+
+Status: **external pattern scan; candidate mechanisms only; production remains BLOCKED**.
+
+Purpose:
+- reassess the solution space after the bridge+constraint grammar became experientially stable;
+- search for transferable deduction structures rather than games that merely share an alchemy theme;
+- prefer mechanisms that enrich logical variety without creating a second bookkeeping-heavy minigame.
+
+Sources inspected:
+- **Alchemists** official rules/tutorial (Czech Games Edition);
+- **Turing Machine** official rulebook (Scorpion Masqué);
+- **The Search for Planet X** official materials / rule explanations (Renegade / Foxtrot);
+- **Black Box** player guide;
+- **Cryptid** official clue/rule materials (Osprey);
+- general logic-grid clue taxonomies as a vocabulary cross-check.
+
+### 1. Constraint grammar can be much richer without adding a new interaction layer
+
+Turing Machine demonstrates a compact clue vocabulary built from a small number of slots and values but many logical forms:
+- equality / inequality;
+- less-than / greater-than;
+- parity;
+- min/max;
+- exact counts of a value;
+- repeated-value counts;
+- all distinct / one pair / repeated structure;
+- ascending / descending order;
+- consecutive sequences;
+- sums;
+- pairwise comparisons and cross-slot relations.
+
+Transfer to AlchemyRiddle:
+- the current reagent-tag layer can support more than exact counts and absence;
+- promising compact forms include comparisons, conditional implications, either/or, at-least/at-most, and cross-slot relations;
+- the UI cost can remain roughly one sentence per clue if grammar is bounded and consistently taught.
+
+Do **not** import numeric-code semantics literally. The transferable result is the breadth of relation forms over a small state space.
+
+### 2. Relational clues between entities may be more interesting than unary tag facts
+
+The Search for Planet X combines:
+- fixed global placement rules;
+- targeted observations;
+- research clues that state relations between object classes;
+- a persistent note sheet.
+
+Examples of the transferable relation language include adjacency, consecutive grouping, opposite positions, and bounded distance.
+
+Transfer to AlchemyRiddle:
+- target clues need not only say something about one tag in isolation;
+- they may express relations such as:
+  - if one slot has property A, another slot must/must-not have B;
+  - exactly one of two slots carries property A;
+  - properties A and B cannot coexist in the same recipe;
+  - if property A appears, property B must appear in a different slot;
+- this directly supports the player-requested composite clue family.
+
+Keep such relations sparse: the product target remains a short micro-deduction, not a full logic-grid puzzle.
+
+### 3. Experiments may be useful even when their observation has multiple possible causes
+
+Black Box is built around deterministic probes whose visible result can arise from different hidden configurations. The player knows the local rules and reasons backward from observed input/output behavior.
+
+Transfer hypothesis:
+- not every AlchemyRiddle experiment must collapse to a binary “this exact pair works/does not work” fact;
+- a bounded experiment result could sometimes indicate a small **class of possible causes** rather than identifying one relation directly;
+- this could create a stronger “scientific” feeling and reduce mechanical pair enumeration.
+
+Risk:
+- this is a materially new information model and may increase working-memory burden sharply;
+- test only after simpler clue-language/topology variants are exhausted;
+- if used, the journal must externalize the unresolved alternatives explicitly.
+
+### 4. Positive and inverse clue forms can be difficulty-scaled
+
+Cryptid uses a small set of clue families and, in its harder mode, allows inverse/negative versions of those same families.
+
+Transfer:
+- AlchemyRiddle can reuse the same semantic clue family in positive and negative forms instead of inventing unrelated rules for higher difficulty;
+- difficulty can come from polarity, composition and interaction rather than just more candidates;
+- this supports progression scaling without requiring a larger UI vocabulary.
+
+### 5. Aggregate feedback is a distinct experiment family
+
+Mastermind-style feedback reports aggregate correctness without telling which exact element caused which part of the feedback.
+
+Transfer hypothesis:
+- a future experiment could report an aggregate property of a proposed triple (for example, how many target conditions it satisfies) without identifying which component is responsible.
+
+Potential value:
+- strong information gain with low text volume;
+- can create cross-comparison reasoning between two hypotheses.
+
+Major risk:
+- if too explicit, it becomes answer-distance telemetry and may feel like guided disclosure;
+- if too abstract, it becomes bookkeeping-heavy;
+- retain only as a later comparator, not the next default direction.
+
+### 6. Clue sets should avoid tautologies and decorative facts
+
+The broader logic-puzzle ecosystem strongly relies on clue sets where each clue changes the legal solution space or becomes useful after another deduction.
+
+This reinforces Prototype 27's player evidence:
+- a surfaced clue may be weak or delayed;
+- but a clue that never affects any intended branch is poor information design;
+- generator quality should eventually measure **marginal usefulness**, not only uniqueness of the final solution.
+
+### 7. “Either/or” and conditional clues are especially promising for AlchemyRiddle
+
+Logic-grid systems commonly use:
+- exclusive either/or;
+- if/then;
+- if/then-not;
+- neither/nor;
+- compound-and.
+
+These fit the user's desired direction unusually well because they:
+- preserve ambiguity initially;
+- become valuable only after another clue or experiment resolves one side;
+- create delayed payoff without adding a new object or resource.
+
+This is likely the **highest-value next clue-family test**.
+
+### Candidate research directions after the scan
+
+Prefer the least-complex candidates first:
+
+**A. Composite-clue prototype**
+- keep current stable bridges and microtests unchanged;
+- introduce 1-2 conditional/either-or target clues alongside simpler facts;
+- test whether the richer clue language creates satisfying delayed deductions without scope confusion.
+
+**B. Residual-answer topology prototype**
+- provide several meaningful starting bridges;
+- ensure none contains the target;
+- after bridges are logically exhausted, exactly one small non-bridge branch remains;
+- test whether this breaks “answer is always on a bridge” meta-learning without reintroducing brute force.
+
+**C. Relational-tag prototype**
+- use sparse cross-slot relations between properties (e.g. A in one slot implies/not B in another);
+- hold bridge count and field size constant;
+- test whether relations feel like elegant structure or like logic-grid bookkeeping.
+
+Defer:
+- Black-Box-style ambiguous-cause experiments;
+- Mastermind-style aggregate answer-distance feedback;
+until A-C are tested, because those families modify the experiment information model rather than only the clue grammar/topology.
+
+### Standalone-demo implication
+
+The proposed standalone web demo remains a strong later research instrument. The current scan makes its telemetry question clearer:
+- which bridge orientation is chosen first;
+- whether players follow bridge-first or clue-first strategies;
+- how often scope errors occur;
+- which clue families are read/revisited;
+- test count, synthesis count and backtracking;
+- whether a non-bridge residual answer is found deductively or by enumeration.
+
+Do not build the demo before the next clue/topology prototypes establish which families are worth measuring.
+
+Production remains **BLOCKED**.
