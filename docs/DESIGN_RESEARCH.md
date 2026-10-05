@@ -4109,3 +4109,38 @@ Full method, aggregate results and limits:
 No installed-runtime test is required from the user.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 24 — variable-field minimum floor matched pair
+
+Status: **precommitted; player-facing test active**.
+
+The progression-limited quantitative screen promoted 2x2x2 to the
+minimum-floor blind-test candidate but did not establish whether that compact
+shape still feels like genuine deduction rather than short enumeration.
+
+Prototype 24 is a matched two-case Adaptive Knowledge-Aware paper test:
+- Investigation I: compact 2x2x2 field;
+- Investigation II: slightly richer 2x3x2 field;
+- both begin with no prior compatibility records;
+- both use one target-property fact;
+- both are precommitted so that target-specific evidence leaves four hidden
+  candidate triples and complete compatibility leaves the target plus one
+  compatible non-target chain;
+- resource scarcity is removed as a variable.
+
+The player knows field size is the current research topic, so architecture-size
+blindness is impossible. Hidden formula, compatibility graph, decoy identity and
+reasoning path remain blind.
+
+Complete facilitator state:
+\`docs/prototypes/PROTOTYPE_24_STATE.md\`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- no relation records;
+- no synthesis exclusions;
+- awaiting the player's first action.
+
+Production source implementation remains **BLOCKED**.
