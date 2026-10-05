@@ -408,3 +408,32 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 6 — Investigation I
+
+Player action:
+- full synthesis P2 + L1 + E2.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation I is solved.
+
+Resources:
+- Research Charges used: 5 / 8;
+- Research Charges remaining: **3 / 8**;
+- full synthesis attempts: 1;
+- successful target syntheses: 1.
+
+Observed reasoning path before success:
+1. Apply the single-Mineral target fact.
+2. Test P1+L1 -> STABLE.
+3. Test L1+E1 -> INCOMPATIBLE.
+4. Test P1+L2 -> INCOMPATIBLE.
+5. Reject P1 as the starting Powder.
+6. Test P2+L1 -> STABLE.
+7. Test L1+E2 -> STABLE.
+8. Synthesize P2+L1+E2 -> TARGET.
+
+Do not solicit comparative evaluation yet; start Investigation II next.
