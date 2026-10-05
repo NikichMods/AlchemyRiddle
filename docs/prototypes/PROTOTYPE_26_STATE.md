@@ -519,3 +519,43 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live completion — Investigation I
+
+Player action:
+- full synthesis P3 + L2 + E3.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation I is solved.
+
+Resources:
+- Research Charges used: 6 / 8;
+- Research Charges remaining: **2 / 8**;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Start with three target facts + prior P1+L3 STABLE.
+2. L3+E2 -> STABLE, yielding a satisfying first anchored hypothesis.
+3. P2+L3+E2 -> compatible non-target.
+4. P2+L1 -> STABLE.
+5. L1+E3 -> INCOMPATIBLE.
+6. P3+L1 -> INCOMPATIBLE.
+7. P3+L2 -> STABLE.
+8. L2+E3 -> STABLE.
+9. P3+L2+E3 -> TARGET.
+
+Experiential note:
+- the sparse-history/tag-rich opening produced a strong first deduction but then decayed into more sequential branch checking after the first compatible decoy failed.
+
+Matched-pair transition:
+- activate Investigation II;
+- reset Research Charges to **8 / 8**;
+- do not transfer relation knowledge from Investigation I;
+- Investigation II starts with exactly its precommitted one target fact and three prior relations.
+
+No comparative evaluation yet.
