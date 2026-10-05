@@ -358,3 +358,24 @@ Possible dispositions:
 - no new actions;
 - no synthesis exclusions;
 - awaiting the player's first action.
+
+
+## Live checkpoint 1 — Investigation I
+
+Player action:
+- microtest L3 + E1.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Journal now contains:
+- prior: P2 + L3 -> STABLE;
+- new: L3 + E1 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
