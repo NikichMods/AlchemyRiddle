@@ -159,3 +159,47 @@ called an acceptable puzzle.
 internal to prevalidated strong fields. It reports whether the same field remains
 strong, becomes thin, or becomes legitimately near-resolved by prior expertise.
 Exact formula rows remain private.
+
+
+### Progression-limited known-pool mode
+
+The variable-field helper also has a \`pools\` mode. Unlike the surface-only
+existence screen, this conditions each recipe variant on a concrete set of
+currently known Powder / Fluid / Essence reagents and asks whether the generator
+can construct a usable contained field.
+
+Examples:
+
+\`\`\`
+python progression_variable_field_screen.py private.json \
+  --mode pools \
+  --pool-criterion compact \
+  --pool-counts "2,2,2;2,3,2;3,2,2;3,3,2;3,3,3" \
+  --pool-samples 128 \
+  --relation-density 0
+
+python progression_variable_field_screen.py private.json \
+  --mode pools \
+  --pool-criterion compact \
+  --pool-counts "2,2,2;2,3,2;3,3,3" \
+  --pool-samples 64 \
+  --relation-density 0.5
+\`\`\`
+
+Every known-pool state is conditioned on the selected hidden recipe variant
+being fully representable: all three true components are included in the known
+pool. A \`gap\` result therefore means the current puzzle grammar could not form
+an acceptable field from available distractors; it is **not** evidence that the
+target should be hard-gated.
+
+Two clue criteria are available:
+
+- \`legacy\` mechanically scales the old 3x3x3 weak-fact ratio
+  (\`ceil(2B/3)..B-1\`);
+- \`compact\` allows the coarser granularity of small fields while still
+  requiring each single target fact to leave at least two first-stage branches
+  and more than two full triples.
+
+The compact criterion is a research candidate, not a production balance
+contract. Its current aggregate results and limitations are documented in
+\`docs/research/PROGRESSION_VARIABLE_FIELD_SCREEN_2026-10-05.md\`.
