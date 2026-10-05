@@ -407,3 +407,33 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 4 — Investigation I
+
+Player reasoning:
+- P2+L1 is stable;
+- P2 contributes Corpse + Mineral and L1 contributes Plant + Slime;
+- under the target constraints, E3 is the natural continuation candidate;
+- player chooses L1+E3.
+
+Player action:
+- microtest L1 + E3.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **5 / 8**.
+
+Journal now contains:
+- prior: P1 + L3 -> STABLE;
+- new: L3 + E2 -> STABLE;
+- P2 + L3 + E2 -> NOT the current target;
+- new: P2 + L1 -> STABLE;
+- new: L1 + E3 -> INCOMPATIBLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
