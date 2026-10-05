@@ -5139,3 +5139,48 @@ remaining materially distinct two-slot grammar families at the player-facing
 level.
 
 Production remains **BLOCKED**.
+
+
+## Two-slot solution-space comparison plan — accepted 2026-10-06
+
+Status: **accepted research plan; production remains BLOCKED**.
+
+The user approved comparing three materially distinct two-slot puzzle families:
+
+- **A. Tag constraints** — bounded candidate field + fixed reagent properties + logical constraints.
+  This candidate has already passed its quantitative corpus-capacity screen.
+- **B. Known-recipe differential** — reason from an already-known nearby reaction and infer what must change.
+  The ordinary two-slot corpus is structurally favorable: 23 / 24 formula variants have another ordinary formula at Hamming distance 1.
+- **C. Controlled comparison / aggregate resonance** — make a complete hypothesis, receive deterministic aggregate feedback, and use controlled one-factor changes to discriminate alternatives.
+
+A Black-Box-style ambiguous-assay family remains a deferred wildcard rather than an equal comparison candidate because it introduces a heavier experiment-information model and carries higher cognitive-load risk.
+
+### Comparison discipline
+
+Do **not** over-develop every family before comparison.
+
+Each candidate should be developed only to the **minimum fair-comparison state**:
+- a complete player-facing rule;
+- a small bounded test case with enough structure to expose the intended reasoning;
+- no obvious missing rule that would make the comparison unfair;
+- no production UI/runtime work;
+- no long corpus-wide optimization unless the candidate first survives player-experience comparison.
+
+Use comparable blind-paper scenarios where practical. The purpose is to compare:
+- subjective deduction quality;
+- clarity of the first move;
+- whether the player can articulate why the next action is useful;
+- sense of “I worked out this recipe”;
+- working-memory burden;
+- risk of routine enumeration or forced linear play;
+- transfer into the later three-slot system;
+- value of accumulated prior knowledge.
+
+Candidate A should not receive extra polish merely because its quantitative screen already exists. B and C need only enough design work to become credible, coherent alternatives.
+
+After one fair blind pass through A, B and C, compare them directly before deciding whether to:
+- select one as the two-slot core;
+- retain one as a secondary/occasional mechanic;
+- or test a narrowly motivated hybrid suggested by the comparison evidence.
+
+Production remains **BLOCKED**.
