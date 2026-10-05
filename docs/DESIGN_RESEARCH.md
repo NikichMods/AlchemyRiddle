@@ -2659,3 +2659,77 @@ Design consequence:
 Prototype 21 therefore supports richer starting relational structure, but introduces a new robustness question: how much irrelevant-but-legitimate prior knowledge is needed before the system stops feeling authored toward the answer without becoming noisy or burdensome?
 
 Production architecture remains BLOCKED.
+
+
+## Quantitative corpus screen — consolidated durable state
+
+This section consolidates the accepted quantitative findings so future work does not need to reconstruct their meaning from commit history or prototype chronology.
+
+### What is established
+
+For the ordinary picker-compatible three-slot Graveyard Keeper 1.407 corpus used by this project:
+- 19 formulas produce 16 outputs;
+- the participating structural universe is 10 Powder x 9 Liquid x 9 Essence = 810 triples;
+- the adjacent compatibility graph contains 19 Powder-Liquid stable edges and 18 Liquid-Essence stable edges;
+- requiring both adjacent edges to be stable reduces the 810 structural triples to 47 viable compatibility chains, while only 19 are actual formulas.
+
+Therefore adjacent compatibility is strongly informative but is not equivalent to the hidden recipe table.
+
+The adaptive information-budget screen established that a fixed clue count is not adequate:
+- on the unrestricted structural field, up to 2 target facts bring only 3/16 outputs into the working 2-4 first-stage-branch envelope;
+- up to 3 facts bring 12/16;
+- up to 4 facts bring 14/16;
+- the remaining 2/16 are broad multi-formula classes under the tested fact vocabulary.
+
+Broad provenance alone is weaker: only 6/16 outputs fit the 2-4-branch envelope with three or fewer broad facts.
+
+With one useful already-known stable Powder-Liquid anchor on the unrestricted field:
+- 11/16 outputs can reduce that anchor to at most three target-consistent Essence continuations with one target fact;
+- 12/16 with up to two facts;
+- 14/16 with up to three facts.
+
+Compatibility knowledge cannot be budgeted as a scalar count because polarity and graph topology matter. An INCOMPATIBLE edge removes a branch; a STABLE edge creates an anchor; two stable adjacent edges may over-direct by forming a complete chain.
+
+### Strongest existence result
+
+A bounded target-relevant 3x3x3 candidate surface can, in principle, make the ordinary three-slot corpus fit the desired short-puzzle envelope:
+- 16/16 outputs can be shaped to 2-4 Powder-Liquid branches with at most one target fact;
+- 15/16 can do so using broad provenance alone;
+- the last class needs one cautious semantic-family fact;
+- with a useful target-relevant stable Powder-Liquid anchor, all 16/16 can also keep the anchor at no more than three target-consistent Essence continuations with at most one target fact.
+
+This is an existence proof only. It establishes that the real vanilla three-slot corpus is compatible with the current puzzle grammar; it does not establish a production rule for selecting the candidate surface.
+
+### What the calculation does NOT prove
+
+The quantitative screen does not yet establish:
+- a legitimate answer-blind rule for selecting the 3x3x3 target-relevant candidate surface;
+- a puzzle grammar for ordinary two-slot recipes;
+- treatment of the single success-classified three-slot definition outside the standard picker contract;
+- progression-specific candidate availability at the moment a target first becomes relevant;
+- how much prior compatibility knowledge should be surfaced without creating a predictable hidden promise that displayed relations are answer-relevant;
+- the final resource/economy budget for microtests;
+- production UI, persistence, save behavior, or implementation ownership.
+
+### Open design/research questions
+
+Priority questions carried forward:
+1. **Candidate-surface legitimacy** — derive a small target-relevant candidate set from information the player can legitimately possess, not by silently reading the hidden answer and surrounding it with distractors.
+2. **Two-slot alchemy** — adjacent compatibility is much closer to complete formula disclosure when there are only two ingredients, so the three-slot grammar must not be copied mechanically.
+3. **Progression context** — establish which reagents/properties/old compatibility observations are realistically available when each target is first encountered.
+4. **Relational structure** — Prototype 20R showed that low branch count alone can still feel like orderly enumeration; Prototype 21 showed that richer starting relations are better shaped but may become meta-information if every salient relation is reliably answer-relevant.
+5. **Exceptional formula class** — classify the picker-incompatible three-slot success definition separately before claiming complete corpus coverage.
+6. **Information-budget refinement** — branch count B, anchors A, continuation counts E(a), complete-chain risk K and expected tests D are useful, but the model also needs a representation of starting relational topology/salience.
+7. **Property presentation** — target facts and reagent properties must remain understandable and world-grounded in the real game rather than depending on opaque internal categories.
+
+### Reproducibility status of the quantitative script
+
+The accepted screen was produced by a one-off research calculation. Commit 659fdbc preserved the method, aggregate inputs, sanity checks and accepted numerical outputs in this document, but did not preserve the calculation script itself as a repository artifact.
+
+Current decision:
+- the accepted numerical results remain valid project evidence and do not need to be discarded merely because the original helper script was ephemeral;
+- do not reconstruct the tool only for archival completeness;
+- **before the next materially new quantitative corpus screen**, reconstruct the calculation as a small reproducible research tool, validate that it reproduces the accepted baseline numbers above, and then use that tool for the new question;
+- keep exact vanilla formula data private/ephemeral as required by the anti-spoiler and repository-content rules; persist only original tooling plus aggregate/derived outputs.
+
+Production architecture remains **BLOCKED**.
