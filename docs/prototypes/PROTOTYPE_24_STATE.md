@@ -360,3 +360,27 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 4 — Investigation I
+
+Player inference:
+- rejected the P1 start after the observed compatibility results;
+- chose microtest P2 + L1.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **4 / 8**.
+
+Journal now contains:
+- P1 + L1 -> STABLE;
+- L1 + E1 -> INCOMPATIBLE;
+- P1 + L2 -> INCOMPATIBLE;
+- P2 + L1 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
