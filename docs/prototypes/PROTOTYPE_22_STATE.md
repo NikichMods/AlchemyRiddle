@@ -564,4 +564,23 @@ Facilitator supplied no new deduction before the player's synthesis choice.
 Investigation I is complete.
 Architecture identity remains hidden pending completion/evaluation of Investigation II.
 
+
+
+## Investigation II — activation checkpoint
+
+Status:
+- Investigation I completed successfully;
+- Investigation II activated in the current chat;
+- architecture identities remain hidden from the player.
+
+Current state:
+- Research Charges: **4 / 4**;
+- completed actions: none;
+- known internal prior relations: none;
+- legal next action: any adjacent microtest or any full synthesis.
+
+Exact current interaction point:
+- Investigation II player-facing panel is being presented;
+- awaiting the player's first action.
+
 Production architecture remains **BLOCKED**.
