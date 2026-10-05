@@ -336,6 +336,8 @@ def dosed_three_by_three_report(formulas, tags_by_name, vocabulary):
         two_positive_surfaces = 0
         three_fact_surfaces = 0
         three_positive_surfaces = 0
+        max_two_fact_surviving_triples = 0
+        max_two_positive_surviving_triples = 0
 
         for p_surface in p_surfaces:
             for f_surface in f_surfaces:
@@ -369,20 +371,30 @@ def dosed_three_by_three_report(formulas, tags_by_name, vocabulary):
                     has_two = False
                     has_two_positive = False
                     for a, b in itertools.combinations(weak_facts, 2):
-                        count = sum(
-                            1
+                        surviving_masks = [
+                            fact_masks[a][pair]
+                            & fact_masks[b][pair]
+                            & e_mask
                             for pair in pl_pairs
-                            if (
-                                fact_masks[a][pair]
-                                & fact_masks[b][pair]
-                                & e_mask
-                            )
-                        )
+                        ]
+                        count = sum(bool(mask) for mask in surviving_masks)
                         pair_counts[(a, b)] = count
                         if 3 <= count <= 4:
+                            surviving_triples = sum(
+                                mask.bit_count()
+                                for mask in surviving_masks
+                            )
                             has_two = True
+                            max_two_fact_surviving_triples = max(
+                                max_two_fact_surviving_triples,
+                                surviving_triples,
+                            )
                             if a[1] > 0 and b[1] > 0:
                                 has_two_positive = True
+                                max_two_positive_surviving_triples = max(
+                                    max_two_positive_surviving_triples,
+                                    surviving_triples,
+                                )
 
                     if has_two:
                         two_fact_surfaces += 1
@@ -445,6 +457,10 @@ def dosed_three_by_three_report(formulas, tags_by_name, vocabulary):
             "two_positive_surfaces": two_positive_surfaces,
             "three_fact_surfaces": three_fact_surfaces,
             "three_positive_surfaces": three_positive_surfaces,
+            "max_two_fact_surviving_triples": max_two_fact_surviving_triples,
+            "max_two_positive_surviving_triples": (
+                max_two_positive_surviving_triples
+            ),
         }
         output_report[output] = result
 
