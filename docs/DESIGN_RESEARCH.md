@@ -4260,3 +4260,34 @@ Therefore the next experiential test should not compare field sizes again. It sh
 while keeping the interaction short and the established presentation density under control.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 26 — adaptive information budget
+
+Status: **precommitted; matched player test active; production remains BLOCKED**.
+
+Prototype 25 retained relation-rich openings and established that two target-property constraints are acceptable. The player proposed a specific compensation rule for low-history states: expose richer reagent property signatures and more target-property constraints when few old compatibility relations exist.
+
+Existing corpus evidence already makes this mechanically plausible:
+- 19/35 reagents in the accepted fixed property model carry multiple properties;
+- balanced two-fact starts cover 16/16 ordinary three-slot outputs;
+- progressive three-fact starts cover 14/16;
+- the adaptive architecture screen shows target-fact demand falling as prior relation knowledge rises.
+
+Prototype 26 therefore tests the remaining experiential question rather than adding new research code.
+
+Matched cases, both 3x3x3 with multi-property reagent cards:
+1. sparse history: three target facts + one prior relation;
+2. relation-rich reference: one target fact + three prior relations.
+
+The test preserves the three-column presentation and Prototype-25 information-density reference. Complete hidden facilitator state is precommitted in:
+`docs/prototypes/PROTOTYPE_26_STATE.md`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- exactly one prior relation;
+- three target-property facts;
+- awaiting first player action.
+
+Production source implementation remains **BLOCKED**.
