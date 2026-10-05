@@ -156,7 +156,14 @@ should not replace the per-output robustness analysis above.
 ## Design consequence
 
 The fixed type-level natural property model **passes the bounded-field
-foundation test**.
+information-sufficiency test**.
+
+This is deliberately narrower than saying the resulting puzzle is already
+well-shaped. The screen minimizes clue count, so it rewards strong one-fact
+reductions. It does not test whether the preferred player experience instead
+uses several individually weak constraints whose conjunction creates the
+deduction path. Candidate-surface selection itself is also an information
+source.
 
 Current evidence supports this shape:
 
