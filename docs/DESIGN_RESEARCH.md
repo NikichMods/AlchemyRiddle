@@ -3632,3 +3632,137 @@ materially independent behavior reaches the DevRules evidence gate.
 
 This architecture decision is canonical and should be recovered from `main`
 before future design or implementation work.
+
+
+## Curated working-field clarification and readiness problem — 2026-10-05
+
+Status: **accepted product clarification; readiness/generation fallback still open**.
+
+The bounded working field does **not** need to arise from a fully natural,
+player-derived scientific filtration of the complete known reagent universe.
+
+Explicit product clarification:
+- AlchemyRiddle is allowed to act as a puzzle designer and present a deliberately
+  curated small candidate field for the selected target;
+- it is acceptable for the generator to know the hidden vanilla answer
+  internally, guarantee that a valid answer is represented in the field, and
+  choose useful distractors around it;
+- the player already understands from the compact research UI that the mod has
+  prepared a bounded puzzle surface;
+- requiring the player to manually reduce dozens of known reagents to a small
+  target-relevant set would be a different, more simulation-heavy design and is
+  not required for this mod;
+- this deliberate curation is considered compatible with the product goal so
+  long as the field does not reveal which candidate is the answer and the player
+  still performs the actual deduction/hypothesis testing.
+
+Product rationale:
+- the mod must compete with the practical alternative of opening a wiki;
+- a scientifically purer but substantially more cumbersome filtering workflow
+  risks making the mod less attractive than external lookup;
+- the desired experience is therefore a compact, enjoyable, self-contained
+  puzzle rather than maximal simulation fidelity.
+
+This supersedes the earlier open concern that answer-aware **field selection
+itself** might be illegitimate. The remaining neutrality rule is narrower:
+once a field is selected, previously learned relations shown inside it must
+remain honest player knowledge; do not cherry-pick individual old relations
+only because they point toward the hidden answer.
+
+### Working end-to-end flow
+
+The current working product flow is coherent but UI details remain provisional:
+
+1. Vanilla creates a visible need for unknown alchemical product X.
+2. X becomes a research lead in the alchemy journal.
+3. The journal primarily acts as reference/external memory: known products,
+   known recipes, known/decomposed substances and unresolved leads.
+4. Actual research actions occur at a laboratory interaction surface (existing
+   study/research furniture or a new dedicated station remains undecided).
+5. The player selects X.
+6. The generator evaluates the player's current alchemical knowledge and tries
+   to construct a bounded adaptive puzzle for X.
+7. If a suitable puzzle exists, the investigation begins.
+
+Do not treat the exact menu/tab/station implementation as selected yet.
+
+### The real remaining readiness problem
+
+The important failure case is no longer "the generator knows the answer while
+choosing distractors." It is:
+
+> What should happen when the player has a legitimate research lead, but their
+> current known reagent set cannot support a good bounded puzzle?
+
+Two different shortages must be distinguished.
+
+#### A. Missing answer knowledge
+
+No valid vanilla formula for the target is fully representable using reagents
+the player can legitimately recognize/use in alchemy at the current progression
+state.
+
+This is a real knowledge/progression shortage. It can legitimately make the
+target not yet research-ready.
+
+The UI must not reveal the missing exact reagent merely to solve the gate.
+
+#### B. Missing distractor / puzzle-shaping capacity
+
+At least one valid target formula is fully representable, but the player does
+not know enough additional reagents to fill an ideal 3x3x3 field or satisfy the
+preferred puzzle-shape scorer.
+
+This **must not** force the player to discover an arbitrary irrelevant reagent
+solely so that the generator can use it as a decoy. Requiring "learn reagent Y"
+when Y is not needed by the target formula would make the gate feel artificial
+and punitive.
+
+Therefore fixed 3x3x3 should be treated as a proven and useful research shape,
+not yet as a mandatory production field size.
+
+### Leading generation/readiness hypothesis
+
+The strongest current direction is a graceful hierarchy:
+
+1. If no valid target formula is fully representable from the player's legitimate
+   reagent knowledge, keep the research lead visible but mark it as not yet
+   research-ready due to insufficient alchemical knowledge.
+2. If at least one valid formula is representable, first try to generate the
+   preferred compact adaptive puzzle from known reagents.
+3. If an ideal 3x3x3 cannot be formed because only distractors are missing,
+   **degrade the field/puzzle gracefully rather than block the player**:
+   smaller per-slot candidate sets, a slightly easier puzzle, or additional
+   target information are preferable to demanding irrelevant reagent discovery.
+4. Blocking on additional reagent knowledge should be reserved for a genuine
+   inability to represent any valid formula, not for cosmetic completion of a
+   desired candidate count.
+
+This hierarchy is a research hypothesis, not yet a fully quantified production
+rule.
+
+### Important implication for the next quantitative screen
+
+The earlier screens proved that good 3x3x3 puzzles exist in the complete real
+three-slot corpus. They did not model progression-limited candidate pools.
+
+The next useful screen should therefore vary **known reagent availability**, not
+re-open the accepted core architecture.
+
+At minimum evaluate:
+- per-slot known candidate counts below 3;
+- states where exactly one valid target formula is fully representable;
+- states where some alternative vanilla formulas remain progression-inaccessible;
+- whether 2x3x3 / 2x2x3 / 2x2x2 or other bounded sub-3 field shapes preserve
+  useful target-property + compatibility deduction;
+- how often graceful simplification can avoid a hard readiness gate;
+- the true minimum knowledge condition under which an ordinary target can become
+  research-ready without requiring irrelevant decoys.
+
+A key semantic question remains for multi-formula targets: whether the active
+puzzle need only contain **one currently representable valid formula** or must
+preserve every currently/ever-valid vanilla alternative. Do not silently relax
+the earlier conservative "preserve all formulas" research rule without an
+explicit product decision.
+
+Production implementation remains **BLOCKED**.
