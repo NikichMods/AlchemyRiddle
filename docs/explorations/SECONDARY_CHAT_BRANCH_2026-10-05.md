@@ -257,3 +257,17 @@ This may solve candidate-surface legitimacy at the cost of UI complexity and sho
 3. Can the real two-slot recipe corpus be made into satisfying tag-composition puzzles using that same vocabulary?
 4. If the candidate field is accepted as authored convention, how answer-shaped may it be before it stops feeling like deduction?
 5. Can full research guarantee uniqueness while preserving optional earlier commitment?
+
+
+## Foundation screen checkpoint
+
+The secondary branch has now completed the first requested foundation pass:
+- identified the 35 final reagent definitions actually participating in the ordinary successful corpus;
+- drafted fixed type-level provenance/affinity tags for all 35;
+- restored a reproducible tag-screen helper with the accepted three-slot structural baseline;
+- found that the coarse natural tag model has useful but insufficient global information diversity;
+- identified the multi-formula invariant problem for complete target tag vectors.
+
+Detailed non-canonical evidence: `docs/explorations/TAG_MODEL_DRAFT_2026-10-05.md`.
+
+Do not promote this model to main without primary-line review.
