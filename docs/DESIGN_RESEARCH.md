@@ -2608,3 +2608,22 @@ Research Charges used: **3 / 4**. Failed synthesis attempts: **0**.
 This is positive evidence that a calibrated three-branch no-anchor start can remain manageable at 3×3×3. Final strength of that conclusion depends on the player's subjective evaluation, especially perceived working-memory load and whether the route felt deductive rather than procedural.
 
 Production architecture remains **BLOCKED**.
+
+
+### Prototype 20R — final evaluation
+
+The calibrated no-anchor 3x3x3 state is viable but not preferred.
+
+The player did not experience it as blind brute force: target facts constrained the field and pair tests were hypothesis-driven. The weakness was different: with no prior relational knowledge, the player had to create most of the useful structure by sequentially checking plausible pairs.
+
+Design consequence:
+- do not make ordinary puzzles harder merely by increasing branch count or working-memory demand;
+- prefer modest cognitive load with richer starting structure;
+- starting information should include legitimate interacting constraints or pair relationships that can reinforce, contradict, or cross-constrain one another;
+- the goal is a shaped reasoning problem before the first new experiment, not only a smaller Cartesian search space.
+
+The adaptive information-budget model therefore needs to account for starting relational structure in addition to branch count, known anchors, continuation counts, complete-chain risk, and expected test count.
+
+Next evidence target: a similarly bounded field with richer legitimate starting relational information, while avoiding an over-directed or effectively pre-solved state.
+
+Production architecture remains BLOCKED.
