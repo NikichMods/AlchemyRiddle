@@ -3453,3 +3453,32 @@ This prototype should also evaluate the wording/feedback needed to teach
 "compatibility != identity" without exposing hidden formulas.
 
 Production architecture remains **BLOCKED**.
+
+
+## Prototype 23 — compatibility is not identity
+
+Status: **precommitted; focused player-facing test active**.
+
+Prototype 22 promoted the adaptive knowledge-aware architecture to the leading
+three-slot research candidate, but exposed a pedagogical risk: if the first
+fully adjacent-compatible chain repeatedly succeeds as the target recipe, the
+player can learn the false heuristic "two stable links = recipe solved."
+
+Prototype 23 isolates that risk with one synthetic adaptive 3x3x3 state:
+- all prior relations internal to the field are surfaced as external memory;
+- the target starts from one weak invariant property fact;
+- at least one plausible fully compatible chain is deliberately not the target;
+- pairwise compatibility remains true after a non-target synthesis;
+- the exact triple alone is excluded from the current target;
+- resource scarcity is not under test; the charge budget is deliberately ample.
+
+Method caveat: the player already knows from the preceding discussion that a
+compatible non-target chain exists, so this cannot measure surprise or whether
+an unprimed player would discover the distinction naturally. It can still test
+whether the feedback is intelligible and whether the subsequent reasoning path
+remains bounded, hypothesis-driven and satisfying.
+
+Complete facilitator state is in
+`docs/prototypes/PROTOTYPE_23_STATE.md`.
+
+Production architecture remains **BLOCKED**.
