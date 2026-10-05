@@ -373,3 +373,37 @@ Resources:
 
 Current interaction point:
 - awaiting next player action.
+
+
+## Live checkpoint 3 — Investigation I
+
+Player design observations before acting:
+- a compatible non-target synthesis should potentially grant a small consolation/research reward so the outcome acknowledges that the player reasoned correctly even though the hidden target was not hit;
+- simplest candidate reward: restore some Research Charge(s); exact economy and presentation remain open;
+- UI distinction between **starting/prior knowledge** and **newly learned facts** feels useful and should be preserved visually;
+- after the first well-justified compatible decoy failed, the player felt the opening structure largely disappeared and explicitly described the next move as simple enumeration;
+- this is evidence that rich target tags can create a strong first hook but may fail to sustain a second reasoning step when too few relation anchors remain.
+
+Player reasoning:
+- P1+L3 was the initial anchor and its E2 continuation was stable, but that line did not yield the target;
+- the player no longer sees another comparably structured continuation and chooses the next unexplored Powder-Liquid pair by simple enumeration.
+
+Player action:
+- microtest P2 + L1.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **6 / 8**.
+
+Journal now contains:
+- prior: P1 + L3 -> STABLE;
+- new: L3 + E2 -> STABLE;
+- P2 + L3 + E2 -> NOT the current target;
+- new: P2 + L1 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
