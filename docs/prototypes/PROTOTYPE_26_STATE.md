@@ -559,3 +559,26 @@ Matched-pair transition:
 - Investigation II starts with exactly its precommitted one target fact and three prior relations.
 
 No comparative evaluation yet.
+
+
+## Live checkpoint 8 — Investigation II
+
+Player reasoning:
+- starts from prior P1+L2 STABLE;
+- notes that L2 supplies the single allowed Mineral;
+- proposes L2+E1 as a continuation.
+
+Protocol handling:
+- L2+E1 is already present in the starting journal as **INCOMPATIBLE**;
+- no duplicate experiment is performed;
+- no Research Charge is consumed.
+
+Resources remain:
+- Research Charges: **8 / 8**.
+
+UX evidence:
+- even with only three prior relations, a player can naturally re-derive and attempt an already-known pair;
+- prior facts should be visually salient at the point of branch continuation / test selection, not merely present somewhere in the journal.
+
+Current interaction point:
+- awaiting player's next action.
