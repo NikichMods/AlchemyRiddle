@@ -708,3 +708,38 @@ Experiential note:
 - prior incompatible relation was less salient and was forgotten despite being present.
 
 Matched pair complete. Proceed to comparative evaluation.
+
+
+## Final player evaluation
+
+Disposition: **RELATIONS STILL REQUIRED; TAG-RICH RETAIN AS COMPLEMENT**.
+
+Player evaluation:
+- three target-property constraints in Investigation I were a comfortable information density, not too much;
+- target-property clues can likely be made more numerous and more varied in wording/shape without immediate overload;
+- however, the sparse-history compensated case still felt substantially more like enumeration after the first strong deduction;
+- Investigation II was more enjoyable because pre-existing stable relations behaved as unfinished bridges that could be completed;
+- old stable pairs appear **principally more important** than tags for structuring the investigation;
+- the benefit is cognitive: structured relation knowledge lowers working-memory load while preserving the feeling of doing research;
+- target tags remain useful and desirable as constraints layered on top of that structure;
+- one target fact in Investigation II was functional but somewhat dull; richer/varied weak tag constraints remain desirable even in relation-rich states;
+- do not conclude that every puzzle should be built only from unfinished bridges; repetition risk remains open.
+
+Additional prototype-bias observation:
+- the live comparisons repeatedly surfaced a stable Powder+Liquid pair first, followed by searching its Essence continuation;
+- this may be an artifact of prototype construction rather than a desirable product pattern;
+- future matched cases should deliberately include Liquid+Essence starting anchors and require searching backward for Powder, so orientation is tested symmetrically.
+
+Interpretation:
+- tag compensation **partially succeeds**: it can create a strong opening hook and satisfying local deduction;
+- it does **not** currently replace relational starting structure over the full short puzzle arc;
+- current best working model is: stable prior relations provide constructive scaffolding; target/reagent properties constrain how that scaffolding can be extended; newly discovered incompatibilities close active branches.
+
+Open questions:
+- how many stable anchors are enough without making the answer too obvious;
+- whether anchor topology can vary enough to avoid repetitive “finish the bridge” play;
+- how to diversify target-property clue forms (counts, absences, bounded slot-local statements) while preserving non-oracularity;
+- whether a reward for compatible non-target synthesis improves failure valence without creating resource exploits;
+- whether journal grouping/linking by shared reagent improves already-promising external-memory behavior.
+
+Production source implementation remains **BLOCKED**.
