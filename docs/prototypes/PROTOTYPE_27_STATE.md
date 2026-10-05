@@ -439,3 +439,35 @@ No facilitator deduction supplied beyond confirming the player-stated branch log
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 4 — Investigation I
+
+Player reasoning:
+- moves from the exhausted L2+E2 bridge to the second prior stable bridge L3+E1;
+- L3 supplies Corpse and E1 supplies Plant;
+- Slime can be ignored for Powder selection because no Powder candidate carries Slime;
+- P2 is excluded because the target allows Corpse exactly once and L3 already supplies it;
+- chooses P1+L3 as the first backward-completion test.
+
+Player action:
+- microtest P1 + L3.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **5 / 8**.
+
+Journal now contains:
+- prior: L2 + E2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: P1 + L2 -> STABLE;
+- P1 + L2 + E2 -> NOT the current target;
+- new: P3 + L2 -> INCOMPATIBLE;
+- new: P1 + L3 -> INCOMPATIBLE.
+
+No facilitator deduction supplied beyond confirming the player-stated tag filtering.
+
+Current interaction point:
+- awaiting player's inference / next action.
