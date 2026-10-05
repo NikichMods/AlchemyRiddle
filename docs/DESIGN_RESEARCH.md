@@ -2892,3 +2892,35 @@ The next useful screen is the same property model inside a deliberately bounded 
 3. whether those residual ambiguities are better resolved by compatibility rather than by inventing finer artificial properties.
 
 Production architecture remains **BLOCKED**.
+
+
+## Bounded 3x3x3 fixed-property screen — accepted 2026-10-05
+
+Status: **accepted quantitative research; production architecture remains unselected**.
+
+Detailed evidence: `docs/research/BOUNDED_TAG_SCREEN_2026-10-05.md`.
+
+Using the accepted fixed final-reagent property model and the private ordinary
+three-slot corpus, the reproducible screen exhaustively enumerated every
+3x3x3 candidate surface that preserves all valid formulas for each output.
+
+Accepted aggregate findings:
+- the corpus contains 13 single-formula and 3 two-formula ordinary three-slot outputs;
+- **372,008** admissible surfaces were enumerated in total;
+- **16 / 16** outputs have at least one admissible surface where **one invariant target-property fact** leaves the intended **2-4 Powder+Fluid branches**;
+- **15 / 16** can achieve that one-fact result using a positive property count; one multi-formula class requires an absence/zero-count fact if restricted to one fact;
+- for the 13 single-formula outputs, one fact works on **61.6%-100%** of admissible surfaces, median **92.7%**;
+- the three multi-formula classes are more selection-sensitive: one-fact coverage is **1.8% / 27.8% / 44.0%** of their admissible surfaces;
+- with all invariant property facts, **14 / 16** outputs have at least one surface where the survivor set equals exactly the valid vanilla answer set;
+- the remaining two multi-formula classes cannot be completely resolved by the current invariant property layer: their best residuals are **2 branches / 3 triples** and **4 branches / 4 triples**.
+
+Interpretation:
+- the natural fixed-property vocabulary is **sufficient as a first information layer inside a bounded 3x3x3 field**;
+- there is no evidence-based need to invent finer/artificial properties merely to force unique signatures;
+- for single-formula targets the result is robust across many distractor choices, not a fragile hand-picked existence proof;
+- alternative-formula targets require more deliberate candidate curation and provide a natural role for compatibility as the second relational layer;
+- full property vectors should not be exposed by default merely because they can over-solve many single-formula targets; the clue budget should remain partial/adaptive.
+
+This screen does **not** settle candidate-surface selection policy, two-slot grammar, progression availability, final property wording, or compatibility-salience policy.
+
+Production architecture remains **BLOCKED**.
