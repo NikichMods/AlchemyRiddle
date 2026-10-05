@@ -537,3 +537,44 @@ Matched-pair transition:
 - Investigation II starts with exactly its two precommitted stable anchors and three target-property constraints.
 
 No comparative evaluation yet.
+
+
+## Live checkpoint 6 — Investigation II
+
+Player design observations before acting:
+- a target-property clue that never affects any branch feels like dead decorative information; weak clues are acceptable, but ideally each surfaced clue should matter at least once during the intended reasoning path;
+- strong stable bridges need not always contain the target. For medium/high difficulty, a promising topology is: several visible bridges are exhausted logically, and that process leaves one small non-bridge residual branch as the answer, avoiding both “all answers come from bridges” meta-learning and post-bridge brute force;
+- simple slot-exclusion clues can become dull if they only erase one candidate; they may be more useful in larger fields or when combined with richer logic;
+- conditional/composite target clues are promising, e.g. constraints of the form “property X is forbidden in slot Y if property Z is present elsewhere”; exact syntax is not accepted, but the general class is strongly interesting;
+- diversity should come from different logical roles, not arbitrary noise: global counts/absence, slot-local constraints, conditional dependencies, bridge topology, and residual deduction can be mixed carefully;
+- the player reports that the underlying grammar now feels stable enough that ideation has shifted from “how do we make this work?” to “how do we make this richer?”, a positive maturity signal;
+- future external validation idea: a standalone web demo/puzzle could collect anonymized path statistics from multiple players to see whether “follow visible stable bridges first” is a general strategy or player-specific.
+
+Player reasoning in Investigation II:
+- target constraints immediately exclude L1 because the Liquid must not have Corpse;
+- from prior P3+L2 STABLE, P3 supplies the one allowed Mineral;
+- E3 is excluded because Plant is forbidden;
+- player intends to test the bridge continuation with E1.
+
+Protocol correction:
+- player verbally said “P2, E1”, but Powder+Essence cannot be directly tested and the stated reasoning clearly refers to continuing P3+L2 with E1;
+- interpret intended legal microtest as **L2 + E1**.
+
+Player action:
+- microtest L2 + E1.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Journal now contains:
+- prior: P3 + L2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: L2 + E1 -> INCOMPATIBLE.
+
+No facilitator deduction supplied beyond clarifying the legal adjacent pair implied by the player's reasoning.
+
+Current interaction point:
+- awaiting player's inference / next action.
