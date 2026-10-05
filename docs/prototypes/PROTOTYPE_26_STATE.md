@@ -316,3 +316,37 @@ Possible dispositions:
 - no new actions;
 - no synthesis exclusions;
 - awaiting player's first action.
+
+
+## Live checkpoint 1 — Investigation I
+
+Player design observations before acting:
+- target-property clues need not all use the same exact-count wording; absence facts such as “tag X does not occur” may be interesting;
+- slot-local tag clues may also be viable in some cases, e.g. a property is present/absent in a specific slot, provided they do not collapse to an exact ingredient too directly;
+- controlled extra candidate noise may be acceptable when tag clues immediately eliminate some of it, but this is explicitly a hypothesis to test rather than an accepted rule;
+- tag clues are viewed as less intrinsically interesting than accumulated stable-pair knowledge, so they may tolerate somewhat more variety/volume to keep reasoning from feeling repetitive;
+- early-game investigations should not artificially avoid a first hypothesis that can succeed quickly if the player reached it through meaningful multi-step reasoning; a short “micro-wow” can be desirable for teaching and competence reinforcement.
+
+Player reasoning:
+- starts from prior P1+L3 STABLE;
+- notes P1 contributes Plant and Insect while L3 contributes Mineral and Insect;
+- under the three target facts, Corpse is still missing and E2 carries Corpse;
+- chooses L3+E2 as the next microtest.
+
+Player action:
+- microtest L3 + E2.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Journal now contains:
+- prior: P1 + L3 -> STABLE;
+- new: L3 + E2 -> STABLE.
+
+No facilitator deduction beyond confirming the player-stated reasoning.
+
+Current interaction point:
+- awaiting player's inference / next action.
