@@ -582,3 +582,36 @@ UX evidence:
 
 Current interaction point:
 - awaiting player's next action.
+
+
+## Live checkpoint 9 — Investigation II
+
+Player design observations before acting:
+- prior **STABLE** relations are cognitively useful as constructive anchors / unfinished bridges;
+- prior **INCOMPATIBLE** relations appear less salient and may be worse starting-journal material, because the player naturally scans for stable anchors and then uses target/reagent properties to limit their continuations;
+- candidate grammar hypothesis: starting relation history may preferentially expose stable anchors, while incompatibilities are learned during the current investigation rather than front-loaded;
+- this is a player-model hypothesis, not an accepted production rule; other players may use negative relation evidence differently;
+- target-property facts work naturally as constraints on how an existing stable branch may be continued;
+- a single strong fact such as “Mineral exactly once” feels semantically dull even when informative; prefer several weaker constraints where possible if they create richer intersections without excess burden;
+- the same “prefer weaker evidence” hypothesis may apply to starting stable pairs: multiple weak/partial anchors may be better than one near-answer relation, but answer-relevance must not become predictable;
+- after a long design digression, the player quickly resumed the puzzle by recognizing the current unfinished bridge (P1+L2) and the last tested continuation (L2+E1), without reconstructing the complete reasoning history; this is positive evidence that branch-shaped presentation can act as external memory.
+
+Player action:
+- microtest L2 + E2.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Investigation II journal now contains:
+- prior: P1 + L2 -> STABLE;
+- prior: P3 + L3 -> STABLE;
+- prior: L2 + E1 -> INCOMPATIBLE;
+- new: L2 + E2 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
