@@ -2724,12 +2724,171 @@ Priority questions carried forward:
 
 ### Reproducibility status of the quantitative script
 
-The accepted screen was produced by a one-off research calculation. Commit 659fdbc preserved the method, aggregate inputs, sanity checks and accepted numerical outputs in this document, but did not preserve the calculation script itself as a repository artifact.
+The earlier accepted screen originated as a one-off calculation, but the next materially new quantitative question triggered the planned reproducibility checkpoint.
 
-Current decision:
-- the accepted numerical results remain valid project evidence and do not need to be discarded merely because the original helper script was ephemeral;
-- do not reconstruct the tool only for archival completeness;
-- **before the next materially new quantitative corpus screen**, reconstruct the calculation as a small reproducible research tool, validate that it reproduces the accepted baseline numbers above, and then use that tool for the new question;
-- keep exact vanilla formula data private/ephemeral as required by the anti-spoiler and repository-content rules; persist only original tooling plus aggregate/derived outputs.
+A small repository research helper now exists at:
+- `research/TagModelScreen/tag_model_screen.py`;
+- `research/TagModelScreen/README.md`.
+
+The helper takes the exact vanilla formula corpus only as private/ephemeral input and reports structural/aggregate outputs. It contains an explicit `--assert-three-slot-baseline` check for the accepted ordinary 1.407 three-slot numbers:
+- 19 formulas;
+- 16 outputs;
+- 10 Powder candidates;
+- 9 Fluid candidates;
+- 9 Essence candidates;
+- 810 Cartesian triples;
+- 19 Powder-Liquid stable edges;
+- 18 Liquid-Essence stable edges;
+- 47 two-edge-compatible chains.
+
+This preserves the calculation method without committing the spoiler-sensitive formula table.
+
+Production architecture remains **BLOCKED**.
+
+
+## Fixed final-reagent tag screen — accepted research checkpoint (2026-10-05)
+
+Status: **accepted quantitative/design research; final tag vocabulary and production architecture remain unselected**.
+
+This checkpoint promotes the evidence-bearing part of the secondary exploration into the canonical main-line research record. It does **not** promote the secondary chat branch wholesale.
+
+### Corpus owner and fixed-tag premise
+
+The ordinary picker-compatible success corpus uses **35 distinct final vanilla alchemical ingredient definitions**:
+- 15 Powder;
+- 8 Fluid;
+- 8 Essence;
+- 4 Universal.
+
+Of those 35:
+- 24 form eight regular Powder / Fluid / Essence semantic triplets;
+- 11 are singleton/special participants.
+
+The reusable vanilla counts and provenance facts are already canonical in `NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md`.
+
+For this product screen, tags are attached to the **final vanilla reagent type**, not to an individual stack unit and not to the particular raw source used for one unit. This avoids requiring source-specific inventory variants when vanilla processing collapses multiple source materials into the same reagent item.
+
+This ownership rule is accepted as the model used by the screen. It does not yet require the final production UI to use literal "tags" as its presentation mechanism.
+
+### Draft world-grounded vocabulary used by the screen
+
+The tested vocabulary is:
+
+- `Растение`
+- `Труп`
+- `Минерал`
+- `Насекомое`
+- `Животное`
+- `Рыба`
+- `Слизь`
+- `Вода`
+
+These are **AlchemyRiddle product abstractions over authored provenance**, not vanilla fields. Their exact names and category boundaries remain open.
+
+The fixed assignment used for the accepted screen was:
+
+| Form | Reagent | Fixed properties |
+| --- | --- | --- |
+| Universal | Алкоголь | Растение |
+| Universal | Вода | Вода |
+| Universal | Кровь | Труп |
+| Universal | Масло | Растение, Труп |
+| Powder | Белый порошок | Труп, Минерал |
+| Powder | Золотой порошок | Минерал |
+| Powder | Пепел | Труп |
+| Powder | Порошок графита | Минерал |
+| Powder | Порошок жизни | Труп, Минерал |
+| Powder | Порошок замедления | Растение, Минерал, Насекомое |
+| Powder | Порошок здоровья | Растение |
+| Powder | Порошок порядка | Насекомое, Минерал |
+| Powder | Порошок смерти | Труп |
+| Powder | Порошок ускорения | Растение, Насекомое |
+| Powder | Порошок хаоса | Животное, Насекомое |
+| Powder | Серебряный порошок | Минерал |
+| Powder | Соль | Труп |
+| Powder | Токсичный порошок | Растение |
+| Powder | Электрический порошок | Рыба |
+| Fluid | Раствор жизни | Труп, Растение, Насекомое |
+| Fluid | Раствор замедления | Растение, Труп, Насекомое |
+| Fluid | Раствор здоровья | Растение |
+| Fluid | Раствор порядка | Растение, Насекомое, Слизь |
+| Fluid | Раствор смерти | Труп, Слизь |
+| Fluid | Раствор токсичности | Растение, Слизь |
+| Fluid | Раствор ускорения | Насекомое, Слизь |
+| Fluid | Раствор хаоса | Животное, Насекомое |
+| Essence | Экстракт жизни | Труп, Растение, Насекомое |
+| Essence | Экстракт замедления | Насекомое |
+| Essence | Экстракт здоровья | Растение |
+| Essence | Экстракт порядка | Растение, Слизь |
+| Essence | Экстракт смерти | Труп, Слизь |
+| Essence | Экстракт токсичности | Растение, Слизь |
+| Essence | Экстракт ускорения | Растение, Слизь |
+| Essence | Экстракт хаоса | Насекомое |
+
+The broad `Насекомое` bucket in this screen deliberately includes small-arthropod products such as web / beeswax / honey provenance. That naming choice is provisional.
+
+### Signature diversity
+
+The tested natural properties are informative but not identifier-like:
+
+| Form | Reagents | Distinct fixed-property signatures |
+| --- | ---: | ---: |
+| Powder | 15 | 9 |
+| Fluid | 8 | 7 |
+| Essence | 8 | 5 |
+| Universal | 4 | 4 |
+
+Important collisions include:
+- `Минерал`: Golden / Graphite / Silver powders;
+- `Труп`: Ash / Death powder / Salt;
+- `Труп + Минерал`: White powder / Life powder;
+- `Растение`: Health powder / Toxic powder;
+- `Растение + Труп + Насекомое`: Life solution / Slowing solution;
+- `Растение + Слизь`: Order / Toxic / Acceleration essences;
+- `Насекомое`: Slowing / Chaos essences.
+
+Therefore a natural fixed-property layer has real information value but cannot be expected to identify every reagent or carry the whole puzzle by itself.
+
+### Full-field three-slot result
+
+The screen then tested a deliberately strong condition on the accepted ordinary three-slot structural universe of **10 x 9 x 9 = 810** triples.
+
+For each output, target-side exact property-count facts were allowed only when they were true for **every valid vanilla formula of that output**. Zero-count facts were allowed.
+
+Using any subset of those valid common facts:
+- **11 / 16** outputs can be reduced to at most four Powder-Liquid first-stage branches;
+- **5 / 16** remain above four Powder-Liquid branches even if every common exact property-count fact is supplied.
+
+Conclusion: coarse natural fixed properties are **not sufficient as the sole deduction system on the unrestricted three-slot field**.
+
+This is not a rejection of the property layer. It supports treating properties as one information layer that can be combined with bounded candidate surfaces, compatibility relations or another non-oracular clue type.
+
+### Multi-formula invariant constraint
+
+A complete aggregate property vector is **not always an intrinsic property of an output**.
+
+For some outputs with multiple valid vanilla formulas, the correct formulas produce different total counts under the tested property model. Therefore the mod must not silently choose one hidden valid formula and present its full property vector as if it described the product itself.
+
+Target-side property clues should instead be restricted to statements invariant across the product's entire valid-answer set, for example:
+- exact counts shared by every formula;
+- zero-count exclusions shared by every formula;
+- bounded/range statements when justified;
+- other relations that remain true for all valid formulas.
+
+This preserves vanilla alternative formulas and prevents the clue layer from invalidating legitimate recipes merely to simplify the puzzle.
+
+### Consequence for the next research step
+
+The foundational question is now sufficiently characterized to continue:
+
+- fixed type-level properties are compatible with vanilla stack identity;
+- the tested natural vocabulary is player-legible and has useful but incomplete distinguishing power;
+- the property layer should not be forced to solve the unrestricted corpus alone;
+- any next quantitative candidate-surface screen must preserve all valid formulas for a target and use only target facts invariant across that answer set.
+
+The next useful screen is the same property model inside a deliberately bounded candidate surface, measuring:
+1. how much invariant property information is required there;
+2. which ambiguity classes remain;
+3. whether those residual ambiguities are better resolved by compatibility rather than by inventing finer artificial properties.
 
 Production architecture remains **BLOCKED**.
