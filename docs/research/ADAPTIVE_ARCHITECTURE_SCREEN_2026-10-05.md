@@ -103,7 +103,7 @@ For every target:
 - therefore the intended branch contains two new compatibility facts to learn.
 
 Across targets, the median fraction of sampled/admissible candidate surfaces
-that can support a fresh closure-capable package is **67.9%**.
+that can support a fresh closure-capable package is **67.6%**.
 
 The worst target is a known difficult multi-formula class: **3.4%** of its
 admissible surfaces work under this stricter combined property+compatibility
@@ -128,14 +128,15 @@ ordinary single-formula targets.
 | Known relations | Fresh states | Expertise-covered | One weak target fact among fresh states | One target edge still missing among fresh states |
 | ---: | ---: | ---: | ---: | ---: |
 | 0% | 100.0% | 100% | 0% | 0% |
-| 20% | 96.8% | 100% | 96.4% | 32.5% |
-| 40% | 85.9% | 100% | 99.8% | 58.2% |
-| 60% | 66.5% | 100% | 100% | 75.6% |
-| 80% | 36.7% | 100% | 100% | 89.6% |
+| 20% | 97.7% | 100% | 96.9% | 33.5% |
+| 40% | 84.8% | 100% | 99.9% | 58.9% |
+| 60% | 67.9% | 100% | 100% | 73.5% |
+| 80% | 37.2% | 100% | 100% | 88.5% |
 
-The second deterministic history seed changed fresh-state rates by at most
-approximately **2.2 percentage points** and did not change any qualitative
-conclusion below.
+A second deterministic seed changed candidate-surface sampling and knowledge
+histories together. Fresh-state rates moved by at most approximately **5.4
+percentage points** in one recipe-seeded density; all qualitative conclusions
+below were unchanged, including zero unexplained no-fresh states.
 
 ## The decisive result: every lost fresh puzzle is earned expertise
 
@@ -191,8 +192,8 @@ selecting only answer-helpful old facts.
 For states where a fresh puzzle exists, the median fraction of all sampled
 admissible surfaces supporting at least one fresh package remains broad:
 
-- uniform histories: about **74% / 81% / 80% / 54%** at 20/40/60/80%;
-- recipe-seeded histories: about **73% / 80% / 81% / 61%**.
+- uniform histories: about **75% / 81% / 79% / 54%** at 20/40/60/80%;
+- recipe-seeded histories: about **74% / 80% / 81% / 60%**.
 
 The minimum observed fresh-surface fraction is still governed by difficult
 multi-formula classes:
