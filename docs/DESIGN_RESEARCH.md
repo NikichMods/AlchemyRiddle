@@ -3247,3 +3247,84 @@ the broader canonical backlog, including:
 - production UI/runtime ownership and implementation gates.
 
 Production architecture remains **BLOCKED**.
+
+
+## Adaptive architecture comparison — accepted quantitative screen (2026-10-05)
+
+Status: **adaptive knowledge-awareness passes the quantitative robustness screen
+and advances to blind comparison against the fixed tag-centric baseline**.
+
+Detailed evidence:
+`docs/research/ADAPTIVE_ARCHITECTURE_SCREEN_2026-10-05.md`.
+
+The screen extended the reproducible `TagModelScreen` over the accepted
+ordinary three-slot corpus. It modeled the complete **171-relation** adjacent
+Powder-Fluid / Fluid-Essence universe at 0/20/40/60/80% accumulated knowledge,
+using both arbitrary-relation stress histories and recipe-seeded histories.
+The primary non-zero runs used 64 deterministic histories per target
+(**1,024 target/history states per density and family**).
+
+Candidate generation remained neutral with respect to old knowledge:
+- preserve every valid vanilla formula in a bounded 3x3x3 surface;
+- use one to three individually weak invariant target-property facts;
+- surface **all** previously learned adjacent relations internal to that field;
+- never select an old relation merely because it helps the hidden answer.
+
+### Result
+
+The baseline at zero prior knowledge remains valid for **16 / 16** targets:
+two weak target-property facts can create the intended bounded field, with both
+target-chain compatibility relations still to be learned.
+
+The adaptive candidate is robust across the sampled knowledge histories.
+
+When at least one adjacent relation of every valid target chain is still
+unknown:
+- **every sampled target/history state** has at least one fresh, closure-capable
+  puzzle configuration;
+- after only 20% accumulated relation knowledge, more than **96%** of fresh
+  states in both history families can use only **one** weak target-property
+  fact;
+- at 40%+ knowledge essentially every fresh state can use one weak property
+  fact;
+- the number of missing target-chain relations falls naturally from two toward
+  one as expertise grows;
+- candidate-surface availability does not collapse relative to the baseline.
+
+The fresh-puzzle rate itself falls at high knowledge density, but this is **not
+a generator failure**. Across both history families, every density and every
+sampled state, a fresh puzzle was unavailable **only when the player already
+knew both stable adjacent relations of at least one valid target formula**.
+There were zero sampled no-fresh states with an incomplete target chain.
+
+Therefore the adaptive system's high-knowledge saturation is interpretable as
+earned expertise. Preserving a fresh puzzle in that exact state would require
+hiding legitimate learned relations or adding artificial noise.
+
+### Architecture decision for the next stage
+
+Do **not** select production architecture yet.
+
+Retain both:
+- **A — fixed tag-centric baseline**, as the simpler deterministic comparator;
+- **B — adaptive knowledge-aware candidate**, now quantitatively justified.
+
+B has earned a blind player-facing comparison because its main product benefit
+— previous discoveries genuinely changing future reasoning — survives varied
+knowledge histories without introducing a new structural/candidate-curation
+failure mode in this screen.
+
+The next player-experience test should compare a matched baseline puzzle against
+an adaptive puzzle where neutral prior relations replace part of the
+target-specific clue burden. It should test whether that mathematical economy
+actually feels like accumulated alchemical expertise rather than like
+meta-information or authorial assistance.
+
+A separate later saturation test should evaluate the subjective result when a
+complete target chain is already known: satisfying mastery versus undesirable
+puzzle disappearance.
+
+This screen remains an existence/structure analysis, not a proof of a blind
+player's branch-selection policy or worst-case experiment count.
+
+Production architecture remains **BLOCKED**.
