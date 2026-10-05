@@ -5184,3 +5184,35 @@ After one fair blind pass through A, B and C, compare them directly before decid
 - or test a narrowly motivated hybrid suggested by the comparison evidence.
 
 Production remains **BLOCKED**.
+
+
+### Accepted execution order for the two-slot comparison
+
+The detailed comparison plan is approved.
+
+Execution order:
+1. **B — known-recipe differential**;
+2. **C — controlled comparison / aggregate resonance**;
+3. **A — tag constraints** as the already corpus-backed control;
+4. immediate cross-candidate decision checkpoint.
+
+Fair-comparison controls:
+- use a 3x2 two-slot field where practical;
+- keep the live hypothesis count and information budget broadly comparable,
+  even when a candidate's own premise legitimately contributes prior knowledge;
+- use fictional/renamed prototype content so one test does not spoil another;
+- precommit complete facilitator state before every blind test;
+- evaluate the same dimensions after each candidate.
+
+Stop rule:
+- bring each family only to the minimum coherent state needed for fair blind
+  comparison;
+- allow at most one narrow repair for an obvious prototype defect before moving
+  on;
+- do not run corpus-wide optimization for B or C unless that family first
+  survives the player-experience comparison;
+- do not introduce a hybrid before the A/B/C comparison identifies a specific
+  deficiency and a specific mechanism that plausibly repairs it.
+
+This plan is intended to minimize sunk-cost bias: a candidate must first prove
+that its player-facing reasoning experience is worth deeper research.
