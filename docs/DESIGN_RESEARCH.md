@@ -4840,3 +4840,21 @@ Complete hidden facilitator model:
 No new runtime probe or harness is justified: this is a pure paper-prototype topology question using already accepted semantics.
 
 Production remains **BLOCKED**.
+
+
+### Prototype 29 stable-but-target-ineligible bridge variant
+
+A new topology variant emerged during live play: a chemically STABLE prior bridge may be immediately disqualified by target-specific clues before any experiment.
+
+Potential value:
+- increases bridge variety;
+- reinforces that prior relations are reusable chemistry knowledge rather than privileged answer carriers;
+- can make some investigations start with elimination rather than completion.
+
+Risk:
+- “STABLE” may be misread as “relevant to this target.”
+- any future use must keep compatibility semantics visually and linguistically distinct from target relevance.
+
+Treat this as a candidate variety pattern, not yet a default.
+
+Production remains **BLOCKED**.
