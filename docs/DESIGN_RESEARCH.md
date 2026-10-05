@@ -5076,3 +5076,66 @@ Treat concrete vanilla recipe variants as independent hidden research targets pe
 If the existing natural property vocabulary covers the corpus with a healthy proportion of unique or bounded-two-candidate paths, Candidate A advances to a blind paper prototype. If it requires artificial tag inflation or repeated guessing, retain that as negative evidence and compare the other two-slot families rather than patching the model ad hoc.
 
 Production remains **BLOCKED**.
+
+
+## Two-slot Candidate A quantitative result — tag constraints pass capacity screen
+
+Status: **quantitatively viable; remains one candidate in the two-slot solution-space checkpoint; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/TWO_SLOT_TAG_CONSTRAINT_SCREEN_2026-10-06.md`.
+
+The accepted fixed eight-property reagent model was screened exhaustively against
+the ordinary 24-variant / 18-output two-slot corpus using target-containing
+2x2, 2x3, 3x2 and 3x3 fields.
+
+Two clue grammars were separated:
+- **simple** — slot-local presence/absence and exact pair tag counts;
+- **composite** — simple clues plus cross-slot XOR and active positive/negative
+  implication forms. Vacuous target implications were excluded.
+
+The main capacity result under the compact small-field weakness criterion is:
+
+| Field | Simple unique | Composite unique | Composite <=2 survivors |
+| --- | ---: | ---: | ---: |
+| 2x2 | 91.1% | 91.1% | 91.1% |
+| 2x3 | 65.2% | 88.0% | 96.7% |
+| 3x2 | 59.2% | 83.1% | 98.6% |
+| 3x3 | 7.5% | 79.5% | 96.6% |
+
+All 24 concrete formula variants have at least one uniquely solvable field at
+every screened size under the composite grammar. At 2x2 the simple grammar
+already covers all variants and composite forms add no information capacity.
+
+A stricter stress test requires every individual clue to leave at least
+`ceil(2V/3)` candidates. Under that deliberately weak-clue rule:
+- simple clues narrow well but never reach a unique pair in 2-3 clues;
+- composite clues still provide unique fields for **24/24** variants at 2x3,
+  3x2 and 3x3;
+- aggregate unique-field rates are 74.9%, 61.8% and 36.6% respectively;
+- 2x2 cannot reach unique resolution under the strict rule, but 64.3% can reach
+  exactly two survivors.
+
+### Design implication
+
+Candidate A does **not** require finer/artificial tags merely to be structurally
+solvable.
+
+The quantitative shape supports a natural tutorial progression:
+1. 2x2 can teach plain tag intersection with simple facts;
+2. 2x3 / 3x2 can introduce richer relations gradually;
+3. 3x3 gives XOR/implication-style composite clues a real mechanical purpose;
+4. the exactly-two-candidate route remains a legitimate fallback/variety shape,
+   not the intended ordinary endpoint.
+
+This is capacity evidence, not blind-player evidence. It does not yet decide
+candidate-field legitimacy under real progression, final clue language, or
+whether Candidate A wins against the remaining two-slot solution families.
+
+The canonical two-slot solution-space checkpoint therefore remains open.
+Candidate A should now be treated as a **strong, corpus-backed contender** rather
+than a speculative idea. Before selecting production architecture, compare the
+remaining materially distinct two-slot grammar families at the player-facing
+level.
+
+Production remains **BLOCKED**.
