@@ -437,3 +437,17 @@ Observed reasoning path before success:
 8. Synthesize P2+L1+E2 -> TARGET.
 
 Do not solicit comparative evaluation yet; start Investigation II next.
+
+
+## Investigation II activated
+
+Investigation I is complete. Per the precommitted matched protocol, comparative evaluation is deferred until both cases are solved.
+
+Active matched case: **Investigation II**.
+
+Resources reset:
+- Research Charges: **8 / 8**;
+- no transferred relation knowledge;
+- no synthesis exclusions.
+
+Awaiting the player's first action in Investigation II.
