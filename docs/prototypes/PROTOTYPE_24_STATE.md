@@ -622,3 +622,37 @@ Research interpretation:
 - candidate slot grouping is now a concrete UX requirement to evaluate for production presentation.
 
 No new experimental result occurred in this checkpoint.
+
+
+## Live completion — Investigation II
+
+Player action:
+- full synthesis P2 + L1 + E2.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation II is solved.
+
+Resources:
+- Research Charges used: 4 / 8;
+- Research Charges remaining: **4 / 8**;
+- full synthesis attempts: 3;
+- compatible non-target syntheses: 1;
+- unsuccessful non-compatible syntheses: 1;
+- successful target syntheses: 1.
+
+Observed reasoning path:
+1. Apply the two-Mineral target fact.
+2. Test P1+L3 -> STABLE.
+3. Test L3+E2 -> INCOMPATIBLE.
+4. Test L3+E1 -> STABLE.
+5. Test P2+L3 -> STABLE.
+6. Synthesize P2+L3+E1 -> compatible non-target.
+7. Synthesize P2+L2+E2 -> non-target; full stable chain not confirmed.
+8. Reconstruct the three positional ways to place exactly two Mineral-bearing components.
+9. Notice P1+L3+E2 is already invalid because L3+E2 is INCOMPATIBLE.
+10. Conclude P2+L1+E2 is the only remaining target-consistent unexcluded triple.
+11. Synthesize P2+L1+E2 -> TARGET.
+
+Matched pair is now complete. Proceed to comparative player evaluation per the precommitted protocol.
