@@ -471,3 +471,29 @@ No facilitator deduction supplied beyond confirming the player-stated tag filter
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 5 — Investigation I
+
+Player action:
+- microtest P3 + L3.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **4 / 8**.
+
+Journal now contains:
+- prior: L2 + E2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: P1 + L2 -> STABLE;
+- P1 + L2 + E2 -> NOT the current target;
+- new: P3 + L2 -> INCOMPATIBLE;
+- new: P1 + L3 -> INCOMPATIBLE;
+- new: P3 + L3 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
