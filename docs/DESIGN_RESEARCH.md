@@ -3766,3 +3766,130 @@ the earlier conservative "preserve all formulas" research rule without an
 explicit product decision.
 
 Production implementation remains **BLOCKED**.
+
+
+## Progression-aware variable fields and recipe-variant targeting — 2026-10-05
+
+Status: **accepted product direction; quantitative envelope still open**.
+
+### Desired progression curve
+
+A previously optional aspiration is now explicit product intent:
+
+> If the real reagent-progression state naturally makes early investigations
+> smaller/easier and later investigations larger/richer, preserve and exploit
+> that progression rather than normalizing every target to the same difficulty.
+
+This should emerge from legitimate player knowledge growth where possible, not
+from arbitrary difficulty inflation.
+
+### Variable field size
+
+Fixed 3x3x3 is no longer a production requirement.
+
+It remains a validated and useful research/reference shape, but production
+generation may use smaller bounded per-slot candidate counts when progression
+does not support a full 3x3x3 field.
+
+Examples worth screening include:
+- 2x2x2;
+- 2x2x3 and permutations;
+- 2x3x3 and permutations;
+- 3x3x3.
+
+The generator should prefer a good smaller puzzle over blocking a researchable
+target merely because irrelevant distractors are unavailable.
+
+However, graceful degradation has a floor: a technically ambiguous field is not
+automatically an interesting puzzle. Very small shapes such as 2x2x1 may leave
+only trivial branch checking and should not be accepted merely because more than
+one triple exists. The minimum production-quality envelope must be measured and
+selected explicitly.
+
+### Multi-formula products become recipe-variant research targets
+
+Accepted direction:
+- if a vanilla product has multiple valid formulas, the player may research
+  those formula variants separately rather than requiring one puzzle to preserve
+  every formula simultaneously;
+- the research UI may represent multiple unknown recipe variants for one product
+  and allow the player to select a specific unresolved variant;
+- exact labeling/presentation remains open (for example "recipe variant 1/2/3"
+  is illustrative, not final copy);
+- once a variant is selected, the generator only needs to construct a valid
+  puzzle for that selected hidden formula;
+- discovering one variant must not permanently suppress the other vanilla
+  variants; they remain independently discoverable while unknown.
+
+Readiness for a selected variant therefore depends on whether that variant's
+true components are legitimately represented in the player's current reagent
+knowledge.
+
+This supersedes the earlier conservative research-screen rule that every
+candidate surface for a multi-formula product had to preserve every valid formula
+for that product. That rule remains useful historical stress-test evidence but
+is not the selected product semantics.
+
+Important implication:
+target-property clues may now be evaluated against the selected recipe variant
+rather than being forced to remain invariant across every alternative formula
+for the same output. Exact clue policy still requires a separate screen so this
+does not become direct formula disclosure.
+
+### Hard gate versus graceful simplification
+
+Accepted preference:
+- if at least one selected/available recipe variant is fully representable from
+  legitimately known reagents, prefer generating the best bounded puzzle the
+  current knowledge state supports;
+- simplify field size or clue burden before blocking;
+- do not require discovery of irrelevant decoy reagents merely to reach a
+  preferred candidate count.
+
+A hard "insufficient alchemical knowledge" gate is appropriate only when the
+selected research target cannot yet be represented because at least one true
+recipe component remains outside legitimate player knowledge.
+
+### Unresolved guidance problem at the hard gate
+
+The player needs a useful path forward when research is not yet ready, but naive
+guidance has two bad extremes:
+
+1. name the exact missing reagent -> leaks a real recipe component;
+2. name an irrelevant reagent or arbitrary mixed list -> creates forced busywork
+   and undermines trust.
+
+Therefore the open question is not whether to provide guidance, but what
+**non-oracular research lead** can point the player toward progress without
+identifying the missing component or requiring irrelevant filler.
+
+Candidate families to evaluate later include:
+- coarse source/provenance leads;
+- progression/activity leads ("broaden knowledge in this class of substances");
+- bounded sets/categories containing the missing reagent without asserting which
+  member is required;
+- natural re-checking after new reagent discoveries without a specific lead.
+
+Do not select one before checking how much each option narrows the hidden recipe
+and how much irrelevant work it can impose.
+
+### Next quantitative question
+
+The next corpus screen should model progression-limited known-reagent pools and
+treat individual recipe variants as research targets.
+
+Measure:
+- minimum per-slot knowledge needed for a puzzle that still clears the accepted
+  deduction-quality bar;
+- which variable field shapes can support that bar;
+- whether early limited knowledge naturally yields simpler puzzles and later
+  knowledge yields richer ones;
+- how often a representable variant can be served without any hard gate;
+- when graceful simplification becomes too trivial to count as a meaningful
+  puzzle;
+- how prior compatibility knowledge interacts with these smaller fields.
+
+This screen should define a **minimum interesting-puzzle envelope**, not merely
+count surviving combinations.
+
+Production implementation remains **BLOCKED**.

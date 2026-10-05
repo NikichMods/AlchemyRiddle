@@ -134,3 +134,36 @@ However, the project must not artificially preserve uncertainty merely to force 
 Avoiding unnecessary recipe spoilers remains the default reporting discipline. It must not become a design constraint that prevents rigorous analysis of the real corpus or narrows the solution space.
 
 If exact-formula inspection or explicit discussion becomes necessary to evaluate a candidate design properly, prefer the stronger research/design result. Relax the spoiler constraint explicitly and minimally rather than preserving it at the cost of a worse game.
+
+
+## Progression-sensitive puzzle scaling and recipe variants
+
+Accepted product intent:
+- when the player's growing reagent knowledge naturally permits it, early
+  investigations should tend to be smaller/easier and later investigations may
+  become richer/more complex;
+- this progression is desirable rather than something the generator should
+  flatten away;
+- fixed 3x3x3 fields are not required in production; smaller bounded fields are
+  acceptable when they still produce a meaningful deductive interaction;
+- a merely non-unique field is not sufficient: very small/trivial candidate
+  spaces may fall below the intended puzzle-quality floor and require a different
+  treatment.
+
+For products with multiple vanilla formulas:
+- unknown formula variants remain independently researchable;
+- discovering one valid recipe must not erase the player's opportunity to
+  discover other vanilla variants;
+- a selected recipe-variant investigation may be generated around that specific
+  hidden variant rather than requiring one puzzle to preserve every formula for
+  the product at once;
+- exact UI labeling and presentation of unknown variants remain open.
+
+Readiness principle:
+- if the selected hidden variant is fully representable from the player's
+  legitimate reagent knowledge, prefer a suitably simplified puzzle over a hard
+  block caused only by missing distractors;
+- do not require discovery of irrelevant reagents solely to decorate or pad the
+  puzzle;
+- if a true component is still unknown, a hard readiness gate may be legitimate,
+  but the eventual guidance must not simply reveal that missing component.
