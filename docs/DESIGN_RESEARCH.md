@@ -5010,3 +5010,69 @@ Current preferred sequence:
 This sequencing is now the canonical plan for the next chat unless new evidence contradicts it.
 
 Production remains **BLOCKED**. No runtime test is currently required.
+
+
+## Two-slot solution-space Candidate A — tag-constraint grammar
+
+Status: **active candidate for the two-slot solution-space checkpoint; not accepted production architecture**.
+
+The first two-slot family to develop is a property/tag-driven deduction grammar rather than a reduced compatibility-bridge system.
+
+### Player-facing shape
+
+`bounded Powder x Liquid field -> several individually partial constraints over fixed reagent properties -> intersect the constraints -> synthesize a justified pair`
+
+The important distinction is:
+- reagent properties/tags remain stable properties of the final vanilla reagent types;
+- puzzle complexity comes primarily from **compound logical statements over those properties**, not from inventing puzzle-specific compound tags.
+
+Candidate clue forms may include:
+- exact/zero/range property counts across the pair;
+- slot-local property requirements or exclusions;
+- XOR / exact-one-of-two relations;
+- implication / conditional relations;
+- conjunctions of individually weak facts.
+
+The intended experience is that no single clue simply names the answer. The player combines several facts and can explain why candidates are eliminated.
+
+### Relationship to three-slot progression
+
+This candidate is attractive because its learned language transfers directly into the accepted three-slot family:
+
+- two-slot: properties + logical constraints -> infer a Powder/Liquid pair;
+- three-slot: the same properties + logical constraints, then add STABLE/INCOMPATIBLE adjacent-pair relations as a richer relational layer.
+
+Therefore two-slot play can teach the common constraint language without introducing a pair-compatibility oracle that would collapse a two-item formula.
+
+### Resolution quality ladder
+
+Preferred outcome:
+- the available clue set uniquely identifies one justified pair before the player commits to synthesis.
+
+Acceptable but weaker bounded outcome:
+- all available constraints legitimately leave exactly **two** plausible pairs;
+- the player chooses one as a reasoned hypothesis;
+- if it is a compatible/non-target result, the system may state that the tested mixture satisfied the established constraints but did not produce the target;
+- this negative result makes the remaining pair the unique residual answer.
+
+This two-survivor path is a fallback/variety shape, **not the desired ordinary default**. Requiring repeated trial among several clue-consistent pairs would degrade into enumeration and fails the intended standard.
+
+Exact player-facing wording for a clue-consistent non-target synthesis remains open; avoid gamey praise such as “you did everything right” if a more in-world observation can communicate the same evidence.
+
+### Next evidence step for Candidate A
+
+Before blind play, quantitatively screen the real ordinary two-slot corpus under the existing fixed property model.
+
+The screen should measure, for progression-plausible bounded candidate fields rather than assuming one permanent field size:
+1. whether 2-3 or another small number of individually partial property constraints can produce useful cross-constraint trajectories;
+2. how often the intended recipe variant can become unique from tags/logic alone;
+3. how often exactly two legitimate clue-consistent pairs remain, enabling the bounded residual-verification fallback;
+4. how often more than two survivors remain and additional information would be required;
+5. whether achieving uniqueness requires over-strong, artificial, or repetitive clues;
+6. which clue forms and field sizes are suitable for onboarding versus later two-slot investigations.
+
+Treat concrete vanilla recipe variants as independent hidden research targets per the accepted variant policy; do not expose exact formulas in reporting.
+
+If the existing natural property vocabulary covers the corpus with a healthy proportion of unique or bounded-two-candidate paths, Candidate A advances to a blind paper prototype. If it requires artificial tag inflation or repeated guessing, retain that as negative evidence and compare the other two-slot families rather than patching the model ad hoc.
+
+Production remains **BLOCKED**.
