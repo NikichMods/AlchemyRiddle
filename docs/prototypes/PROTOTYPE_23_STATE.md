@@ -301,4 +301,37 @@ No facilitator deduction supplied.
 Current interaction point:
 - awaiting player's inference / next action.
 
+
+
+## Live completion
+
+Player inference after L3+E3 returned STABLE:
+- P3+L3 is known STABLE;
+- L3+E3 is now known STABLE;
+- the triple satisfies the target fact Mineral x1;
+- player therefore chose full synthesis P3+L3+E3.
+
+Deterministic synthesis result:
+- **ИСКОМЫЙ ЭФФЕКТ ПОЛУЧЕН**;
+- P3+L3+E3 is the recipe for the current target.
+
+Resources:
+- Research Charges used: 2 / 6;
+- Research Charges remaining: 4 / 6;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Follow pre-known stable P1+L1 anchor.
+2. Test L1+E2 -> STABLE.
+3. Synthesize P1+L1+E2 -> stable links, target effect absent.
+4. Preserve both pair facts and exclude only the exact triple.
+5. Pivot to pre-known stable P3+L3 anchor.
+6. Attempted L3+E2, but journal already contained INCOMPATIBLE; no charge spent.
+7. Test L3+E3 -> STABLE.
+8. Synthesize P3+L3+E3 -> target effect obtained.
+
+Prototype 23 player interaction is complete. Await explicit subjective evaluation before assigning final disposition.
+
 Production architecture remains **BLOCKED**.
