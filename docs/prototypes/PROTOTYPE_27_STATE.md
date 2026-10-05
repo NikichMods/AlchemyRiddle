@@ -384,3 +384,26 @@ No facilitator deduction supplied beyond confirming the player-stated reasoning.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 2 — Investigation I
+
+Player action:
+- full synthesis P1 + L2 + E2. (Player's spoken reference to “P2+L2 stable” is treated as a slip; the established new relation is P1+L2 STABLE and the requested triple is explicit.)
+
+Deterministic outcome:
+- both adjacent links are **STABLE**;
+- **TARGET EFFECT ABSENT**.
+
+Triple exclusion:
+- P1 + L2 + E2 is not the current target recipe.
+
+Resources:
+- Research Charges remaining: **7 / 8**;
+- full synthesis attempts in Investigation I: 1;
+- compatible non-target syntheses: 1.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
