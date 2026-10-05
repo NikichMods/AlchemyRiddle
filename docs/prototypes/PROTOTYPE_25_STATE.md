@@ -644,3 +644,43 @@ Observed path:
 5. P3 + L3 + E1 -> TARGET.
 
 Matched pair is now complete. Proceed to comparative player evaluation per the precommitted protocol.
+
+
+## Final player evaluation
+
+Disposition: **RELATION-RICH RETAIN; TARGET-TAG COMPENSATION RETAIN FOR LOW-HISTORY STATES**.
+
+Player evaluation:
+- Investigation II was clearly more interesting than Investigation I;
+- three prior relations made the opening feel substantially more like the desired "partially completed sculpture";
+- Investigation II also gave the more pleasant immediate reasoning start;
+- the two target-side tag constraints in Investigation I were not themselves objectionable or boring bookkeeping; the player considers two such tag constraints normal/acceptable;
+- the weakness of Investigation I was primarily the lack of enough pre-existing relational structure, not the existence of two target facts;
+- when few old compatibility relations are available, the player proposes compensating with richer reagent tag information and more target-side tag constraints;
+- this compensation hypothesis should be tested rather than assumed.
+
+Presentation result:
+- the Investigation II panel density was explicitly judged **ideal**;
+- three spatial reagent columns + one target fact + a compact journal of roughly 4-6 entries + resources was easy to scan and contained no felt excess;
+- preserve this as the current presentation-density reference.
+
+Important interpretation:
+- prefer existing earned relation knowledge when available because it creates visible partial structure;
+- target-property facts remain a valid complementary information source, especially when history is sparse;
+- the information budget should plausibly trade between prior relations and target-property constraints rather than using one fixed clue count for every investigation.
+
+Real-corpus feasibility note from accepted tag research:
+- the fixed 35-reagent world-grounded property model already includes multi-tag reagents;
+- derived from the accepted fixed assignment: 16 reagents have one property, 14 have two, and 5 have three (mean 1.69 properties/reagent);
+- therefore richer reagent property display is structurally available in the real corpus and does not require inventing a new taxonomy.
+
+Existing quantitative evidence already aligns with the proposed compensation direction:
+- at 0% prior relation knowledge, the adaptive architecture screen needed two weak target facts for all targets;
+- at 20% sampled relation knowledge, about 97% of fresh states could use one weak target fact;
+- higher relation densities almost universally used one target fact among remaining fresh states;
+- the separate clue-dosing screen proves a balanced two-fact start for 16/16 ordinary three-slot outputs and a progressive three-fact shape for 14/16.
+
+Next research question:
+> Does an explicitly adaptive information budget — richer visible reagent properties and 2-3 weak target constraints when relation history is sparse, fewer target constraints when useful prior relations are already present — preserve the desired partially-completed-puzzle feeling across both early and later knowledge states?
+
+Production source implementation remains **BLOCKED**.
