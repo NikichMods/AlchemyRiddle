@@ -4332,3 +4332,20 @@ Prototype 26 adds two design hypotheses and one negative experiential signal.
 - the next comparison must evaluate not only first-move quality but whether enough relational structure survives after a wrong-but-valid hypothesis.
 
 Production remains **BLOCKED**.
+
+
+### Constructive-anchor journal hypothesis
+
+Prototype 26 produced a stronger player-model hypothesis about how the two evidence layers are mentally organized.
+
+The player naturally treats **known stable adjacent relations** as constructive structure: unfinished bridges / partially completed paths that invite continuation. Target-property clues then act as **constraints** on which continuations are plausible. This separation was easier to hold mentally than mixing positive and negative relation facts together as equally salient starting evidence.
+
+Implications to test, not yet production rules:
+- starting history may be more legible when it emphasizes stable anchors rather than front-loading incompatible pairs;
+- incompatibilities may be more valuable as discoveries during the current investigation, because they close a branch the player was actively considering;
+- target-property facts should preferably be several weaker cross-constraints rather than one semantically flat strong fact when the corpus permits it;
+- the same information-dosing principle may apply to relation history: prefer multiple partial anchors over one relation that almost identifies the answer, while ensuring displayed old relations do not acquire a meta-guarantee of target relevance.
+
+A notable interruption-resilience observation occurred in the same live test. After an extended design discussion, the player resumed the puzzle almost immediately by recognizing the currently open stable branch and which continuation had already been tested. They did not need to reconstruct the full prior reasoning chain. This is evidence that a branch/bridge-shaped journal may serve the project's external-memory requirement more effectively than a flat fact list.
+
+This remains a single-player blind-prototype observation and requires further testing before generalization. Production remains **BLOCKED**.
