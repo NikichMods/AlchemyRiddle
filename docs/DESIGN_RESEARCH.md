@@ -2627,3 +2627,16 @@ The adaptive information-budget model therefore needs to account for starting re
 Next evidence target: a similarly bounded field with richer legitimate starting relational information, while avoiding an over-directed or effectively pre-solved state.
 
 Production architecture remains BLOCKED.
+
+
+### Prototype 21 — structured-start test
+
+Status: active blind play.
+
+This prototype tests the Prototype-20R finding that richer starting relational structure may be more interesting than a no-anchor state without increasing working-memory demand.
+
+The 3x3x3 field begins with three reusable pair observations. They shape the remaining hypotheses but do not provide a complete known route. The purpose is to compare this structured start against Prototype 20R's self-directed pair-elimination loop.
+
+Canonical state: `docs/prototypes/PROTOTYPE_21_STATE.md`.
+
+Production architecture remains BLOCKED.
