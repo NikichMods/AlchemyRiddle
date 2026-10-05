@@ -589,3 +589,19 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 13 — Investigation II
+
+Player reasoning/confusion checkpoint:
+- player correctly recognized that exactly two Mineral-bearing components yields three positional patterns;
+- player noticed P1+L3+E2 as the remaining pattern without Powder Mineral, then rejected it because L3+E2 is already known INCOMPATIBLE;
+- P2+L3+E1 has already been synthesized as compatible non-target;
+- P2+L2+E2 has already been synthesized as non-target with no full stable chain;
+- therefore only one target-fact-consistent triple remains unexcluded: P2+L1+E2.
+
+UX evidence:
+- despite having logically reduced the state to a single remaining hypothesis, the player reported confusion and felt as though there might be no options left;
+- this suggests the journal/state presentation does not sufficiently surface elimination coverage or the fact that a unique hypothesis has been reached.
+
+No new experimental result occurred in this checkpoint.
