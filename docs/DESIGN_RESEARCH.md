@@ -4031,3 +4031,81 @@ No runtime test is currently required from the user.
 The next chat should recover from repository state and continue with the
 progression-limited variable-field quantitative screen unless new evidence
 changes the priority.
+
+
+## Progression-limited variable-field quantitative result — 2026-10-05
+
+Status: **screen completed; 2x2x2 promoted to blind-test floor candidate; production remains BLOCKED**.
+
+The progression-aware screen now treats each concrete three-slot recipe variant
+as an independent hidden research target and conditions candidate generation on
+concrete progression-limited known-reagent pools.
+
+The private oracle reproduced the accepted ordinary three-slot baseline before
+use: 19 variants / 16 outputs / 10x9x9 structural universe / 19 Powder-Fluid
+stable edges / 18 Fluid-Essence stable edges / 47 compatible chains.
+
+The important new distinction is between two clue-quality bars:
+
+- the old 3x3x3 weak-fact ratio, mechanically scaled to smaller fields;
+- a compact-field candidate bar that still forbids self-resolving clues but
+  allows the coarser branch granularity of 2x2 first-stage surfaces.
+
+The mechanically scaled old rule performs poorly on 2x2x2 because four-branch
+fields do not have the same clue-strength granularity as nine-branch fields.
+That is a metric-transfer failure, not evidence that early compact alchemy is
+intrinsically unsuitable.
+
+Under the compact candidate bar:
+
+- the full representable 2x2x2 known-pool population was enumerated exhaustively:
+  **10,944 states**;
+- **95.815%** can be served by a compact deductive puzzle;
+- the worst recipe variant is still serviceable in **89.931%** of its
+  representable 2x2x2 states;
+- deterministic sampled 2x3x2 and 3x2x2 states are approximately **99%+**
+  serviceable;
+- sampled 3x3x2 and 3x3x3 states reached **100%** service in the tested bank.
+
+The selected field size therefore grows naturally with reagent knowledge:
+2x2x2 at the smallest normal state, then 12-/18-triple intermediate fields, then
+3x3x3 where the larger field remains well-formed. This is the desired
+progression-sensitive difficulty direction.
+
+Neutral accumulated compatibility knowledge does not introduce a new readiness
+failure mode in the sampled compact states. As relation density rises, fresh
+puzzles mostly become expertise-resolved states while total coverage remains
+essentially stable. This is consistent with the already accepted Adaptive
+Knowledge-Aware architecture.
+
+Hard-gate implication:
+- if a true component is unknown, the existing hard readiness gate remains
+  legitimate;
+- if the selected recipe variant is already representable, a failure of the
+  compact scorer must **not** be converted into "learn an irrelevant reagent";
+- the remaining minority of representable 2x2x2 gaps needs a graceful
+  information fallback, not an artificial knowledge gate.
+
+Minimum-floor checkpoint:
+- one-candidate-slot shapes such as 2x2x1 remain below the current candidate
+  quality floor;
+- **2x2x2 is now the minimum-floor blind-test candidate**;
+- 2x3x2 / 3x2x2 are strong compact fallback/richer-early shapes;
+- 3x3x2 / 3x3x3 are quantitatively robust under the current grammar.
+
+The remaining floor question is experiential:
+
+> Does a good 2x2x2 adaptive investigation still feel like a deduction the
+> player worked out, or does it feel too close to short enumeration compared
+> with a matched 2x3x2 case?
+
+The next step is therefore a blind matched paper-prototype pair:
+1. 2x2x2 compact;
+2. matched 2x3x2 (or symmetric 3x2x2).
+
+Full method, aggregate results and limits:
+\`docs/research/PROGRESSION_VARIABLE_FIELD_SCREEN_2026-10-05.md\`.
+
+No installed-runtime test is required from the user.
+
+Production source implementation remains **BLOCKED**.

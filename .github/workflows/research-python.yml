@@ -1,0 +1,28 @@
+name: Research Python
+
+on:
+  push:
+    branches:
+      - "research/**"
+    paths:
+      - "research/**/*.py"
+      - ".github/workflows/research-python.yml"
+  pull_request:
+    paths:
+      - "research/**/*.py"
+      - ".github/workflows/research-python.yml"
+
+concurrency:
+  group: research-python-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  py-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile research helpers
+        run: python -m py_compile research/TagModelScreen/*.py
