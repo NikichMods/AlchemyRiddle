@@ -2934,3 +2934,82 @@ is a separate quantitative screen and remains open.
 This screen does **not** settle candidate-surface selection policy, two-slot grammar, progression availability, final property wording, or compatibility-salience policy.
 
 Production architecture remains **BLOCKED**.
+
+
+## Tag clue-power dosing screen — accepted 2026-10-05
+
+Status: **accepted quantitative research; numeric thresholds are screening
+criteria, not final production balance constants**.
+
+Detailed evidence: `docs/research/TAG_POWER_DOSING_SCREEN_2026-10-05.md`.
+
+The bounded-field follow-up explicitly tested the concern that minimizing clue
+count could produce over-strong one-fact starts. It searched instead for
+several individually weak invariant property facts whose conjunction carries
+the useful information.
+
+### Balanced two-fact result
+
+Screening criterion:
+- start from 9 Powder+Fluid branches in a 3x3x3 field;
+- each fact alone must leave **6-8** branches;
+- the two facts together must leave **3-4**.
+
+Result:
+- **16 / 16** ordinary three-slot outputs have at least one admissible surface
+  satisfying this criterion;
+- **245,562 / 372,008 = 66.0%** of all admissible surfaces satisfy it for their
+  target;
+- per-output surface coverage ranges from **7.94%** to **81.03%**, median
+  **69.03%**;
+- if both facts must be positive counts, **14 / 16** outputs remain covered;
+  the two exceptions are multi-formula classes and become covered when an
+  invariant zero/absence fact is allowed.
+
+The property layer can also be deliberately stopped well before a final
+formula: for **16 / 16** outputs there is a balanced two-fact surface leaving
+**4 Powder+Fluid branches and 12 complete triples**. Thus compatibility can
+retain substantial independent work rather than merely confirming a recipe
+already disclosed by properties.
+
+### Progressive three-fact result
+
+A stricter screen required:
+- every individual fact to leave **6-8** branches;
+- every two-fact conjunction to leave **3-6**;
+- all three together to leave **2-4**;
+- every fact to be non-redundant: removing it increases branch count.
+
+Result:
+- **14 / 16** outputs pass;
+- **135,042 / 372,008 = 36.3%** of all admissible surfaces pass;
+- among covered outputs, per-output coverage ranges from **9.36%** to
+  **51.40%**, median **39.00%**;
+- the two failures are difficult multi-formula classes with too little
+  independent invariant structure under the current simple property
+  vocabulary;
+- both already pass the balanced two-fact screen, so their next deduction step
+  can naturally come from compatibility instead of finer artificial tags.
+
+A real anonymized corpus case demonstrates the intended interaction shape:
+9 starting branches; three positive facts individually leave **7 / 6 / 6**;
+their pairwise intersections leave **5 / 4 / 4**; all three together leave
+**3**.
+
+### Design consequence
+
+The fixed natural property vocabulary has enough **headroom to dose clue
+power**, not merely enough raw information to solve a bounded field.
+
+Future puzzle-generation research should therefore optimize an information
+trajectory rather than minimum clue count:
+1. bounded candidate surface;
+2. several individually weak property constraints;
+3. useful reduction produced by their conjunction;
+4. compatibility / microtests supply the next relational deductions.
+
+Do not make every puzzle use three property facts. The universal result is the
+balanced two-fact pattern; the richer three-fact pattern is available for
+14/16 outputs and can be used where it improves the reasoning shape.
+
+Production architecture remains **BLOCKED**.
