@@ -25,3 +25,20 @@ preserving the project's anti-spoiler rule.
 
 The helper does not choose product architecture. It screens whether a proposed
 fixed reagent-tag vocabulary has enough information to be worth prototyping.
+
+
+## Bounded 3x3x3 screen
+
+Pass `--bounded-3x3` to enumerate every 3x3x3 candidate surface that
+contains every valid formula ingredient for each output.
+
+The bounded screen:
+- preserves every valid vanilla formula for the target;
+- derives only exact tag-count facts invariant across all of those formulas;
+- measures whether some subset of those facts leaves 2-4 Powder+Fluid branches;
+- separately tracks one-fact and positive-one-fact surfaces;
+- records whether the complete invariant fact set can isolate exactly the
+  target's valid formula set.
+
+The candidate universe comes from the slot populations present in the supplied
+private formula corpus. Exact formula rows remain outside the repository.
