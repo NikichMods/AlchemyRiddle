@@ -578,3 +578,29 @@ No facilitator deduction supplied beyond clarifying the legal adjacent pair impl
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 7 — Investigation II
+
+Player reasoning:
+- after L2+E1 is found INCOMPATIBLE, continues the same P3+L2 bridge with the remaining plausible Essence E2.
+
+Player action:
+- microtest L2 + E2.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **6 / 8**.
+
+Journal now contains:
+- prior: P3 + L2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: L2 + E1 -> INCOMPATIBLE;
+- new: L2 + E2 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
