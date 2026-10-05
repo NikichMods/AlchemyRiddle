@@ -193,3 +193,36 @@ Outcome: compatible chain; target effect absent.
 Research Charges: 8/8.
 
 Awaiting next player action.
+
+
+## Live completion
+
+Player evaluation before final synthesis:
+- initial visual impression of three composite clues was intimidating, but actual local reasoning was easier than expected;
+- revised difficulty estimate: **mid difficulty**, definitely not introductory, but not necessarily high difficulty;
+- player positively values that some hypotheses can be derived directly from clue logic without first spending a microtest;
+- do not require every investigation to consume experiments mechanically;
+- preserve variety: some investigations may need relation tests, some may yield a plausible synthesis directly from clues and known bridges;
+- an immediate first-move successful recipe is acceptable occasionally, but should not become a frequent generator pattern;
+- player naturally re-read and self-corrected clue scope while evaluating the second bridge, suggesting the composite grammar remains manageable in practice.
+
+Player reasoning on prior L2+E2:
+- clue 1 excludes P1: if Powder is Plant, Essence would need Slime; E2 is not Slime;
+- clue 3 excludes P2: L2 is Mineral and P2 carries Insect;
+- therefore P3 remains.
+
+Player action:
+- full synthesis P3 + L2 + E2.
+
+Outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Resources:
+- Research Charges used: 0 / 8;
+- Research Charges remaining: **8 / 8**;
+- full syntheses: 2;
+- microtests: 0;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Prototype 28 blind play complete.
