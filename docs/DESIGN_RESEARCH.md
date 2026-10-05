@@ -4405,3 +4405,183 @@ Current presentation evidence remains positive:
 Next research should test **bridge topology and clue variety**, not return to raw field-size comparison. At minimum include mirrored anchor orientation and more varied weak target-property statements while holding the successful information density roughly constant.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 27 — bridge topology and clue variety
+
+Status: **precommitted; matched player test active; production remains BLOCKED**.
+
+Prototype 26 established a provisional cognitive grammar:
+- prior STABLE relations provide constructive scaffold / unfinished bridges;
+- target/reagent properties constrain continuations;
+- newly discovered INCOMPATIBLE relations close active branches.
+
+The next uncertainty is topology repetition, not information quantity.
+
+### Solution-space checkpoint
+
+Compared topology families:
+1. mirrored Liquid+Essence anchors requiring backward Powder completion;
+2. mixed orientation with one Powder+Liquid and one Liquid+Essence anchor;
+3. a pre-completed stable chain at start;
+4. denser fork/star relation networks.
+
+Selected first comparison: **(1) vs (2)**.
+- A pre-completed chain is deferred because it is too close to a finished hypothesis for the current question.
+- Denser fork/star graphs are deferred until simple orientation symmetry is tested, to avoid simultaneously adding relation density and layout burden.
+
+### Research-method checkpoint
+
+No new runtime or host-internals uncertainty exists. Existing corpus/tag/compatibility evidence proves the relevant information sources. The unresolved question is experiential: orientation symmetry, readability, repetition risk and clue-language variety. A matched synthetic blind paper prototype is therefore the least-complex adequate method; no new harness/probe is justified.
+
+### Matched controls
+
+Both investigations use:
+- 3x3x3 field;
+- exactly three target-property constraints;
+- exactly two prior STABLE relations;
+- zero prior INCOMPATIBLE relations;
+- the established three-column presentation;
+- prior/new journal distinction;
+- 8 charges, 1 per adjacent microtest, 0 per synthesis.
+
+Investigation I uses two **Liquid+Essence** starting bridges. Investigation II uses one **Powder+Liquid** and one **Liquid+Essence** bridge.
+
+Both use varied clue forms: exact count, global absence, and a non-oracular slot-local absence statement. Each starting bridge has two target-consistent continuation candidates, so the tag layer does not turn either bridge into a direct slot answer.
+
+Complete facilitator state is precommitted in:
+`docs/prototypes/PROTOTYPE_27_STATE.md`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- two prior L+E stable bridges;
+- three target-property constraints;
+- awaiting first player action.
+
+Production source implementation remains **BLOCKED**.
+
+
+### Prototype 27 early clue-language signal
+
+The opening of Prototype 27 produced a strong early UX signal before the first experiment:
+- mixing clue forms (global absence + exact count + slot-local absence) felt markedly more engaging than repeated “tag X exactly once” statements;
+- the player immediately used the clue set to reason about how to complete a known stable bridge;
+- working-memory burden remained acceptable despite having three constraints;
+- this supports the hypothesis that tag-clue **variety**, not merely clue count, matters materially to perceived puzzle quality.
+
+The slot-local negative clue also exposed a wording issue. Its semantics were clear and useful, but the literal phrasing equivalent to “Powder does not belong to Corpse” sounded unnatural. Keep the clue family under test, but treat final player-facing phrasing as unresolved.
+
+Production remains **BLOCKED**.
+
+
+### Prototype 27 diversity philosophy and external-validation note
+
+Prototype 27 produced a broader design synthesis while the blind test was still in progress.
+
+#### Useful-information principle
+A surfaced target-property clue should not be **perfectly decorative**. It may be weak and need not dominate the puzzle, but the intended path should normally include at least one moment where that clue materially excludes, permits, or disambiguates a branch. Prototype I exposed that an absence-of-Slime clue can feel wasted if Slime never becomes a live candidate choice.
+
+This is not a requirement that every clue fire constantly. The goal is to avoid UI information that appears mechanically meaningful but contributes nothing to the actual investigation.
+
+#### Bridges are scaffolding, not guaranteed answer carriers
+Stable prior relations should remain the main constructive scaffold, but the target should not always lie on one of the obvious starting bridges. A promising medium/high-difficulty topology is:
+1. several visible stable bridges provide natural research directions;
+2. each bridge is resolved/closed using tags and a small number of tests;
+3. their elimination leaves a very small residual branch that was not itself a starting bridge;
+4. the player can articulate why that residual branch is the answer, without beginning a fresh brute-force search.
+
+This could prevent the meta-rule “the answer is always hidden inside a starting bridge” while preserving the low-working-memory benefits of bridge-guided reasoning.
+
+#### Clue-language diversity should be structural, not decorative
+Promising clue families now include:
+- exact global counts;
+- global absence;
+- slot-local presence/absence;
+- conditional/composite constraints that couple properties or slots, e.g. a property being forbidden/required in one place only when another property is present elsewhere;
+- intersections of several individually weak facts.
+
+The specific wording/formulas remain open. Composite clues should be introduced sparingly because they raise reasoning depth and UI complexity. The key principle is to diversify **logical roles**, not merely wording.
+
+#### Maturity signal
+The player explicitly reports that the base system now feels stable enough that ideation is shifting from repairing the core toward inventing richer variants. Treat this as qualitative evidence that the current bridge+constraint grammar is becoming a viable foundation, not as production acceptance.
+
+#### External validation direction
+A later standalone web demo is a promising research tool. It could present bounded AlchemyRiddle puzzles independently of Graveyard Keeper and collect anonymized interaction-path statistics from multiple players, including which anchor is chosen first, test count, backtracking, resumptions, and whether players naturally follow stable bridges. This would directly test whether the current single-player cognitive model generalizes.
+
+Before building such a demo, define the exact research questions and minimal telemetry; do not let the demo become a production-architecture commitment by accident.
+
+After Prototype 27, perform a fresh broad solution-space/literature/game-mechanics scan from the now-stable bridge+constraint foundation to identify additional deduction patterns that may transfer cleanly.
+
+Production remains **BLOCKED**.
+
+
+## Prototype 27 result — topology rotation and expressive clues
+
+Status: **matched comparison complete; all simple bridge orientations retained; clue-language diversity strongly retained; production remains BLOCKED**.
+
+Prototype 27 asked whether the unfinished-bridge model survives reversed orientation and mixed orientation, and whether varied target-property clues remain readable.
+
+### Bridge-topology result
+
+No single local topology should become the product default.
+
+Retain and deliberately rotate:
+- Powder+Liquid anchors completed toward Essence;
+- Liquid+Essence anchors completed backward toward Powder;
+- mixed sets containing both orientations.
+
+The important design variable is the **distribution across many investigations**, not which one topology wins a single matched test. Repetition risk is itself a failure mode: if every investigation presents the same bridge orientation or same answer-bearing structure, the player can learn the puzzle generator rather than reason about alchemy.
+
+The mirrored L+E case was navigated naturally, so reverse orientation is viable. The mixed case was also navigated naturally, so orientation diversity does not inherently create unacceptable working-memory burden.
+
+Future generator/design work should therefore vary:
+- anchor orientation;
+- number of useful anchors within the accepted information-density envelope;
+- whether the target lies on a starting anchor or emerges as the small residual branch after visible anchors are exhausted;
+- relative strength of each anchor.
+
+### Target-clue result
+
+Varied clue forms are clearly better than a monotone exact-count vocabulary.
+
+Retain as useful families:
+- exact counts;
+- global absence;
+- slot-local presence/absence;
+- carefully bounded conditional/composite constraints;
+- intersections of individually weak facts.
+
+Repeated “property X occurs exactly once” should be treated as a basic fallback form, not the intended dominant language.
+
+Design principle:
+> maximize logical and linguistic variety subject to immediate mechanical clarity.
+
+Novelty must never require interpretive guesswork. The player should understand exactly what fact has been learned even when its wording is playful or world-flavoured.
+
+### Authored flavour / humor hypothesis
+
+Selected pre-authored clue phrasings may use light humor or Graveyard Keeper world references when:
+- the numeric/logical meaning remains exact;
+- the reference is stable and recognizable;
+- no lore interpretation is required to decode the rule;
+- the phrasing does not hide whether the clue is global, slot-local, conditional, or count-based.
+
+This is best treated as a bounded authored-template layer, not free-form autogenerated joke text, until ambiguity risk is proven manageable.
+
+### Scope-error UX evidence
+
+A slot-local constraint was once mentally promoted to a global restriction during live play. This is valid player evidence, not test contamination.
+
+Therefore slot scope should eventually be visible in presentation as well as sentence wording, for example through grouping, iconography, slot headers, or another explicit visual association. Exact UI remains open.
+
+### Current foundation
+
+The player reports that the core now feels stable enough that ideation is shifting from fixing the base mechanic toward enriching it. This is qualitative evidence that the bridge+constraint grammar is a viable foundation for the next design phase, not production acceptance.
+
+Next research:
+- conduct a fresh broad scan of established deduction-game structures and puzzle grammars;
+- look specifically for transferable patterns that can enrich bridge topology, clue interaction, residual deduction, and information revelation without increasing bookkeeping;
+- compare those patterns against the existing AlchemyRiddle acceptance envelope before adopting any.
+
+Production remains **BLOCKED**.
