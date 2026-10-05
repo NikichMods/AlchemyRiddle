@@ -4190,3 +4190,36 @@ Presentation requirement learned in the same prototype:
 - the earlier one-column table materially increased visual parsing cost and confounded one moment of reasoning.
 
 The next paper prototype should hold field size roughly constant and vary opening information structure. Production source implementation remains **BLOCKED**.
+
+
+## Prototype 25 — middle-information opening structure
+
+Status: **precommitted; player-facing matched test active**.
+
+Prototype 24 showed that sparse-start blankness is a more important engagement problem than field size alone. The next solution-space checkpoint compares two existing-mechanism ways to create a partially formed opening while holding the field at 3x3x3:
+
+1. **target-rich hybrid** — two target-specific constraints + one prior relation;
+2. **relation-rich hybrid** — one target-specific constraint + three prior relations.
+
+A new derived structural-clue family is deliberately deferred until these simpler combinations are tested; merely enlarging the field is not being pursued because Prototype 24 already showed that size alone is insufficient.
+
+Research-method checkpoint:
+- the uncertainty is experiential, not a missing host/runtime fact;
+- no new game probe or quantitative harness is needed;
+- a matched synthetic paper-prototype pair is the least-complex adequate test.
+
+Presentation control:
+- candidates must remain grouped spatially by slot as three columns / equivalent blocks;
+- this prevents the layout confound observed in Prototype 24.
+
+Complete facilitator state:
+`docs/prototypes/PROTOTYPE_25_STATE.md`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- two target-specific facts;
+- exactly one prior relation in the journal;
+- awaiting the player's first action.
+
+Production source implementation remains **BLOCKED**.
