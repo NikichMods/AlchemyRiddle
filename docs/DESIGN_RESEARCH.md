@@ -4223,3 +4223,40 @@ Current interaction point:
 - awaiting the player's first action.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 25 result — relation-rich openings preferred
+
+Status: **relation-rich opening retained; adaptive tag compensation becomes the next test; production remains BLOCKED**.
+
+Prototype 25 held a 3x3x3 field constant and compared two middle-information openings:
+- target-rich: two target-property constraints + one prior relation;
+- relation-rich: one target-property constraint + three prior relations.
+
+Player result:
+- the relation-rich case was more interesting and more strongly produced the desired "partially completed sculpture" feeling;
+- it gave better immediate reasoning hooks;
+- the two target-property constraints in the target-rich case were not themselves considered a problem — two tag conditions felt normal and understandable;
+- the weakness was that target facts alone did not substitute fully for visible relational structure.
+
+Presentation result:
+- three spatial reagent columns, one target fact, a compact journal of roughly 4-6 relation/synthesis records, and resources visible together were explicitly judged **ideal information density**;
+- preserve that density/layout as the current UX reference;
+- repeated already-known relations should be intercepted without consuming resources.
+
+New adaptive-information hypothesis:
+- prefer earned compatibility relations as opening structure when they exist;
+- when useful prior relations are sparse, compensate with richer visible reagent properties and additional weak target-property constraints;
+- do not force a fixed clue count across all progression states.
+
+This hypothesis is supported structurally by already accepted real-corpus evidence:
+- the fixed 35-reagent property assignment contains 16 one-property reagents, 14 two-property reagents and 5 three-property reagents (mean 1.69 properties/reagent), so richer reagent cards are already available without inventing a new taxonomy;
+- the clue-dosing screen proves balanced two-fact starts for 16/16 ordinary three-slot outputs and progressive three-fact starts for 14/16;
+- the adaptive architecture screen already shows the same compensation direction quantitatively: all zero-history targets use two weak target facts, whereas after modest prior relation knowledge roughly 97% of fresh states can use one.
+
+Therefore the next experiential test should not compare field sizes again. It should compare progression/knowledge states under an **explicit adaptive information budget**:
+- sparse history -> richer reagent tag signatures + 2-3 weak target facts;
+- richer history -> fewer target facts + useful accumulated relations;
+while keeping the interaction short and the established presentation density under control.
+
+Production source implementation remains **BLOCKED**.
