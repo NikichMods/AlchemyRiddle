@@ -605,3 +605,20 @@ UX evidence:
 - this suggests the journal/state presentation does not sufficiently surface elimination coverage or the fact that a unique hypothesis has been reached.
 
 No new experimental result occurred in this checkpoint.
+
+
+## Live checkpoint 14 — Presentation confound
+
+Player UX clarification:
+- the confusion at the unique-hypothesis state was materially caused by the chat presentation layout, not just by the puzzle logic;
+- presenting all reagents as a single vertical table made slot membership harder to scan visually;
+- the player reports that the earlier three-column presentation (Powders / Liquids / Essences as distinct spatial columns) made candidate relationships much easier to perceive at a glance;
+- the player still acknowledges a momentary reasoning lapse, but explicitly identifies layout as a significant contributor.
+
+Research interpretation:
+- do **not** count checkpoint 13 confusion as clean evidence that 2x3x2 is cognitively too complex or that the deduction itself failed;
+- it is confounded by facilitator/UI presentation;
+- future paper prototypes comparing field sizes should preserve a slot-column layout so the tested variable is field size / reasoning, not visual parsing cost;
+- candidate slot grouping is now a concrete UX requirement to evaluate for production presentation.
+
+No new experimental result occurred in this checkpoint.
