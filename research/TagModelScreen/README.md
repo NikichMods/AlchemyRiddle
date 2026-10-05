@@ -203,3 +203,58 @@ Two clue criteria are available:
 The compact criterion is a research candidate, not a production balance
 contract. Its current aggregate results and limitations are documented in
 \`docs/research/PROGRESSION_VARIABLE_FIELD_SCREEN_2026-10-05.md\`.
+
+
+## Two-slot tag-constraint screen
+
+Run `two_slot_tag_constraint_screen.py` against a private two-slot corpus to
+measure whether the accepted fixed reagent properties can support the proposed
+early-game tag-constraint grammar without committing vanilla formula rows.
+
+Example:
+
+```
+python two_slot_tag_constraint_screen.py private-two-slot.json \
+  --assert-two-slot-baseline
+```
+
+The private input contains only ingredient tag sets and exact two-slot formula
+rows. The baseline assertion reproduces the accepted ordinary tier-I structure:
+
+- 24 formula variants;
+- 18 outputs;
+- 4 multi-formula outputs;
+- at most 3 formulas for one output;
+- 15 first-slot participants;
+- 9 second-slot participants;
+- 23 / 24 formula variants have another ordinary formula at Hamming distance 1.
+
+The helper exhaustively screens 2x2, 2x3, 3x2 and 3x3 candidate fields that
+contain the selected hidden formula variant.
+
+Two clue grammars are compared:
+
+- **simple** — slot-local target-true presence/absence plus exact pair tag
+  counts;
+- **composite** — the simple grammar plus cross-slot XOR/exact-one-of-two and
+  active cross-slot implications with positive or negative consequents.
+
+Implications whose antecedent is false on the hidden target are deliberately
+excluded, so a target never satisfies an implication only vacuously.
+
+Two clue-strength policies are reported:
+
+- **strict** — every clue alone leaves `ceil(2V/3)..V-1` candidates, preserving
+  the earlier three-slot weak-clue ratio;
+- **compact** — every clue alone leaves `max(2, ceil(V/2))..V-1` candidates,
+  allowing the coarser granularity of small onboarding fields.
+
+A retained 2- or 3-clue set must be non-redundant: every clue has to eliminate
+at least one candidate that the other selected clues would leave alive.
+Resolution categories distinguish:
+- unique answer in two clues;
+- unique answer in three clues;
+- exactly two residual candidates after two or three clues;
+- no bounded result.
+
+Exact formula rows remain private and are never printed.
