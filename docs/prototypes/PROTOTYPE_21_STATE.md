@@ -209,3 +209,23 @@ Resources:
 - Research Charges remaining: **1 / 2**.
 
 No facilitator deduction from the fresh result. Await player inference / next action.
+
+
+## Live checkpoint 2
+
+Player inference after the first new microtest:
+- rejected the obvious continuation of the known stable P2 + L1 branch after L1 + E3 returned INCOMPATIBLE;
+- shifted attention to the other pre-known stable relation L2 + E1;
+- reasoned that L2 + E1 together already supply Минерал + Труп, leaving Растение as the remaining target property;
+- identified P1 Травяной порошок as the natural Powder candidate for that role;
+- chose to test P1 + L2.
+
+Player action:
+- microtest P1 Травяной порошок + L2 Солёный раствор.
+
+Raw outcome: **STABLE / СТАБИЛЬНО**.
+
+Resources:
+- Research Charges remaining: **0 / 2**.
+
+No facilitator deduction from the fresh result. Await player inference / final action.
