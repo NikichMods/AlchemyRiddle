@@ -674,3 +674,37 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live completion — Investigation II
+
+Player action:
+- full synthesis P3 + L3 + E1. (User shorthand “B3” interpreted as P3 from current slot notation.)
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation II is solved.
+
+Resources:
+- Research Charges used: 2 / 8;
+- Research Charges remaining: **6 / 8**;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Start with one target fact + three prior relations.
+2. Player first re-attempts already-known L2+E1; intercepted, no cost.
+3. L2+E2 -> STABLE.
+4. P1+L2+E2 -> compatible non-target.
+5. Player returns to second prior anchor P3+L3.
+6. L3+E1 -> STABLE.
+7. P3+L3+E1 -> TARGET.
+
+Experiential note:
+- the player repeatedly used prior stable pairs as visible unfinished bridges and target tags as continuation filters;
+- the journal itself supported chain reconstruction and interruption recovery;
+- prior incompatible relation was less salient and was forgotten despite being present.
+
+Matched pair complete. Proceed to comparative evaluation.
