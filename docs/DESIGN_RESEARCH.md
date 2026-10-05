@@ -3328,3 +3328,128 @@ This screen remains an existence/structure analysis, not a proof of a blind
 player's branch-selection policy or worst-case experiment count.
 
 Production architecture remains **BLOCKED**.
+
+
+## Prototype 22 — blind architecture A/B result (2026-10-05)
+
+Status: **completed; adaptive knowledge-aware architecture is now the leading
+three-slot candidate, but production architecture remains BLOCKED**.
+
+Prototype state and exact precommitted facilitator model:
+`docs/prototypes/PROTOTYPE_22_STATE.md`.
+
+The test compared two structurally isomorphic 3x3x3 cases with the same
+compatibility/property topology, resource budget and action grammar. The
+architecture assignment and order were precommitted before play.
+
+Blind mapping:
+- Investigation I = **adaptive knowledge-aware**;
+- Investigation II = **fixed tag-centric baseline**.
+
+### Blind player result
+
+Investigation I:
+- one weak target-property fact;
+- four neutral prior compatibility records surfaced because both ingredients
+  were present on the working field;
+- the player immediately used a pre-known stable Powder-Liquid relation as a
+  justified starting hypothesis;
+- one new Liquid-Essence microtest returned STABLE;
+- the player synthesized that chain successfully;
+- result: **1 microtest, 0 failed syntheses, solved**.
+
+Investigation II:
+- two individually weak target-property facts;
+- no prior compatibility relation inside the field;
+- the player reported substantial working-memory load before the first action
+  and difficulty identifying a principled first experiment;
+- the first branch consumed three tests and dead-ended;
+- a fourth test established a new stable Powder-Liquid branch;
+- Research Charges then reached zero while at least two plausible continuations
+  remained and an entire third powder branch had not been explored;
+- the player explicitly declined to guess and instead wanted to leave, obtain
+  more research resources and return;
+- result: **4 microtests, 0 synthesis attempts, unresolved due to resource
+  exhaustion**.
+
+### Subjective comparison given before architecture reveal
+
+The player clearly preferred Investigation I.
+
+Specifically:
+- the prior relations felt like **natural accumulated alchemical knowledge**,
+  not suspicious authorial breadcrumbs;
+- automatically filtering the player's known relation history to the current
+  working substances felt like welcome UI/external-memory support;
+- choosing the next experiment was substantially easier for an articulable
+  reason;
+- the stronger "I worked it out" feeling occurred in Investigation I;
+- Investigation II required too much simultaneous candidate/property state in
+  human working memory before a useful first action could be selected.
+
+This directly answers Prototype 21's main meta-information concern in the tested
+shape: neutral surfaced prior relations did **not** feel like illegitimate
+answer curation.
+
+### Architecture consequence
+
+The quantitative screen plus this blind A/B justify changing the research
+ranking:
+
+1. **Adaptive knowledge-aware = leading three-slot candidate.**
+2. **Fixed tag-centric = fallback/comparator, not the preferred player-facing
+   architecture in its tested form.**
+
+A reverse-order matched pair is not required now because the observed
+difference was large and internally consistent rather than close or
+contradictory.
+
+This is still not permission for production implementation. Open production
+questions remain, including candidate-surface legitimacy, progression-state
+knowledge, persistence/economy, two-slot grammar, and UI/runtime ownership.
+
+### New risk exposed by the winning case
+
+Investigation I was too frictionless in one important pedagogical sense.
+
+The first attractive known stable Powder-Liquid anchor, followed by the first
+successful continuation test, happened to form the actual target recipe. The
+player correctly noted that this can teach the false heuristic:
+
+> "If both adjacent pairs are STABLE, I have found the recipe."
+
+But the intended rule is weaker:
+
+> A fully stable adjacent chain is **chemically plausible / compatible**, but
+> compatibility is necessary rather than sufficient to identify the requested
+> target product.
+
+This distinction must be player-legible, not merely written in a rule paragraph.
+The system should produce an early concrete experience where a fully stable
+chain can still be a **non-target** combination, while preserving the truth of
+the compatibility observations.
+
+### Next focused research question
+
+Before selecting the three-slot production architecture, run one focused
+adaptive blind prototype that tests the distinction above.
+
+The prototype should:
+- keep the adaptive/neutral old-knowledge rule;
+- begin with enough prior knowledge to avoid the baseline working-memory
+  failure;
+- contain at least one plausible fully stable **decoy chain**;
+- make that decoy a reasonable player hypothesis rather than an obviously bad
+  path;
+- ensure a failed target synthesis does not contradict the learned STABLE pair
+  facts;
+- give a clear player-facing result equivalent to "stable mixture, but not the
+  requested product" rather than implying the pair observations were wrong;
+- preserve a short route to the real target after that disconfirmation;
+- test whether the resulting extra uncertainty adds satisfying investigation
+  rather than merely another brute-force layer.
+
+This prototype should also evaluate the wording/feedback needed to teach
+"compatibility != identity" without exposing hidden formulas.
+
+Production architecture remains **BLOCKED**.
