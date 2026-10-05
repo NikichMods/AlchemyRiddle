@@ -4291,3 +4291,21 @@ Current interaction point:
 - awaiting first player action.
 
 Production source implementation remains **BLOCKED**.
+
+
+### Tag-clue variety and early-success teaching note
+
+Prototype 26 produced an additional player-owned design hypothesis that should be retained for comparison, not yet treated as final grammar:
+
+- target-property clues should not be limited to repetitive exact-count statements;
+- promising clue forms include exact counts, zero/absence facts, and possibly bounded slot-local statements such as a property being present/absent in one recipe position;
+- slot-local clues are acceptable only when they remain non-oracular on the displayed candidate field; if a clue effectively names one exact ingredient, it has crossed into guided disclosure rather than the desired deductive layer;
+- because tag clues are less intrinsically engaging than earned compatibility relations, modestly greater variety and information volume may be appropriate in sparse-history states;
+- deliberately adding extra candidates only so a tag clue can remove them is **not accepted**; controlled decoy padding remains an explicit hypothesis and must justify its cognitive/noise cost rather than becoming filler.
+
+The same live reasoning produced a useful teaching principle:
+- do not intentionally prevent an early investigation from resolving on the player's first well-justified hypothesis;
+- if that hypothesis required combining prior relation knowledge with several target/reagent properties, a quick success can create a desirable early-game competence moment rather than feeling trivial;
+- later investigations can require deeper branching once the rule language is learned.
+
+These are candidate UX/grammar refinements for the adaptive information-budget direction. Production remains **BLOCKED**.
