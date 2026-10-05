@@ -42,3 +42,28 @@ The bounded screen:
 
 The candidate universe comes from the slot populations present in the supplied
 private formula corpus. Exact formula rows remain outside the repository.
+
+
+## Clue-power dosing screen
+
+Pass `--dosing-screen` to test whether the information carried by invariant
+target properties can be distributed across several individually weak facts.
+
+Current accepted screening criteria:
+
+**Balanced two-fact start**
+- each fact alone leaves 6-8 of the 9 Powder+Fluid branches;
+- both facts together leave 3-4 branches.
+
+**Progressive three-fact start**
+- each fact alone leaves 6-8 branches;
+- every pair leaves 3-6 branches;
+- all three leave 2-4 branches;
+- every fact is necessary: removing it increases the branch count.
+
+The report also distinguishes positive-count-only clue sets from sets that use
+an absence / zero-count fact, and records how many full triples can remain
+after a balanced two-fact start.
+
+These thresholds are a research screen for clue interaction, not a production
+balance contract.
