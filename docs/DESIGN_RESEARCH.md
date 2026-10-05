@@ -4144,3 +4144,49 @@ Current interaction point:
 - awaiting the player's first action.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 24 result — sparse-start field size is not the main problem
+
+Status: **current sparse-start grammar rejected; production remains BLOCKED**.
+
+Prototype 24 compared a 2x2x2 case with a matched 2x3x2 case under an early / low-expertise opening state:
+- no prior compatibility records;
+- one target-property fact;
+- ample resources;
+- the same accepted Adaptive Knowledge-Aware interaction semantics.
+
+Result:
+- the 2x2x2 case was clearly boring and felt like mechanically checking possibilities until the answer remained;
+- the 2x3x2 case was only somewhat more engaging;
+- therefore field size alone is not the dominant quality variable.
+
+The stronger new product insight is about **starting information structure**.
+
+The player prefers to enter an investigation where the possibility space is already partly shaped by useful evidence, then complete the remaining deduction. Starting from an almost blank combinatorial field and repeatedly eliminating possibilities feels like carving an entire sculpture from a raw block rather than finishing a partially formed sculpture.
+
+Design consequence:
+- do not optimize the next iteration around finding the smallest acceptable grid by itself;
+- do not accept 2x2x2 as the normal production floor under the tested one-fact / zero-history opening;
+- do not assume 2x3x2 is adequate merely because it was slightly better;
+- increase **meaningful opening structure**, not just candidate count.
+
+This result fits the earlier Prototype 23 evidence:
+- one target-property fact by itself felt sparse;
+- seven surfaced prior relations felt cluttered;
+- the successful interaction came from a partially constrained landscape with a few justified hypotheses and meaningful follow-up tests.
+
+The next solution-space checkpoint should compare several **middle-information opening packages**, for example:
+1. two target-specific facts plus a small neutral set of prior relations;
+2. one target-specific fact plus roughly 2-4 neutral prior relations;
+3. one compact derived structural clue plus 1-2 prior relations;
+4. equivalent-information packages split differently between target-centric evidence and relation-centric prior knowledge.
+
+The research objective is now:
+> find the smallest opening information package that makes the player feel they are **completing a deduction** rather than **starting from a blank search space**.
+
+Presentation requirement learned in the same prototype:
+- candidate categories must remain spatially distinct (Powder / Liquid / Essence columns or equivalent grouping);
+- the earlier one-column table materially increased visual parsing cost and confounded one moment of reasoning.
+
+The next paper prototype should hold field size roughly constant and vary opening information structure. Production source implementation remains **BLOCKED**.
