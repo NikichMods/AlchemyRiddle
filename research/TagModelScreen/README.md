@@ -67,3 +67,47 @@ after a balanced two-fact start.
 
 These thresholds are a research screen for clue interaction, not a production
 balance contract.
+
+
+## Adaptive architecture comparison
+
+Run `adaptive_architecture_screen.py` against the same private three-slot JSON
+corpus to compare the fixed tag-centric baseline with a knowledge-aware variant.
+
+Example:
+
+```
+python adaptive_architecture_screen.py private.json \
+  --assert-three-slot-baseline \
+  --surface-samples 1024 \
+  --history-samples 64
+```
+
+The screen models two deterministic knowledge-history families at 0/20/40/60/80%
+of the 171 learnable adjacent Powder-Fluid / Fluid-Essence relations:
+
+- **uniform** — arbitrary previously learned relations, used as a topology stress
+  test;
+- **recipe-seeded** — prior successful formulas contribute their stable adjacent
+  edges first, then the remaining relation budget is filled by other learned
+  relations.
+
+For each target/history the candidate generator may use one to three invariant
+target-property facts. Every individual fact is weak on the raw 3x3x3 surface
+(6-8 first-stage branches). A configuration is retained only when full
+compatibility knowledge would leave at most two compatible chains.
+
+The screen reports whether a **fresh** puzzle can still be formed after known
+incompatibilities are applied, how many target-property facts are needed, how
+often accumulated expertise already resolves/over-directs the target, and how
+large the usable candidate-surface set remains.
+
+Important limits:
+
+- this is a structural/existence screen, not a player-choice simulator;
+- the reported number of missing target edges is a lower bound along a correct
+  hypothesis branch, not a claim that a blind player selects that branch
+  optimally;
+- single-formula candidate surfaces are deterministically sampled by default;
+  multi-formula surfaces remain exhaustive;
+- exact formula rows stay in the private runtime input and are never committed.
