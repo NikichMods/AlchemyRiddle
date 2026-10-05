@@ -4815,3 +4815,28 @@ Therefore:
 This is a presentation and cognitive-load principle, not a semantic restriction. Exact UI remains open.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 29 — residual-answer topology
+
+Status: **precommitted; single blind player test active; production remains BLOCKED**.
+
+Prototype 29 isolates the next major topology question:
+> can starting stable bridges remain useful even when the target formula lies on none of them?
+
+Method:
+- keep the accepted 3x3x3 field, two prior stable anchors, unchanged microtest/synthesis semantics, and a moderate familiar clue set;
+- construct exactly three target-consistent formulas;
+- two formulas each sit on one of the known stable bridges and are designed as compatible non-targets;
+- the third formula is outside both starting bridges and is the hidden target;
+- if the first two hypotheses are ruled out, the third should be derivable as the unique residual candidate rather than found by blind search.
+
+Research goal:
+- distinguish “productive elimination leading to an off-bridge answer” from “bridges were bait and now enumerate the rest.”
+
+Complete hidden facilitator model:
+`docs/prototypes/PROTOTYPE_29_STATE.md`.
+
+No new runtime probe or harness is justified: this is a pure paper-prototype topology question using already accepted semantics.
+
+Production remains **BLOCKED**.
