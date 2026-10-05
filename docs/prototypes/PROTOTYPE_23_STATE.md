@@ -255,4 +255,27 @@ The player then chose full synthesis P1+L1+E2 because both adjacent links are es
 
 Deterministic synthesis result: both adjacent links remain STABLE, but the requested target effect is absent. Record the exact triple P1+L1+E2 as NOT the recipe for the current target. Pair facts P1+L1 and L1+E2 remain true. No facilitator deduction has been supplied after the synthesis result.
 
+
+
+## Live checkpoint 3
+
+Player evaluation of compatible non-target synthesis:
+- wording equivalent to "links are stable; requested effect is absent" was judged immediately clear and conceptually strong;
+- player understood that pair knowledge remains valid while the exact triple is rejected;
+- presentation may be polished later, but the core distinction compatibility != target identity was successfully communicated.
+
+Player inference:
+- P1+L1 branch is exhausted for the current target after the exact P1+L1+E2 triple was rejected and the other continuations are either target-inconsistent or already incompatible;
+- player pivoted to the pre-known stable P3+L3 anchor;
+- because P3 already contains the single allowed Mineral and L3 contains none, the Essence must add no Mineral.
+
+Player attempted to choose microtest L3+E2.
+Protocol intervention:
+- L3+E2 is already present in the prior journal as INCOMPATIBLE;
+- no Research Charge is consumed and no duplicate experiment is performed;
+- this lapse is recorded as UX evidence that seven surfaced prior relation records may exceed comfortable scanability and can cause useful known facts to be overlooked.
+
+Resources remain 5/6.
+Awaiting player's next action.
+
 Production architecture remains **BLOCKED**.
