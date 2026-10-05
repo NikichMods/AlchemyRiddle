@@ -111,3 +111,51 @@ Important limits:
 - single-formula candidate surfaces are deterministically sampled by default;
   multi-formula surfaces remain exhaustive;
 - exact formula rows stay in the private runtime input and are never committed.
+
+
+## Progression-aware variable-field screen
+
+Run `progression_variable_field_screen.py` against the same private three-slot
+JSON corpus after the adaptive architecture has been selected for further
+research.
+
+Examples:
+
+```
+python progression_variable_field_screen.py private.json --mode shapes
+python progression_variable_field_screen.py private.json --mode relations --histories 64 --seed 20261005
+```
+
+This screen changes two assumptions from the earlier 3x3x3 work:
+
+- each concrete vanilla recipe variant is an independent hidden research target;
+- the candidate field may use 2 or 3 candidates per slot rather than always
+  using 3x3x3.
+
+The branch metric is orientation-neutral. A puzzle may begin from either adjacent
+pair (Powder-Fluid or Fluid-Essence); this avoids treating a permutation such as
+2x2x3 as intrinsically weaker merely because an earlier research metric always
+started from Powder-Fluid.
+
+The single-fact weakness rule scales the accepted 3x3x3 threshold rather than
+inventing a new one: on a raw first-stage branch count B, a fact is weak only
+when it leaves from ceil(2B/3) through B-1 branches. For 3x3 this reproduces the
+accepted 6-8-of-9 rule exactly.
+
+Two research tiers are reported:
+
+- **strong** — after one to three individually weak, non-redundant target facts,
+  2-4 first-stage branches and at least four full triples remain, while complete
+  compatibility knowledge leaves at most two chains;
+- **thin-or-better** — the same screen with a three-triple floor, used to expose
+  the boundary where a mathematically ambiguous field may already feel like
+  short branch checking.
+
+These are screening tiers, not a selected production balance contract. In
+particular, a thin result still requires blind player testing before it can be
+called an acceptable puzzle.
+
+`--mode relations` samples neutral previously learned adjacent relations
+internal to prevalidated strong fields. It reports whether the same field remains
+strong, becomes thin, or becomes legitimately near-resolved by prior expertise.
+Exact formula rows remain private.
