@@ -61,6 +61,7 @@ def bounded_three_by_three_report(formulas, tags_by_name, vocabulary):
     powders = sorted({x["powder"] for x in formulas})
     fluids = sorted({x["fluid"] for x in formulas})
     essences = sorted({x["essence"] for x in formulas})
+    essence_index = {name: i for i, name in enumerate(essences)}
 
     by_output = defaultdict(list)
     for row in formulas:
@@ -112,23 +113,35 @@ def bounded_three_by_three_report(formulas, tags_by_name, vocabulary):
 
         fact_items = sorted(invariant_facts.items())
         fact_subsets = []
+        matching_masks = {}
+
         for k in range(1, len(fact_items) + 1):
             for subset in itertools.combinations(fact_items, k):
                 fact_subsets.append(subset)
-
-        matching = {}
-        for subset in fact_subsets:
-            matching[subset] = {
-                triple
-                for triple, counts in triple_counts.items()
-                if all(counts[tag] == value for tag, value in subset)
-            }
+                pair_masks = {}
+                for p in powders:
+                    for f in fluids:
+                        mask = 0
+                        for e in essences:
+                            counts = triple_counts[(p, f, e)]
+                            if all(
+                                counts[tag] == value
+                                for tag, value in subset
+                            ):
+                                mask |= 1 << essence_index[e]
+                        pair_masks[(p, f)] = mask
+                matching_masks[subset] = pair_masks
 
         full_subset = tuple(fact_items)
-        full_matching = matching.get(
-            full_subset,
-            set(triple_counts),
-        )
+        if full_subset:
+            full_masks = matching_masks[full_subset]
+        else:
+            all_essences_mask = (1 << len(essences)) - 1
+            full_masks = {
+                (p, f): all_essences_mask
+                for p in powders
+                for f in fluids
+            }
 
         surface_count = 0
         minimum_fact_histogram = Counter()
@@ -141,29 +154,33 @@ def bounded_three_by_three_report(formulas, tags_by_name, vocabulary):
 
         for p_surface in p_surfaces:
             for f_surface in f_surfaces:
-                pl_pairs = {
+                pl_pairs = [
                     (p, f)
                     for p in p_surface
                     for f in f_surface
-                }
+                ]
                 for e_surface in e_surfaces:
                     surface_count += 1
-                    surface_triples = {
-                        (p, f, e)
-                        for p in p_surface
-                        for f in f_surface
+                    e_mask = sum(
+                        1 << essence_index[e]
                         for e in e_surface
-                    }
+                    )
 
                     minimum = None
-                    has_positive_one = False
                     has_one = False
+                    has_positive_one = False
 
                     for subset in fact_subsets:
                         if minimum is not None and len(subset) > minimum:
                             break
-                        survivors = surface_triples.intersection(matching[subset])
-                        branches = len({(p, f) for p, f, _ in survivors})
+
+                        pair_masks = matching_masks[subset]
+                        branches = sum(
+                            1
+                            for pair in pl_pairs
+                            if pair_masks[pair] & e_mask
+                        )
+
                         if 2 <= branches <= 4:
                             if minimum is None:
                                 minimum = len(subset)
@@ -185,10 +202,16 @@ def bounded_three_by_three_report(formulas, tags_by_name, vocabulary):
                     if has_positive_one:
                         positive_one_fact_surfaces += 1
 
-                    full_survivors = surface_triples.intersection(full_matching)
-                    full_branches = len({
-                        (p, f) for p, f, _ in full_survivors
-                    })
+                    full_survivors = set()
+                    full_branches = 0
+                    for p, f in pl_pairs:
+                        mask = full_masks[(p, f)] & e_mask
+                        if mask:
+                            full_branches += 1
+                        for e in essences:
+                            if mask & (1 << essence_index[e]):
+                                full_survivors.add((p, f, e))
+
                     full_metric = (full_branches, len(full_survivors))
                     if best_full is None or full_metric < best_full:
                         best_full = full_metric
