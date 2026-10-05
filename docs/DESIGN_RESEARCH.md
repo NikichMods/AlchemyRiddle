@@ -4749,3 +4749,42 @@ The proposed standalone web demo remains a strong later research instrument. The
 Do not build the demo before the next clue/topology prototypes establish which families are worth measuring.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 28 — composite clue grammar
+
+Status: **precommitted; single blind player test active; production remains BLOCKED**.
+
+Prototype 27 and the subsequent broad deduction-pattern scan both support richer clue grammar as the least-complex next extension of the accepted bridge+constraint base.
+
+Research question:
+> Can conditional and exact-one-of-two target clues make the puzzle richer without turning a short investigation into a bookkeeping-heavy logic grid?
+
+Research-method checkpoint:
+- no new runtime/host uncertainty exists;
+- no new experiment mechanism is introduced;
+- a single bounded blind paper prototype is sufficient for this first experiential check.
+
+Controls:
+- 3x3x3 field;
+- exactly two prior STABLE bridges;
+- zero prior INCOMPATIBLE facts;
+- 8 charges;
+- unchanged adjacent microtests and free synthesis;
+- target remains on a starting bridge so residual-answer topology is not mixed into this test.
+
+Composite clue families under test:
+- positive implication across slots;
+- exact-one-of-two / XOR;
+- implication with a negative consequent.
+
+Complete hidden facilitator state:
+`docs/prototypes/PROTOTYPE_28_STATE.md`.
+
+Current interaction point:
+- target `Реагент увязки`;
+- 8/8 Research Charges;
+- prior P2+L3 STABLE and L2+E2 STABLE;
+- awaiting first player action.
+
+Production remains **BLOCKED**.
