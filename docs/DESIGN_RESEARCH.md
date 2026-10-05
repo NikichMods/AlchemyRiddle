@@ -4260,3 +4260,148 @@ Therefore the next experiential test should not compare field sizes again. It sh
 while keeping the interaction short and the established presentation density under control.
 
 Production source implementation remains **BLOCKED**.
+
+
+## Prototype 26 — adaptive information budget
+
+Status: **precommitted; matched player test active; production remains BLOCKED**.
+
+Prototype 25 retained relation-rich openings and established that two target-property constraints are acceptable. The player proposed a specific compensation rule for low-history states: expose richer reagent property signatures and more target-property constraints when few old compatibility relations exist.
+
+Existing corpus evidence already makes this mechanically plausible:
+- 19/35 reagents in the accepted fixed property model carry multiple properties;
+- balanced two-fact starts cover 16/16 ordinary three-slot outputs;
+- progressive three-fact starts cover 14/16;
+- the adaptive architecture screen shows target-fact demand falling as prior relation knowledge rises.
+
+Prototype 26 therefore tests the remaining experiential question rather than adding new research code.
+
+Matched cases, both 3x3x3 with multi-property reagent cards:
+1. sparse history: three target facts + one prior relation;
+2. relation-rich reference: one target fact + three prior relations.
+
+The test preserves the three-column presentation and Prototype-25 information-density reference. Complete hidden facilitator state is precommitted in:
+`docs/prototypes/PROTOTYPE_26_STATE.md`.
+
+Current interaction point:
+- Investigation I active;
+- 8/8 Research Charges;
+- exactly one prior relation;
+- three target-property facts;
+- awaiting first player action.
+
+Production source implementation remains **BLOCKED**.
+
+
+### Tag-clue variety and early-success teaching note
+
+Prototype 26 produced an additional player-owned design hypothesis that should be retained for comparison, not yet treated as final grammar:
+
+- target-property clues should not be limited to repetitive exact-count statements;
+- promising clue forms include exact counts, zero/absence facts, and possibly bounded slot-local statements such as a property being present/absent in one recipe position;
+- slot-local clues are acceptable only when they remain non-oracular on the displayed candidate field; if a clue effectively names one exact ingredient, it has crossed into guided disclosure rather than the desired deductive layer;
+- because tag clues are less intrinsically engaging than earned compatibility relations, modestly greater variety and information volume may be appropriate in sparse-history states;
+- deliberately adding extra candidates only so a tag clue can remove them is **not accepted**; controlled decoy padding remains an explicit hypothesis and must justify its cognitive/noise cost rather than becoming filler.
+
+The same live reasoning produced a useful teaching principle:
+- do not intentionally prevent an early investigation from resolving on the player's first well-justified hypothesis;
+- if that hypothesis required combining prior relation knowledge with several target/reagent properties, a quick success can create a desirable early-game competence moment rather than feeling trivial;
+- later investigations can require deeper branching once the rule language is learned.
+
+These are candidate UX/grammar refinements for the adaptive information-budget direction. Production remains **BLOCKED**.
+
+
+### Compatible non-target reward and structure-decay note
+
+Prototype 26 adds two design hypotheses and one negative experiential signal.
+
+**Compatible non-target reward hypothesis**
+- when the player constructs a full chain whose adjacent relations are stable but the target effect is absent, the result already proves that the player found a chemically coherent hypothesis;
+- a small reward may prevent this from reading as pure failure and reinforce "your reasoning was good; the hidden target simply was not this one";
+- the simplest candidate is restoring Research Charge capacity, but exact reward type, magnitude, exploit resistance and presentation are unresolved;
+- do not accept this economy rule without later testing because free synthesis plus renewable charges could create degenerate probing loops.
+
+**Prior-vs-new knowledge presentation**
+- visually distinguishing starting journal facts from newly discovered facts was explicitly judged useful in live play;
+- retain this as a UI direction for later mockups.
+
+**Structure-decay signal**
+- the sparse-history compensated opening produced a strong first deduction from one prior stable anchor plus three target-property constraints;
+- once that compatible hypothesis failed, the player reported that no comparable second structure was visible and explicitly shifted to simple enumeration of unexplored pairs;
+- therefore richer tag information may compensate for sparse history at the **opening hook** without necessarily sustaining the whole deduction arc;
+- the next comparison must evaluate not only first-move quality but whether enough relational structure survives after a wrong-but-valid hypothesis.
+
+Production remains **BLOCKED**.
+
+
+### Constructive-anchor journal hypothesis
+
+Prototype 26 produced a stronger player-model hypothesis about how the two evidence layers are mentally organized.
+
+The player naturally treats **known stable adjacent relations** as constructive structure: unfinished bridges / partially completed paths that invite continuation. Target-property clues then act as **constraints** on which continuations are plausible. This separation was easier to hold mentally than mixing positive and negative relation facts together as equally salient starting evidence.
+
+Implications to test, not yet production rules:
+- starting history may be more legible when it emphasizes stable anchors rather than front-loading incompatible pairs;
+- incompatibilities may be more valuable as discoveries during the current investigation, because they close a branch the player was actively considering;
+- target-property facts should preferably be several weaker cross-constraints rather than one semantically flat strong fact when the corpus permits it;
+- the same information-dosing principle may apply to relation history: prefer multiple partial anchors over one relation that almost identifies the answer, while ensuring displayed old relations do not acquire a meta-guarantee of target relevance.
+
+A notable interruption-resilience observation occurred in the same live test. After an extended design discussion, the player resumed the puzzle almost immediately by recognizing the currently open stable branch and which continuation had already been tested. They did not need to reconstruct the full prior reasoning chain. This is evidence that a branch/bridge-shaped journal may serve the project's external-memory requirement more effectively than a flat fact list.
+
+This remains a single-player blind-prototype observation and requires further testing before generalization. Production remains **BLOCKED**.
+
+
+### Journal-chain reconstruction note
+
+Prototype 26 produced positive external-memory evidence from the journal itself. After learning L2+E2 as stable, the player looked only at the journal, recognized that an earlier stable pair also used L2, recalled P1+L2, and reconstructed the complete candidate chain P1-L2-E2 without consulting the candidate grid or re-deriving the target-property logic.
+
+This suggests:
+- relation records can naturally compose through shared reagent nodes;
+- even a compact flat journal may support resumption and chain reconstruction if stable relations are visually easy to scan;
+- a later UI should consider grouping, highlighting, or visually linking records that share a reagent, but a full graph visualization is not yet justified.
+
+Production remains **BLOCKED**.
+
+
+## Prototype 26 result — relations remain the scaffold
+
+Status: **matched comparison complete; stable prior relations retained as primary structural scaffold; tags retained as complementary constraints; production remains BLOCKED**.
+
+Prototype 26 tested whether richer reagent properties plus three target-property constraints could compensate for sparse prior relation history.
+
+Result:
+- compensation worked at the opening: the sparse-history case produced a satisfying first deduction from one known stable pair plus three target constraints;
+- compensation did **not** sustain the whole puzzle arc: once the first compatible non-target hypothesis failed, the player explicitly shifted toward sequential branch checking;
+- the relation-rich case was more enjoyable and easier to navigate because known stable pairs formed visible unfinished bridges;
+- this reduced working-memory burden without removing the feeling of investigation.
+
+The player explicitly judged three target-property constraints to be a comfortable density and suggested that tag clues could be more varied and sometimes more numerous. Therefore the result is **not** “use fewer tags.” It is:
+
+> use stable prior relations as the constructive scaffold, and use target/reagent properties as the constraint layer that makes some continuations plausible and others impossible.
+
+A useful provisional cognitive model is now:
+- prior **STABLE** relation = direction / unfinished bridge;
+- target/reagent properties = admissibility constraints on continuation;
+- newly discovered **INCOMPATIBLE** relation = branch closure;
+- compatible non-target synthesis = valid but wrong complete hypothesis, potentially deserving a small recognition/reward.
+
+Starting incompatible relations were less salient in this blind test and were forgotten despite being visible. Do not yet remove them from the architecture, but do not assume positive and negative prior relations have equal UX value.
+
+Target-property clue variety remains open and promising:
+- exact counts;
+- zero/absence constraints;
+- bounded slot-local presence/absence constraints where they remain non-oracular;
+- combinations of several individually weak facts rather than one semantically flat strong fact.
+
+The player also noted a prototype-construction bias: most live cases began from a known Powder+Liquid anchor and then searched for an Essence continuation. Future prototypes must deliberately reverse orientation in some cases (known Liquid+Essence anchor -> search for Powder) before treating the bridge model as validated symmetrically.
+
+Current presentation evidence remains positive:
+- three reagent columns;
+- visibly distinguished prior vs newly learned relations;
+- compact journal;
+- current resource state;
+- relation entries that can be mentally composed through shared reagent nodes.
+
+Next research should test **bridge topology and clue variety**, not return to raw field-size comparison. At minimum include mirrored anchor orientation and more varied weak target-property statements while holding the successful information density roughly constant.
+
+Production source implementation remains **BLOCKED**.
