@@ -165,6 +165,7 @@ def build_model(data, surface_samples, seed):
 
     surface_records = {}
     surface_population = {}
+    selected_surface_counts = {}
 
     for output_index, output in enumerate(outputs):
         true = set(target_true_triples[output])
@@ -197,6 +198,8 @@ def build_model(data, surface_samples, seed):
                 rng.sample(range(len(all_surfaces)), sample_count)
             )
             selected = [all_surfaces[i] for i in selected_indices]
+
+        selected_surface_counts[output] = len(selected)
 
         records = []
         facts = invariant_facts[output]
@@ -311,6 +314,7 @@ def build_model(data, surface_samples, seed):
         "true_masks": true_masks,
         "surface_records": surface_records,
         "surface_population": surface_population,
+        "selected_surface_counts": selected_surface_counts,
         "formula_edge_sets": formula_edge_sets,
         "branch_count": branch_count,
         "structural": {
@@ -435,9 +439,14 @@ def scan_target_state(model, output, known_mask):
         if not has_fresh and not has_resolved:
             counts["no_usable_surfaces"] += 1
 
-    pool = len(model["surface_records"][output])
+    closure_capable = len(model["surface_records"][output])
+    pool = model["selected_surface_counts"][output]
+    counts["no_usable_surfaces"] = (
+        pool - counts["usable_or_expertise_surfaces"]
+    )
     return {
-        "sampled_closure_capable_surfaces": pool,
+        "sampled_admissible_surfaces": pool,
+        "closure_capable_surfaces": closure_capable,
         **counts,
         "fresh": counts["fresh_surfaces"] > 0,
         "expertise_covered": (
@@ -542,10 +551,10 @@ def summarize_states(rows, target_count):
     fresh_surface_fractions = [
         (
             x["state"].get("fresh_surfaces", 0)
-            / x["state"]["sampled_closure_capable_surfaces"]
+            / x["state"]["sampled_admissible_surfaces"]
         )
         for x in fresh_rows
-        if x["state"]["sampled_closure_capable_surfaces"]
+        if x["state"]["sampled_admissible_surfaces"]
     ]
 
     by_target = defaultdict(list)
@@ -768,16 +777,28 @@ def main():
             ),
         },
         "structural": model["structural"],
-        "sampled_closure_capable_surfaces_by_target": {
-            "minimum": min(
+        "surface_sampling": {
+            "selected_admissible_minimum": min(
+                model["selected_surface_counts"][x]
+                for x in model["outputs"]
+            ),
+            "selected_admissible_median": statistics.median(
+                model["selected_surface_counts"][x]
+                for x in model["outputs"]
+            ),
+            "selected_admissible_maximum": max(
+                model["selected_surface_counts"][x]
+                for x in model["outputs"]
+            ),
+            "closure_capable_minimum": min(
                 len(model["surface_records"][x])
                 for x in model["outputs"]
             ),
-            "median": statistics.median(
+            "closure_capable_median": statistics.median(
                 len(model["surface_records"][x])
                 for x in model["outputs"]
             ),
-            "maximum": max(
+            "closure_capable_maximum": max(
                 len(model["surface_records"][x])
                 for x in model["outputs"]
             ),
