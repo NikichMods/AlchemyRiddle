@@ -4361,3 +4361,47 @@ This suggests:
 - a later UI should consider grouping, highlighting, or visually linking records that share a reagent, but a full graph visualization is not yet justified.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 26 result — relations remain the scaffold
+
+Status: **matched comparison complete; stable prior relations retained as primary structural scaffold; tags retained as complementary constraints; production remains BLOCKED**.
+
+Prototype 26 tested whether richer reagent properties plus three target-property constraints could compensate for sparse prior relation history.
+
+Result:
+- compensation worked at the opening: the sparse-history case produced a satisfying first deduction from one known stable pair plus three target constraints;
+- compensation did **not** sustain the whole puzzle arc: once the first compatible non-target hypothesis failed, the player explicitly shifted toward sequential branch checking;
+- the relation-rich case was more enjoyable and easier to navigate because known stable pairs formed visible unfinished bridges;
+- this reduced working-memory burden without removing the feeling of investigation.
+
+The player explicitly judged three target-property constraints to be a comfortable density and suggested that tag clues could be more varied and sometimes more numerous. Therefore the result is **not** “use fewer tags.” It is:
+
+> use stable prior relations as the constructive scaffold, and use target/reagent properties as the constraint layer that makes some continuations plausible and others impossible.
+
+A useful provisional cognitive model is now:
+- prior **STABLE** relation = direction / unfinished bridge;
+- target/reagent properties = admissibility constraints on continuation;
+- newly discovered **INCOMPATIBLE** relation = branch closure;
+- compatible non-target synthesis = valid but wrong complete hypothesis, potentially deserving a small recognition/reward.
+
+Starting incompatible relations were less salient in this blind test and were forgotten despite being visible. Do not yet remove them from the architecture, but do not assume positive and negative prior relations have equal UX value.
+
+Target-property clue variety remains open and promising:
+- exact counts;
+- zero/absence constraints;
+- bounded slot-local presence/absence constraints where they remain non-oracular;
+- combinations of several individually weak facts rather than one semantically flat strong fact.
+
+The player also noted a prototype-construction bias: most live cases began from a known Powder+Liquid anchor and then searched for an Essence continuation. Future prototypes must deliberately reverse orientation in some cases (known Liquid+Essence anchor -> search for Powder) before treating the bridge model as validated symmetrically.
+
+Current presentation evidence remains positive:
+- three reagent columns;
+- visibly distinguished prior vs newly learned relations;
+- compact journal;
+- current resource state;
+- relation entries that can be mentally composed through shared reagent nodes.
+
+Next research should test **bridge topology and clue variety**, not return to raw field-size comparison. At minimum include mirrored anchor orientation and more varied weak target-property statements while holding the successful information density roughly constant.
+
+Production source implementation remains **BLOCKED**.
