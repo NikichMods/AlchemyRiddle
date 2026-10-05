@@ -565,3 +565,27 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 12 — Investigation II
+
+Player action:
+- full synthesis P2 + L2 + E2.
+
+Deterministic outcome:
+- **TARGET EFFECT ABSENT; FULL STABLE CHAIN NOT CONFIRMED**.
+
+This synthesis does not add pairwise relation records that were not independently established.
+
+Triple-level exclusion added:
+- P2 + L2 + E2 -> NOT the recipe for the current target.
+
+Resources:
+- Research Charges remaining: **4 / 8**;
+- full synthesis attempts in Investigation II: 2;
+- compatible non-target syntheses: 1.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
