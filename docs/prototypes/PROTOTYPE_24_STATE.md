@@ -451,3 +451,24 @@ Resources reset:
 - no synthesis exclusions.
 
 Awaiting the player's first action in Investigation II.
+
+
+## Live checkpoint 7 — Investigation II
+
+Player inference:
+- noticed the second matched case uses a 2x3x2 field rather than 2x2x2;
+- applied the two-Mineral target fact and chose microtest P1 + L3.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Investigation II journal now contains:
+- P1 + L3 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
