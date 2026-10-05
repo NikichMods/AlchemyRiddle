@@ -1,6 +1,6 @@
 # Design / Research Phase
 
-Status: **OPEN — no production architecture selected**
+Status: **OPEN — adaptive knowledge-aware selected as the three-slot puzzle core; full production architecture and implementation gates remain open**
 
 ## Research objective
 
@@ -3561,3 +3561,74 @@ explicit architecture decision checkpoint required by the project workflow.
 
 Production architecture remains **BLOCKED** pending that decision and the
 remaining production-evidence gates.
+
+
+## Accepted three-slot architecture decision — 2026-10-05
+
+Status: **DECIDED for the three-slot puzzle core**.
+
+Explicit product decision:
+**Adaptive knowledge-aware is the accepted architecture for ordinary three-slot
+AlchemyRiddle investigations.**
+
+This supersedes the earlier state where adaptive and fixed tag-centric designs
+were retained as co-equal candidates.
+
+### Accepted core shape
+
+The accepted three-slot loop is:
+
+`bounded working field -> target-specific coarse property evidence + accumulated
+known adjacent relations -> a small set of justified hypotheses -> targeted
+microtests and/or synthesis -> requested product identified`.
+
+Required semantics:
+- previously learned Powder-Liquid and Liquid-Essence relations are reusable
+  alchemical knowledge;
+- the journal acts as external memory and surfaces relevant learned facts without
+  doing the deduction for the player;
+- known relations must not be secretly chosen because they help the hidden
+  answer;
+- adjacent compatibility is **necessary but not sufficient** for recipe identity;
+- a fully stable non-target triple is a legitimate informative outcome;
+- rejecting that triple must preserve the truth of its learned pair relations;
+- the intended residual search is bounded hypothesis testing, not blind
+  enumeration;
+- ordinary investigations should remain short and atomic enough to resolve
+  without forcing the player out of the reasoning loop merely to recover context
+  or replenish research resources.
+
+### Status of the former baseline
+
+The fixed tag-centric architecture is no longer a co-equal production candidate
+for the ordinary three-slot core.
+
+Retain it only as:
+- historical comparison evidence;
+- a fallback/reference shape for future edge-case analysis if the accepted
+  adaptive mechanism fails a specific production constraint.
+
+Do not silently revert to the fixed baseline because it is easier to implement.
+
+### What this decision does not settle
+
+This decision does **not** select the entire production implementation.
+
+Still open:
+- legitimate production rule for constructing/selecting the bounded working
+  field without answer-leaking curation;
+- progression-specific player knowledge state and candidate completeness;
+- dosage of target properties versus surfaced old relations;
+- exact journal/compendium presentation and persistence;
+- research-charge economy and replenishment;
+- early teaching and two-slot alchemy grammar;
+- behavior for complete-chain mastery/saturation;
+- exceptional picker-incompatible success definition;
+- exact production UI/runtime owners, final writers/consumers and acceptance
+  evidence.
+
+Accordingly, production source mutation remains **BLOCKED** until each
+materially independent behavior reaches the DevRules evidence gate.
+
+This architecture decision is canonical and should be recovered from `main`
+before future design or implementation work.
