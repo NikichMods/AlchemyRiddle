@@ -169,12 +169,12 @@ At 0% knowledge, all targets need the baseline two weak target facts.
 
 At 20% knowledge:
 - 97.6% of fresh uniform-history states;
-- 96.4% of fresh recipe-seeded states
+- 96.9% of fresh recipe-seeded states
 
 can use **one** individually weak target-property fact.
 
 At 40% and above, effectively every fresh state in the primary sample uses one
-weak fact (two recipe-seeded 40% states still need two).
+weak fact (one recipe-seeded 40% state still needs two).
 
 Likewise, accumulated compatibility reduces missing experimental work:
 - no-knowledge baseline: two target-chain relations remain unknown;
