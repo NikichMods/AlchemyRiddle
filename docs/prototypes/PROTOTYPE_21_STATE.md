@@ -229,3 +229,39 @@ Resources:
 - Research Charges remaining: **0 / 2**.
 
 No facilitator deduction from the fresh result. Await player inference / final action.
+
+
+## Live completion
+
+Player reasoning before final synthesis:
+- inferred that the prototype's generally friendly structure itself provides meta-information;
+- expected that one of the two salient pre-known stable relations would likely belong to the intended solution path;
+- after the P2 + L1 route failed on L1 + E3, treated the L2 + E1 route as the likely intended branch;
+- judged P1 + L2 + E1 at 90%+ confidence and chose to synthesize it.
+
+Player final action:
+- synthesize P1 Травяной порошок + L2 Солёный раствор + E1 Тленная эссенция.
+
+Deterministic outcome: **SUCCESS / УСПЕХ**.
+
+Resources:
+- Research Charges used: **2 / 2**;
+- Research Charges remaining: **0 / 2**;
+- failed synthesis attempts: 0.
+
+Observed blind-play path:
+1. Start with two salient partial stable relations.
+2. Test L1 + E3 -> INCOMPATIBLE, rejecting the obvious completion of P2 + L1.
+3. Shift to the other old stable relation L2 + E1.
+4. Test P1 + L2 -> STABLE.
+5. Synthesize P1 + L2 + E1 -> SUCCESS.
+
+Meta-information observation:
+- a friendly authored structure can teach the player that salient pre-seeded relations are likely relevant;
+- this can reduce tension and encourage a simple 'try both highlighted branches' strategy;
+- the player did not consider this inherently bad for Graveyard Keeper, but recognized it as a real reduction in independent search pressure.
+
+Subjective evaluation:
+- the structure was clear and comfortable;
+- the player considered this level of friendliness acceptable for the game;
+- the puzzle may benefit from being low-pressure rather than maximizing uncertainty.
