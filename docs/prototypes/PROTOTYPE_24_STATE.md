@@ -493,3 +493,25 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live checkpoint 9 — Investigation II
+
+Player action:
+- microtest L3 + E1.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **5 / 8**.
+
+Investigation II journal now contains:
+- P1 + L3 -> STABLE;
+- L3 + E2 -> INCOMPATIBLE;
+- L3 + E1 -> STABLE.
+
+No facilitator deduction supplied.
+
+Current interaction point:
+- awaiting player's inference / next action.
