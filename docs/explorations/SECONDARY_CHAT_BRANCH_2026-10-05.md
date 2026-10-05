@@ -271,3 +271,28 @@ The secondary branch has now completed the first requested foundation pass:
 Detailed non-canonical evidence: `docs/explorations/TAG_MODEL_DRAFT_2026-10-05.md`.
 
 Do not promote this model to main without primary-line review.
+
+
+## Integration status — CLOSED 2026-10-05
+
+This exploratory chat branch has now been reviewed against the canonical main
+line.
+
+The accepted evidence and decisions worth retaining were promoted individually
+to `main`, culminating in canonical continuation commit:
+
+`8b2ab3c908ec6a65629f7a58b4cfc71016dc9309`
+— `Integrate secondary branch and set adaptive comparison task`.
+
+Do **not** resume project work from this branch and do **not** merge it
+wholesale. Recover current state from `main`, especially the final
+`Secondary-branch integration checkpoint — 2026-10-05` in
+`docs/DESIGN_RESEARCH.md`.
+
+The immediate canonical next task is the quantitative comparison between:
+1. the fixed bounded tag-centric three-slot puzzle baseline; and
+2. the adaptive knowledge-aware variant that incorporates the player's
+   accumulated STABLE / INCOMPATIBLE adjacent-pair graph.
+
+The broader project backlog remains canonical in `main`; this branch covered
+only a subset of the overall AlchemyRiddle design questions.
