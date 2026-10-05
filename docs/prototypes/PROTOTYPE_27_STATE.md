@@ -348,3 +348,39 @@ Possible dispositions:
 - no new actions;
 - no synthesis exclusions;
 - awaiting first player action.
+
+
+## Live checkpoint 1 — Investigation I
+
+Player UX observations before acting:
+- the varied target-property clue set immediately feels substantially more engaging than repeated exact-count clues;
+- the player naturally begins from the incomplete stable bridges and uses tags to filter continuations;
+- this starts reasoning quickly without unacceptable working-memory load;
+- the slot-local negative clue is mechanically clear and immediately useful, but its literal wording (“Powder does not belong to Corpse”) feels awkward and should later be rephrased more naturally without changing semantics;
+- the player explicitly reports strong positive affect before any experiment is made.
+
+Player reasoning:
+- starts from known L2+E2 STABLE;
+- observes L2 supplies Mineral and E2 supplies Corpse;
+- notes the target already satisfies the one-Corpse condition through E2;
+- therefore Powder must not be Corpse, matching the slot-local constraint;
+- chooses P1+L2 as a plausible backward completion.
+
+Player action:
+- microtest P1 + L2.
+
+Raw outcome:
+- **STABLE**.
+
+Resources:
+- Research Charges remaining: **7 / 8**.
+
+Journal now contains:
+- prior: L2 + E2 -> STABLE;
+- prior: L3 + E1 -> STABLE;
+- new: P1 + L2 -> STABLE.
+
+No facilitator deduction supplied beyond confirming the player-stated reasoning.
+
+Current interaction point:
+- awaiting player's inference / next action.
