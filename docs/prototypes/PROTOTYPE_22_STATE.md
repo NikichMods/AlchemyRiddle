@@ -666,4 +666,16 @@ No facilitator deduction was supplied.
 Current interaction point:
 - awaiting the player's inference / next action.
 
+
+
+## Investigation II - checkpoint 4 and resource-stop result
+
+Checkpoint 4: player abandoned the exhausted P1-L3 branch, moved to P2, and selected P2+L1 from the target-property constraints. Raw outcome: STABLE. Charges fell to 0/4.
+
+At zero charges the player declined to guess a synthesis. They identified two plausible continuations of P2+L1, noted that P3 had not yet been investigated, and concluded that the natural next action would be to leave the puzzle, obtain/craft more research resources, and return for additional tests. Therefore Investigation II ended unresolved due to research-resource exhaustion rather than a solved formula.
+
+Mechanical result: 4 microtests, 0 synthesis attempts, unresolved target, explicit desire for more research charges. Subjective result: high working-memory load before the first action, difficulty choosing an informative first test, and a resource/progression stop after exhausting one branch.
+
+The A/B pair is now complete. Architecture identities may be revealed only during the post-pair comparison/debrief.
+
 Production architecture remains **BLOCKED**.
