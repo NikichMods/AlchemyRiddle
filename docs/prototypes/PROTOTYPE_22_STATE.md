@@ -645,4 +645,25 @@ Facilitator supplied no deduction from the fresh observation.
 Current interaction point:
 - awaiting the player's inference / next action.
 
+
+
+## Investigation II - live checkpoint 3
+
+Player action:
+- microtest L3 Molocnyi rastvor + E3 Stekliannaia essentsiia.
+
+Player intent:
+- finish checking the current P1 + L3 branch after the E2 continuation failed.
+
+Raw outcome:
+- **INCOMPATIBLE**.
+
+Resources:
+- Research Charges remaining: **1 / 4**.
+
+No facilitator deduction was supplied.
+
+Current interaction point:
+- awaiting the player's inference / next action.
+
 Production architecture remains **BLOCKED**.
