@@ -500,3 +500,39 @@ No facilitator deduction supplied.
 
 Current interaction point:
 - awaiting player's inference / next action.
+
+
+## Live completion — Investigation I
+
+Player action:
+- full synthesis P3 + L1 + E2.
+
+Deterministic outcome:
+- **TARGET EFFECT OBTAINED**.
+
+Investigation I is solved.
+
+Resources:
+- Research Charges used: 4 / 8;
+- Research Charges remaining: **4 / 8**;
+- full synthesis attempts: 2;
+- compatible non-target syntheses: 1;
+- successful target syntheses: 1.
+
+Observed path:
+1. Start with two target facts plus prior P2+L3 STABLE.
+2. L3+E1 -> STABLE.
+3. P2+L3+E1 -> compatible non-target.
+4. Attempted repeat P2+L3 -> intercepted, no charge.
+5. P1+L2 -> INCOMPATIBLE.
+6. P1+L3 -> INCOMPATIBLE.
+7. P3+L1 -> STABLE.
+8. P3+L1+E2 -> TARGET.
+
+Matched-pair transition:
+- activate Investigation II;
+- reset Research Charges to **8 / 8**;
+- do not transfer relation knowledge from Investigation I;
+- Investigation II starts with exactly its precommitted three prior relations and one target-specific fact.
+
+No comparative evaluation yet.
