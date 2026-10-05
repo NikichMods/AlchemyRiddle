@@ -2921,6 +2921,16 @@ Interpretation:
 - alternative-formula targets require more deliberate candidate curation and provide a natural role for compatibility as the second relational layer;
 - full property vectors should not be exposed by default merely because they can over-solve many single-formula targets; the clue budget should remain partial/adaptive.
 
+Important limitation of this screen:
+- it optimized for the **minimum number of target-property facts** needed to enter the 2-4 branch envelope;
+- therefore a successful one-fact surface is evidence of information sufficiency, **not evidence that one-fact starts are desirable or interesting**;
+- the screen does not measure clue interaction, reasoning depth, or whether several individually weak facts combine into a satisfying cross-constraint;
+- candidate-surface curation itself contributes substantial information before any explicit clue is shown.
+
+A richer desired puzzle shape may instead require several constraints whose
+**conjunction** is strong while no single constraint is overly decisive. That
+is a separate quantitative screen and remains open.
+
 This screen does **not** settle candidate-surface selection policy, two-slot grammar, progression availability, final property wording, or compatibility-salience policy.
 
 Production architecture remains **BLOCKED**.
