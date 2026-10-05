@@ -3482,3 +3482,82 @@ Complete facilitator state is in
 `docs/prototypes/PROTOTYPE_23_STATE.md`.
 
 Production architecture remains **BLOCKED**.
+
+
+## Prototype 23 — final result
+
+Status: **completed; PASS / RETAIN**.
+
+Player rating: **~4.5 / 5**.
+
+The focused adaptive test successfully demonstrated that a fully adjacent-stable
+chain can fail to produce the requested target without invalidating the learned
+pair relations.
+
+Key result:
+- "stable links, requested effect absent" was immediately understood;
+- the player retained trust in both pair facts;
+- the exact triple alone was rejected for the current target;
+- moving to the next justified hypothesis felt natural;
+- the added uncertainty felt like research, not like opaque punishment.
+
+The player explicitly distinguished the remaining search from blind brute force:
+the broad possibility space is first reduced by target properties and accumulated
+compatibility knowledge, then a small number of theory-supported hypotheses are
+tested. This bounded hypothesis checking is acceptable and desirable for the
+product.
+
+Strong product-fit requirement recovered from the evaluation:
+- alchemy should resolve as a short **atomic investigation session** whenever
+  practical;
+- the player should be able to enter the research interaction, reason, test and
+  resolve it without being forced out for unrelated resource work;
+- AlchemyRiddle should not optimize for maximal puzzle sophistication at the
+  expense of Graveyard Keeper pacing and working-memory comfort.
+
+Additional dosage/UI findings:
+- seven surfaced prior relation records already felt cluttered enough that one
+  known incompatibility was overlooked during play;
+- one target-property fact felt somewhat sparse;
+- future tuning should compare fewer surfaced old relations against slightly
+  richer target-specific property information while preserving the neutral
+  knowledge rule;
+- attempting an already-known pair test should explicitly show the existing
+  journal result and consume no research resource.
+
+Prototype 23 used:
+- 2 meaningful new microtests;
+- 2 full syntheses;
+- 1 compatible non-target synthesis;
+- 1 successful target synthesis;
+- no resource interruption.
+
+Blindness caveat remains: the player knew beforehand that a compatible
+non-target chain existed, so Prototype 23 validates feedback semantics and
+post-disconfirmation reasoning, not the surprise/teaching effect for an
+unprimed player.
+
+### Three-slot architecture checkpoint
+
+Evidence now supports the adaptive knowledge-aware family substantially more
+strongly than the fixed tag-centric baseline:
+
+- real-corpus quantitative robustness screen: PASS;
+- blind matched A/B against fixed baseline: adaptive clearly preferred;
+- accumulated relations felt like legitimate expertise rather than authored
+  breadcrumbs;
+- compatibility != recipe identity interaction: PASS at ~4.5/5;
+- bounded hypothesis checking remained comfortable and appropriately
+  alchemical.
+
+The remaining open questions are now mostly **production envelope and integration
+questions**, not evidence that the fixed baseline is still equally competitive:
+candidate-surface legitimacy, progression-specific knowledge state, relation/clue
+dosage, journal/persistence, research economy, two-slot grammar/tutorial,
+exception handling and production UI/runtime ownership.
+
+Do not silently promote this to the full production architecture without the
+explicit architecture decision checkpoint required by the project workflow.
+
+Production architecture remains **BLOCKED** pending that decision and the
+remaining production-evidence gates.
