@@ -4872,3 +4872,38 @@ New UI hypothesis:
 Do not treat this as accepted implementation architecture yet. UI feasibility, persistence, input model, and ownership remain unresearched.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 29 result — residual answers retained
+
+Status: **blind test complete; residual-answer topology retained; production remains BLOCKED**.
+
+Prototype 29 tested whether the hidden target can lie on none of the starting stable bridges without making the post-bridge phase feel like brute force.
+
+Result:
+- two starting stable bridges each supported a genuine target-consistent, fully compatible non-target hypothesis;
+- resolving those hypotheses was productive rather than deceptive;
+- after both were closed, one off-bridge candidate remained;
+- the player described the transition to that candidate as exactly the intended experience: a natural residual deduction, not “try whatever is left.”
+
+Design implication:
+- starting stable bridges are scaffolding, not privileged answer carriers;
+- investigations may safely include cases where:
+  - the answer lies on a direct bridge;
+  - the answer lies on a mirrored bridge;
+  - the answer lies on one of several mixed bridges;
+  - no starting bridge contains the answer, but resolving them proves a small residual branch.
+- this topology should be part of the investigation library specifically to prevent meta-learning that the answer always sits on a provided bridge.
+
+Quality condition:
+- off-bridge cases are only good when bridge resolution materially reduces the solution space;
+- do not use starting bridges as decorative decoys followed by a fresh search over many unrelated candidates;
+- the residual branch should be small enough that the player can articulate why it remains.
+
+Manual annotation remains a separate UI hypothesis:
+- player-controlled strike-through/exclusion marks may support external memory without auto-solving;
+- feasibility and persistence remain open.
+
+With Prototype 29, the current bridge+constraint family now has validated variety across orientation, clue-led vs experiment-led solving, composite clue grammar, and residual-answer topology.
+
+Production remains **BLOCKED**.
