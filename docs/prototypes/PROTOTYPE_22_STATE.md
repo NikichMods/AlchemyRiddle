@@ -678,4 +678,70 @@ Mechanical result: 4 microtests, 0 synthesis attempts, unresolved target, explic
 
 The A/B pair is now complete. Architecture identities may be revealed only during the post-pair comparison/debrief.
 
+
+
+## Post-pair blind evaluation
+
+Architecture identities were still hidden when the player gave this evaluation.
+
+Player preference:
+- **Investigation I was clearly preferred** over Investigation II.
+- Investigation I produced the stronger "I worked it out" feeling because it
+  actually reached a justified successful synthesis.
+- Previously learned relations in Investigation I felt like **natural accumulated
+  alchemical knowledge**, not like suspicious authorial breadcrumbs.
+- Automatic surfacing/filtering of the old relations relevant to the current
+  working field was perceived as welcome UI assistance rather than cheating.
+- Choosing the next experiment was substantially easier and more reasoned in
+  Investigation I.
+
+Investigation II failure mode:
+- the player understood the rules but faced too large a live possibility field
+  before the first action;
+- intersecting the two target-property constraints in working memory was at or
+  beyond comfortable human working-memory limits;
+- the player wanted an external way to mark/cross out possibilities;
+- the first test felt partly arbitrary because no sufficiently salient reason
+  distinguished a good first branch;
+- four charges were consumed without a justified final formula;
+- the natural response at zero charges was to leave, obtain more research
+  resources, and continue later rather than guess.
+
+Important caveat about Investigation I:
+- it was **too frictionless / too lucky** because the first selected old stable
+  Powder-Liquid relation led, after one successful new Liquid-Essence test,
+  directly to the correct formula;
+- the player explicitly wants the system to demonstrate that two STABLE adjacent
+  relations are **necessary but not sufficient** to prove the target recipe;
+- otherwise players may naturally learn the false heuristic "find any fully
+  stable chain = recipe solved";
+- a future player-facing state should therefore include a plausible fully stable
+  non-target chain, or otherwise produce an unmistakable experience where
+  compatibility alone does not identify the requested product.
+
+Blind A/B reveal:
+- Investigation I = **adaptive knowledge-aware architecture**.
+- Investigation II = **fixed tag-centric baseline**.
+
+Interpretation:
+- the blind result strongly favors the adaptive architecture on the tested
+  player-experience dimensions: lower working-memory burden, clearer
+  experiment-selection rationale, and meaningful reuse of prior discoveries;
+- this does **not** yet prove the production architecture;
+- the remaining high-value experiential risk is whether adaptive play remains
+  satisfying once the first attractive fully stable chain can be a decoy and
+  the player must distinguish "chemically compatible" from "the requested
+  recipe";
+- the fixed baseline remains structurally valid but, in this matched blind case,
+  its two-clue start reproduced the under-structured / matrix-like burden that
+  earlier prototypes warned about.
+
+Prototype 22 status:
+- blind A/B comparison complete;
+- result: **adaptive favored**;
+- no reverse-order repeat is required at this stage because the subjective
+  difference was strong rather than close or contradictory;
+- production architecture remains **BLOCKED** pending the next focused
+  prototype / architecture decision checkpoint.
+
 Production architecture remains **BLOCKED**.
