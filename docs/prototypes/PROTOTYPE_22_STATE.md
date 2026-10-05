@@ -620,4 +620,29 @@ Facilitator supplied no deduction from the fresh observation.
 Current interaction point:
 - awaiting the player's inference / next action.
 
+
+
+## Investigation II — live checkpoint 2
+
+Player inference after the first microtest:
+- accepted P1 + L3 as a stable first-stage branch;
+- continued that same branch rather than reopening the full candidate field;
+- reasoned that L3 contributes one Труп and the target requires Труп ×2, so the
+  Essence continuation should contribute another Труп;
+- chose E2 Тёмная эссенция as the next continuation to test.
+
+Player action:
+- microtest L3 Молочный раствор + E2 Тёмная эссенция.
+
+Raw outcome:
+- **НЕСОВМЕСТИМО**.
+
+Resources:
+- Research Charges remaining: **2 / 4**.
+
+Facilitator supplied no deduction from the fresh observation.
+
+Current interaction point:
+- awaiting the player's inference / next action.
+
 Production architecture remains **BLOCKED**.
