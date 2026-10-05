@@ -180,3 +180,16 @@ Possible dispositions:
   - L2 + E2 -> STABLE
 - no new actions
 - awaiting player's first action
+
+
+## Live checkpoint 1
+
+Player reports that three composite clues shown at once feel dense and more appropriate for a later/high-difficulty investigation than an introductory one.
+
+On the P2+L3 bridge, the player naturally ignores the two implications whose antecedents are false and uses the exact-one-of-two Corpse clue to select E2.
+
+Action: full synthesis P2+L3+E2.
+Outcome: compatible chain; target effect absent.
+Research Charges: 8/8.
+
+Awaiting next player action.
