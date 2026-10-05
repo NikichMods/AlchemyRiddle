@@ -207,3 +207,48 @@ Possible dispositions:
   - L1 + E1 -> STABLE
 - no new actions
 - awaiting player's first action
+
+
+## Live checkpoint 1 — fast-forwarded bridge resolution
+
+Player explicitly fast-forwards through the two starting bridges and asks for the resulting journal/state.
+
+Design observation:
+- a prior STABLE bridge could itself already violate one of the target-specific clues and therefore be immediately irrelevant to the current target;
+- this is a potentially useful topology variant;
+- risk: players may conflate STABLE with “belongs to the target recipe,” so future presentation must keep chemical compatibility distinct from target relevance.
+
+Bridge 1 reasoning:
+- prior P2+L2 is STABLE;
+- Slime absence excludes E3;
+- P2 already supplies the single allowed Plant, so E2 is excluded;
+- only E1 remains target-consistent.
+Player action sequence:
+- microtest L2+E1 -> STABLE;
+- full synthesis P2+L2+E1 -> compatible non-target.
+Charges after microtest: 7/8.
+
+Bridge 2 reasoning:
+- prior L1+E1 is STABLE;
+- L1 already supplies the single allowed Plant;
+- P1 is excluded by Slime absence;
+- P2 is excluded because it would add a second Plant;
+- P3 satisfies the Powder/Liquid Corpse XOR with L1.
+Player action:
+- full synthesis P3+L1+E1 -> compatible non-target.
+Charges remain: 7/8.
+
+Journal after the fast-forward:
+- [Prior] P2+L2 -> STABLE
+- [Prior] L1+E1 -> STABLE
+- [New] L2+E1 -> STABLE
+- P2+L2+E1 -> not target
+- P3+L1+E1 -> not target
+
+Important protocol note:
+- full synthesis outcomes do not silently create separate pair facts, so P3+L1 is not added as an independently established journal relation.
+
+Current interaction point:
+- both starting bridge hypotheses are closed as compatible non-targets;
+- Research Charges: 7/8;
+- awaiting player's residual deduction / next action.
