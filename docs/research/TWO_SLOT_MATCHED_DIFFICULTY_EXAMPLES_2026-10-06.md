@@ -1,6 +1,6 @@
 # Two-slot matched difficulty examples — 2026-10-06
 
-Status: **working design artifact for visual comparison; not yet an accepted final per-band grammar; production remains BLOCKED**.
+Status: **partially superseded comparison artifact; RICH remains illustrative, while the original HARD/MAX and derived BOSS package are retained as negative evidence for pseudo-complexity; production remains BLOCKED**.
 
 Purpose:
 hold candidate field and hidden answer constant while varying only clue structure,
@@ -117,17 +117,26 @@ conditional and XOR grammar are interlocked. The last step is meaningful because
 the previous three facts have reduced the field to a pair of plausible
 near-misses.
 
-## Current interpretation
+## Current interpretation — superseded after player review
 
-The matched comparison supports the proposed semantic distinction:
+The numerical comparison was useful, but it exposed an important design defect.
 
-- RICH: familiar rules combine, but at least one clue may still make a large
-  reduction;
-- HARD: several weaker partial facts must all be carried together;
-- MAX: full mature grammar is available and conditional/composite reasoning is
-  ordinary;
-- BOSS: familiar clue families become mutually dependent enough that no proper
-  large subset of the clue package already solves the puzzle.
+The original HARD example is not accepted as a positive exemplar because
+`Fluid is not Mineral` + `Fluid is not Dark` is mostly flat same-slot
+filtering.
+
+The original MAX example is not accepted because `Powder is Dark` directly
+activates `if Powder is Dark -> Fluid is Plant`, collapsing the conditional
+into a disguised direct fact.
+
+The BOSS package inherits some of that weakness even though all clues are
+mathematically necessary. This proves that **necessity/non-redundancy alone is
+not sufficient evidence of intellectual interest**.
+
+Retain this artifact as negative evidence motivating the accepted
+anti-pseudocomplexity rule. A replacement positive matched set must require
+genuine cross-clue inference / derived condition activation before it can
+calibrate HARD / MAX / BOSS.
 
 This example deliberately does not test:
 - increasing property-card richness;
