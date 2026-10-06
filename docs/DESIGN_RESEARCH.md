@@ -5216,3 +5216,43 @@ Stop rule:
 
 This plan is intended to minimize sunk-cost bias: a candidate must first prove
 that its player-facing reasoning experience is worth deeper research.
+
+
+## Prototype 30 — two-slot known-recipe differential result
+
+Status: **stopped early after one blind comparison; standalone B wrapper does not lead**.
+
+The prototype intentionally tested whether a 3x2 two-slot puzzle could be driven
+by comparison against already-known recipes, with several references that were
+mathematically different in information value.
+
+Observed player experience before and after the first comparison:
+- the candidate matrix itself was harder to parse than expected because some
+  cells represented already-known products while other known references lived
+  outside the displayed target field;
+- "same reagent in the same role" was logically understandable but felt
+  abstract / physically ungrounded in the interface;
+- the player initially confused candidate synthesis with reference comparison;
+- the player explicitly reported not knowing how to choose the first reference
+  or what useful conclusion a comparison would support before trying one;
+- after A returned 1/2, the local deduction became understandable, but the loop
+  immediately looked like another reference query followed by a bounded residual
+  choice rather than an attractive alchemical reasoning pattern.
+
+Important nuance:
+- the prototype did contain more balanced reference choices than A;
+- therefore this is not evidence that the underlying partition problem was
+  mathematically unsolvable;
+- it is evidence that **the useful comparison was not naturally legible as a
+  player action**. Requiring the player to inspect a recipe library as an
+  information-partition matrix is itself the UX burden.
+
+Disposition:
+- do not spend another repair cycle on B before the A/B/C checkpoint;
+- retain known recipes as a potentially valuable evidence primitive or hybrid
+  ingredient;
+- reject the tested standalone known-recipe-comparison wrapper as the leading
+  two-slot core;
+- proceed to Candidate C.
+
+Production remains **BLOCKED**.
