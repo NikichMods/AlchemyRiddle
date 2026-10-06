@@ -258,3 +258,44 @@ Resolution categories distinguish:
 - no bounded result.
 
 Exact formula rows remain private and are never printed.
+
+
+## Curriculum serviceability screen
+
+Run `curriculum_serviceability_screen.py` after the current property model and
+progression core have been selected.
+
+The private inputs are deliberately filtered to:
+- 16 mandatory two-slot formula variants / 10 outputs;
+- 19 ordinary three-slot formula variants / 16 outputs;
+- the accepted Dark + Organ property assignment.
+
+Example:
+
+```
+python curriculum_serviceability_screen.py TWO_CORE.json THREE_CORE.json
+```
+
+The screen asks whether **a player-selected target formula** can still serve the
+desired curriculum beat. It does not let the scheduler choose another target.
+
+Two-slot:
+- exhaustively checks 2x2 fields;
+- tests BREATHE/simple packages plus low-load introductions of XOR, forward
+  positive implication, forward negative-consequent implication and reverse
+  implication direction;
+- includes a deliberately over-strict exact-2-of-4 clue-split sensitivity
+  control to expose failures caused by unnecessary generator constraints.
+
+Three-slot:
+- exhaustively checks Prototype-35-like 2x2x2 first-relation tutorial surfaces;
+- reuses the accepted reasoning-diversity option generator to measure later
+  major-family capacity per target.
+
+Only aggregates are emitted. Exact formula rows remain private.
+
+Important limits:
+- this is formula-identity serviceability, not a complete save-state simulator;
+- progression-limited known identities and accumulated learned relations can
+  still force runtime generation fallback;
+- later bridge/residual relation-topology concepts remain a separate question.
