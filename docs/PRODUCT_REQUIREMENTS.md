@@ -201,10 +201,10 @@ Accepted product direction:
   history / current knowledge state**, not from a fixed assumption that every
   two-slot target is encountered before every three-slot target.
 
-The exact counter semantics for products with multiple vanilla formula variants
-remain open. A promising default is to let distinct target products advance the
-broad difficulty ladder while alternative formula variants remain independently
-researchable without artificially consuming multiple progression steps.
+Formula-variant advancement is resolved below under **Formula-variant completion
+advances arity experience**: every independently completed variant counts as
+genuine within-arity practice. Exact numeric rank increments remain a generator
+implementation detail.
 
 
 
@@ -320,34 +320,31 @@ Accepted continuity requirement:
   regenerated from the player's later progression state;
 - the journal remains the external-memory owner for this continuity.
 
-Whether the production UI allows several simultaneously suspended unsolved
-investigations or presents one foreground investigation at a time remains a
-separate UX/persistence decision. Do not discard or regenerate a started
-investigation merely because the player exits the screen.
+The later **One active deduction and visible progress** decision supersedes the
+earlier multi-investigation option: only one unsolved deduction may be active at
+a time. Other discovered targets remain visible in the journal, and the active
+puzzle resumes unchanged after interruption.
 
-### Separate theoretical deduction from practical recipe confirmation
+### Separate theoretical deduction from practical acquisition
 
-Leading product hypothesis, pending focused validation:
-- a target investigation may be allowed to reason about a bounded set of
-  **theoretical reagent identities** even when the player has not yet learned
-  the practical source/decomposition route for every reagent shown;
-- the puzzle may therefore establish a unique theoretical formula before every
-  component is practically obtainable;
-- this theoretical solution must not silently grant vanilla decomposition
-  knowledge, inventory, or recipe-completion state;
-- if a required reagent is not yet practically mastered, the solved target
-  should create a reagent-acquisition/source-research lead instead of pretending
-  the product can already be crafted;
-- final vanilla recipe confirmation/discovery remains tied to actually producing
-  the target through the real alchemy interaction unless a later explicit
-  product decision changes that boundary.
+Accepted product model:
+- a target investigation may reason about a bounded set of **theoretical reagent
+  identities** even when the player has not yet learned the practical
+  source/decomposition route for every reagent shown;
+- the puzzle may establish a unique theoretical formula before every component is
+  practically obtainable;
+- theoretical exposure must not silently grant decomposition knowledge,
+  inventory, or practical source mastery;
+- once deduction uniquely determines a concrete vanilla formula variant, that
+  formula becomes known recipe knowledge immediately;
+- if a required reagent is not yet practically mastered, the solved formula
+  creates a separate reagent-acquisition/source-research lead.
 
-This hypothesis would replace a large class of "true component unknown -> hard
-gate" cases with a two-layer flow:
-`deduce formula -> learn how to obtain missing reagent(s) -> synthesize/confirm`.
+The accepted two-layer flow is:
+`deduce/unlock formula knowledge -> learn missing reagent route(s) if needed -> synthesize when practical`.
 
-It must be validated for clarity and spoiler behavior before becoming the
-production readiness contract.
+The later **Deduction unlocks recipe knowledge before first synthesis** section is
+the canonical recipe-knowledge boundary.
 
 
 ### One active deduction and visible progress
@@ -582,28 +579,26 @@ Accepted product direction:
 - onboarding should be deliberately front-loaded: teach the puzzle language
   quickly, then spend the majority of the remaining investigations on richer
   puzzles that combine already-known mechanics;
-- as a current pacing target, roughly the first **30-35%** of a ladder may carry
-  most explicit concept onboarding, while roughly **65-70%** should primarily be
-  normal play with familiar mechanics at varying load;
-- for the 16 mandatory two-slot investigations this implies approximately the
-  first **5-6** steps for the main logical grammar and roughly **10-11** later
-  steps for richer combinations;
-- for the 19 mandatory three-slot investigations, shared logical grammar already
-  transfers from two-slot alchemy, so relation-specific onboarding should be
-  even more compact: approximately the first **4-5** steps for the main
-  relation/topology grammar and roughly **14-15** later steps for rich
-  three-slot play;
+- explicit teaching is front-loaded and compact; the current semantic target is
+  roughly the first **four** investigations of each arity carrying most genuine
+  concept introduction, followed by rich/hard play;
+- the mature/MAX envelope should become available roughly around the **sixth or
+  seventh** investigation of an arity rather than being reserved for the tail;
+- the full 16 two-slot / 19 three-slot variant sets are completionist capacity,
+  not assumed campaign lengths; after MAX is reached, the remaining content
+  forms a mature plateau with rich, hard, breathe and selected boss peaks;
 - late richness should come from interaction depth, clue weakness, field shape,
   relation topology and combinations of familiar operators rather than from
   continuing to introduce new rules;
 - BREATHE steps should be occasional deliberate load releases, not a metronomic
   every-fourth-step requirement;
-- reverse/reference-direction wording is not yet guaranteed to deserve a
-  dedicated teaching step; it may be introduced as a variation of already-known
-  implication logic if prototype evidence supports that simpler treatment.
+- reverse/reference-direction wording is the same implication mechanic read
+  from the opposite slot direction and does not receive a dedicated teaching
+  rung by default.
 
-The exact step-by-step 16/19 ladders remain a design task. These proportions are
-accepted pacing intent, not immutable numeric quotas.
+Exact numbered placement inside the mature plateau remains tuning. The accepted
+semantic order is: basic language -> compact concept introductions -> rich
+combination -> hard -> early MAX -> mature plateau -> selected boss peaks.
 
 ### Accepted property-density refinement: Dark and rare four-tag cards
 
