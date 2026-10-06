@@ -662,3 +662,17 @@ Rationale from accepted progression evidence:
   safe assumption for ordinary natural-demand progression.
 
 Exact first-max-band and boss-step indices remain tuning work.
+
+
+### Mature and boss difficulty: richer cards plus deeper interaction
+
+Accepted product refinement:
+- visible reagent-property richness should generally increase with difficulty: onboarding should prefer simpler one-property cards when an equally good surface exists; early play may mix one- and two-property cards; mature/MAX and boss play should increasingly prefer two-, three- and naturally occurring four-property cards;
+- this is a **soft field-level preference**, not a requirement that every true late-game formula component itself have many properties. Vanilla formulas remain fixed, so a valid late target with simple components must remain serviceable;
+- mature difficulty should also increase through weaker individual clues, higher interaction depth, denser plausible near-misses and, in three-slot play, richer relation topology;
+- boss puzzles should primarily combine a small number of these high-cost dimensions rather than introduce a wholly new mechanic at the end;
+- higher-order clue forms are allowed when they are understandable extensions of already learned grammar (for example a broader exact-one/exact-count condition or a compound conditional), but a genuinely new logical operator must not first appear only in a boss puzzle;
+- the defining boss property is a short multi-stage proof in which several individually partial facts are mutually necessary and become decisive only through their interaction;
+- do not equate boss difficulty with more clicks, more clues, larger-than-screened fields or compatibility-matrix filling.
+
+Exact mature/boss clue grammar and thresholds remain design/prototype work.
