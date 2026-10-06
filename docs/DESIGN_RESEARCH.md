@@ -6863,3 +6863,33 @@ Next bounded research:
 construct 2-3 concrete coherent taxonomies and compare vocabulary size,
 1/2/3/4 distribution, duplicate signatures, source-spoiler risk, rare-tag clue
 strength, and the existing sequence/reasoning-diversity screens.
+
+
+## Accepted tag refinement: Dark + rare four-property cards — 2026-10-06
+
+Status: **Dark accepted for the working property model; Organ still candidate pending full-table screen; production remains BLOCKED**.
+
+Accepted:
+- add **Dark** to the nine Health / Death / Acceleration Powder/Fluid/Essence
+  family identities;
+- do not require a separate visual-validation gate before using Dark in research;
+- reject Warm as a current candidate;
+- relax the previous three-property ceiling: rare **four-property** reagent cards
+  are acceptable when they arise from a strong systemic trait and can serve as
+  richer later-game material;
+- do not optimize toward four properties as a quota.
+
+This materially changes the next taxonomy comparison:
+- do not distort or narrow Organ merely to avoid 4-tag cards;
+- test a straightforward global **Organ** rule on the full 35-reagent table;
+- compare the resulting Dark + Organ model against the previous accepted model
+  on:
+  - 1/2/3/4-property distribution;
+  - exact-signature duplication;
+  - per-form signature diversity;
+  - sequence repetition;
+  - reasoning-trajectory diversity;
+  - rare-tag clue-strength risk.
+
+If Organ performs well, four-property Life-family cards are acceptable rather
+than an automatic failure.
