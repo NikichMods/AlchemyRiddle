@@ -208,3 +208,26 @@ Per the accepted comparison plan:
   - [Calibration] P1 + L1 -> 1 / 2
 - no paid actions yet
 - awaiting player's first action
+
+
+## Live checkpoint 1 — controlled liquid substitution
+
+Pre-action player UX observations:
+- the core rule was immediately described as clear, simple, and somewhat immersive;
+- the player could readily imagine physically preparing a mixture and running it through an analyzer;
+- unlike Prototype 30, no representation confusion appeared before the first action;
+- from calibration P1+L1 -> 1/2, the player's first instinct was to hold P1 fixed and change only the liquid to L2;
+- the player explicitly asked whether an immediate exact match would simply return the successful result, indicating that 2/2 is understood as a natural terminal observation rather than a separate hidden rule.
+
+Player action:
+- resonance test P1 Серый пепел + L2 Рассол.
+
+Deterministic outcome:
+- **0 / 2 resonance**.
+
+Resources after action:
+- test charges: **1 / 2**.
+
+Protocol boundary:
+- present the raw 0/2 observation and journal;
+- do not infer the target formula or remaining candidates until the player states their own reasoning.
