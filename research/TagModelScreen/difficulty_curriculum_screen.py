@@ -447,6 +447,8 @@ def compact_three_surface_candidates(
     branch_max,
     max_clues,
     policy,
+    min_triples=1,
+    exact_min_incompatible_tests_to_le2=None,
 ):
     triples = [
         (p, f, e)
@@ -506,6 +508,14 @@ def compact_three_surface_candidates(
             relation = useful_relation_metrics(
                 triples, survivor, stable_pf, stable_fe, target
             )
+            if survivor.bit_count() < min_triples:
+                continue
+            if (
+                exact_min_incompatible_tests_to_le2 is not None
+                and relation["min_incompatible_tests_to_le2"]
+                != exact_min_incompatible_tests_to_le2
+            ):
+                continue
             candidates.append(
                 {
                     "clues": k,
@@ -533,12 +543,19 @@ def three_slot_compact_report(data):
             "branch_max": 3,
             "max_clues": 2,
             "policy": "compact",
+            # A tutorial relation must do real work: clues alone leave at least
+            # three concrete formula hypotheses, and one informative
+            # INCOMPATIBLE result can reduce them to <=2.
+            "min_triples": 3,
+            "exact_min_incompatible_tests_to_le2": 1,
         },
         "early": {
             "branch_min": 2,
             "branch_max": 4,
             "max_clues": 2,
             "policy": "compact",
+            "min_triples": 3,
+            "exact_min_incompatible_tests_to_le2": None,
         },
     }
 
