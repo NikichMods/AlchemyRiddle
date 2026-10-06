@@ -239,3 +239,58 @@ difficulty generator. The leading hypothesis is that completing any genuinely
 independent formula-variant investigation should count as alchemical practice,
 rather than special-casing alternative formulas solely because they share an
 output.
+
+
+### Formula-variant completion advances arity experience
+
+Accepted refinement:
+- completing an independently researched formula variant counts as genuine
+  practice for that recipe arity, even when another formula for the same output
+  was researched earlier;
+- therefore a later alternative formula normally participates in the same
+  within-arity difficulty progression as any other completed investigation;
+- exact numeric rank increments remain generator implementation detail, but do
+  not special-case an alternative formula as "not real progression" merely
+  because its output is already known.
+
+### Investigation state must survive interruption
+
+Accepted continuity requirement:
+- entering a deduction puzzle must not trap the player in that screen until
+  completion;
+- the player may leave normal research UI and return to Graveyard Keeper
+  activities at any time;
+- an investigation's generated puzzle state is frozen once that investigation
+  starts: difficulty budget, candidate field, surfaced clues, experiments,
+  exclusions/marks and other earned evidence must resume exactly rather than be
+  regenerated from the player's later progression state;
+- the journal remains the external-memory owner for this continuity.
+
+Whether the production UI allows several simultaneously suspended unsolved
+investigations or presents one foreground investigation at a time remains a
+separate UX/persistence decision. Do not discard or regenerate a started
+investigation merely because the player exits the screen.
+
+### Separate theoretical deduction from practical recipe confirmation
+
+Leading product hypothesis, pending focused validation:
+- a target investigation may be allowed to reason about a bounded set of
+  **theoretical reagent identities** even when the player has not yet learned
+  the practical source/decomposition route for every reagent shown;
+- the puzzle may therefore establish a unique theoretical formula before every
+  component is practically obtainable;
+- this theoretical solution must not silently grant vanilla decomposition
+  knowledge, inventory, or recipe-completion state;
+- if a required reagent is not yet practically mastered, the solved target
+  should create a reagent-acquisition/source-research lead instead of pretending
+  the product can already be crafted;
+- final vanilla recipe confirmation/discovery remains tied to actually producing
+  the target through the real alchemy interaction unless a later explicit
+  product decision changes that boundary.
+
+This hypothesis would replace a large class of "true component unknown -> hard
+gate" cases with a two-layer flow:
+`deduce formula -> learn how to obtain missing reagent(s) -> synthesize/confirm`.
+
+It must be validated for clarity and spoiler behavior before becoming the
+production readiness contract.
