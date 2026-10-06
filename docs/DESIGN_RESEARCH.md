@@ -6248,3 +6248,217 @@ budget**:
 This makes the next fundamental step the two independent difficulty curricula
 and their generation budgets, with unknown-identity exposure as one cost term
 rather than a hard readiness gate.
+
+
+## Chat migration checkpoint — 2026-10-06 after Prototype 33
+
+Status: **canonical recovery point for the next chat**.
+
+The current design direction is internally coherent enough to leave the chat.
+Do not reopen the decisions below merely because the conversation context is
+missing; repository state is authoritative.
+
+### Puzzle-core status
+
+- Two-slot core: Candidate A / fixed reagent properties + logical constraints is
+  selected as the leading grammar after A/B/C comparison and blind play.
+- Three-slot core: Adaptive Knowledge-Aware bridge + constraint architecture
+  remains accepted.
+- Production implementation remains **BLOCKED**.
+- Do not formalize runtime/UI implementation yet.
+
+### Two independent difficulty ladders
+
+Treat two-slot and three-slot alchemy as separate difficulty progressions that
+can interleave in normal play.
+
+- each arity has its own tutorial -> early -> medium -> late/boss curve;
+- the first actually started investigation in each arity receives that arity's
+  onboarding budget;
+- completing a deduction advances that arity's progression;
+- alternative formula variants are genuine independent practice and normally
+  advance the same arity ladder;
+- difficulty belongs to the investigation, not permanently to the product;
+- once an investigation starts, its generated puzzle state is frozen and resumes
+  unchanged if the player leaves.
+
+Visible real progression is desirable: difficulty bands/progress/milestones may
+be shown to the player later.
+
+### One active deduction at a time
+
+Accepted:
+- many target leads may exist in the journal;
+- only one **unsolved deduction** may be active;
+- the player may leave the research UI and return to ordinary gameplay at any
+  time;
+- returning restores the exact persisted puzzle state;
+- other targets remain visible but cannot start another deduction until the
+  current one is theoretically solved;
+- theoretical solve frees the deduction slot immediately.
+
+This prevents pre-freezing many easy puzzles while preserving interruption
+resilience.
+
+### Formula submission and Science
+
+A player-facing success/failure formula check is an information oracle.
+
+Accepted direction:
+- no free unlimited brute-force confirmation;
+- Science is the leading cost resource;
+- 1 Science per submitted formula is a current working value, not final balance;
+- exact wrong-answer feedback and final cost remain open;
+- every Science spend in this subsystem should buy concrete information, not a
+  generic admission fee.
+
+### Deduction success flow
+
+When a formula submission succeeds:
+1. show explicit success;
+2. show the now-known formula/components;
+3. record/unlock that formula as known recipe knowledge;
+4. only then inspect whether required reagents are practically mastered;
+5. surface source-research leads for any true required reagent whose practical
+   route is unknown.
+
+This cleanly separates "I solved the formula" from "I still need to learn how to
+obtain one ingredient."
+
+The earlier conservative default "do not auto-unlock unknown recipes" is
+explicitly superseded: unique deduction now makes the concrete formula known
+before first physical synthesis. Vanilla host research already establishes that
+scripted recipe knowledge can exist before physical crafting.
+
+### Theoretical reagents
+
+Accepted abstraction:
+- target puzzles may show the **real in-game reagent identity/name** and its fixed
+  AlchemyRiddle property tags even if the player has never physically produced
+  that reagent;
+- this applies both to true formula components and to **decoy candidates**;
+- the future-content spoiler cost (learning that a reagent exists and its tags)
+  is accepted as small relative to the benefit of world-grounded, scalable
+  puzzles.
+
+Generator preference:
+1. prefer already known/mastered identities where a good puzzle remains possible;
+2. introduce unmastered theoretical candidates when needed for intended puzzle
+   structure/difficulty;
+3. minimize unnecessary new identity exposure among equivalent candidate fields.
+
+Treat theoretical unknown decoys as a generation penalty/cost, not a prohibition.
+
+### Goal-first reagent source research
+
+A reagent appearing as a decoy does **not** create an acquisition task.
+
+Source/preparation research becomes actionable only when the reagent is actually
+needed by:
+- a newly deduced/known formula; or
+- another concrete visible gameplay need.
+
+After a formula is solved, the anti-spoiler problem largely disappears for its
+required reagent: the player already proved that reagent is needed.
+
+Accepted flow:
+`known needed reagent -> spend Science to research source/preparation -> learn a
+valid route -> obtain/study/process through ordinary vanilla play`.
+
+Current safe direction is informational/hybrid:
+- research reveals a valid source/preparation route;
+- it does not automatically grant the physical item;
+- it does not automatically complete vanilla Study/decomposition unless a later
+  explicit product decision changes that boundary.
+
+### Prototype 33 result
+
+Prototype 33 tested:
+`visible target -> deduction with one unmastered theoretical reagent -> formula
+known -> missing reagent source lead -> Science-funded source research -> return
+to vanilla acquisition/Study`.
+
+Result: **PASS**.
+
+Player judgement:
+- flow felt natural and dramatically clearer than vanilla;
+- no obvious conceptual contradiction/confusion was found;
+- the added structure felt like explicit alchemical knowledge rather than
+  arbitrary mod bureaucracy;
+- formula deduction still felt complete before the practical acquisition problem
+  appeared.
+
+Do not re-test this state transition without new evidence.
+
+### Reagent compendium / durable knowledge
+
+Paid research results must not live only in chronological history.
+
+The future knowledge surface should cover all known reagent identities and
+preserve:
+- reagent name/identity;
+- fixed property tags;
+- whether source/preparation knowledge is known;
+- known source/preparation route when learned;
+- source-research action when appropriate.
+
+Do not force the player to rediscover paid information by scrolling old journal
+entries.
+
+Open UI/data-policy detail:
+- whether a decoy-only theoretical identity remains permanently visible in the
+  compendium after a puzzle ends.
+This is deliberately unresolved and must not be forgotten, but it does **not**
+block difficulty-design work.
+
+### Pause preference
+
+Preferred UX:
+- normal world time pauses while the alchemy research/journal interface is open,
+  not only during the logic sub-screen;
+- communicate clearly that time is paused.
+
+Technical mechanism remains **BLOCKED** pending exact host owner/lifecycle/final
+writer evidence.
+
+### Tutorial wording/difficulty signal from Prototype 33
+
+Do not invent a fake preliminary research action/progress bar merely to justify
+clue wording.
+
+Prefer neutral framing such as:
+- known facts about the target;
+- observations;
+- composition constraints;
+rather than "research produced these facts" when no such action occurred.
+
+Prototype 33 also showed that a 2x2 field can still be too cognitively rich for
+a tutorial if it carries several compound clues. Difficulty must consider:
+- field size;
+- clue count;
+- clue form/complexity (simple count/absence vs XOR/implication etc.);
+- for three-slot, prior bridge/relation density and topology;
+- experiment demand;
+- theoretical-new-identity exposure.
+
+### Exact next step after migration
+
+Resume with **difficulty curriculum design**, not readiness hard-gate research.
+
+Design the two independent ladders in abstract generator terms:
+- two-slot tutorial / early / medium / late / boss envelopes;
+- three-slot tutorial / early / medium / late / boss envelopes;
+- field-size bands;
+- clue-family introduction order;
+- clue count / strength / direction budget;
+- three-slot bridge density/topology progression;
+- Science experiment/submission expectations;
+- theoretical-new-identity exposure budget.
+
+The new exposure budget replaces the earlier assumption that physical reagent
+catalog breadth must always provide every distractor.
+
+Do not yet commit to exact UI labels or exact Science prices while defining the
+curriculum.
+
+No runtime test is required from the user at this checkpoint.
