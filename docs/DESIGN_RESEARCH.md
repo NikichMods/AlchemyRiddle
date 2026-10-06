@@ -5905,3 +5905,59 @@ This matches the intended 1–3 minute atomic puzzle shape, avoids mass-freezing
 easy investigations, and minimizes persistent mutable puzzle state. It is not
 yet an accepted product restriction; validate it against player preference
 before production architecture.
+
+
+## Next checkpoint — define the investigation state machine before more difficulty math
+
+Status: **next design task; production remains BLOCKED**.
+
+The current uncertainty is no longer whether the selected two-slot and three-slot
+puzzle cores can work. It is the exact product-state transition from an unknown
+target to a practically confirmed vanilla recipe, especially when the deduction
+uses theoretical-but-not-yet-mastered reagents.
+
+Before further corpus-wide difficulty/readiness work, define and paper-test the
+minimum investigation state machine.
+
+At minimum distinguish:
+- discovered target lead;
+- active deduction;
+- theoretically solved formula;
+- missing practical reagent/source knowledge;
+- practically ready to synthesize;
+- vanilla-confirmed recipe.
+
+Already accepted:
+- one unsolved deduction active at a time;
+- leaving the UI never discards/regenerates it;
+- theoretical solve frees the active deduction slot and advances the arity ladder;
+- solved-but-unconfirmed formulas may remain as journal work;
+- final synthesis remains the practical confirmation boundary by default.
+
+Main unresolved semantics:
+1. **Theoretical candidate exposure** — exactly what identity/properties of an
+   unmastered reagent the puzzle may show, and what fiction/source justifies that
+   knowledge.
+2. **Post-deduction acquisition research** — whether the journal reveals an exact
+   source, a bounded source set/category, or asks for another small research
+   action/cost before naming a practical route.
+3. **Resource semantics** — which actions consume Science (or another native
+   resource), and whether lack of Science interrupts only experiments/acquisition
+   research rather than target selection.
+4. **Time semantics** — product preference is to pause world time while the
+   deduction UI is open, but technical ownership/lifecycle remains unproved.
+5. **Journal status language** — make “formula deduced” distinct from
+   “reagent mastered” and “recipe confirmed” without making the flow feel
+   bureaucratic.
+
+Least-complex next evidence:
+- one fictional/isomorphic paper scenario containing one unmastered theoretical
+  reagent;
+- play through target selection -> deduction -> theoretical solve -> reagent
+  acquisition lead -> practical-ready state;
+- do not test final production UI polish or runtime seams yet;
+- stop and compare only if the transition becomes confusing, feels like an
+  embedded wiki, or makes the solved formula feel unfinished/unsatisfying.
+
+If the flow is immediately coherent in paper play, adopt the state machine and
+then return to difficulty/readiness quantification with the new semantics.
