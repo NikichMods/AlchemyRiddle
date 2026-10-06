@@ -301,3 +301,17 @@ Accepted constraints/preferences:
 
 This refinement weakens narrow candidates such as Metal/Precious as primary
 taxonomy additions unless they participate in a broader coherent package.
+
+
+## Direction update: Dark accepted, four-property exception allowed
+
+The solution-space comparison is narrowed:
+- Dark is no longer merely a candidate; it is accepted into the working model;
+- Warm is rejected;
+- hierarchy remains rejected;
+- rare four-property cards are allowed;
+- Organ should be evaluated additively and globally before considering
+  refinement/replacement tricks.
+
+The next comparison is therefore **current + Dark** versus
+**current + Dark + global Organ**, not a broad hierarchy/taxonomy redesign.
