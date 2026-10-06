@@ -6944,3 +6944,26 @@ Recommendation:
 
 Do not add a third broad tag merely to chase the old 25/50/25 soft histogram.
 Reassess the remaining actual deficiency only after Dark + Organ is accepted.
+
+
+## Static taxonomy sanity-check closure — 2026-10-06
+
+Status: **current enriched property model is accepted as sufficient for continued design work; production remains BLOCKED**.
+
+Evidence:
+`docs/research/DARK_ORGAN_STATIC_HEATMAP_2026-10-06.md`.
+
+Result:
+- 12 / 11 / 8 / 4 cards have 1 / 2 / 3 / 4 properties;
+- only 9 of 35 cards remain in exact same-role duplicate groups;
+- all three-property and four-property cards are same-role unique;
+- Fluids and Universals have no exact duplicate signatures;
+- remaining duplicates are four local clusters in the simpler Powder/Essence
+  material.
+
+Decision:
+- the current enriched property model is sufficient;
+- no third broad property search is justified merely to remove those residual
+  clusters or to improve the visual histogram;
+- reopen only for a concrete play/sequence deficiency or an independently strong
+  world-grounded property.
