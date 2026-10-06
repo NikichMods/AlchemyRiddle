@@ -6157,3 +6157,94 @@ This is now the smallest design decision that determines whether the previously
 planned knowledge-capacity/readiness measurement remains necessary.
 
 Do not resume broad readiness math until this boundary is decided.
+
+## Theoretical decoy boundary resolved — 2026-10-06
+
+Status: **accepted product direction; production remains BLOCKED**.
+
+The open boundary exposed after Prototype 33 is resolved:
+
+> target puzzles may include real, not-yet-practically-mastered reagent identities
+> as **decoy candidates**, not only as true formula components.
+
+### Why this direction was selected
+
+The alternative — allowing theoretical exposure only for true components — would
+leave puzzle difficulty tightly coupled to the player's physically mastered
+catalog and would reintroduce readiness/downgrade pressure.
+
+Allowing real theoretical decoys:
+- preserves the intended independent difficulty ladders;
+- keeps puzzle fields grounded in actual Graveyard Keeper substances rather than
+  arbitrary symbols;
+- accepts a small future-content spoiler cost: the player may learn that a real
+  reagent exists and see its fixed tags before needing it.
+
+The user considers that cost acceptable.
+
+### Known-first candidate-selection preference
+
+This does **not** mean the generator should eagerly expose unknown substances.
+
+Preferred selection order:
+1. use already known/mastered reagent identities where they support a good puzzle;
+2. introduce unmastered theoretical candidates only when needed to meet the
+   intended difficulty/structure;
+3. minimize unnecessary new-identity exposure among otherwise equivalent valid
+   fields.
+
+Treat theoretical unknown decoys as a generation cost/penalty, not as forbidden
+content.
+
+### Goal-first source research remains restricted to real need
+
+A reagent merely appearing as a candidate does not become an acquisition task.
+
+Source/preparation research becomes actionable only when:
+- the reagent is a true component of a newly deduced/known formula; or
+- another concrete visible gameplay need establishes that the player actually
+  needs that reagent.
+
+Therefore:
+- a decoy such as an unknown "Lunar Dust" may appear in a puzzle and be ruled out;
+- it does not automatically enter a to-do list;
+- after a successful solve, only the practically unknown **true required
+  components** create source-research leads.
+
+A focused journal section such as
+**unknown substances required by known formulas** is consistent with this rule.
+
+This preserves the project's goal-first philosophy at both product and reagent
+levels and avoids turning puzzle exposure into completionist busywork.
+
+### Compendium distinction
+
+Do not conflate:
+- **reference knowledge**: an identity/tag set the player has seen or otherwise
+  legitimately learned;
+- **actionable acquisition lead**: a substance the player currently has a reason
+  to obtain.
+
+Exact compendium retention for decoy-only identities remains a UI/data-policy
+detail, but source-research actionability is now decided: decoy exposure alone is
+insufficient.
+
+### Consequence for progression/readiness
+
+The previously feared direct coupling between higher puzzle difficulty and
+physically discovering arbitrary extra reagents is substantially removed.
+
+The next progression work no longer needs to ask whether the player's physical
+catalog can always supply every distractor in the nominal field.
+
+Instead, the generator/difficulty pass should model a **theoretical-exposure
+budget**:
+- field size / clue complexity target;
+- number of already known candidates available;
+- minimum number of new theoretical identities required;
+- penalty for unnecessary unknown decoys;
+- avoid flooding early play with future reagent identities.
+
+This makes the next fundamental step the two independent difficulty curricula
+and their generation budgets, with unknown-identity exposure as one cost term
+rather than a hard readiness gate.
