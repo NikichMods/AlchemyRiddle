@@ -189,3 +189,39 @@ State after source research:
 - no physical item granted;
 - no vanilla Study/decomposition completion granted;
 - next ordinary-world task: obtain Красный гриб -> Study -> process -> obtain Токсичная жидкость -> synthesize the known target formula.
+
+
+## Final player evaluation
+
+The end-to-end flow is accepted experientially.
+
+Player judgement:
+- the sequence feels natural:
+  `deduce formula -> identify missing practical reagent knowledge -> research source -> return to ordinary play`;
+- compared with vanilla, the flow is dramatically clearer and more actionable;
+- no obvious conceptual contradiction, confusion or immersion break was found;
+- the added structure does not feel like arbitrary mod configuration; it feels
+  like making previously implicit alchemical knowledge/progress explicit.
+
+Important journal/compendium refinement:
+- do **not** rely on transient research-history messages to preserve source
+  knowledge;
+- do **not** need a verbose status such as "practical mastery still ahead";
+- once a source/preparation route has been researched, that result should become
+  durable reference data;
+- maintain a unified reagent compendium/database for **all known reagent
+  identities**, not only reagents that happened to be missing during one target;
+- for each known reagent, show whether a source/preparation route is known;
+- when known, show the durable route;
+- when unknown, expose the source-research action where appropriate.
+
+This makes paid source research persistent player knowledge rather than a log
+entry the player must later rediscover.
+
+Prototype disposition:
+**PASS. RETAIN THEORETICAL-REAGENT -> SOURCE-RESEARCH FLOW.**
+
+The prototype does not validate final UI layout, wording, exact Science costs,
+or runtime/save implementation ownership.
+
+Production remains BLOCKED.
