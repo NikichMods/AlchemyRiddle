@@ -130,3 +130,25 @@ Observe:
 - does the sequence feel too layered/bureaucratic.
 
 Do not change any rule/result after play starts.
+
+
+## Live checkpoint 1
+
+Player UX feedback:
+- the heading that says the target research 'gave' the clue set is misleading because no prior research action occurred; use neutral wording such as known target facts/observations rather than inventing an extra progress-bar action;
+- the explicit wording 'exactly one' was clear;
+- this 2x2 puzzle felt too complex for a tutorial because two of three clues are compound; provisional difficulty feels closer to medium;
+- field size, clue count/complexity, and later relation density should all contribute to difficulty.
+
+Player independently deduced the unique pair P1 + L2. This matches the precommitted answer.
+
+The player proposed a possible paid 'check combination' action. It is not added mid-prototype. Under the precommitted rules, unique deduction itself completes this investigation without spending Science.
+
+Transition:
+- deduction complete;
+- two-slot progression advances one step;
+- active deduction slot freed;
+- Science remains 6;
+- the formula is now known in the simulated recipe list;
+- L2 remains practically unmastered and its source is still unknown;
+- next available action: research the source of L2 for 2 Science.
