@@ -256,3 +256,45 @@ Resources after action:
 Protocol boundary:
 - present the raw 1/2 observation and current journal;
 - do not infer the remaining unique powder until the player states their own reasoning.
+
+
+## Live completion
+
+Player deduction:
+- from P1+L1 -> 1/2 and P1+L2 -> 0/2, the player established:
+  - L1 is correct;
+  - P1 is incorrect.
+- P2+L1 -> 1/2 then shows that P2 is also incorrect, because L1 already accounts for the single resonance point.
+- therefore the only remaining Powder is P3.
+
+Player identifies the unique target as:
+- **P3 Янтарная пудра + L1 Роса**
+
+This matches the precommitted hidden answer.
+
+No ceremonial synthesis is required because the formula is uniquely established.
+
+Resources:
+- paid tests used: **2 / 2**
+- free calibration observations: **1**
+- failed/guess synthesis attempts: **0**
+
+## Immediate player-experience result
+
+Positive:
+- the rule was immediately understandable and easy to imagine as a physical alchemical test;
+- the player naturally chose controlled one-variable changes without facilitator steering;
+- each observation had a locally legible consequence;
+- the final answer was deduced rather than guessed or synthesis-enumerated;
+- working-memory burden was low.
+
+Observed friction:
+- the player briefly lost track of which reagent changed / which symbol referred to which role, but recovered immediately;
+- this appears to be naming/state-tracking friction rather than rule opacity;
+- the solving strategy still has a coordinate-isolation character: once one role is established, the remaining role is resolved by testing candidates one at a time.
+
+Disposition pending explicit comparative evaluation against Candidate A:
+**C SURVIVES PLAYER-EXPERIENCE SCREEN; retain as a serious finalist, with coordinate-search/routinization risk still open.**
+
+Per the accepted plan, proceed to Candidate A rather than optimizing C further.
+Production remains BLOCKED.
