@@ -473,3 +473,42 @@ Goal-first rule:
 
 This prevents the mod from turning bounded puzzle distractors into arbitrary
 completionist busywork.
+
+
+## Difficulty curriculum: novelty and wave-shaped progression
+
+Accepted product direction after the 2026-10-06 external validation:
+
+- puzzle difficulty is **multidimensional**; field size or clue count alone must
+  not define the difficulty rank;
+- treat **concept novelty relative to the player's prior investigations** as an
+  explicit difficulty cost;
+- when a reasoning concept is first introduced, introduce at most one genuinely
+  new concept family in that investigation and deliberately reduce surrounding
+  load rather than making every difficulty dimension rise at once;
+- after a concept has been introduced, later investigations may practice it and
+  then combine it with other already-familiar concepts;
+- local progression should therefore be **wave-shaped**, not strictly monotonic:
+  introduce under reduced load -> practice -> combine -> occasional breather ->
+  next conceptual escalation;
+- late/boss difficulty should come primarily from richer interaction among
+  already-mastered ideas, not from maximizing field size, clue count, relation
+  density, unfamiliar reagent identities and experiment count simultaneously;
+- concepts learned in two-slot alchemy transfer into three-slot alchemy and
+  reduce their novelty cost there; the adjacent STABLE/INCOMPATIBLE relation
+  layer remains genuinely new and deserves its own low-load onboarding;
+- accumulated knowledge may legitimately shorten later puzzles. Do not hide
+  correct prior knowledge merely to preserve a nominal difficulty curve.
+
+Theoretical reagent-identity exposure remains a separate soft generation cost:
+prefer familiar identities when an equally good puzzle exists, especially
+during onboarding, but do not turn that preference into a hard readiness gate.
+
+Brute-force attractiveness is also a separate product criterion. A puzzle is
+not acceptable merely because its logical difficulty is well calibrated if
+blind sequential formula submission is strategically easier than reasoning.
+The working Science cost for submission is not by itself proof that brute force
+is adequately controlled.
+
+Exact numeric band thresholds, concept-familiarity counters, submission economy
+and curriculum beat frequency remain generator/balance questions.
