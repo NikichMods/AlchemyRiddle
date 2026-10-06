@@ -6816,3 +6816,50 @@ practical three-visible-property ceiling?**
 
 Do not introduce hierarchy/subtype semantics merely to preserve a preferred
 distribution unless their player-facing rule cost is justified.
+
+
+## Tag-taxonomy solution-space scan — 2026-10-06
+
+Status: **research framing accepted for further comparison; current property assignment remains unchanged**.
+
+Detailed evidence:
+`docs/research/TAG_TAXONOMY_SOLUTION_SPACE_2026-10-06.md`.
+
+The tag question is broader than “append Organ / Metal / Flower”.
+
+New evaluation dimensions:
+- **display value** and **deductive value** are separate;
+- a rare but intuitive property may be valuable on the card while receiving a
+  high clue-strength cost so it does not become a cheap near-identifier;
+- tags that directly reveal acquisition/process routes are disfavoured because
+  theoretical properties are visible before the accepted Science-funded
+  source-research step.
+
+Solution families to compare:
+1. additive intrinsic/material traits;
+2. specific-over-general flat refinement;
+3. hierarchical subtype semantics only as a higher-complexity fallback;
+4. reject arbitrary “show any three salient truths” unless a deterministic
+   player-legible rule exists;
+5. avoid provenance/process tags as the default taxonomy;
+6. avoid effect-family tags that merely restate reagent identity.
+
+Promising broad candidates after the full 35-reagent scan include:
+- Organ;
+- Metal versus broader Precious-material;
+- Flower;
+- aquatic;
+- fungus;
+- dark anatomical material.
+
+Organ remains the strongest systemic candidate but exposes the real design
+tension: naive global addition creates two four-property Life-family cards.
+
+Do not force the 1/2/3 histogram to a target ratio. The user's preference for
+roughly one-quarter simple / one-half core / one-quarter rich cards remains a
+soft presentation objective.
+
+Next bounded research:
+construct 2-3 concrete coherent taxonomies and compare vocabulary size,
+1/2/3/4 distribution, duplicate signatures, source-spoiler risk, rare-tag clue
+strength, and the existing sequence/reasoning-diversity screens.
