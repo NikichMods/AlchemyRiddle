@@ -16,6 +16,7 @@ OVERLAYS schema:
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import random
 import statistics
@@ -44,8 +45,24 @@ def apply_tags(model: base.Model, dark: set[str], organ: set[str]):
         tags[name].add("Dark")
     for name in organ:
         tags[name].add("Organ")
+
     frozen = {name: frozenset(values) for name, values in tags.items()}
-    return replace(model, tags=frozen)
+    vocabulary = tuple(sorted(set().union(*frozen.values())))
+    counts = {}
+    for triple in itertools.product(
+        model.powders, model.fluids, model.essences
+    ):
+        counts[triple] = tuple(
+            sum(tag in frozen[item] for item in triple)
+            for tag in vocabulary
+        )
+
+    return replace(
+        model,
+        tags=frozen,
+        vocabulary=vocabulary,
+        counts=counts,
+    )
 
 
 def sampled_pass_rates(model: base.Model, samples: int, seed: int):
