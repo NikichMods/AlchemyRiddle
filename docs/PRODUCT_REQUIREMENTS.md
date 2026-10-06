@@ -206,6 +206,30 @@ remain open. A promising default is to let distinct target products advance the
 broad difficulty ladder while alternative formula variants remain independently
 researchable without artificially consuming multiple progression steps.
 
+
+
+### Optional decorative targets do not reserve difficulty
+
+Accepted product direction:
+- optional decorative/remodelling alchemy targets are **side content**, not the
+  denominator of either arity's mandatory difficulty curve;
+- do not reserve late/boss difficulty for targets that a normal player may never
+  choose to pursue;
+- do not proactively populate the journal with every decorative target merely
+  because its formula exists;
+- create/surface such a lead when the player has a concrete visible decorative
+  or remodelling need;
+- if the player voluntarily starts one, generate it from the player's current
+  two-slot difficulty state rather than assigning a permanent "late paint"
+  difficulty;
+- whether optional completions advance the arity experience counter remains a
+  balance detail, but they must never be required to reach the top difficulty
+  bands.
+
+For the current ordinary corpus classification, eight decorative colour variants
+are in this optional group. White and black paint are not: they also have
+ordinary gameplay production uses.
+
 ### Goal-first research coexists with vanilla experimentation
 
 The preferred mod flow remains:
