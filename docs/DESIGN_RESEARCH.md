@@ -7193,3 +7193,27 @@ number of required AlchemyRiddle deductions further.
 
 This supports, but does not by itself numerically fix, the current early-max
 plateau direction around the first 6-7 investigations of each arity.
+
+
+## Semantic difficulty-step ordering accepted — 2026-10-06
+
+Status: **accepted progression structure; exact mature-plateau slot tuning remains flexible; production remains BLOCKED**.
+
+The user accepted the current semantic ordering of the ladders as a coherent fast progression rather than merely a rough pacing idea.
+
+Canonical semantic order:
+1. basic puzzle language / simple property intersection;
+2. introduce the small set of genuinely new logical or relation concepts under reduced load;
+3. first rich combination using familiar concepts;
+4. hard play with deeper interaction;
+5. early entry into the mature/MAX difficulty envelope;
+6. continue on a mature plateau using varied rich/hard/breathe cases;
+7. use selected boss/peak cases inside that plateau, with several guaranteed late boss-grade investigations for players who continue far enough.
+
+This ordering is accepted because each step adds a distinct cognitive role while the progression remains compact enough that a player who researches only a partial natural-demand subset can still experience the whole difficulty arc.
+
+Do not treat every numbered investigation after MAX as a new semantic level. Once the mature envelope is reached, exact MAX / BREATHE / BOSS placement is tuning within the plateau and may move without reopening the progression architecture.
+
+Two-slot basic exact-count facts remain part of the initial language rather than a separate teaching step. Reverse slot-direction implication remains ordinary implication wording, not a separate semantic rung.
+
+No runtime evidence is required for this design acceptance.
