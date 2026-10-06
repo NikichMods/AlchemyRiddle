@@ -293,3 +293,16 @@ Property richness is a soft candidate-field preference, not a hard requirement o
 MAX exposes the full mature envelope. BOSS is a selected peak inside that envelope, built from a few simultaneously high-cost dimensions and a short multi-stage proof. Do not introduce a wholly new logical operator for the first time only in a boss.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — reject pseudo-complex clue packages
+
+Accepted after review of the first matched RICH/HARD/MAX/BOSS examples:
+- do not stack same-slot unary exclusions as fake depth;
+- do not pair an implication with a clue that directly states its antecedent;
+- mathematical non-redundancy is not enough: mature difficulty requires meaningful cross-clue interaction;
+- prefer derived condition activation and clue chains/graphs in which applying one fact changes the usefulness or interpretation of another.
+
+The first matched HARD/MAX examples are explicitly not accepted as positive exemplars and should be revised before further calibration.
+
+Production remains BLOCKED. No runtime action is required.
