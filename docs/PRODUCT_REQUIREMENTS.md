@@ -456,3 +456,32 @@ Accepted product direction:
 Exact layout, status wording and navigation remain UI-design questions. Avoid
 unnecessary bureaucratic states such as a permanent "practical mastery still
 ahead" label when the durable route knowledge itself communicates what matters.
+
+
+### Unknown decoy reagents may appear, but source research remains goal-first
+
+Accepted product direction:
+- a deduction puzzle may include real in-game reagent identities that the player
+  has not yet practically mastered, **including decoy candidates** that are not
+  part of the hidden formula;
+- the generator should prefer already-known/mastered reagent identities where
+  practical, but it is not constrained to them when a richer field is needed;
+- exposing an unmastered decoy identity/name/properties inside the puzzle is an
+  accepted small future-content spoiler cost in exchange for preserving
+  difficulty progression and a world-grounded candidate field.
+
+However, merely appearing as a candidate does **not** automatically create a
+source-research task.
+
+Goal-first rule:
+- source/preparation research becomes actionable when the reagent is established
+  as **actually needed by a known/deduced formula or another concrete visible
+  gameplay need**;
+- decoy reagents that merely appeared in a puzzle do not populate an
+  "investigate everything you saw" task queue;
+- therefore the journal may maintain a focused section such as
+  **unknown substances required by known formulas**, rather than treating every
+  exposed candidate as an acquisition objective.
+
+This prevents the mod from turning bounded puzzle distractors into arbitrary
+completionist busywork.
