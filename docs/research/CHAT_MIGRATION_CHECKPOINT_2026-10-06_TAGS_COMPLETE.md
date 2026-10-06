@@ -208,3 +208,32 @@ Accepted continuation state:
   non-metronomic INTRODUCE / PRACTICE / COMBINE / BREATHE selection.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — curriculum pacing simplified
+
+The "smallest curriculum state machine" next step is now superseded.
+
+Accepted direction:
+- keep the two-slot and three-slot difficulty ladders independent;
+- hand-author their short progression at the **step role / load** level instead of
+  introducing a general curriculum state machine;
+- preserve free player target choice; the actual puzzle remains generated around
+  the selected target;
+- INTRODUCE / PRACTICE / COMBINE / BREATHE are descriptive roles, not a repeated
+  mandatory four-step cycle;
+- front-load most explicit teaching, then spend the majority of each ladder on
+  richer puzzles using familiar mechanics;
+- working pacing target: about 5-6 teaching-heavy steps then 10-11 rich steps in
+  the 16-step two-slot ladder; about 4-5 relation/topology teaching steps then
+  14-15 rich steps in the 19-step three-slot ladder;
+- BREATHE is occasional load relief rather than metronomic scheduling;
+- late/boss difficulty should primarily combine and deepen mastered mechanics;
+- exact per-step assignments remain open, and the earlier rough tables are not
+  canonical.
+
+Immediate next step:
+draft the compressed manual 16-step and 19-step ladders and inspect them as a
+design artifact before creating any new quantitative screener.
+
+Production remains BLOCKED. No runtime action is required.
