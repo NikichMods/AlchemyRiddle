@@ -6731,3 +6731,49 @@ compare current tags versus the optimistic enrichment on clue-family packages,
 elimination trajectories and decisive-signature repetition. Do not research real
 new world-grounded tags until that formal reasoning-variety screen shows a
 material gain.
+
+
+## Reasoning-diversity screen — 2026-10-06
+
+Status: **accepted bounded quantitative result; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/REASONING_DIVERSITY_SCREEN_2026-10-06.md`.
+
+The complete ordinary three-slot corpus was revalidated at:
+- 19 formula variants / 16 outputs;
+- 10 Powder-role / 9 Fluid-role / 9 Essence-role participants;
+- 19 PF stable edges / 18 FE stable edges;
+- 47 compatible chains.
+
+Main findings:
+- current tags already provide about **49 distinct major clue-family multisets**
+  per formula variant; optimistic extra properties do not materially increase
+  this;
+- therefore accidental runs of the same logical operator are a generator /
+  curriculum scheduling issue, not a tag-capacity issue;
+- an aggressive recency-aware selector can avoid even adjacent major-family and
+  slot-abstracted semantic overlap on the current corpus, proving substantial
+  anti-clumping headroom;
+- production must intentionally relax that anti-repeat behavior during PRACTICE
+  beats rather than pursuing absolute novelty.
+
+The optimistic enrichment does have a different measurable benefit:
+- slot-abstracted semantic package reserve rises by about **9.3%** on average;
+- structural elimination/branch/relation trajectory reserve rises by about
+  **10.3%** on average, with a **14.2%** median gain;
+- combined with the previous reduction in repeated exact tag signatures, this
+  supports the user's perception that additional well-chosen properties could
+  make different reagents feel less functionally interchangeable.
+
+Decision:
+- do not add tags to obtain logical-family diversity; current grammar already
+  has it;
+- a bounded search for real world-grounded additional property candidates is now
+  justified specifically for **card/signature differentiation and reasoning
+  texture**;
+- target shallow/duplicate Powder and Essence signatures first;
+- preserve the current practical ceiling of three visible properties per
+  reagent unless later evidence reopens it;
+- no real tag is accepted until it passes the same quantitative screens and a
+  small matched player-facing test.
