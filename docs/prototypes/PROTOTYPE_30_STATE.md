@@ -309,3 +309,44 @@ Resources after action:
 Protocol boundary:
 - present the raw 1/2 observation only;
 - do not infer which live hypotheses remain until the player states their own reasoning.
+
+
+## Live stop and evaluation
+
+After the first comparison (target vs A -> 1/2), the player correctly interpreted
+the result as "either P1 matches or L1 matches" and recognized that P3+L2 is
+eliminated. P2+L2 was already excluded before play because it is a known formula
+for another product, so the new comparison itself eliminates only P3+L2 among
+the four live hypotheses.
+
+The player then understood the basic comparison grammar, but immediately framed
+the likely continuation as another comparison followed by a possible two-way
+guess / synthesis check. More importantly, the player did not naturally inspect
+the reference library as an information-partition problem before acting and did
+not identify why one reference should be preferred over another.
+
+The player explicitly offered to stop because the loop was understood well
+enough to judge.
+
+Disposition: **STOP EARLY / B DOES NOT LEAD AS A STANDALONE TWO-SLOT CORE**.
+
+Primary evidence:
+- the player-facing mental model was initially hard to grasp;
+- the 3x2 candidate table, known products inside the field, and additional known
+  recipes outside the field created representation friction before any deduction;
+- "compare target sample with a known recipe" did not present a physically
+  intuitive interaction;
+- the first comparison choice was not hypothesis-driven; the player reported not
+  knowing where to start;
+- after one result, the deduction itself was understandable, but the loop looked
+  like repeated reference querying and eventual bounded guessing rather than a
+  compelling alchemical insight;
+- accumulated known recipes remain conceptually valuable, but this standalone
+  comparison wrapper asks the player to reason about abstract overlap partitions
+  across a recipe library.
+
+This result does not reject known recipes as an evidence source. It rejects the
+tested standalone B wrapper as a leading two-slot grammar.
+
+Per the accepted A/B/C plan, do not repair B further now. Move to Candidate C.
+Production remains BLOCKED.
