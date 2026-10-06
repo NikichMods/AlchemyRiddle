@@ -91,12 +91,20 @@ def sequence_stats(model: base.Model, bank_size: int, runs: int, seed: int):
     rng = random.Random(seed)
     banks = {}
     for formula in model.formulas:
-        banks[formula] = [
-            seq.random_good_surface(
+        good = []
+        seen = set()
+        while len(good) < bank_size:
+            surface = base.random_surface(
                 model, formula.triple, (3, 3, 3), rng
             )
-            for _ in range(bank_size)
-        ]
+            if surface in seen:
+                continue
+            seen.add(surface)
+            if base.surface_passes(
+                model, formula.triple, surface, 4
+            ):
+                good.append(surface)
+        banks[formula] = good
 
     rows = []
     records = [(formula, formula.triple) for formula in model.formulas]
