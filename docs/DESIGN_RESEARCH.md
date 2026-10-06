@@ -5386,3 +5386,166 @@ Proceed with the previously accepted order:
    state and formalize unified difficulty/generation policy.
 
 Production remains **BLOCKED**.
+
+
+## Independent arity progression model — accepted 2026-10-06
+
+Status: **accepted product/difficulty direction; production remains BLOCKED**.
+
+The post-A/B/C progression model is not a single campaign in which all
+two-slot puzzles must precede all three-slot puzzles.
+
+### Core model
+
+Treat ordinary two-slot and three-slot alchemy as **two independent difficulty
+ladders that can interleave in actual play**.
+
+Reason:
+- vanilla unlocks access to the two-slot capability before the three-slot
+  capability, but AlchemyRiddle's preferred entry point is a visible need for a
+  specific unknown product rather than blind workstation experimentation;
+- once both arities are available, the order in which concrete target needs
+  become relevant can be mixed and should not be forced into an artificial
+  global sequence;
+- therefore a player may encounter early-grade and later-grade investigations
+  from the two arities interleaved.
+
+### Two-slot ladder
+
+Candidate A is the selected core direction.
+
+Desired progression shape:
+1. first actual two-slot investigation: tutorial/onboarding-grade, preferably a
+   compact 2x2 field and simple individually partial facts;
+2. early cases: small fields, count/presence/absence and simple slot-local
+   constraints;
+3. middle cases: 2x3 / 3x2 and increasingly meaningful interaction among facts;
+4. later cases: richer composite forms such as XOR and implication, larger
+   bounded fields where justified, more demanding interaction among constraints;
+5. late/boss-grade cases: the hardest fair forms supported by the player's
+   current reagent knowledge, without turning the puzzle into long formal logic.
+
+The existing real-corpus screen supports this direction:
+- every ordinary two-slot recipe variant has a uniquely solvable 2x2 field under
+  the compact simple grammar;
+- 2x3 / 3x2 progressively benefit from composite relations;
+- 3x3 makes composite clue forms mechanically important.
+
+This means the first two-slot target does not need to be a specially hand-picked
+vanilla formula merely to obtain a tutorial-capable puzzle.
+
+### Three-slot ladder
+
+Three-slot alchemy has its own onboarding and escalation.
+
+Its first actual investigation should **not** inherit the player's full two-slot
+difficulty rank. Shared vocabulary may be familiar, but the added relational
+layer is new and deserves its own gentle introduction.
+
+Desired progression shape:
+1. tutorial-grade compact three-slot case introducing the richer arity without
+   immediately demanding the full bridge grammar;
+2. early cases combine familiar property constraints with a small amount of
+   adjacent relation knowledge;
+3. middle cases add more bridge topology, mixed orientation and richer logical
+   forms;
+4. later cases use composite clues, reverse-direction relations, residual-answer
+   topology and denser prior knowledge;
+5. late/boss-grade cases use the hardest fair combinations within the accepted
+   short-micro-deduction envelope.
+
+The existing progression-aware three-slot screen supports compact early cases:
+2x2x2 is serviceable across the great majority of representable progression
+states, with richer compact fields available as graceful fallbacks. The accepted
+Adaptive Knowledge-Aware architecture already allows clue/relation dosage to
+respond to current knowledge rather than requiring a fixed field size.
+
+### Cross-arity transfer
+
+The two ladders are separate but not unrelated.
+
+Two-slot should teach reusable concepts:
+- stable reagent properties/tags;
+- count/presence/absence constraints;
+- reading slot-local scope;
+- combining several individually partial facts;
+- later XOR/conditional forms.
+
+Three-slot reuses those concepts and adds:
+- adjacent STABLE / INCOMPATIBLE empirical relations;
+- bridge completion;
+- compatibility knowledge accumulated from prior chemistry;
+- more varied topology.
+
+Thus three-slot should feel like a **richer extension of the same reasoning
+language**, not "level 19" of one uninterrupted ladder and not an unrelated
+second minigame.
+
+### Difficulty ownership / chronology
+
+Difficulty should be based primarily on:
+- within-arity investigation history;
+- current legitimate reagent knowledge;
+- accumulated relation knowledge where applicable;
+- field shape and clue/relationship complexity.
+
+Do not assign difficulty solely from global story chronology or assume that a
+specific product always occupies a fixed difficulty rank.
+
+A strong implementation hypothesis is:
+- the first investigation actually **started** in each arity receives the
+  tutorial budget;
+- subsequent investigations advance that arity's difficulty budget;
+- an old journal lead that the player postpones does not need to remain
+  permanently tutorial-grade merely because it was encountered earlier.
+
+Exact persistence/counter semantics remain an implementation/design detail until
+the progression-specific generation policy is formalized.
+
+### Multi-formula products
+
+The accepted rule that vanilla formula variants are independently researchable
+remains unchanged.
+
+Open detail:
+- whether every alternative formula variant advances the arity difficulty
+  counter, or whether the broad ladder advances primarily by distinct target
+  products.
+
+Current preferred hypothesis:
+- count **distinct target products** for the broad progression curve;
+- let alternative formula variants remain independent research targets but avoid
+  allowing one multi-formula product to consume several major difficulty steps.
+
+Do not promote this preferred hypothesis to a hard production contract until the
+generation/progression pass verifies its consequences.
+
+### Vanilla experimentation remains available
+
+Goal-first investigation is the preferred route, not an artificial lock on
+vanilla alchemy.
+
+Preserve direct/free mixture attempts by default. AlchemyRiddle supplies a
+reasoned route from a known need to a recipe; it does not need to disable the
+existing opaque vanilla experimentation path unless later evidence reveals a
+specific conflict.
+
+### Next research step
+
+Do not perform detailed vanilla target-order archaeology yet.
+
+First define a **difficulty curriculum** for each arity in abstract generator
+terms:
+- field-size bands;
+- clue-family introduction order;
+- clue count / strength trajectory;
+- relation density/topology trajectory for three-slot;
+- tutorial and boss envelopes;
+- graceful fallback rules when current knowledge cannot support the nominal
+  difficulty.
+
+Only after that curriculum exists should progression-specific target availability
+be mapped deeply enough to test whether real play can realize the intended
+curves without recipe spoilers or artificial gates.
+
+Production remains **BLOCKED**.
