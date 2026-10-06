@@ -7242,3 +7242,21 @@ MAX versus BOSS:
 - genuinely new logical operators should be taught before boss play. A boss may use broader/nested forms only when they are legible extensions of already familiar concepts.
 
 This preserves the earlier rule that late challenge comes from mastery and interaction rather than surprise mechanics.
+
+
+## Anti-pseudocomplexity clue rule — 2026-10-06
+
+Status: **accepted design constraint; previous matched HARD/MAX examples require revision; production remains BLOCKED**.
+
+Player review exposed two failure modes in the first matched difficulty example:
+1. parallel unary exclusions such as `Fluid is not Mineral` + `Fluid is not Dark` merely remove two Fluids independently and feel like a dull checklist;
+2. `Powder is Dark` followed by `if Powder is Dark -> Fluid is Plant` is formally an implication but functionally just states `Fluid is Plant`, because the antecedent was already given directly.
+
+Decision:
+- reject these patterns as representative HARD/MAX/BOSS design;
+- prefer clues whose logical role changes after another clue is applied;
+- condition activation should usually be **derived**, not explicitly handed to the player by a companion literal;
+- prefer interaction graphs/chains where A + B establishes a fact that makes C useful, or where several clues constrain overlapping branches, over flat independent filters;
+- clue necessity alone is insufficient: a package can be mathematically non-redundant and still be experientially trivial.
+
+The existing matched artifact remains useful as negative evidence but must be revised before it is used as the positive model for mature difficulty.
