@@ -21,7 +21,7 @@ This file contains only project-specific additions, constraints, verified facts,
 
 ## Scope and current phase
 
-The project is in **design/research phase**. Do not treat any proposed UX or mechanics as accepted production architecture until the solution-space comparison is complete and the user selects a direction.
+The project is in **design/research phase**. The main solution-space comparison is complete and the selected puzzle cores are canonical in `docs/PRODUCT_REQUIREMENTS.md` / `docs/DESIGN_RESEARCH.md`. Production implementation is still BLOCKED until the remaining product/generator questions are closed and each runtime behavior change passes the DevRules READY/BLOCKED evidence gate. Do not reopen selected architecture merely because older research notes describe pre-selection candidates.
 
 Canonical product requirements and acceptance envelope: `docs/PRODUCT_REQUIREMENTS.md`.
 
