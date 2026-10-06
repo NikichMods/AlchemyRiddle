@@ -628,3 +628,37 @@ Warm/heat-colour grouping is rejected as a current tag direction.
 Organ remains the leading next systemic candidate. If a consistent Organ rule
 creates a small number of four-property cards, that is no longer a reason to
 discard it.
+
+
+### Difficulty ceiling should arrive early enough for partial-play players
+
+Accepted product refinement:
+- do not assume a player will complete every independently researchable formula
+  variant in either arity;
+- the difficulty curve should therefore expose the **full mature grammar and
+  maximum difficulty band early enough** that a player who researches only a
+  modest subset of available alchemy targets can still experience the complete
+  progression from tutorial to hard play;
+- reaching the maximum band does **not** mean every later puzzle must be a boss
+  puzzle: after the ceiling is unlocked, continue with a mature plateau that may
+  alternate normal hard puzzles, occasional lower-load breathers and explicit
+  boss/peak puzzles;
+- reserve several late investigations as guaranteed boss-grade peaks for
+  completion-oriented players, but do not reserve first exposure to the maximum
+  difficulty band for the very end of the 16-step / 19-step ladders;
+- simple exact-count clues are part of the basic shared grammar and do not need a
+  dedicated repeat/teaching step after the initial onboarding;
+- reverse slot-direction implication wording is the same implication mechanic
+  read from the opposite slot direction, not a separate logical rule that
+  automatically deserves its own lesson.
+
+Rationale from accepted progression evidence:
+- the two-slot core contains 10 distinct outputs / 16 formula variants, but only
+  8 of those outputs have strong downstream or direct story/system demand while
+  2 are player-driven direct-use consumables;
+- the three-slot core contains 16 distinct outputs / 19 variants, with 10 strong
+  downstream-use outputs and 6 player-driven direct-use consumables;
+- alternate formula variants remain independently researchable but are not a
+  safe assumption for ordinary natural-demand progression.
+
+Exact first-max-band and boss-step indices remain tuning work.
