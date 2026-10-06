@@ -237,3 +237,29 @@ draft the compressed manual 16-step and 19-step ladders and inspect them as a
 design artifact before creating any new quantitative screener.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — reach mature difficulty early
+
+Accepted refinement after reviewing the compressed ladder draft:
+- do not assume players will research all 16 two-slot or all 19 three-slot
+  formula variants;
+- expose the mature / maximum difficulty band early enough that a partial-play
+  player can experience the whole difficulty progression;
+- once the ceiling is reached, keep playing inside that mature band with waves:
+  ordinary hard puzzles, occasional breathers and selected boss peaks;
+- several final investigations may still be guaranteed boss-grade, but first
+  maximum-band exposure must occur earlier;
+- exact-count facts do not need their own repeated lesson;
+- reverse implication direction is not a separate rule and does not require a
+  dedicated introduction by default;
+- residual/off-bridge three-slot reasoning is an already-tested advanced use of
+  known relation semantics, not a wholly new interaction mechanic.
+
+The immediate next task is to draft:
+1. revised compressed 16-step and 19-step ladders with an early max plateau;
+2. one plausible mixed two-slot/three-slot player-experience sequence using the
+   existing P1-P4 progression skeleton, clearly marked illustrative rather than
+   canonical chronology.
+
+Production remains BLOCKED. No runtime action is required.
