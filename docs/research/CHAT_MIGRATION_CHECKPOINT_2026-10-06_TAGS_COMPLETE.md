@@ -16,8 +16,12 @@ The selected puzzle cores remain:
 - three-slot: adaptive knowledge-aware properties + adjacent
   STABLE/INCOMPATIBLE relations + constraints.
 
-The accepted wave-shaped curriculum remains:
-INTRODUCE -> PRACTICE -> COMBINE -> BREATHE.
+Curriculum roles remain useful descriptors, but there is no mandatory repeating
+INTRODUCE -> PRACTICE -> COMBINE -> BREATHE cycle. The accepted semantic
+progression is:
+
+basic language -> compact concept introductions -> rich combination -> hard ->
+early MAX -> mature plateau -> selected boss peaks.
 
 Generator anti-repeat must be curriculum-aware and separately consider:
 - reagent identity;
