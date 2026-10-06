@@ -216,3 +216,26 @@ vanilla experimentation. Preserve the player's ability to try mixtures directly
 unless later evidence establishes a concrete conflict. The mod should make a
 targeted deductive route available; it does not need to close the existing
 vanilla route merely because that route is opaque.
+
+
+### Recipe-variant difficulty is assigned at investigation start
+
+Accepted refinement:
+- an alternative formula variant does **not** inherit the difficulty that another
+  formula for the same output had when that earlier formula was researched;
+- every unresolved formula variant is an independent research puzzle;
+- when the player actually starts investigating that variant, its puzzle should
+  be generated from the **current within-arity difficulty state** and current
+  legitimate reagent knowledge;
+- therefore two valid formulas for the same product may legitimately be
+  encountered as easy and later/harder investigations. This is not considered a
+  product inconsistency: the difficulty belongs to the research puzzle and the
+  player's current expertise, not to an intrinsic fixed difficulty of the output;
+- once an investigation has started, its generated puzzle state should remain
+  stable rather than silently changing difficulty while the player postpones it.
+
+Exact counter advancement semantics remain to be finalized together with the
+difficulty generator. The leading hypothesis is that completing any genuinely
+independent formula-variant investigation should count as alchemical practice,
+rather than special-casing alternative formulas solely because they share an
+output.
