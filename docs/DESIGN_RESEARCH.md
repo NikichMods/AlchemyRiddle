@@ -5256,3 +5256,38 @@ Disposition:
 - proceed to Candidate C.
 
 Production remains **BLOCKED**.
+
+
+## Prototype 31 — two-slot controlled comparison result
+
+Status: **completed blind play; Candidate C rejected as the two-slot core**.
+
+Prototype 31 removed the representation problems seen in Prototype 30:
+- one Powder + one Liquid were physically mixed;
+- one simple aggregate 0/2, 1/2 or 2/2 resonance score was returned;
+- no known-recipe library, tag layer or off-field references were present;
+- one free calibration made the first paid action non-random.
+
+Positive evidence:
+- the rule was immediately clear and easy to imagine as an in-world laboratory
+  interaction;
+- the player independently used controlled one-factor substitutions;
+- local consequences were easy to reason about;
+- two paid tests after calibration were enough to identify the unique target.
+
+However, the final subjective evaluation was strongly negative:
+- interest approximately **1.5 / 5**;
+- the player reported little sense of having solved a puzzle;
+- the dominant experience was simply **trying candidates in sequence**;
+- coordinate isolation / candidate scanning remained the natural strategy.
+
+Disposition:
+- reject aggregate resonance as the primary two-slot grammar;
+- retain only the general evidence that controlled experiments can be clear and
+  immersive;
+- clarity alone does not satisfy the project if the reasoning still feels like
+  enumeration;
+- do not repair C before the A/B/C checkpoint;
+- proceed to Candidate A.
+
+Production remains **BLOCKED**.
