@@ -6057,3 +6057,35 @@ The scenario must exercise:
 Do not spend this prototype re-testing whether Candidate A itself is enjoyable.
 The evidence target is whether the multi-state transition is coherent, grounded
 and non-bureaucratic.
+
+
+### Formula submission is a paid oracle, not a free confirmation
+
+The player clarified an important economy/anti-bruteforce distinction.
+
+If the UI lets the player choose any candidate formula and press a check/confirm
+action, the result is information even when the player could in principle have
+deduced the answer first. A free binary oracle would permit mechanical
+enumeration of the bounded field.
+
+Accepted direction:
+- arbitrary formula submission has a non-zero cost;
+- Science is the leading resource;
+- 1 Science is a useful working prototype value, not accepted final balance;
+- success/failure should remain deliberately low-information unless a richer
+  result is part of the chosen puzzle grammar.
+
+This does not imply that every logically complete deduction needs an additional
+information step in an abstract sense. It means the production interaction
+itself must not offer free brute-force checking.
+
+### Success transition should preserve the deduction reward
+
+After a successful formula submission, present the states in sequence:
+1. success / formula discovered;
+2. formula becomes known in the normal recipe experience;
+3. evaluate practical mastery of each component;
+4. only then announce any new reagent-source research lead.
+
+This prevents an unmastered reagent from making a solved deduction feel like a
+partial failure.
