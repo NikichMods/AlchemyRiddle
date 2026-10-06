@@ -6089,3 +6089,71 @@ After a successful formula submission, present the states in sequence:
 
 This prevents an unmastered reagent from making a solved deduction feel like a
 partial failure.
+
+
+## Prototype 33 result — theoretical reagent -> source research flow
+
+Status: **PASS; retain the two-layer flow; production remains BLOCKED**.
+
+Prototype 33 tested the full conceptual transition rather than a new puzzle core:
+- visible target;
+- bounded deduction containing one real-named reagent not yet practically
+  mastered;
+- unique formula deduction;
+- formula becomes known immediately;
+- missing source knowledge is surfaced separately;
+- Science-funded source research reveals a practical route;
+- ordinary vanilla acquisition/Study/processing remains afterward.
+
+Player evaluation:
+- the flow felt natural and substantially clearer than vanilla;
+- no obvious conceptual mismatch or confusing state transition was found;
+- the additional structure felt like making real alchemical knowledge/progress
+  explicit, not like arbitrary mod configuration;
+- formula deduction still felt complete before the acquisition problem appeared.
+
+Accepted consequence:
+- retain the theoretical-reagent / practical-source split;
+- retain goal-first source research as a separate follow-on task;
+- retain immediate recipe knowledge after successful deduction;
+- source-research results belong in durable reagent reference data.
+
+### Reagent compendium becomes a durable knowledge surface
+
+Do not preserve paid source-research results only as chronological journal
+history.
+
+The player should have a unified reference over all known reagent identities,
+with at minimum:
+- reagent identity;
+- fixed property tags;
+- whether source/preparation knowledge is known;
+- known route when available;
+- source-research affordance when it is not known.
+
+This is a semantic/data requirement, not yet a final UI layout decision.
+
+### New boundary exposed by the theoretical-reagent model
+
+Before returning to difficulty-ladder formalization, resolve one narrow question:
+
+> May a target puzzle introduce not-yet-practically-mastered **decoy reagent
+> identities**, or only not-yet-mastered reagents that actually belong to the
+> hidden formula?
+
+Why this matters:
+- if only true unmastered components may be introduced theoretically, current
+  practical/known reagent breadth can still constrain distractor fields and
+  therefore achievable puzzle difficulty;
+- if bounded research may also introduce real but unmastered decoy identities,
+  the generator can support the intended field/difficulty independently of
+  practical catalog breadth, but each puzzle may reveal existence/properties of
+  substances the player did not otherwise need yet;
+- every theoretically exposed identity may also become durable compendium
+  knowledge, which changes progression breadth and potentially enables source
+  research for substances introduced only as puzzle candidates.
+
+This is now the smallest design decision that determines whether the previously
+planned knowledge-capacity/readiness measurement remains necessary.
+
+Do not resume broad readiness math until this boundary is decided.
