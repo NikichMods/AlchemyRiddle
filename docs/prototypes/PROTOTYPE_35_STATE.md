@@ -159,3 +159,31 @@ After resolution ask:
 - would the player accept this as the first three-slot puzzle.
 
 Stop after evaluation. Do not add another prototype in the same blind sequence.
+
+
+## Live checkpoint 1
+
+Player-facing comprehension before acting:
+- the three-slot rules still read as clear, clean and understandable despite the
+  player having seen earlier three-slot prototypes;
+- the player explicitly contrasted ordinary property/XOR/implication logic with
+  the adjacent STABLE/INCOMPATIBLE layer and judged the latter as comparatively
+  fresh and authorial rather than a generic assembled logic-puzzle vocabulary;
+- this is positive subjective design evidence, but not general-user usability
+  evidence; broader onboarding legibility remains to be validated beyond the
+  current experienced tester.
+
+Player deduction before any relation test:
+- fact 1 fixes Powder to **P2 Меловой порошок**;
+- fact 2 then fixes Liquid to **L1 Травяной раствор**, because Plant must occur
+  exactly once and neither Essence carries Plant;
+- only the Essence remains unresolved.
+
+Player independently chose **L1 + E1** as the first relation test.
+This is exactly the intended purposeful-test shape: the test targets the sole
+remaining uncertainty rather than scanning arbitrary pairs.
+
+Precommitted result:
+**L1 + E1 -> INCOMPATIBLE**.
+
+No rules or hidden state changed.
