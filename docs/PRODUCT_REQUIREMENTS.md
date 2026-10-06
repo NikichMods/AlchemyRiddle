@@ -294,3 +294,26 @@ gate" cases with a two-layer flow:
 
 It must be validated for clarity and spoiler behavior before becoming the
 production readiness contract.
+
+
+### One active deduction and visible progress
+
+Accepted product behavior:
+- only **one unsolved deduction investigation** may be active at a time;
+- the player may leave the research UI and return to normal gameplay freely;
+- returning later resumes the exact persisted puzzle state;
+- other discovered research targets remain visible in the journal but cannot start
+  a second deduction until the active one is theoretically solved;
+- once the deduction reaches a unique formula, the active deduction slot is
+  freed immediately even if practical reagent acquisition or final synthesis
+  remains outstanding;
+- the relevant two-slot or three-slot difficulty progression advances when the
+  deduction is completed, not when the target is eventually synthesized.
+
+Visible progression is desirable:
+- when feasible, expose the player's real progression through each arity's
+  difficulty ladder rather than hiding it entirely;
+- difficulty labels/bands, progress indicators, completed milestones or similar
+  UI may reinforce competence and long-term mastery;
+- presentation must reflect real system state rather than inventing fake
+  progression.
