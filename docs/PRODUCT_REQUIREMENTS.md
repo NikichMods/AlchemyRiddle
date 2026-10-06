@@ -382,3 +382,18 @@ Accepted UX preference:
 
 The technical pause mechanism remains BLOCKED pending exact host ownership and
 lifecycle evidence.
+
+### Paid formula submission prevents brute-force confirmation
+
+Accepted direction:
+- if the deduction UI lets the player submit an arbitrary candidate formula and receive success/failure feedback, that submission is an information-producing oracle and should not be free;
+- a free unlimited confirmation action would let the player brute-force candidate pairs/triples instead of reasoning;
+- Science is the leading resource for this formula-submission/check action;
+- a working prototype value of 1 Science per submission is plausible, but exact cost remains a balance question;
+- if the system can complete an investigation without exposing a reusable success/failure oracle, the anti-bruteforce requirement may be satisfied by another mechanism; the product requirement is the absence of free brute-force confirmation, not a mandatory fixed fee of exactly 1 Science.
+
+After a successful formula submission / completed deduction:
+- show an explicit success acknowledgement and the now-known formula;
+- then evaluate practical mastery of the formula's components separately;
+- if a required reagent's source/preparation is not known, surface a clear new research lead such as `source research available: <reagent>`;
+- the deduction slot is already free at this point, so the player may either start another target deduction or pursue the reagent-source research.
