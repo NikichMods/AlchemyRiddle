@@ -7217,3 +7217,28 @@ Do not treat every numbered investigation after MAX as a new semantic level. Onc
 Two-slot basic exact-count facts remain part of the initial language rather than a separate teaching step. Reverse slot-direction implication remains ordinary implication wording, not a separate semantic rung.
 
 No runtime evidence is required for this design acceptance.
+
+
+## Mature/MAX/BOSS differentiation — 2026-10-06
+
+Status: **accepted design direction; exact grammar/threshold calibration remains open; production remains BLOCKED**.
+
+Accepted differentiation axes:
+- property-card richness trends upward with difficulty at the field-selection level;
+- field size/branching may rise within the already screened ceilings;
+- individual clues become weaker while remaining useful;
+- interaction depth rises: more deductions depend on combining partial facts rather than applying one strong clue;
+- plausible near-miss candidates may be denser;
+- three-slot cases increase relation/topology load, mixed orientation and residual/off-bridge interaction;
+- selected higher-order clue forms may extend already learned count/XOR/implication grammar.
+
+Important limit:
+Do not force every late target ingredient to have many properties. Formula identity is fixed. Prefer richer candidate surfaces when available, but preserve serviceability for simple true components.
+
+MAX versus BOSS:
+- MAX means the full mature grammar and full accepted difficulty envelope are available;
+- BOSS is a peak instance inside that envelope, normally turning up only a few dimensions at once;
+- a boss should feel like a short multi-stage proof with mutually dependent clues/relations, not like a larger board or longer checklist;
+- genuinely new logical operators should be taught before boss play. A boss may use broader/nested forms only when they are legible extensions of already familiar concepts.
+
+This preserves the earlier rule that late challenge comes from mastery and interaction rather than surprise mechanics.
