@@ -187,3 +187,26 @@ Precommitted result:
 **L1 + E1 -> INCOMPATIBLE**.
 
 No rules or hidden state changed.
+
+
+## Live checkpoint 2
+
+After receiving the precommitted result
+**L1 Травяной раствор + E1 Летучая эссенция -> НЕСОВМЕСТИМО**,
+the player immediately concluded:
+
+**P2 Меловой порошок + L1 Травяной раствор + E2 Сухая эссенция**.
+
+This matches the precommitted hidden answer.
+
+Observed reasoning trajectory:
+1. familiar property facts fixed P2;
+2. the same familiar property logic fixed L1;
+3. one purposeful adjacent relation test eliminated E1;
+4. E2 became the unique remaining continuation.
+
+No brute-force scanning, arbitrary pair testing, or clarification of the new
+relation semantics was required.
+
+The tutorial has now reached deterministic resolution. A final subjective
+evaluation is still required before disposition is recorded.
