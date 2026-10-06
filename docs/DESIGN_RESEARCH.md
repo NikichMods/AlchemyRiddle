@@ -6584,3 +6584,54 @@ Prototype 34 is precommitted in
 `docs/prototypes/PROTOTYPE_34_STATE.md`.
 
 Do not start production implementation.
+
+
+## Onboarding calibration — Prototypes 34-35
+
+Status: **accepted player-facing evidence; production remains BLOCKED**.
+
+### Two-slot first tutorial
+
+Prototype 34 PASS:
+- 2x2;
+- two simple partial property facts;
+- no XOR or implication;
+- player solved by intersecting facts, not enumeration;
+- difficulty was very easy but acceptable for the first formal tutorial;
+- a small but real “I derived it” feeling remained.
+
+Refinement:
+- the first case may deliberately use only one visible property per reagent;
+- avoid accidental extra triviality such as placing the hidden answer in the
+  first row of both candidate lists;
+- richer property cards belong after the basic reading model is learned.
+
+### First three-slot tutorial
+
+Prototype 35 PASS:
+- familiar simple property reasoning first fixed Powder and Liquid;
+- exactly one new concept was introduced: adjacent pair
+  STABLE / INCOMPATIBLE testing;
+- the player independently chose a useful Liquid+Essence test;
+- the test felt purposeful rather than like candidate scanning;
+- difficulty was judged appropriate for the first three-slot puzzle;
+- the cross-arity transition felt natural rather than like a separate minigame.
+
+Accepted curriculum sequence:
+1. teach fixed-property intersection in a deliberately simple two-slot case;
+2. reuse the same reasoning language in the first three-slot case;
+3. add adjacent empirical compatibility as the one new reasoning layer;
+4. only later introduce richer composite clue forms, multiple relation anchors,
+   mixed orientation and residual topology.
+
+UX requirement derived from Prototype 35:
+- available relation-test actions must remain discoverable in the interface;
+- do not rely on the player remembering that the interaction exists;
+- visibility of legal actions must not become automatic strategic advice.
+
+Separate open research hypothesis:
+- current one-/two-/three-property reagent distribution may constrain late-puzzle
+  expressive depth;
+- do not change the accepted fixed-property model until a dedicated
+  information-gain screen shows that additional world-grounded properties
+  materially improve later puzzle quality.
