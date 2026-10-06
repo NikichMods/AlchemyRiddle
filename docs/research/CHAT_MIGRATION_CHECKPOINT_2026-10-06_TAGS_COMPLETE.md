@@ -323,3 +323,20 @@ Accepted globally for all puzzle bands:
 Future generator acceptance must not reduce puzzle quality to survivor counts, clue counts or difficulty bands alone.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — product coherence audit complete
+
+Broad audit result:
+- selected product architecture remains coherent and is not being reopened;
+- canonical stale-state contradictions were reconciled;
+- high-leverage product/design decisions are approximately 75-85% closed, not counting production implementation;
+- the highest-leverage unresolved generator question is **inference quality / intellectual interest**: can we reliably produce short clue structures in which facts change the usefulness of other facts rather than merely filtering candidates independently?
+
+Immediate next step:
+1. create revised positive matched examples that embody genuine cross-clue inference;
+2. blind-calibrate a minimal spread across easy/rich and mature/boss two-slot play plus one representative three-slot case;
+3. distill those results into an inference-quality acceptance contract;
+4. only then run a bounded real-corpus screen for serviceability of those accepted structures.
+
+Production remains BLOCKED. No runtime action is required.
