@@ -278,3 +278,26 @@ For each candidate report:
 Then choose at most one or two for a matched player-facing test.
 
 No runtime test is required.
+
+
+## User refinement after broad scan
+
+Accepted constraints/preferences:
+- **do not pursue hierarchical tag semantics**;
+- the desired next search is for broad cross-cutting vocabulary, not primarily
+  one-off tags that repair one duplicated signature;
+- a new **core** tag is much more attractive when it naturally applies to a
+  material fraction of the 35 reagents (rough working preference: about 6-12
+  identities, not 2-3);
+- rare 1-3 identity tags are not forbidden, but they should be exceptions and
+  should not be the main mechanism used to enrich the global 1/2/3-property
+  distribution;
+- tag labels should be **short**, with English UI length especially important
+  because the expected audience is predominantly English-speaking;
+- Russian research labels may remain explanatory during design, but candidate
+  production vocabulary should be judged on concise English naming as well;
+- continue to treat the user's desired 1/2/3 distribution as a soft visual
+  target, not a quota.
+
+This refinement weakens narrow candidates such as Metal/Precious as primary
+taxonomy additions unless they participate in a broader coherent package.
