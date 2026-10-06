@@ -219,3 +219,37 @@ from Prototype 31's coordinate scanning.
 
 Final subjective evaluation is still pending.
 Production remains BLOCKED.
+
+
+## Final player evaluation
+
+Subjective interest: **solid 4 / 5**.
+
+Player evaluation:
+- there was a definite feeling of having **solved** the recipe;
+- the clue set did read as a logic puzzle, but not as an excessively abstract or
+  detached one;
+- because the reasoning operated on plants, minerals, insects, corpses,
+  powders and liquids, it remained easy to imagine that these properties
+  genuinely matter to the resulting tincture;
+- overall reaction was positive: the prototype felt coherent and enjoyable.
+
+Final disposition:
+**A PASSES BLIND PLAY AND LEADS THE TWO-SLOT CHECKPOINT.**
+
+Why:
+- unlike B, the player-facing model was legible without reasoning over an
+  external recipe library or information partitions;
+- unlike C, the solve did not feel like candidate scanning / controlled
+  enumeration;
+- the player combined multiple partial facts and experienced the result as a
+  genuine deduction;
+- the property vocabulary provided enough world grounding that the explicit
+  logic did not feel excessively abstract.
+
+Candidate A now has both:
+1. corpus-wide capacity evidence from the real ordinary two-slot formula set;
+2. positive blind-player evidence at the intended 3x2 scale.
+
+Production remains BLOCKED pending the explicit post-comparison design decision
+and subsequent two-slot -> three-slot progression work.
