@@ -7141,3 +7141,55 @@ accepted P1-P4 progression buckets. Do not present that chronology as a fixed
 story order.
 
 No installed-runtime test is required.
+
+
+## Realistic target-exposure envelope — 2026-10-06
+
+Status: **derived interpretation of accepted corpus/progression evidence; not a fixed playthrough prediction; production remains BLOCKED**.
+
+Question:
+how much of the nominal 43-formula ordinary corpus is a normal player likely to
+encounter as genuinely motivated deduction content?
+
+Accepted corpus decomposition:
+- 34 ordinary picker-compatible output products;
+- 43 ordinary picker-compatible formula variants;
+- 18 outputs have strong natural demand:
+  - 16 downstream craft/material outputs;
+  - 2 direct story/system demands;
+- 8 outputs are player-driven direct-use consumables;
+- 8 outputs are optional decorative/remodelling colours;
+- formula multiplicity contributes 9 extra variants beyond one formula per
+  output (43 - 34 = 9):
+  - two-slot: 24 variants / 18 outputs -> 6 extra variants, across four
+    multi-formula outputs, maximum three formulas for one output;
+  - three-slot: 19 variants / 16 outputs -> 3 extra variants, across three
+    multi-formula outputs, maximum two formulas for one output.
+
+The eight decorative outputs account for eight two-slot variants and have already
+been excluded from the mandatory progression core. Therefore the 8 decorative
+variants and 9 alternative-formula variants are disjoint. Together they account
+for 17 / 43 ~= 39.5% of all ordinary formula-variant investigations.
+
+Useful player-experience envelopes:
+- strong natural-demand pool: up to 18 distinct product investigations before
+  accounting for recipes learned through vanilla channels or skipped systems;
+- broad non-completionist pool: up to 26 distinct non-decorative products if the
+  player also chooses all eight direct-use consumables;
+- completionist non-decorative pool: 35 formula-variant investigations when all
+  alternative formulas are also pursued;
+- total ordinary pool including decorative colours: 43 variants.
+
+Per arity, strong natural-demand outputs are especially important for pacing:
+- two-slot: 8 strongly motivated outputs out of 10 non-decorative core outputs;
+- three-slot: 10 strongly motivated outputs out of 16 non-decorative outputs.
+
+Design consequence:
+the project should not reserve first exposure to mature/max difficulty for the
+tail of the 16/19 variant ladders. A player who follows only naturally motivated
+product needs may plausibly see roughly eight two-slot and ten three-slot target
+products, and vanilla/scripted/random recipe discovery can reduce the actual
+number of required AlchemyRiddle deductions further.
+
+This supports, but does not by itself numerically fix, the current early-max
+plateau direction around the first 6-7 investigations of each arity.
