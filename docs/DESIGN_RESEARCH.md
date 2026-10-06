@@ -5549,3 +5549,122 @@ be mapped deeply enough to test whether real play can realize the intended
 curves without recipe spoilers or artificial gates.
 
 Production remains **BLOCKED**.
+
+
+## Variant difficulty and reagent-knowledge coupling — 2026-10-06
+
+Status: **variant assignment accepted; knowledge/readiness coupling becomes the next design constraint to resolve; production remains BLOCKED**.
+
+### Alternative formula variants do not carry an old product difficulty
+
+The earlier tentative idea of making the broad ladder advance primarily by
+distinct target products is no longer preferred as the main mental model.
+
+Accepted refinement:
+- every unresolved formula variant is an independent research puzzle;
+- its difficulty is selected when that specific investigation is **started**;
+- it uses the player's current within-arity difficulty state and current
+  legitimate reagent knowledge;
+- it does not inherit the difficulty of an earlier formula for the same output;
+- therefore the same output may legitimately have one easy formula investigation
+  and a later medium/hard formula investigation if those variants are researched
+  at different moments;
+- this is coherent because difficulty belongs to the current research challenge,
+  not to a permanent intrinsic difficulty label on the product;
+- once started, keep the generated puzzle stable across postponement/resumption.
+
+Remaining counter detail:
+- the leading hypothesis is to let any completed independent formula-variant
+  investigation contribute to within-arity experience because the player really
+  solved another puzzle;
+- do not hard-code that increment rule until the difficulty generator is defined,
+  because simultaneous/open investigations and graceful simplification may
+  affect the exact counter semantics.
+
+### Desired difficulty versus feasible difficulty
+
+The independent arity ladder should be treated as a **desired difficulty
+budget**, not as a hard requirement that forces the player to collect arbitrary
+decoy reagents.
+
+At investigation start distinguish:
+
+1. **Target representable and nominal difficulty feasible**
+   - generate the intended difficulty envelope.
+
+2. **Target representable but current reagent breadth cannot support the nominal
+   difficulty**
+   - generate the hardest good puzzle current legitimate knowledge supports;
+   - allow the realized difficulty to plateau or dip temporarily;
+   - do not require irrelevant reagent discoveries merely to pad the field.
+
+3. **Target not representable because at least one true component is still
+   outside legitimate alchemical knowledge**
+   - a hard readiness gate is legitimate;
+   - this is the real case where the player needs a non-spoiler path toward
+     broader reagent knowledge.
+
+This preserves the previously accepted readiness contract while allowing a
+long-term upward difficulty curve whenever real player knowledge supports it.
+
+### Why reagent acquisition is now the next constraint
+
+A nominal ladder such as 2x2 -> 2x3/3x2 -> 3x3 (or the analogous three-slot
+compact-to-rich sequence) implicitly requires a growing known-reagent catalog.
+
+Existing quantitative screens establish that larger legitimate known pools can
+support richer puzzles, but they do **not** establish one canonical Graveyard
+Keeper chronology:
+- the three-slot progression-variable screen conditioned on already-representable
+  hidden variants and sampled/enumed known pools;
+- it explicitly did not prove actual save-state chronology or the frequency of
+  missing true components.
+
+Existing progression research does establish a useful native onboarding fact:
+the early alchemy-introduction path contains a reagent-side route that can teach
+Study/decomposition/reagent identity before the first full target-formula
+deduction. This means the mod does not need to invent the basic concept of
+"broaden your alchemical material knowledge" from nothing.
+
+Later hard-gate guidance remains unresolved.
+
+### Guidance problem remains deliberately unsolved
+
+Do not yet choose a generic message such as "learn more ingredients" or a
+specific provenance/activity hint.
+
+The accepted triangle still applies:
+- exact missing reagent -> recipe spoiler;
+- arbitrary irrelevant list -> forced busywork;
+- completely generic "learn more" -> weak actionability.
+
+Candidate non-oracular leads remain:
+- broad source/provenance family;
+- relevant activity/progression direction;
+- bounded substance class containing the missing reagent;
+- natural re-check after later reagent discoveries.
+
+Before choosing among them, measure how often the hard gate can actually occur
+and how narrow each proposed lead would be.
+
+### Revised next research step
+
+Before polishing the abstract tutorial/early/mid/late/boss curriculum, run a
+bounded **knowledge-capacity / readiness coupling pass**.
+
+Questions:
+1. for each planned two-slot and three-slot difficulty envelope, what minimum
+   legitimate known-reagent breadth is actually required;
+2. how often a representable target can simply degrade to a smaller high-quality
+   puzzle rather than blocking;
+3. in representative real progression states, how often an unknown target is
+   unrepresentable because a true ingredient is still unknown;
+4. for those hard-gate cases, how much each non-spoiler guidance family narrows
+   the missing ingredient and how much irrelevant discovery work it can impose;
+5. whether the natural vanilla reagent-learning flow is likely to broaden the
+   catalog fast enough that explicit nudging is rare rather than a central loop.
+
+Do not expose exact vanilla formulas while reporting this work. Use aggregate
+counts, knowledge-state sizes, gate rates, and guidance ambiguity.
+
+Production remains **BLOCKED**.
