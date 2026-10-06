@@ -5961,3 +5961,99 @@ Least-complex next evidence:
 
 If the flow is immediately coherent in paper play, adopt the state machine and
 then return to difficulty/readiness quantification with the new semantics.
+
+## Post-deduction recipe knowledge and source-research decisions — 2026-10-06
+
+Status: **accepted product direction; runtime implementation remains BLOCKED**.
+
+### Real reagent identities may appear before practical mastery
+
+The player may see the actual in-game reagent name plus its accepted property
+tags inside a target deduction even if that reagent has never been physically
+produced on the current save.
+
+This is an intentional abstraction trade:
+- arbitrary symbols would preserve a purer epistemic model but feel detached;
+- real reagent identities/properties keep the deduction embedded in Graveyard
+  Keeper's world;
+- source/preparation knowledge remains separate and is not granted merely by
+  exposing the candidate.
+
+Therefore the old hard-gate model is no longer the default whenever a true
+component is physically unmastered.
+
+### Theoretical solve now writes recipe knowledge
+
+Once a concrete hidden formula variant is uniquely deduced, it should become
+known in the normal alchemy recipe-selection experience immediately.
+
+This intentionally supersedes the earlier conservative hypothesis that the
+journal could mark a formula theoretically solved while vanilla recipe knowledge
+waited for physical synthesis.
+
+Shared host evidence already proves a vanilla semantic precedent:
+`UnlockAlchemy` / `UnlockRandomAlchemy` can mark real mixed recipes as known via
+`completed_one_time_crafts` without the player physically crafting them first.
+
+Important implementation boundary:
+- use that as evidence that pre-craft recipe knowledge is host-consistent;
+- do **not** yet assume the exact safest writer/hook for AlchemyRiddle;
+- before production mutation, establish the exact known-recipe UI consumer,
+  persistent owner, rollback/save implications and native scripted-unlock seam.
+
+### Property tags should follow the reagent outside the puzzle
+
+The selected fixed properties are intended to be inspectable reagent knowledge,
+not temporary puzzle annotations.
+
+Once an identity is exposed/known, surface its tags in ordinary item/tooltips or
+another always-available native-adjacent reference path so the player does not
+need to memorize journal-only data.
+
+Exact tooltip composition/ownership is deferred to the production UI gate.
+
+### Source research uses the same goal-first grammar
+
+A reagent whose source/preparation route is unknown becomes an explicit journal
+research target.
+
+Conceptual action:
+`known needed reagent R -> Research source/preparation of R -> spend Science ->
+learn a concrete valid route -> obtain/study/process source through vanilla`.
+
+After formula deduction, naming the reagent is no longer a recipe spoiler, so
+source research may be substantially more direct than the earlier pre-deduction
+guidance candidates.
+
+Science is the leading fuel because it already belongs to Graveyard Keeper's
+research economy. Every spend should buy a concrete information-producing action.
+Exact costs and Faith interaction remain open.
+
+### Pause scope expands to the whole research interface
+
+Preferred product behavior now pauses world time while the alchemy research UI
+is open generally, including journal/reference browsing as well as deduction.
+
+This remains a technical BLOCKED item: existing evidence proves scaled-time
+ownership of world progression but not the final safe pause owner/lifecycle for
+the future AlchemyRiddle GUI.
+
+### Immediate next step
+
+Run one end-to-end fictional paper prototype whose purpose is **state-flow
+validation**, not another comparison of puzzle grammars.
+
+The scenario must exercise:
+1. visible goal -> start one active deduction;
+2. candidate field containing one real-named but practically unmastered reagent;
+3. successful deduction under the already-selected two-slot constraint grammar;
+4. immediate recipe-known transition after unique deduction;
+5. visible inability to physically craft because one reagent source is unknown;
+6. goal-first source research for that reagent using Science;
+7. resulting source/preparation knowledge while leaving physical Study/acquisition
+   as the player's next ordinary-world task;
+8. leave/resume semantics where relevant.
+
+Do not spend this prototype re-testing whether Candidate A itself is enjoyable.
+The evidence target is whether the multi-state transition is coherent, grounded
+and non-bureaucratic.
