@@ -148,3 +148,50 @@ Immediate side observation raised by the player:
 
 Prototype 34 still needs the player's subjective tutorial evaluation before
 disposition is recorded.
+
+
+## Final player evaluation
+
+Disposition: **PASS AS FIRST-TUTORIAL SHAPE, WITH PRESENTATION SIMPLIFICATION.**
+
+Player judgement:
+- the case was **very easy**, but acceptable specifically as the first
+  two-slot tutorial;
+- it still produced a small but real feeling of “I derived the answer myself”;
+- the player would accept this general shape as the first formal AlchemyRiddle
+  puzzle;
+- some of the perceived triviality was accidental: the hidden answer happened
+  to be the first Powder and first Liquid in the visible lists, so the player
+  barely needed to inspect the later entries.
+
+Important onboarding refinement:
+- the first tutorial does not need rich multi-tag reagent cards;
+- one visible property per reagent may be preferable for the very first case,
+  because the pedagogical goal is to teach **candidate columns + stable
+  properties + intersecting target facts**, not to demonstrate the full later
+  property density;
+- richer one/two/three-property reagent cards should appear after the basic
+  reading model is established.
+
+Do not infer that the first tutorial needs a larger field merely because 2x2 is
+easy. A 3x3 field could remain mechanically trivial while adding visual search
+load.
+
+Preferred next iteration for production/tutorial design:
+- keep the first tutorial deliberately simple;
+- avoid placing the intended answer in the first row/first row position;
+- use only the minimum visible properties needed to teach the rule;
+- let the following early puzzle, not the tutorial itself, introduce richer
+  cards or a larger field.
+
+The exact choice between a 2x2 and a slightly larger demonstration field remains
+a presentation calibration detail, not an architecture question.
+
+Separate open hypothesis retained:
+- later-puzzle expressive depth may benefit from reviewing the current
+  distribution of one-, two- and three-property reagents;
+- do not alter the accepted fixed-property model until a dedicated information-
+  gain screen shows that extra properties materially improve later puzzle
+  quality.
+
+Prototype 34 is complete.
