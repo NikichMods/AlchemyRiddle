@@ -394,7 +394,7 @@ def main():
             "two_slot_variants": len(two_raw["formulas"]),
             "two_slot_outputs": len({x["output"] for x in two_raw["formulas"]}),
             "three_slot_variants": len(three_model.formulas),
-            "three_slot_outputs": len({x.output for x in three_model.formulas),
+            "three_slot_outputs": len({x.output for x in three_model.formulas}),
             "optional_outputs_excluded_from_progression_core": len(optional_outputs),
             "core_two_slot_variants": len(core_two),
             "core_two_slot_outputs": len({x["output"] for x in core_two}),
