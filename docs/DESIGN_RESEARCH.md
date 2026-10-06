@@ -6893,3 +6893,54 @@ This materially changes the next taxonomy comparison:
 
 If Organ performs well, four-property Life-family cards are acceptable rather
 than an automatic failure.
+
+
+## Dark + Organ comparison — 2026-10-06
+
+Status: **bounded quantitative comparison complete; Dark accepted; Organ is a strong PASS candidate pending final product acceptance; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/DARK_ORGAN_COMPARISON_2026-10-06.md`.
+
+Compared:
+- A = current property model + accepted Dark;
+- B = A + global Organ for intestine / brain / heart source families, including
+  dark variants.
+
+Full 35-reagent distribution:
+- A: **12 / 13 / 10 / 0** cards with 1/2/3/4 properties;
+- B: **12 / 11 / 8 / 4**.
+
+Exact signatures:
+- A: **20 / 35** distinct;
+- B: **22 / 35** distinct.
+
+Per-form:
+- Powder **11/15 -> 12/15** distinct signatures;
+- Fluid **7/8 -> 8/8**;
+- Essence remains **6/8**;
+- Universal remains **4/4**.
+
+Full ordinary three-slot screen:
+- strong 3x3x3 surface mean rate **78.7% -> 81.7%**;
+- median **81.0% -> 85.1%**;
+- signature repetition under anti-repeat **2.640/6 -> 2.388/6**
+  (about 9.5% lower);
+- reagent-identity repetition effectively unchanged;
+- major clue-family diversity effectively unchanged;
+- slot-abstracted semantic clue-package reserve rises about **6.1%**;
+- structural reasoning-trajectory count is effectively neutral.
+
+Interpretation:
+- Organ does not add a new logical operator and does not need to;
+- it improves card/signature differentiation and semantic reasoning texture;
+- it creates four naturally dense four-property cards without harming strong
+  puzzle availability;
+- role prevalence makes some positive Organ clues strong, so clue generation
+  must score prevalence rather than treating every visible tag as equally cheap.
+
+Recommendation:
+**accept Organ** as the second broad property after Dark.
+
+Do not add a third broad tag merely to chase the old 25/50/25 soft histogram.
+Reassess the remaining actual deficiency only after Dark + Organ is accepted.
