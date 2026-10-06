@@ -7260,3 +7260,20 @@ Decision:
 - clue necessity alone is insufficient: a package can be mathematically non-redundant and still be experientially trivial.
 
 The existing matched artifact remains useful as negative evidence but must be revised before it is used as the positive model for mature difficulty.
+
+
+## Intellectual interest versus difficulty — 2026-10-06
+
+Status: **accepted cross-cutting design principle; production remains BLOCKED**.
+
+The anti-pseudocomplexity discussion is generalized beyond mature difficulty.
+
+Decision:
+- "interesting" and "difficult" are different dimensions;
+- intellectual interest comes from genuine inference: one fact changes what can be concluded from another, a hidden dependency becomes visible, or the player revises the live hypothesis structure in a meaningful way;
+- repetitive filtering, bookkeeping and serial exclusion can raise effort without raising interest;
+- this quality requirement applies to tutorial, early, rich, hard, max and boss puzzles alike;
+- difficulty progression may increase depth, density and working-memory demand, but every band should still prefer clue packages with a reasoned path and at least one worthwhile deductive turn over equally difficult flat filtering.
+
+Implication for future generator work:
+logical uniqueness and non-redundancy are necessary but insufficient. Candidate puzzles eventually need an additional qualitative/structural screen for inference quality or reasoning-path interest.
