@@ -177,3 +177,42 @@ meaningful recipe spoiler.
 
 Unknown variants may remain individually researchable until each is discovered.
 Exact labels and presentation remain open.
+
+
+### Independent difficulty ladders by recipe arity
+
+Accepted product direction:
+- difficulty progression is **not one global chronological ladder** from all
+  two-slot alchemy into all three-slot alchemy;
+- two-slot and three-slot investigations have **independent difficulty ladders**,
+  because actual Graveyard Keeper target needs can interleave after the relevant
+  workstation/technology capabilities are available;
+- the first investigation the player actually undertakes in each arity should be
+  eligible for an onboarding/tutorial-grade puzzle even if the other arity has
+  already been used several times;
+- later investigations within the same arity should generally grow richer and
+  harder, up to occasional late "boss"-grade cases, subject to real
+  progression/knowledge and corpus feasibility rather than a rigid fixed curve;
+- shared concepts should transfer across arities (stable reagent properties,
+  basic count/exclusion logic, later compound logical forms), while three-slot
+  alchemy remains a richer but partly independent grammar because it adds
+  adjacent STABLE/INCOMPATIBLE relation knowledge;
+- difficulty should be generated from the player's **within-arity investigation
+  history / current knowledge state**, not from a fixed assumption that every
+  two-slot target is encountered before every three-slot target.
+
+The exact counter semantics for products with multiple vanilla formula variants
+remain open. A promising default is to let distinct target products advance the
+broad difficulty ladder while alternative formula variants remain independently
+researchable without artificially consuming multiple progression steps.
+
+### Goal-first research coexists with vanilla experimentation
+
+The preferred mod flow remains:
+`visible need for unknown product -> journal target -> selected investigation`.
+
+This is additive to vanilla alchemy rather than a reason to prohibit free
+vanilla experimentation. Preserve the player's ability to try mixtures directly
+unless later evidence establishes a concrete conflict. The mod should make a
+targeted deductive route available; it does not need to close the existing
+vanilla route merely because that route is opaque.
