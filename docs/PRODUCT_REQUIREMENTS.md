@@ -689,3 +689,22 @@ Accepted product refinement:
 - HARD / MAX / BOSS candidates should therefore be scored not only for necessity/non-redundancy, but also for **interaction quality**: whether one clue changes how another clue can be used.
 
 This sharpens the existing rule that late difficulty comes from interaction among mastered ideas rather than from more text or more exclusions.
+
+
+### Intellectual interest is a separate quality axis from difficulty
+
+Accepted product refinement:
+- do not equate puzzle difficulty with puzzle quality;
+- evaluate **intellectual interest** separately from cognitive load or nominal difficulty;
+- a good investigation should preferably create at least one meaningful deduction where information changes the interpretation or usefulness of other information, producing an understandable "aha" step;
+- a puzzle may be easy yet intellectually satisfying if it contains a clean non-obvious inference;
+- a puzzle may be hard yet poor if it consists mainly of repetitive elimination, bookkeeping, many similar filters, or long candidate scanning;
+- this criterion applies to **all** investigations, not only HARD / MAX / BOSS cases;
+- later difficulty may increase interaction depth, but early/tutorial puzzles should also avoid mechanically flat clue packages when an equally clear inferential structure is available;
+- generator acceptance should therefore distinguish at least:
+  - difficulty / cognitive load;
+  - logical validity and uniqueness;
+  - brute-force attractiveness;
+  - intellectual-interest / inference quality.
+
+Exact automated scoring for intellectual interest remains open; do not collapse it into clue count or survivor count.
