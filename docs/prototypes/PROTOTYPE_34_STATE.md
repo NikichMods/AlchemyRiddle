@@ -120,3 +120,31 @@ Important interpretation:
   experienced tester.
 
 Stop after evaluation and record the result before starting Prototype 35.
+
+
+## Live checkpoint 1
+
+Player independently selected **P1 + L1**, matching the precommitted hidden answer.
+
+Observed reasoning:
+- fact 1 made P1 the only Powder candidate carrying the required Mineral;
+- with P1 selected, fact 2 required the Plant property to come from the Liquid;
+- L1 is the only Liquid carrying Plant;
+- therefore P1 + L1 is unique.
+
+The player did not enumerate all four pairs and did not require clarification of
+the clue semantics.
+
+Immediate side observation raised by the player:
+- reagents with only one fixed property/tag may be comparatively weak as
+  participants in later high-interaction puzzles;
+- consider whether some reagents should receive an additional AlchemyRiddle
+  property, or whether a new world-grounded property family could be derived
+  cheaply from existing game evidence;
+- this is an **open design hypothesis only**, not an accepted tag-model change;
+- explicitly evaluate the benefit against costs: artificial taxonomy,
+  learnability, presentation density, consistency, and risk of making the
+  property system feel mod-invented rather than discovered from the world.
+
+Prototype 34 still needs the player's subjective tutorial evaluation before
+disposition is recorded.
