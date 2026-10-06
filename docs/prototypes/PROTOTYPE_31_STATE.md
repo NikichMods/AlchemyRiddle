@@ -231,3 +231,28 @@ Resources after action:
 Protocol boundary:
 - present the raw 0/2 observation and journal;
 - do not infer the target formula or remaining candidates until the player states their own reasoning.
+
+
+## Live checkpoint 2 — controlled powder substitution
+
+Player inference from the first paid test:
+- calibration P1+L1 -> 1/2;
+- test P1+L2 -> 0/2;
+- because P1 was held constant and only the liquid changed, the player correctly concluded:
+  - L1 Роса is the correct liquid;
+  - P1 Серый пепел is not the correct powder.
+
+Player next action:
+- hold L1 Роса fixed;
+- change powder to P2 Костяная пыль;
+- resonance test P2 + L1.
+
+Deterministic outcome:
+- **1 / 2 resonance**.
+
+Resources after action:
+- test charges: **0 / 2**.
+
+Protocol boundary:
+- present the raw 1/2 observation and current journal;
+- do not infer the remaining unique powder until the player states their own reasoning.
