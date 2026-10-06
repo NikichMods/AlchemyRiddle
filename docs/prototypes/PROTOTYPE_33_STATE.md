@@ -152,3 +152,40 @@ Transition:
 - the formula is now known in the simulated recipe list;
 - L2 remains practically unmastered and its source is still unknown;
 - next available action: research the source of L2 for 2 Science.
+
+
+## Live checkpoint 2 — confirmation-cost clarification and source research action
+
+Player clarified that a paid formula-confirmation action is not ceremonial if the player may submit any candidate pair and receive success/failure feedback. A free success/failure oracle would permit brute-force clicking without reasoning.
+
+Design conclusion for future prototypes/production candidate:
+- formula submission / hypothesis confirmation should consume a non-zero research resource when it can be invoked on arbitrary candidate formulas;
+- Science is the leading resource;
+- prototype working value suggested by player: 1 Science per submitted formula;
+- exact cost and wrong-answer feedback semantics remain open;
+- do not retroactively alter Prototype 33's precommitted economy. In this run Science remained 6 after deduction.
+
+Player also specified the desired success transition:
+- explicit success acknowledgement;
+- show the now-known formula and its components;
+- compare component mastery/practical availability;
+- if any component is not practically mastered, surface a clear message such as `Доступно исследование способа получения: <reagent>`;
+- add the corresponding source-research action to the journal;
+- after theoretical solve, the player is free to start a new deduction or pursue reagent-source research.
+
+Player now chooses the precommitted action:
+- `Исследовать способ получения Токсичной жидкости`
+- cost: 2 Science.
+
+Deterministic result from precommit:
+- source material: Красный гриб;
+- preparation: перегонка в алхимическом кубе;
+- practical requirement remains: obtain and Study the source through normal vanilla research before the decomposition/preparation route can be used.
+
+State after source research:
+- Science: 4;
+- formula remains known;
+- source/preparation knowledge for Токсичная жидкость is now known;
+- no physical item granted;
+- no vanilla Study/decomposition completion granted;
+- next ordinary-world task: obtain Красный гриб -> Study -> process -> obtain Токсичная жидкость -> synthesize the known target formula.
