@@ -258,3 +258,46 @@ Resolution categories distinguish:
 - no bounded result.
 
 Exact formula rows remain private and are never printed.
+
+
+## Difficulty curriculum screen
+
+Run `difficulty_curriculum_screen.py` against the accepted private two-slot and
+three-slot corpora after the external difficulty-curriculum validation.
+
+Example:
+
+```
+python difficulty_curriculum_screen.py \
+  --two-slot private-two-slot.json \
+  --three-slot private-three-slot.json
+```
+
+The helper first asserts both accepted ordinary 1.407 baselines.
+
+Two-slot output separates the logical vocabulary into pedagogical tiers:
+- simple slot/count facts;
+- + XOR;
+- + forward positive implication;
+- + forward negative consequent;
+- + reverse implication.
+
+It screens 2x2, 2x3, 3x2 and 3x3 fields under compact and strict individual-clue
+strength policies. This distinguishes a clue family that is **needed for
+capacity** from one that can be introduced deliberately for variety or learning.
+
+The compact three-slot tutorial screen deliberately uses only simple property
+facts. A tutorial candidate must leave 2-3 first-stage Powder-Fluid branches and
+at least three concrete full hypotheses; one real INCOMPATIBLE adjacent-pair
+test must then reduce the full hypothesis set to at most two. This prevents a
+relation mechanic from passing the screen when it is merely decorative.
+
+The helper reports aggregate coverage only. Exact formulas remain private.
+
+Important limits:
+- the helper does not know a specific save's currently familiar reagent
+  identities, so identity-exposure budgeting remains a later progression-state
+  screen;
+- the relation-test count is structural, not a prediction of the player's exact
+  chosen strategy;
+- Science economy and formula-submission brute-force pressure are not modeled.
