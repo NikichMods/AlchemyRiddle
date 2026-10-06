@@ -6967,3 +6967,21 @@ Decision:
   clusters or to improve the visual histogram;
 - reopen only for a concrete play/sequence deficiency or an independently strong
   world-grounded property.
+
+
+## Chat migration recovery point — 2026-10-06 property model complete
+
+Canonical recovery checkpoint:
+`docs/research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md`.
+
+Use that checkpoint to resolve older intermediate wording.
+
+Current state:
+- Dark + Organ is the accepted property model for continued design;
+- property-taxonomy optimization is closed for now;
+- residual same-role duplicate clusters do not justify another tag search;
+- production remains BLOCKED;
+- next work returns to puzzle generator / progression design and should identify
+  the highest-leverage unresolved generator parameter before any implementation.
+
+No runtime test is required at this transition.
