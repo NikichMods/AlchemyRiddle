@@ -7040,3 +7040,49 @@ state machine**:
   rigid four-step metronome.
 
 No installed-runtime test is required for this checkpoint.
+
+
+## Curriculum pacing simplification — 2026-10-06
+
+Status: **accepted design direction; exact 16/19 step maps remain open; production remains BLOCKED**.
+
+The previous "smallest curriculum state machine" question is superseded by a
+simpler direction: hand-author the short two-slot and three-slot progression
+ladders at the step-role/load level, while still generating each actual puzzle
+around the player's freely selected target.
+
+Rationale:
+- the mandatory corpus is only 16 two-slot and 19 three-slot investigations;
+- curriculum serviceability is already broad enough that target selection does
+  not normally need a scheduler;
+- repeating a full INTRODUCE / PRACTICE / COMBINE / BREATHE cycle after each
+  concept would consume too much of the available progression;
+- manual step roles are simpler to tune and test without reducing procedural
+  puzzle generation.
+
+Accepted pacing:
+- concentrate explicit teaching near the front of each independent arity ladder;
+- use roughly the first 30-35% for most onboarding and the remaining 65-70% for
+  richer play using familiar mechanics;
+- current working scale is about 5-6 teaching-heavy steps plus 10-11 rich steps
+  for two-slot, and about 4-5 relation/topology teaching steps plus 14-15 rich
+  steps for three-slot;
+- INTRODUCE / PRACTICE / COMBINE / BREATHE are descriptive roles, not a mandatory
+  repeated cycle;
+- BREATHE is occasional load relief;
+- late/boss difficulty should deepen combinations rather than keep introducing
+  rules;
+- reverse/reference-direction logic may be folded into familiar implication
+  play instead of receiving a dedicated lesson if later prototype evidence
+  supports that simpler treatment.
+
+The earlier rough 16-step and 19-step tables are brainstorming rather than
+canonical assignments.
+
+Next bounded design task:
+draft the compressed manual 16-step and 19-step ladders, then inspect whether the
+early teaching slots can carry the required concepts cleanly while the majority
+of each ladder forms a varied rich-play tail. Do not add another corpus screener
+unless that draft exposes a concrete structural uncertainty.
+
+No installed-runtime test is required.
