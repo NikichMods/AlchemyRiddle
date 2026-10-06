@@ -184,3 +184,27 @@ Before new implementation or deep mechanism-specific research, perform the norma
 DevRules solution-space / evidence checkpoint.
 
 No user runtime action is needed at migration.
+
+
+## Post-migration continuation — curriculum serviceability closed
+
+The next-step wording above has now been completed and is superseded by:
+
+`docs/research/CURRICULUM_SERVICEABILITY_SCREEN_2026-10-06.md`.
+
+Accepted continuation state:
+- free player target choice is structurally compatible with the tested curriculum
+  at formula-identity level;
+- all 16 mandatory two-slot variants can carry the tested low-load BREATHE / XOR
+  / forward implication / negative-consequent implication / reverse-direction
+  beats under the accepted compact envelope;
+- all 19 ordinary three-slot variants can carry the accepted first-relation
+  tutorial shape;
+- do not add a normal scheduler layer that reserves or selects target recipes for
+  curriculum reasons;
+- preserve adaptive fallback only for actual dynamic-state infeasibility;
+- the next highest-leverage generator question is the smallest curriculum state
+  machine: per-arity state, cross-arity concept transfer, mastery transition and
+  non-metronomic INTRODUCE / PRACTICE / COMBINE / BREATHE selection.
+
+Production remains BLOCKED. No runtime action is required.
