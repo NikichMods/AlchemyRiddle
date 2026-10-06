@@ -187,3 +187,35 @@ The campaign-level sequence is therefore the primary new criterion added by this
 research plan.
 
 No runtime test is required.
+
+
+## Preflight: property-depth bottleneck is slot-asymmetric
+
+Before any sequence simulation, the accepted 35-reagent property assignment was
+recounted by native reagent form.
+
+| Form | Reagents | 1 property | 2 properties | 3 properties | Distinct exact signatures |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Powder | 15 | **9** | 5 | 1 | **9** |
+| Fluid | 8 | **1** | 4 | 3 | **7** |
+| Essence | 8 | **3** | 4 | 1 | **5** |
+| Universal | 4 | **3** | 1 | 0 | **4** |
+
+Exact-signature repetition is also uneven:
+- Powder has repeated signatures at multiplicities 3, 3, 2 and 2;
+- Fluid has only one duplicated signature, with multiplicity 2;
+- Essence has one signature repeated 3 times and another repeated 2 times;
+- Universal identities all have distinct signatures.
+
+Interpretation:
+- the potential expressive-depth problem is **not** simply “16 of 35 reagents
+  are one-property”;
+- Powder is the clearest shallow/repetitive form;
+- Fluid is already information-rich under the current model;
+- Essence has moderate depth but significant signature duplication;
+- a future enrichment, if justified, should be selective rather than
+  mechanically adding properties to every one-property reagent.
+
+This preflight does not prove that any enrichment is needed. It narrows the
+sequence screen to test whether Powder/Essence signature concentration actually
+forces repeated identities or weak late-puzzle fields.
