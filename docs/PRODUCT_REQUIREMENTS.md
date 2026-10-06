@@ -397,3 +397,40 @@ After a successful formula submission / completed deduction:
 - then evaluate practical mastery of the formula's components separately;
 - if a required reagent's source/preparation is not known, surface a clear new research lead such as `source research available: <reagent>`;
 - the deduction slot is already free at this point, so the player may either start another target deduction or pursue the reagent-source research.
+
+
+### Paid formula submission prevents brute-force confirmation
+
+Accepted direction:
+- if the player may submit an arbitrary candidate formula and receive a
+  success/failure verdict, that action is an information-producing oracle rather
+  than a ceremonial confirmation;
+- such formula submission should therefore have a non-zero research cost so that
+  repeatedly clicking through all candidate formulas is not the dominant
+  strategy;
+- **Science** is the leading native resource for this cost;
+- a working prototype value is **1 Science per submitted formula**, but exact
+  production cost remains a balance decision;
+- a logically unique answer may still be submitted through the same interaction
+  for consistency, but the reason for the cost is anti-bruteforce pressure, not
+  forcing uncertainty after deduction.
+
+Exact wrong-answer feedback must not reveal more information than the agreed
+success/failure semantics unless that information is deliberately part of the
+puzzle design.
+
+### Deduction success is acknowledged before practical blockers
+
+Accepted UX sequence when a submitted formula succeeds:
+1. explicitly acknowledge success;
+2. show the now-known target formula and its components;
+3. record/unlock that formula as known recipe knowledge;
+4. only then evaluate whether each required reagent is practically mastered;
+5. for any missing practical route, surface a separate new lead such as
+   **"Source research available: <reagent>"**;
+6. the player is free to start another deduction or pursue the reagent-source
+   lead.
+
+Do not merge "you solved the formula" and "you still cannot obtain one reagent"
+into one ambiguous failure-like message. The deduction should feel complete
+before the next practical problem is introduced.
