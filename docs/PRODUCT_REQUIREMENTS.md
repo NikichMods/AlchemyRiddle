@@ -676,3 +676,16 @@ Accepted product refinement:
 - do not equate boss difficulty with more clicks, more clues, larger-than-screened fields or compatibility-matrix filling.
 
 Exact mature/boss clue grammar and thresholds remain design/prototype work.
+
+
+### Mature clue packages must avoid pseudo-complexity
+
+Accepted product refinement:
+- do not manufacture difficulty by stacking several near-identical unary filters on the same slot (for example, several separate clues that each merely exclude one Fluid property/candidate);
+- a mature clue package should create **cross-clue deductions**, not just a checklist of independent eliminations;
+- an implication should not be paired with another clue that directly fixes its antecedent true, because that collapses the implication into a disguised direct consequent;
+- conditional clues are strongest when the antecedent becomes relevant only after combining other partial facts, so the player must derive when/how the condition applies;
+- repeated clue families are acceptable only when they participate in materially different branches or interactions, not when wording changes while logical work stays the same;
+- HARD / MAX / BOSS candidates should therefore be scored not only for necessity/non-redundancy, but also for **interaction quality**: whether one clue changes how another clue can be used.
+
+This sharpens the existing rule that late difficulty comes from interaction among mastered ideas rather than from more text or more exclusions.
