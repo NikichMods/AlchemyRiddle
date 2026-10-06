@@ -5668,3 +5668,193 @@ Do not expose exact vanilla formulas while reporting this work. Use aggregate
 counts, knowledge-state sizes, gate rates, and guidance ambiguity.
 
 Production remains **BLOCKED**.
+
+## Theoretical formula vs practical mastery — architecture pivot hypothesis
+
+Status: **new leading hypothesis; not yet production-accepted; production remains BLOCKED**.
+
+The previous readiness framing assumed that every true recipe component had to
+already belong to the player's legitimately mastered reagent set before the
+target puzzle could begin. The user proposed a materially different model:
+
+> the player may be able to reason about a reagent as a theoretical alchemical
+> substance before knowing how to produce/decompose it in practice.
+
+This is a promising architecture pivot because it may preserve the intended
+difficulty ladder without forcing arbitrary reagent-collection busywork.
+
+### Three distinct knowledge states
+
+Treat the following as separate unless later evidence supports collapsing them:
+
+1. **Theoretical reagent identity**
+   - the research system may name the reagent and expose the stable properties
+     needed for a bounded deduction puzzle;
+   - this is enough for the reagent to appear as a candidate in the research UI.
+
+2. **Practical source / preparation knowledge**
+   - the player knows at least one legitimate source/preparation route for that
+     reagent;
+   - this may be learned through target-directed reagent research.
+
+3. **Vanilla practical unlock / possession**
+   - the relevant source has actually been studied/unlocked/processed under the
+     preserved vanilla progression rules and the player can obtain the reagent.
+
+The mod must not silently convert state 1 into state 3.
+
+### Resulting target flow
+
+A target can therefore proceed:
+
+`visible need for X -> start X investigation -> deduce a theoretical formula`
+`-> if all components are practically mastered: synthesize`
+`-> otherwise create missing-reagent acquisition lead(s)`
+`-> research source/preparation -> perform preserved vanilla Study/decomposition/acquisition work`
+`-> synthesize X -> native formula completion confirms the practical recipe`.
+
+This separates **"I know what should work"** from **"I can make it work"** in a
+physically legible way rather than merely blocking the puzzle.
+
+### Relationship to the earlier final-craft rule
+
+Do not preserve uncertainty merely to force a ceremonial craft.
+
+The deduction layer may explicitly mark a formula as **theoretically solved**
+once only one formula remains.
+
+However, under this hypothesis, theoretical solution and native recipe
+confirmation are separate:
+- the journal may record the deduced formula;
+- the game does not need to mark the vanilla mixed recipe completed/unlocked
+  until the player actually synthesizes it;
+- if a component route is still unknown, the final craft is not ceremonial at
+  all: obtaining the missing substance is a genuine practical second stage.
+
+This reconciles the earlier "unique deduction may resolve without one more logic
+step" rule with preservation of vanilla practical progression.
+
+### Reagent-source research already has design lineage
+
+Earlier design work already identified a compatible goal-first reagent flow:
+
+`need reagent R -> research R -> learn authored source/preparation route -> obtain/study/process source`.
+
+The safest initial variant remains **informational / hybrid**:
+- research may reveal or narrow a valid source route;
+- vanilla Study/decomposition unlocking remains required for practical use;
+- do not directly grant decomposition knowledge merely because the target puzzle
+  named the reagent.
+
+Possible research costs include native research resources such as Science,
+Faith, paper/ink or bounded work time, but exact economy is still open.
+
+### Why this changes the readiness question
+
+If bounded target puzzles may include theoretical-but-unmastered reagents, then
+"true component not yet physically known" is no longer automatically a reason to
+block the deduction puzzle.
+
+The hard-gate problem becomes narrower:
+- can the research system legitimately introduce the needed theoretical
+  substance identity/property vocabulary without over-spoiling future content;
+- can the resulting acquisition lead be actionable without degenerating into
+  broad irrelevant grind.
+
+Therefore pause the planned large readiness-frequency measurement until this
+two-layer model is validated experientially.
+
+### Difficulty preservation
+
+This model directly addresses the concern that graceful simplification can rob
+the player of visible difficulty progression.
+
+A nominal medium/hard investigation need not be downgraded merely because one
+candidate substance has not yet been practically mastered: the candidate can
+still exist at the theoretical research layer.
+
+A separate visible difficulty/rank presentation may still be useful so the
+player can understand the two independent arity ladders and anticipate growing
+challenge. Exact labels/bands remain open.
+
+### Investigation continuity / suspension
+
+The user explicitly wants a started short puzzle to be interruptible despite the
+goal of making each investigation compact.
+
+Accepted product behavior:
+- leaving the research screen does not abandon/regenerate the puzzle;
+- its full generated state persists;
+- resuming reconstructs the exact same logical state from the journal.
+
+A strong UX hypothesis is to allow multiple journal projects to remain
+independently suspended rather than forcing one global active puzzle, because a
+player may need to leave one line of work for normal Graveyard Keeper activity.
+The exact persistence owner/schema is not yet selected and requires a production
+evidence gate before implementation.
+
+### Game-time pause while reasoning
+
+New preferred UX hypothesis:
+- while the dedicated deduction/research puzzle UI is open, normal world time
+  should be paused so the player is not penalized for thinking/reading;
+- show a small explicit "time paused" affordance so the player does not have to
+  wonder whether an NPC/day timer is advancing;
+- world time resumes when returning to ordinary gameplay or leaving to acquire
+  resources.
+
+Existing shared runtime evidence proves that Graveyard Keeper world progression
+is driven from scaled time and that mods can alter timing in bounded contexts,
+but it does **not** yet prove the correct native pause owner/lifecycle for this
+new UI. Treat the product preference as plausible and the technical mechanism as
+**BLOCKED pending exact owner/final-writer inspection**.
+
+### Science as research fuel
+
+Replacing abstract prototype-only Research Charges with Graveyard Keeper's
+existing **Science** research resource is a strong economy hypothesis:
+- it is already associated with research;
+- paper already participates in the player's familiar research loop;
+- spending Science on alchemical tests would make the prototype resource legible
+  without inventing a new currency;
+- exhaustion naturally creates a reason to leave, obtain more research capacity,
+  and resume the exact persisted investigation.
+
+Do not accept exact costs or even Science as the sole production currency yet.
+Verify the native owner, spending seam, economy scale and interaction with Faith
+before production mutation.
+
+### Formula-variant progression refinement
+
+The user explicitly confirmed that every independently completed formula-variant
+investigation should normally count as genuine within-arity practice.
+
+Therefore do not preserve one permanent difficulty label for an output:
+- a later variant of the same product receives the current difficulty when that
+  variant's investigation starts;
+- completion normally advances the same arity ladder;
+- the generated puzzle then remains frozen if suspended.
+
+### Revised immediate next step
+
+Do **not** run the previously planned broad readiness-frequency screen first.
+
+Run a focused architecture/UX comparison around the new two-layer model:
+
+1. a bounded target puzzle that includes at least one theoretical reagent whose
+   production route is not yet known;
+2. let the player deduce the complete formula without being blocked;
+3. transition the solved formula into a clearly separate practical
+   reagent-acquisition lead;
+4. test whether the distinction **"formula deduced / ingredient not yet mastered / recipe not yet confirmed"**
+   feels natural or cumbersome;
+5. test one source-guidance form that is useful but not necessarily exact;
+6. only if this flow survives, return to quantitative progression work and
+   measure how often practical acquisition leads occur and how much guidance
+   they require.
+
+Use fictional/isomorphic substances for the first paper test unless real
+progression evidence is specifically required. No new runtime probe is justified
+for this UX question.
+
+Production remains **BLOCKED**.
