@@ -6462,3 +6462,82 @@ Do not yet commit to exact UI labels or exact Science prices while defining the
 curriculum.
 
 No runtime test is required from the user at this checkpoint.
+
+
+## Difficulty curriculum external validation accepted — 2026-10-06
+
+Status: **accepted design refinement; production remains BLOCKED**.
+
+The external validation documented in
+`docs/research/DIFFICULTY_CURRICULUM_EXTERNAL_VALIDATION_2026-10-06.md`
+was reviewed and accepted by the user.
+
+### Accepted refinements
+
+The post-Prototype-33 difficulty model remains valid, with three explicit
+refinements:
+
+1. **Concept novelty is a first-class difficulty cost.**
+   A new reasoning concept should normally be introduced alone, while field
+   size, clue interaction, relation topology and identity exposure are kept
+   below the normal ceiling for that progression band.
+
+2. **Difficulty is locally wave-shaped rather than monotonically increasing on
+   every axis.**
+   Use an introduce -> practice -> combine -> occasional breather rhythm.
+   Later challenge should come mainly from interaction among already-familiar
+   concepts.
+
+3. **Brute-force attractiveness is separate from nominal puzzle difficulty.**
+   A paid formula-submission oracle still requires explicit economy/information
+   analysis. The working 1-Science value is not accepted proof that brute force
+   is controlled.
+
+Cross-arity consequence:
+- two-slot investigations teach the shared property/constraint language;
+- the first three-slot investigation should reuse that familiar language under
+  reduced load and introduce the adjacent STABLE/INCOMPATIBLE relation concept
+  as the primary new idea;
+- later three-slot cases may combine relation topology with the already learned
+  logical grammar.
+
+Do not hide earned relation knowledge merely to preserve a nominal difficulty
+curve. Expertise-resolved cases remain valid mastery outcomes.
+
+### Working formal generator envelopes
+
+The first formal translation of these accepted principles is now canonical as a
+**working research model**, not final balance:
+
+`docs/research/DIFFICULTY_CURRICULUM_ENVELOPES_2026-10-06.md`.
+
+It defines:
+- tutorial / early / medium / late / boss envelopes for both arities;
+- curriculum beat types: INTRODUCE / PRACTICE / COMBINE / BREATHE;
+- field-size preferences and fallbacks;
+- clue-family introduction order;
+- clue-interaction expectations;
+- three-slot relation/topology progression;
+- meaningful experiment expectations;
+- theoretical-identity exposure preferences;
+- brute-force rejection criteria.
+
+Exact numeric thresholds remain provisional until corpus screening and focused
+blind calibration.
+
+### Exact next step
+
+Perform a quantitative envelope screen against the concealed ordinary corpus
+and accepted fixed-property / compatibility model.
+
+Measure separately for two-slot and three-slot:
+- per-band corpus coverage;
+- preferred versus fallback field-shape frequency;
+- clue-family availability under the one-new-concept rule;
+- interaction depth and redundancy;
+- expected meaningful relation-test demand in three-slot;
+- theoretical identity exposure required to hit each band;
+- expertise-resolved frequency;
+- brute-force-attractive candidate frequency.
+
+Do not begin production implementation.
