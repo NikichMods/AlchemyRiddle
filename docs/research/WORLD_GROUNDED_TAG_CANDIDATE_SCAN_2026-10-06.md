@@ -139,3 +139,14 @@ means candidate evaluation must consider:
 Do not accept a hierarchy merely to save a preferred histogram.
 
 No runtime test is required.
+
+
+## Accepted follow-up after candidate scan
+
+- **Dark is accepted** as a working property.
+- **Warm is rejected**.
+- the former three-visible-property ceiling is no longer hard;
+- rare four-property cards are acceptable when produced by a strong systemic
+  property and may contribute useful late-game visual density;
+- therefore Organ must now be evaluated in its clean global form rather than
+  narrowed solely to avoid 4-tag cards.
