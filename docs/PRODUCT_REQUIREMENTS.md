@@ -230,6 +230,36 @@ For the current ordinary corpus classification, eight decorative colour variants
 are in this optional group. White and black paint are not: they also have
 ordinary gameplay production uses.
 
+
+
+### Reasoning-motif diversity is curriculum-aware
+
+Accepted generator requirement:
+- avoid accidental campaign-level repetition not only of reagent identities, but
+  also of exact property signatures and recently used reasoning motifs;
+- track recency/cost separately for at least:
+  - reagent identity;
+  - exact property signature;
+  - major logical family (property literal/exclusion, exact count, XOR,
+    positive implication, negative-consequent implication);
+  - richer reasoning fingerprint where practical, including relation
+    orientation / bridge shape and rough branching/experiment structure;
+- do **not** optimize for mathematically equal frequencies of every clue family;
+  the curriculum owns when repetition is pedagogically useful.
+
+The recency policy must respect the accepted wave-shaped curriculum:
+- INTRODUCE may add one genuinely new motif under reduced surrounding load;
+- PRACTICE may deliberately repeat the focus motif and should reduce or invert
+  its normal recency penalty;
+- COMBINE should mix already mastered motifs while penalizing an exact recent
+  reasoning fingerprint;
+- BREATHE should prefer a simpler mastered route and avoid the recently dominant
+  motif where feasible.
+
+A short deliberate repetition such as XOR -> XOR can therefore be correct
+practice. A long run such as five XOR-heavy puzzles must not happen merely
+because the generator failed to account for recent reasoning history.
+
 ### Goal-first research coexists with vanilla experimentation
 
 The preferred mod flow remains:
