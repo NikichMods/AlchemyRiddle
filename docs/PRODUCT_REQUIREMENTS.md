@@ -434,3 +434,25 @@ Accepted UX sequence when a submitted formula succeeds:
 Do not merge "you solved the formula" and "you still cannot obtain one reagent"
 into one ambiguous failure-like message. The deduction should feel complete
 before the next practical problem is introduced.
+
+
+### Reagent compendium preserves paid research knowledge
+
+Accepted product direction:
+- source/preparation knowledge must be durable reference data, not a transient
+  notification or research-history entry;
+- maintain a unified compendium/database for **all known reagent identities**,
+  not only reagents that were once missing from a target formula;
+- for each known reagent, the player should be able to inspect:
+  - its identity/name;
+  - its accepted AlchemyRiddle property tags;
+  - whether a practical source/preparation route is known;
+  - the known route when it has been learned;
+- when the route is unknown, the compendium may expose the corresponding
+  source-research action;
+- do not require the player to search old journal chronology to recover
+  information they previously paid Science to learn.
+
+Exact layout, status wording and navigation remain UI-design questions. Avoid
+unnecessary bureaucratic states such as a permanent "practical mastery still
+ahead" label when the durable route knowledge itself communicates what matters.
