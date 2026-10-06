@@ -210,3 +210,35 @@ relation semantics was required.
 
 The tutorial has now reached deterministic resolution. A final subjective
 evaluation is still required before disposition is recorded.
+
+
+## Final player evaluation
+
+Disposition: **PASS — ACCEPT AS FIRST THREE-SLOT TUTORIAL SHAPE.**
+
+Player judgement:
+- the transition from the two-slot tutorial felt natural after reflection;
+- the adjacent STABLE / INCOMPATIBLE rule was clear on first presentation;
+- the single L1 + E1 test felt like a purposeful experiment rather than random
+  trial among candidates;
+- difficulty felt **right for the first three-slot puzzle**;
+- the player would accept this general case as the first three-component
+  AlchemyRiddle investigation.
+
+Important UX constraint:
+- the future interface must make the currently available action space explicit;
+- in particular, the player should not have to remember from an earlier tutorial
+  that adjacent-pair compatibility tests exist;
+- when a useful adjacent test is available, the UI should make that interaction
+  discoverable without auto-solving or recommending the answer;
+- this is a future presentation/interaction requirement, not evidence for a
+  specific production UI architecture.
+
+Curriculum conclusion:
+- two-slot onboarding can teach simple property intersection first;
+- the first three-slot investigation can then reuse that exact reasoning language
+  and add one new layer: adjacent empirical compatibility;
+- one purposeful relation test is enough to make the escalation feel new without
+  making it feel like a separate minigame.
+
+Prototype 35 is complete.
