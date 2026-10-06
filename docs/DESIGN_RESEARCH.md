@@ -5291,3 +5291,98 @@ Disposition:
 - proceed to Candidate A.
 
 Production remains **BLOCKED**.
+
+
+## Two-slot A/B/C checkpoint result
+
+Status: **checkpoint complete; Candidate A selected as the leading two-slot core direction; production remains BLOCKED**.
+
+The accepted comparison plan evaluated three materially different two-slot
+families at the player-facing level.
+
+### B — known-recipe differential
+
+Prototype 30 was stopped early.
+
+Observed:
+- difficult initial representation model;
+- recipe-library references outside the active candidate field were especially
+  hard to parse;
+- comparison semantics were understandable only after explanation but felt
+  abstract and physically ungrounded;
+- the player did not naturally see which known recipe was strategically useful
+  to compare;
+- after one comparison, the loop already looked like repeated reference querying
+  followed by bounded residual checking.
+
+Disposition:
+- **reject as standalone core**;
+- retain known recipes as a possible evidence primitive / accumulated-knowledge
+  source in later architecture.
+
+### C — controlled comparison / aggregate resonance
+
+Prototype 31 completed cleanly.
+
+Observed:
+- rule was immediately clear and physically imaginable;
+- player independently used controlled one-factor substitutions;
+- unique target was found in two paid tests after one free calibration;
+- nevertheless subjective interest was only **~1.5 / 5**;
+- player reported that the dominant experience was simply trying candidates in
+  sequence, with little sense of having solved a puzzle.
+
+Disposition:
+- **reject as standalone core**;
+- retain controlled experiments as a legible interaction primitive only.
+
+### A — fixed properties + logical constraints
+
+Prototype 32 completed cleanly.
+
+Observed:
+- player solved by interacting constraints rather than enumerating all six
+  candidate pairs;
+- implication narrowed the structural branch, XOR rejected one branch member,
+  and count logic confirmed the survivor;
+- subjective interest was a **solid 4 / 5**;
+- player reported a definite **"I solved it"** feeling;
+- the explicit logic-puzzle character was visible but did not feel excessively
+  abstract because the vocabulary remained grounded in material/alchemical
+  properties such as Plant, Mineral, Insect, Corpse, Powder and Liquid.
+
+Disposition:
+- **Candidate A wins the current two-slot solution-space checkpoint**.
+
+### Selection rationale
+
+Candidate A is now the only compared family with both:
+1. **real-corpus capacity evidence** showing that the fixed natural property
+   vocabulary can support short unique/bounded deductions across the ordinary
+   two-slot corpus without artificial tag inflation;
+2. **positive blind-player evidence** that the deduction itself feels like
+   solving rather than scanning.
+
+Do not overgeneralize:
+- this selects the **core two-slot grammar direction**, not final production
+  architecture;
+- final wording, tutorial ordering, candidate-field legitimacy under real
+  progression, information acquisition, UI presentation and difficulty scaling
+  remain open;
+- B/C primitives may re-enter only if a later concrete deficiency in A gives a
+  specific reason to use them. Do not build a broad hybrid merely because the
+  primitives exist.
+
+### Next work after checkpoint
+
+Proceed with the previously accepted order:
+1. define the **two-slot tutorial/progression architecture** around Candidate A,
+   including the simplest 2x2 onboarding form and progression into richer 2x3 /
+   3x2 / 3x3 logical relations;
+2. define the **two-slot -> three-slot conceptual progression**, identifying
+   which property/clue concepts carry forward and where STABLE/INCOMPATIBLE
+   bridge knowledge is introduced;
+3. only then characterize progression-specific reagent availability / knowledge
+   state and formalize unified difficulty/generation policy.
+
+Production remains **BLOCKED**.
