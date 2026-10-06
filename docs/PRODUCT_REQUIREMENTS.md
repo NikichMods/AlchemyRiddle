@@ -317,3 +317,68 @@ Visible progression is desirable:
   UI may reinforce competence and long-term mastery;
 - presentation must reflect real system state rather than inventing fake
   progression.
+
+### Theoretical reagent identities are valid puzzle candidates
+
+Accepted product decision:
+- a target puzzle may show the **real in-game reagent identity/name** and the
+  real AlchemyRiddle property tags for a reagent even if the player has never
+  physically produced that reagent before;
+- this is an intentional abstraction cost accepted in exchange for a much more
+  world-grounded puzzle than arbitrary symbolic placeholders;
+- the player is allowed to learn that such a reagent exists through target
+  research itself;
+- exposing the reagent identity/property card does **not** automatically teach
+  its source/preparation route or grant the vanilla decomposition unlock.
+
+Reagent property tags should also be available from ordinary item/tooltips once
+the relevant reagent identity is known, so the puzzle does not depend on hidden
+journal-only metadata or external memory.
+
+### Deduction unlocks recipe knowledge before first synthesis
+
+Accepted product decision, superseding the earlier default that unknown recipes
+must not be auto-unlocked:
+- when an investigation uniquely determines a concrete vanilla formula variant,
+  that formula becomes **known recipe knowledge immediately**;
+- the vanilla alchemy recipe-selection/known-recipe presentation should then
+  recognize that formula in the same semantic sense as a vanilla scripted recipe
+  discovery;
+- the player does not need to perform a ceremonial first synthesis merely to
+  make the already-deduced formula appear in the known-recipe list;
+- actual possession/production of each reagent remains separate, so a known
+  formula may be temporarily uncraftable because one or more reagent source
+  routes are still unknown or unavailable.
+
+This is an explicit product-level exception to the bootstrap invariant
+`do not auto-unlock unknown recipes`. Formula contents and vanilla success
+semantics remain unchanged.
+
+### Goal-first reagent-source research
+
+Accepted direction:
+- when a known/theoretically exposed reagent lacks a practical source route,
+  the journal may list it as an unresolved substance/source problem;
+- the player may spend **Science** on a concrete research action to learn new
+  acquisition/preparation information for that reagent;
+- every Science expenditure in this subsystem should produce a concrete new
+  observation, relation or source/preparation fact rather than function as a
+  generic entry fee;
+- the default safe behavior is informational/hybrid: research teaches a valid
+  source/preparation route, while ordinary vanilla Study/decomposition/physical
+  acquisition remains required unless a later explicit decision changes it.
+
+Exact Science costs and whether some actions also require Faith remain open.
+
+### Pause while using the research interface
+
+Accepted UX preference:
+- normal world time should be paused while the dedicated alchemy research/journal
+  interface is open, not only while a logical puzzle sub-screen is open;
+- this lets the player read known formulas, reagent/property references,
+  unresolved-substance entries and deduction state without NPC/day/corpse timers
+  pressuring them;
+- the UI should communicate clearly that time is paused.
+
+The technical pause mechanism remains BLOCKED pending exact host ownership and
+lifecycle evidence.
