@@ -176,3 +176,46 @@ Per the accepted comparison plan:
 - no actions yet
 - all three constraints visible
 - awaiting player's deduction
+
+
+## Live completion
+
+Player reasoning, stated independently:
+
+1. The player first focused on constraint 3:
+   - if the Powder has Plant, the Liquid must have Mineral;
+   - therefore P1 or P3 would force L1.
+
+2. The player then checked P1+L1 against constraint 2:
+   - P1 lacks Insect;
+   - L1 lacks Corpse;
+   - therefore neither side of the XOR is true;
+   - P1+L1 is rejected.
+
+3. The player then considered P3+L1:
+   - P3 has Plant and Insect;
+   - L1 has Mineral and not Corpse;
+   - constraint 3 holds;
+   - constraint 2 holds because exactly the Powder side is true;
+   - constraint 1 holds because Plant appears exactly once.
+
+Player identifies the unique target as:
+- **P3 Янтарная пудра + L1 Роса**
+
+This matches the precommitted hidden answer.
+
+No synthesis is required because the answer is uniquely deduced.
+
+## Immediate qualitative signal
+
+The player did not enumerate all six pairs.
+Instead, the solve proceeded by interacting constraints:
+- one implication generated a narrow structural branch;
+- the XOR rejected one member of that branch;
+- the count constraint confirmed the surviving pair.
+
+This is the intended Candidate A reasoning pattern and is qualitatively distinct
+from Prototype 31's coordinate scanning.
+
+Final subjective evaluation is still pending.
+Production remains BLOCKED.
