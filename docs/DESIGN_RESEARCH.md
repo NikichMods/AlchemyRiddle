@@ -7277,3 +7277,24 @@ Decision:
 
 Implication for future generator work:
 logical uniqueness and non-redundancy are necessary but insufficient. Candidate puzzles eventually need an additional qualitative/structural screen for inference quality or reasoning-path interest.
+
+
+## Product coherence audit — 2026-10-06
+
+Status: **broad product/design audit complete; selected architecture retained; production remains BLOCKED**.
+
+Canonical audit: `docs/research/PRODUCT_COHERENCE_AUDIT_2026-10-06.md`.
+
+Result:
+- no architectural contradiction with the durable product invariant was found;
+- the selected two-slot and three-slot cores remain coherent with target-first research, fair deduction, persistent knowledge, compact onboarding, early mature difficulty and anti-bruteforce requirements;
+- prior external validation remains aligned with the current design: cognitive load, guidance fading, knowledge progression, non-ritual experiments and answer-oracle control are all represented in the current requirements;
+- stale canonical wording was reconciled in README / AGENTS / PRODUCT_REQUIREMENTS / recovery state;
+- the largest remaining **product/generator** risk is no longer solvability or curriculum serviceability, but whether generated clue packages reliably produce intellectually interesting inference rather than flat filtering.
+
+Current high-leverage product/design decision completeness is estimated at roughly **75-85%**, explicitly excluding production implementation progress.
+
+Next step:
+define and blind-calibrate a small positive vocabulary of interesting inference structures before commissioning a corpus-wide inference-quality screen. Do not automate an undefined notion of "interesting" first.
+
+No installed-runtime test is required.
