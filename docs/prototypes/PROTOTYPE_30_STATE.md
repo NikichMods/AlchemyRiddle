@@ -286,3 +286,26 @@ Per the accepted comparison plan:
 - live hypotheses: H1 / H2 / H3 / H4
 - no comparative distillations performed
 - awaiting player's first action
+
+
+## Live checkpoint 1 — first comparison
+
+Pre-action player UX observations:
+- the player initially struggled to understand that the 3x2 table cells represent complete Powder+Liquid formula hypotheses/products rather than physical UI slots;
+- the presence of known reference recipes C/D/E whose components extend outside the 3x2 target candidate field was especially confusing;
+- the player first interpreted the available action as mixing a candidate pair rather than comparing the target sample against an already-known product;
+- even after the comparison rule was restated, the interaction felt abstract / hard to physically picture, with “slot” semantics described as immaterial and difficult to grasp;
+- the player explicitly reported not knowing how to choose a first comparison or what conclusion a comparison would support before trying one.
+
+Player action:
+- comparative distillation against A — Бледная смесь = P1 + L1.
+
+Deterministic outcome:
+- **1 / 2 exact role-matched reagents shared**.
+
+Resources after action:
+- target samples: **2 / 3**.
+
+Protocol boundary:
+- present the raw 1/2 observation only;
+- do not infer which live hypotheses remain until the player states their own reasoning.
