@@ -276,3 +276,20 @@ This is the durable ordering for both independent arity ladders, with three-slot
 Exact numbered placement of individual MAX / BREATHE / BOSS puzzles inside the mature plateau remains tuning rather than architecture. Do not reopen the ladder model merely to move one of those later slots.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — mature/boss texture accepted
+
+Difficulty above the teaching phase now has explicit variation axes:
+- richer visible property cards increasingly preferred;
+- weaker individual clues;
+- deeper cross-clue interaction;
+- denser plausible near-misses;
+- richer three-slot relation topology;
+- bounded higher-order forms that extend already learned logic.
+
+Property richness is a soft candidate-field preference, not a hard requirement on the fixed true formula components.
+
+MAX exposes the full mature envelope. BOSS is a selected peak inside that envelope, built from a few simultaneously high-cost dimensions and a short multi-stage proof. Do not introduce a wholly new logical operator for the first time only in a boss.
+
+Production remains BLOCKED. No runtime action is required.
