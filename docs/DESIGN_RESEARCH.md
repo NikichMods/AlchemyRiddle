@@ -6690,3 +6690,44 @@ histogram prettier”.
 The next quantitative screen should test whether the actual sequence bottleneck
 is concentrated in Powder and/or duplicated Essence signatures. If Fluid already
 provides adequate diversity, do not add complexity there merely for symmetry.
+
+
+## Property-depth / sequence-diversity result — 2026-10-06
+
+Status: **accepted bounded quantitative result; fixed tag model remains unchanged; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/PROPERTY_SEQUENCE_DIVERSITY_SCREEN_2026-10-06.md`.
+
+Progression-core correction:
+- eight optional decorative colour targets do not reserve late/boss difficulty;
+- white and black paint remain core because they also support ordinary gameplay;
+- core corpus for progression-diversity screening is 10 two-slot outputs /
+  16 formula variants plus 16 three-slot outputs / 19 variants.
+
+Main result:
+- good late surfaces do **not** preferentially depend on richer reagents after
+  opportunity normalization;
+- a simple anti-repeat surface selector reduces avoidable identity repetition to
+  very low levels without changing the property taxonomy;
+- therefore the hypothesis “too many one-property reagents force the same rich
+  substances to recur” is **not supported**.
+
+Residual signal:
+- exact property-signature repetition remains noticeably higher in three-slot
+  sequences;
+- an optimistic research-only enrichment of duplicate/shallow Powder/Essence
+  signatures almost halves signature repetition and increases the reserve of
+  strong two-slot fields, while barely changing reagent-identity repetition.
+
+Interpretation:
+- do not add properties to solve an identity-repeat problem;
+- additional properties remain worth considering only if they materially improve
+  **reasoning/clue trajectory diversity** enough to justify extra taxonomy and
+  card density.
+
+Next bounded question:
+compare current tags versus the optimistic enrichment on clue-family packages,
+elimination trajectories and decisive-signature repetition. Do not research real
+new world-grounded tags until that formal reasoning-variety screen shows a
+material gain.
