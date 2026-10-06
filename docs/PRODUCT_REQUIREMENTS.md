@@ -568,6 +568,43 @@ Exact numeric band thresholds, concept-familiarity counters, submission economy
 and curriculum beat frequency remain generator/balance questions.
 
 
+
+### Curriculum pacing: teach early, play richly for the majority of each ladder
+
+Accepted product direction:
+- the independent two-slot and three-slot ladders are short enough that the
+  curriculum should be **hand-authored at the step-role level** rather than
+  driven by a general-purpose curriculum state machine unless a later concrete
+  need proves one necessary;
+- INTRODUCE / PRACTICE / COMBINE / BREATHE remain useful descriptions of a
+  step's pedagogical role, but they are **not a mandatory four-step cycle** after
+  every newly introduced concept;
+- onboarding should be deliberately front-loaded: teach the puzzle language
+  quickly, then spend the majority of the remaining investigations on richer
+  puzzles that combine already-known mechanics;
+- as a current pacing target, roughly the first **30-35%** of a ladder may carry
+  most explicit concept onboarding, while roughly **65-70%** should primarily be
+  normal play with familiar mechanics at varying load;
+- for the 16 mandatory two-slot investigations this implies approximately the
+  first **5-6** steps for the main logical grammar and roughly **10-11** later
+  steps for richer combinations;
+- for the 19 mandatory three-slot investigations, shared logical grammar already
+  transfers from two-slot alchemy, so relation-specific onboarding should be
+  even more compact: approximately the first **4-5** steps for the main
+  relation/topology grammar and roughly **14-15** later steps for rich
+  three-slot play;
+- late richness should come from interaction depth, clue weakness, field shape,
+  relation topology and combinations of familiar operators rather than from
+  continuing to introduce new rules;
+- BREATHE steps should be occasional deliberate load releases, not a metronomic
+  every-fourth-step requirement;
+- reverse/reference-direction wording is not yet guaranteed to deserve a
+  dedicated teaching step; it may be introduced as a variation of already-known
+  implication logic if prototype evidence supports that simpler treatment.
+
+The exact step-by-step 16/19 ladders remain a design task. These proportions are
+accepted pacing intent, not immutable numeric quotas.
+
 ### Accepted property-density refinement: Dark and rare four-tag cards
 
 Accepted product direction:
