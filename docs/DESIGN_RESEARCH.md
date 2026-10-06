@@ -6777,3 +6777,42 @@ Decision:
   reagent unless later evidence reopens it;
 - no real tag is accepted until it passes the same quantitative screens and a
   small matched player-facing test.
+
+
+## World-grounded tag candidate direction — 2026-10-06
+
+Status: **candidate research only; accepted current property assignment remains unchanged**.
+
+Detailed scan:
+`docs/research/WORLD_GROUNDED_TAG_CANDIDATE_SCAN_2026-10-06.md`.
+
+New user preference:
+- visible property density itself contributes positively to perceived puzzle
+  richness;
+- two-property cards should be the normal/core visual shape;
+- one-property cards are useful simple/early exceptions;
+- three-property cards are useful rich/later exceptions;
+- a rough 25% / 50% / 25% one/two/three-property distribution is an attractive
+  **soft target**, not a quota or mathematical requirement.
+
+Do not distort world grounding or reasoning quality merely to hit the histogram.
+
+The candidate search now covers all 35 reagent identities, not only Powder.
+
+Strong initial candidates:
+- **Organ** — best semantic/systemic candidate; spans multiple forms and breaks
+  several shallow corpse-derived signatures, but naive global addition would
+  create four-property Life Fluid and Life Essence cards;
+- **Metal** — cleanly distinguishes Gold/Silver Powder from Graphite and creates
+  no >3-property cards, but affects only two reagents;
+- **Flower** and **cultivated crop/farmed plant** — globally intelligible and
+  useful for plant-derived diversity, but naive addition creates >3-property
+  collisions in already-rich cards.
+
+Therefore the next design problem is not "which tags can be appended?" but:
+**what globally coherent flat taxonomy gives the best world grounding,
+signature diversity and 1/2/3 property distribution while retaining the current
+practical three-visible-property ceiling?**
+
+Do not introduce hierarchy/subtype semantics merely to preserve a preferred
+distribution unless their player-facing rule cost is justified.
