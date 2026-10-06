@@ -83,12 +83,26 @@ survivability, convenience) unless another authored task requests them.
 These give strong authored goal-first leads independent of downstream
 technology recipes.
 
-### DLC/remodelling-specific targets — 8 outputs
-- eight two-slot coloured-paint outputs belong to the special remodelling/DLC
-  use family.
+### Optional decorative/remodelling targets — 8 outputs
+- eight two-slot coloured-paint outputs belong to the optional decorative /
+  remodelling use family;
+- **white and black paint are not in this optional eight** because they also
+  participate in ordinary gameplay production such as writing/church materials.
 
-Keep these as a distinct progression bucket rather than letting them dominate
-the base-game target-order approximation.
+These eight optional decorative targets are **not part of the mandatory
+difficulty-curve denominator**:
+- do not reserve the final/highest difficulty bands for them;
+- do not assume the player will ever pursue them;
+- do not proactively flood the journal with them merely because their formulas
+  exist;
+- surface them when a concrete decorative/remodelling need actually becomes
+  relevant to the player.
+
+If the player voluntarily investigates one, it should use the current two-slot
+difficulty state rather than a permanently assigned "late paint" difficulty.
+Whether such optional completions advance the arity experience counter remains
+an implementation/balance detail; they must not be required to reach late/boss
+difficulty.
 
 Aggregate check:
 - 16 downstream-component;
