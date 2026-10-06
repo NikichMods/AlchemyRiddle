@@ -6541,3 +6541,46 @@ Measure separately for two-slot and three-slot:
 - brute-force-attractive candidate frequency.
 
 Do not begin production implementation.
+
+
+## Difficulty curriculum quantitative synthesis — 2026-10-06
+
+Status: **accepted-evidence synthesis complete; production remains BLOCKED**.
+
+The working difficulty envelopes were checked against the existing reproducible
+two-slot and three-slot corpus screens rather than re-running an equivalent
+private-corpus calculation under a new wrapper.
+
+Detailed synthesis:
+`docs/research/DIFFICULTY_CURRICULUM_QUANTITATIVE_SYNTHESIS_2026-10-06.md`.
+
+Key result:
+- the curriculum is broadly realizable on the accepted ordinary corpus;
+- two-slot 2x2 simple onboarding is structurally available for **24/24**
+  variants;
+- two-slot 2x3 / 3x2 / 3x3 composite progression is structurally available for
+  **24/24** variants;
+- three-slot 2x2x2 is a credible but non-universal compact shape
+  (**95.815%** exact representable-state service), with richer compact
+  fallbacks already near-universal;
+- adaptive 3x3x3 remains corpus-wide robust, including accumulated-knowledge
+  states;
+- late/boss mechanisms have no architecture gap, but their exact threshold is
+  lower priority than onboarding calibration.
+
+The main remaining uncertainty is now experiential onboarding, not broad corpus
+capacity.
+
+### Smallest next blind set
+
+1. **Prototype 34** — true two-slot tutorial:
+   2x2, two simple partial property facts, no XOR/implication.
+2. **Prototype 35** — three-slot relation-introduction tutorial:
+   reuse familiar simple property reasoning and introduce exactly one new
+   concept, adjacent STABLE/INCOMPATIBLE relations, under reduced surrounding
+   load.
+
+Prototype 34 is precommitted in
+`docs/prototypes/PROTOTYPE_34_STATE.md`.
+
+Do not start production implementation.
