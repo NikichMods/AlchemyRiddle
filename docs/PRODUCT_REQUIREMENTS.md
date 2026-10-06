@@ -566,3 +566,28 @@ is adequately controlled.
 
 Exact numeric band thresholds, concept-familiarity counters, submission economy
 and curriculum beat frequency remain generator/balance questions.
+
+
+### Accepted property-density refinement: Dark and rare four-tag cards
+
+Accepted product direction:
+- **Dark** is accepted as a real AlchemyRiddle reagent property for the
+  Health / Death / Acceleration dark-family reagent identities across their
+  Powder / Fluid / Essence forms;
+- do not block Dark on a requirement for a separate visual-identification test;
+  the combined vanilla naming/family/color semantics are sufficient for this
+  design decision;
+- the former practical ceiling of exactly three visible properties per reagent
+  is relaxed;
+- **rare four-property cards are allowed** when the fourth property follows from
+  a strong, globally coherent world-grounded rule;
+- four-property cards are desirable candidates for later/higher-density puzzles,
+  but difficulty is still multidimensional: a four-property card does not by
+  itself define a late puzzle;
+- do not create four-property cards merely to make the histogram richer.
+
+Warm/heat-colour grouping is rejected as a current tag direction.
+
+Organ remains the leading next systemic candidate. If a consistent Organ rule
+creates a small number of four-property cards, that is no longer a reason to
+discard it.
