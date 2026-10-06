@@ -263,3 +263,16 @@ The immediate next task is to draft:
    canonical chronology.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — semantic ladder order accepted
+
+The progression architecture is now accepted at the semantic-step level:
+
+basic language -> compact concept introductions -> rich combination -> hard -> early MAX -> mature plateau -> selected boss peaks.
+
+This is the durable ordering for both independent arity ladders, with three-slot-specific relation/topology concepts layered onto transferred shared logic.
+
+Exact numbered placement of individual MAX / BREATHE / BOSS puzzles inside the mature plateau remains tuning rather than architecture. Do not reopen the ladder model merely to move one of those later slots.
+
+Production remains BLOCKED. No runtime action is required.
