@@ -5858,3 +5858,50 @@ progression evidence is specifically required. No new runtime probe is justified
 for this UX question.
 
 Production remains **BLOCKED**.
+
+### Post-deduction source guidance changes the old guidance triangle
+
+Important new consequence of the theoretical/practical split:
+- before formula deduction, naming the exact missing reagent can spoil the recipe;
+- **after** the player has independently deduced the formula, that reagent is no
+  longer secret;
+- source/preparation research may therefore become much more explicit without
+  violating the recipe-spoiler contract.
+
+This may collapse most of the earlier hard-gate guidance triangle. Instead of
+asking the player to broaden knowledge blindly before the puzzle, the system can
+allow the puzzle first and then create a concrete goal-first subproject such as
+`learn how to obtain reagent R`.
+
+At that stage the remaining design question is not "does this reveal a recipe
+component?" but "how much acquisition/exploration should research automate?".
+The earlier three implementation families remain useful:
+1. informational — reveal one or more authored sources, vanilla Study still required;
+2. substitute — research itself unlocks the preparation knowledge;
+3. hybrid — identify a source, then require the player to study/process it.
+
+The hybrid/informational forms remain safer because they preserve vanilla
+practical progression while removing wiki dependence.
+
+### Single active deduction session is now a strong simplicity candidate
+
+Allowing arbitrary numbers of simultaneously started puzzles creates a subtle
+difficulty exploit/edge case: if difficulty is frozen at investigation start,
+the player could start many projects at an early rank and preserve many
+artificially easy puzzles.
+
+A strong current UX/implementation candidate is therefore:
+- many journal leads may exist;
+- **one unsolved deduction investigation is active at a time**;
+- the player may exit to the world at any time and later resume that exact
+  investigation;
+- solving it theoretically frees the deduction slot immediately, even if
+  practical reagent acquisition / final synthesis remains pending;
+- solved-but-unconfirmed formulas may coexist freely as journal tasks;
+- the arity difficulty ladder advances when the deduction investigation is
+  completed, not when practical synthesis eventually occurs.
+
+This matches the intended 1–3 minute atomic puzzle shape, avoids mass-freezing
+easy investigations, and minimizes persistent mutable puzzle state. It is not
+yet an accepted product restriction; validate it against player preference
+before production architecture.
