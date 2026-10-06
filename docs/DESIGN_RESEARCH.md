@@ -7086,3 +7086,58 @@ of each ladder forms a varied rich-play tail. Do not add another corpus screener
 unless that draft exposes a concrete structural uncertainty.
 
 No installed-runtime test is required.
+
+
+## Early mature-difficulty plateau — 2026-10-06
+
+Status: **accepted pacing refinement; exact per-step map still provisional; production remains BLOCKED**.
+
+The previous compact-curriculum direction is refined further.
+
+Accepted conclusion:
+- the generator must not rely on players exhausting the full 16 two-slot or 19
+  three-slot formula-variant research sets before they experience the top of the
+  difficulty curve;
+- reach the mature/max-difficulty band substantially earlier, then let that band
+  continue for the rest of the game with internal waves;
+- distinguish **maximum band unlocked** from **boss puzzle**:
+  - mature/max band = full familiar grammar and high interaction depth are
+    available;
+  - boss = a selected peak instance inside that band;
+- several final investigations may be guaranteed boss-grade for players who keep
+  researching, while earlier players should still encounter at least one mature
+  or boss-like challenge after only a modest number of investigations.
+
+Evidence:
+- progression research distinguishes 10 two-slot core outputs from 16 variant
+  investigations; six two-slot outputs are downstream components, two are
+  direct story/system demands and two are player-driven direct-use consumables;
+- three-slot has 16 outputs / 19 variants, of which ten are downstream
+  components and six are player-driven direct-use consumables;
+- therefore natural goal-first play does not guarantee completion of either full
+  variant ladder;
+- optional decorative two-slot outputs were already removed from the mandatory
+  curve for the same reason.
+
+Grammar simplification:
+- exact-count facts belong in initial/basic grammar rather than receiving their
+  own repeat lesson;
+- reverse-direction implication is not a distinct logical operator: it is the
+  same conditional relationship written Fluid->Powder instead of Powder->Fluid,
+  so it may first appear during mature play without a dedicated introduction
+  step.
+
+Three-slot terminology:
+- "residual/off-bridge" means reasoning that the obvious known compatible/stable
+  chain is not necessarily the target; the correct formula can be identified
+  among candidates outside that starting bridge;
+- this topology has prior positive blind-prototype evidence and need not be
+  postponed to the very end, though its exact first step remains tuning work.
+
+Next design artifact:
+produce a revised compressed 16-step and 19-step map with an early mature
+plateau, plus one illustrative mixed-arities chronology constrained only by the
+accepted P1-P4 progression buckets. Do not present that chronology as a fixed
+story order.
+
+No installed-runtime test is required.
