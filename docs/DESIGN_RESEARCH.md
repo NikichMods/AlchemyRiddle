@@ -6635,3 +6635,58 @@ Separate open research hypothesis:
 - do not change the accepted fixed-property model until a dedicated
   information-gain screen shows that additional world-grounded properties
   materially improve later puzzle quality.
+
+
+## Bounded progression skeleton for sequence-diversity research — 2026-10-06
+
+Status: **accepted coarse research approximation; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/PROGRESSION_SKELETON_2026-10-06.md`.
+
+Do not reconstruct one exact Graveyard Keeper playthrough yet.
+
+For sequence-diversity screening, use the following progression skeleton:
+
+- P0: pre-alchemy;
+- P1: Beginning of Alchemy -> two-slot apparatus available;
+- P2: downstream/story demand begins expanding; some three-slot products may
+  already become visible as needs before the tier-II workbench exists;
+- P3: Advanced Alchemy -> three-slot apparatus / normal Essence production
+  available; both arity ladders can now interleave;
+- P4: mature/late mixed demand from higher embalming, fertilizer, incense,
+  writing/book and special/DLC progression.
+
+Across the accepted 34 ordinary outputs, the coarse demand-channel fingerprint
+used for sequence modeling is:
+- 16 downstream material/craft-component targets;
+- 8 direct-use consumables;
+- 2 direct story/system targets;
+- 8 special DLC/remodelling targets.
+
+Important consequence:
+- target visibility, arity apparatus availability, theoretical formula
+  solvability and practical reagent mastery are separate states;
+- do not force chronological target order to equal arity order;
+- late needs can still point to two-slot products.
+
+The first sequence-diversity screen should therefore sample order within broad
+progression buckets rather than use a random permutation of all targets or a
+fully reconstructed quest chronology.
+
+### Property-depth preflight
+
+The current 35-reagent property-depth distribution is strongly slot-asymmetric:
+
+- Powder: 15 reagents -> 9 one-property / 5 two-property / 1 three-property,
+  only 9 distinct exact signatures;
+- Fluid: 8 -> 1 / 4 / 3, with 7 distinct signatures;
+- Essence: 8 -> 3 / 4 / 1, with 5 distinct signatures;
+- Universal: 4 -> 3 / 1 / 0, all 4 signatures distinct.
+
+Therefore any eventual enrichment should not begin from “make the 1/2/3
+histogram prettier”.
+
+The next quantitative screen should test whether the actual sequence bottleneck
+is concentrated in Powder and/or duplicated Essence signatures. If Fluid already
+provides adequate diversity, do not add complexity there merely for symmetry.
