@@ -6985,3 +6985,58 @@ Current state:
   the highest-leverage unresolved generator parameter before any implementation.
 
 No runtime test is required at this transition.
+
+
+
+## Curriculum serviceability under free target choice — 2026-10-06
+
+Status: **accepted bounded quantitative result; production remains BLOCKED**.
+
+Detailed evidence:
+`docs/research/CURRICULUM_SERVICEABILITY_SCREEN_2026-10-06.md`.
+
+Question:
+can a player-selected formula variant fail to support the next desired
+curriculum beat strongly enough that the mod must reserve or choose another
+target?
+
+Result:
+- all 16 mandatory two-slot variants support a compact 2x2 BREATHE/simple
+  package;
+- all 16/16 support low-load introductions of XOR, forward positive implication,
+  forward negative-consequent implication and reverse implication direction on a
+  2x2 field under the accepted compact clue-strength envelope;
+- an intentionally over-strict exact-2-of-4 clue-split rule creates artificial
+  gaps (15/16 for forward implications and 13/16 for reverse implication),
+  confirming that identical clue partitions should not become a production
+  requirement;
+- all 19/19 ordinary three-slot variants support a Prototype-35-like 2x2x2
+  first-relation tutorial; the minimum per-target serviceable-surface rate is
+  79.2%, median 88.9%;
+- a purposeful Fluid-Essence tutorial orientation exists for all 19 variants,
+  while Powder-Fluid exists for 12/19;
+- later accepted three-slot reasoning packages provide every major shared
+  logical family on every 19/19 target variants.
+
+Decision:
+- the feared formula-identity conflict is not a primary generator constraint;
+- do not add a scheduler layer that chooses/reserves targets merely to satisfy
+  curriculum;
+- preserve free player target choice;
+- after the target is selected, the relevant independent arity ladder chooses
+  the desired beat and the generator searches within that target;
+- keep adaptive fallback only as a guardrail for actual dynamic-state
+  infeasibility (progression-limited identities, accumulated relation knowledge
+  or future topology constraints);
+- curriculum validity/difficulty filters remain hard; anti-repeat is a scoring
+  preference after those filters.
+
+The next highest-leverage generator question is now the **smallest curriculum
+state machine**:
+- what is stored separately for two-slot and three-slot progression;
+- what shared concept familiarity transfers across arities;
+- when a newly introduced concept becomes practised/mastered;
+- how INTRODUCE / PRACTICE / COMBINE / BREATHE are selected without becoming a
+  rigid four-step metronome.
+
+No installed-runtime test is required for this checkpoint.
