@@ -306,3 +306,16 @@ Accepted after review of the first matched RICH/HARD/MAX/BOSS examples:
 The first matched HARD/MAX examples are explicitly not accepted as positive exemplars and should be revised before further calibration.
 
 Production remains BLOCKED. No runtime action is required.
+
+
+## Post-migration continuation — intellectual interest is separate from difficulty
+
+Accepted globally for all puzzle bands:
+- difficulty and intellectual interest are separate axes;
+- prefer puzzles where clues interact to produce genuine deductions or an "aha" step;
+- reject flat repetitive filtering even when it is mathematically non-redundant or objectively harder;
+- this applies from tutorial through boss, not only to late-game cases.
+
+Future generator acceptance must not reduce puzzle quality to survivor counts, clue counts or difficulty bands alone.
+
+Production remains BLOCKED. No runtime action is required.
