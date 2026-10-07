@@ -7,6 +7,30 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('journal pair selection replaces all slots atomically, accepts earned negatives and preserves resources/history', () => {
+  const s = createState(harbor); s.selected={...harbor.answer}; s.notes='keep'; s.marks.p3=true;
+  const before=structuredClone(s);
+  const prior=harbor.knownRelations[0];
+  act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
+  assert.deepEqual(s,{...before,selected:prior.tuple});
+  act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
+  assert.deepEqual(s.selected,prior.tuple);
+  const invalid=structuredClone(s);
+  assert.throws(()=>act(harbor,s,{type:'selectPair',slots:['powder','essence'],tuple:{powder:'p1',essence:'e1'}}));
+  assert.throws(()=>act(harbor,s,{type:'selectPair',slots:['powder','fluid'],tuple:{powder:'p2',fluid:'f2'}}));
+  assert.throws(()=>act(harbor,s,{type:'selectPair',slots:['fluid','essence']}));
+  assert.deepEqual(s,invalid);
+  s.selected={powder:'p2',fluid:'f2',essence:'e1'};
+  act(harbor,s,{type:'pairTest',slots:['fluid','essence']});
+  const earned=structuredClone(s);
+  act(harbor,s,{type:'selectPair',slots:['fluid','essence'],tuple:{fluid:'f2',essence:'e1'}});
+  assert.deepEqual(s,{...earned,selected:{fluid:'f2',essence:'e1'}});
+  s.status='solved';
+  act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
+  assert.equal(s.status,'solved'); assert.equal(s.research,3); assert.equal(s.science,1); assert.equal(s.history.length,1);
+  assert.throws(()=>act(fixture,createState(fixture),{type:'selectPair',slots:['powder','fluid'],tuple:{powder:'p1',fluid:'f1'}}));
+});
+
 test('seventh fixture starts with stable bridges, needs every clue and supports complete branch rejection within budget', () => {
   const f = JSON.parse(readFileSync(new URL('./fixtures/lantern-07.json', import.meta.url)));
   validate(f);

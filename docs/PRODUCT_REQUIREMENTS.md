@@ -780,3 +780,18 @@ hover/focus highlighting as an experimental scanning aid, retaining full names.
 These references carry identity only, no new property/compatibility semantics.
 Full synthesis should be visibly distinguished as the final answer rather than
 another equally weighted pair experiment. Revised scan quality awaits human use.
+
+### Case 07 and attention hierarchy — 2026-10-07
+
+Stable-only starting bridges supported a positively received three-slot case.
+The user reports clearer pair state/external memory reduced avoidable cognitive
+burden; treat this as subjective evidence, not a controlled comparison. Stronger
+logical interaction is worth testing with the improved UI, not automatic growth
+of candidate count. Do not equate conditional usefulness with mandatory premise
+truth; uniquely identifiable conditional terms can expose an author-intent lead.
+
+Attention priority is candidates and composition/empirical information, followed
+by compact nearby investigative actions and a distinct final answer. Journal click
+or keyboard activation selects only that observed pair, clearing all other
+selections for free. A final chain may summarize observed adjacent stability, but
+must not assess target tag conditions or imply that stable pairs alone are correct.

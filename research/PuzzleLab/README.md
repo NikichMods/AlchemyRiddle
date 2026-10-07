@@ -83,3 +83,10 @@ types, with polarity colors/icons and matching-selection highlights. General
 rules, notes and full action history are in expandable reference sections.
 Case 06 is retained with its historical mixed-polarity initial observations;
 new blind cases start with stable bridges only, per the clarified product policy.
+
+Workspace interaction: journal entries are buttons. Hover/focus highlights the
+observed candidates; click/Enter/Space selects exactly that pair and clears other
+slots. This is free selection, never an experiment or automatic deduction.
+The final-answer chain displays only observed adjacent pair states; tag conditions
+remain the player's reasoning task. On narrow screens, candidates and evidence
+precede actions. Case 07 is completed; its checkpoint retains the human result.

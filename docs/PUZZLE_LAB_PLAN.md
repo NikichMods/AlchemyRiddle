@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 accepted after three-slot play; case 07 precommitted and ready for blind play with stable-only starting bridges. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Attention-hierarchy revision implemented on completed case 07. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -368,3 +368,39 @@ state has Science 1 / Research 8, three stable initial observations and no actio
 The primary server now runs lantern-07.json; current user tab is retained as a
 deliverable. Checkpoint: docs/prototypes/PUZZLE_LAB_V0_07_STATE.md.
 Next: human blind play and feedback on the identity scanning aid, then debrief.
+
+## Attention hierarchy and case-07 outcome — 2026-10-07
+
+Case 07 completed: f2e1 incompatible, f2e3 incompatible, p2f3 stable, final
+p2f3e2 success. Science 0, Research 5, six observations, no notes/marks.
+User accepted the pleasant relaxed puzzle and highly legible known/unknown pair
+states; perceived reduced UI burden is not a controlled before/after experiment.
+Unique conditional terms offered an author-intent shortcut, not logical proof
+that a premise must be true. See the exact checkpoint for narrated reasoning.
+
+Visual priorities: candidates and composition/empirical information first;
+research actions second, final submission a distinct compact action rather than
+a large contrasting region. Reduced action fills/borders/size, stronger primary
+headings/card text/clues. Actions remain below candidates on desktop; narrow
+layout and DOM order are candidates -> evidence -> actions. Guidance consulted:
+https://www.nngroup.com/articles/visual-hierarchy-ux-definition/ and
+https://www.nngroup.com/articles/closeness-of-actions-and-objects-gui/.
+These inform presentation choices; human hierarchy acceptance remains open.
+
+Click/Enter/Space on any journal observation atomically selects exactly its two
+components, clears the third slot, costs nothing and adds no history. Server
+accepts only observations already known in that session; budgets/notes/marks/
+terminal status unchanged. Both positive and personally learned negative entries
+are selectable. A compact final-answer chain shows observed stable/incompatible/
+unknown edges only; never evaluates tags or signals that the formula is correct.
+
+All 17 tests pass, including pair-selection validation and state preservation.
+Browser confirmed mouse and keyboard pair selection, clear-third semantics,
+unknown/incompatible/all-stable final summaries, and no errors. Actual viewport
+1917x1065: main core ends at y~757; no nominal smaller-size claim is made.
+Server restarted for new action, then the original three tests and successful
+synthesis were restored mechanically and verified against the recorded history,
+selected p2/f3/e2, budgets 0/5 and six relations. This is technical restoration,
+not another human playtest. No reset button added from tentative speculation.
+Next: user reviews hierarchy revision on completed case 07, then a fresh stronger
+logical-interaction example; generator acceptance and mature/boss remain open.

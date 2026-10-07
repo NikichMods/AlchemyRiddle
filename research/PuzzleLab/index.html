@@ -5,31 +5,33 @@
 <header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge">Синтетический опыт</span></header>
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
 <div class="workspace">
-  <section class="board" aria-label="Кандидаты и действия">
+  <section class="board" aria-label="Кандидаты">
     <h2>Кандидаты <span class="heading-note">Клик — выбрать, повторный — снять выбор</span></h2>
     <div id="cards"></div>
-    <section id="pair-research" hidden aria-label="Выбранные пары">
-      <div class="section-heading"><h2>Выбранные пары</h2><span id="research-budget"></span></div>
-      <div id="pair-actions" aria-live="polite"></div>
-    </section>
-    <section class="submission" aria-label="Полная формула">
-      <div><span class="final-label">Финальный ответ</span><h2>Ваша формула</h2><p id="selection"></p><span id="budget"></span></div>
-      <button id="submit" disabled>Проверить формулу</button>
-      <p id="result" role="status" aria-live="polite"></p>
-    </section>
-    <p id="error" role="alert"></p>
   </section>
   <aside class="evidence" aria-label="Условия и наблюдения">
     <section class="clue-panel"><h2>Сведения о составе</h2><ol id="clues"></ol></section>
     <section id="knowledge" hidden><h2>Наблюдения о парах</h2><div id="relations" aria-live="polite"></div></section>
   </aside>
+  <section class="actions" aria-label="Исследования и финальный ответ">
+    <section id="pair-research" hidden aria-label="Выбранные пары">
+      <div class="section-heading"><h2>Исследование пар</h2><span id="research-budget"></span></div>
+      <div id="pair-actions" aria-live="polite"></div>
+    </section>
+    <section class="submission" aria-label="Полная формула">
+      <div><span class="final-label">Финальный ответ</span><h2>Ваша формула</h2><p id="selection"></p><div id="formula-compatibility" hidden aria-live="polite"></div><span id="budget"></span></div>
+      <button id="submit" disabled>Проверить формулу</button>
+      <p id="result" role="status" aria-live="polite"></p>
+    </section>
+    <p id="error" role="alert"></p>
+  </section>
 </div>
 <p id="quick-rules" class="quick-rules"></p>
 <details class="reference"><summary>Как устроен опыт</summary>
   <p id="description"></p>
   <p>«Ровно один» — свойство есть у одного выбранного компонента и отсутствует у остальных. «Если А, то Б» запрещает только верное А вместе с ложным Б; обратное не следует. Все сведения верны одновременно. Свойства перечислены полностью; названия не добавляют правил.</p>
   <p id="pair-help" hidden>Формуле нужны стабильные пары порошок + жидкость и жидкость + эссенция. Стабильность пары не гарантирует правильную формулу и не определяется совпадением тегов. Порошок + эссенция отдельно не исследуются. В журнале показаны прежние и новые наблюдения для данного набора веществ.</p>
-  <p>Обозначения П1, Ж1, Э1 связывают карточки с журналом: порошок, жидкость, эссенция и номер в столбце. Наведите курсор на запись журнала, чтобы подсветить её компоненты.</p>
+  <p>Обозначения П1, Ж1, Э1 связывают карточки с журналом: порошок, жидкость, эссенция и номер в столбце. Наведение на запись подсвечивает её компоненты. Клик выбирает только эту пару и снимает остальные выделения. Две стабильные пары ещё не гарантируют ответ: сведения о составе также должны выполняться.</p>
   <p>Выбор бесплатный. Исследование неизвестной пары тратит заряд; известную повторять не нужно. Финальная проверка полной формулы тратит Science и сообщает только успех или неудачу. Ресурсы не пополняются; исчерпание зарядов исследования не мешает оставшейся проверке формулы. После успеха или исчерпания Science опыт завершён.</p>
   <p>Состояние хранится до остановки сервера или замены задачи. Перед завершением сохраните журнал.</p>
 </details>

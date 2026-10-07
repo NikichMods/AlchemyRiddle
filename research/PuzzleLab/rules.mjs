@@ -86,6 +86,12 @@ export function act(f, state, action) {
   if (action.type === 'notes') {
     if (typeof action.text !== 'string' || action.text.length > 4000) throw new Error('Недопустимая заметка');
     state.notes = action.text;
+  } else if (action.type === 'selectPair') {
+    if (!f.compatibility || !adjacent(f,action.slots)) throw new Error('Выберите наблюдение о соседней паре');
+    const observed = state.knownRelations.find(r => r.slots.every((id,i) => id === action.slots[i]) &&
+      r.slots.every(id => r.tuple[id] === action.tuple?.[id]));
+    if (!observed) throw new Error('Такой пары нет в журнале');
+    state.selected = {...observed.tuple};
   } else if (action.type === 'select' || action.type === 'toggleSelect' || action.type === 'mark') {
     const slot = f.slots.find(s => s.id === action.slot);
     if (!slot?.cards.some(c => c.id === action.card)) throw new Error('Неизвестная карточка');

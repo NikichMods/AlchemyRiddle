@@ -38,11 +38,15 @@ function relationJournal(s) {
         const refs = document.createElement('span'); refs.className = 'relation-refs';
         const connector = document.createElement('span'); connector.textContent = '↔';
         refs.append(cardRef(r.tuple[r.slots[0]]),connector,cardRef(r.tuple[r.slots[1]]),verdict);
-        li.tabIndex = 0;
+        const choice = document.createElement('button'); choice.className = 'relation-choice';
+        choice.id = `pair-${r.slots.map(id=>r.tuple[id]).join('-')}`;
+        choice.setAttribute('aria-label',`Выбрать только пару: ${r.slots.map(id=>name(r.tuple[id])).join(' + ')}`);
+        choice.title = 'Выбрать эту пару и снять остальные выделения';
+        choice.onclick = () => action({type:'selectPair',slots:r.slots,tuple:r.tuple});
         const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
-        li.onmouseenter = () => highlight(true); li.onmouseleave = () => highlight(false);
-        li.onfocus = () => highlight(true); li.onblur = () => highlight(false);
-        li.append(refs,names); list.append(li);
+        choice.onmouseenter = () => highlight(true); choice.onmouseleave = () => highlight(false);
+        choice.onfocus = () => highlight(true); choice.onblur = () => highlight(false);
+        choice.append(refs,names); li.append(choice); list.append(li);
       }
       if (!list.childElementCount) {const li = document.createElement('li'); li.className='empty'; li.textContent='Нет наблюдений'; list.append(li);}
       column.append(list); columns.append(column);
@@ -104,6 +108,7 @@ function render() {
   $('pair-research').hidden = !view.pairTestCost;
   $('knowledge').hidden = !view.pairTestCost;
   $('pair-help').hidden = !view.pairTestCost;
+  $('formula-compatibility').hidden = !view.pairTestCost;
   if (view.pairTestCost) {
     $('research-budget').textContent = `Заряды: ${s.research}`;
     $('pair-actions').replaceChildren(...view.slots.slice(0,-1).map((slot,i) => {
@@ -122,6 +127,26 @@ function render() {
       button.onclick = () => action({type:'pairTest',slots}); panel.append(heading,status,names,button); return panel;
     }));
     $('relations').replaceChildren(relationJournal(s));
+    const summary = $('formula-compatibility'); summary.replaceChildren();
+    const complete = view.slots.every(slot => s.selected[slot.id]);
+    const edges = view.slots.slice(0,-1).map((slot,i) => {
+      const slots = [slot.id,view.slots[i+1].id];
+      return s.knownRelations.find(r => pairMatches(r,slots,s.selected));
+    });
+    const state = !complete ? 'incomplete' : edges.some(r => r && !r.stable) ? 'incompatible' :
+      edges.every(r => r?.stable) ? 'stable' : 'unknown';
+    summary.className = `formula-compatibility ${state}`;
+    const chain = document.createElement('span'); chain.className = 'formula-chain';
+    view.slots.forEach((slot,i) => {
+      chain.append(cardRef(s.selected[slot.id]));
+      if (i<edges.length) {
+        const link = document.createElement('span'); link.className = `chain-link ${edges[i] ? edges[i].stable ? 'stable' : 'incompatible' : 'unknown'}`;
+        link.textContent = edges[i] ? edges[i].stable ? '✓' : '⊘' : s.selected[slot.id] && s.selected[view.slots[i+1].id] ? '?' : '—'; chain.append(link);
+      }
+    });
+    const label = document.createElement('span'); label.className = 'verdict';
+    label.textContent = {incomplete:'Выберите три компонента',incompatible:'Есть несовместимая пара',stable:'Обе пары стабильны',unknown:'Совместимость ещё не полностью известна'}[state];
+    summary.append(chain,label);
   }
   $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);

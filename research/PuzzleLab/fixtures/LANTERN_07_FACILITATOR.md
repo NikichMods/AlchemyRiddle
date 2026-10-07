@@ -47,3 +47,12 @@ No difficulty/progression labels and no answer hints or surviving-set display.
 
 Player checkpoint: docs/prototypes/PUZZLE_LAB_V0_07_STATE.md.
 Next interaction: fresh blind play; record reasoning before facilitator debrief.
+
+## Human outcome — 2026-10-07
+
+Completed and positively received. Exact history: f2e1 incompatible, f2e3
+incompatible, p2f3 stable, then target success. Science 0 / Research 5.
+Player used a unique conditional-term pair as an author-intent lead after
+rejecting the first bridge; do not label that premise as logically required.
+UI clarity was strongly praised and perceived as reducing avoidable mental work.
+Frozen fixture is unchanged. Complete state/reasoning: case-07 player checkpoint.
