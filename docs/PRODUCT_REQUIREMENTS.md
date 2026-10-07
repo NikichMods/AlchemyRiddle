@@ -711,6 +711,14 @@ Accepted product refinement:
 
 Exact automated scoring for intellectual interest remains open; do not collapse it into clue count or survivor count.
 
+Clue wording preference, accepted from case-03 feedback on 2026-10-07: use lively,
+natural wording while remaining crystal-clear, understandable and unambiguous.
+Visible tags, counts, slot scope and logical conditions retain their exact
+meaning. Liveliness must not add unstated mechanics or replace precise property
+names with ambiguous flavor/metaphor. Case 03's target-specific forbidden pairing
+and varied sentence roles received positive feedback; this does not by itself
+prove deep inference quality.
+
 Player calibration refinement, 2026-10-07: outside a deliberately bounded
 tutorial, reject clue packages made of parallel repetitions of the same logical
 form (case 02: three exact-one property counts). Rich cards, mathematical clue

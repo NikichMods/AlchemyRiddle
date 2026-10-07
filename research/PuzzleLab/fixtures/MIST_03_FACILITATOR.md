@@ -1,6 +1,10 @@
 # FACILITATOR SPOILERS — DO NOT SURFACE DURING BLIND PLAY
 
 Precommitted model: `mist-03.json`, lab-v0-03, 2026-10-07.
+Outcome: player solved in one submission; clear/lively wording received positive
+feedback. Observed route and exact state:
+`docs/prototypes/PUZZLE_LAB_V0_03_STATE.md`. Intended path below is historical
+authoring intent, not a claim about the player's route.
 Synthetic target Сумеречный покров. Two slots, three candidates per slot,
 nine possible pairs. Answer p3 + f3. All properties are exhaustive, names add no
 rules; no real game recipe is represented. No difficulty labels.

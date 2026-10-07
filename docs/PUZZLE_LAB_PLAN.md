@@ -64,9 +64,16 @@ Shared-property is a narrow fixture predicate, defined in the visible rules;
 forbidden conjunction is a target-specific logical constraint, not a change to
 the selected two-slot architecture or a chemistry experiment relation.
 
-Next: blind-play case 03, capture subjective interest before expanding to mature
-and three-slot fixtures. Technical smoke tests and successful deduction are
-not player acceptance of puzzle quality.
+Case 03 completed successfully in one paid submission. The player liked lively
+but precise wording and chose a plausible Fluid first, inferred the Powder's
+required property and checked overlap without exhaustively inspecting all cards.
+Exact final state/reasoning are in the case-03 checkpoint. Retain as a positive
+wording/short-hypothesis case; do not claim the intended deeper elimination path
+was actually used or that mature inference quality is calibrated.
+
+Next: debrief and, when next play is authorized, prepare a case testing deeper
+interaction while preserving varied clue roles and clear/live wording. Technical
+smoke tests and successful deduction are not blanket acceptance of puzzle quality.
 
 State lives only in server memory. A restart or valid fixture replacement clears
 it. Preserve a player journal before stopping during live calibration.
