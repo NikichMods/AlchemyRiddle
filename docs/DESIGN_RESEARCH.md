@@ -4,11 +4,22 @@ Status: **OPEN — adaptive knowledge-aware selected as the three-slot puzzle co
 
 ## Current recovery entry point
 
-The selected two-slot and three-slot architecture remains accepted; production remains BLOCKED. No runtime test is currently required. The highest-leverage open generator question is inference quality / intellectual interest, distinct from numerical difficulty.
+The selected two-slot and three-slot architecture remains accepted; production remains BLOCKED. No installed-runtime test is currently required. The highest-leverage open generator question is inference quality / intellectual interest, distinct from numerical difficulty.
 
-Next: revise positive matched examples to require genuine cross-clue inference; blind-calibrate a minimal easy/rich and mature/boss two-slot spread plus a representative three-slot case; distill the inference-quality acceptance contract; then run a bounded real-corpus serviceability screen. The first matched HARD/MAX examples are negative evidence, not accepted positive exemplars.
+The user now has a stable ChatGPT Desktop / Codex environment with the AlchemyRiddle repository open locally. The next research phase should use a minimal local browser harness to accelerate repeated blind calibration. Canonical working plan: `docs/PUZZLE_LAB_PLAN.md`.
 
-Read `PRODUCT_REQUIREMENTS.md`, the relevant accepted sections below, and `PAPER_PROTOTYPE_PROTOCOL.md` before play. The dated `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md` retains the consolidated accepted model and continuation history; use this section for the current resume pointer, not the checkpoint filename. Update this section when a material milestone changes the next step; preserve detailed historical evidence separately.
+Immediate sequence:
+1. local Codex inspects its checkout/worktree and synchronizes safely with current remote state;
+2. verify the localhost/hot-reload cycle;
+3. implement the narrow Puzzle Lab V0 around one synthetic two-slot fixture, with separate player and facilitator/debug views;
+4. revise positive matched examples to require genuine cross-clue inference;
+5. blind-calibrate a minimal easy/rich and mature/boss two-slot spread plus a representative three-slot case;
+6. distill the inference-quality acceptance contract;
+7. only then run a bounded real-corpus serviceability screen.
+
+The first matched HARD/MAX examples are negative evidence, not accepted positive exemplars. Puzzle Lab is a research harness, not accepted Graveyard Keeper production UI architecture and not yet a public standalone game.
+
+Read `PRODUCT_REQUIREMENTS.md`, `PUZZLE_LAB_PLAN.md`, the relevant accepted sections below, and `PAPER_PROTOTYPE_PROTOCOL.md` before blind play. The dated `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md` retains the consolidated accepted model and continuation history; use this section for the current resume pointer, not the checkpoint filename. Update this section when a material milestone changes the next step; preserve detailed historical evidence separately.
 
 ## Research objective
 
