@@ -29,3 +29,14 @@
 .card.excluded button.mark{color:#b9dfcc;font-size:24px}
 .card.excluded button.mark:hover{background:#2b433b}
 @media(max-width:420px){#cards fieldset + fieldset{border-left:0;border-top:1px solid #526d78;padding-left:0;padding-top:14px}}
+/* Three slots need readable cards rather than squeezed columns beside clues. */
+body.three-slot .layout{grid-template-columns:1fr}
+body.three-slot #cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+body.three-slot aside{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+#pair-actions{display:flex;flex-wrap:wrap;gap:10px}
+#pair-research[hidden]{display:none}
+#pair-research{margin-top:16px}
+#relations li{margin-bottom:8px}
+.card button.mark{font-size:23px}
+@media(max-width:760px){body.three-slot aside{grid-template-columns:1fr}}
+@media(max-width:600px){body.three-slot #cards{grid-template-columns:1fr}body.three-slot #cards fieldset + fieldset{border-left:0;border-top:1px solid #526d78;padding-left:0;padding-top:14px}}

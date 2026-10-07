@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 precommitted for three-slot play. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -10,7 +10,7 @@ Local command: `node research/PuzzleLab/server.mjs`; player URL:
 
 The minimal stack is Node.js 24 built-ins plus HTML/CSS/browser modules, without
 package dependencies. Fixture data, rules/evaluation, server projection and
-presentation are separate. Five synthetic two-slot fixtures preserve their precommitted models;
+presentation are separate. Five synthetic two-slot fixtures and one three-slot fixture preserve their precommitted models;
 subjective findings are recorded separately for each case.
 
 Implemented: card selection, personal exclusions, notes, paid binary submission,
@@ -19,7 +19,7 @@ browser reload for presentation/fixture edits. Answer and evaluator stay on the
 server; debug routes require explicit `--debug`. One Science/one submission is
 this fixture's bounded calibration budget, not accepted production balance.
 
-Verified locally on Node 24.19.0: eleven deterministic/HTTP tests pass, including
+Verified locally on Node 24.19.0: fourteen deterministic/HTTP tests pass, including
 clue truth tables, uniqueness, budget exhaustion, invalid requests, session
 continuity and player/debug separation. Browser checks prove initial rendering,
 selection, notes, personal marking, failed submission and exhausted-budget UI.
@@ -39,18 +39,18 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-05`, synthetic target Печать росы, with
-linked opposite-slot implications, an exact count and shared-property clues.
-Completed checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. No player-facing
+Current active fixture: `lab-v0-06`, synthetic target Тихая гавань, with
+three slots, three varied target clues, prior adjacent-pair observations and paid pair research.
+Initial checkpoint/next point:
+`docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
 
 Run the current case:
-`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/dew-05.json`.
+`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/harbor-06.json`.
 The original `fixture.json` is retained as historical negative onboarding
-evidence. Eleven deterministic/HTTP tests now pass, including the fourth case's
+evidence. Fourteen deterministic/HTTP tests now pass, including the fourth case's
 uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
 
 Case 02 feedback: the player independently articulated the correct answer,
@@ -92,9 +92,17 @@ author chain was not explicitly stated. Preserve the positive experience without
 claiming increased abstract proof depth. Exact final state and narration are in
 the case-05 checkpoint. UI watch item for the next pass: red cross resembles a
 close/remove action; use a different manual-exclusion marker, keeping cards
-visible and restoration available. No UI change was requested for this turn.
-Next: extend calibration with representative three-slot play (V0 currently
-requires a bounded two-to-three-slot harness extension), while continuing
+visible and restoration available. The icon feedback was initially deferred; the next harness UI pass implements it without changing marking semantics.
+Case 06 is precommitted before play. The bounded harness extension supports three
+slots, prior stable/incompatible observations and unknown adjacent-pair tests.
+Science 1 funds one formula check; four separate Research Charges fund pair tests
+at cost 1. No refill; spent research charges do not block remaining synthesis.
+All prior observations on the surface are shown without relevance labels, and
+no survivor set or deductions are calculated for the player. This is one frozen
+knowledge state of the accepted three-slot core, not a generator or game mod.
+The marker now uses a slashed circle instead of a close-like red cross.
+Next: blind-play case 06, capture the actual route and subjective experience,
+then continue calibration
 toward mature/boss and three-slot calibration. Technical
 smoke tests and successful deduction are not blanket acceptance of puzzle quality.
 
@@ -272,3 +280,23 @@ standalone game until evidence requires more.
 
 No installed Graveyard Keeper runtime test is required for this research-tool
 bootstrap.
+
+## Three-slot Lab extension checkpoint — 2026-10-07
+
+Case 06 uses the selected three-slot grammar in one frozen synthetic knowledge
+state. Automated checks cover 27 triples, every clue's necessity, initial partial
+anchors, no initial known complete target-compatible chain, adjacent-only tests,
+independent budgets, free invalid/repeated requests, final synthesis and public
+projection/session continuity. All 14 tests pass. Isolated browser checks on
+port 4174 verified both research buttons, raw observations, charge spending,
+three selections, exclusion/restore and the three-column layout. This technical
+session is separate from the untouched blind-play state on port 4173.
+
+The browser check caught an incomplete-pair display incorrectly matching a
+different prior relation. Lookup now checks both relation slot identities and
+both selected cards. Conditions are placed immediately below cards, before
+research controls, to avoid burying them beneath the observation journal.
+
+Collaboration preference is canonical in AGENTS.md: execute obvious agreed next
+steps autonomously; check before major unaccepted direction/mechanics/scope
+decisions. Do not ask for permission merely to carry out an already accepted step.

@@ -10,15 +10,15 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
-For the current blind calibration case (Печать росы):
+For the current blind calibration case (Тихая гавань):
 
 ```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/dew-05.json
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/harbor-06.json
 ```
 
 The default fixture remains the original case for historical reproduction.
 Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. Difficulty labels and progression UI
+`docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`. Difficulty labels and progression UI
 are deliberately deferred pending a separate product decision.
 
 If a restricted execution environment blocks the test runner's child process,
@@ -39,7 +39,7 @@ Replace the default fixture with `--fixture=path/to/fixture.json`. The fixture
 owns cards, properties, structured clues, answer and Science budget. The rules
 module evaluates and renders the same clue structure, preventing independently
 authored wording from drifting from its logic. Startup requires one unique
-answer. V0 supports two slots, exact counts, implication, shared-property and
+answer. V0 supports two or three slots, exact counts, implication, shared-property and
 forbidden-conjunction clues used by the committed fixtures.
 
 Player mode has no debug link, answer data, candidate solver or automatic
@@ -65,3 +65,12 @@ The first fixture is a proposed easy positive case, not a player-accepted
 inference-quality exemplar. Facilitator semantics and test status are recorded
 in `FACILITATOR.md` (contains fictional spoilers). V0's single Science budget is
 a bounded calibration choice, not production balance.
+
+Three-slot fixture research: both adjacent pairs must be STABLE in addition to
+all target clues. `compatibility.stablePairs` defines the stable edges; all other
+legal adjacent pairs are incompatible. `knownRelations` seeds prior observations.
+These facilitator fields remain server-side except observed relation results.
+`researchCharges` / `pairTestCost` fund unknown adjacent tests separately from
+Science / submissionCost. Repeating known pairs is free; the UI disables them.
+No Powder-Essence test, automatic exclusion or derived candidate set is offered.
+The initial knowledge state is fixed for calibration, not a production generator.

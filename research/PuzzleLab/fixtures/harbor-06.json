@@ -1,0 +1,40 @@
+{
+  "id": "lab-v0-06",
+  "title": "Тихая гавань",
+  "description": "Подберите один порошок, одну жидкость и одну эссенцию. Все сведения о составе верны одновременно. Свойства перечислены полностью; названия не добавляют правил. Для формулы обе соседние пары должны быть стабильны. Совместимость узнаётся из журнала и исследований пар, а не из совпадения тегов. Условие «если» не требует выполнения своей первой части.",
+  "slots": [
+    {"id": "powder", "name": "Порошок", "cards": [
+      {"id": "p1", "name": "Пыль каменного вереска", "tags": ["Растительное", "Минеральное"]},
+      {"id": "p2", "name": "Пыль сумеречного мотылька", "tags": ["Животное", "Тёмное"]},
+      {"id": "p3", "name": "Пыль ночного плюща", "tags": ["Растительное", "Тёмное"]}
+    ]},
+    {"id": "fluid", "name": "Жидкость", "cards": [
+      {"id": "f1", "name": "Раствор речной соли", "tags": ["Водное", "Минеральное"]},
+      {"id": "f2", "name": "Сок вязкой лианы", "tags": ["Растительное", "Слизь"]},
+      {"id": "f3", "name": "Вода сумеречного ключа", "tags": ["Водное", "Тёмное"]}
+    ]},
+    {"id": "essence", "name": "Эссенция", "cards": [
+      {"id": "e1", "name": "Эссенция сердца цветка", "tags": ["Растительное", "Орган"]},
+      {"id": "e2", "name": "Эссенция лесного моллюска", "tags": ["Животное", "Слизь"]},
+      {"id": "e3", "name": "Эссенция чёрного кристалла", "tags": ["Минеральное", "Тёмное"]}
+    ]}
+  ],
+  "clues": [
+    {"kind": "exactly", "count": 1, "terms": [{"slot": "powder", "tag": "Тёмное"}, {"slot": "fluid", "tag": "Тёмное"}, {"slot": "essence", "tag": "Тёмное"}]},
+    {"kind": "implies", "if": {"slot": "powder", "tag": "Минеральное"}, "then": {"slot": "essence", "tag": "Животное"}},
+    {"kind": "notTogether", "left": {"slot": "powder", "tag": "Растительное"}, "right": {"slot": "fluid", "tag": "Слизь"}}
+  ],
+  "compatibility": {"stablePairs": ["p1:f1", "p1:f3", "p2:f1", "p2:f2", "p3:f2", "p3:f3", "f1:e3", "f2:e2", "f2:e3", "f3:e1", "f3:e3"]},
+  "knownRelations": [
+    {"slots": ["powder", "fluid"], "tuple": {"powder": "p1", "fluid": "f3"}, "stable": true},
+    {"slots": ["fluid", "essence"], "tuple": {"fluid": "f1", "essence": "e2"}, "stable": false},
+    {"slots": ["powder", "fluid"], "tuple": {"powder": "p3", "fluid": "f1"}, "stable": false},
+    {"slots": ["powder", "fluid"], "tuple": {"powder": "p2", "fluid": "f1"}, "stable": true},
+    {"slots": ["fluid", "essence"], "tuple": {"fluid": "f2", "essence": "e2"}, "stable": true}
+  ],
+  "researchCharges": 4,
+  "pairTestCost": 1,
+  "science": 1,
+  "submissionCost": 1,
+  "answer": {"powder": "p2", "fluid": "f2", "essence": "e2"}
+}

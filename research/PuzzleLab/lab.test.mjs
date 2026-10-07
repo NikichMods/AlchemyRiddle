@@ -2,9 +2,54 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {act, candidates, clueText, createState, publicView, satisfies, validate} from './rules.mjs';
+import {act, candidates, clueText, createState, publicView, satisfies, validate, validFormula} from './rules.mjs';
 import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
+const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
+
+test('three-slot model requires clues and both adjacent edges, with four initial hypotheses', () => {
+  validate(harbor);
+  const all = candidates(harbor);
+  assert.equal(all.length,27);
+  assert.equal(all.filter(t => validFormula(harbor,t)).length,1);
+  const possible = all.filter(t => harbor.clues.every(c => satisfies(harbor,t,c)) &&
+    harbor.knownRelations.every(r => r.stable || !r.slots.every(id => r.tuple[id] === t[id])));
+  assert.equal(possible.length,4);
+  assert.ok(possible.every(t => ![['powder','fluid'],['fluid','essence']].every(slots =>
+    harbor.knownRelations.some(r => r.stable && slots.every(id => r.tuple[id] === t[id])))));
+  for (let omitted=0; omitted<harbor.clues.length; omitted++) {
+    const f = {...harbor,clues:harbor.clues.filter((_,i) => i!==omitted)};
+    assert.ok(all.filter(t => validFormula(f,t)).length > 1);
+  }
+  const broken = structuredClone(harbor); broken.knownRelations[0].stable = false;
+  assert.throws(() => validate(broken));
+  const nonAdjacent = structuredClone(harbor); nonAdjacent.compatibility.stablePairs.push('p1:e1');
+  assert.throws(() => validate(nonAdjacent));
+});
+
+test('pair research charges only unknown adjacent pairs, preserves Science and never solves automatically', () => {
+  const s = createState(harbor);
+  assert.throws(() => act(harbor,s,{type:'pairTest',slots:['powder','essence']}));
+  assert.throws(() => act(harbor,s,{type:'pairTest',slots:['powder','fluid']}));
+  assert.equal(s.research,4);
+  s.selected={...harbor.answer};
+  act(harbor,s,{type:'pairTest',slots:['powder','fluid']});
+  assert.equal(s.research,3); assert.equal(s.science,1); assert.equal(s.status,'playing');
+  assert.equal(s.history[0].stable,true);
+  act(harbor,s,{type:'pairTest',slots:['powder','fluid']});
+  assert.equal(s.research,3); assert.equal(s.history.length,1);
+  s.selected.essence='e1'; act(harbor,s,{type:'pairTest',slots:['fluid','essence']});
+  assert.equal(s.history[1].stable,false); assert.equal(s.research,2);
+  s.research=0;
+  act(harbor,s,{type:'pairTest',slots:['powder','fluid']}); // known pair stays free
+  s.selected={powder:'p3',fluid:'f3',essence:'e1'};
+  assert.throws(() => act(harbor,s,{type:'pairTest',slots:['powder','fluid']}));
+  s.selected={powder:'p2',fluid:'f2'};
+  assert.throws(() => act(harbor,s,{type:'submit'})); assert.equal(s.science,1);
+  s.selected={...harbor.answer}; act(harbor,s,{type:'submit'});
+  assert.equal(s.status,'solved'); assert.equal(s.science,0);
+  assert.throws(() => act(harbor,s,{type:'pairTest',slots:['powder','fluid']}));
+});
 
 test('fifth fixture links opposite-slot implications; every clue removes a plausible alternative', () => {
   const f = JSON.parse(readFileSync(new URL('./fixtures/dew-05.json', import.meta.url)));
@@ -106,12 +151,31 @@ test('successful submission completes once; public projection omits facilitator 
   const projected = publicView(fixture,s);
   assert.equal(projected.answer, undefined); assert.ok(projected.clues.every(c => typeof c === 'string'));
 });
-async function serve(t, debug = false) {
-  const server = createLab({debug});
+async function serve(t, debug = false, fixturePath) {
+  const server = createLab({debug,...(fixturePath ? {fixturePath} : {})});
   await new Promise(r => server.listen(0,'127.0.0.1',r));
   t.after(() => new Promise(r => {server.close(r); server.closeAllConnections();}));
   return `http://127.0.0.1:${server.address().port}`;
 }
+test('three-slot HTTP exposes only prior and earned observations; third slot and final verification work', async t => {
+  const base = await serve(t,false,new URL('./fixtures/harbor-06.json',import.meta.url));
+  const first = await fetch(base+'/api/state'); const cookie = first.headers.get('set-cookie').split(';')[0];
+  const initial = await first.json();
+  assert.equal(initial.slots.length,3); assert.equal(initial.compatibility,undefined);
+  assert.equal(initial.answer,undefined); assert.equal(initial.state.knownRelations.length,5);
+  const headers={Cookie:cookie,'Content-Type':'application/json'};
+  const action = body => fetch(base+'/api/action',{method:'POST',headers,body:JSON.stringify(body)});
+  assert.equal((await action({type:'pairTest',slots:['powder','essence']})).status,400);
+  for (const slot of harbor.slots) await action({type:'select',slot:slot.id,card:harbor.answer[slot.id]});
+  const observed = await (await action({type:'pairTest',slots:['powder','fluid']})).json();
+  assert.equal(observed.state.research,3); assert.equal(observed.state.science,1);
+  assert.equal(observed.state.knownRelations.length,6); assert.equal(observed.state.status,'playing');
+  const refreshed = await (await fetch(base+'/api/state',{headers})).json();
+  assert.deepEqual(refreshed.state,observed.state);
+  const solved = await (await action({type:'submit'})).json();
+  assert.equal(solved.state.status,'solved'); assert.equal(solved.state.history.length,2);
+  assert.equal((await fetch(base+'/api/debug')).status,404);
+});
 test('HTTP player session survives refresh; source and facilitator routes are unavailable', async t => {
   const base = await serve(t);
   const first = await fetch(base+'/api/state'); const cookie = first.headers.get('set-cookie').split(';')[0];

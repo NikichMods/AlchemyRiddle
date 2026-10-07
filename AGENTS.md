@@ -12,6 +12,16 @@ For local Codex startup/recovery, follow `DevRules/CODEX_WORKFLOW.md`. Read the 
 
 This file contains only project-specific additions, constraints, verified facts, and explicit exceptions.
 
+## Collaboration cadence
+
+User preference, clarified 2026-10-07: carry an obvious next step through without
+waiting for another go-ahead when it follows the agreed direction. Briefly check
+with the user before major decisions that change direction, mechanics or scope,
+even if the agent considers them obvious, unless that decision is already
+authorized in the session or accepted project scope. Routine implementation choices within
+the agreed step do not require confirmation. Capture material results and owning
+decisions continuously; do not turn every completed step into an approval gate.
+
 ## Project identity
 
 - Project name: **AlchemyRiddle**

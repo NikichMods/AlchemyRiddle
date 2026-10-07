@@ -4,6 +4,7 @@ let view;
 let queue = Promise.resolve();
 const name = id => view.slots.flatMap(s => s.cards).find(c => c.id === id)?.name ?? '—';
 const formula = tuple => view.slots.map(s => name(tuple[s.id])).join(' + ');
+const pairDescription = r => `${r.slots.map(id => name(r.tuple[id])).join(' + ')} — ${r.stable ? 'СТАБИЛЬНО' : 'НЕСОВМЕСТИМО'}`;
 // Presentation palette only: colors carry no additional logical meaning.
 const tagStyles = {
   'Растительное':'plant', 'Минеральное':'mineral', 'Тёмное':'dark',
@@ -30,6 +31,10 @@ function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
   $('title').textContent = view.title; $('description').textContent = view.description;
+  document.body.classList.toggle('three-slot', view.slots.length === 3);
+  const aside = document.querySelector('.layout aside');
+  if (view.slots.length === 3) $('pair-research').before(aside);
+  else document.querySelector('.layout').append(aside);
   $('cards').replaceChildren();
   for (const slot of view.slots) {
     const group = document.createElement('fieldset');
@@ -45,7 +50,7 @@ function render() {
       const tags = document.createElement('p'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); box.append(tags);
       const mark = document.createElement('button'); mark.className = 'mark';
       const markAction = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
-      mark.textContent = s.marks[card.id] ? '↶' : '×';
+      mark.textContent = s.marks[card.id] ? '↶' : '⊘';
       mark.title = markAction;
       mark.id = `mark-${card.id}`;
       mark.setAttribute('aria-label', `${markAction}: ${card.name}`); mark.setAttribute('aria-pressed', String(Boolean(s.marks[card.id])));
@@ -55,10 +60,27 @@ function render() {
   }
   $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
   $('selection').textContent = formula(s.selected);
+  $('pair-research').hidden = !view.pairTestCost;
+  if (view.pairTestCost) {
+    $('research-budget').textContent = `Заряды исследования: ${s.research} · Стоимость исследования пары: ${view.pairTestCost}`;
+    $('pair-actions').replaceChildren(...view.slots.slice(0,-1).map((slot,i) => {
+      const slots = [slot.id,view.slots[i+1].id];
+      const known = s.knownRelations.find(r => r.slots.every((id,index) => id === slots[index]) &&
+        slots.every(id => s.selected[id] && r.tuple[id] === s.selected[id]));
+      const button = document.createElement('button'); button.id = `test-${slot.id}`;
+      button.textContent = known ? `${slots.map(id => view.slots.find(x => x.id === id).name).join(' + ')}: ${known.stable ? 'стабильно' : 'несовместимо'}`
+        : `Исследовать: ${slot.name.toLowerCase()} + ${view.slots[i+1].name.toLowerCase()}`;
+      button.disabled = s.status !== 'playing' || Boolean(known) || s.research < view.pairTestCost || !slots.every(id => s.selected[id]);
+      button.onclick = () => action({type:'pairTest',slots}); return button;
+    }));
+    $('relations').replaceChildren(...s.knownRelations.map(r => {const li = document.createElement('li'); li.textContent = pairDescription(r); return li;}));
+  }
   $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);
   $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Бюджет проверок исчерпан; ответ не раскрыт. Сохраните рассуждения для разбора.' : '';
-  $('history').replaceChildren(...s.history.map(h => {const li = document.createElement('li'); li.textContent = `${formula(h.tuple)} — ${h.success ? 'успех' : 'неудача'} (Science −${h.cost})`; return li;}));
+  $('history').replaceChildren(...s.history.map(h => {const li = document.createElement('li'); li.textContent = h.type === 'pairTest'
+    ? `${pairDescription(h)} (заряд исследования −${h.cost})`
+    : `${formula(h.tuple)} — ${h.success ? 'успех' : 'неудача'} (Science −${h.cost})`; return li;}));
   if (!s.history.length) {const li = document.createElement('li'); li.textContent = 'Проверок пока не было.'; $('history').append(li);}
   if (focused && $(focused) !== document.activeElement) $(focused)?.focus({preventScroll:true});
 }
