@@ -1,6 +1,6 @@
 # Bounded real-corpus quality diagnostic — 2026-10-07
 
-Status: **execution blocked on private inputs; sampling/stop plan predeclared**.
+Status: **raw corpus recovered and structural baseline verified; property join/core inputs pending; sampling/stop plan predeclared**.
 Owner: [PUZZLE_QUALITY_CONTRACT.md](../PUZZLE_QUALITY_CONTRACT.md).
 Production remains BLOCKED. No new human fixture or runtime probe is commissioned.
 
@@ -19,7 +19,8 @@ temporary files. Filename search of Windows Temp encountered inaccessible
 unrelated subdirectories; absence everywhere on the machine is not established.
 Repository evidence names private/ephemeral inputs without a recoverable path or
 input hash. Available public aggregates cannot reconstruct exact formula rows.
-Input location has been requested from the user.
+This describes the first recovery attempt. Subsequent attachment recovery below
+found the accepted raw corpus without requiring user retransmission.
 
 Before execution, locate the accepted private inputs or original accepted logs;
 record SHA-256, source provenance, property-model identity and tool revision.
@@ -123,6 +124,31 @@ motifs transferred, failed or remain untested, and one bounded next action.
 
 ## Current execution result
 
-**Real-corpus variants evaluated: 0.** Input identity and the real baseline remain
-unverified in this checkout. The immediate next step is input recovery and baseline
-validation, then this bounded pass; completed Lab calibration is not repeated.
+**Real-corpus quality variants evaluated: 0.** The raw corpus is now recovered;
+quality-package evaluation still awaits the verified property join and core inputs.
+
+## Attachment recovery and baseline — 2026-10-07
+
+The app's `read_thread` tool retrieved `LogOutput(3).log` from the earlier chat
+`Исследование алхимической механики`, chat identity
+`6ac17487-2184-83ed-8abc-bae98e01ad2c`. It materialized the attachment in a local
+temporary preview directory. Preserve it in private local evidence storage,
+not in this public repository; a private input index records its recoverable path.
+
+SHA-256: `d4d5817fb9a00917188f0c740a60c2e567f6c8e3e299ed27a158c84e5cd33094`.
+The log has complete `AR_CORPUS_BEGIN` / `AR_CORPUS_DONE` markers for probe 0.2.0,
+509 recipe rows, 79 ingredient-symbol records and 57 goo-map rows. Its summary
+reproduces 44 success-classified / 465 auxiliary definitions.
+
+Direct parsing of the recorded recipe needs and ingredient types reproduces:
+- 43 ordinary picker-compatible formulas;
+- two-slot: 24 formulas / 18 outputs;
+- three-slot: 19 formulas / 16 outputs, 10/9/9 role participants, 810 triples,
+  19 PF / 18 FE stable edges and 47 compatible chains.
+
+This resolves raw formula availability and the structural three-slot baseline.
+It does **not** yet verify the de-anonymizing property join, Dark + Organ model
+or filtered 16-variant two-slot input. The original recipe log is anonymized;
+do not assign named properties to symbols by guessing. Next: recover the accepted
+property/provenance capture or exact prior private join, validate the canonical
+assignment and core filtering, then execute the predeclared quality pass.

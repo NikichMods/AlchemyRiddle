@@ -6,16 +6,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Bounded diagnostic recovery — 2026-10-07
 
-Repository recovery is complete. The frozen Lab audit was reproduced successfully;
-the real-corpus baseline has **not** been reproduced. Accepted private formula/tag
-inputs or original probe logs were not located in the inspected local paths, and
-their location has been requested. This blocks execution, not the selected design.
+Repository recovery and the frozen Lab audit are complete. A subsequent search
+recovered accepted probe 0.2.0 `LogOutput(3).log` through the original chat attachment.
+Its ordinary corpus and three-slot structural baseline reproduce exactly. Raw
+evidence is preserved outside Git with a private recovery index. The verified
+symbol-to-property join, Dark + Organ input and 16-variant two-slot core still
+need recovery/validation; quality-package execution has not started.
 
 Predeclared sample, seed, computation/review caps and measurement boundaries:
 `research/BOUNDED_QUALITY_DIAGNOSTIC_2026-10-07.md`. At most six variants,
 192 fields, 49,152 packages and 18 reviewed certificates; no real variants have
-been evaluated yet. Next: recover and hash accepted private inputs, validate the
-Dark + Organ model and existing baseline, then run that pass. Do not fabricate
+been evaluated yet. Next: recover the accepted property capture or prior exact
+join, validate Dark + Organ and core filtering, then run that pass. Do not fabricate
 missing corpus rows or replace this task with another synthetic Lab case.
 
 The handoff below remains the calibration boundary and reading guide; its
