@@ -145,3 +145,24 @@ The user accepts retaining the **weak additive correction**. Use tested strength
 and diversity/interest criteria retained. Stronger arms remain comparison evidence.
 This acceptance resolves selection direction; production scoring-scale transfer
 and human calibration are not established by it. No new execution in this segment.
+
+## Proposed coverage-gap diagnosis (not executed)
+
+The missing item is one of 19 formula-variant targets, not an established failure
+of an entire output or the new route penalty. Its candidate pool is empty before
+route estimation, stored-knowledge contexts and additive ranking.
+
+Leading hypothesis: the bounded search (eight 3x3x3 fields, sampled two/three-clue
+packages) missed suitable candidates. Alternative: the local sampling envelope
+or a structural gate has low/no capacity for this variant. Neither is established;
+per-target rejection stages were not preserved in the original aggregate.
+
+Proposed sequence: first reproduce the exact original target sample with per-field
+counts of uniqueness, clue necessity, branch/route-witness and ordinary-interaction
+rejections. Then, preserving all gates, extend only this target's sampling to a
+predeclared maximum of 32 fields / 2,048 package attempts per field. Record whether
+any eligible candidate exists and its estimated mean route under the accepted weak
+ranking. A positive witness establishes a sampling miss; a negative bounded result
+does not establish impossibility. If no candidate survives, inspect the dominant
+gate and the already-accepted variable-field envelope before proposing any change
+to quality criteria. No tag, recipe, fee or gate changes are authorized by this plan.
