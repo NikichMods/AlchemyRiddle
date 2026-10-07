@@ -1,112 +1,80 @@
 # Puzzle Lab V0
 
-Local research harness, not a game mod or a published website. Original source
-is MPL-2.0. No third-party packages, game assets or real recipes are included.
+Local research harness, not a game mod or published website. Original source is
+MPL-2.0. No third-party packages, game assets or real recipes are included.
 
-From the repository root, with Node.js 24:
+## Current research state
+
+Cases 01–10 are complete; the user accepts the interface as sufficient for the
+laboratory. Current served case 10 (Сердце глубины) is solved, not fresh blind play.
+Its recorded state is Science 2 / Research 3 after six pair tests and one success.
+Checkpoint: `docs/prototypes/PUZZLE_LAB_V0_10_STATE.md`.
+Consolidated findings/next step: `docs/PUZZLE_QUALITY_CONTRACT.md`.
+
+## Run and verify
+
+From the repository root, using Node.js 24 built-ins:
 
 ```sh
-node research/PuzzleLab/server.mjs
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/depth-10.json
 node --test research/PuzzleLab/lab.test.mjs
+node research/PuzzleLab/audit-calibration.mjs --write
 ```
 
-For the current blind calibration case (Печать прилива):
+If child-process isolation is restricted, use
+`node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
+There are 21 deterministic/HTTP tests. The offline audit validates all ten frozen
+fixtures, replays recorded pair histories and emits aggregate structural evidence
+with fixture hashes in `calibration-audit.json`; it does not score human interest.
 
-```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/tide-08.json
-```
+Open http://127.0.0.1:4173. Stop with Ctrl+C. An alternative port uses `--port=4174`.
+The server binds IPv4 loopback; `localhost` works when it resolves to IPv4.
+The default `fixture.json` remains original negative onboarding case 01 for
+reproduction. Select historical cases explicitly with `--fixture=path/to/file.json`.
 
-The default fixture remains the original case for historical reproduction.
-Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_08_STATE.md`. Difficulty labels and progression UI
-are deliberately deferred pending a separate product decision.
+## State and presentation
 
-If a restricted execution environment blocks the test runner's child process,
-use `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
+State is held in server memory, associated with an HttpOnly session cookie.
+HTML/CSS/browser-JS changes reload presentation and preserve current state.
+Finite polling every two seconds avoids permanent reload streams. Server/rules
+changes require a restart. A valid changed fixture resets sessions; invalid
+fixture edits preserve the last valid model. Do not change a live blind fixture.
+A restart creates fresh sessions, not restoration of a historical human trial.
+Preserve paid actions and current player state in the case checkpoint beforehand.
 
-Open http://127.0.0.1:4173. Stop with Ctrl+C. Another port may be selected with
-`--port=4174`. The server binds only to IPv4 loopback. `localhost` is also
-accepted when it resolves to IPv4.
+Player surface: candidate cards and labeled colored properties, composition clues,
+observed adjacent compatibility, selected-pair experiments, final synthesis and
+expandable instructions. Repeat-click deselects; observed-pair selection clears
+other choices. Pair identities have slot silhouettes/codes and linked highlighting.
+No automatic tag deductions, survivor list, difficulty/progression labels,
+manual exclusion controls, notes, bottom action-history list or download button.
+Historical mark/notes data and paid-action history remain in session/API evidence.
 
-HTML/CSS/browser-JS changes trigger live reload and preserve session state.
-The browser checks public presentation/fixture state with finite requests every
-two seconds; no permanent EventSource stream is opened during navigation.
-Changes to `server.mjs` or `rules.mjs` require a server restart. A valid changed
-fixture triggers reload and resets sessions; invalid edits retain the last
-valid fixture and print an error. Do not edit a fixture during blind play.
+The rules module evaluates and renders the same structured clue objects. Two or
+three slots, exact counts, implication, shared-property and forbidden-conjunction
+clauses are supported. Startup validates a unique answer in each synthetic model.
+The fixture owns candidates, exhaustive properties, clues, answer and budgets.
+Cases 09/10 allow three final checks; older budgets remain frozen. Neither budget
+nor synthetic outcome matrices establish production balance or corpus coverage.
 
-Replace the default fixture with `--fixture=path/to/fixture.json`. The fixture
-owns cards, properties, structured clues, answer and Science budget. The rules
-module evaluates and renders the same clue structure, preventing independently
-authored wording from drifting from its logic. Startup requires one unique
-answer. V0 supports two or three slots, exact counts, implication, shared-property and
-forbidden-conjunction clues used by the committed fixtures.
+Three-slot models require both adjacent edges stable and all composition clues.
+`compatibility.stablePairs` defines the full hidden graph; every other legal
+adjacent edge is incompatible. `knownRelations` contains only public priors.
+New cases start with stable priors only; every personally researched result stays
+visible. Pair research charges and synthesis Science are separate finite pools.
+Known/invalid pair requests are free. Pair tests reveal only binary compatibility;
+full synthesis reveals success/failure. Exhausting pair charges does not block a
+remaining full synthesis. Success or exhausted Science ends the investigation.
 
-Player mode has no debug link, answer data, candidate solver or automatic
-exclusions. The answer stays server-side. Candidate exclusion controls are removed
-by user request; historical mark data/API remain for reproducing old cases.
-Sessions survive page reload through an HttpOnly cookie;
-all state is in process memory, not durable storage. Notes and the current
-player state can be downloaded as JSON. Exports contain no hidden answer.
+## Facilitator and evidence boundary
 
-Facilitator use only, after blind play or while privately authoring:
+Only public fields and earned observations are served in normal mode. Answer,
+unobserved edges, audit and fixture source are not player routes. To inspect a
+private authoring/debug session explicitly run `--debug` and open `/facilitator`.
+That page warns about spoilers before linking to `/api/debug`, which includes the
+full model and sessions. Both routes return 404 in ordinary mode.
 
-```sh
-node research/PuzzleLab/server.mjs --debug
-```
-
-Visit `/facilitator` for an explicit spoiler warning and opt-in link to JSON
-containing the fixture, per-tuple clue truth table and current sessions. The
-live clue-compatible set is the rows with all clue values true. Player marks
-remain independent. These routes return 404 unless debug is explicitly enabled.
-This is accidental-spoiler separation, not an anti-cheat system: a local user
-can inspect repository files, clear cookies or restart the server.
-
-The first fixture is a proposed easy positive case, not a player-accepted
-inference-quality exemplar. Facilitator semantics and test status are recorded
-in `FACILITATOR.md` (contains fictional spoilers). V0's single Science budget is
-a bounded calibration choice, not production balance.
-
-Three-slot fixture research: both adjacent pairs must be STABLE in addition to
-all target clues. `compatibility.stablePairs` defines the stable edges; all other
-legal adjacent pairs are incompatible. `knownRelations` seeds prior observations.
-These facilitator fields remain server-side except observed relation results.
-`researchCharges` / `pairTestCost` fund unknown adjacent tests separately from
-Science / submissionCost. Repeating known pairs is free; the UI disables them.
-No Powder-Essence test, automatic exclusion or derived candidate set is offered.
-The initial knowledge state is fixed for calibration, not a production generator.
-Workspace interaction: click a candidate to select it; click again to deselect.
-Pair/formula actions are directly under the candidate grid. Pair states use only
-already observed knowledge; no tag-based deductions are supplied. The journal
-separates prior vs current-investigation observations and the two adjacent pair
-types, with polarity colors/icons and matching-selection highlights. General
-rules, notes and full action history are in expandable reference sections.
-Case 06 is retained with its historical mixed-polarity initial observations;
-new blind cases start with stable bridges only, per the clarified product policy.
-
-Workspace interaction: journal entries are buttons. Hover/focus highlights the
-observed candidates; click/Enter/Space selects exactly that pair and clears other
-slots. This is free selection, never an experiment or automatic deduction.
-The final-answer chain displays only observed adjacent pair states; tag conditions
-remain the player's reasoning task. On narrow screens, candidates and evidence
-precede actions. Case 07 is completed; its checkpoint retains the human result.
-
-Case 08 is now in debrief after a failed synthesis; the frozen model is unchanged.
-Future synthetic examples use three final checks at cost 1 Science each. Remaining
-and original final-check counts are visible before submission. The information-first
-layout places composition and pair compatibility below candidates, actions at right.
-Unknown compatibility does not block full submission. Incomplete pair controls are
-hidden; selected formula entries are plain output rather than bordered empty inputs.
-
-Current fixture (case 09 completed and accepted): `fixtures/lantern-09.json` (case 09).
-Run `node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/lantern-09.json`.
-Initial state must be blank, playing, Science 3 / Research 6. The prior case 08
-is archived as exhausted; do not present an ordinary UI refresh as a new puzzle.
-
-Active fresh contrast: `fixtures/depth-10.json`, case 10. Run with
-`--fixture=research/PuzzleLab/fixtures/depth-10.json`. Initial state empty, playing,
-Science 3 / Research 9. Case 09 completed; its checkpoint preserves earned state.
-
-Case 10 has now completed and been accepted; preserve its checkpoint. Player UI
-retains pair observations but no longer exposes bottom notes/history/export.
-Action history remains in server session/public state for facilitator evidence.
+This is accidental-spoiler separation, not an anti-cheat system: a local user can
+read repository files or start a new session. Facilitator files contain fictional
+spoilers and must not be surfaced during blind play. Exact played fixtures stay
+frozen; dated outcomes belong in their checkpoints. See `docs/PAPER_PROTOTYPE_PROTOCOL.md`.

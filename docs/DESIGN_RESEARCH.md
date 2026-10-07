@@ -1,28 +1,48 @@
 # Design / Research Phase
 
-Status: **OPEN — adaptive knowledge-aware selected as the three-slot puzzle core; full production architecture and implementation gates remain open**
+Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cores retained; production remains BLOCKED**.
 
 ## Current recovery entry point
 
-The selected two-slot and three-slot architecture remains accepted; production remains BLOCKED. No installed-runtime test is currently required. The highest-leverage open generator question is inference quality / intellectual interest, distinct from numerical difficulty.
+Puzzle Lab V0 calibration cases 01–10 are complete. Cases 03–07, 09 and 10 received
+explicit positive puzzle acceptance; 01/02 retain negative teaching/repetition
+evidence, and 08 is a UI/economy-confounded failure. The user explicitly accepts
+the current Lab interface as sufficient for this research phase; routine UI polish
+is finished. No installed-runtime test is currently required.
 
-Puzzle Lab V0 is implemented on `research/puzzle-lab-v0`, with five synthetic two-slot calibration fixtures and an accepted three-slot case, separate player/facilitator data, paid submission, personal marks, notes and journal export. Localhost, live reload, browser interactions and fifteen deterministic/HTTP tests have been verified. The first human feedback requires revising onboarding: repeated Plant wording and conditional interpretation caused confusion/rejection. That fixture is now in debrief, not fresh blind play; exact player state has been recovered. Evidence: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`. Colored tags and explicit slot separation are visually verified; the latest compact workspace is recorded in the plan. A new browser tab loads/reloads correctly after replacing permanent reload streams with finite requests; the old tab's timeout root cause remains unproved. Canonical working plan: `docs/PUZZLE_LAB_PLAN.md`; run instructions: `research/PuzzleLab/README.md`.
+Current synthesis and working evaluation rubric:
+**[PUZZLE_QUALITY_CONTRACT.md](PUZZLE_QUALITY_CONTRACT.md)**. Read it before further
+quality/generator work. It links exact case checkpoints and the reproducible,
+aggregate-only `research/PuzzleLab/audit-calibration.mjs` audit of frozen fixtures.
+All ten fixtures are unique and every clue is necessary under the full model;
+that property does not distinguish the accepted cases from the rejected ones.
+Player routes, author proofs, uncertainty reduction and positive certification
+must be evaluated separately. No numeric difficulty bands or production economy
+are accepted by this synthesis.
 
-Immediate sequence:
-1. inspect the actual checkout/worktree and recover V0 from the plan and run instructions;
-2. case `lab-v0-03` is explicitly accepted as a pleasant initial puzzle. Case `lab-v0-04` (Чернильный щит) also completed and was explicitly accepted for richer, satisfying branch reasoning. Its subjective medium-or-above estimate is not a calibrated band. Exact completed state/next point: `docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. Case 03 retains its observed reasoning in its checkpoint; case 02 remains negative repetitive-clue evidence. Case `lab-v0-05` (Печать росы) completed with one success and explicit positive acceptance. Its actual route was pair-based branch rejection, not an explicitly articulated compressed implication chain; increased abstract proof depth remains unproved. Exact completed state: `docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. Case `lab-v0-06` (Тихая гавань) completed with three pair tests and one successful synthesis, and was explicitly accepted. A compact workspace places actions next to candidates and distinguishes observed pair states/origins; exact completed checkpoint/next point: `docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`;
-3. case `lab-v0-07` (Фонарь переправы) completed with three pair investigations and successful synthesis; explicitly positive feedback on puzzle and reduced UI memory/cross-reference burden. Exact completed checkpoint: `docs/prototypes/PUZZLE_LAB_V0_07_STATE.md`. The player followed one starting bridge, rejected its two continuations, then used a uniquely identifiable conditional pair as an author-intent heuristic and verified the missing empirical edge. This is not proof that conditional premises are required or that tags imply stability. Workspace refinement now prioritizes candidates/clues/observations over quieter adjacent actions, supports free atomic pair selection from journal, and displays the observed chain near the final answer. Seventeen tests pass. The user found that hierarchy revision too small/dense. Case `lab-v0-08` (Печать прилива) ended with a failed full submission and no pair research: the player correctly linked tag conditions but the interface did not make empirical pair checking or the one-check limit sufficiently clear. Exact checkpoint: `docs/prototypes/PUZZLE_LAB_V0_08_STATE.md`. The revised layout puts both information sources below candidates and actions at right, removes empty pseudo-inputs, and shows final checks upfront. Future models use three paid final checks (user accepted); case 08 remains frozen/exhausted. Twenty tests pass. Case `lab-v0-09` (Свет под водой) completed with five pair investigations and one successful synthesis, explicitly accepted for satisfying independent research; remaining Science 2 / Research 1; checkpoint: `docs/prototypes/PUZZLE_LAB_V0_09_STATE.md`. Case `lab-v0-10` (Сердце глубины) completed and was explicitly accepted after six pair investigations and one successful full synthesis; larger structure remained understandable, remaining Science 2 / Research 3; checkpoint `docs/prototypes/PUZZLE_LAB_V0_10_STATE.md`. Next: distill quality criteria and proceed to the bounded corpus screen. Avoid extending UI iteration into an unbounded replacement for puzzle research;
-4. revise and extend positive cross-clue cases to RICH, mature/boss and representative three-slot play;
-5. distill the inference-quality acceptance contract;
-6. only then run a bounded real-corpus serviceability screen.
+Current checkout branch: `research/puzzle-lab-v0`. The served fixture is completed
+case 10, Сердце глубины: p1/f4/e1 solved, Science 2 / Research 3, six pair tests and
+one success. Exact checkpoint: `prototypes/PUZZLE_LAB_V0_10_STATE.md`. Do not present
+this completed page as a fresh puzzle or restart it merely to review the analysis.
+The lab has five two-slot and five three-slot frozen fixtures; 21 rules/HTTP tests
+pass. Player notes/history/export controls were removed by request; observed pair
+knowledge and internal paid-action records remain. Run instructions:
+`research/PuzzleLab/README.md`; detailed work log: `PUZZLE_LAB_PLAN.md`.
 
-The first matched HARD/MAX examples are negative evidence, not accepted positive exemplars. Puzzle Lab is a research harness, not accepted Graveyard Keeper production UI architecture and not yet a public standalone game.
+Next:
+1. use the synthesis to review candidate packages for interacting reasoning,
+   meaningful experimental choices, repetition and resource robustness;
+2. run the bounded real-corpus diagnostic specified in the quality contract,
+   reusing TagModelScreen and accepted private inputs; report aggregate results;
+3. commission another human example only to close a named uncertainty, rather
+   than continue an unbounded sequence of UI changes and synthetic cases.
 
-Current UI scope: no player-facing tutorial/easy/medium/hard labels or progression
-bar. Visible player progression remains desirable but its presentation/metric is
-open and is not equated automatically with increased puzzle difficulty.
-
-Read `PRODUCT_REQUIREMENTS.md`, `PUZZLE_LAB_PLAN.md`, the relevant accepted sections below, and `PAPER_PROTOTYPE_PROTOCOL.md` before blind play. The dated `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md` retains the consolidated accepted model and continuation history; use this section for the current resume pointer, not the checkpoint filename. Update this section when a material milestone changes the next step; preserve detailed historical evidence separately.
+The selected cores have earlier paper-prototype evidence as well as this Lab
+series. Do not reopen architecture selection or repeat completed serviceability
+surveys by default. Difficulty ceiling, novice generalization, interruption
+recovery and production anti-bruteforce balance remain open. No player-facing
+level labels or progression indicator are approved. Preserve vanilla recipes,
+anti-spoiler rules and per-change production evidence gates.
 
 ## Research objective
 

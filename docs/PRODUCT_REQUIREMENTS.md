@@ -823,3 +823,27 @@ Use varied, readable nouns for future synthetic Powder and Essence candidates
 while keeping their slot identity explicit; names convey no additional tag rules.
 Keep the research sequence focused on richer/mature inference rather than unlimited
 UI polish or accumulation of more similarly structured calibration examples.
+
+### Lab calibration synthesis and accepted research UI — 2026-10-07
+
+Cases 03–07 and 09–10 are positive exemplars for this player; 01/02 show that
+formal validity and necessary clues do not establish comprehensibility or interest.
+Case 08 is a UI/economy-confounded failure. Case 10's accepted larger exploration
+does not establish a calibrated boss ceiling. The user's explicit acceptance of
+the current Lab interface closes routine stand polishing for this research phase.
+
+The operational evaluation reference is `PUZZLE_QUALITY_CONTRACT.md`. Preserve
+separate judgments for formal validity, actual player reasoning, intellectual
+interest, avoidable memory burden, resource robustness and brute-force appeal.
+A useful result may eliminate a hypothesis or certify part of a proposed answer.
+Do not require exhaustive elimination of all alternatives, the author's route,
+or a minimum experiment count before accepting an independently justified success.
+
+Three final checks remain accepted Lab balance, not evidence that production
+brute force is unattractive. Exact counts, wording/operator diversity and richer
+cards require semantic/interaction review rather than automatic interest scores.
+The synthesis adds no production mechanics or numeric difficulty thresholds.
+
+Removal of bottom notes/history/export controls applies to the current Lab UI;
+it does not remove the production requirement to preserve investigation knowledge
+across interruption. Pair observations and facilitator action evidence remain.

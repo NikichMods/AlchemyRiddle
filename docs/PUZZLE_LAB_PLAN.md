@@ -1,113 +1,45 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Case 08 ended with a UI-confounded failed synthesis; layout revised and three final checks accepted for future models. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 calibration completed through case 10; interface accepted as sufficient
+for the laboratory; inference-quality synthesis complete; production remains BLOCKED**.
 
 ## Current execution checkpoint — 2026-10-07
 
-Implementation and run instructions: `research/PuzzleLab/README.md`.
-Local command: `node research/PuzzleLab/server.mjs`; player URL:
-`http://127.0.0.1:4173`.
+Read [PUZZLE_QUALITY_CONTRACT.md](PUZZLE_QUALITY_CONTRACT.md) for the consolidated
+results, evidence limits and working evaluation rubric. The ten individual
+checkpoints remain the source for exact paid actions and narrated reasoning.
 
-The minimal stack is Node.js 24 built-ins plus HTML/CSS/browser modules, without
-package dependencies. Fixture data, rules/evaluation, server projection and
-presentation are separate. Five synthetic two-slot fixtures and one three-slot fixture preserve their precommitted models;
-subjective findings are recorded separately for each case.
+- Seven positive cases: 03–07, 09–10; negative 01/02; failed/UI-confounded 08.
+- Five two-slot and five three-slot frozen fixtures; no active blind play.
+- Served case 10 remains solved: Science 2, Research 3, p1/f4/e1 selected.
+- Current UI: candidates and both information sources, nearby pair experiments,
+  final synthesis, compact identity journal and expandable action-oriented help.
+  Manual exclusions and bottom notes/history/download controls are removed.
+- Observed pair results and server-side paid-action history remain available.
+- Three final checks apply to 09/10; do not rewrite earlier one-check fixtures.
+- 21 deterministic/HTTP tests pass. Node 24 built-ins, no package dependencies.
+- Routine interface work is complete by explicit user acceptance. No difficulty
+  labels/progression UI or production UI architecture is selected.
 
-Implemented: card selection, personal exclusions, notes, paid binary submission,
-player journal export, optional facilitator truth-table/session view, and live
-browser reload for presentation/fixture edits. Answer and evaluator stay on the
-server; debug routes require explicit `--debug`. One Science/one submission is
-this fixture's bounded calibration budget, not accepted production balance.
+Current case reproduction (starts a fresh session if server is restarted):
 
-Verified locally on Node 24.19.0: fifteen deterministic/HTTP tests pass, including
-clue truth tables, uniqueness, budget exhaustion, invalid requests, session
-continuity and player/debug separation. Browser checks prove initial rendering,
-selection, notes, personal marking, failed submission and exhausted-budget UI.
-An HTML edit triggered automatic reload while retaining notes and selections.
-The normal test runner was blocked by local child-process permissions; the same
-tests passed with `--test-isolation=none`. CI runs the normal isolated command.
+```sh
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/depth-10.json
+node --test --test-isolation=none research/PuzzleLab/lab.test.mjs
+node research/PuzzleLab/audit-calibration.mjs --write
+```
 
-First player feedback: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`.
-The easy fixture is formally valid but requires revised onboarding: repetitive
-single-property wording and conditional interpretation caused rejection/confusion.
-It is now in debrief; repeating it cannot count as a fresh blind attempt.
-Colored property badges and explicit slot frames have been implemented and
-visually verified in a new browser tab. The old tab remained unresponsive while
-HTTP page/state requests returned 200 promptly. Permanent EventSource reload
-was replaced with short finite polling; new-tab reload reaches document state
-`complete`. Exact player state was recovered and persisted in the result record.
-The server/fixture were not reset. The precise cause of the old-tab CDP timeout
-remains unproved; do not present the stream change as proof of that root cause.
+URL: http://127.0.0.1:4173. Keep the currently completed session during analysis.
+Presentation reload preserves state; restart/fixture replacement clears process
+sessions. Historical outcomes must be recovered from checkpoints, not recreated
+as new human trials. Occasional old-tab timeouts remain of unknown cause; fresh
+browser tabs have worked. Run details: `research/PuzzleLab/README.md`.
 
-Current active fixture: `lab-v0-08`, synthetic target Печать прилива, with
-three slots, three varied target clues, prior adjacent-pair observations and paid pair research.
-Completed checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_08_STATE.md`. No player-facing
-difficulty labels or progression indicators are added; progression presentation
-is a separate open product decision. The user found the colored tags attractive
-and the revised layout somewhat better; finer UI polish is deferred.
-
-Run the current case:
-`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/harbor-06.json`.
-The original `fixture.json` is retained as historical negative onboarding
-evidence. Fifteen deterministic/HTTP tests now pass, including the fourth case's
-uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
-
-Case 02 feedback: the player independently articulated the correct answer,
-liked rich multi-tag cards, and rejected the three parallel exact-one clues as
-boring ordinary-play content. Formal submission is not yet observed. Current
-state and narrated reasoning are preserved in the case-02 player checkpoint.
-
-The user requested the next example after case 02 reasoning; no formal case-02
-submission result is asserted. Case 03's model is precommitted before play.
-Shared-property is a narrow fixture predicate, defined in the visible rules;
-forbidden conjunction is a target-specific logical constraint, not a change to
-the selected two-slot architecture or a chemistry experiment relation.
-
-Case 03 completed successfully in one paid submission. The player liked lively
-but precise wording and chose a plausible Fluid first, inferred the Powder's
-required property and checked overlap without exhaustively inspecting all cards.
-Exact final state/reasoning are in the case-03 checkpoint. Retain as a positive
-wording/short-hypothesis case; do not claim the intended deeper elimination path
-was actually used or that mature inference quality is calibrated.
-
-The user subsequently accepted the whole case 03 as a pleasant initial puzzle
-and requested next play. Preserve it as a positive initial exemplar. Case 04
-is precommitted to test richer card interaction and an active conditional;
-generic conditional semantics are visible before play.
-
-Case 04 completed with one successful submission. The player explicitly enjoyed
-richer interacting constraints and independent branch reasoning, estimating
-medium or greater difficulty. Retain as a second positive exemplar, without
-turning the subjective estimate into a calibrated band. A forgotten tested pair
-is evidence for future memory support, not automatic deduction.
-
-After play, exclusion buttons became small red bottom-right crosses with restore
-arrows. Full slot frames were removed, the divider retained and colored tags
-rounded. Browser toggle/restore and visual checks passed, with solved state kept.
-Case 05 completed with one successful submission and explicit acceptance as
-pleasant, interesting and subjectively medium. Actual reasoning was systematic
-pair rejection, with inactive conditionals understood correctly; the compressed
-author chain was not explicitly stated. Preserve the positive experience without
-claiming increased abstract proof depth. Exact final state and narration are in
-the case-05 checkpoint. UI watch item for the next pass: red cross resembles a
-close/remove action; use a different manual-exclusion marker, keeping cards
-visible and restoration available. The icon feedback was initially deferred; the next harness UI pass implements it without changing marking semantics.
-Case 06 was precommitted before play and is now completed. The bounded harness extension supports three
-slots, prior stable/incompatible observations and unknown adjacent-pair tests.
-Science 1 funds one formula check; four separate Research Charges fund pair tests
-at cost 1. No refill; spent research charges do not block remaining synthesis.
-All prior observations on the surface are shown without relevance labels, and
-no survivor set or deductions are calculated for the player. This is one frozen
-knowledge state of the accepted three-slot core, not a generator or game mod.
-The marker now uses a slashed circle instead of a close-like red cross.
-Next: review the compact workspace with the preserved completed case, then precommit a stable-start example,
-then continue calibration
-toward mature/boss and three-slot calibration. Technical
-smoke tests and successful deduction are not blanket acceptance of puzzle quality.
-
-State lives only in server memory. A restart or valid fixture replacement clears
-it. Preserve a player journal before stopping during live calibration.
+Next: the bounded corpus diagnostic in the quality contract. Reuse the existing
+TagModelScreen tooling/accepted private models; do not repeat architecture choice
+or commission an undefined automatic 'interest score'. Further human play should
+address a specific remaining question. Dated sections below preserve the earlier
+implementation and calibration sequence rather than current-state instructions.
 
 ## Why this exists
 

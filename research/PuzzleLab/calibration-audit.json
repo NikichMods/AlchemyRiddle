@@ -1,0 +1,652 @@
+{
+  "method": "Static enumeration of frozen synthetic fixtures; recorded paid pair traces from case checkpoints. Counts stop before full synthesis and do not incorporate failed-synthesis exclusions. Public survivors use tags and observed negatives only. Positive edges may certify a solution without eliminating other hypotheses. Author-level clue omission uses full hidden compatibility, not player knowledge. No player-facing solver is added.",
+  "cases": [
+    {
+      "id": "lab-v0-easy-01",
+      "fixture": "fixture.json",
+      "sha256": "1f04885bbe2725ed47d7b85ff5f581cdf8ca943c7e9bdde9cff2745a89fc37e7",
+      "humanOutcome": "revise-onboarding",
+      "cardsPerSlot": [
+        2,
+        2
+      ],
+      "tuples": 4,
+      "clues": 2,
+      "tagOnlySurvivors": 1,
+      "initialPublicSurvivors": 1,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 3,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": null,
+      "initialCertifiedFormulas": null,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": null,
+      "researchRemainingAfterRecordedProbes": null
+    },
+    {
+      "id": "lab-v0-02",
+      "fixture": "fixtures/amber-02.json",
+      "sha256": "34ff27d137bbf131953ed6654345ad918bebeebf87b88eed272f856d7a6a29b2",
+      "humanOutcome": "rejected-repetition; solution narrated, submission unobserved",
+      "cardsPerSlot": [
+        3,
+        3
+      ],
+      "tuples": 9,
+      "clues": 3,
+      "tagOnlySurvivors": 1,
+      "initialPublicSurvivors": 1,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 3,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": null,
+      "initialCertifiedFormulas": null,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": null,
+      "researchRemainingAfterRecordedProbes": null
+    },
+    {
+      "id": "lab-v0-03",
+      "fixture": "fixtures/mist-03.json",
+      "sha256": "de6d2abfba1efb7414620053400f6952af3d9a95921ed02b1a9df4c74317156d",
+      "humanOutcome": "accepted-initial",
+      "cardsPerSlot": [
+        3,
+        3
+      ],
+      "tuples": 9,
+      "clues": 3,
+      "tagOnlySurvivors": 1,
+      "initialPublicSurvivors": 1,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "sharedTag",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 3,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 4,
+          "fullModelSurvivorsWhenOmitted": 4,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": null,
+      "initialCertifiedFormulas": null,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": null,
+      "researchRemainingAfterRecordedProbes": null
+    },
+    {
+      "id": "lab-v0-04",
+      "fixture": "fixtures/ink-04.json",
+      "sha256": "52a170778986b50347fda5dff6d491efe6673a37c001f2fbbbc244cbb2b4bc59",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        3,
+        3
+      ],
+      "tuples": 9,
+      "clues": 4,
+      "tagOnlySurvivors": 1,
+      "initialPublicSurvivors": 1,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "sharedTag",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 3,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": null,
+      "initialCertifiedFormulas": null,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": null,
+      "researchRemainingAfterRecordedProbes": null
+    },
+    {
+      "id": "lab-v0-05",
+      "fixture": "fixtures/dew-05.json",
+      "sha256": "3727a43c0c4c95de96c8b7d7716afbea4e20bb5c23065da61e58e86f0c3d00fd",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        3,
+        3
+      ],
+      "tuples": 9,
+      "clues": 4,
+      "tagOnlySurvivors": 1,
+      "initialPublicSurvivors": 1,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "sharedTag",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 2,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": null,
+      "initialCertifiedFormulas": null,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": null,
+      "researchRemainingAfterRecordedProbes": null
+    },
+    {
+      "id": "lab-v0-06",
+      "fixture": "fixtures/harbor-06.json",
+      "sha256": "002f87f1df8e5b7552e7aef2c27f63499563efda9ac41f500fedf6381722688e",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        3,
+        3,
+        3
+      ],
+      "tuples": 27,
+      "clues": 3,
+      "tagOnlySurvivors": 7,
+      "initialPublicSurvivors": 4,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 17,
+          "fullModelSurvivorsWhenOmitted": 5,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 9,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 9,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": 1,
+      "initialCertifiedFormulas": 0,
+      "probes": [
+        {
+          "step": 1,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 4,
+          "unrefutedAfter": 3,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 2,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 3,
+          "unrefutedAfter": 2,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 3,
+          "stable": true,
+          "supportedHypothesesBefore": 2,
+          "unrefutedBefore": 2,
+          "unrefutedAfter": 2,
+          "certifiedAfter": 1
+        }
+      ],
+      "recordedPairTests": 3,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 2,
+      "finalCertifiedFormulas": 1,
+      "researchRemainingAfterRecordedProbes": 1
+    },
+    {
+      "id": "lab-v0-07",
+      "fixture": "fixtures/lantern-07.json",
+      "sha256": "6b9169fedeb9f58c033b9839398a3cb25c73b4791d4ec80ed803db208d152923",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        3,
+        3,
+        3
+      ],
+      "tuples": 27,
+      "clues": 3,
+      "tagOnlySurvivors": 9,
+      "initialPublicSurvivors": 9,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 18,
+          "fullModelSurvivorsWhenOmitted": 4,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 11,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 10,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": 1,
+      "initialCertifiedFormulas": 0,
+      "probes": [
+        {
+          "step": 1,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 9,
+          "unrefutedAfter": 8,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 2,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 8,
+          "unrefutedAfter": 7,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 3,
+          "stable": true,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 7,
+          "unrefutedAfter": 7,
+          "certifiedAfter": 1
+        }
+      ],
+      "recordedPairTests": 3,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 7,
+      "finalCertifiedFormulas": 1,
+      "researchRemainingAfterRecordedProbes": 5
+    },
+    {
+      "id": "lab-v0-08",
+      "fixture": "fixtures/tide-08.json",
+      "sha256": "8213efda51224335b6cadee86a51aff26bff474523820fc2bc63ea9c1b079d7a",
+      "humanOutcome": "failed; UI-confounded",
+      "cardsPerSlot": [
+        3,
+        3,
+        3
+      ],
+      "tuples": 27,
+      "clues": 4,
+      "tagOnlySurvivors": 5,
+      "initialPublicSurvivors": 5,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 10,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 9,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 6,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 6,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": 1,
+      "initialCertifiedFormulas": 0,
+      "probes": [],
+      "recordedPairTests": 0,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 5,
+      "finalCertifiedFormulas": 0,
+      "researchRemainingAfterRecordedProbes": 5
+    },
+    {
+      "id": "lab-v0-09",
+      "fixture": "fixtures/lantern-09.json",
+      "sha256": "37df37b65b77086ffdd30e8be525c160a0dc71e182a10274f78959cdfe4ef676",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        3,
+        3,
+        3
+      ],
+      "tuples": 27,
+      "clues": 4,
+      "tagOnlySurvivors": 4,
+      "initialPublicSurvivors": 4,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 7,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 5,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 6,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 2,
+          "tagOnlySurvivorsWhenOmitted": 8,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": [
+            {
+              "slot": "fluid",
+              "property": "Водное",
+              "matches": 3,
+              "candidates": 3
+            }
+          ]
+        }
+      ],
+      "initialStableAnswerEdges": 0,
+      "initialCertifiedFormulas": 0,
+      "probes": [
+        {
+          "step": 1,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 4,
+          "unrefutedAfter": 3,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 2,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 3,
+          "unrefutedAfter": 2,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 3,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 2,
+          "unrefutedAfter": 1,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 4,
+          "stable": true,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 1,
+          "unrefutedAfter": 1,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 5,
+          "stable": true,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 1,
+          "unrefutedAfter": 1,
+          "certifiedAfter": 1
+        }
+      ],
+      "recordedPairTests": 5,
+      "probesWithoutTargetHypothesis": 0,
+      "afterRecordedPairProbesSurvivors": 1,
+      "finalCertifiedFormulas": 1,
+      "researchRemainingAfterRecordedProbes": 1
+    },
+    {
+      "id": "lab-v0-10",
+      "fixture": "fixtures/depth-10.json",
+      "sha256": "2822ea49cf51af72335c179b8aaccfb3a2c8d55add791e507e54baf498b79821",
+      "humanOutcome": "accepted",
+      "cardsPerSlot": [
+        4,
+        4,
+        4
+      ],
+      "tuples": 64,
+      "clues": 5,
+      "tagOnlySurvivors": 7,
+      "initialPublicSurvivors": 7,
+      "fullModelSolutions": 1,
+      "clueAudit": [
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 9,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 2,
+          "tagOnlySurvivorsWhenOmitted": 12,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        },
+        {
+          "kind": "implies",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 8,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "notTogether",
+          "count": null,
+          "tagOnlySurvivorsWhenOmitted": 8,
+          "fullModelSurvivorsWhenOmitted": 2,
+          "fixedTerms": []
+        },
+        {
+          "kind": "exactly",
+          "count": 1,
+          "tagOnlySurvivorsWhenOmitted": 14,
+          "fullModelSurvivorsWhenOmitted": 3,
+          "fixedTerms": []
+        }
+      ],
+      "initialStableAnswerEdges": 0,
+      "initialCertifiedFormulas": 0,
+      "probes": [
+        {
+          "step": 1,
+          "stable": false,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 7,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 2,
+          "stable": true,
+          "supportedHypothesesBefore": 0,
+          "unrefutedBefore": 6,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 3,
+          "stable": false,
+          "supportedHypothesesBefore": 0,
+          "unrefutedBefore": 6,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 4,
+          "stable": false,
+          "supportedHypothesesBefore": 0,
+          "unrefutedBefore": 6,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 5,
+          "stable": true,
+          "supportedHypothesesBefore": 1,
+          "unrefutedBefore": 6,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 0
+        },
+        {
+          "step": 6,
+          "stable": true,
+          "supportedHypothesesBefore": 2,
+          "unrefutedBefore": 6,
+          "unrefutedAfter": 6,
+          "certifiedAfter": 1
+        }
+      ],
+      "recordedPairTests": 6,
+      "probesWithoutTargetHypothesis": 3,
+      "afterRecordedPairProbesSurvivors": 6,
+      "finalCertifiedFormulas": 1,
+      "researchRemainingAfterRecordedProbes": 3
+    }
+  ]
+}
