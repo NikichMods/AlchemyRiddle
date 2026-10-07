@@ -1,0 +1,175 @@
+# Puzzle Lab local research tool — working plan
+
+Status: **accepted infrastructure direction for the next research phase; not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+
+## Why this exists
+
+AlchemyRiddle has moved from broad architecture discovery into repeated puzzle
+calibration. Text-only paper prototypes remain valid evidence, but they are now
+slow for the expected volume of blind iteration and make it harder to evaluate
+interaction flow, notation, candidate marking and future UI ideas.
+
+The local **Puzzle Lab** should shorten that loop.
+
+Its immediate purpose is:
+
+`define fixture -> play it quickly in a browser -> capture player reasoning / friction -> revise fixture or generator rule`.
+
+A later standalone showcase version is a useful possible descendant, but it is
+**not** the current requirement and must not distort the research tool.
+
+## Current environment state
+
+As of 2026-10-07:
+- ChatGPT Desktop / Codex is working stably for the user;
+- the local AlchemyRiddle repository is open in Codex;
+- local localhost/hot-reload development should be verified as the first
+  execution check before tool work proceeds;
+- repository/canonical docs, not chat history, remain the recovery source.
+
+Local Codex must first inspect its checkout/worktree, branch, HEAD and local
+changes under `DevRules/CODEX_WORKFLOW.md` before synchronizing with remote work.
+
+## Product question the first Lab must serve
+
+The highest-leverage open design question is **inference quality / intellectual
+interest**, separate from numerical difficulty.
+
+The first Lab-backed calibration should test whether short puzzles contain
+genuine cross-clue inference rather than flat filtering.
+
+Accepted negative examples include:
+- several same-slot unary exclusions that merely eliminate candidates one by
+  one;
+- an implication paired with another clue that directly states its antecedent,
+  collapsing the conditional into a disguised literal.
+
+Positive cases should make one fact change the usefulness or interpretation of
+another fact, ideally creating a compact player-articulable "aha" step.
+
+The immediate calibration set remains:
+1. a simple/easy two-slot positive case;
+2. a RICH two-slot case;
+3. a mature MAX/BOSS two-slot case;
+4. one representative three-slot case.
+
+Do not build a corpus-wide generator before these positive structures are
+player-calibrated.
+
+## V0 acceptance envelope
+
+The smallest useful local tool should:
+
+1. run locally in a normal browser on localhost with a short repeatable dev
+   command and fast reload;
+2. load a **synthetic puzzle fixture** without embedding its logic directly into
+   presentation components;
+3. show the candidate reagents/cards, their visible properties and surfaced
+   clues needed by the fixture;
+4. let the player perform the currently needed puzzle interactions directly in
+   the UI instead of describing every move in chat;
+5. support lightweight player-owned candidate marking/exclusion if it is cheap
+   enough to add without inventing final production semantics;
+6. preserve a clean **player mode** that does not expose the hidden answer or
+   facilitator-only state;
+7. provide a separate **debug/facilitator view** sufficient to verify the hidden
+   answer, live candidate set and clue semantics while authoring fixtures;
+8. make it cheap to replace one fixture with the next calibration case.
+
+For the first V0, a static/local fixture file is sufficient. Persistence across
+browser restarts, a database, accounts and cloud storage are not required.
+
+## Architecture preference, not production commitment
+
+Prefer a thin separation:
+
+`puzzle fixture/model -> puzzle rules/evaluation -> web presentation`
+
+The reason is research ergonomics:
+- the same fixture can be rendered differently without rewriting its semantics;
+- hidden facilitator state can stay separate from player presentation;
+- puzzle logic can later receive automated tests;
+- a future standalone web showcase can reuse the research model if that remains
+  advantageous.
+
+This is **not** a decision that the Graveyard Keeper mod must use the same web
+technology or source code. The eventual production mod remains a BepInEx/C#
+runtime integration and will need separate evidence gates.
+
+Do not generalize the engine beyond current fixture needs merely for elegance.
+
+## Explicit non-goals for V0
+
+Do not spend time yet on:
+- public deployment or hosting;
+- accounts/login;
+- multiplayer or remote sessions;
+- polished standalone-game branding;
+- final Graveyard Keeper visual imitation;
+- production journal layout;
+- localization framework beyond what is necessary for test readability;
+- analytics backend;
+- save migration;
+- exact in-game persistence ownership;
+- generalized authoring tools;
+- full real-corpus recipe import;
+- production mod hooks.
+
+If a feature does not materially shorten or improve the next blind calibration,
+defer it.
+
+## Evidence boundary
+
+Puzzle Lab is a **research harness**.
+
+It may provide:
+- exact deterministic fixture state;
+- interaction ergonomics;
+- repeatable blind presentation;
+- action/session trace if cheap;
+- faster visual iteration.
+
+It does not prove:
+- real Graveyard Keeper UI ownership/lifecycle;
+- production save persistence;
+- in-game pause behavior;
+- BepInEx integration;
+- actual resource/economy balance;
+- subjective puzzle quality without the player's blind test.
+
+The user remains the player for perceptual/subjective calibration. The tool
+must not silently solve deductions on the player's behalf.
+
+## First execution checkpoint
+
+Before creating substantial new harness code, answer:
+
+**Question:** Can a minimal local web surface materially accelerate the next
+inference-quality blind prototypes?
+
+**Existing path:** text paper prototypes work but require repeated manual
+state presentation and slow interaction.
+
+**Justification for the Lab:** the upcoming work expects repeated matched
+fixtures and interaction/UI iteration; a tiny local browser harness removes
+mechanical presentation overhead while preserving the existing blind-prototype
+semantics.
+
+Therefore a minimal local Puzzle Lab is justified. Keep it narrower than a
+standalone game until evidence requires more.
+
+## First local sequence
+
+1. Inspect local checkout/worktree and synchronize safely with current remote
+   canonical state.
+2. Verify a minimal localhost/hot-reload cycle.
+3. Select the smallest web stack already practical in the local environment;
+   do not choose a framework for hypothetical future deployment.
+4. Implement one synthetic two-slot fixture with strict player/debug separation.
+5. Use that fixture to rebuild the next **positive** inference-quality prototype.
+6. Blind-test it with the user.
+7. Only after the interaction loop is useful, extend the Lab to the remaining
+   calibration fixtures and then to the representative three-slot case.
+
+No installed Graveyard Keeper runtime test is required for this research-tool
+bootstrap.
