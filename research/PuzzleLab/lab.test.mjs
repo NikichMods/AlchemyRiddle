@@ -2,9 +2,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
+import {act, candidates, clueText, createState, publicView, satisfies, validate} from './rules.mjs';
 import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
+test('second fixture is unique, each clue is necessary, compact wording preserves count semantics', () => {
+  const f = JSON.parse(readFileSync(new URL('./fixtures/amber-02.json', import.meta.url)));
+  validate(f);
+  const rows = candidates(f);
+  assert.equal(rows.length,9);
+  for (let omitted = 0; omitted < f.clues.length; omitted++) {
+    assert.ok(rows.filter(t => f.clues.every((c,i) => i === omitted || satisfies(f,t,c))).length > 1);
+    assert.ok(rows.filter(t => satisfies(f,t,f.clues[omitted])).length > 1);
+    assert.equal((clueText(f,f.clues[omitted]).match(/«/g) ?? []).length,1);
+  }
+  assert.equal(rows.filter(t => f.clues.every(c => satisfies(f,t,c))).length,1);
+});
 test('fixture is unique; both clues are necessary and individually partial', () => {
   validate(fixture);
   const all = candidates(fixture);

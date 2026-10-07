@@ -39,10 +39,23 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Next: review the changed presentation and author a new precommitted onboarding
-case before expanding to RICH, mature and three-slot fixtures. Export/persist
-player state at material checkpoints under the paper-prototype protocol.
-Technical smoke tests are not player acceptance.
+Current active fixture: `lab-v0-02`, synthetic target Янтарный оберег, with a
+precommitted interacting-count model. Initial player checkpoint and next
+interaction: `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`. No player-facing
+difficulty labels or progression indicators are added; progression presentation
+is a separate open product decision. The user found the colored tags attractive
+and the revised layout somewhat better; finer UI polish is deferred.
+
+Run the current case:
+`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/amber-02.json`.
+The original `fixture.json` is retained as historical negative onboarding
+evidence. Eight deterministic/HTTP tests now pass, including the second case's
+uniqueness, per-clue necessity and compact count wording.
+
+Next: user blind-plays case 02; capture interest, reasoning and friction before
+expanding to RICH, mature and three-slot fixtures. Export/persist player state
+at material checkpoints under the paper-prototype protocol. Technical smoke
+tests are not player acceptance.
 
 State lives only in server memory. A restart or valid fixture replacement clears
 it. Preserve a player journal before stopping during live calibration.

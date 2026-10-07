@@ -12,6 +12,12 @@ export function satisfies(f, tuple, clue) {
 }
 export function clueText(f, clue) {
   const term = t => `${f.slots.find(s => s.id === t.slot).name.toLowerCase()} имеет свойство «${t.tag}»`;
+  if (clue.kind === 'exactly' && clue.count === 1 && clue.terms.length === f.slots.length &&
+      new Set(clue.terms.map(t => t.slot)).size === f.slots.length &&
+      f.slots.every(s => clue.terms.some(t => t.slot === s.id)) &&
+      new Set(clue.terms.map(t => t.tag)).size === 1) {
+    return `Среди компонентов формулы ровно один имеет свойство «${clue.terms[0].tag}».`;
+  }
   if (clue.kind === 'exactly') return `Ровно ${clue.count} из следующих утверждений верно: ${clue.terms.map(term).join('; ')}.`;
   if (clue.kind === 'implies') return `Если ${term(clue.if)}, то ${term(clue.then)}.`;
   throw new Error('Unsupported clue kind');

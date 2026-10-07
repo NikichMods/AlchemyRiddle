@@ -10,13 +10,17 @@ Puzzle Lab V0 is implemented on `research/puzzle-lab-v0`, with one synthetic two
 
 Immediate sequence:
 1. inspect the actual checkout/worktree and recover V0 from the plan and run instructions;
-2. review the presentation fixes and author a new precommitted onboarding fixture addressing conditional interpretation and repetitive wording;
+2. blind-play the now-precommitted case `lab-v0-02` (Янтарный оберег); initial player state/next interaction are canonical in `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`;
 3. preserve exact player state/journal at material checkpoints, and record subjective findings;
 4. revise and extend positive cross-clue cases to RICH, mature/boss and representative three-slot play;
 5. distill the inference-quality acceptance contract;
 6. only then run a bounded real-corpus serviceability screen.
 
 The first matched HARD/MAX examples are negative evidence, not accepted positive exemplars. Puzzle Lab is a research harness, not accepted Graveyard Keeper production UI architecture and not yet a public standalone game.
+
+Current UI scope: no player-facing tutorial/easy/medium/hard labels or progression
+bar. Visible player progression remains desirable but its presentation/metric is
+open and is not equated automatically with increased puzzle difficulty.
 
 Read `PRODUCT_REQUIREMENTS.md`, `PUZZLE_LAB_PLAN.md`, the relevant accepted sections below, and `PAPER_PROTOTYPE_PROTOCOL.md` before blind play. The dated `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md` retains the consolidated accepted model and continuation history; use this section for the current resume pointer, not the checkpoint filename. Update this section when a material milestone changes the next step; preserve detailed historical evidence separately.
 

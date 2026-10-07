@@ -10,6 +10,17 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
+For the current blind calibration case (Янтарный оберег):
+
+```sh
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/amber-02.json
+```
+
+The default fixture remains the original case for historical reproduction.
+Do not open facilitator records during blind play. Current player checkpoint:
+`docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`. Difficulty labels and progression UI
+are deliberately deferred pending a separate product decision.
+
 If a restricted execution environment blocks the test runner's child process,
 use `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
 

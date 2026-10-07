@@ -369,6 +369,13 @@ Visible progression is desirable:
 - presentation must reflect real system state rather than inventing fake
   progression.
 
+Current presentation scope, clarified 2026-10-07: Puzzle Lab does not yet expose
+labels such as tutorial/easy/medium/hard or a difficulty/progression bar.
+Showing meaningful player progression remains desirable, but its final metric
+and UI are open; increasing difficulty alone must not silently be treated as
+equivalent to player progression. Existing within-arity progression design is
+retained. Research fixture identities/band hypotheses are internal metadata.
+
 ### Theoretical reagent identities are valid puzzle candidates
 
 Accepted product decision:
