@@ -10,15 +10,15 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
-For the current blind calibration case (Тихая гавань):
+For the current blind calibration case (Фонарь переправы):
 
 ```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/harbor-06.json
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/lantern-07.json
 ```
 
 The default fixture remains the original case for historical reproduction.
 Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`. Difficulty labels and progression UI
+`docs/prototypes/PUZZLE_LAB_V0_07_STATE.md`. Difficulty labels and progression UI
 are deliberately deferred pending a separate product decision.
 
 If a restricted execution environment blocks the test runner's child process,
@@ -43,8 +43,9 @@ answer. V0 supports two or three slots, exact counts, implication, shared-proper
 forbidden-conjunction clues used by the committed fixtures.
 
 Player mode has no debug link, answer data, candidate solver or automatic
-exclusions. The answer stays server-side. Manual exclusions are annotations and
-do not block selection. Sessions survive page reload through an HttpOnly cookie;
+exclusions. The answer stays server-side. Candidate exclusion controls are removed
+by user request; historical mark data/API remain for reproducing old cases.
+Sessions survive page reload through an HttpOnly cookie;
 all state is in process memory, not durable storage. Notes and the current
 player state can be downloaded as JSON. Exports contain no hidden answer.
 

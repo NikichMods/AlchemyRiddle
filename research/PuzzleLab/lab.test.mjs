@@ -7,6 +7,38 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('seventh fixture starts with stable bridges, needs every clue and supports complete branch rejection within budget', () => {
+  const f = JSON.parse(readFileSync(new URL('./fixtures/lantern-07.json', import.meta.url)));
+  validate(f);
+  const rows = candidates(f);
+  const possible = rows.filter(t => f.clues.every(c => satisfies(f,t,c)));
+  assert.equal(possible.length,9);
+  assert.ok(f.knownRelations.every(r => r.stable));
+  const adjacent = [['powder','fluid'],['fluid','essence']];
+  const matches = (r,t,slots) => r.slots.every((id,i) => id === slots[i]) && slots.every(id => r.tuple[id] === t[id]);
+  assert.ok(possible.every(t => !adjacent.every(slots => f.knownRelations.some(r => matches(r,t,slots)))));
+  for (let omitted=0; omitted<f.clues.length; omitted++) {
+    assert.ok(rows.filter(t => validFormula({...f,clues:f.clues.filter((_,i) => i!==omitted)},t)).length>1);
+  }
+  const s = createState(f);
+  const investigations = [
+    ['fluid','essence','f2','e1'], ['fluid','essence','f2','e3'],
+    ['powder','fluid','p1','f3'], ['powder','fluid','p2','f2'],
+    ['fluid','essence','f1','e3'], ['powder','fluid','p3','f2'],
+    ['powder','fluid','p3','f3'], ['powder','fluid','p2','f3']
+  ];
+  for (const [a,b,x,y] of investigations) {
+    s.selected = {[a]:x,[b]:y}; act(f,s,{type:'pairTest',slots:[a,b]});
+  }
+  assert.equal(s.research,0); assert.equal(s.science,1);
+  assert.deepEqual(s.history.map(h=>h.stable),[false,false,false,false,false,false,false,true]);
+  assert.equal(s.knownRelations.length,11);
+  assert.deepEqual(possible.filter(t => s.knownRelations.every(r => r.stable || !r.slots.every(id => r.tuple[id] === t[id]))),[f.answer]);
+  assert.ok(adjacent.every(slots => s.knownRelations.some(r => r.stable && matches(r,f.answer,slots))));
+  assert.ok(!JSON.stringify(publicView(f,s)).includes('stablePairs'));
+  s.selected={...f.answer}; act(f,s,{type:'submit'}); assert.equal(s.status,'solved');
+});
+
 test('repeat-click selection clears only its slot, remains free and requires reselecting for submission', () => {
   const s = createState(harbor); s.selected={...harbor.answer};
   act(harbor,s,{type:'toggleSelect',slot:'essence',card:'e2'});

@@ -3,6 +3,14 @@ const $ = id => document.getElementById(id);
 let view;
 let queue = Promise.resolve();
 const name = id => view.slots.flatMap(s => s.cards).find(c => c.id === id)?.name ?? '—';
+function cardRef(id) {
+  const slot = view.slots.find(s => s.cards.some(c => c.id === id));
+  const badge = document.createElement('span');
+  badge.className = `card-ref ref-${slot?.id ?? 'empty'}`;
+  badge.textContent = slot ? `${{powder:'П',fluid:'Ж',essence:'Э'}[slot.id]}${slot.cards.findIndex(c => c.id === id)+1}` : '—';
+  badge.title = name(id);
+  return badge;
+}
 const formula = tuple => view.slots.map(s => name(tuple[s.id])).join(' + ');
 const pairDescription = r => `${r.slots.map(id => name(r.tuple[id])).join(' + ')} — ${r.stable ? 'СТАБИЛЬНО' : 'НЕСОВМЕСТИМО'}`;
 const pairMatches = (r, slots, tuple) => r.slots.length === slots.length &&
@@ -27,7 +35,14 @@ function relationJournal(s) {
         const names = document.createElement('span'); names.className = 'relation-names';
         names.textContent = r.slots.map(id => name(r.tuple[id])).join(' + ');
         const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Стабильно' : '⊘ Несовместимо';
-        li.append(names,verdict); list.append(li);
+        const refs = document.createElement('span'); refs.className = 'relation-refs';
+        const connector = document.createElement('span'); connector.textContent = '↔';
+        refs.append(cardRef(r.tuple[r.slots[0]]),connector,cardRef(r.tuple[r.slots[1]]),verdict);
+        li.tabIndex = 0;
+        const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
+        li.onmouseenter = () => highlight(true); li.onmouseleave = () => highlight(false);
+        li.onfocus = () => highlight(true); li.onblur = () => highlight(false);
+        li.append(refs,names); list.append(li);
       }
       if (!list.childElementCount) {const li = document.createElement('li'); li.className='empty'; li.textContent='Нет наблюдений'; list.append(li);}
       column.append(list); columns.append(column);
@@ -63,7 +78,7 @@ function render() {
   const s = view.state;
   $('title').textContent = view.title; $('description').textContent = view.description;
   $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
-  $('quick-rules').textContent = view.pairTestCost ? 'Все сведения действуют одновременно. Обе соседние пары должны быть стабильны. Теги не определяют совместимость.' : 'Все сведения действуют одновременно. Выбор и пометки бесплатны. Проверка сообщает только успех или неудачу.';
+  $('quick-rules').textContent = view.pairTestCost ? 'Все сведения действуют одновременно. Обе соседние пары должны быть стабильны. Теги не определяют совместимость.' : 'Все сведения действуют одновременно. Выбор бесплатный. Проверка сообщает только успех или неудачу.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
   $('cards').replaceChildren();
   for (const slot of view.slots) {
@@ -71,22 +86,16 @@ function render() {
     const legend = document.createElement('legend'); legend.textContent = slot.name; group.append(legend);
     for (const card of slot.cards) {
       const selected = s.selected[slot.id] === card.id;
-      const box = document.createElement('div'); box.className = `card ${s.marks[card.id] ? 'excluded' : ''} ${selected ? 'selected' : ''}`;
+      const box = document.createElement('div'); box.className = `card ${selected ? 'selected' : ''}`;
       const choose = document.createElement('button'); choose.className = 'choose'; choose.id = `select-${card.id}`;
       choose.setAttribute('aria-pressed',String(selected)); choose.setAttribute('aria-label',card.name);
       choose.title = selected ? 'Снять выбор' : 'Выбрать';
       choose.onclick = () => action({type:'toggleSelect',slot:slot.id,card:card.id});
       const dot = document.createElement('span'); dot.className='selection-dot'; dot.setAttribute('aria-hidden','true');
       const text = document.createElement('strong'); text.textContent = card.name;
-      choose.append(dot,text);
+      choose.append(dot,text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
-      const mark = document.createElement('button'); mark.className = 'mark';
-      const markAction = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
-      mark.textContent = s.marks[card.id] ? '↶' : '⊘';
-      mark.title = markAction;
-      mark.id = `mark-${card.id}`;
-      mark.setAttribute('aria-label', `${markAction}: ${card.name}`); mark.setAttribute('aria-pressed', String(Boolean(s.marks[card.id])));
-      mark.onclick = () => action({type:'mark', slot:slot.id, card:card.id}); box.append(mark); group.append(box);
+      group.append(box);
     }
     $('cards').append(group);
   }

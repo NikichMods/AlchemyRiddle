@@ -772,3 +772,11 @@ or active model. New blind models must precommit stable-only starting observatio
 and budget against that information. Cross-investigation storage/reuse of prior
 negative results is not specified by this clarification; do not silently delete
 durable history or infer an automatic re-test/refund policy.
+
+Workspace refinement after case 06: the user accepted pair-status readability
+and journal grouping. Remove candidate exclusion controls; preserve historical
+mark state for reproduction. Add compact shared card identifiers and journal
+hover/focus highlighting as an experimental scanning aid, retaining full names.
+These references carry identity only, no new property/compatibility semantics.
+Full synthesis should be visibly distinguished as the final answer rather than
+another equally weighted pair experiment. Revised scan quality awaits human use.

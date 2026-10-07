@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 accepted after three-slot play; workspace revision ready for review. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 accepted after three-slot play; case 07 precommitted and ready for blind play with stable-only starting bridges. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -39,10 +39,10 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-06`, synthetic target Тихая гавань, with
+Current active fixture: `lab-v0-07`, synthetic target Фонарь переправы, with
 three slots, three varied target clues, prior adjacent-pair observations and paid pair research.
 Completed checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`. No player-facing
+`docs/prototypes/PUZZLE_LAB_V0_07_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
@@ -347,3 +347,24 @@ secondary UI checks before final primary-session restoration, or use a separate
 hostname/profile. Final primary restoration was rechecked through page reload
 only after temporary servers/tabs were closed; budgets, journal and selection
 still matched the completed player record.
+
+## Stable-start example and identity scanning — 2026-10-07
+
+Case 07 (Фонарь переправы) precommitted with three stable initial observations,
+three interacting tag clues, exhaustive deterministic adjacent outcomes and a
+unique target. Research budget 8 / Science 1 are synthetic calibration quantities,
+not production balance. All 16 tests pass, including absence of an initially
+known complete target chain, clue necessity, retention of negative discoveries
+and branch-first exhaustive rejection within budget. Shortest route may be much
+shorter; no subjective difficulty claim is made before human play.
+
+Remove exclusion controls from candidates, while retaining historical API/data.
+Card codes П1/Ж1/Э1 are repeated in journal entries; hover or keyboard focus on
+an observation highlights its two candidate cards without changing selection or
+adding deductions. Full synthesis has a separate Финальный ответ accent.
+Browser verification on actual 1151x1065 viewport: no exclusion controls, exactly
+two highlighted candidates on journal focus, core ends at y~774. Fresh player
+state has Science 1 / Research 8, three stable initial observations and no actions.
+The primary server now runs lantern-07.json; current user tab is retained as a
+deliverable. Checkpoint: docs/prototypes/PUZZLE_LAB_V0_07_STATE.md.
+Next: human blind play and feedback on the identity scanning aid, then debrief.

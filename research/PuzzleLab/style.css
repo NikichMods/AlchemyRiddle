@@ -21,17 +21,22 @@ fieldset+fieldset{border-left:1px solid #40565f;padding-left:12px}
 legend{font-size:14px;font-weight:700;padding:0;margin-bottom:8px;color:#c3d9d6}
 .card{position:relative;min-height:92px;margin-bottom:8px;background:#1b3038;border:1px solid #344d56;border-radius:8px;overflow:visible}
 .card.selected{border-color:#a6d5c3;box-shadow:inset 0 0 0 1px #a6d5c3}
-.card.excluded{border-style:dashed}
-.card.excluded strong{text-decoration:line-through;color:#9dacb0}
+.card.journal-linked{outline:2px dashed #90bac9;outline-offset:2px}
 button{font:inherit;cursor:pointer;border:1px solid #99c9b8;background:#b9dfcc;color:#15251f;padding:8px 12px;border-radius:6px}
 button:disabled{opacity:.48;cursor:default}
 button:hover:not(:disabled){filter:brightness(1.1)}
 :focus-visible{outline:3px solid #f0d799;outline-offset:3px}
-.card .choose{display:grid;grid-template-columns:12px 1fr;gap:0 7px;width:100%;min-height:90px;padding:10px 9px 12px;text-align:left;background:transparent;border:0;color:inherit;border-radius:8px;align-content:start}
+.card .choose{display:grid;grid-template-columns:12px 1fr auto;gap:0 7px;width:100%;min-height:90px;padding:10px 9px 12px;text-align:left;background:transparent;border:0;color:inherit;border-radius:8px;align-content:start}
 .choose strong{font-size:13px;line-height:1.3}
 .selection-dot{width:10px;height:10px;border:1px solid #93adaf;border-radius:50%;margin-top:4px}
 .selected .selection-dot{background:#b9dfcc;box-shadow:inset 0 0 0 2px #1b3038}
-.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px;margin-top:7px;padding-right:22px}
+.tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.card-ref{display:inline-block;align-self:start;font-size:10px;font-weight:600;line-height:1.5;padding:0 4px;border-radius:3px;white-space:nowrap}
+.ref-powder{color:#c3d7e5;background:#304351}
+.ref-fluid{color:#bde0d9;background:#27453e}
+.ref-essence{color:#d9cbea;background:#41354d}
+.relation-refs{display:flex;align-items:center;gap:5px;margin-bottom:4px;color:#92aeb8}
+.relation-refs .verdict{margin-left:auto}
 .tag{display:inline-block;padding:1px 6px;border:1px solid;border-radius:999px;font-size:11px;font-weight:600;line-height:1.3;vertical-align:baseline}
 .tag-plant{color:#b5ed9e;background:#223c28;border-color:#7aaa68}
 .tag-mineral{color:#bce4ff;background:#203647;border-color:#739eb7}
@@ -44,10 +49,6 @@ button:hover:not(:disabled){filter:brightness(1.1)}
 .tag-water{color:#b7c9ff;background:#26324d;border-color:#7c93cc}
 .tag-organ{color:#ffb8b5;background:#442729;border-color:#c78385}
 .tag-neutral{color:#e4dfc9;background:#353225;border-color:#9a9275}
-.card .mark{position:absolute;right:4px;bottom:4px;display:grid;place-items:center;width:28px;height:28px;padding:0;border:0;border-radius:50%;background:transparent;color:#ffaaa5;font-size:22px;line-height:1}
-.card .mark:hover{background:#462e32}
-.card.excluded .mark{color:#b9dfcc}
-.card.excluded .mark:hover{background:#2b433b}
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
 #research-budget,#budget{font-size:12px;color:#b7c9cb}
 #pair-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -61,7 +62,8 @@ button:hover:not(:disabled){filter:brightness(1.1)}
 .pair-control.incompatible{border-color:#ae766e}
 .pair-names{grid-column:1/-1;min-height:32px;color:#c3d2d5;font-size:12px;margin:0}
 .pair-control button{grid-column:1/-1;padding:6px 10px;font-size:12px}
-.submission{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;border-top:1px solid #40565f;margin-top:14px;padding-top:12px}
+.submission{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;border:1px solid #73897c;border-left:3px solid #c2c891;border-radius:8px;background:#20312e;margin-top:14px;padding:12px}
+.final-label{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#d9d9a7;margin-bottom:3px}
 .submission h2{margin:0}
 #selection{font-size:12px;color:#c6d8d7;margin:5px 0;min-height:17px}
 #submit{font-size:13px}
