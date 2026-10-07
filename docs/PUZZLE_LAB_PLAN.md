@@ -534,3 +534,26 @@ Browser handoff verified in tab 20: title Сердце глубины, all selec
 fresh tab loads normally, root cause unknown. Twenty-one tests pass. Larger pool
 uses slightly tighter card padding while preserving font sizes. No player action
 or research performed in handed-off session.
+
+## Case 10 accepted and help simplified — 2026-10-07
+
+Actual route: p1f2 negative, p1f3 stable, f3e1 negative, f3e3 negative, p1f4 stable,
+f4e1 stable, then successful full synthesis. Six research charges spent, one
+Science; remain Research 3 / Science 2. Player followed a single branch, occasionally
+experimented before checking every clause, then explicitly validated final tags.
+Positive acceptance of substantial investigation and structured larger interface.
+Not a calibrated boss/hard classification. Exact outcome in case-10 checkpoint.
+
+Remove bottom notes/history/download controls and duplicated whole-formula rule.
+Retain compatibility observations (essential puzzle memory) and server-side action
+history for reproducible research. Rewrite disclosure as goal -> choose -> learn
+pairs -> check all clues -> final synthesis; small reference for counts/conditionals,
+free choices, finite costs, hover/click linkage and refresh continuity. No evaluator,
+resource or prior knowledge change. Final action Смешать и проверить with subtle
+alchemy styling; no animation, hidden information or misleading readiness signal.
+
+Row-color suggestion remains a proposal: shared hue across slot positions could
+be read as a matching/compatible set, while property tags already use colors.
+Retain slot silhouettes/codes and the current restrained palette for now.
+Next: distill quality acceptance criteria from cases, then bounded corpus screen;
+no need to produce another example merely to extend the count.

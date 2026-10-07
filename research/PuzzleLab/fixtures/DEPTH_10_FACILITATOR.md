@@ -12,3 +12,9 @@ All unlisted adjacent edges incompatible. Known tests free. Incorrect synthesis
 continues while Science remains; success or zero Science stops synthesis.
 Initial selection, history, notes, marks empty; playing. No automatic deductions,
 answer disclosure, or difficulty label. Acceptance pending human blind play.
+
+## Observed outcome
+
+Accepted after six investigations and one successful synthesis. Actual single-
+branch route differs from the seven-probe complete-elimination witness. See
+case-10 checkpoint. Frozen fixture unchanged. No further hidden recipe disclosed.

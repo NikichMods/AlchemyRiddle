@@ -24,8 +24,6 @@ function cardRef(id) {
   badge.title = name(id);
   return badge;
 }
-const formula = tuple => view.slots.map(s => name(tuple[s.id])).join(' + ');
-const pairDescription = r => `${r.slots.map(id => name(r.tuple[id])).join(' + ')} — ${r.stable ? 'СТАБИЛЬНО' : 'НЕСОВМЕСТИМО'}`;
 const pairMatches = (r, slots, tuple) => r.slots.length === slots.length &&
   r.slots.every((id,index) => id === slots[index]) && slots.every(id => tuple[id] && r.tuple[id] === tuple[id]);
 function relationJournal(s) {
@@ -93,9 +91,11 @@ function clueContents(text) {
 function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
-  $('title').textContent = view.title; $('description').textContent = view.description;
+  $('title').textContent = view.title;
+  $('description').textContent = view.slots.length === 3
+    ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть стабильными.'
+    : 'Найдите смесь из порошка и жидкости, которая подходит под все сведения о составе.';
   $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
-  $('quick-rules').textContent = view.pairTestCost ? 'Формуле нужны обе стабильные пары и выполнение всех сведений о составе.' : 'Все сведения о составе должны выполняться одновременно.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
   document.body.classList.toggle('many-candidates',view.slots.some(slot=>slot.cards.length>3));
   $('cards').replaceChildren();
@@ -126,6 +126,7 @@ function render() {
   $('pair-research').hidden = !view.pairTestCost || !view.slots.slice(0,-1).some((slot,i)=>s.selected[slot.id] && s.selected[view.slots[i+1].id]);
   $('knowledge').hidden = !view.pairTestCost;
   $('pair-help').hidden = !view.pairTestCost;
+  $('pair-tips').hidden = !view.pairTestCost;
   $('formula-compatibility').hidden = !view.pairTestCost;
   if (view.pairTestCost) {
     $('research-budget').textContent = `Заряды: ${s.research}`;
@@ -166,10 +167,6 @@ function render() {
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);
   const lastSubmission = s.history.filter(h=>h.type!=='pairTest').at(-1);
   $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Финальных проверок не осталось.' : lastSubmission && !lastSubmission.success ? 'Формула не подошла. Можно продолжить исследование.' : '';
-  $('history').replaceChildren(...s.history.map(h => {const li = document.createElement('li'); li.textContent = h.type === 'pairTest'
-    ? `${pairDescription(h)} (заряд исследования −${h.cost})`
-    : `${formula(h.tuple)} — ${h.success ? 'успех' : 'неудача'} (Science −${h.cost})`; return li;}));
-  if (!s.history.length) {const li = document.createElement('li'); li.textContent = 'Проверок пока не было.'; $('history').append(li);}
   if (focused && $(focused) !== document.activeElement) $(focused)?.focus({preventScroll:true});
 }
 async function request(path, body) {
@@ -178,19 +175,13 @@ async function request(path, body) {
 }
 function action(body) {
   queue = queue.then(async () => {
-    try {view = await request('/api/action', body); render(); $('error').textContent = ''; if (body.type === 'notes') $('saved').textContent = 'Сохранено в текущей сессии';}
+    try {view = await request('/api/action', body); render(); $('error').textContent = '';}
     catch(e) {$('error').textContent = e.message;}
   });
   return queue;
 }
 $('submit').onclick = () => action({type:'submit'});
-$('notes').oninput = () => {$('saved').textContent = 'Сохранение…'; action({type:'notes', text:$('notes').value});};
-$('export').onclick = async () => {
-  await queue;
-  const blob = new Blob([JSON.stringify({...view, state:{...view.state, notes:$('notes').value}}, null, 2)], {type:'application/json'});
-  const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = `${view.id}-journal.json`; link.click(); URL.revokeObjectURL(url);
-};
-try {view = await request('/api/state'); $('notes').value = view.state.notes; render();}
+try {view = await request('/api/state'); render();}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
 // Finite requests keep the embedded browser's navigation from waiting on a
 // permanent stream. Read only public presentation files; never reset sessions.

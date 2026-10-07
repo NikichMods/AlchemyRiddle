@@ -106,3 +106,7 @@ is archived as exhausted; do not present an ordinary UI refresh as a new puzzle.
 Active fresh contrast: `fixtures/depth-10.json`, case 10. Run with
 `--fixture=research/PuzzleLab/fixtures/depth-10.json`. Initial state empty, playing,
 Science 3 / Research 9. Case 09 completed; its checkpoint preserves earned state.
+
+Case 10 has now completed and been accepted; preserve its checkpoint. Player UI
+retains pair observations but no longer exposes bottom notes/history/export.
+Action history remains in server session/public state for facilitator evidence.
