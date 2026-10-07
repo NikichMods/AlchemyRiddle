@@ -1,0 +1,544 @@
+{
+  "scope": "one formerly empty variant, expanded unchanged 3x3x3 search",
+  "complete": true,
+  "seed": 20301013,
+  "fields": 32,
+  "counters": {
+    "attempts": 65536,
+    "distinctPackages": 62560,
+    "rejectCompleteAnswer": 30700,
+    "uniqueAnswer": 31860,
+    "rejectFullModelRedundancy": 31105,
+    "duplicateCombo": 2976,
+    "necessaryFullModelClues": 755,
+    "legacyOptionAccepted": 523,
+    "eligible": 296,
+    "rejectHandedAntecedent": 86,
+    "rejectFlatControl": 141,
+    "rejectLegacy_branchRange": 134,
+    "rejectLegacy_residualRange": 89,
+    "rejectLegacy_authorEliminationWitness": 9,
+    "replays": 1152
+  },
+  "perField": [
+    {
+      "weakClues": 130,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1985,
+        "rejectCompleteAnswer": 1176,
+        "uniqueAnswer": 809,
+        "rejectFullModelRedundancy": 809,
+        "duplicateCombo": 63
+      }
+    },
+    {
+      "weakClues": 131,
+      "compatibleTriplesBeforeClues": 4,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1987,
+        "rejectCompleteAnswer": 1360,
+        "uniqueAnswer": 627,
+        "rejectFullModelRedundancy": 503,
+        "duplicateCombo": 61,
+        "necessaryFullModelClues": 124,
+        "legacyOptionAccepted": 112,
+        "eligible": 84,
+        "rejectHandedAntecedent": 12,
+        "rejectFlatControl": 16,
+        "rejectLegacy_branchRange": 9,
+        "rejectLegacy_residualRange": 3
+      }
+    },
+    {
+      "weakClues": 133,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1985,
+        "uniqueAnswer": 1985,
+        "rejectFullModelRedundancy": 1985,
+        "duplicateCombo": 63
+      }
+    },
+    {
+      "weakClues": 134,
+      "compatibleTriplesBeforeClues": 4,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1989,
+        "rejectCompleteAnswer": 1086,
+        "uniqueAnswer": 903,
+        "rejectFullModelRedundancy": 687,
+        "duplicateCombo": 59,
+        "necessaryFullModelClues": 216,
+        "legacyOptionAccepted": 176,
+        "eligible": 77,
+        "rejectHandedAntecedent": 28,
+        "rejectFlatControl": 71,
+        "rejectLegacy_branchRange": 30,
+        "rejectLegacy_residualRange": 10
+      }
+    },
+    {
+      "weakClues": 120,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1969,
+        "uniqueAnswer": 1969,
+        "rejectFullModelRedundancy": 1969,
+        "duplicateCombo": 79
+      }
+    },
+    {
+      "weakClues": 138,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1996,
+        "rejectCompleteAnswer": 824,
+        "uniqueAnswer": 1172,
+        "rejectFullModelRedundancy": 1172,
+        "duplicateCombo": 52
+      }
+    },
+    {
+      "weakClues": 123,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1980,
+        "rejectCompleteAnswer": 1980,
+        "duplicateCombo": 68
+      }
+    },
+    {
+      "weakClues": 111,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1957,
+        "rejectCompleteAnswer": 745,
+        "uniqueAnswer": 1212,
+        "rejectFullModelRedundancy": 1194,
+        "duplicateCombo": 91,
+        "necessaryFullModelClues": 18,
+        "legacyOptionAccepted": 13,
+        "eligible": 12,
+        "rejectFlatControl": 1,
+        "rejectLegacy_branchRange": 5
+      }
+    },
+    {
+      "weakClues": 76,
+      "compatibleTriplesBeforeClues": 4,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1886,
+        "rejectCompleteAnswer": 1886,
+        "duplicateCombo": 162
+      }
+    },
+    {
+      "weakClues": 124,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1980,
+        "uniqueAnswer": 1980,
+        "rejectFullModelRedundancy": 1980,
+        "duplicateCombo": 68
+      }
+    },
+    {
+      "weakClues": 131,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1994,
+        "rejectCompleteAnswer": 872,
+        "uniqueAnswer": 1122,
+        "rejectFullModelRedundancy": 1122,
+        "duplicateCombo": 54
+      }
+    },
+    {
+      "weakClues": 81,
+      "compatibleTriplesBeforeClues": 5,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1879,
+        "rejectCompleteAnswer": 1879,
+        "duplicateCombo": 169
+      }
+    },
+    {
+      "weakClues": 86,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1919,
+        "uniqueAnswer": 1919,
+        "rejectFullModelRedundancy": 1919,
+        "duplicateCombo": 129
+      }
+    },
+    {
+      "weakClues": 104,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1956,
+        "uniqueAnswer": 1956,
+        "rejectFullModelRedundancy": 1956,
+        "duplicateCombo": 92
+      }
+    },
+    {
+      "weakClues": 114,
+      "compatibleTriplesBeforeClues": 4,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1943,
+        "rejectCompleteAnswer": 1269,
+        "uniqueAnswer": 674,
+        "rejectFullModelRedundancy": 554,
+        "duplicateCombo": 105,
+        "necessaryFullModelClues": 120,
+        "legacyOptionAccepted": 87,
+        "eligible": 47,
+        "rejectHandedAntecedent": 13,
+        "rejectFlatControl": 27,
+        "rejectLegacy_branchRange": 23,
+        "rejectLegacy_residualRange": 10
+      }
+    },
+    {
+      "weakClues": 110,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1950,
+        "rejectCompleteAnswer": 1157,
+        "uniqueAnswer": 793,
+        "rejectFullModelRedundancy": 663,
+        "duplicateCombo": 98,
+        "necessaryFullModelClues": 130,
+        "legacyOptionAccepted": 51,
+        "eligible": 30,
+        "rejectHandedAntecedent": 6,
+        "rejectFlatControl": 15,
+        "rejectLegacy_branchRange": 45,
+        "rejectLegacy_residualRange": 34
+      }
+    },
+    {
+      "weakClues": 113,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1962,
+        "uniqueAnswer": 1962,
+        "rejectFullModelRedundancy": 1962,
+        "duplicateCombo": 86
+      }
+    },
+    {
+      "weakClues": 118,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1961,
+        "rejectCompleteAnswer": 509,
+        "uniqueAnswer": 1452,
+        "rejectFullModelRedundancy": 1418,
+        "duplicateCombo": 87,
+        "necessaryFullModelClues": 34,
+        "legacyOptionAccepted": 16,
+        "eligible": 11,
+        "rejectFlatControl": 5,
+        "rejectLegacy_branchRange": 8,
+        "rejectLegacy_residualRange": 1,
+        "rejectLegacy_authorEliminationWitness": 9
+      }
+    },
+    {
+      "weakClues": 138,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 2011,
+        "rejectCompleteAnswer": 726,
+        "uniqueAnswer": 1285,
+        "rejectFullModelRedundancy": 1285,
+        "duplicateCombo": 37
+      }
+    },
+    {
+      "weakClues": 98,
+      "compatibleTriplesBeforeClues": 5,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1939,
+        "rejectCompleteAnswer": 1939,
+        "duplicateCombo": 109
+      }
+    },
+    {
+      "weakClues": 125,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1989,
+        "rejectCompleteAnswer": 1135,
+        "uniqueAnswer": 854,
+        "rejectFullModelRedundancy": 854,
+        "duplicateCombo": 59
+      }
+    },
+    {
+      "weakClues": 101,
+      "compatibleTriplesBeforeClues": 4,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1943,
+        "rejectCompleteAnswer": 1943,
+        "duplicateCombo": 105
+      }
+    },
+    {
+      "weakClues": 124,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1970,
+        "rejectCompleteAnswer": 593,
+        "uniqueAnswer": 1377,
+        "rejectFullModelRedundancy": 1377,
+        "duplicateCombo": 78
+      }
+    },
+    {
+      "weakClues": 71,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1867,
+        "rejectCompleteAnswer": 1867,
+        "duplicateCombo": 181
+      }
+    },
+    {
+      "weakClues": 101,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1962,
+        "uniqueAnswer": 1962,
+        "rejectFullModelRedundancy": 1962,
+        "duplicateCombo": 86
+      }
+    },
+    {
+      "weakClues": 92,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1936,
+        "uniqueAnswer": 1936,
+        "rejectFullModelRedundancy": 1936,
+        "duplicateCombo": 112
+      }
+    },
+    {
+      "weakClues": 121,
+      "compatibleTriplesBeforeClues": 5,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1973,
+        "rejectCompleteAnswer": 1973,
+        "duplicateCombo": 75
+      }
+    },
+    {
+      "weakClues": 57,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1765,
+        "rejectCompleteAnswer": 1765,
+        "duplicateCombo": 283
+      }
+    },
+    {
+      "weakClues": 138,
+      "compatibleTriplesBeforeClues": 2,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1974,
+        "rejectCompleteAnswer": 867,
+        "uniqueAnswer": 1107,
+        "rejectFullModelRedundancy": 1107,
+        "duplicateCombo": 74
+      }
+    },
+    {
+      "weakClues": 151,
+      "compatibleTriplesBeforeClues": 5,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 2010,
+        "rejectCompleteAnswer": 2010,
+        "duplicateCombo": 38
+      }
+    },
+    {
+      "weakClues": 123,
+      "compatibleTriplesBeforeClues": 3,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1971,
+        "rejectCompleteAnswer": 1139,
+        "uniqueAnswer": 832,
+        "rejectFullModelRedundancy": 719,
+        "duplicateCombo": 77,
+        "necessaryFullModelClues": 113,
+        "legacyOptionAccepted": 68,
+        "eligible": 35,
+        "rejectHandedAntecedent": 27,
+        "rejectFlatControl": 6,
+        "rejectLegacy_branchRange": 14,
+        "rejectLegacy_residualRange": 31
+      }
+    },
+    {
+      "weakClues": 115,
+      "compatibleTriplesBeforeClues": 1,
+      "counters": {
+        "attempts": 2048,
+        "distinctPackages": 1972,
+        "uniqueAnswer": 1972,
+        "rejectFullModelRedundancy": 1972,
+        "duplicateCombo": 76
+      }
+    }
+  ],
+  "originalFieldCompatibleTriplesCounts": [
+    2,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2
+  ],
+  "retained": 12,
+  "selected": [
+    {
+      "preferred": 3,
+      "strength": 0.25,
+      "estimate": {
+        "mean": 3.0625,
+        "min": 2,
+        "max": 5,
+        "observedStablePriors": 0,
+        "initialCertified": false
+      },
+      "heldOut": {
+        "mean": 2.96875,
+        "min": 2,
+        "max": 6,
+        "observedStablePriors": 0,
+        "initialCertified": false
+      },
+      "structure": {
+        "clues": 2,
+        "families": [
+          "xor",
+          "xor"
+        ],
+        "effectiveScopes": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "constantCountTerms": 0,
+        "derivedAntecedents": 0,
+        "immediatelyHandedAntecedents": 0,
+        "uniqueConditionalEndpoints": 0,
+        "crossSlotClauses": 2,
+        "controlProxy": false
+      }
+    },
+    {
+      "preferred": 5,
+      "strength": 0.25,
+      "estimate": {
+        "mean": 4.15625,
+        "min": 2,
+        "max": 5,
+        "observedStablePriors": 0,
+        "initialCertified": false
+      },
+      "heldOut": {
+        "mean": 4.15625,
+        "min": 2,
+        "max": 5,
+        "observedStablePriors": 0,
+        "initialCertified": false
+      },
+      "structure": {
+        "clues": 2,
+        "families": [
+          "xor",
+          "xor"
+        ],
+        "effectiveScopes": [
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "constantCountTerms": 0,
+        "derivedAntecedents": 0,
+        "immediatelyHandedAntecedents": 0,
+        "uniqueConditionalEndpoints": 0,
+        "crossSlotClauses": 1,
+        "controlProxy": false
+      }
+    }
+  ],
+  "searchSeconds": 0.39,
+  "totalSeconds": 0.547,
+  "limits": {
+    "fields": 32,
+    "attempts": 65536,
+    "retained": 12,
+    "replays": 1152,
+    "searchSeconds": 120
+  },
+  "sourceHashes": {
+    "coverage_gap_screen.py": "d7fcd7885f564ca6b0c38fec9c23a6647e034dba057844b2f8dee2687c4ed486",
+    "generator_route_ranking.py": "c954fa9f2efbc8f6a61790526ab007ce896b7d21f56f152717caedc5dd15df14",
+    "reasoning_diversity_screen.py": "c08552d3cbd404269c53dc6d5811092168c94cf7edbdb1f45f9664b258d525ba",
+    "progression_variable_field_screen.py": "bfc2480f3896baea3b1d3c22f30a0ba1ac0ace26eb263160665305173901245b",
+    "bounded_quality_diagnostic.py": "b5016f3ef976c196507ab5000ff673ddd8efb72b5c13a7d6bc7e06e53384dd4c",
+    "science_route_comparison.py": "b50de571312dfb86aec2f868baa8329d90cdda5332b956f7270c669b1d118683"
+  },
+  "inputHashes": {
+    "corpus": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "originalPool": "27a2860f8a2eb5c1cc9fd18033b86ba9cb36c9a93fc9be1962b3bf4699ccbe85"
+  }
+}

@@ -148,6 +148,16 @@ and human calibration are not established by it. No new execution in this segmen
 
 ## Proposed coverage-gap diagnosis (not executed)
 
+Execution authorized subsequently. User chooses expanded search first, counting
+rejection stages within that same pass; omit a separate replay of the original
+eight fields. Freeze seed 20261007+40000+missing-target index, 32 new 3x3x3 fields,
+2,048 package attempts per field, unchanged gates. Retain at most 12 candidates
+by seeded reservoir, independent of route costs. Cap search at 120 seconds;
+evaluate retained candidates with 16 seeds/policy plus 32 independent seeds/policy
+(maximum 1,152 replays), no known priors. Rank with the unchanged legacy score
+plus accepted strength 0.25, preferred 3/5, and validate fixed choices separately.
+Exact candidates stay private. Negative bounded results are not impossibility.
+
 The missing item is one of 19 formula-variant targets, not an established failure
 of an entire output or the new route penalty. Its candidate pool is empty before
 route estimation, stored-knowledge contexts and additive ranking.
@@ -166,3 +176,44 @@ ranking. A positive witness establishes a sampling miss; a negative bounded resu
 does not establish impossibility. If no candidate survives, inspect the dominant
 gate and the already-accepted variable-field envelope before proposing any change
 to quality criteria. No tag, recipe, fee or gate changes are authorized by this plan.
+
+### Coverage-gap result — complete
+
+Expanded search, unchanged gates: 32 fields, 65,536 attempts / 62,560 distinct
+packages. 31,860 have the unique complete-model answer; 755 also pass full-model
+clue necessity; 523 pass legacy option gates; 296 pass the ordinary interaction
+proxies. Seven fields produce eligible packages. Seeded reservoir retains twelve;
+1,152 selection/held-out replays complete. Exact identities stay private.
+
+| Weak ranking setting, fresh knowledge | Selection estimate | Held-out mean | Held-out range |
+| --- | ---: | ---: | ---: |
+| Preferred 3, strength 0.25 | 3.0625 | 2.96875 | 2–6 |
+| Preferred 5, strength 0.25 | 4.15625 | 4.15625 | 2–5 |
+
+This establishes suitable structural witnesses and ordinary paid-route estimates
+for the previously missing target. Combined with the earlier eighteen targets,
+all nineteen now have witnesses across the two bounded passes. It does not
+retroactively change the original comparison's pool or prove all save states,
+field sizes, difficulty bands or human-interest judgments serviceable.
+
+The sampling explanation is now supported by a more specific structural cause.
+Reconstructing only the original field shapes (no replay of clue sampling) gives
+complete-model compatible triple counts **2,2,1,2,1,2,2,2**. No such field can
+support two necessary ordinary clues under the retained omission gate.
+For k jointly necessary clues with one full-model answer, every omitted clue
+needs a distinct alternative witness that violates only that clue; hence at
+least k+1 compatible triples must exist before clues. Original fields fall below
+the minimum of three for two clues. In the expanded sample, seventeen fields
+still fall below that floor, but other sampled fields support valid packages.
+
+Conclusion: the earlier gap was field-sampling failure, not lack of serviceability
+under unchanged criteria or a failure of the new mean-route penalty. Future
+research-generator field sampling can skip fields below this necessary floor and
+resample before expensive clue-package work. This is a logically implied early
+check of the existing necessity contract, not weakening or replacing quality
+criteria. It does not require changing tags, vanilla formulas or Science prices.
+No production code changed; the expanded pass has stopped.
+
+Artifacts: `coverage_gap_screen.py`, `coverage-gap-2026-10-07.json`; source/input
+hashes, per-field counters, original topology counts and caps are recorded.
+Exact candidate pool remains private. Original aggregate snapshots remain frozen.

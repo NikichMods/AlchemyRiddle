@@ -341,3 +341,11 @@ Exact identities/certificates remain private. Specification and results:
 `generator-route-ranking-2026-10-07.json`. Weights are experimental; tutorial,
 two-slot, incomplete reagent availability and measured human interest are outside
 this pass. Tests: `test_generator_route_ranking.py`.
+
+`coverage_gap_screen.py THREE.json ORIGINAL_PRIVATE_POOL.json PRIVATE_POOL.json
+AGGREGATES.json` performs the expanded single-target search with unchanged gates,
+per-field rejection counters and independent route validation. It reconstructs
+the original field compatibility counts without replaying old package sampling.
+Aggregate artifact: `coverage-gap-2026-10-07.json`; owning result: the coverage-gap
+section in `docs/research/GENERATOR_ROUTE_RANKING_2026-10-07.md`. Exact data stays
+outside Git. No production behavior or relaxed quality criterion.

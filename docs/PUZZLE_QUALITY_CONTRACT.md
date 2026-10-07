@@ -220,6 +220,13 @@ default (tested strength 0.25), preserving other axes and earned shortcuts.
 This direction is accepted; human calibration and production-scale transfer
 remain distinct from the completed selection decision.
 
+Coverage follow-up complete: the original 18/19 sample gap now has a structural
+witness under unchanged criteria and about three/four new paid checks in held-out
+simulations. Original sampled fields had fewer than three compatible triples,
+so two necessary clues were impossible there. Prechecking the implied k+1
+compatible-witness floor can avoid such field choices; it is not a new quality
+threshold. Combined coverage witnesses are 19/19, within the reported envelope.
+
 Established for this player: the core supports pleasant short deduction and richer
 empirical investigation; varied interacting conditions outperform repetitive filters;
 earned pair visibility supports independent reasoning; the Lab interface is now

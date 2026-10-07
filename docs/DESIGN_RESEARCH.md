@@ -6,6 +6,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Bounded diagnostic recovery — 2026-10-07
 
+Latest checkpoint: the one missing target is now covered by the authorized
+expanded search, `research/GENERATOR_ROUTE_RANKING_2026-10-07.md`, coverage-gap
+result. Unchanged gates, 32 fields / 65,536 attempts, 296 eligible packages from
+seven fields; selected held-out means 2.96875 and 4.15625 checks with the accepted
+weak correction. All nineteen targets have structural witnesses across the two
+passes. Original eight fields each contained only one/two compatible triples,
+insufficient for two necessary clues (minimum three distinct compatible triples).
+The gap is explained by field sampling. Preserve the weak term and old criteria;
+future generator work can precheck this implied field floor before clue sampling.
+No more search is pending for this target. Human calibration and save-state
+generalization remain open; production stays BLOCKED.
+
 Latest completed work: additive generator-selection evaluation,
 `research/GENERATOR_ROUTE_RANKING_2026-10-07.md`. Existing reproducible gates and
 diversity scoring retained, same 197 candidates in both arms, 19 three-slot
@@ -17,7 +29,8 @@ logical-family diversity. Existing gates already reject the prior nine-isolated-
 triple example. This validates an additive pacing preference in the declared
 sample, not calibrated human difficulty or complete production readiness.
 Next bounded question: the one target without an eligible sampled candidate;
-do not weaken gates, substitute targets or reopen the property model by default.
+that question is now closed by the expanded checkpoint above. Do not weaken gates,
+substitute targets or reopen the property model by default.
 Exact penalty weights remain experimental. Production remains BLOCKED.
 
 Subsequent user acceptance: **keep the weak additive correction**. Selected
