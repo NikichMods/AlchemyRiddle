@@ -215,6 +215,11 @@ targets in this bounded sample; do not generalize that gap into impossibility.
 The new criterion complements the older ones. No exact production weight or
 human difficulty/interest guarantee is accepted.
 
+Following user decision: retain the **weak** correction as the working research
+default (tested strength 0.25), preserving other axes and earned shortcuts.
+This direction is accepted; human calibration and production-scale transfer
+remain distinct from the completed selection decision.
+
 Established for this player: the core supports pleasant short deduction and richer
 empirical investigation; varied interacting conditions outperform repetitive filters;
 earned pair visibility supports independent reasoning; the Lab interface is now

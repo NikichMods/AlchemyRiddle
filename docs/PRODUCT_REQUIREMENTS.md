@@ -524,6 +524,15 @@ term. Held-out simulations support shorter ordinary routes without changing
 those gates, while strong weights reduce logical-family diversity. This supports
 the additive direction, not acceptance of exact production coefficients.
 
+User decision after that comparison (2026-10-07): **retain the weak additive
+correction** alongside all existing criteria. Working research setting is the
+tested strength 0.25 in the current legacy-score scale and the report's penalty
+formula. This is the selected research default, not another open choice between
+weak/strong correction. Preserve earned shortcuts and difficulty-dependent
+preferences; do not strengthen the correction merely to minimize check count.
+Production implementation/scoring-scale transfer remains subject to the existing
+design/runtime gates, without reopening this accepted direction.
+
 Evaluate route length against actual starting knowledge and public reasoning.
 Distinguish clue/field ambiguity from query-policy detours before changing tags
 or generation. Separately compare paid pair investigation plus final checking

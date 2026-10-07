@@ -20,6 +20,13 @@ Next bounded question: the one target without an eligible sampled candidate;
 do not weaken gates, substitute targets or reopen the property model by default.
 Exact penalty weights remain experimental. Production remains BLOCKED.
 
+Subsequent user acceptance: **keep the weak additive correction**. Selected
+working research strength is 0.25 on the tested score scale; existing gates,
+reasoning/diversity criteria and knowledge-aware selection remain unchanged.
+This resolves the weak-versus-strong selection decision. Implementation-scale
+transfer remains future work; do not reopen acceptance merely because historical
+notes above call the comparison experimental. No further computation launched.
+
 The entries below preserve the preceding decisions and diagnostic boundaries;
 their previously proposed evaluation has now been completed as linked above.
 

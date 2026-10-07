@@ -137,3 +137,11 @@ Private pool and selection certificates remain outside Git. Four focused tests
 verify baseline agreement with the old sequence selector, earned-shortcut handling,
 progressive penalty and unchanged candidate membership. Public policy boundary
 tests remain applicable. No game/runtime/UI changes.
+
+## Owning decision after review
+
+The user accepts retaining the **weak additive correction**. Use tested strength
+0.25 as the working research default on this score scale, with all existing gates
+and diversity/interest criteria retained. Stronger arms remain comparison evidence.
+This acceptance resolves selection direction; production scoring-scale transfer
+and human calibration are not established by it. No new execution in this segment.
