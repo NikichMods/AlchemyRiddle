@@ -322,3 +322,12 @@ Run focused route-policy checks with:
 ```
 python -m unittest discover -s research/TagModelScreen -p test_bounded_quality_diagnostic.py
 ```
+
+`science_route_comparison.py THREE.json PRIVATE_CERTIFICATES.json
+PRIVATE_ROUTES.json AGGREGATES.json` compares the two public policies on one
+frozen package, exhaustively accounting for tied choices with memoized states.
+It also compares singleton-deduction stopping and 2/5 Science costs. Exact
+certificates/output stay outside Git. No new corpus sample or production behavior.
+Plan/results: `docs/research/SCIENCE_ROUTE_COMPARISON_2026-10-07.md`;
+aggregates: `science-routes-2026-10-07.json`. Uniform mechanical tie/order weights
+are not human probabilities. Tests: `test_science_route_comparison.py`.

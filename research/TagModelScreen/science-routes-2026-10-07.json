@@ -1,0 +1,526 @@
+{
+  "scope": "one fixed rich package, zero initial answer-edge support",
+  "complete": true,
+  "pairCost": 2,
+  "tripleCost": 5,
+  "attemptCap": null,
+  "hypotheses": 9,
+  "unknownRelevantEdges": 17,
+  "unknownEdgeSharingHistogram": {
+    "1": 17
+  },
+  "stablePriors": 1,
+  "hypothesesSupportedByPrior": 1,
+  "policies": {
+    "balanced": {
+      "pairTests": {
+        "3": 0.125,
+        "4": 0.09821428571428568,
+        "5": 0.10267857142857144,
+        "6": 0.10223214285714287,
+        "7": 0.10223214285714284,
+        "8": 0.10223214285714284,
+        "9": 0.10223214285714284,
+        "10": 0.10223214285714284,
+        "11": 0.09151785714285716,
+        "12": 0.055803571428571425,
+        "13": 0.015624999999999997
+      },
+      "min": 3,
+      "max": 13,
+      "uniformTieMean": 7.25,
+      "within3": 0.125,
+      "within5": 0.3258928571428571,
+      "scienceRange": [
+        11,
+        31
+      ],
+      "uniformTieMeanScience": 19.5,
+      "memoizedStates": 10936,
+      "seedTests": [
+        3,
+        11,
+        11
+      ],
+      "observedRouteCheckpoints": [
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 8,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ],
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 18.0,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.0,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 4,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 5,
+            "liveTriples": 5,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 14.0,
+            "remainingDirectOrderingMeanScience": 15.0
+          },
+          {
+            "pairChecksSpent": 6,
+            "liveTriples": 4,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 13.0,
+            "remainingDirectOrderingMeanScience": 12.5
+          },
+          {
+            "pairChecksSpent": 7,
+            "liveTriples": 3,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 11.5,
+            "remainingDirectOrderingMeanScience": 10.0
+          },
+          {
+            "pairChecksSpent": 8,
+            "liveTriples": 2,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 10.0,
+            "remainingDirectOrderingMeanScience": 7.5
+          },
+          {
+            "pairChecksSpent": 9,
+            "liveTriples": 1,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 9.0,
+            "remainingDirectOrderingMeanScience": 5.0
+          },
+          {
+            "pairChecksSpent": 10,
+            "liveTriples": 1,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 5.0
+          },
+          {
+            "pairChecksSpent": 11,
+            "liveTriples": 1,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ],
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 18.0,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.0,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 4,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 5,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.5,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 6,
+            "liveTriples": 5,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 13.5,
+            "remainingDirectOrderingMeanScience": 15.0
+          },
+          {
+            "pairChecksSpent": 7,
+            "liveTriples": 4,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 12.0,
+            "remainingDirectOrderingMeanScience": 12.5
+          },
+          {
+            "pairChecksSpent": 8,
+            "liveTriples": 3,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 11.0,
+            "remainingDirectOrderingMeanScience": 10.0
+          },
+          {
+            "pairChecksSpent": 9,
+            "liveTriples": 2,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 10.0,
+            "remainingDirectOrderingMeanScience": 7.5
+          },
+          {
+            "pairChecksSpent": 10,
+            "liveTriples": 2,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 7.5
+          },
+          {
+            "pairChecksSpent": 11,
+            "liveTriples": 2,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ]
+      ]
+    },
+    "candidate_first": {
+      "pairTests": {
+        "3": 0.125,
+        "4": 0.0982142857142857,
+        "5": 0.10267857142857141,
+        "6": 0.10223214285714287,
+        "7": 0.10223214285714287,
+        "8": 0.10223214285714287,
+        "9": 0.10223214285714285,
+        "10": 0.10223214285714285,
+        "11": 0.09151785714285714,
+        "12": 0.055803571428571425,
+        "13": 0.015624999999999997
+      },
+      "min": 3,
+      "max": 13,
+      "uniformTieMean": 7.25,
+      "within3": 0.125,
+      "within5": 0.3258928571428571,
+      "scienceRange": [
+        11,
+        31
+      ],
+      "uniformTieMeanScience": 19.5,
+      "memoizedStates": 26247,
+      "seedTests": [
+        8,
+        7,
+        6
+      ],
+      "observedRouteCheckpoints": [
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.5,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.0,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 4,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 5,
+            "liveTriples": 5,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 14.0,
+            "remainingDirectOrderingMeanScience": 15.0
+          },
+          {
+            "pairChecksSpent": 6,
+            "liveTriples": 4,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 12.5,
+            "remainingDirectOrderingMeanScience": 12.5
+          },
+          {
+            "pairChecksSpent": 7,
+            "liveTriples": 4,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 12.5
+          },
+          {
+            "pairChecksSpent": 8,
+            "liveTriples": 4,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ],
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.5,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.5,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 4,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 5,
+            "liveTriples": 5,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 14.0,
+            "remainingDirectOrderingMeanScience": 15.0
+          },
+          {
+            "pairChecksSpent": 6,
+            "liveTriples": 5,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 15.0
+          },
+          {
+            "pairChecksSpent": 7,
+            "liveTriples": 5,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ],
+        [
+          {
+            "pairChecksSpent": 1,
+            "liveTriples": 8,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.5,
+            "remainingDirectOrderingMeanScience": 22.5
+          },
+          {
+            "pairChecksSpent": 2,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 16.5,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 3,
+            "liveTriples": 7,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 17.0,
+            "remainingDirectOrderingMeanScience": 20.0
+          },
+          {
+            "pairChecksSpent": 4,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 15.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 5,
+            "liveTriples": 6,
+            "certified": false,
+            "remainingPairPolicyMeanScience": 7.0,
+            "remainingDirectOrderingMeanScience": 17.5
+          },
+          {
+            "pairChecksSpent": 6,
+            "liveTriples": 6,
+            "certified": true,
+            "remainingPairPolicyMeanScience": 5.0,
+            "remainingDirectOrderingMeanScience": 5
+          }
+        ]
+      ]
+    }
+  },
+  "singletonStopSensitivity": {
+    "balanced": {
+      "pairTests": {
+        "3": 0.125,
+        "4": 0.09821428571428568,
+        "5": 0.10267857142857144,
+        "6": 0.10223214285714287,
+        "7": 0.10223214285714284,
+        "8": 0.11785714285714287,
+        "9": 0.14910714285714283,
+        "10": 0.13348214285714285,
+        "11": 0.06026785714285714,
+        "12": 0.008928571428571428
+      },
+      "min": 3,
+      "max": 12,
+      "uniformTieMean": 7.0,
+      "within3": 0.125,
+      "within5": 0.3258928571428571,
+      "scienceRange": [
+        11,
+        29
+      ],
+      "uniformTieMeanScience": 19.0,
+      "memoizedStates": 10552,
+      "seedTests": [
+        3,
+        9,
+        11
+      ],
+      "seedStopReasons": [
+        "success",
+        "deduced",
+        "success"
+      ]
+    },
+    "candidate_first": {
+      "pairTests": {
+        "3": 0.125,
+        "4": 0.0982142857142857,
+        "5": 0.10267857142857141,
+        "6": 0.10223214285714287,
+        "7": 0.10223214285714287,
+        "8": 0.11785714285714284,
+        "9": 0.14910714285714283,
+        "10": 0.13348214285714283,
+        "11": 0.06026785714285714,
+        "12": 0.008928571428571428
+      },
+      "min": 3,
+      "max": 12,
+      "uniformTieMean": 6.999999999999999,
+      "within3": 0.125,
+      "within5": 0.3258928571428571,
+      "scienceRange": [
+        11,
+        29
+      ],
+      "uniformTieMeanScience": 19.0,
+      "memoizedStates": 25735,
+      "seedTests": [
+        8,
+        7,
+        6
+      ],
+      "seedStopReasons": [
+        "success",
+        "success",
+        "success"
+      ]
+    }
+  },
+  "directSubmissions": {
+    "candidates": 9,
+    "scienceRange": [
+      5,
+      45
+    ],
+    "uniformOrderingMeanScience": 25.0,
+    "distribution": {
+      "5": 0.1111111111111111,
+      "10": 0.1111111111111111,
+      "15": 0.1111111111111111,
+      "20": 0.1111111111111111,
+      "25": 0.1111111111111111,
+      "30": 0.1111111111111111,
+      "35": 0.1111111111111111,
+      "40": 0.1111111111111111,
+      "45": 0.1111111111111111
+    },
+    "twoSubmissionSuccessFraction": 0.2222222222222222,
+    "threeSubmissionSuccessFraction": 0.3333333333333333
+  },
+  "sourceHashes": {
+    "science_route_comparison.py": "b50de571312dfb86aec2f868baa8329d90cdda5332b956f7270c669b1d118683",
+    "bounded_quality_diagnostic.py": "b5016f3ef976c196507ab5000ff673ddd8efb72b5c13a7d6bc7e06e53384dd4c",
+    "progression_variable_field_screen.py": "bfc2480f3896baea3b1d3c22f30a0ba1ac0ace26eb263160665305173901245b",
+    "reasoning_diversity_screen.py": "c08552d3cbd404269c53dc6d5811092168c94cf7edbdb1f45f9664b258d525ba"
+  },
+  "inputHashes": {
+    "corpus": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "certificates": "7e16f261e98daf1f0045df4b2b7e4d5e02016e56135c69471f582607f03f27b3"
+  },
+  "seconds": 1.578,
+  "limits": {
+    "packages": 1,
+    "statesPerPolicy": 200000,
+    "seconds": 300
+  },
+  "caveat": "Uniform policy ties/orderings are mechanical baselines, not human probabilities."
+}

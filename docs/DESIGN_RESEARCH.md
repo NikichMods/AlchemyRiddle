@@ -21,8 +21,17 @@ All six targets support matched same-field controls and compound alternatives.
 This is structural existence, not corpus-wide quality or new human acceptance.
 Zero-answer-edge public routes take 3–11 pair tests; one-answer-edge contrasts
 take 1–6. A retained compound package has a 3–11 spread across plausible tied
-queries. Next: compare balanced-edge and candidate-first policies on that same
-retained package before choosing budget rules or commissioning further play.
+queries. The same-package policy comparison is now complete; see
+`research/SCIENCE_ROUTE_COMPARISON_2026-10-07.md`. Both public policies have the
+same mechanical tie distribution: 3–13 checks for chemical certification,
+3–12 when singleton deduction may stop, mean 7 in the latter comparison.
+Nine residual triples have no shared pair edges; tests reject only one branch
+at a time. This package does not support robust ordinary 3–5-check service.
+At provisional 2/5 prices, research averages 19 Science versus 25 for randomly
+ordered direct submissions; some late states favor submitting instead of further
+pair checks. These are mechanical comparisons, not player probabilities.
+Next proposed step: compare already-retained clue alternatives on the same field
+before changing field construction, fees or tags. That step has not run.
 Keep the sample bounded, tag taxonomy closed and production BLOCKED.
 
 Subsequent user clarification (2026-10-07): repeatable paid checks, no fixed
@@ -32,9 +41,9 @@ about 3 pair checks, reliably around 5; around 10 flags a route/generation
 problem to diagnose. Shorter justified routes remain valid. Owning semantics:
 PRODUCT_REQUIREMENTS.md, Science economy and investigation-length target.
 Previous 6/9 sensitivity thresholds and Lab final-check caps are historical.
-Before further route simulation, explain the proposed comparison to the user;
-evaluate both long-route causes and research-versus-guessing costs under these
-provisional prices. No further simulation has been run for this clarification.
+The user authorized the proposed same-package route/economy comparison after
+this clarification; results are linked above. No production economy acceptance
+or generator-rule change follows automatically from these bounded results.
 
 The handoff below remains the calibration boundary and reading guide; its
 instruction to finish recovery before execution has now been completed.

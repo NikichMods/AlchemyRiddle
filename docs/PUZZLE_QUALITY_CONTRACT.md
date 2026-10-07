@@ -211,7 +211,13 @@ six real variants, 192 fields, 46,801 sampled packages and 18 reviewed certifica
 Matched flat/compound alternatives exist for this sample. Public route costs vary
 substantially with starting knowledge and query choices; formal interaction alone
 does not establish resource robustness. The linked report owns evidence, limits
-and the next same-package policy comparison. No new difficulty/balance acceptance.
+and the completed same-package policy comparison, now recorded in
+[Science route comparison](research/SCIENCE_ROUTE_COMPARISON_2026-10-07.md).
+That package leaves nine triples without shared pair edges; both tested policies
+retain a long-route tail after removing unnecessary certification of a singleton.
+Review remaining branch structure and reusable experimental effects alongside
+formal gates; do not silently accept a numeric generator rejection threshold.
+No new difficulty/balance acceptance.
 
 Reuse TagModelScreen and the accepted private corpus/property inputs; do not build
 a new production generator or repeat the completed architecture/curriculum survey.
