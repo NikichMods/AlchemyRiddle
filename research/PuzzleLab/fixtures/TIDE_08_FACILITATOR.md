@@ -46,3 +46,11 @@ Costs remain visible; detailed grammar/interaction instructions in one disclosur
 
 Player checkpoint: docs/prototypes/PUZZLE_LAB_V0_08_STATE.md.
 Next: fresh blind human play and UI feedback; preserve reasoning before debrief.
+
+## Human attempt — 2026-10-07
+
+One unsuccessful p1f3e1 synthesis, no microtests. Science 0 / Research 5. Player
+correctly followed the linked conditionals and count; empirical second edge was
+unobserved. Preserve this as UI-confounded reasoning evidence, not core rejection
+or pure difficulty evidence. Future three-check policy accepted separately; this
+model and failed state remain frozen. Checkpoint contains exact narration/state.

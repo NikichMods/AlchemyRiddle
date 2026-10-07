@@ -104,12 +104,13 @@ function render() {
     $('cards').append(group);
   }
   $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
-  $('selection').replaceChildren(...view.slots.map(slot => {
+  $('selection').replaceChildren(...view.slots.filter(slot=>s.selected[slot.id]).map(slot => {
     const tile = document.createElement('div'); tile.className = `formula-tile ${s.selected[slot.id] ? 'filled' : 'empty'}`;
     const label = document.createElement('span'); label.textContent = s.selected[slot.id] ? name(s.selected[slot.id]) : `Выберите: ${slot.name.toLowerCase()}`;
     tile.append(cardRef(s.selected[slot.id]),label); return tile;
   }));
-  $('pair-research').hidden = !view.pairTestCost;
+  if (!$('selection').childElementCount) $('selection').textContent='Пока ничего не выбрано';
+  $('pair-research').hidden = !view.pairTestCost || !view.slots.slice(0,-1).some((slot,i)=>s.selected[slot.id] && s.selected[view.slots[i+1].id]);
   $('knowledge').hidden = !view.pairTestCost;
   $('pair-help').hidden = !view.pairTestCost;
   $('formula-compatibility').hidden = !view.pairTestCost;
@@ -144,12 +145,14 @@ function render() {
       edges.every(r => r?.stable) ? 'stable' : 'unknown';
     summary.className = `formula-compatibility ${state}`;
     const label = document.createElement('span'); label.className = 'verdict';
-    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара — измените смесь',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'? Исследуйте неизвестные пары'}[state];
+    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:s.status==='playing' ? '? Есть неисследованные пары. Финальная проверка доступна.' : '? Есть неисследованные пары.'}[state];
     summary.append(label);
   }
-  $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
+  const initialScience = s.science + s.history.filter(h=>h.type!=='pairTest').reduce((total,h)=>total+h.cost,0);
+  $('budget').textContent = `Финальных проверок: ${Math.floor(s.science/view.submissionCost)} из ${Math.floor(initialScience/view.submissionCost)} · цена ${view.submissionCost} Science`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);
-  $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Бюджет проверок исчерпан; ответ не раскрыт. Сохраните рассуждения для разбора.' : '';
+  const lastSubmission = s.history.filter(h=>h.type!=='pairTest').at(-1);
+  $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Финальных проверок не осталось.' : lastSubmission && !lastSubmission.success ? 'Формула не подошла. Можно продолжить исследование.' : '';
   $('history').replaceChildren(...s.history.map(h => {const li = document.createElement('li'); li.textContent = h.type === 'pairTest'
     ? `${pairDescription(h)} (заряд исследования −${h.cost})`
     : `${formula(h.tuple)} — ${h.success ? 'успех' : 'неудача'} (Science −${h.cost})`; return li;}));

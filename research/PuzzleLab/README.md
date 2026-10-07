@@ -90,3 +90,10 @@ slots. This is free selection, never an experiment or automatic deduction.
 The final-answer chain displays only observed adjacent pair states; tag conditions
 remain the player's reasoning task. On narrow screens, candidates and evidence
 precede actions. Case 07 is completed; its checkpoint retains the human result.
+
+Case 08 is now in debrief after a failed synthesis; the frozen model is unchanged.
+Future synthetic examples use three final checks at cost 1 Science each. Remaining
+and original final-check counts are visible before submission. The information-first
+layout places composition and pair compatibility below candidates, actions at right.
+Unknown compatibility does not block full submission. Incomplete pair controls are
+hidden; selected formula entries are plain output rather than bordered empty inputs.

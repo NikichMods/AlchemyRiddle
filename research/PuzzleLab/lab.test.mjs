@@ -7,6 +7,17 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('three-Science model permits research after failed synthesis and success on the third check', () => {
+  const f={...harbor,science:3}; validate(f); const s=createState(f);
+  s.selected={powder:'p1',fluid:'f3',essence:'e2'};
+  act(f,s,{type:'submit'}); assert.equal(s.science,2); assert.equal(s.status,'playing');
+  act(f,s,{type:'pairTest',slots:['fluid','essence']}); assert.equal(s.research,3);
+  act(f,s,{type:'submit'}); assert.equal(s.science,1); assert.equal(s.status,'playing');
+  s.selected={...f.answer}; act(f,s,{type:'submit'});
+  assert.equal(s.science,0); assert.equal(s.status,'solved');
+  assert.deepEqual(s.history.filter(h=>h.type!=='pairTest').map(h=>h.success),[false,false,true]);
+});
+
 test('eighth fixture links conditionals without requiring their premises and budgets branch-first research', () => {
   const f=JSON.parse(readFileSync(new URL('./fixtures/tide-08.json',import.meta.url)));
   validate(f); const rows=candidates(f), possible=rows.filter(t=>f.clues.every(c=>satisfies(f,t,c)));

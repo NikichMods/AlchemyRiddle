@@ -804,3 +804,22 @@ state near synthesis should say what observed pair knowledge is missing or known
 without evaluating target conditions. Journal selection remains optional; the
 layout should support candidate selection -> relevant research -> final synthesis
 without requiring a written sequence guide. Review this variant in case 08.
+
+Case-08 refinement: failed synthesis after correct tag-chain reasoning and no
+microtests exposed an information/affordance gap. Pair knowledge is a primary
+puzzle information source, not auxiliary notebook text. Place it with composition
+facts in the downward scan beneath candidates; group actions separately nearby.
+Avoid empty noninteractive fields that resemble input controls. Unknown empirical
+edges should be marked as uncertainty, not a requirement that falsely suggests
+submission is blocked. Emphasize actionable unknown-pair research; known pairs
+need no disabled duplicate button.
+
+User accepted 3 final checks at 1 Science each for FUTURE synthetic prototypes.
+This is not production economy/refill policy and does not revise frozen past/live
+models. Show remaining/total checks before the player commits. A failed check with
+remaining Science should communicate that investigation can continue.
+
+Use varied, readable nouns for future synthetic Powder and Essence candidates
+while keeping their slot identity explicit; names convey no additional tag rules.
+Keep the research sequence focused on richer/mature inference rather than unlimited
+UI polish or accumulation of more similarly structured calibration examples.

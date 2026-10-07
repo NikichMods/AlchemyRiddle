@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Case 08 precommitted and ready for fresh blind play with a larger, less caption-heavy workspace. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Case 08 ended with a UI-confounded failed synthesis; layout revised and three final checks accepted for future models. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -433,3 +433,41 @@ Actual 1600x900 viewport: core ends at y~778. This initial state remains untouch
 by pair investigations or synthesis. Tab retained as deliverable for human play.
 Current exact checkpoint: docs/prototypes/PUZZLE_LAB_V0_08_STATE.md.
 Next: fresh blind play with reasoning/UI feedback before debrief.
+
+## Case 08 outcome, information-first scan and future economy — 2026-10-07
+
+Attempt ended with p1f3e1 failure, no pair microtests, Science 0 / Research 5.
+Player correctly used Plant -> Animal -> Water and mineral count; all four tag
+conditions fit the attempt. The other empirical edge was unknown. Do not expose
+its hidden outcome or the answer during debrief. This is useful linked-clue and
+UI evidence, not an accepted difficulty band. Exact state/history is in case-08
+checkpoint; no model change, reset or new observation added from synthesis.
+
+User accepted THREE final checks for future examples, cost 1 Science each.
+Keep case 08 frozen/exhausted; production Science acquisition/refill is still open.
+All 19 tests pass, including failure -> continued research -> third-check success
+under a three-Science model using the existing evaluator. Presentation now shows
+remaining/original final-check counts and price, with a nonterminal failure message
+when resources remain. Unknown pairs are a risk, not a prerequisite enforced by
+UI; remove the imperative that conflicted with the enabled synthesis button.
+
+New scan layout: candidates top-left; two equally important information blocks
+below (composition and compatibility), actions at right. Compatibility block
+states the short two-stable-pair requirement; whole-target tag requirement remains
+visible. Hide incomplete pair panels rather than showing technical dashes; show
+selected formula as plain output, not empty bordered pseudo-inputs. Hide known-pair
+buttons, accent the unknown-pair research action. Journal selection stays optional.
+Browser verified actual 1151x1065 completed/exhausted state with correct area order,
+unchanged p1f3e1, sole failed submission, three prior observations and budgets 0/5.
+No errors, resources or hidden model changed during UI revision.
+
+User requests lexical variation in future synthetic powder/essence names, without
+names conveying extra properties. Follow the existing slot headers/exhaustive tags
+for semantics; do not rename a frozen live fixture.
+
+Research sequence remains puzzle-first: next fresh richer three-slot example with
+three checks, then mature/boss contrast; capture reasoning and subjective findings,
+distill inference-quality acceptance criteria, then bounded real-corpus screen.
+UI adjustments support this sequence rather than replacing it. Counts: eight
+presented human calibration cases, separate from nineteen automated checks; case
+08 failure is not evidence that the user failed tag reasoning or the selected core.
