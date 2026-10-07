@@ -4,6 +4,31 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Chat handoff — 2026-10-07
+
+The user requests a new chat at this completed calibration/synthesis boundary.
+The bounded real-corpus quality diagnostic is authorized as the next substantive
+step, but has **not started**. Finish recovery before executing it.
+
+After the repository/DevRules bootstrap, read in this order:
+1. `PRODUCT_REQUIREMENTS.md` for accepted product semantics and scope;
+2. this recovery entry and `PUZZLE_QUALITY_CONTRACT.md` for findings and the
+   bounded diagnostic specification;
+3. `PUZZLE_LAB_PLAN.md` and `prototypes/PUZZLE_LAB_V0_10_STATE.md` for the
+   completed Lab state; follow linked earlier cases only when needed;
+4. `research/TagModelScreen/README.md`, relevant existing screen source and
+   `RUNTIME_CORPUS_ANALYSIS.md` before proposing new tooling.
+
+First execution task: locate and verify the accepted private corpus/property
+inputs, reproduce the existing baseline, then predeclare a small sample and
+stop budget under the quality contract. The input path/availability was not
+established during this handoff; the public checkout does not contain the exact
+formula table. Do not infer input availability from previous aggregate reports.
+Preserve anti-spoiler reporting and do not repeat completed architecture surveys.
+The synthesis/audit source checkpoint is commit
+`00f1ad1f66828f2484c7ebc842a0f41dc63a9223` on `research/puzzle-lab-v0`.
+Recover the actual current branch/HEAD/local changes rather than resetting to it.
+
 Puzzle Lab V0 calibration cases 01–10 are complete. Cases 03–07, 09 and 10 received
 explicit positive puzzle acceptance; 01/02 retain negative teaching/repetition
 evidence, and 08 is a UI/economy-confounded failure. The user explicitly accepts
