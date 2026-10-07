@@ -7,6 +7,28 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('eighth fixture links conditionals without requiring their premises and budgets branch-first research', () => {
+  const f=JSON.parse(readFileSync(new URL('./fixtures/tide-08.json',import.meta.url)));
+  validate(f); const rows=candidates(f), possible=rows.filter(t=>f.clues.every(c=>satisfies(f,t,c)));
+  assert.equal(possible.length,5); assert.ok(f.knownRelations.every(r=>r.stable));
+  const adjacent=[['powder','fluid'],['fluid','essence']];
+  const matches=(r,t,slots)=>r.slots.every((id,i)=>id===slots[i]) && slots.every(id=>r.tuple[id]===t[id]);
+  assert.ok(possible.every(t=>!adjacent.every(slots=>f.knownRelations.some(r=>matches(r,t,slots)))));
+  for(let i=0;i<f.clues.length;i++) assert.ok(rows.filter(t=>validFormula({...f,clues:f.clues.filter((_,j)=>i!==j)},t)).length>1);
+  // The conditionals constrain other branches; neither premise is mandatory in the answer.
+  assert.ok(!f.slots[0].cards.find(c=>c.id===f.answer.powder).tags.includes('Растительное'));
+  assert.ok(!f.slots[2].cards.find(c=>c.id===f.answer.essence).tags.includes('Животное'));
+  const s=createState(f);
+  for(const [a,b,x,y] of [['fluid','essence','f3','e1'],['fluid','essence','f1','e1'],['powder','fluid','p2','f1'],['fluid','essence','f1','e2'],['powder','fluid','p2','f2']]) {
+    s.selected={[a]:x,[b]:y}; act(f,s,{type:'pairTest',slots:[a,b]});
+  }
+  assert.deepEqual(s.history.map(h=>h.stable),[false,false,true,false,true]);
+  assert.equal(s.research,0); assert.equal(s.science,1);
+  assert.deepEqual(possible.filter(t=>s.knownRelations.every(r=>r.stable||!r.slots.every(id=>r.tuple[id]===t[id]))),[f.answer]);
+  assert.ok(adjacent.every(slots=>s.knownRelations.some(r=>r.stable&&matches(r,f.answer,slots))));
+  s.selected={...f.answer}; act(f,s,{type:'submit'}); assert.equal(s.status,'solved');
+});
+
 test('journal pair selection replaces all slots atomically, accepts earned negatives and preserves resources/history', () => {
   const s = createState(harbor); s.selected={...harbor.answer}; s.notes='keep'; s.marks.p3=true;
   const before=structuredClone(s);

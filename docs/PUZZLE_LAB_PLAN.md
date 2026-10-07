@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Attention-hierarchy revision implemented on completed case 07. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; cases 06 and 07 accepted after three-slot play. Case 08 precommitted and ready for fresh blind play with a larger, less caption-heavy workspace. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -39,10 +39,10 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-07`, synthetic target Фонарь переправы, with
+Current active fixture: `lab-v0-08`, synthetic target Печать прилива, with
 three slots, three varied target clues, prior adjacent-pair observations and paid pair research.
 Completed checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_07_STATE.md`. No player-facing
+`docs/prototypes/PUZZLE_LAB_V0_08_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
@@ -404,3 +404,32 @@ selected p2/f3/e2, budgets 0/5 and six relations. This is technical restoration,
 not another human playtest. No reset button added from tentative speculation.
 Next: user reviews hierarchy revision on completed case 07, then a fresh stronger
 logical-interaction example; generator acceptance and mature/boss remain open.
+
+## Legibility refinement and case 08 — 2026-10-07
+
+User found the quieter hierarchy too small and caption-heavy. Retain the hierarchy
+but increase reading text/statuses: 16px core facts and formula message, 15px card
+names/chosen formula tiles, 14px action buttons/costs. Journal names 13px, codes and
+tags 12px. Remove repeated selected names from pair controls; show identity codes
+beside actions. Replace the tiny final chain with three full-name selected tiles
+and one contextual observed-state message once all slots are selected. No automatic
+tag checking, synthesis blocking by inferred validity, or changes to paid actions.
+Hide duplicate incomplete-formula instructions; placeholders already show missing
+slots. Move the card click instruction into the existing disclosure.
+
+New lab-v0-08, Печать прилива, tide-08.json: four necessary interacting clues,
+three stable initial bridges, five Research Charges and one Science. Complete
+model and author hypotheses frozen in TIDE_08_FACILITATOR.md before play. Eighteen
+tests pass including uniqueness, clause necessity, no initially complete known
+target chain, linked conditionals and a five-test branch-first route. This is a
+new blind model; do not retrofit case 07. Subjective depth awaits human evidence.
+
+Browser QA on completed case 07 confirmed selected full-name tiles and large
+stable-message display. Binding old tab 17 timed out on focus emulation; a fresh
+visible tab 19 loaded immediately. Exact cause is unknown, not diagnosed as a
+server fault. Primary server restarted with tide-08.json; new tab verified title,
+four clauses, three priors, no selection/history, Science 1 / Research 5, no errors.
+Actual 1600x900 viewport: core ends at y~778. This initial state remains untouched
+by pair investigations or synthesis. Tab retained as deliverable for human play.
+Current exact checkpoint: docs/prototypes/PUZZLE_LAB_V0_08_STATE.md.
+Next: fresh blind play with reasoning/UI feedback before debrief.

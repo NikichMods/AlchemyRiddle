@@ -10,15 +10,15 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
-For the current blind calibration case (Фонарь переправы):
+For the current blind calibration case (Печать прилива):
 
 ```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/lantern-07.json
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/tide-08.json
 ```
 
 The default fixture remains the original case for historical reproduction.
 Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_07_STATE.md`. Difficulty labels and progression UI
+`docs/prototypes/PUZZLE_LAB_V0_08_STATE.md`. Difficulty labels and progression UI
 are deliberately deferred pending a separate product decision.
 
 If a restricted execution environment blocks the test runner's child process,

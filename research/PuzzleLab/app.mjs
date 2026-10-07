@@ -82,7 +82,7 @@ function render() {
   const s = view.state;
   $('title').textContent = view.title; $('description').textContent = view.description;
   $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
-  $('quick-rules').textContent = view.pairTestCost ? 'Все сведения действуют одновременно. Обе соседние пары должны быть стабильны. Теги не определяют совместимость.' : 'Все сведения действуют одновременно. Выбор бесплатный. Проверка сообщает только успех или неудачу.';
+  $('quick-rules').textContent = view.pairTestCost ? 'Формуле нужны обе стабильные пары и выполнение всех сведений о составе.' : 'Все сведения о составе должны выполняться одновременно.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
   $('cards').replaceChildren();
   for (const slot of view.slots) {
@@ -104,7 +104,11 @@ function render() {
     $('cards').append(group);
   }
   $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
-  $('selection').textContent = formula(s.selected);
+  $('selection').replaceChildren(...view.slots.map(slot => {
+    const tile = document.createElement('div'); tile.className = `formula-tile ${s.selected[slot.id] ? 'filled' : 'empty'}`;
+    const label = document.createElement('span'); label.textContent = s.selected[slot.id] ? name(s.selected[slot.id]) : `Выберите: ${slot.name.toLowerCase()}`;
+    tile.append(cardRef(s.selected[slot.id]),label); return tile;
+  }));
   $('pair-research').hidden = !view.pairTestCost;
   $('knowledge').hidden = !view.pairTestCost;
   $('pair-help').hidden = !view.pairTestCost;
@@ -119,7 +123,9 @@ function render() {
       const heading = document.createElement('h3'); heading.textContent = `${slot.name} ↔ ${view.slots[i+1].name}`;
       const status = document.createElement('span'); status.className='verdict';
       status.textContent = known ? known.stable ? '✓ Стабильно' : '⊘ Несовместимо' : complete ? '? Не исследовано' : '— Выберите пару';
-      const names = document.createElement('p'); names.className='pair-names'; names.textContent=slots.map(id=>name(s.selected[id])).join(' + ');
+      const names = document.createElement('p'); names.className='pair-names';
+      const arrow = document.createElement('span'); arrow.textContent='↔';
+      names.append(cardRef(s.selected[slots[0]]),arrow,cardRef(s.selected[slots[1]]));
       const button = document.createElement('button'); button.id = `test-${slot.id}`;
       button.textContent = known ? 'Уже известно' : `Исследовать · −${view.pairTestCost} заряд`;
       button.setAttribute('aria-label', `Исследовать: ${slot.name.toLowerCase()} + ${view.slots[i+1].name.toLowerCase()}`);
@@ -129,6 +135,7 @@ function render() {
     $('relations').replaceChildren(relationJournal(s));
     const summary = $('formula-compatibility'); summary.replaceChildren();
     const complete = view.slots.every(slot => s.selected[slot.id]);
+    summary.hidden = !complete;
     const edges = view.slots.slice(0,-1).map((slot,i) => {
       const slots = [slot.id,view.slots[i+1].id];
       return s.knownRelations.find(r => pairMatches(r,slots,s.selected));
@@ -136,17 +143,9 @@ function render() {
     const state = !complete ? 'incomplete' : edges.some(r => r && !r.stable) ? 'incompatible' :
       edges.every(r => r?.stable) ? 'stable' : 'unknown';
     summary.className = `formula-compatibility ${state}`;
-    const chain = document.createElement('span'); chain.className = 'formula-chain';
-    view.slots.forEach((slot,i) => {
-      chain.append(cardRef(s.selected[slot.id]));
-      if (i<edges.length) {
-        const link = document.createElement('span'); link.className = `chain-link ${edges[i] ? edges[i].stable ? 'stable' : 'incompatible' : 'unknown'}`;
-        link.textContent = edges[i] ? edges[i].stable ? '✓' : '⊘' : s.selected[slot.id] && s.selected[view.slots[i+1].id] ? '?' : '—'; chain.append(link);
-      }
-    });
     const label = document.createElement('span'); label.className = 'verdict';
-    label.textContent = {incomplete:'Выберите три компонента',incompatible:'Есть несовместимая пара',stable:'Обе пары стабильны',unknown:'Совместимость ещё не полностью известна'}[state];
-    summary.append(chain,label);
+    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара — измените смесь',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'? Исследуйте неизвестные пары'}[state];
+    summary.append(label);
   }
   $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);

@@ -6,7 +6,7 @@
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
 <div class="workspace">
   <section class="board" aria-label="Кандидаты">
-    <h2>Кандидаты <span class="heading-note">Клик — выбрать, повторный — снять выбор</span></h2>
+    <h2>Кандидаты</h2>
     <div id="cards"></div>
   </section>
   <aside class="evidence" aria-label="Условия и наблюдения">
@@ -19,7 +19,8 @@
       <div id="pair-actions" aria-live="polite"></div>
     </section>
     <section class="submission" aria-label="Полная формула">
-      <div><span class="final-label">Финальный ответ</span><h2>Ваша формула</h2><p id="selection"></p><div id="formula-compatibility" hidden aria-live="polite"></div><span id="budget"></span></div>
+      <div class="formula-content"><h2>Ваша смесь</h2><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
+      <span id="budget"></span>
       <button id="submit" disabled>Проверить формулу</button>
       <p id="result" role="status" aria-live="polite"></p>
     </section>
@@ -29,6 +30,7 @@
 <p id="quick-rules" class="quick-rules"></p>
 <details class="reference"><summary>Как устроен опыт</summary>
   <p id="description"></p>
+  <p>Клик по карточке выбирает компонент; повторный клик снимает выбор.</p>
   <p>«Ровно один» — свойство есть у одного выбранного компонента и отсутствует у остальных. «Если А, то Б» запрещает только верное А вместе с ложным Б; обратное не следует. Все сведения верны одновременно. Свойства перечислены полностью; названия не добавляют правил.</p>
   <p id="pair-help" hidden>Формуле нужны стабильные пары порошок + жидкость и жидкость + эссенция. Стабильность пары не гарантирует правильную формулу и не определяется совпадением тегов. Порошок + эссенция отдельно не исследуются. В журнале показаны прежние и новые наблюдения для данного набора веществ.</p>
   <p>Обозначения П1, Ж1, Э1 связывают карточки с журналом: порошок, жидкость, эссенция и номер в столбце. Наведение на запись подсвечивает её компоненты. Клик выбирает только эту пару и снимает остальные выделения. Две стабильные пары ещё не гарантируют ответ: сведения о составе также должны выполняться.</p>

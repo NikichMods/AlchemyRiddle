@@ -795,3 +795,12 @@ by compact nearby investigative actions and a distinct final answer. Journal cli
 or keyboard activation selects only that observed pair, clearing all other
 selections for free. A final chain may summarize observed adjacent stability, but
 must not assess target tag conditions or imply that stable pairs alone are correct.
+
+Legibility clarification after the hierarchy revision: reduced visual dominance
+must not be achieved through numerous micro-labels or a tiny final answer. Prefer
+larger physical selection/status affordances with fewer repeated captions. Chosen
+formula components should be recognizable as separate tiles; a single visible
+state near synthesis should say what observed pair knowledge is missing or known,
+without evaluating target conditions. Journal selection remains optional; the
+layout should support candidate selection -> relevant research -> final synthesis
+without requiring a written sequence guide. Review this variant in case 08.
