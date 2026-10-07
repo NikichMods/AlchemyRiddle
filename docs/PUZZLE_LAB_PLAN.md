@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; four calibration cases recorded; cases 03 and 04 accepted as positive exemplars. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03 and 04 accepted as positive exemplars; case 05 precommitted for blind play. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -10,7 +10,7 @@ Local command: `node research/PuzzleLab/server.mjs`; player URL:
 
 The minimal stack is Node.js 24 built-ins plus HTML/CSS/browser modules, without
 package dependencies. Fixture data, rules/evaluation, server projection and
-presentation are separate. Four synthetic two-slot fixtures preserve their precommitted models;
+presentation are separate. Five synthetic two-slot fixtures preserve their precommitted models;
 subjective findings are recorded separately for each case.
 
 Implemented: card selection, personal exclusions, notes, paid binary submission,
@@ -19,7 +19,7 @@ browser reload for presentation/fixture edits. Answer and evaluator stay on the
 server; debug routes require explicit `--debug`. One Science/one submission is
 this fixture's bounded calibration budget, not accepted production balance.
 
-Verified locally on Node 24.19.0: ten deterministic/HTTP tests pass, including
+Verified locally on Node 24.19.0: eleven deterministic/HTTP tests pass, including
 clue truth tables, uniqueness, budget exhaustion, invalid requests, session
 continuity and player/debug separation. Browser checks prove initial rendering,
 selection, notes, personal marking, failed submission and exhausted-budget UI.
@@ -39,18 +39,18 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-04`, synthetic target Чернильный щит, with
-shared property, exact count, conditional and forbidden-conjunction clues.
-Completed checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. No player-facing
+Current active fixture: `lab-v0-05`, synthetic target Печать росы, with
+linked opposite-slot implications, an exact count and shared-property clues.
+Initial checkpoint/next point:
+`docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
 
 Run the current case:
-`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/ink-04.json`.
+`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/dew-05.json`.
 The original `fixture.json` is retained as historical negative onboarding
-evidence. Ten deterministic/HTTP tests now pass, including the fourth case's
+evidence. Eleven deterministic/HTTP tests now pass, including the fourth case's
 uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
 
 Case 02 feedback: the player independently articulated the correct answer,
@@ -85,7 +85,7 @@ is evidence for future memory support, not automatic deduction.
 After play, exclusion buttons became small red bottom-right crosses with restore
 arrows. Full slot frames were removed, the divider retained and colored tags
 rounded. Browser toggle/restore and visual checks passed, with solved state kept.
-Next: review the lighter layout, then extend with a distinct inference case
+Case 05 preserves the same six-card/four-clue field and existing grammar to test a linked inference path. Its model is frozen before play; uniqueness and per-clue alternatives are tested. No difficulty or interest is accepted before human feedback. Next: blind-play case 05 and capture actual reasoning, then extend
 toward mature/boss and three-slot calibration. Technical
 smoke tests and successful deduction are not blanket acceptance of puzzle quality.
 

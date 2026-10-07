@@ -10,15 +10,15 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
-For the current blind calibration case (Чернильный щит):
+For the current blind calibration case (Печать росы):
 
 ```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/ink-04.json
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/dew-05.json
 ```
 
 The default fixture remains the original case for historical reproduction.
 Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. Difficulty labels and progression UI
+`docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. Difficulty labels and progression UI
 are deliberately deferred pending a separate product decision.
 
 If a restricted execution environment blocks the test runner's child process,

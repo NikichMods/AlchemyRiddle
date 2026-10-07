@@ -5,6 +5,28 @@ import {readFileSync} from 'node:fs';
 import {act, candidates, clueText, createState, publicView, satisfies, validate} from './rules.mjs';
 import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
+
+test('fifth fixture links opposite-slot implications; every clue removes a plausible alternative', () => {
+  const f = JSON.parse(readFileSync(new URL('./fixtures/dew-05.json', import.meta.url)));
+  validate(f);
+  const rows = candidates(f);
+  const alternatives = [
+    {powder:'p1',fluid:'f3'}, {powder:'p3',fluid:'f1'},
+    {powder:'p2',fluid:'f1'}, {powder:'p3',fluid:'f2'}
+  ];
+  f.clues.forEach((clue, omitted) => {
+    assert.ok(rows.filter(t => satisfies(f,t,clue)).length > 1);
+    assert.deepEqual(f.clues.map(c => satisfies(f,alternatives[omitted],c)),
+      f.clues.map((_,i) => i !== omitted));
+  });
+  // The linked implications derive Powder Water for Mineral hypotheses;
+  // the count and overlap then reject all such hypotheses, without a literal.
+  const chain = rows.filter(t => [f.clues[0],f.clues[2]].every(c => satisfies(f,t,c)));
+  assert.ok(chain.filter(t => t.powder === 'p1').length === 0);
+  assert.deepEqual(chain.filter(t => t.powder === 'p3').map(t => t.fluid),['f1','f2']);
+  assert.equal(satisfies(f,{powder:'p3',fluid:'f1'},f.clues[1]),false);
+  assert.equal(satisfies(f,{powder:'p3',fluid:'f2'},f.clues[3]),false);
+});
 test('fourth fixture is unique, every clue necessary, target condition active without a supplied literal', () => {
   const f = JSON.parse(readFileSync(new URL('./fixtures/ink-04.json', import.meta.url)));
   validate(f);
