@@ -5,10 +5,13 @@ for the laboratory; inference-quality synthesis complete; production remains BLO
 
 ## Current execution checkpoint — 2026-10-07
 
-Active next trial: anonymous real-corpus case 11, precommitted in
+Completed trial: anonymous real-corpus case 11, recorded in
 prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md. Generator gates, weak route term and
 field floor retained. Shared Science 20, pair 2, triple 5, unlimited +10 Lab refill.
-Private fixture and durable session stay outside Git. Awaiting first player move.
+Private fixture and durable session stay outside Git. Solved: 13 pair checks,
+two submissions, seven pair checks outside tag-valid hypotheses. Human pacing
+acceptance remains open; next proposed review is within-puzzle repetition and
+branch-tracking burden.
 This assesses human investigation, not acquisition balance.
 
 Read [PUZZLE_QUALITY_CONTRACT.md](PUZZLE_QUALITY_CONTRACT.md) for the consolidated

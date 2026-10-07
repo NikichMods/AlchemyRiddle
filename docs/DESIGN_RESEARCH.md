@@ -4,15 +4,21 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
-### Active human calibration — corpus case 11, 2026-10-07
+### Human calibration completed — corpus case 11, 2026-10-08
 
-User authorized one live test under accepted weak ranking and field-feasibility
-floor. Start with prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md and mandatory
-PAPER_PROTOTYPE_PROTOCOL.md. Model is precommitted privately; anonymous identities
-prevent source vanilla recipe disclosure. Science 20, pair 2, triple 5, unlimited
-explicit +10 Lab refill. Awaiting first player move. Restore latest private durable
-session before continuing; never edit the live model or restart by assumption.
-Production remains BLOCKED.
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md for completed human evidence.
+Case solved independently: 13 pair checks, two submissions, 36 Science spent,
+two refills, 4 remain. Seven pair checks lay outside then-unrefuted tag-valid
+proposals. Failed synthesis had stable edges but violated the Slime clue.
+Player disliked repeated exactly-one structure and became stuck after losing a
+property/branch constraint. Frozen model identity and blind integrity verified.
+Simulation assumes perfect constraint tracking; it cannot call this human route
+a worst tie-break or validate average human pacing. Single-case baseline supplied
+no prior history and scores only between-package diversity; repeated XOR inside
+one puzzle has no explicit preference. No new weights or mechanics accepted.
+Next proposed bounded question: within-package repetition and branch-tracking
+burden in existing candidates before another blind trial. Preserve old gates,
+weak correction and field floor. Human pacing remains open; production BLOCKED.
 
 ### Bounded diagnostic recovery — 2026-10-07
 

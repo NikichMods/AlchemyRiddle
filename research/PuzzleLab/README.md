@@ -5,7 +5,8 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-Active trial: anonymous real-corpus case 11. Checkpoint:
+Completed trial: anonymous real-corpus case 11, solved with 13 pair checks and
+two submissions. Current browser state is solved; do not replace it by assumption. Checkpoint:
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md`. Hidden fixture stays private;
 tracked public JSON is an initial snapshot, not a full fixture. Historical case-10
 state below is the preceding completed trial.

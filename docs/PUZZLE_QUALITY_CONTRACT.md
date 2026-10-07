@@ -292,3 +292,16 @@ The first pass is a small diagnostic sample, not a corpus-wide coverage claim:
 Do not launch an eleventh synthetic puzzle merely to increase the count. A new
 human test should resolve a named remaining uncertainty, such as matched depth,
 novice onboarding or recovery after a mistaken full synthesis.
+
+## Corpus case 11 human calibration — 2026-10-08
+
+Completed checkpoint: prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md. Thirteen pair
+checks, two submissions, independently solved; seven checks on no then-unrefuted
+tag-valid proposal. Confusion concerned stable edges versus composition validity
+and loss of a property constraint. Repeated exactly-one clauses were disliked.
+The precommitted policies assume perfect constraint maintenance and predict 2–6
+checks; their mean is not validated human pacing. Sequence-family diversity does
+not guarantee variety within one package, especially when a fresh selection has
+no preceding history. Formal validity survives; pleasant difficulty acceptance
+for this package does not follow. Review repetition and branch-tracking burden
+before another human case; no new numeric penalty or additional clue accepted.

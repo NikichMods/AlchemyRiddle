@@ -1,0 +1,463 @@
+{
+  "id": "lab-v0-corpus-11",
+  "title": "Неизвестная смесь",
+  "description": "Найдите состав неизвестной смеси. Все сведения о составе верны одновременно. Свойства перечислены полностью; обозначения образцов не добавляют правил. Порошок с жидкостью и жидкость с эссенцией должны образовать стабильные пары. Свойства сами по себе не определяют совместимость. Пара стоит 2 Science, вся смесь — 5 Science; запас общий и пополняемый. Получение науки в игре здесь не моделируется.",
+  "slots": [
+    {
+      "id": "powder",
+      "name": "Порошок",
+      "cards": [
+        {
+          "id": "p1",
+          "name": "Порошок №1",
+          "tags": [
+            "Насекомое",
+            "Минеральное"
+          ]
+        },
+        {
+          "id": "p2",
+          "name": "Порошок №2",
+          "tags": [
+            "Минеральное"
+          ]
+        },
+        {
+          "id": "p3",
+          "name": "Порошок №3",
+          "tags": [
+            "Тёмное",
+            "Растительное"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluid",
+      "name": "Жидкость",
+      "cards": [
+        {
+          "id": "f1",
+          "name": "Жидкость №1",
+          "tags": [
+            "Трупное",
+            "Насекомое",
+            "Растительное"
+          ]
+        },
+        {
+          "id": "f2",
+          "name": "Жидкость №2",
+          "tags": [
+            "Насекомое",
+            "Растительное",
+            "Слизь"
+          ]
+        },
+        {
+          "id": "f3",
+          "name": "Жидкость №3",
+          "tags": [
+            "Тёмное",
+            "Растительное"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "essence",
+      "name": "Эссенция",
+      "cards": [
+        {
+          "id": "e1",
+          "name": "Эссенция №1",
+          "tags": [
+            "Растительное",
+            "Слизь"
+          ]
+        },
+        {
+          "id": "e2",
+          "name": "Эссенция №2",
+          "tags": [
+            "Тёмное",
+            "Растительное"
+          ]
+        },
+        {
+          "id": "e3",
+          "name": "Эссенция №3",
+          "tags": [
+            "Трупное",
+            "Насекомое",
+            "Орган",
+            "Растительное"
+          ]
+        }
+      ]
+    }
+  ],
+  "clues": [
+    "Ровно 1 из следующих утверждений верно: порошок имеет свойство «Тёмное»; эссенция имеет свойство «Тёмное».",
+    "Ровно 1 из следующих утверждений верно: жидкость имеет свойство «Слизь»; эссенция имеет свойство «Слизь»."
+  ],
+  "submissionCost": 5,
+  "state": {
+    "science": 4,
+    "selected": {
+      "fluid": "f2",
+      "essence": "e2",
+      "powder": "p2"
+    },
+    "marks": {},
+    "notes": "",
+    "history": [
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f2"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "refill",
+        "amount": 10
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f1"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f3"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e2"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f3",
+          "essence": "e2"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f3"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "tuple": {
+          "essence": "e2",
+          "fluid": "f3",
+          "powder": "p1"
+        },
+        "success": false,
+        "cost": 5
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f3"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e1"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f3",
+          "essence": "e1"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f1"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f2"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f2",
+          "essence": "e2"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "refill",
+        "amount": 10
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f2"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "tuple": {
+          "fluid": "f2",
+          "essence": "e2",
+          "powder": "p2"
+        },
+        "success": true,
+        "cost": 5
+      }
+    ],
+    "status": "solved",
+    "knownRelations": [
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f2"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f1"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f3"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e2"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f3",
+          "essence": "e2"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f3"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f3"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e1"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f3",
+          "essence": "e1"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f1"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f2"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f2",
+          "essence": "e2"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f2"
+        },
+        "stable": true
+      }
+    ]
+  },
+  "economy": {
+    "mode": "sharedScience",
+    "refillAmount": 10
+  },
+  "pairTestCost": 2
+}

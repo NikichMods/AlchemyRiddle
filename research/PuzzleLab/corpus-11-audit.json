@@ -1,0 +1,222 @@
+{
+  "id": "lab-v0-corpus-11",
+  "fixtureFileSha256": "ce8fa0416592d619b73eca691cdd295516d2ef04858e99ea2570e470567d8a51",
+  "initialTagValid": 5,
+  "pairTrace": [
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p3",
+        "fluid": "f2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p3",
+        "fluid": "f1"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p3",
+        "fluid": "f3"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f3",
+        "essence": "e2"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p2",
+        "fluid": "f3"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f3"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e1"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f3",
+        "essence": "e1"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f2",
+        "essence": "e2"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p2",
+        "fluid": "f2"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    }
+  ],
+  "submissions": [
+    {
+      "tuple": {
+        "essence": "e2",
+        "fluid": "f3",
+        "powder": "p1"
+      },
+      "success": false,
+      "cost": 5,
+      "clueSatisfied": [
+        true,
+        false
+      ]
+    },
+    {
+      "tuple": {
+        "fluid": "f2",
+        "essence": "e2",
+        "powder": "p2"
+      },
+      "success": true,
+      "cost": 5,
+      "clueSatisfied": [
+        true,
+        true
+      ]
+    }
+  ],
+  "status": "solved",
+  "science": 4,
+  "offTargetPairTests": 7,
+  "refills": 2,
+  "scienceSpent": 36
+}
