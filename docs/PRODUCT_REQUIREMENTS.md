@@ -469,6 +469,20 @@ puzzle design.
 
 ### Science economy and investigation-length target — 2026-10-07
 
+Accepted generator criterion, after the coverage follow-up: **field feasibility
+for necessary clues**. For an ordinary package with k jointly necessary clues
+and one complete-model answer, the field must contain at least k+1 complete-model
+compatible triples before applying those clues. Two clues require at least three;
+three require at least four. Resample an insufficient field before package search;
+if it supports two but not three clues, search two-clue packages only.
+This is an author-level necessary condition, not visible tag-hypothesis count,
+a requirement that alternatives be actual vanilla recipes, or a sufficient quality
+test. Retain all existing answer/omission/interaction/knowledge-aware gates and
+the accepted weak mean-route correction. Tutorials, deliberately redundant teaching
+and multi-answer packages need their own contract; do not apply the unique-answer
+floor to them by assumption. Research implementation: field_feasibility.py and
+generator_route_ranking.py. Production remains subject to existing readiness gates.
+
 Accepted direction: checks have a repeatable Science cost, not a fixed allotment
 of attempts per puzzle. Science is replenished through familiar vanilla means;
 no new acquisition mechanic is selected. Native progression/economy otherwise

@@ -18,6 +18,13 @@ future generator work can precheck this implied field floor before clue sampling
 No more search is pending for this target. Human calibration and save-state
 generalization remain open; production stays BLOCKED.
 
+User accepts adding the field-feasibility criterion. Ordinary unique-answer
+packages with k necessary clues require k+1 compatible triples before clues.
+Research generator now prefilters impossible fields/package sizes via
+field_feasibility.py; retain the weak route term and all prior criteria. Frozen
+comparison artifacts keep their original source identities; do not overwrite them
+to reflect the new precheck. This is a necessary floor, not a quality guarantee.
+
 Latest completed work: additive generator-selection evaluation,
 `research/GENERATOR_ROUTE_RANKING_2026-10-07.md`. Existing reproducible gates and
 diversity scoring retained, same 197 candidates in both arms, 19 three-slot

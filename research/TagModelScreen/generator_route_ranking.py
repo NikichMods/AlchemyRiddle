@@ -14,6 +14,7 @@ import bounded_quality_diagnostic as bounded
 import progression_variable_field_screen as three
 import reasoning_diversity_screen as reasoning
 from science_route_comparison import Investigation
+from field_feasibility import supports_necessary_clues
 
 ROOT = Path(__file__).resolve().parents[2]
 SEED = 20261007
@@ -126,11 +127,17 @@ def run(input_path, private_path, public_path):
             full = (1 << len(triples))-1
             compatible = sum(1 << i for i, t in enumerate(triples)
                              if all(reasoning.stable_relation(model, e) for e in bounded.edges(t)))
+            if not supports_necessary_clues(compatible.bit_count(), 2):
+                counters['rejectFieldWitnessFloor'] += 1
+                continue
             seen = set()
             for _ in range(512):
                 check_cap()
                 counters['packageAttempts'] += 1
                 k = rng.choice((2, 3))
+                if not supports_necessary_clues(compatible.bit_count(), k):
+                    counters['rejectPackageWitnessFloor'] += 1
+                    continue
                 if len(raw) < k:
                     continue
                 combo = tuple(sorted(rng.sample(range(len(raw)), k)))
@@ -248,6 +255,7 @@ def run(input_path, private_path, public_path):
                   inputSha256=sha(input_path),
                   sourceHashes={p.name: sha(p) for p in (Path(__file__), Path(bounded.__file__),
                                       Path(three.__file__), Path(reasoning.__file__),
+                                      ROOT/'research/TagModelScreen/field_feasibility.py',
                                       ROOT/'research/TagModelScreen/science_route_comparison.py')},
                   limits=dict(targets=19, fields=152, packageAttempts=77824, candidates=228,
                               replays=21888, validationReplays=43776, secondsPerPass=360, reviewedChanges=6),

@@ -101,6 +101,13 @@ Inspect fixed terms and semantic simplifications when evaluating future packages
 
 ### 1. Formal and epistemic gates
 
+- Accepted field-feasibility precheck: for k necessary ordinary clues and one
+  full-model answer, require at least k+1 compatible triples before clues.
+  Resample fields below the minimum for the intended package. This does not
+  replace omission witnesses or other quality gates; author-level compatibility
+  is distinct from player-visible hypotheses. Teaching/multi-answer exceptions
+  follow their own semantics. Owning criterion: PRODUCT_REQUIREMENTS.md.
+
 - Precommit the field, complete outcomes, clues, initial knowledge, costs and stop
   conditions. Freeze them through play. Check wording against rule semantics.
 - Verify that the intended answer/valid-answer set is correct. Lab fixtures require

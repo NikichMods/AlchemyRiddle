@@ -349,3 +349,9 @@ the original field compatibility counts without replaying old package sampling.
 Aggregate artifact: `coverage-gap-2026-10-07.json`; owning result: the coverage-gap
 section in `docs/research/GENERATOR_ROUTE_RANKING_2026-10-07.md`. Exact data stays
 outside Git. No production behavior or relaxed quality criterion.
+
+Accepted ordinary-field precheck: `field_feasibility.py` requires k+1 chemically
+compatible triples for k necessary clues and a unique answer. The research
+ranking generator rejects impossible fields/package sizes before sampling
+packages. This is necessary, not sufficient; all later gates remain. Historical
+aggregate artifacts are unchanged. Tests: `test_field_feasibility.py`.
