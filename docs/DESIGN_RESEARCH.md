@@ -30,14 +30,24 @@ at a time. This package does not support robust ordinary 3–5-check service.
 At provisional 2/5 prices, research averages 19 Science versus 25 for randomly
 ordered direct submissions; some late states favor submitting instead of further
 pair checks. These are mechanical comparisons, not player probabilities.
-Next proposed step: compare already-retained clue alternatives on the same field
-before changing field construction, fees or tags. That step has not run.
+Latest user direction supersedes the single-field follow-up as the main objective:
+evaluate the **generator/selection process**. Desired ordinary three-slot routes
+are softly centered on 3–5 checks (about 3 lower/middle, about 5 higher intended
+difficulty); two may be valid, more than about 7 is particularly undesirable.
+Use progressively stronger preferences/penalties, not hard rejection or an
+attempt cap. Tutorials and earned-knowledge shortcuts must be treated separately.
+Difficulty is not defined by check count. Owning criteria: PRODUCT_REQUIREMENTS.md.
+Next: predeclare a bounded generator-level evaluation, sampled targets/knowledge,
+public-route estimator and selection baseline; measure the distribution of
+selected packages and whether ranking improves it. Exact penalty weights and
+estimator are not selected. Do not continue one handpicked fixture as a substitute
+for generator evaluation. No new evaluation has run for this clarification.
 Keep the sample bounded, tag taxonomy closed and production BLOCKED.
 
 Subsequent user clarification (2026-10-07): repeatable paid checks, no fixed
 per-puzzle attempt cap; provisional 2 Science per pair / 5 per whole triple from
-one replenishable vanilla Science pool. Ordinary three-slot route target is
-about 3 pair checks, reliably around 5; around 10 flags a route/generation
+one replenishable vanilla Science pool. Ordinary three-slot route preference is
+softly 3–5 pair checks depending on intended difficulty; around 10 flags a route/generation
 problem to diagnose. Shorter justified routes remain valid. Owning semantics:
 PRODUCT_REQUIREMENTS.md, Science economy and investigation-length target.
 Previous 6/9 sensitivity thresholds and Lab final-check caps are historical.

@@ -475,11 +475,30 @@ no new acquisition mechanic is selected. Native progression/economy otherwise
 remain unchanged. Pair and whole-triple checks share the Science pool.
 
 The provisional prices are 2 Science for a pair and 5 for a whole triple. The
-user's intended ordinary three-slot investigation is approximately 3 pair checks,
-with a reasoned solution reliably reachable around 5; approximately 10 is a
-generation/route diagnostic warning, not an enforced cutoff or proof of bad tags.
-These are design targets, not measured human guarantees or difficulty bands.
-Do not require three checks when prior knowledge or deduction permits fewer.
+user's ordinary three-slot investigation preference is a **soft 3–5-check range**:
+approximately 3 for lower/middle intended difficulty, approximately 5 for higher
+intended difficulty. Two-check solutions can be legitimate. Ordinary fresh
+puzzles that collapse to one check are less desirable, but this is not a minimum
+paid-action requirement. Tutorials are evaluated separately, and previously
+earned knowledge or strong deduction must remain free to shorten solutions.
+
+Generator selection should prefer routes near the intended range, penalize long
+routes progressively and regard more than about 7 as particularly undesirable;
+around 10 remains a strong diagnostic warning. These are user preferences for
+ranking candidates, not hard rejection thresholds or player attempt caps.
+Penalty weights, route estimators and numeric difficulty calibration remain open.
+Do not manufacture checks or hide knowledge to hit a nominal range. Experimental
+length is a pacing/economy axis; reasoning difficulty must also reflect interacting
+deductions, branch dependencies and evidence reuse, rather than count alone.
+
+Evaluate the **generator/selection process**, not just individual fixtures:
+measure how often selected packages meet these preferences across a declared
+sample of targets and starting-knowledge states, comparing selection before/after
+any proposed ranking. One difficult package diagnoses a possible failure mode,
+not its prevalence. Use plausible public-information routes and their detours;
+neither an omniscient shortest witness nor arbitrarily bad play is the sole metric.
+Stop when the player can justify submission, including singleton deduction; do
+not require chemical certification of every edge for ceremonial completeness.
 
 Evaluate route length against actual starting knowledge and public reasoning.
 Distinguish clue/field ambiguity from query-policy detours before changing tags

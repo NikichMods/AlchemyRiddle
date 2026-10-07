@@ -155,9 +155,16 @@ Case 10 is accepted substantial exploratory play, not proof of a boss ceiling.
 
 Current product clarification (2026-10-07): production checks use replenishable
 Science, with provisional prices of 2 per pair and 5 per whole triple, without a
-per-puzzle attempt cap. For ordinary three-slot investigations, about 3 pair
-checks is the desired short route and around 5 the reliability target; about 10
-is a diagnostic warning. These are not measured guarantees or mandatory minima.
+per-puzzle attempt cap. Latest clarification: evaluate generator selection with
+soft 3–5 pair-check preferences (about 3 lower/middle, about 5 higher intended
+difficulty); two can be valid. More than about 7 is particularly undesirable,
+about 10 a warning. Prefer a progressive ranking penalty, not an automatic cap.
+Tutorials are separate; earned knowledge and deduction may shorten valid routes.
+These are not measured guarantees, calibrated difficulty labels or mandatory minima.
+Assess reasoning depth separately from check count and compare selected-package
+distributions across declared targets/knowledge states before and after proposed
+ranking. One fixture diagnoses a failure mode, not generator prevalence. The
+route estimator, penalty weights and treatment of plausible detours remain open.
 Compare research plus final-check cost against direct guessing; distinguish
 policy detours from clue/field ambiguity. See PRODUCT_REQUIREMENTS.md for ownership.
 Historical Lab pools and the completed screen's 6/9 thresholds are evidence only.
@@ -218,6 +225,13 @@ retain a long-route tail after removing unnecessary certification of a singleton
 Review remaining branch structure and reusable experimental effects alongside
 formal gates; do not silently accept a numeric generator rejection threshold.
 No new difficulty/balance acceptance.
+
+The latest user direction is generator-level evaluation, using soft route-length
+preferences owned by PRODUCT_REQUIREMENTS.md. The single-package comparison is
+diagnostic evidence only. Before another screen, declare the sampled generation
+and selection process, starting knowledge, route estimator and comparison
+baseline; measure selection quality/frequency rather than continue improving
+one handpicked fixture. No new screen is executed by this clarification.
 
 Reuse TagModelScreen and the accepted private corpus/property inputs; do not build
 a new production generator or repeat the completed architecture/curriculum survey.
