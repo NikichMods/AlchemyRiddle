@@ -7,7 +7,20 @@ function cardRef(id) {
   const slot = view.slots.find(s => s.cards.some(c => c.id === id));
   const badge = document.createElement('span');
   badge.className = `card-ref ref-${slot?.id ?? 'empty'}`;
-  badge.textContent = slot ? `${{powder:'П',fluid:'Ж',essence:'Э'}[slot.id]}${slot.cards.findIndex(c => c.id === id)+1}` : '—';
+  const label = document.createElement('span');
+  label.textContent = slot ? `${{powder:'П',fluid:'Ж',essence:'Э'}[slot.id]}${slot.cards.findIndex(c => c.id === id)+1}` : '—';
+  if (slot) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 40 34'); svg.setAttribute('aria-hidden','true');
+    const path = document.createElementNS(svg.namespaceURI,'path');
+    path.setAttribute('d', {
+      powder:'M2 30 L7 17 L12 17 L16 8 L23 8 L27 17 L32 17 L38 30 Z',
+      fluid:'M14 2 H26 V9 L36 25 Q39 32 31 32 H9 Q1 32 4 25 L14 9 Z',
+      essence:'M10 3 H30 L39 17 L30 31 H10 L1 17 Z'
+    }[slot.id]);
+    svg.append(path); badge.append(svg);
+  }
+  badge.append(label);
   badge.title = name(id);
   return badge;
 }
@@ -34,19 +47,19 @@ function relationJournal(s) {
         li.className = `relation ${r.stable ? 'stable' : 'incompatible'} ${pairMatches(r,slots,s.selected) ? 'current' : ''}`;
         const names = document.createElement('span'); names.className = 'relation-names';
         names.textContent = r.slots.map(id => name(r.tuple[id])).join(' + ');
-        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Стабильно' : '⊘ Несовместимо';
+        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? fresh ? '✓ Стабильно' : 'Стабильно' : '⊘ Несовместимо';
         const refs = document.createElement('span'); refs.className = 'relation-refs';
         const connector = document.createElement('span'); connector.textContent = '↔';
         refs.append(cardRef(r.tuple[r.slots[0]]),connector,cardRef(r.tuple[r.slots[1]]),verdict);
         const choice = document.createElement('button'); choice.className = 'relation-choice';
         choice.id = `pair-${r.slots.map(id=>r.tuple[id]).join('-')}`;
         choice.setAttribute('aria-label',`Выбрать только пару: ${r.slots.map(id=>name(r.tuple[id])).join(' + ')}`);
-        choice.title = 'Выбрать эту пару и снять остальные выделения';
+        choice.title = `${names.textContent} — ${r.stable ? 'стабильно' : 'несовместимо'}. Выбрать только эту пару`;
         choice.onclick = () => action({type:'selectPair',slots:r.slots,tuple:r.tuple});
         const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
         choice.onmouseenter = () => highlight(true); choice.onmouseleave = () => highlight(false);
         choice.onfocus = () => highlight(true); choice.onblur = () => highlight(false);
-        choice.append(refs,names); li.append(choice); list.append(li);
+        choice.append(refs); li.append(choice); list.append(li);
       }
       if (!list.childElementCount) {const li = document.createElement('li'); li.className='empty'; li.textContent='Нет наблюдений'; list.append(li);}
       column.append(list); columns.append(column);
@@ -145,7 +158,7 @@ function render() {
       edges.every(r => r?.stable) ? 'stable' : 'unknown';
     summary.className = `formula-compatibility ${state}`;
     const label = document.createElement('span'); label.className = 'verdict';
-    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:s.status==='playing' ? '? Есть неисследованные пары. Финальная проверка доступна.' : '? Есть неисследованные пары.'}[state];
+    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'Совместимость смеси пока неизвестна.'}[state];
     summary.append(label);
   }
   const initialScience = s.science + s.history.filter(h=>h.type!=='pairTest').reduce((total,h)=>total+h.cost,0);

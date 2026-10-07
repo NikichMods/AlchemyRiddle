@@ -26,3 +26,9 @@ Initial intended UI: empty selection/marks/notes/history, playing, Science 3,
 Research 6. Candidates above composition and compatibility; actions at right.
 Future reloads preserve this player's current state rather than simulate a new
 case. A fresh handoff must change fixture identity and verify initial state.
+
+## Outcome
+
+Explicitly accepted after five pair investigations and one successful synthesis.
+See case-09 checkpoint for exact action order and subjective evidence. Frozen
+fixture unchanged. No answer hints supplied during play.

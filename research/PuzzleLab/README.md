@@ -98,7 +98,7 @@ layout places composition and pair compatibility below candidates, actions at ri
 Unknown compatibility does not block full submission. Incomplete pair controls are
 hidden; selected formula entries are plain output rather than bordered empty inputs.
 
-Current fresh human-play fixture: `fixtures/lantern-09.json` (case 09).
+Current fixture (case 09 completed and accepted): `fixtures/lantern-09.json` (case 09).
 Run `node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/lantern-09.json`.
 Initial state must be blank, playing, Science 3 / Research 6. The prior case 08
 is archived as exhausted; do not present an ordinary UI refresh as a new puzzle.

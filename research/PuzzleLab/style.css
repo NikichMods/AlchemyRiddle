@@ -118,3 +118,19 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 [hidden]{display:none!important}
 @media(max-width:1050px){.workspace{grid-template-columns:1fr;grid-template-areas:'board' 'evidence' 'actions'}.actions{border-left:0;border-top:1px solid #40565f;padding:14px 0 0}.relation-columns{gap:18px}.card{min-height:88px}}
 @media(max-width:600px){main{padding:14px}.three-slot #cards{grid-template-columns:1fr}#cards{grid-template-columns:1fr}fieldset+fieldset{border-left:0;border-top:1px solid #40565f;padding:10px 0 0}.evidence{grid-template-columns:1fr}#knowledge{border-left:0;border-top:1px solid #354b53;padding:14px 0 0}h1{font-size:25px}}
+
+/* Compact reagent identities: silhouette plus readable code, never color alone. */
+.card-ref{position:relative;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:38px;height:32px;line-height:1;padding:0;border-radius:0;background:transparent}
+.card-ref svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.card-ref path{fill:currentColor;fill-opacity:.12;stroke:currentColor;stroke-opacity:.6;stroke-width:1}
+.card-ref>span{position:relative;padding-top:3px}
+.tag{display:inline-flex;align-items:center;justify-content:center;min-height:22px;padding:2px 7px;line-height:1;vertical-align:middle}
+.relation-refs{margin-bottom:0;gap:7px}
+.relation-refs .verdict{margin-left:8px}
+.relation{background:transparent!important;border-left:0;margin-bottom:4px}
+.relation-choice{width:fit-content;min-width:195px;border-radius:5px;padding:3px 6px}
+.prior .relation .verdict{color:#b7c9cb;font-weight:400}
+.prior .relation-choice{background:transparent}
+.new .relation-choice{background:#ffffff03}
+.relation.current{outline:0}
+.relation.current .relation-choice{outline:2px solid #e1d29a;outline-offset:1px}

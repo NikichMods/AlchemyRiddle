@@ -487,3 +487,26 @@ Fresh initial state is empty and playing. Checkpoint: prototypes/PUZZLE_LAB_V0_0
 Twenty automated tests cover validity, clue necessity, bounded investigative route,
 fresh state and three-check continued play. Next: user blind play and reasoning,
 then mature/boss contrast and inference-quality criteria; no difficulty labels.
+
+## Case 09 accepted; compact identity journal — 2026-10-07
+
+Five paid pair tests, one successful synthesis; remaining Research 1 / Science 2.
+Player rejected tag/empirical branches and all initial bridges, then constructed
+and verified a new chain. Strong positive report of independent research feeling;
+count-two welcomed. Exact state and action order in case-09 checkpoint.
+
+Presentation follow-up retains codes alongside different silhouettes rather than
+ambiguous icons alone. Powder mound, fluid flask, essence faceted outline are
+synthetic slot identities, not new properties. Pair rows omit full names but keep
+hover titles, accessible names, linked-card highlighting and atomic selection.
+Prior observations use neutral text/no success check; personal stable/incompatible
+outcomes remain explicit in words and symbols. Background fills removed. Property
+tags vertically centered with inline flex. Local research rule distinguishes one
+pair experiment from full synthesis; unknown summary states uncertainty without
+contradictory imperative/availability text. No evaluator or resource change.
+
+Design references: NN/g Icon Usability (https://www.nngroup.com/articles/icon-usability/)
+for labels with unfamiliar icons; W3C Use of Color
+(https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) for redundant symbols/text.
+The implementation is an experimental application, not a claim of WCAG certification.
+Next research step: mature/boss contrast before quality criteria and corpus screen.
