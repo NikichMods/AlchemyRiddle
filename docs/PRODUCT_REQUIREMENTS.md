@@ -734,3 +734,11 @@ exemplars. The player's medium-or-above estimate for case 04 is subjective, not
 an accepted difficulty band. Colored tags helped read constraints. Forgetting a
 previously tried pair remains evidence to evaluate journal/marking support;
 external memory must not silently supply deductions the player has not earned.
+
+Case-05 refinement, 2026-10-07: a second conditional sentence form was compatible
+with a pleasant, interesting experience when it served a different interacting
+role. The player used systematic pair rejection and correctly handled inactive
+conditions. Retain this positive exemplar without requiring the author's intended
+proof route or claiming deeper abstract inference was observed. Difficulty was
+subjectively medium. Repetition is evaluated by the cognitive work it creates,
+not merely by counting identical operators or sentence openings.

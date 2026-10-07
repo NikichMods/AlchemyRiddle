@@ -40,3 +40,12 @@ submission disabled until both slots selected. Preserve previous completed case
 before switching servers. Never revise this model during blind play.
 Player checkpoint: `docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`.
 Next: human play and unprompted reasoning report; no hints about the chain.
+
+## Outcome — 2026-10-07
+
+One successful paid submission and explicit positive acceptance. The player used
+pair-by-pair branch rejection, correctly handling inactive conditionals; the
+compressed author chain was not explicitly stated. Do not claim increased proof
+depth was observed. Detailed reasoning, browser-confirmed final state, subjective
+medium estimate and deferred exclusion-icon feedback are in the case-05 player
+checkpoint. The model stayed unchanged throughout blind play.

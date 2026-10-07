@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03 and 04 accepted as positive exemplars; case 05 precommitted for blind play. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -41,7 +41,7 @@ remains unproved; do not present the stream change as proof of that root cause.
 
 Current active fixture: `lab-v0-05`, synthetic target Печать росы, with
 linked opposite-slot implications, an exact count and shared-property clues.
-Initial checkpoint/next point:
+Completed checkpoint/next point:
 `docs/prototypes/PUZZLE_LAB_V0_05_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
@@ -85,7 +85,16 @@ is evidence for future memory support, not automatic deduction.
 After play, exclusion buttons became small red bottom-right crosses with restore
 arrows. Full slot frames were removed, the divider retained and colored tags
 rounded. Browser toggle/restore and visual checks passed, with solved state kept.
-Case 05 preserves the same six-card/four-clue field and existing grammar to test a linked inference path. Its model is frozen before play; uniqueness and per-clue alternatives are tested. No difficulty or interest is accepted before human feedback. Next: blind-play case 05 and capture actual reasoning, then extend
+Case 05 completed with one successful submission and explicit acceptance as
+pleasant, interesting and subjectively medium. Actual reasoning was systematic
+pair rejection, with inactive conditionals understood correctly; the compressed
+author chain was not explicitly stated. Preserve the positive experience without
+claiming increased abstract proof depth. Exact final state and narration are in
+the case-05 checkpoint. UI watch item for the next pass: red cross resembles a
+close/remove action; use a different manual-exclusion marker, keeping cards
+visible and restoration available. No UI change was requested for this turn.
+Next: extend calibration with representative three-slot play (V0 currently
+requires a bounded two-to-three-slot harness extension), while continuing
 toward mature/boss and three-slot calibration. Technical
 smoke tests and successful deduction are not blanket acceptance of puzzle quality.
 
