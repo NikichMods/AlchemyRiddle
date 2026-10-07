@@ -726,3 +726,11 @@ necessity and a valid deductive path do not by themselves compensate for felt
 repetition. Prefer conditions with distinct cognitive roles that interact;
 cosmetic rewording is insufficient. This does not impose a blanket ban on any
 repeated tag/operator, nor select a player-facing difficulty-label policy.
+
+Positive calibration evidence, 2026-10-07: case 03 was explicitly accepted as a
+pleasant initial puzzle; case 04 as a satisfying richer puzzle after independent
+branch rejection and one successful verification. Retain both as concrete
+exemplars. The player's medium-or-above estimate for case 04 is subjective, not
+an accepted difficulty band. Colored tags helped read constraints. Forgetting a
+previously tried pair remains evidence to evaluate journal/marking support;
+external memory must not silently supply deductions the player has not earned.

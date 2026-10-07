@@ -34,3 +34,11 @@ submit disabled until both slots selected. Player next point and durable state:
 `docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. No model changes during play.
 Test player interest separately from formal uniqueness/necessity. Do not defend
 the package against confusion or explain its inferred path before the player.
+
+## Outcome — 2026-10-07
+
+One successful player submission; independent branch reasoning and explicit
+positive acceptance. Detailed narration, final state and limitations are in
+`docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. Retain as a richer positive exemplar;
+mature/boss and family-wide quality are still uncalibrated. Precommitted model
+unchanged; subsequent edits affect presentation only.

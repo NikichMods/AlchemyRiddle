@@ -43,9 +43,12 @@ function render() {
       const text = document.createElement('strong'); text.textContent = card.name;
       label.append(radio, text); box.append(label);
       const tags = document.createElement('p'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); box.append(tags);
-      const mark = document.createElement('button'); mark.className = 'mark'; mark.textContent = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
+      const mark = document.createElement('button'); mark.className = 'mark';
+      const markAction = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
+      mark.textContent = s.marks[card.id] ? '↶' : '×';
+      mark.title = markAction;
       mark.id = `mark-${card.id}`;
-      mark.setAttribute('aria-label', `${mark.textContent}: ${card.name}`); mark.setAttribute('aria-pressed', String(Boolean(s.marks[card.id])));
+      mark.setAttribute('aria-label', `${markAction}: ${card.name}`); mark.setAttribute('aria-pressed', String(Boolean(s.marks[card.id])));
       mark.onclick = () => action({type:'mark', slot:slot.id, card:card.id}); box.append(mark); group.append(box);
     }
     $('cards').append(group);
