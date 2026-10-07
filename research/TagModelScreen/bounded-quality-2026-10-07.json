@@ -1,0 +1,1685 @@
+{
+  "seed": 20261007,
+  "scope": "six structurally selected variants; bounded diagnostic, not corpus coverage",
+  "sourceHashes": {
+    "bounded_quality_diagnostic.py": "b5016f3ef976c196507ab5000ff673ddd8efb72b5c13a7d6bc7e06e53384dd4c",
+    "two_slot_tag_constraint_screen.py": "f8ffa74a9eedf323bbb5bce383f20aaf978d48937846cc842104060385e2fa31",
+    "progression_variable_field_screen.py": "bfc2480f3896baea3b1d3c22f30a0ba1ac0ace26eb263160665305173901245b",
+    "reasoning_diversity_screen.py": "c08552d3cbd404269c53dc6d5811092168c94cf7edbdb1f45f9664b258d525ba"
+  },
+  "inputHashes": {
+    "2": "78a19653785eecfc8c9d7e65def19059259393d4f2dcb144f7f585305cdd93ec",
+    "3": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20"
+  },
+  "counters": {
+    "fields": 192,
+    "packages": 46801,
+    "rejectAnswerSet": 31134,
+    "valid": 985,
+    "rejectFullModelRedundancy": 14682,
+    "unrelatedPriorConfigurations": 289
+  },
+  "timedOut": false,
+  "seconds": 0.609,
+  "selected": [
+    {
+      "arity": 2,
+      "selection": "simple",
+      "evaluated": 7425,
+      "valid": 193,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "literal",
+            "literal",
+            "literal"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "literal",
+            "imp_fp",
+            "imp_fp"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 2,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 4,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "xor",
+            "imp_fp",
+            "imp_fp"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 2,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 4,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        }
+      ]
+    },
+    {
+      "arity": 2,
+      "selection": "rich",
+      "evaluated": 7594,
+      "valid": 134,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "literal",
+            "literal",
+            "count"
+          ],
+          "effectiveScopes": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "constantCountTerms": 1,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 4,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 3,
+          "families": [
+            "imp_pf",
+            "imp_fp",
+            "imp_fp"
+          ],
+          "effectiveScopes": [
+            [
+              0,
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 2,
+          "immediatelyHandedAntecedents": 1,
+          "uniqueConditionalEndpoints": 1,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            4,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 4,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 4,
+          "families": [
+            "count",
+            "literal",
+            "literal",
+            "literal"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "constantCountTerms": 1,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 4,
+            "2": 2
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        }
+      ]
+    },
+    {
+      "arity": 2,
+      "selection": "rare",
+      "evaluated": 7440,
+      "valid": 212,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "literal",
+            "literal",
+            "count"
+          ],
+          "effectiveScopes": [
+            [
+              0
+            ],
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          "constantCountTerms": 1,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "3": 3,
+            "1": 1
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "imp_pf",
+            "imp_pf",
+            "imp_fp"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 3,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 3,
+          "crossSlotClauses": 3,
+          "controlProxy": false,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            2,
+            2,
+            2,
+            3
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "3": 3,
+            "1": 1
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        },
+        {
+          "clues": 4,
+          "families": [
+            "literal",
+            "xor",
+            "imp_pf",
+            "imp_fp"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 1,
+          "immediatelyHandedAntecedents": 1,
+          "uniqueConditionalEndpoints": 2,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 1,
+          "omissionAnswerCounts": [
+            3,
+            3,
+            3,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "3": 3,
+            "1": 1
+          },
+          "routes": [],
+          "publicDeductionCandidates": 1
+        }
+      ]
+    },
+    {
+      "arity": 3,
+      "selection": "simple",
+      "evaluated": 8192,
+      "valid": 147,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 2,
+          "families": [
+            "count",
+            "count"
+          ],
+          "effectiveScopes": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "constantCountTerms": 2,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 2,
+          "controlProxy": true,
+          "tagCompatible": 6,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 1,
+            "2": 4,
+            "1": 3,
+            "4": 1
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 1,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 2,
+                  "remaining": 4,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                },
+                {
+                  "tests": 1,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 2,
+          "families": [
+            "xor",
+            "xor"
+          ],
+          "effectiveScopes": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 7,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 1,
+            "2": 4,
+            "1": 3,
+            "4": 1
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.42857142857142855,
+              "policyRoutes": [
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 4,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                },
+                {
+                  "tests": 5,
+                  "remaining": 2,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 4,
+                  "remaining": 3,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.42857142857142855,
+              "policyRoutes": [
+                {
+                  "tests": 1,
+                  "remaining": 7,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 2,
+                  "remaining": 5,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                },
+                {
+                  "tests": 1,
+                  "remaining": 7,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 2,
+          "families": [
+            "literal",
+            "count"
+          ],
+          "effectiveScopes": [
+            [
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "constantCountTerms": 1,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 1,
+          "controlProxy": false,
+          "tagCompatible": 8,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 1,
+            "2": 4,
+            "1": 3,
+            "4": 1
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.375,
+              "policyRoutes": [
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 4,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                },
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 4,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                },
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 4,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.375,
+              "policyRoutes": [
+                {
+                  "tests": 3,
+                  "remaining": 4,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                },
+                {
+                  "tests": 1,
+                  "remaining": 8,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 3,
+                  "remaining": 4,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arity": 3,
+      "selection": "rich",
+      "evaluated": 7958,
+      "valid": 202,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 2,
+          "families": [
+            "literal",
+            "literal"
+          ],
+          "effectiveScopes": [
+            [
+              0
+            ],
+            [
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 12,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "1": 3,
+            "3": 1,
+            "4": 3
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.25,
+              "policyRoutes": [
+                {
+                  "tests": 10,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 7,
+                  "certifyingTests": 3,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -4,
+                  "slack9": -1
+                },
+                {
+                  "tests": 8,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 6,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -2,
+                  "slack9": 1
+                },
+                {
+                  "tests": 9,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 6,
+                  "certifyingTests": 3,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -3,
+                  "slack9": 0
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.25,
+              "policyRoutes": [
+                {
+                  "tests": 2,
+                  "remaining": 10,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                },
+                {
+                  "tests": 1,
+                  "remaining": 12,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 2,
+                  "remaining": 10,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 2,
+          "families": [
+            "xor",
+            "xor"
+          ],
+          "effectiveScopes": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 9,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "1": 3,
+            "3": 1,
+            "4": 3
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.3333333333333333,
+              "policyRoutes": [
+                {
+                  "tests": 3,
+                  "remaining": 8,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                },
+                {
+                  "tests": 11,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 8,
+                  "certifyingTests": 3,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -5,
+                  "slack9": -2
+                },
+                {
+                  "tests": 11,
+                  "remaining": 2,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 7,
+                  "certifyingTests": 4,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -5,
+                  "slack9": -2
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.3333333333333333,
+              "policyRoutes": [
+                {
+                  "tests": 1,
+                  "remaining": 9,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 2,
+                  "remaining": 8,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                },
+                {
+                  "tests": 1,
+                  "remaining": 9,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 2,
+          "families": [
+            "xor",
+            "imp_neg_rev"
+          ],
+          "effectiveScopes": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 6,
+          "omissionAnswerCounts": [
+            2,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "2": 2,
+            "1": 3,
+            "3": 1,
+            "4": 3
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 4,
+                  "remaining": 2,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                },
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 1,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 2,
+                  "remaining": 4,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 1,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 4,
+                  "slack9": 7
+                },
+                {
+                  "tests": 1,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "PF"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "arity": 3,
+      "selection": "rare",
+      "evaluated": 8192,
+      "valid": 97,
+      "matchedContrast": true,
+      "retained": 3,
+      "certificates": [
+        {
+          "clues": 2,
+          "families": [
+            "literal",
+            "literal"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 0,
+          "controlProxy": true,
+          "tagCompatible": 12,
+          "omissionAnswerCounts": [
+            3,
+            3
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 3,
+            "4": 2
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.25,
+              "policyRoutes": [
+                {
+                  "tests": 7,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 5,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -1,
+                  "slack9": 2
+                },
+                {
+                  "tests": 6,
+                  "remaining": 2,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 4,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                },
+                {
+                  "tests": 7,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 5,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": -1,
+                  "slack9": 2
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.25,
+              "policyRoutes": [
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 5,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                },
+                {
+                  "tests": 3,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                },
+                {
+                  "tests": 6,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 5,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 0,
+                  "slack9": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 3,
+          "families": [
+            "literal",
+            "imp_neg_fwd",
+            "imp_neg_rev"
+          ],
+          "effectiveScopes": [
+            [
+              0
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "constantCountTerms": 0,
+          "derivedAntecedents": 1,
+          "immediatelyHandedAntecedents": 1,
+          "uniqueConditionalEndpoints": 2,
+          "crossSlotClauses": 2,
+          "controlProxy": false,
+          "tagCompatible": 4,
+          "omissionAnswerCounts": [
+            3,
+            3,
+            2
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 3,
+            "4": 2
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.75,
+              "policyRoutes": [
+                {
+                  "tests": 4,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                },
+                {
+                  "tests": 4,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                },
+                {
+                  "tests": 4,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.75,
+              "policyRoutes": [
+                {
+                  "tests": 3,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                },
+                {
+                  "tests": 1,
+                  "remaining": 4,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 3,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 2,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 3,
+                  "slack9": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "clues": 2,
+          "families": [
+            "literal",
+            "count"
+          ],
+          "effectiveScopes": [
+            [
+              1
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          "constantCountTerms": 1,
+          "derivedAntecedents": 0,
+          "immediatelyHandedAntecedents": 0,
+          "uniqueConditionalEndpoints": 0,
+          "crossSlotClauses": 1,
+          "controlProxy": false,
+          "tagCompatible": 6,
+          "omissionAnswerCounts": [
+            3,
+            3
+          ],
+          "fieldPropertyHistogram": {
+            "3": 2,
+            "1": 2,
+            "2": 3,
+            "4": 2
+          },
+          "routes": [
+            {
+              "answerEdgePriors": 0,
+              "stablePriors": 1,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                },
+                {
+                  "tests": 5,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 2,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 1,
+                  "slack9": 4
+                }
+              ]
+            },
+            {
+              "answerEdgePriors": 1,
+              "stablePriors": 2,
+              "anchorRelevant": true,
+              "threeSubmissionFraction": 0.5,
+              "policyRoutes": [
+                {
+                  "tests": 4,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                },
+                {
+                  "tests": 1,
+                  "remaining": 6,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 0,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE"
+                  ],
+                  "slack6": 5,
+                  "slack9": 8
+                },
+                {
+                  "tests": 4,
+                  "remaining": 1,
+                  "certified": 1,
+                  "success": true,
+                  "negativeTests": 3,
+                  "certifyingTests": 1,
+                  "orientations": [
+                    "FE",
+                    "PF"
+                  ],
+                  "slack6": 2,
+                  "slack9": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "targets": 6,
+    "fields": 192,
+    "packages": 49152,
+    "certificates": 18,
+    "seconds": 900
+  }
+}

@@ -299,3 +299,26 @@ Important limits:
 - progression-limited known identities and accumulated learned relations can
   still force runtime generation fallback;
 - later bridge/residual relation-topology concepts remain a separate question.
+
+## Bounded quality diagnostic and input recovery
+
+`recover_private_inputs.py` reconstructs private screen inputs from the exact
+accepted local asset hash and probe-0.2.0 capture. It uses UnityPy 1.25.4 for the
+asset container, verifies narrow candidate joins against complete runtime rows,
+and checks properties against the canonical assignment. Derived inputs must be
+written outside the repository. It is not a complete GameBalance parser.
+
+`bounded_quality_diagnostic.py TWO_CORE.json THREE.json PRIVATE_CERTIFICATES.json
+AGGREGATES.json` runs the declared six-variant/192-field diagnostic using existing
+clue predicates. Exact selections/certificates stay private; public output contains
+only hashes, structural measures and policy-route summaries. Query policies see
+public hypotheses and observations; outcomes are consulted only after selection.
+
+Specification/results: `docs/research/BOUNDED_QUALITY_DIAGNOSTIC_2026-10-07.md`.
+Frozen aggregate artifact: `bounded-quality-2026-10-07.json`. These results are not
+an autonomous interest score, a production economy or corpus-wide quality coverage.
+Run focused route-policy checks with:
+
+```
+python -m unittest discover -s research/TagModelScreen -p test_bounded_quality_diagnostic.py
+```

@@ -196,10 +196,12 @@ not evidence that the real corpus can provide the same quality on demand.
 ## Next bounded screen — execution specification
 
 Execution checkpoint: [bounded diagnostic plan](research/BOUNDED_QUALITY_DIAGNOSTIC_2026-10-07.md).
-Recovery and the synthetic calibration control are complete. The accepted raw
-corpus attachment was found and its structural baseline reproduced; the verified
-property join/core inputs remain pending. Sample/stop limits are predeclared,
-with zero real-corpus quality variants evaluated so far.
+Recovery, property/core input validation and the bounded pass are complete:
+six real variants, 192 fields, 46,801 sampled packages and 18 reviewed certificates.
+Matched flat/compound alternatives exist for this sample. Public route costs vary
+substantially with starting knowledge and query choices; formal interaction alone
+does not establish resource robustness. The linked report owns evidence, limits
+and the next same-package policy comparison. No new difficulty/balance acceptance.
 
 Reuse TagModelScreen and the accepted private corpus/property inputs; do not build
 a new production generator or repeat the completed architecture/curriculum survey.

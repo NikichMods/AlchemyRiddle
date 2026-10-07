@@ -9,16 +9,21 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 Repository recovery and the frozen Lab audit are complete. A subsequent search
 recovered accepted probe 0.2.0 `LogOutput(3).log` through the original chat attachment.
 Its ordinary corpus and three-slot structural baseline reproduce exactly. Raw
-evidence is preserved outside Git with a private recovery index. The verified
-symbol-to-property join, Dark + Organ input and 16-variant two-slot core still
-need recovery/validation; quality-package execution has not started.
+evidence is preserved outside Git with a private recovery index. The symbol/property
+join, Dark + Organ model and 16-variant two-slot core are now verified against
+the exact installed reference and accepted runtime rows. No properties changed.
 
 Predeclared sample, seed, computation/review caps and measurement boundaries:
 `research/BOUNDED_QUALITY_DIAGNOSTIC_2026-10-07.md`. At most six variants,
-192 fields, 49,152 packages and 18 reviewed certificates; no real variants have
-been evaluated yet. Next: recover the accepted property capture or prior exact
-join, validate Dark + Organ and core filtering, then run that pass. Do not fabricate
-missing corpus rows or replace this task with another synthetic Lab case.
+192 fields, 49,152 packages and 18 reviewed certificates. The pass is complete:
+six targets, 192 fields, 46,801 sampled packages and 18 reviewed certificates.
+All six targets support matched same-field controls and compound alternatives.
+This is structural existence, not corpus-wide quality or new human acceptance.
+Zero-answer-edge public routes take 3–11 pair tests; one-answer-edge contrasts
+take 1–6. A retained compound package has a 3–11 spread across plausible tied
+queries. Next: compare balanced-edge and candidate-first policies on that same
+retained package before choosing budget rules or commissioning further play.
+Keep the sample bounded, tag taxonomy closed and production BLOCKED.
 
 The handoff below remains the calibration boundary and reading guide; its
 instruction to finish recovery before execution has now been completed.
