@@ -4,6 +4,23 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Bounded diagnostic recovery — 2026-10-07
+
+Repository recovery is complete. The frozen Lab audit was reproduced successfully;
+the real-corpus baseline has **not** been reproduced. Accepted private formula/tag
+inputs or original probe logs were not located in the inspected local paths, and
+their location has been requested. This blocks execution, not the selected design.
+
+Predeclared sample, seed, computation/review caps and measurement boundaries:
+`research/BOUNDED_QUALITY_DIAGNOSTIC_2026-10-07.md`. At most six variants,
+192 fields, 49,152 packages and 18 reviewed certificates; no real variants have
+been evaluated yet. Next: recover and hash accepted private inputs, validate the
+Dark + Organ model and existing baseline, then run that pass. Do not fabricate
+missing corpus rows or replace this task with another synthetic Lab case.
+
+The handoff below remains the calibration boundary and reading guide; its
+instruction to finish recovery before execution has now been completed.
+
 ### Chat handoff — 2026-10-07
 
 The user requests a new chat at this completed calibration/synthesis boundary.
