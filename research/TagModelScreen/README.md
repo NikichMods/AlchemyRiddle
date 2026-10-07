@@ -331,3 +331,13 @@ certificates/output stay outside Git. No new corpus sample or production behavio
 Plan/results: `docs/research/SCIENCE_ROUTE_COMPARISON_2026-10-07.md`;
 aggregates: `science-routes-2026-10-07.json`. Uniform mechanical tie/order weights
 are not human probabilities. Tests: `test_science_route_comparison.py`.
+
+`generator_route_ranking.py THREE.json PRIVATE_POOL.json AGGREGATES.json` runs
+the bounded additive mean-route ranking comparison across the 19 three-slot
+variants. It reuses old option gates/sequence scoring, keeps the sampled pool
+fixed across arms, and evaluates selections on held-out public-policy replays.
+Exact identities/certificates remain private. Specification and results:
+`docs/research/GENERATOR_ROUTE_RANKING_2026-10-07.md`; aggregates:
+`generator-route-ranking-2026-10-07.json`. Weights are experimental; tutorial,
+two-slot, incomplete reagent availability and measured human interest are outside
+this pass. Tests: `test_generator_route_ranking.py`.

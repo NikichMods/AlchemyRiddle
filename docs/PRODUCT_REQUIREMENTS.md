@@ -518,6 +518,12 @@ this extra term. Exact penalty weights/policy weighting remain to be evaluated.
 Existing research tools implement parts of the agreed selection model, not a
 finished production generator or calibrated automated reasoning/interest oracle.
 
+Evidence checkpoint: `research/GENERATOR_ROUTE_RANKING_2026-10-07.md` compares
+the same pool with existing implemented gates/diversity score and a weak additive
+term. Held-out simulations support shorter ordinary routes without changing
+those gates, while strong weights reduce logical-family diversity. This supports
+the additive direction, not acceptance of exact production coefficients.
+
 Evaluate route length against actual starting knowledge and public reasoning.
 Distinguish clue/field ambiguity from query-policy detours before changing tags
 or generation. Separately compare paid pair investigation plus final checking

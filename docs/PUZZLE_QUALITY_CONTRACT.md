@@ -205,6 +205,16 @@ Historical Lab pools and the completed screen's 6/9 thresholds are evidence only
 
 ## Current conclusions and remaining questions
 
+Additive route-ranking checkpoint (2026-10-07):
+[generator selection comparison](research/GENERATOR_ROUTE_RANKING_2026-10-07.md).
+Old reproducible gates/diversity score are preserved. Same-pool weak mean-route
+penalty improves lower/middle pacing on held-out mechanical simulations, with
+a measurable diversity trade-off at larger weights. The previous isolated-nine-
+triple diagnostic example already fails the old branch gate. Coverage is 18/19
+targets in this bounded sample; do not generalize that gap into impossibility.
+The new criterion complements the older ones. No exact production weight or
+human difficulty/interest guarantee is accepted.
+
 Established for this player: the core supports pleasant short deduction and richer
 empirical investigation; varied interacting conditions outperform repetitive filters;
 earned pair visibility supports independent reasoning; the Lab interface is now

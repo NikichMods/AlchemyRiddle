@@ -6,6 +6,23 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Bounded diagnostic recovery — 2026-10-07
 
+Latest completed work: additive generator-selection evaluation,
+`research/GENERATOR_ROUTE_RANKING_2026-10-07.md`. Existing reproducible gates and
+diversity scoring retained, same 197 candidates in both arms, 19 three-slot
+targets sampled / 18 covered; 152 fields, 77,824 package attempts, 56,736 replays
+including held-out validation. Fresh-state baseline mean 4.078 checks; weak
+additive preferred-3 ranking gives 3.622, reducing selected means above five
+from 12.96% to 3.70%. Preferred-5 changes little (3.994); stronger penalties cost
+logical-family diversity. Existing gates already reject the prior nine-isolated-
+triple example. This validates an additive pacing preference in the declared
+sample, not calibrated human difficulty or complete production readiness.
+Next bounded question: the one target without an eligible sampled candidate;
+do not weaken gates, substitute targets or reopen the property model by default.
+Exact penalty weights remain experimental. Production remains BLOCKED.
+
+The entries below preserve the preceding decisions and diagnostic boundaries;
+their previously proposed evaluation has now been completed as linked above.
+
 Repository recovery and the frozen Lab audit are complete. A subsequent search
 recovered accepted probe 0.2.0 `LogOutput(3).log` through the original chat attachment.
 Its ordinary corpus and three-slot structural baseline reproduce exactly. Raw
