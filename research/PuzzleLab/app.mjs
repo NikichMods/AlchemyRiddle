@@ -4,6 +4,28 @@ let view;
 let queue = Promise.resolve();
 const name = id => view.slots.flatMap(s => s.cards).find(c => c.id === id)?.name ?? '—';
 const formula = tuple => view.slots.map(s => name(tuple[s.id])).join(' + ');
+// Presentation palette only: colors carry no additional logical meaning.
+const tagStyles = {
+  'Растительное':'plant', 'Минеральное':'mineral', 'Тёмное':'dark',
+  'Трупное':'corpse', 'Насекомое':'insect', 'Животное':'animal',
+  'Рыбное':'fish', 'Слизь':'slime', 'Водное':'water', 'Орган':'organ',
+  Plant:'plant', Mineral:'mineral', Dark:'dark', Corpse:'corpse',
+  Insect:'insect', Animal:'animal', Fish:'fish', Slime:'slime', Water:'water', Organ:'organ'
+};
+function tagBadge(tag) {
+  const badge = document.createElement('span');
+  badge.className = `tag tag-${tagStyles[tag] ?? 'neutral'}`;
+  badge.textContent = tag;
+  return badge;
+}
+function clueContents(text) {
+  const parts = document.createDocumentFragment();
+  for (const part of text.split(/(«[^»]+»)/g)) {
+    if (part.startsWith('«') && part.endsWith('»')) parts.append(tagBadge(part.slice(1,-1)));
+    else parts.append(document.createTextNode(part));
+  }
+  return parts;
+}
 function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
@@ -20,7 +42,7 @@ function render() {
       radio.onchange = () => action({type:'select', slot:slot.id, card:card.id});
       const text = document.createElement('strong'); text.textContent = card.name;
       label.append(radio, text); box.append(label);
-      const tags = document.createElement('p'); tags.className = 'tags'; tags.textContent = card.tags.join(' · '); box.append(tags);
+      const tags = document.createElement('p'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); box.append(tags);
       const mark = document.createElement('button'); mark.className = 'mark'; mark.textContent = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
       mark.id = `mark-${card.id}`;
       mark.setAttribute('aria-label', `${mark.textContent}: ${card.name}`); mark.setAttribute('aria-pressed', String(Boolean(s.marks[card.id])));
@@ -28,7 +50,7 @@ function render() {
     }
     $('cards').append(group);
   }
-  $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.textContent = text; return li;}));
+  $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
   $('selection').textContent = formula(s.selected);
   $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);

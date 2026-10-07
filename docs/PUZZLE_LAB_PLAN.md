@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; local mechanical checks passed; first blind player calibration pending. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; mechanical checks passed; first player feedback requires revising onboarding. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -27,10 +27,18 @@ An HTML edit triggered automatic reload while retaining notes and selections.
 The normal test runner was blocked by local child-process permissions; the same
 tests passed with `--test-isolation=none`. CI runs the normal isolated command.
 
-Next: blind-play the easy fixture with the user; export/persist player state at
-material checkpoints under the paper-prototype protocol. Then retain/revise it
-before adding RICH, mature and three-slot fixtures. Technical smoke tests are
-not player acceptance. No active human blind session exists yet.
+First player feedback: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`.
+The easy fixture is formally valid but requires revised onboarding: repetitive
+single-property wording and conditional interpretation caused rejection/confusion.
+It is now in debrief; repeating it cannot count as a fresh blind attempt.
+Colored property badges and explicit slot frames have been implemented; visual
+verification is pending after browser-connection timeouts. Exact player session
+state was not recovered. The server/fixture were not reset.
+
+Next: review the changed presentation and author a new precommitted onboarding
+case before expanding to RICH, mature and three-slot fixtures. Export/persist
+player state at material checkpoints under the paper-prototype protocol.
+Technical smoke tests are not player acceptance.
 
 State lives only in server memory. A restart or valid fixture replacement clears
 it. Preserve a player journal before stopping during live calibration.

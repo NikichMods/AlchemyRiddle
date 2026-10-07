@@ -6,11 +6,11 @@ Status: **OPEN — adaptive knowledge-aware selected as the three-slot puzzle co
 
 The selected two-slot and three-slot architecture remains accepted; production remains BLOCKED. No installed-runtime test is currently required. The highest-leverage open generator question is inference quality / intellectual interest, distinct from numerical difficulty.
 
-Puzzle Lab V0 is now implemented on `research/puzzle-lab-v0`, with one synthetic two-slot fixture, separate player/facilitator data, paid submission, personal marks, notes and journal export. Localhost, presentation live reload, browser interactions and seven deterministic/HTTP tests have been verified. Canonical working plan and execution evidence: `docs/PUZZLE_LAB_PLAN.md`; run instructions: `research/PuzzleLab/README.md`. Human blind calibration has not started.
+Puzzle Lab V0 is implemented on `research/puzzle-lab-v0`, with one synthetic two-slot fixture, separate player/facilitator data, paid submission, personal marks, notes and journal export. Localhost, presentation live reload, initial browser interactions and seven deterministic/HTTP tests have been verified. The first human feedback requires revising onboarding: repeated Plant wording and conditional interpretation caused confusion/rejection. That fixture is now in debrief, not fresh blind play. Evidence: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`. Colored tags and framed slot groups are implemented; their visual verification is pending after browser timeouts. Canonical working plan: `docs/PUZZLE_LAB_PLAN.md`; run instructions: `research/PuzzleLab/README.md`.
 
 Immediate sequence:
 1. inspect the actual checkout/worktree and recover V0 from the plan and run instructions;
-2. start/resume the player-only Lab and blind-calibrate its proposed easy positive fixture;
+2. review the presentation fixes and author a new precommitted onboarding fixture addressing conditional interpretation and repetitive wording;
 3. preserve exact player state/journal at material checkpoints, and record subjective findings;
 4. revise and extend positive cross-clue cases to RICH, mature/boss and representative three-slot play;
 5. distill the inference-quality acceptance contract;

@@ -1,2 +1,19 @@
 /* SPDX-License-Identifier: MPL-2.0 */
+/* Slot boundaries and consistent property colors across cards and clues. */
+.tag{display:inline-block;padding:1px 7px;border:1px solid;border-radius:5px;font-size:.85em;font-weight:600;line-height:1.5;vertical-align:baseline}
+.tag-plant{color:#b5ed9e;background:#223c28;border-color:#7aaa68}
+.tag-mineral{color:#bce4ff;background:#203647;border-color:#739eb7}
+.tag-dark{color:#e4def1;background:#090a10;border-color:#a59bbd}
+.tag-corpse{color:#e5b2e2;background:#3b283b;border-color:#a578a5}
+.tag-insect{color:#efdca3;background:#39321d;border-color:#ad9658}
+.tag-animal{color:#ebc3a0;background:#3d2e24;border-color:#af896a}
+.tag-fish{color:#a9e8e6;background:#1b393c;border-color:#5aa8ac}
+.tag-slime{color:#d4ed8e;background:#30391d;border-color:#97ae52}
+.tag-water{color:#b7c9ff;background:#26324d;border-color:#7c93cc}
+.tag-organ{color:#ffb8b5;background:#442729;border-color:#c78385}
+.tag-neutral{color:#e4dfc9;background:#353225;border-color:#9a9275}
+#cards{column-gap:24px}
+#cards fieldset{border:1px solid #526d78;border-radius:12px;padding:16px 12px 4px;background:#14252c}
+#cards legend{padding:4px 10px;background:#243c46;border:1px solid #6b8892;border-radius:6px;font-size:17px;font-weight:700;color:#eef4f2;margin:0 0 6px}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px}
 :root{color-scheme:dark;font:16px/1.55 system-ui,sans-serif;background:#111b20;color:#e5e9e7}*{box-sizing:border-box}body{margin:0}main{max-width:1120px;margin:auto;padding:32px}header{display:flex;justify-content:space-between;gap:16px;align-items:center}.eyebrow{letter-spacing:.14em;font-size:12px;color:#9fc2bd}.badge{font-size:12px;border:1px solid #48615f;border-radius:20px;padding:4px 12px}h1{font-size:38px;font-weight:600;margin:26px 0 6px}h2{font-size:20px;margin:0 0 12px}h3{font-size:16px}.muted,footer{color:#abbabf;font-size:14px}.layout{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;margin:28px 0}.panel,.submission{border:1px solid #354b53;border-radius:12px;padding:22px;background:#17272e;margin-bottom:18px}#cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}fieldset{border:0;padding:0;min-width:0}legend{color:#b9ceca;margin-bottom:10px}.card{border:1px solid #47626a;border-radius:10px;padding:14px;margin-bottom:12px;background:#1b3038}.card:has(input:checked){border-color:#a6d5c3;box-shadow:inset 0 0 0 1px #a6d5c3}.card label{cursor:pointer;display:flex;align-items:flex-start;gap:8px}.card input{margin-top:6px;accent-color:#b5e1cf}.tags{margin:9px 0;color:#b8d4cb;font-size:13px}.excluded strong{text-decoration:line-through;color:#a8b4b8}.excluded{border-style:dashed}.submission{margin-top:14px}.submission p{margin:8px 0}button{font:inherit;cursor:pointer;border:1px solid #99c9b8;background:#b9dfcc;color:#15251f;padding:10px 16px;border-radius:7px}button:disabled{opacity:.45;cursor:default}button.mark{font-size:12px;padding:4px 6px;background:transparent;color:#c6d6d7;border-color:#587078}button:hover:not(:disabled){filter:brightness(1.12)}:focus-visible{outline:3px solid #f0d799;outline-offset:3px}li{margin-bottom:16px}ol{padding-left:22px}details{border-top:1px solid #354b53;padding-top:12px;font-size:14px}summary{cursor:pointer;color:#c7dfd9}textarea{display:block;width:100%;resize:vertical;margin:10px 0;background:#101e24;color:inherit;border:1px solid #527079;border-radius:6px;padding:12px;font:inherit}#saved{font-size:13px;color:#abc7bb}#error{color:#ffbbad}#result{color:#dddbc2}footer{text-align:center;padding:12px}@media(max-width:760px){main{padding:20px}.layout{grid-template-columns:1fr;gap:0}header{align-items:flex-start}h1{font-size:30px}}@media(max-width:420px){#cards{grid-template-columns:1fr}header{flex-direction:column}}

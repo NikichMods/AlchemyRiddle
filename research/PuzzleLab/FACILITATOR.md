@@ -2,7 +2,8 @@
 
 ## Precommitted model: lab-v0-easy-01
 
-Status: authored and mechanically validated; blind player test NOT STARTED.
+Status: first player attempt reported; debrief started; REVISE as onboarding.
+Result/evidence limits: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`.
 No real Graveyard Keeper recipe is represented.
 
 `fixture.json` is the complete immutable-within-a-session model. Two slots,
