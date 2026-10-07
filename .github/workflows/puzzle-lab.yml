@@ -1,0 +1,21 @@
+name: Puzzle Lab checks
+on:
+  push:
+    paths: ['research/PuzzleLab/**', '.github/workflows/puzzle-lab.yml']
+  pull_request:
+    paths: ['research/PuzzleLab/**', '.github/workflows/puzzle-lab.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: puzzle-lab-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test research/PuzzleLab/lab.test.mjs

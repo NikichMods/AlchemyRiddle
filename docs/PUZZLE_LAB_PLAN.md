@@ -1,6 +1,39 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **accepted infrastructure direction for the next research phase; not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; local mechanical checks passed; first blind player calibration pending. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+
+## Current execution checkpoint — 2026-10-07
+
+Implementation and run instructions: `research/PuzzleLab/README.md`.
+Local command: `node research/PuzzleLab/server.mjs`; player URL:
+`http://127.0.0.1:4173`.
+
+The minimal stack is Node.js 24 built-ins plus HTML/CSS/browser modules, without
+package dependencies. Fixture data, rules/evaluation, server projection and
+presentation are separate. One synthetic easy two-slot fixture is precommitted;
+its subjective inference quality is unaccepted until blind play.
+
+Implemented: card selection, personal exclusions, notes, paid binary submission,
+player journal export, optional facilitator truth-table/session view, and live
+browser reload for presentation/fixture edits. Answer and evaluator stay on the
+server; debug routes require explicit `--debug`. One Science/one submission is
+this fixture's bounded calibration budget, not accepted production balance.
+
+Verified locally on Node 24.19.0: seven deterministic/HTTP tests pass, including
+clue truth tables, uniqueness, budget exhaustion, invalid requests, session
+continuity and player/debug separation. Browser checks prove initial rendering,
+selection, notes, personal marking, failed submission and exhausted-budget UI.
+An HTML edit triggered automatic reload while retaining notes and selections.
+The normal test runner was blocked by local child-process permissions; the same
+tests passed with `--test-isolation=none`. CI runs the normal isolated command.
+
+Next: blind-play the easy fixture with the user; export/persist player state at
+material checkpoints under the paper-prototype protocol. Then retain/revise it
+before adding RICH, mature and three-slot fixtures. Technical smoke tests are
+not player acceptance. No active human blind session exists yet.
+
+State lives only in server memory. A restart or valid fixture replacement clears
+it. Preserve a player journal before stopping during live calibration.
 
 ## Why this exists
 
@@ -23,8 +56,8 @@ A later standalone showcase version is a useful possible descendant, but it is
 As of 2026-10-07:
 - ChatGPT Desktop / Codex is working stably for the user;
 - the local AlchemyRiddle repository is open in Codex;
-- local localhost/hot-reload development should be verified as the first
-  execution check before tool work proceeds;
+- local localhost and presentation live-reload development were verified during
+  V0 bootstrap; server/rules changes require a restart;
 - repository/canonical docs, not chat history, remain the recovery source.
 
 Local Codex must first inspect its checkout/worktree, branch, HEAD and local
