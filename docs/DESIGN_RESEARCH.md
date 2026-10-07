@@ -10,7 +10,7 @@ Puzzle Lab V0 is implemented on `research/puzzle-lab-v0`, with one synthetic two
 
 Immediate sequence:
 1. inspect the actual checkout/worktree and recover V0 from the plan and run instructions;
-2. blind-play the now-precommitted case `lab-v0-02` (Янтарный оберег); initial player state/next interaction are canonical in `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`;
+2. finish/debrief case `lab-v0-02`: player derived the correct pair independently but rejected repeated exact-one clues; current player state/next interaction are canonical in `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`;
 3. preserve exact player state/journal at material checkpoints, and record subjective findings;
 4. revise and extend positive cross-clue cases to RICH, mature/boss and representative three-slot play;
 5. distill the inference-quality acceptance contract;

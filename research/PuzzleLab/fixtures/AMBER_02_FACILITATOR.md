@@ -3,7 +3,10 @@
 ## Precommitted lab-v0-02 — 2026-10-07
 
 Model owner: `amber-02.json`. Synthetic only. Authoring complete before player
-choices; subjective acceptance pending. Same two-slot property-count grammar,
+choices; player independently reasoned to the correct pair, but rejected the
+repetitive clue package as ordinary-play content. Submission not observed.
+Current state/evidence: `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`.
+Same two-slot property-count grammar,
 no conditional lesson in this case. No player-facing difficulty label.
 
 Answer: p2 + f1. Complete field: 3 Powder / 3 Fluid, 9 tuples. All card properties

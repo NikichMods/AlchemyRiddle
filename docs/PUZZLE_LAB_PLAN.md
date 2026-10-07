@@ -52,10 +52,16 @@ The original `fixture.json` is retained as historical negative onboarding
 evidence. Eight deterministic/HTTP tests now pass, including the second case's
 uniqueness, per-clue necessity and compact count wording.
 
-Next: user blind-plays case 02; capture interest, reasoning and friction before
-expanding to RICH, mature and three-slot fixtures. Export/persist player state
-at material checkpoints under the paper-prototype protocol. Technical smoke
-tests are not player acceptance.
+Case 02 feedback: the player independently articulated the correct answer,
+liked rich multi-tag cards, and rejected the three parallel exact-one clues as
+boring ordinary-play content. Formal submission is not yet observed. Current
+state and narrated reasoning are preserved in the case-02 player checkpoint.
+
+Next: allow the player to submit/finish the current case, then author a new
+precommitted positive case with distinct interacting clue roles. Do not fix
+repetition merely by paraphrasing the same constraints. Capture subjective
+interest before expanding to mature and three-slot fixtures. Technical smoke
+tests and successful deduction are not player acceptance of puzzle quality.
 
 State lives only in server memory. A restart or valid fixture replacement clears
 it. Preserve a player journal before stopping during live calibration.

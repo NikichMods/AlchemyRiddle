@@ -710,3 +710,11 @@ Accepted product refinement:
   - intellectual-interest / inference quality.
 
 Exact automated scoring for intellectual interest remains open; do not collapse it into clue count or survivor count.
+
+Player calibration refinement, 2026-10-07: outside a deliberately bounded
+tutorial, reject clue packages made of parallel repetitions of the same logical
+form (case 02: three exact-one property counts). Rich cards, mathematical clue
+necessity and a valid deductive path do not by themselves compensate for felt
+repetition. Prefer conditions with distinct cognitive roles that interact;
+cosmetic rewording is insufficient. This does not impose a blanket ban on any
+repeated tag/operator, nor select a player-facing difficulty-label policy.

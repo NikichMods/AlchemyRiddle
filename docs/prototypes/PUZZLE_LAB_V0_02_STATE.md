@@ -1,6 +1,7 @@
 # Puzzle Lab V0 — lab-v0-02 player checkpoint
 
-Status: **ready for first blind player interaction; no human actions recorded**.
+Status: **player independently derived the correct pair; formal submission not
+observed; clue package REJECTED as a positive ordinary-play exemplar**.
 Date: 2026-10-07. Family under test (research metadata, not player labeling):
 interacting property counts on a two-slot field.
 
@@ -38,3 +39,45 @@ Exact next interaction: human reads and reasons, optionally records marks/notes,
 then submits. The facilitator may clarify general rules but must not perform
 new deductions. Persist actual state after material actions; do not infer it
 from this initial checkpoint. Subjective validity/interest not yet accepted.
+
+## Current checkpoint — player reasoning and feedback, 2026-10-07
+
+The initial state above is historical. Fixture and visible facts remain unchanged.
+
+Human-reported reasoning:
+1. Read the three facts as one Plant, one Mineral and one Dark.
+2. Considered Plant powder, then looked for a Fluid supplying Mineral + Dark;
+   found no such Fluid.
+3. Considered the Plant + Dark Fluid, then chose Mineral powder.
+4. Checked the Mineral + Dark powder and rejected it because it would give two
+   Dark components.
+5. Concluded p2 Кварцевая пыль + f1 Сок ночного цветка.
+
+The player briefly considered choosing three ingredients, then self-corrected:
+the formula has two slots. Do not infer a UI cause from this alone. The field has
+two slots with three candidates each (nine pairs); the player's informal
+"2 by 3" describes the displayed arrangement, not three-ingredient arity.
+
+The facilitator confirmed only the already-articulated correct inference.
+No submission was made by the facilitator. User reports selecting Quartz
+powder; exact current radio selections/marks/notes/history were not inspected.
+No submitted outcome or resource change was reported, so current Science/status
+must not be claimed as observed. Last verified initial budget was Science 1.
+Known human hypothesis: p2 + f1, justified by the narrated reasoning.
+Next interaction: player may submit that pair, followed by debrief. Do not
+silently submit, reset or replace this played fixture.
+
+Player experience:
+- rich per-card tag sets were explicitly liked;
+- three identically structured exact-one conditions were called boring;
+- repetition of wording was perceived as the successor to repeated tags in the
+  first case;
+- deliberate repetition may be understandable in a tutorial, but this was not
+  perceived/accepted as tutorial play;
+- therefore do not claim this case proves ordinary-play intellectual interest,
+  despite logical validity and successful independent deduction.
+
+Judgment: reject this package as a positive ordinary-play exemplar; retain as
+negative research evidence and a formally valid count-grammar example. Next
+case must vary the actual cognitive roles of conditions, not merely paraphrase
+three count filters. Subjective difficulty is not inferred from board size.
