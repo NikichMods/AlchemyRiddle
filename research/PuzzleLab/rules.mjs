@@ -6,12 +6,22 @@ function has(f, tuple, term) {
   return f.slots.find(s => s.id === term.slot)?.cards.find(c => c.id === tuple[term.slot])?.tags.includes(term.tag) ?? false;
 }
 export function satisfies(f, tuple, clue) {
+  if (clue.kind === 'sharedTag') {
+    const cards = f.slots.map(s => s.cards.find(c => c.id === tuple[s.id]));
+    return cards[0].tags.some(tag => cards.every(c => c.tags.includes(tag)));
+  }
+  if (clue.kind === 'notTogether') return !(has(f, tuple, clue.left) && has(f, tuple, clue.right));
   if (clue.kind === 'exactly') return clue.terms.filter(t => has(f, tuple, t)).length === clue.count;
   if (clue.kind === 'implies') return !has(f, tuple, clue.if) || has(f, tuple, clue.then);
   throw new Error('Unsupported clue kind');
 }
 export function clueText(f, clue) {
   const term = t => `${f.slots.find(s => s.id === t.slot).name.toLowerCase()} имеет свойство «${t.tag}»`;
+  if (clue.kind === 'sharedTag') return 'У выбранных порошка и жидкости есть хотя бы одно общее свойство.';
+  if (clue.kind === 'notTogether') {
+    const slot = t => f.slots.find(s => s.id === t.slot).name.toLowerCase();
+    return `В этой формуле ${slot(clue.left)} со свойством «${clue.left.tag}» и ${slot(clue.right)} со свойством «${clue.right.tag}» не могут быть вместе.`;
+  }
   if (clue.kind === 'exactly' && clue.count === 1 && clue.terms.length === f.slots.length &&
       new Set(clue.terms.map(t => t.slot)).size === f.slots.length &&
       f.slots.every(s => clue.terms.some(t => t.slot === s.id)) &&
@@ -28,7 +38,8 @@ export function validate(f) {
   if (ids.length !== new Set(ids).size || f.slots.some(s => !s.cards.length)) throw new Error('Invalid cards');
   if (!Number.isInteger(f.science) || f.science < 1 || !Number.isInteger(f.submissionCost) || f.submissionCost < 1) throw new Error('Invalid budget');
   for (const c of f.clues) {
-    const terms = c.kind === 'exactly' ? c.terms : c.kind === 'implies' ? [c.if, c.then] : [];
+    if (c.kind === 'sharedTag') continue;
+    const terms = c.kind === 'exactly' ? c.terms : c.kind === 'implies' ? [c.if, c.then] : c.kind === 'notTogether' ? [c.left,c.right] : [];
     if (!terms.length || terms.some(t => !f.slots.find(s => s.id === t.slot)?.cards.some(card => card.tags.includes(t.tag)))) throw new Error('Invalid clue terms');
     if (c.kind === 'exactly' && (!Number.isInteger(c.count) || c.count < 0 || c.count > terms.length)) throw new Error('Invalid count');
   }

@@ -39,29 +39,34 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-02`, synthetic target Янтарный оберег, with a
-precommitted interacting-count model. Initial player checkpoint and next
-interaction: `docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`. No player-facing
+Current active fixture: `lab-v0-03`, synthetic target Сумеречный покров, with
+three distinct constraint roles: shared property, exact count, forbidden
+conjunction. Initial checkpoint/next point:
+`docs/prototypes/PUZZLE_LAB_V0_03_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
 
 Run the current case:
-`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/amber-02.json`.
+`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/mist-03.json`.
 The original `fixture.json` is retained as historical negative onboarding
-evidence. Eight deterministic/HTTP tests now pass, including the second case's
-uniqueness, per-clue necessity and compact count wording.
+evidence. Nine deterministic/HTTP tests now pass, including the third case's
+uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
 
 Case 02 feedback: the player independently articulated the correct answer,
 liked rich multi-tag cards, and rejected the three parallel exact-one clues as
 boring ordinary-play content. Formal submission is not yet observed. Current
 state and narrated reasoning are preserved in the case-02 player checkpoint.
 
-Next: allow the player to submit/finish the current case, then author a new
-precommitted positive case with distinct interacting clue roles. Do not fix
-repetition merely by paraphrasing the same constraints. Capture subjective
-interest before expanding to mature and three-slot fixtures. Technical smoke
-tests and successful deduction are not player acceptance of puzzle quality.
+The user requested the next example after case 02 reasoning; no formal case-02
+submission result is asserted. Case 03's model is precommitted before play.
+Shared-property is a narrow fixture predicate, defined in the visible rules;
+forbidden conjunction is a target-specific logical constraint, not a change to
+the selected two-slot architecture or a chemistry experiment relation.
+
+Next: blind-play case 03, capture subjective interest before expanding to mature
+and three-slot fixtures. Technical smoke tests and successful deduction are
+not player acceptance of puzzle quality.
 
 State lives only in server memory. A restart or valid fixture replacement clears
 it. Preserve a player journal before stopping during live calibration.

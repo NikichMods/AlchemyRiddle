@@ -5,6 +5,21 @@ import {readFileSync} from 'node:fs';
 import {act, candidates, clueText, createState, publicView, satisfies, validate} from './rules.mjs';
 import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
+test('third fixture has distinct necessary constraints and consistent overlap/prohibition semantics', () => {
+  const f = JSON.parse(readFileSync(new URL('./fixtures/mist-03.json', import.meta.url)));
+  validate(f);
+  const rows = candidates(f);
+  assert.equal(new Set(f.clues.map(c => c.kind)).size,3);
+  for (let omit=0; omit<f.clues.length; omit++) {
+    assert.ok(rows.filter(t => f.clues.every((c,i) => i===omit || satisfies(f,t,c))).length>1);
+  }
+  assert.equal(rows.filter(t => f.clues.slice(0,2).every(c => satisfies(f,t,c))).length,2);
+  assert.equal(satisfies(f,{powder:'p1',fluid:'f1'},f.clues[0]),true);
+  assert.equal(satisfies(f,{powder:'p1',fluid:'f2'},f.clues[0]),false);
+  assert.equal(satisfies(f,{powder:'p1',fluid:'f1'},f.clues[2]),false);
+  assert.equal(satisfies(f,{powder:'p3',fluid:'f1'},f.clues[2]),true);
+  assert.equal(satisfies(f,{powder:'p1',fluid:'f3'},f.clues[2]),true);
+});
 test('second fixture is unique, each clue is necessary, compact wording preserves count semantics', () => {
   const f = JSON.parse(readFileSync(new URL('./fixtures/amber-02.json', import.meta.url)));
   validate(f);

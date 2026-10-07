@@ -10,15 +10,15 @@ node research/PuzzleLab/server.mjs
 node --test research/PuzzleLab/lab.test.mjs
 ```
 
-For the current blind calibration case (Янтарный оберег):
+For the current blind calibration case (Сумеречный покров):
 
 ```sh
-node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/amber-02.json
+node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/mist-03.json
 ```
 
 The default fixture remains the original case for historical reproduction.
 Do not open facilitator records during blind play. Current player checkpoint:
-`docs/prototypes/PUZZLE_LAB_V0_02_STATE.md`. Difficulty labels and progression UI
+`docs/prototypes/PUZZLE_LAB_V0_03_STATE.md`. Difficulty labels and progression UI
 are deliberately deferred pending a separate product decision.
 
 If a restricted execution environment blocks the test runner's child process,
@@ -39,7 +39,8 @@ Replace the default fixture with `--fixture=path/to/fixture.json`. The fixture
 owns cards, properties, structured clues, answer and Science budget. The rules
 module evaluates and renders the same clue structure, preventing independently
 authored wording from drifting from its logic. Startup requires one unique
-answer. V0 supports two slots, exact counts and implication only.
+answer. V0 supports two slots, exact counts, implication, shared-property and
+forbidden-conjunction clues used by the committed fixtures.
 
 Player mode has no debug link, answer data, candidate solver or automatic
 exclusions. The answer stays server-side. Manual exclusions are annotations and

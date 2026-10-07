@@ -81,3 +81,7 @@ Judgment: reject this package as a positive ordinary-play exemplar; retain as
 negative research evidence and a formally valid count-grammar example. Next
 case must vary the actual cognitive roles of conditions, not merely paraphrase
 three count filters. Subjective difficulty is not inferred from board size.
+
+Closure: user requested the next example. Case 02 is no longer the active
+investigation. No formal submission result is asserted. Its recovered human
+reasoning and feedback above are the retained research evidence.
