@@ -153,12 +153,22 @@ Case 10 is accepted substantial exploratory play, not proof of a boss ceiling.
 
 ### 4. Cost and freedom of approach
 
+Current product clarification (2026-10-07): production checks use replenishable
+Science, with provisional prices of 2 per pair and 5 per whole triple, without a
+per-puzzle attempt cap. For ordinary three-slot investigations, about 3 pair
+checks is the desired short route and around 5 the reliability target; about 10
+is a diagnostic warning. These are not measured guarantees or mandatory minima.
+Compare research plus final-check cost against direct guessing; distinguish
+policy detours from clue/field ambiguity. See PRODUCT_REQUIREMENTS.md for ownership.
+Historical Lab pools and the completed screen's 6/9 thresholds are evidence only.
+
 - Accept a justified solution even if alternatives were not exhausted or the author
   intended another route. Do not impose a minimum experiment count for ceremony.
 - Useful experiments can eliminate a live branch **or certify an uncertain edge**
   of a live candidate. Survivor-count reduction alone is not a complete metric.
 - Track both an efficient feasible route and observed/plausible detours. Evaluate
-  whether the budget permits recovery; do not fit it only to an omniscient shortest path.
+  paid investigation and recovery costs; do not fit them only to an omniscient
+  shortest path or treat a diagnostic threshold as an enforced attempt cap.
 - Three final checks are accepted for later synthetic Lab examples. Cases 09/10
   each succeeded on the first, so they do not establish wrong-answer recovery
   quality or production economy. Pair charges and Science are separate Lab pools.

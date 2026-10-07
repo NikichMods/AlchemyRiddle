@@ -451,8 +451,10 @@ Accepted direction:
   pairs/triples instead of reasoning;
 - such formula submission should therefore have a non-zero research cost, with
   **Science** as the leading native resource;
-- a working prototype value is **1 Science per submitted formula**, but exact
-  production cost remains a balance decision;
+- historical Lab fixtures used **1 Science per submitted formula**; the current
+  provisional production direction (2026-10-07) is **2 Science per pair check**
+  and **5 Science per whole-triple check**, paid from the same native Science
+  resource. These values require balance validation;
 - a logically unique answer may still be submitted through the same interaction
   for consistency, but the reason for the cost is anti-bruteforce pressure, not
   forcing uncertainty after deduction;
@@ -464,6 +466,28 @@ Accepted direction:
 Exact wrong-answer feedback must not reveal more information than the agreed
 success/failure semantics unless that information is deliberately part of the
 puzzle design.
+
+### Science economy and investigation-length target — 2026-10-07
+
+Accepted direction: checks have a repeatable Science cost, not a fixed allotment
+of attempts per puzzle. Science is replenished through familiar vanilla means;
+no new acquisition mechanic is selected. Native progression/economy otherwise
+remain unchanged. Pair and whole-triple checks share the Science pool.
+
+The provisional prices are 2 Science for a pair and 5 for a whole triple. The
+user's intended ordinary three-slot investigation is approximately 3 pair checks,
+with a reasoned solution reliably reachable around 5; approximately 10 is a
+generation/route diagnostic warning, not an enforced cutoff or proof of bad tags.
+These are design targets, not measured human guarantees or difficulty bands.
+Do not require three checks when prior knowledge or deduction permits fewer.
+
+Evaluate route length against actual starting knowledge and public reasoning.
+Distinguish clue/field ambiguity from query-policy detours before changing tags
+or generation. Separately compare paid pair investigation plus final checking
+with direct whole-triple guessing: a higher individual price alone does not
+establish that research is cheaper or preferable. Historical Lab charge pools,
+three-final-check limits and the completed diagnostic's 6/9 thresholds remain
+frozen evidence, not current production restrictions.
 
 ### Deduction success is acknowledged before practical blockers
 

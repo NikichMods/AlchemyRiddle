@@ -25,6 +25,17 @@ queries. Next: compare balanced-edge and candidate-first policies on that same
 retained package before choosing budget rules or commissioning further play.
 Keep the sample bounded, tag taxonomy closed and production BLOCKED.
 
+Subsequent user clarification (2026-10-07): repeatable paid checks, no fixed
+per-puzzle attempt cap; provisional 2 Science per pair / 5 per whole triple from
+one replenishable vanilla Science pool. Ordinary three-slot route target is
+about 3 pair checks, reliably around 5; around 10 flags a route/generation
+problem to diagnose. Shorter justified routes remain valid. Owning semantics:
+PRODUCT_REQUIREMENTS.md, Science economy and investigation-length target.
+Previous 6/9 sensitivity thresholds and Lab final-check caps are historical.
+Before further route simulation, explain the proposed comparison to the user;
+evaluate both long-route causes and research-versus-guessing costs under these
+provisional prices. No further simulation has been run for this clarification.
+
 The handoff below remains the calibration boundary and reading guide; its
 instruction to finish recovery before execution has now been completed.
 
