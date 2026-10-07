@@ -5,6 +5,11 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+Active trial: anonymous real-corpus case 11. Checkpoint:
+`docs/prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md`. Hidden fixture stays private;
+tracked public JSON is an initial snapshot, not a full fixture. Historical case-10
+state below is the preceding completed trial.
+
 Cases 01–10 are complete; the user accepts the interface as sufficient for the
 laboratory. Current served case 10 (Сердце глубины) is solved, not fresh blind play.
 Its recorded state is Science 2 / Research 3 after six pair tests and one success.
@@ -23,7 +28,7 @@ node research/PuzzleLab/audit-calibration.mjs --write
 
 If child-process isolation is restricted, use
 `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
-There are 21 deterministic/HTTP tests. The offline audit validates all ten frozen
+There are 25 deterministic/HTTP tests (include `economy.test.mjs` in the test command). The offline audit validates all ten frozen
 fixtures, replays recorded pair histories and emits aggregate structural evidence
 with fixture hashes in `calibration-audit.json`; it does not score human interest.
 
@@ -78,3 +83,14 @@ This is accidental-spoiler separation, not an anti-cheat system: a local user ca
 read repository files or start a new session. Facilitator files contain fictional
 spoilers and must not be surfaced during blind play. Exact played fixtures stay
 frozen; dated outcomes belong in their checkpoints. See `docs/PAPER_PROTOTYPE_PROTOCOL.md`.
+
+## Shared Science and durable corpus trial
+
+Case 11 opts into sharedScience: pair 2, triple 5, initially 20 Science, unlimited
+explicit free +10 Lab refill. Wrong submissions and zero Science do not end play.
+Acquisition in the game is not simulated. Historical fixtures retain finite pools.
+
+Use `--fixture=PRIVATE_FIXTURE --state-dir=PRIVATE_STATE_DIRECTORY --port=4174`.
+Optional state directory atomically persists actions and restores the cookie's
+session after restart when the fixture hash matches. Keep it outside Git. Without
+this option the historical memory-only behavior above applies.

@@ -91,10 +91,17 @@ function clueContents(text) {
 function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
+  const shared = view.economy?.mode === 'sharedScience';
+  $('case-badge').textContent = shared ? 'Корпусный опыт' : 'Синтетический опыт';
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
     ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть стабильными.'
     : 'Найдите смесь из порошка и жидкости, которая подходит под все сведения о составе.';
+  if (shared) $('description').textContent = view.description;
+  $('economy-help').textContent = shared
+    ? `Пара стоит ${view.pairTestCost} Science, вся смесь — ${view.submissionCost} Science. Запас общий, лимита попыток нет. Кнопка пополнения добавляет ${view.economy.refillAmount} Science. В лаборатории пополнение бесплатно: получение науки в игре здесь не моделируется. Уже изученные пары повторно оплачивать не нужно.`
+    : 'Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.';
+  $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> Для тройки нужны две стабильные пары: порошок с жидкостью и жидкость с эссенцией. Их состояние показано справа. Кнопка «Исследовать» узнаёт результат одной пары за '+(shared ? 'Science.' : 'заряд.')+' Уже известные результаты сохраняются в «Совместимости пар».';
   $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
   document.body.classList.toggle('many-candidates',view.slots.some(slot=>slot.cards.length>3));
@@ -129,7 +136,7 @@ function render() {
   $('pair-tips').hidden = !view.pairTestCost;
   $('formula-compatibility').hidden = !view.pairTestCost;
   if (view.pairTestCost) {
-    $('research-budget').textContent = `Заряды: ${s.research}`;
+    $('research-budget').textContent = shared ? `Science: ${s.science}` : `Заряды: ${s.research}`;
     $('pair-actions').replaceChildren(...view.slots.slice(0,-1).map((slot,i) => {
       const slots = [slot.id,view.slots[i+1].id];
       const complete = slots.every(id => s.selected[id]);
@@ -142,9 +149,9 @@ function render() {
       const arrow = document.createElement('span'); arrow.textContent='↔';
       names.append(cardRef(s.selected[slots[0]]),arrow,cardRef(s.selected[slots[1]]));
       const button = document.createElement('button'); button.id = `test-${slot.id}`;
-      button.textContent = known ? 'Уже известно' : `Исследовать · −${view.pairTestCost} заряд`;
+      button.textContent = known ? 'Уже известно' : `Исследовать · −${view.pairTestCost} ${shared ? 'Science' : 'заряд'}`;
       button.setAttribute('aria-label', `Исследовать: ${slot.name.toLowerCase()} + ${view.slots[i+1].name.toLowerCase()}`);
-      button.disabled = s.status !== 'playing' || Boolean(known) || s.research < view.pairTestCost || !complete;
+      button.disabled = s.status !== 'playing' || Boolean(known) || (shared ? s.science : s.research) < view.pairTestCost || !complete;
       button.onclick = () => action({type:'pairTest',slots}); panel.append(heading,status,names,button); return panel;
     }));
     $('relations').replaceChildren(relationJournal(s));
@@ -162,10 +169,14 @@ function render() {
     label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'Совместимость смеси пока неизвестна.'}[state];
     summary.append(label);
   }
-  const initialScience = s.science + s.history.filter(h=>h.type!=='pairTest').reduce((total,h)=>total+h.cost,0);
-  $('budget').textContent = `Финальных проверок: ${Math.floor(s.science/view.submissionCost)} из ${Math.floor(initialScience/view.submissionCost)} · цена ${view.submissionCost} Science`;
-  $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);
-  const lastSubmission = s.history.filter(h=>h.type!=='pairTest').at(-1);
+  const submissions = s.history.filter(h=>h.type!=='pairTest' && h.type!=='refill');
+  const initialScience = s.science + submissions.reduce((total,h)=>total+h.cost,0);
+  $('budget').textContent = shared ? `Science: ${s.science} · проверка смеси: ${view.submissionCost}` : `Финальных проверок: ${Math.floor(s.science/view.submissionCost)} из ${Math.floor(initialScience/view.submissionCost)} · цена ${view.submissionCost} Science`;
+  $('refill').hidden = !shared;
+  $('refill').textContent = `Пополнить запас · +${view.economy?.refillAmount ?? 0} Science`;
+  $('refill').disabled = s.status !== 'playing';
+  $('submit').disabled = s.status !== 'playing' || s.science < view.submissionCost || !view.slots.every(slot => s.selected[slot.id]);
+  const lastSubmission = submissions.at(-1);
   $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Финальных проверок не осталось.' : lastSubmission && !lastSubmission.success ? 'Формула не подошла. Можно продолжить исследование.' : '';
   if (focused && $(focused) !== document.activeElement) $(focused)?.focus({preventScroll:true});
 }
@@ -181,6 +192,7 @@ function action(body) {
   return queue;
 }
 $('submit').onclick = () => action({type:'submit'});
+$('refill').onclick = () => action({type:'refill'});
 try {view = await request('/api/state'); render();}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
 // Finite requests keep the embedded browser's navigation from waiting on a

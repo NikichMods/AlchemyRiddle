@@ -5,6 +5,12 @@ for the laboratory; inference-quality synthesis complete; production remains BLO
 
 ## Current execution checkpoint — 2026-10-07
 
+Active next trial: anonymous real-corpus case 11, precommitted in
+prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md. Generator gates, weak route term and
+field floor retained. Shared Science 20, pair 2, triple 5, unlimited +10 Lab refill.
+Private fixture and durable session stay outside Git. Awaiting first player move.
+This assesses human investigation, not acquisition balance.
+
 Read [PUZZLE_QUALITY_CONTRACT.md](PUZZLE_QUALITY_CONTRACT.md) for the consolidated
 results, evidence limits and working evaluation rubric. The ten individual
 checkpoints remain the source for exact paid actions and narrated reasoning.

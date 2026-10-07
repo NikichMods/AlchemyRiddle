@@ -1,15 +1,23 @@
 // SPDX-License-Identifier: MPL-2.0
 import http from 'node:http';
-import {readFileSync, watch} from 'node:fs';
+import {readFileSync, watch, mkdirSync, existsSync, writeFileSync, renameSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
-import {randomUUID} from 'node:crypto';
+import {randomUUID, createHash} from 'node:crypto';
 import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
 const root = new URL('./', import.meta.url);
-export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false} = {}) {
+export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory} = {}) {
   let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
   validate(fixture);
   const sessions = new Map();
+  if (stateDirectory) mkdirSync(stateDirectory,{recursive:true});
+  const modelHash = () => createHash('sha256').update(JSON.stringify(fixture)).digest('hex');
+  const persist = (id,state) => {
+    if (!stateDirectory) return;
+    const path = resolve(stateDirectory,`${id}.json`);
+    writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state},null,2));
+    renameSync(path+'.tmp',path);
+  };
   const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css'};
   const server = http.createServer(async (req, res) => {
     const host = req.headers.host;
@@ -35,15 +43,26 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
         json({fixture, rows: candidates(fixture).map(tuple => ({tuple, clues: fixture.clues.map(c => satisfies(fixture, tuple, c))})), sessions: [...sessions.values()]}); return;
       }
       if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
-      let id = req.headers.cookie?.match(/(?:^|; )lab=([^;]+)/)?.[1];
+      const cookieName = stateDirectory ? `lab_${createHash('sha256').update(fixture.id).digest('hex').slice(0,12)}` : 'lab';
+      let id = req.headers.cookie?.match(new RegExp(`(?:^|; )${cookieName}=([^;]+)`))?.[1];
+      if (stateDirectory && /^[a-f0-9-]{36}$/.test(id ?? '') && !sessions.has(id)) {
+        const path = resolve(stateDirectory,`${id}.json`);
+        if (existsSync(path)) {
+          const saved = JSON.parse(readFileSync(path,'utf8'));
+          if (saved.fixtureHash === modelHash()) sessions.set(id,saved.state);
+        }
+      }
       if (!sessions.has(id)) {
         id = randomUUID(); sessions.set(id, createState(fixture));
-        res.setHeader('Set-Cookie', `lab=${id}; HttpOnly; SameSite=Strict; Path=/`);
+        persist(id,sessions.get(id));
+        res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/`);
       }
-      const state = sessions.get(id);
+      let state = sessions.get(id);
       if (req.method === 'POST') {
         let body = ''; for await (const chunk of req) {body += chunk; if (body.length > 20000) throw new Error('Слишком большой запрос');}
-        act(fixture, state, JSON.parse(body));
+        const next = structuredClone(state);
+        act(fixture, next, JSON.parse(body));
+        persist(id,next); sessions.set(id,next); state=next;
       }
       json(publicView(fixture, state));
     } catch (error) {json({error: error.message}, 400);}
@@ -65,8 +84,10 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const args = process.argv.slice(2);
   const fixtureArg = args.find(a => a.startsWith('--fixture='));
   const portArg = args.find(a => a.startsWith('--port='));
+  const stateArg = args.find(a => a.startsWith('--state-dir='));
   const port = portArg ? Number(portArg.slice(7)) : 4173;
   const server = createLab({debug: args.includes('--debug'), liveReload: true,
+    ...(stateArg ? {stateDirectory:resolve(stateArg.slice(12))} : {}),
     ...(fixtureArg ? {fixturePath: resolve(fixtureArg.slice(10))} : {})});
   server.on('error', e => {console.error(e.message); process.exitCode = 1;});
   server.listen(port, '127.0.0.1', () => console.log(`Puzzle Lab: http://127.0.0.1:${server.address().port}${args.includes('--debug') ? ' (facilitator enabled at /facilitator)' : ''}`));

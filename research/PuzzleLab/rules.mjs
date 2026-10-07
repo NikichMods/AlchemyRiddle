@@ -47,6 +47,8 @@ export function clueText(f, clue) {
   throw new Error('Unsupported clue kind');
 }
 export function validate(f) {
+  const shared = f.economy?.mode === 'sharedScience';
+  if (f.economy && (!shared || !Number.isInteger(f.economy.refillAmount) || f.economy.refillAmount < 1)) throw new Error('Invalid economy');
   if (![2,3].includes(f.slots.length) || new Set(f.slots.map(s => s.id)).size !== f.slots.length) throw new Error('V0 requires two or three distinct slots');
   const ids = f.slots.flatMap(s => s.cards.map(c => c.id));
   if (ids.length !== new Set(ids).size || f.slots.some(s => !s.cards.length)) throw new Error('Invalid cards');
@@ -58,7 +60,7 @@ export function validate(f) {
     if (c.kind === 'exactly' && (!Number.isInteger(c.count) || c.count < 0 || c.count > terms.length)) throw new Error('Invalid count');
   }
   if (f.compatibility) {
-    if (f.slots.length !== 3 || !Number.isInteger(f.researchCharges) || f.researchCharges < 1 ||
+    if (f.slots.length !== 3 || (!shared && (!Number.isInteger(f.researchCharges) || f.researchCharges < 1)) ||
         !Number.isInteger(f.pairTestCost) || f.pairTestCost < 1) throw new Error('Invalid pair research budget');
     const legal = new Set(f.slots.slice(0,-1).flatMap((s,i) => s.cards.flatMap(a =>
       f.slots[i+1].cards.map(b => `${a.id}:${b.id}`))));
@@ -77,15 +79,21 @@ export function validate(f) {
 }
 export function createState(f) {
   return {science: f.science, selected: {}, marks: {}, notes: '', history: [], status: 'playing',
-    ...(f.compatibility ? {research:f.researchCharges, knownRelations:structuredClone(f.knownRelations ?? [])} : {})};
+    ...(f.compatibility ? {...(f.economy?.mode === 'sharedScience' ? {} : {research:f.researchCharges}), knownRelations:structuredClone(f.knownRelations ?? [])} : {})};
 }
 export function publicView(f, state) {
   return {id: f.id, title: f.title, description: f.description, slots: f.slots,
     clues: f.clues.map(c => clueText(f, c)), submissionCost: f.submissionCost, state,
+    ...(f.economy ? {economy:f.economy} : {}),
     ...(f.compatibility ? {pairTestCost:f.pairTestCost} : {})};
 }
 export function act(f, state, action) {
-  if (action.type === 'notes') {
+  const shared = f.economy?.mode === 'sharedScience';
+  if (action.type === 'refill') {
+    if (!shared || state.status !== 'playing') throw new Error('Пополнение недоступно');
+    state.science += f.economy.refillAmount;
+    state.history.push({type:'refill',amount:f.economy.refillAmount});
+  } else if (action.type === 'notes') {
     if (typeof action.text !== 'string' || action.text.length > 4000) throw new Error('Недопустимая заметка');
     state.notes = action.text;
   } else if (action.type === 'selectPair') {
@@ -109,9 +117,10 @@ export function act(f, state, action) {
     if (!action.slots.every(id => f.slots.find(s => s.id === id).cards.some(c => c.id === state.selected[id]))) throw new Error('Выберите обе карточки пары');
     const tuple = Object.fromEntries(action.slots.map(id => [id,state.selected[id]]));
     if (state.knownRelations.some(r => pairKey(f,r.tuple,r.slots) === pairKey(f,tuple,action.slots))) return;
-    if (state.research < f.pairTestCost) throw new Error('Заряды исследования закончились');
+    if ((shared ? state.science : state.research) < f.pairTestCost) throw new Error(shared ? 'Недостаточно Science: пополните запас' : 'Заряды исследования закончились');
     const result = {slots:[...action.slots], tuple, stable:stablePair(f,tuple,action.slots)};
-    state.research -= f.pairTestCost;
+    if (shared) state.science -= f.pairTestCost;
+    else state.research -= f.pairTestCost;
     state.knownRelations.push(result);
     state.history.push({type:'pairTest',...result,cost:f.pairTestCost});
   } else if (action.type === 'submit') {
@@ -120,6 +129,6 @@ export function act(f, state, action) {
     state.science -= f.submissionCost;
     const success = f.slots.every(s => state.selected[s.id] === f.answer[s.id]);
     state.history.push({tuple: {...state.selected}, success, cost: f.submissionCost});
-    state.status = success ? 'solved' : state.science < f.submissionCost ? 'exhausted' : 'playing';
+    state.status = success ? 'solved' : !shared && state.science < f.submissionCost ? 'exhausted' : 'playing';
   } else throw new Error('Неизвестное действие');
 }

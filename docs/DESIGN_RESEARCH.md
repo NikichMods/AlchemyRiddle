@@ -4,6 +4,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Active human calibration — corpus case 11, 2026-10-07
+
+User authorized one live test under accepted weak ranking and field-feasibility
+floor. Start with prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md and mandatory
+PAPER_PROTOTYPE_PROTOCOL.md. Model is precommitted privately; anonymous identities
+prevent source vanilla recipe disclosure. Science 20, pair 2, triple 5, unlimited
+explicit +10 Lab refill. Awaiting first player move. Restore latest private durable
+session before continuing; never edit the live model or restart by assumption.
+Production remains BLOCKED.
+
 ### Bounded diagnostic recovery — 2026-10-07
 
 Latest checkpoint: the one missing target is now covered by the authorized

@@ -2,7 +2,7 @@
 <!-- SPDX-License-Identifier: MPL-2.0 -->
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Puzzle Lab</title><link rel="stylesheet" href="/style.css"></head>
 <body><main>
-<header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge">Синтетический опыт</span></header>
+<header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge" id="case-badge">Синтетический опыт</span></header>
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
 <div class="workspace">
   <section class="board" aria-label="Кандидаты">
@@ -22,6 +22,7 @@
     <section class="submission" aria-label="Полная формула">
       <div class="formula-content"><h2>Выбранная смесь</h2><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
       <span id="budget"></span>
+      <button id="refill" hidden>Пополнить Science</button>
       <button id="submit" disabled><span aria-hidden="true">✦</span> Смешать и проверить</button>
       <p id="result" role="status" aria-live="polite"></p>
     </section>
@@ -44,7 +45,7 @@
   </ul>
   <h3>Под рукой</h3>
   <p>П, Ж и Э обозначают столбец, цифра — карточку в нём. Наведите курсор на известную пару: её карточки подсветятся. Нажмите на пару, чтобы выбрать только её.</p>
-  <p>Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.</p>
+  <p id="economy-help">Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.</p>
   <p id="pair-tips" hidden>Исследования помогают узнать пары заранее. Если хотите рискнуть, можно сразу проверить всю выбранную смесь.</p>
   <p>Обновление страницы сохраняет текущее прохождение; новая загадка начинается с пустого выбора.</p>
 </details>
