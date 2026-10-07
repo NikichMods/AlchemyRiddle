@@ -165,6 +165,12 @@ Assess reasoning depth separately from check count and compare selected-package
 distributions across declared targets/knowledge states before and after proposed
 ranking. One fixture diagnoses a failure mode, not generator prevalence. The
 route estimator, penalty weights and treatment of plausible detours remain open.
+This is an additive criterion: retain existing reasoning/interest/diversity and
+knowledge-aware selection. Use estimated mean **new** paid pair checks as the
+primary length measure, counting both outcomes and excluding known edges. Mean
+is over predeclared public policies/ties, not shortest/worst luck and not a claim
+of measured player average. Compare selection on the same candidate pool before
+and after the new soft term; do not replace established gates with route count.
 Compare research plus final-check cost against direct guessing; distinguish
 policy detours from clue/field ambiguity. See PRODUCT_REQUIREMENTS.md for ownership.
 Historical Lab pools and the completed screen's 6/9 thresholds are evidence only.

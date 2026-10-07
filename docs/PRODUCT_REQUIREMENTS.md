@@ -500,6 +500,24 @@ neither an omniscient shortest witness nor arbitrarily bad play is the sole metr
 Stop when the player can justify submission, including singleton deduction; do
 not require chemical certification of every edge for ceremonial completeness.
 
+Additive clarification (2026-10-07): retain the existing validity, reasoning,
+interest, diversity, difficulty/progression and knowledge-aware field-selection
+criteria. The new criterion is **estimated mean new paid pair checks** for the
+candidate under public reasoning and its already-selected initial knowledge.
+It adds a soft ranking adjustment; it does not replace older criteria or require
+redesigning how known stable relations participate in field selection. Successful
+and unsuccessful pair checks both count; already-known pairs cost no new checks.
+Best/worst paths are diagnostic context, not the primary pacing estimate.
+
+Proposed evaluation implementation: preserve the established candidate gates and
+preferences, estimate mean route length with fixed public-state research policies,
+then add a difficulty-dependent soft penalty for distance from the desired range,
+increasing especially beyond 5/7. Report that estimate as a mechanical proxy;
+human average is uncalibrated. Compare the same candidate pool with and without
+this extra term. Exact penalty weights/policy weighting remain to be evaluated.
+Existing research tools implement parts of the agreed selection model, not a
+finished production generator or calibrated automated reasoning/interest oracle.
+
 Evaluate route length against actual starting knowledge and public reasoning.
 Distinguish clue/field ambiguity from query-policy detours before changing tags
 or generation. Separately compare paid pair investigation plus final checking

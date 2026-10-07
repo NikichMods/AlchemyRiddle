@@ -42,6 +42,15 @@ public-route estimator and selection baseline; measure the distribution of
 selected packages and whether ranking improves it. Exact penalty weights and
 estimator are not selected. Do not continue one handpicked fixture as a substitute
 for generator evaluation. No new evaluation has run for this clarification.
+Further clarification: preserve all existing quality and knowledge-aware field
+selection criteria; add only a soft ranking term based primarily on estimated
+mean new paid pair checks at the selected starting state. Best/worst routes are
+diagnostic context. Existing reasoning-depth criteria are already canonical;
+their automation is partial, not a finished calibrated scorer. The completed
+bounded screen selected structural diagnostic examples rather than executing
+the whole accepted generator-selection design. Do not call its bad example
+evidence that the full generator routinely fails. Next comparison must retain
+existing criteria and use the same candidate pool before/after the additive term.
 Keep the sample bounded, tag taxonomy closed and production BLOCKED.
 
 Subsequent user clarification (2026-10-07): repeatable paid checks, no fixed
