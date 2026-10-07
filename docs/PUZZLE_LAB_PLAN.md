@@ -471,3 +471,19 @@ distill inference-quality acceptance criteria, then bounded real-corpus screen.
 UI adjustments support this sequence rather than replacing it. Counts: eight
 presented human calibration cases, separate from nineteen automated checks; case
 08 failure is not evidence that the user failed tag reasoning or the selected core.
+
+## Fresh case 09 handoff — 2026-10-07
+
+The prior UI revision did not switch fixtures: the exhausted case 08 remained
+visible, including persisted selections and terminal failure text. User perceived
+this as a fresh puzzle already failed without submitting. Selection does not
+invoke synthesis; persistence itself is intentional. Correct the handoff rather
+than erase previous research on every reload.
+
+Case lab-v0-09, Свет под водой, precommitted in lantern-09.json; varied powder and
+essence nouns, richer tags, four necessary clauses, unique full answer. Stable-only
+priors; 6 research charges, 3 final checks costing 1 Science each, no refill.
+Fresh initial state is empty and playing. Checkpoint: prototypes/PUZZLE_LAB_V0_09_STATE.md.
+Twenty automated tests cover validity, clue necessity, bounded investigative route,
+fresh state and three-check continued play. Next: user blind play and reasoning,
+then mature/boss contrast and inference-quality criteria; no difficulty labels.

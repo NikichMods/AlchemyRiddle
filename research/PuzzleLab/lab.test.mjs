@@ -7,6 +7,27 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('ninth fixture starts empty with three checks; every clue matters and branch research fits the budget', () => {
+  const f=JSON.parse(readFileSync(new URL('./fixtures/lantern-09.json',import.meta.url)));
+  validate(f); const s=createState(f);
+  assert.deepEqual(s.selected,{}); assert.deepEqual(s.history,[]);
+  assert.equal(s.science,3); assert.equal(s.status,'playing');
+  assert.ok(s.knownRelations.every(r=>r.stable));
+  for (let i=0;i<f.clues.length;i++) {
+    const reduced={...f,clues:f.clues.filter((_,j)=>j!==i)};
+    assert.ok(candidates(f).filter(t=>validFormula(reduced,t)).length>1);
+  }
+  for (const [slots,tuple] of [
+    [['fluid','essence'],{fluid:'f1',essence:'e3'}],
+    [['fluid','essence'],{fluid:'f1',essence:'e1'}],
+    [['powder','fluid'],{powder:'p2',fluid:'f2'}],
+    [['fluid','essence'],{fluid:'f2',essence:'e1'}]
+  ]) {s.selected=tuple;act(f,s,{type:'pairTest',slots});}
+  assert.equal(s.research,2); assert.equal(s.science,3);
+  s.selected={...f.answer};act(f,s,{type:'submit'});
+  assert.equal(s.status,'solved'); assert.equal(s.science,2);
+});
+
 test('three-Science model permits research after failed synthesis and success on the third check', () => {
   const f={...harbor,science:3}; validate(f); const s=createState(f);
   s.selected={powder:'p1',fluid:'f3',essence:'e2'};
