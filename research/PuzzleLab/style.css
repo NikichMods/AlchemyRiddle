@@ -27,7 +27,7 @@ button{font:inherit;cursor:pointer;border:1px solid #99c9b8;background:#b9dfcc;c
 button:disabled{opacity:.48;cursor:default}
 button:hover:not(:disabled){filter:brightness(1.1)}
 :focus-visible{outline:3px solid #f0d799;outline-offset:3px}
-.card .choose{display:grid;grid-template-columns:12px 1fr auto;gap:0 7px;width:100%;min-height:90px;padding:10px 9px 12px;text-align:left;background:transparent;border:0;color:inherit;border-radius:8px;align-content:start}
+.card .choose{display:grid;grid-template-columns:1fr auto;gap:0 7px;width:100%;min-height:90px;padding:10px 9px 12px;text-align:left;background:transparent;border:0;color:inherit;border-radius:8px;align-content:start}
 .choose strong{font-size:15px;line-height:1.35}
 .selection-dot{width:10px;height:10px;border:1px solid #93adaf;border-radius:50%;margin-top:4px}
 .selected .selection-dot{background:#b9dfcc;box-shadow:inset 0 0 0 2px #1b3038}
@@ -123,14 +123,18 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 .card-ref{position:relative;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:38px;height:32px;line-height:1;padding:0;border-radius:0;background:transparent}
 .card-ref svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .card-ref path{fill:currentColor;fill-opacity:.12;stroke:currentColor;stroke-opacity:.6;stroke-width:1}
-.card-ref>span{position:relative;padding-top:3px}
+.card-ref>span{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center}.ref-powder>span{top:68%}.ref-fluid>span{top:66%}
 .tag{display:inline-flex;align-items:center;justify-content:center;min-height:22px;padding:2px 7px;line-height:1;vertical-align:middle}
 .relation-refs{margin-bottom:0;gap:7px}
 .relation-refs .verdict{margin-left:8px}
 .relation{background:transparent!important;border-left:0;margin-bottom:4px}
 .relation-choice{width:fit-content;min-width:195px;border-radius:5px;padding:3px 6px}
-.prior .relation .verdict{color:#b7c9cb;font-weight:400}
+.prior .relation .verdict{font-weight:600}
 .prior .relation-choice{background:transparent}
 .new .relation-choice{background:#ffffff03}
 .relation.current{outline:0}
 .relation.current .relation-choice{outline:2px solid #e1d29a;outline-offset:1px}
+.many-candidates .card{min-height:74px}
+.many-candidates .card .choose{min-height:72px;padding-top:6px;padding-bottom:7px}
+.many-candidates .tags{margin-top:6px}
+.many-candidates #clues li{margin-bottom:9px}

@@ -510,3 +510,27 @@ for labels with unfamiliar icons; W3C Use of Color
 (https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) for redundant symbols/text.
 The implementation is an experimental application, not a claim of WCAG certification.
 Next research step: mature/boss contrast before quality criteria and corpus screen.
+
+## Case 10 precommit and consistent visual vocabulary — 2026-10-07
+
+User accepted compact journal but requested consistent green check/text for stable
+prior and earned pairs. Source headings distinguish origin; large green fills stay
+removed. Remove selection dot because selected-card outline already carries the
+signal; preserve aria-pressed and repeat-click deselection. Codes optically centered
+in usable silhouette interior, rather than a uniform canvas center. Powder shape
+now broad rounded mound/scattered grains, unlike flask neck or faceted essence.
+
+Fresh contrast case lab-v0-10, Сердце глубины: 4 candidates per slot, 5 necessary
+constraints, 3 final checks, 9 research charges, stable-only priors. Complete hidden
+model precommitted in depth-10.json and DEPTH_10_FACILITATOR.md before play. Model
+has one full answer and a bounded seven-investigation feasibility witness; this
+is facilitator evidence, not a player hint. Checkpoint prototypes/PUZZLE_LAB_V0_10_STATE.md.
+Acceptance/difficulty pending. Next: human contrast play, quality criteria synthesis.
+Potential further UI simplifications should first be described, not silently
+implemented: repeated whole-formula rule, repeated selected names vs card codes,
+and explanatory copy only when relevant. Do not sacrifice return-from-pause clarity.
+Browser handoff verified in tab 20: title Сердце глубины, all selections empty,
+3/3 final checks, no result text/history. Tab 19 timed out during reload/close;
+fresh tab loads normally, root cause unknown. Twenty-one tests pass. Larger pool
+uses slightly tighter card padding while preserving font sizes. No player action
+or research performed in handed-off session.

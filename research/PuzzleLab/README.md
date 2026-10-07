@@ -102,3 +102,7 @@ Current fixture (case 09 completed and accepted): `fixtures/lantern-09.json` (ca
 Run `node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/lantern-09.json`.
 Initial state must be blank, playing, Science 3 / Research 6. The prior case 08
 is archived as exhausted; do not present an ordinary UI refresh as a new puzzle.
+
+Active fresh contrast: `fixtures/depth-10.json`, case 10. Run with
+`--fixture=research/PuzzleLab/fixtures/depth-10.json`. Initial state empty, playing,
+Science 3 / Research 9. Case 09 completed; its checkpoint preserves earned state.

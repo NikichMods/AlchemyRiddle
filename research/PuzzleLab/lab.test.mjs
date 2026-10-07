@@ -7,6 +7,23 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('tenth contrast has necessary clues and fits its precommitted investigative budget', () => {
+  const f=JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.url)));
+  validate(f);assert.ok(f.slots.every(s=>s.cards.length===4));
+  const s=createState(f);assert.deepEqual(s.selected,{});assert.deepEqual(s.history,[]);
+  assert.equal(s.science,3);assert.ok(s.knownRelations.every(r=>r.stable));
+  for(let i=0;i<f.clues.length;i++)assert.ok(candidates(f).filter(t=>validFormula({...f,clues:f.clues.filter((_,j)=>j!==i)},t)).length>1);
+  const probes=['f2:e1','p1:f2','p2:f1','p4:f2','p4:f4','p1:f4','f4:e1'];
+  for(const key of probes){
+    const [a,b]=key.split(':');const i=a.startsWith('p')?0:1;
+    const slots=[f.slots[i].id,f.slots[i+1].id];s.selected={[slots[0]]:a,[slots[1]]:b};
+    act(f,s,{type:'pairTest',slots});
+  }
+  const compatibleWithKnowledge=candidates(f).filter(t=>f.clues.every(c=>satisfies(f,t,c))&&!s.knownRelations.some(r=>!r.stable&&r.slots.every(id=>t[id]===r.tuple[id])));
+  assert.deepEqual(compatibleWithKnowledge,[f.answer]);assert.equal(s.research,2);
+  s.selected={...f.answer};act(f,s,{type:'submit'});assert.equal(s.status,'solved');
+});
+
 test('ninth fixture starts empty with three checks; every clue matters and branch research fits the budget', () => {
   const f=JSON.parse(readFileSync(new URL('./fixtures/lantern-09.json',import.meta.url)));
   validate(f); const s=createState(f);

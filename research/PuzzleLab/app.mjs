@@ -14,7 +14,7 @@ function cardRef(id) {
     svg.setAttribute('viewBox','0 0 40 34'); svg.setAttribute('aria-hidden','true');
     const path = document.createElementNS(svg.namespaceURI,'path');
     path.setAttribute('d', {
-      powder:'M2 30 L7 17 L12 17 L16 8 L23 8 L27 17 L32 17 L38 30 Z',
+      powder:'M1 31 Q6 28 10 20 Q14 10 20 10 Q26 10 30 20 Q34 28 39 31 Z M4 17 h1 M35 18 h1 M29 6 h1',
       fluid:'M14 2 H26 V9 L36 25 Q39 32 31 32 H9 Q1 32 4 25 L14 9 Z',
       essence:'M10 3 H30 L39 17 L30 31 H10 L1 17 Z'
     }[slot.id]);
@@ -47,7 +47,7 @@ function relationJournal(s) {
         li.className = `relation ${r.stable ? 'stable' : 'incompatible'} ${pairMatches(r,slots,s.selected) ? 'current' : ''}`;
         const names = document.createElement('span'); names.className = 'relation-names';
         names.textContent = r.slots.map(id => name(r.tuple[id])).join(' + ');
-        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? fresh ? '✓ Стабильно' : 'Стабильно' : '⊘ Несовместимо';
+        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Стабильно' : '⊘ Несовместимо';
         const refs = document.createElement('span'); refs.className = 'relation-refs';
         const connector = document.createElement('span'); connector.textContent = '↔';
         refs.append(cardRef(r.tuple[r.slots[0]]),connector,cardRef(r.tuple[r.slots[1]]),verdict);
@@ -97,6 +97,7 @@ function render() {
   $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
   $('quick-rules').textContent = view.pairTestCost ? 'Формуле нужны обе стабильные пары и выполнение всех сведений о составе.' : 'Все сведения о составе должны выполняться одновременно.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
+  document.body.classList.toggle('many-candidates',view.slots.some(slot=>slot.cards.length>3));
   $('cards').replaceChildren();
   for (const slot of view.slots) {
     const group = document.createElement('fieldset');
@@ -108,9 +109,8 @@ function render() {
       choose.setAttribute('aria-pressed',String(selected)); choose.setAttribute('aria-label',card.name);
       choose.title = selected ? 'Снять выбор' : 'Выбрать';
       choose.onclick = () => action({type:'toggleSelect',slot:slot.id,card:card.id});
-      const dot = document.createElement('span'); dot.className='selection-dot'; dot.setAttribute('aria-hidden','true');
       const text = document.createElement('strong'); text.textContent = card.name;
-      choose.append(dot,text,cardRef(card.id));
+      choose.append(text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
       group.append(box);
     }
