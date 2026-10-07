@@ -10,7 +10,7 @@ Puzzle Lab V0 is implemented on `research/puzzle-lab-v0`, with one synthetic two
 
 Immediate sequence:
 1. inspect the actual checkout/worktree and recover V0 from the plan and run instructions;
-2. case `lab-v0-03` (Сумеречный покров) is solved in one submission, with positive wording feedback; exact final state/observed reasoning: `docs/prototypes/PUZZLE_LAB_V0_03_STATE.md`. Next calibration should test deeper interaction while preserving clear/live wording; the observed path was tentative selection plus a derived property and overlap check, not the author's planned full elimination. Case 02 remains negative repetitive-clue evidence;
+2. case `lab-v0-03` is explicitly accepted as a pleasant initial puzzle. Next active case `lab-v0-04` (Чернильный щит) is precommitted for richer interaction; exact initial state/next point: `docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. Case 03 retains its observed reasoning in its checkpoint; case 02 remains negative repetitive-clue evidence;
 3. preserve exact player state/journal at material checkpoints, and record subjective findings;
 4. revise and extend positive cross-clue cases to RICH, mature/boss and representative three-slot play;
 5. distill the inference-quality acceptance contract;

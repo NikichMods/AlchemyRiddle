@@ -1,7 +1,7 @@
 # Puzzle Lab V0 — case 03 player checkpoint
 
 Status: **completed successfully in one submission; wording received positive
-player feedback; ordinary-play inference depth not yet established**.
+player feedback; accepted by the player as a pleasant initial puzzle**.
 Model: `research/PuzzleLab/fixtures/mist-03.json`.
 Facilitator record (synthetic spoilers):
 `research/PuzzleLab/fixtures/MIST_03_FACILITATOR.md`.
@@ -72,3 +72,9 @@ Next point: debrief is complete enough to preserve this outcome; next candidate
 should examine deeper interaction while keeping the approved clear/live wording
 and varied clue roles. Do not replace the solved session until next play is
 requested/authorized. Exact state is recorded above for cross-chat recovery.
+
+Acceptance refinement: the user explicitly called this puzzle pleasant/good and
+a normal initial puzzle, then authorized next play. Treat the whole case as a
+positive accepted initial exemplar, not only a wording demonstration. Do not
+generalize this acceptance to mature/boss depth. The session is now historical;
+case 04 is the next active precommitted investigation.

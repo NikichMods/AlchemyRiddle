@@ -5,6 +5,22 @@ import {readFileSync} from 'node:fs';
 import {act, candidates, clueText, createState, publicView, satisfies, validate} from './rules.mjs';
 import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
+test('fourth fixture is unique, every clue necessary, target condition active without a supplied literal', () => {
+  const f = JSON.parse(readFileSync(new URL('./fixtures/ink-04.json', import.meta.url)));
+  validate(f);
+  const rows = candidates(f);
+  for (let omit=0; omit<f.clues.length; omit++) {
+    assert.ok(rows.filter(t => f.clues.every((c,i) => i===omit || satisfies(f,t,c))).length>1);
+  }
+  assert.equal(rows.filter(t => f.clues.slice(0,2).every(c => satisfies(f,t,c))).length,3);
+  const implication = f.clues.find(c => c.kind==='implies');
+  const powder = f.slots[0].cards.find(c => c.id === f.answer.powder);
+  const fluid = f.slots[1].cards.find(c => c.id === f.answer.fluid);
+  assert.ok(powder.tags.includes(implication.if.tag));
+  assert.ok(fluid.tags.includes(implication.then.tag));
+  assert.equal(satisfies(f,{powder:'p1',fluid:'f3'},implication),false);
+  assert.equal(satisfies(f,{powder:'p2',fluid:'f3'},implication),true);
+});
 test('third fixture has distinct necessary constraints and consistent overlap/prohibition semantics', () => {
   const f = JSON.parse(readFileSync(new URL('./fixtures/mist-03.json', import.meta.url)));
   validate(f);

@@ -39,18 +39,18 @@ was replaced with short finite polling; new-tab reload reaches document state
 The server/fixture were not reset. The precise cause of the old-tab CDP timeout
 remains unproved; do not present the stream change as proof of that root cause.
 
-Current active fixture: `lab-v0-03`, synthetic target Сумеречный покров, with
-three distinct constraint roles: shared property, exact count, forbidden
-conjunction. Initial checkpoint/next point:
-`docs/prototypes/PUZZLE_LAB_V0_03_STATE.md`. No player-facing
+Current active fixture: `lab-v0-04`, synthetic target Чернильный щит, with
+shared property, exact count, conditional and forbidden-conjunction clues.
+Initial checkpoint/next point:
+`docs/prototypes/PUZZLE_LAB_V0_04_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
 and the revised layout somewhat better; finer UI polish is deferred.
 
 Run the current case:
-`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/mist-03.json`.
+`node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/ink-04.json`.
 The original `fixture.json` is retained as historical negative onboarding
-evidence. Nine deterministic/HTTP tests now pass, including the third case's
+evidence. Ten deterministic/HTTP tests now pass, including the fourth case's
 uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
 
 Case 02 feedback: the player independently articulated the correct answer,
@@ -71,8 +71,12 @@ Exact final state/reasoning are in the case-03 checkpoint. Retain as a positive
 wording/short-hypothesis case; do not claim the intended deeper elimination path
 was actually used or that mature inference quality is calibrated.
 
-Next: debrief and, when next play is authorized, prepare a case testing deeper
-interaction while preserving varied clue roles and clear/live wording. Technical
+The user subsequently accepted the whole case 03 as a pleasant initial puzzle
+and requested next play. Preserve it as a positive initial exemplar. Case 04
+is precommitted to test richer card interaction and an active conditional;
+generic conditional semantics are visible before play.
+
+Next: blind-play case 04 and capture the actual reasoning/interest. Technical
 smoke tests and successful deduction are not blanket acceptance of puzzle quality.
 
 State lives only in server memory. A restart or valid fixture replacement clears
