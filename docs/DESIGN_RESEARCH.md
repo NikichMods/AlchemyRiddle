@@ -7320,4 +7320,3 @@ Next step:
 define and blind-calibrate a small positive vocabulary of interesting inference structures before commissioning a corpus-wide inference-quality screen. Do not automate an undefined notion of "interesting" first.
 
 No installed-runtime test is required.
-
