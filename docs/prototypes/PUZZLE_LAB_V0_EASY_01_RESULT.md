@@ -41,8 +41,22 @@ display aliases, not accepted terminology. Unknown properties use a neutral
 fallback. The current fixture/budget/evaluator remain unchanged.
 
 Checks: JavaScript syntax, seven rules/HTTP tests and diff whitespace checks pass.
-Visual verification of the new rendering remains pending because the browser
-connection timed out. Server was not restarted; in-memory human state was not
-deliberately reset. Next interaction: player reviews the presentation and the
-debrief; author a new precommitted onboarding case after the learning issue is
-addressed. No exact ongoing player state can be recovered from this record.
+Visual verification was subsequently completed in a new browser tab after the
+old tab remained unresponsive. Server was not restarted; human state survived.
+Next interaction: player reviews the presentation and debrief; author a new
+precommitted onboarding case after the learning issue is addressed.
+
+## Recovered player state — 2026-10-07 loading incident
+
+Recovered from the rendered new tab, sharing the same browser session:
+- selected Powder p2 (Бархатная пыль), Fluid f1 (Лунная влага);
+- no marked/excluded cards;
+- notes empty;
+- exactly one submitted pair, p2 + f1, failure, cost 1 Science;
+- remaining Science 0; exhausted, submission disabled;
+- target, cards and both clues unchanged from the precommitted fixture;
+- debrief already started; no fresh blind continuation is possible.
+
+This supersedes the earlier recovery limitation without changing what was
+known at the original feedback checkpoint. Both selected components are Plant,
+so the failed pair satisfies the implication but violates exactly-one.

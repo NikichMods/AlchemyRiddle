@@ -60,7 +60,7 @@ function render() {
   if (focused && $(focused) !== document.activeElement) $(focused)?.focus({preventScroll:true});
 }
 async function request(path, body) {
-  const r = await fetch(path, body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {});
+  const r = await fetch(path, {signal:AbortSignal.timeout(5000), ...(body ? {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)} : {})});
   const data = await r.json(); if (!r.ok) throw new Error(data.error); return data;
 }
 function action(body) {
@@ -79,6 +79,25 @@ $('export').onclick = async () => {
 };
 try {view = await request('/api/state'); $('notes').value = view.state.notes; render();}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
+// Finite requests keep the embedded browser's navigation from waiting on a
+// permanent stream. Read only public presentation files; never reset sessions.
+const presentationFiles = ['/', '/app.mjs', '/style.css'];
 let revision;
-const events = new EventSource('/events');
-events.onmessage = e => {if (revision && revision !== e.data) {queue.then(() => location.reload());} revision = e.data;};
+async function checkPresentation() {
+  try {
+    const files = await Promise.all(presentationFiles.map(async path => {
+      const r = await fetch(path, {cache:'no-store', signal:AbortSignal.timeout(3000)});
+      if (!r.ok) throw new Error('Presentation unavailable');
+      return r.text();
+    }));
+    const current = await request('/api/state');
+    const {state: playerState, ...publicFixture} = current;
+    const next = JSON.stringify([files, publicFixture]);
+    if (revision && revision !== next) {await queue; location.reload(); return;}
+    revision = next;
+  } catch {
+    // Temporary loss of the dev server must not erase the player's board.
+  }
+  setTimeout(checkPresentation, 2000);
+}
+checkPresentation();

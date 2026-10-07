@@ -18,6 +18,8 @@ Open http://127.0.0.1:4173. Stop with Ctrl+C. Another port may be selected with
 accepted when it resolves to IPv4.
 
 HTML/CSS/browser-JS changes trigger live reload and preserve session state.
+The browser checks public presentation/fixture state with finite requests every
+two seconds; no permanent EventSource stream is opened during navigation.
 Changes to `server.mjs` or `rules.mjs` require a server restart. A valid changed
 fixture triggers reload and resets sessions; invalid edits retain the last
 valid fixture and print an error. Do not edit a fixture during blind play.

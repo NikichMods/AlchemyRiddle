@@ -10,8 +10,6 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
   let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
   validate(fixture);
   const sessions = new Map();
-  const streams = new Set();
-  let revision = randomUUID();
   const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css'};
   const server = http.createServer(async (req, res) => {
     const host = req.headers.host;
@@ -24,11 +22,6 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
     const path = new URL(req.url, `http://${host}`).pathname;
     const json = (value, status = 200) => {res.writeHead(status, {'Content-Type': 'application/json; charset=utf-8'}); res.end(JSON.stringify(value));};
     try {
-      if (req.method === 'GET' && path === '/events' && liveReload) {
-        res.writeHead(200, {'Content-Type': 'text/event-stream'});
-        res.write(`data: ${revision}\n\n`); streams.add(res);
-        req.on('close', () => streams.delete(res)); return;
-      }
       if (req.method === 'GET' && assets[path]) {
         const ext = assets[path].split('.').pop();
         res.writeHead(200, {'Content-Type': {html:'text/html; charset=utf-8', mjs:'text/javascript; charset=utf-8', css:'text/css; charset=utf-8'}[ext]});
@@ -61,13 +54,11 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
       try {
         const next = JSON.parse(readFileSync(fixturePath, 'utf8')); validate(next);
         if (JSON.stringify(next) !== JSON.stringify(fixture)) {fixture = next; sessions.clear();}
-        revision = randomUUID(); for (const stream of streams) stream.write(`data: ${revision}\n\n`);
       } catch (e) {console.error('Fixture reload rejected:', e.message);}
     };
-    for (const file of ['index.html', 'app.mjs', 'style.css']) watchers.push(watch(new URL(file, root), refresh));
     watchers.push(watch(fixturePath, refresh));
   }
-  server.on('close', () => {for (const w of watchers) w.close(); for (const s of streams) s.end();});
+  server.on('close', () => {for (const w of watchers) w.close();});
   return server;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

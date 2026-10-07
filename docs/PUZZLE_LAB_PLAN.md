@@ -31,9 +31,13 @@ First player feedback: `docs/prototypes/PUZZLE_LAB_V0_EASY_01_RESULT.md`.
 The easy fixture is formally valid but requires revised onboarding: repetitive
 single-property wording and conditional interpretation caused rejection/confusion.
 It is now in debrief; repeating it cannot count as a fresh blind attempt.
-Colored property badges and explicit slot frames have been implemented; visual
-verification is pending after browser-connection timeouts. Exact player session
-state was not recovered. The server/fixture were not reset.
+Colored property badges and explicit slot frames have been implemented and
+visually verified in a new browser tab. The old tab remained unresponsive while
+HTTP page/state requests returned 200 promptly. Permanent EventSource reload
+was replaced with short finite polling; new-tab reload reaches document state
+`complete`. Exact player state was recovered and persisted in the result record.
+The server/fixture were not reset. The precise cause of the old-tab CDP timeout
+remains unproved; do not present the stream change as proof of that root cause.
 
 Next: review the changed presentation and author a new precommitted onboarding
 case before expanding to RICH, mature and three-slot fixtures. Export/persist
