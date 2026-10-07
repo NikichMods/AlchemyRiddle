@@ -74,3 +74,11 @@ These facilitator fields remain server-side except observed relation results.
 Science / submissionCost. Repeating known pairs is free; the UI disables them.
 No Powder-Essence test, automatic exclusion or derived candidate set is offered.
 The initial knowledge state is fixed for calibration, not a production generator.
+Workspace interaction: click a candidate to select it; click again to deselect.
+Pair/formula actions are directly under the candidate grid. Pair states use only
+already observed knowledge; no tag-based deductions are supplied. The journal
+separates prior vs current-investigation observations and the two adjacent pair
+types, with polarity colors/icons and matching-selection highlights. General
+rules, notes and full action history are in expandable reference sections.
+Case 06 is retained with its historical mixed-polarity initial observations;
+new blind cases start with stable bridges only, per the clarified product policy.

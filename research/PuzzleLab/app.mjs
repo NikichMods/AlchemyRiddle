@@ -5,6 +5,37 @@ let queue = Promise.resolve();
 const name = id => view.slots.flatMap(s => s.cards).find(c => c.id === id)?.name ?? '—';
 const formula = tuple => view.slots.map(s => name(tuple[s.id])).join(' + ');
 const pairDescription = r => `${r.slots.map(id => name(r.tuple[id])).join(' + ')} — ${r.stable ? 'СТАБИЛЬНО' : 'НЕСОВМЕСТИМО'}`;
+const pairMatches = (r, slots, tuple) => r.slots.length === slots.length &&
+  r.slots.every((id,index) => id === slots[index]) && slots.every(id => tuple[id] && r.tuple[id] === tuple[id]);
+function relationJournal(s) {
+  const tested = s.history.filter(h => h.type === 'pairTest');
+  const groups = document.createDocumentFragment();
+  for (const fresh of [false,true]) {
+    const observations = s.knownRelations.filter(r => tested.some(h => pairMatches(h,r.slots,r.tuple)) === fresh);
+    if (!observations.length) continue;
+    const section = document.createElement('section'); section.className = `observation-source ${fresh ? 'new' : 'prior'}`;
+    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Мои исследования' : 'Было известно'; section.append(heading);
+    const columns = document.createElement('div'); columns.className = 'relation-columns';
+    for (let i=0; i<view.slots.length-1; i++) {
+      const slots = [view.slots[i].id,view.slots[i+1].id];
+      const column = document.createElement('section');
+      const title = document.createElement('h4'); title.textContent = `${view.slots[i].name} ↔ ${view.slots[i+1].name}`; column.append(title);
+      const list = document.createElement('ul');
+      for (const r of observations.filter(r => r.slots.every((id,index) => id === slots[index]))) {
+        const li = document.createElement('li');
+        li.className = `relation ${r.stable ? 'stable' : 'incompatible'} ${pairMatches(r,slots,s.selected) ? 'current' : ''}`;
+        const names = document.createElement('span'); names.className = 'relation-names';
+        names.textContent = r.slots.map(id => name(r.tuple[id])).join(' + ');
+        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Стабильно' : '⊘ Несовместимо';
+        li.append(names,verdict); list.append(li);
+      }
+      if (!list.childElementCount) {const li = document.createElement('li'); li.className='empty'; li.textContent='Нет наблюдений'; list.append(li);}
+      column.append(list); columns.append(column);
+    }
+    section.append(columns); groups.append(section);
+  }
+  return groups;
+}
 // Presentation palette only: colors carry no additional logical meaning.
 const tagStyles = {
   'Растительное':'plant', 'Минеральное':'mineral', 'Тёмное':'dark',
@@ -31,23 +62,24 @@ function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
   $('title').textContent = view.title; $('description').textContent = view.description;
+  $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
+  $('quick-rules').textContent = view.pairTestCost ? 'Все сведения действуют одновременно. Обе соседние пары должны быть стабильны. Теги не определяют совместимость.' : 'Все сведения действуют одновременно. Выбор и пометки бесплатны. Проверка сообщает только успех или неудачу.';
   document.body.classList.toggle('three-slot', view.slots.length === 3);
-  const aside = document.querySelector('.layout aside');
-  if (view.slots.length === 3) $('pair-research').before(aside);
-  else document.querySelector('.layout').append(aside);
   $('cards').replaceChildren();
   for (const slot of view.slots) {
     const group = document.createElement('fieldset');
     const legend = document.createElement('legend'); legend.textContent = slot.name; group.append(legend);
     for (const card of slot.cards) {
-      const box = document.createElement('div'); box.className = `card ${s.marks[card.id] ? 'excluded' : ''}`;
-      const label = document.createElement('label');
-      const radio = document.createElement('input'); radio.type = 'radio'; radio.name = slot.id; radio.checked = s.selected[slot.id] === card.id;
-      radio.id = `select-${card.id}`;
-      radio.onchange = () => action({type:'select', slot:slot.id, card:card.id});
+      const selected = s.selected[slot.id] === card.id;
+      const box = document.createElement('div'); box.className = `card ${s.marks[card.id] ? 'excluded' : ''} ${selected ? 'selected' : ''}`;
+      const choose = document.createElement('button'); choose.className = 'choose'; choose.id = `select-${card.id}`;
+      choose.setAttribute('aria-pressed',String(selected)); choose.setAttribute('aria-label',card.name);
+      choose.title = selected ? 'Снять выбор' : 'Выбрать';
+      choose.onclick = () => action({type:'toggleSelect',slot:slot.id,card:card.id});
+      const dot = document.createElement('span'); dot.className='selection-dot'; dot.setAttribute('aria-hidden','true');
       const text = document.createElement('strong'); text.textContent = card.name;
-      label.append(radio, text); box.append(label);
-      const tags = document.createElement('p'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); box.append(tags);
+      choose.append(dot,text);
+      const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
       const mark = document.createElement('button'); mark.className = 'mark';
       const markAction = s.marks[card.id] ? 'Вернуть в рассмотрение' : 'Пометить исключённым';
       mark.textContent = s.marks[card.id] ? '↶' : '⊘';
@@ -61,19 +93,26 @@ function render() {
   $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
   $('selection').textContent = formula(s.selected);
   $('pair-research').hidden = !view.pairTestCost;
+  $('knowledge').hidden = !view.pairTestCost;
+  $('pair-help').hidden = !view.pairTestCost;
   if (view.pairTestCost) {
-    $('research-budget').textContent = `Заряды исследования: ${s.research} · Стоимость исследования пары: ${view.pairTestCost}`;
+    $('research-budget').textContent = `Заряды: ${s.research}`;
     $('pair-actions').replaceChildren(...view.slots.slice(0,-1).map((slot,i) => {
       const slots = [slot.id,view.slots[i+1].id];
-      const known = s.knownRelations.find(r => r.slots.every((id,index) => id === slots[index]) &&
-        slots.every(id => s.selected[id] && r.tuple[id] === s.selected[id]));
+      const complete = slots.every(id => s.selected[id]);
+      const known = s.knownRelations.find(r => pairMatches(r,slots,s.selected));
+      const panel = document.createElement('section'); panel.className=`pair-control ${known ? known.stable ? 'stable' : 'incompatible' : complete ? 'unknown' : 'incomplete'}`;
+      const heading = document.createElement('h3'); heading.textContent = `${slot.name} ↔ ${view.slots[i+1].name}`;
+      const status = document.createElement('span'); status.className='verdict';
+      status.textContent = known ? known.stable ? '✓ Стабильно' : '⊘ Несовместимо' : complete ? '? Не исследовано' : '— Выберите пару';
+      const names = document.createElement('p'); names.className='pair-names'; names.textContent=slots.map(id=>name(s.selected[id])).join(' + ');
       const button = document.createElement('button'); button.id = `test-${slot.id}`;
-      button.textContent = known ? `${slots.map(id => view.slots.find(x => x.id === id).name).join(' + ')}: ${known.stable ? 'стабильно' : 'несовместимо'}`
-        : `Исследовать: ${slot.name.toLowerCase()} + ${view.slots[i+1].name.toLowerCase()}`;
-      button.disabled = s.status !== 'playing' || Boolean(known) || s.research < view.pairTestCost || !slots.every(id => s.selected[id]);
-      button.onclick = () => action({type:'pairTest',slots}); return button;
+      button.textContent = known ? 'Уже известно' : `Исследовать · −${view.pairTestCost} заряд`;
+      button.setAttribute('aria-label', `Исследовать: ${slot.name.toLowerCase()} + ${view.slots[i+1].name.toLowerCase()}`);
+      button.disabled = s.status !== 'playing' || Boolean(known) || s.research < view.pairTestCost || !complete;
+      button.onclick = () => action({type:'pairTest',slots}); panel.append(heading,status,names,button); return panel;
     }));
-    $('relations').replaceChildren(...s.knownRelations.map(r => {const li = document.createElement('li'); li.textContent = pairDescription(r); return li;}));
+    $('relations').replaceChildren(relationJournal(s));
   }
   $('budget').textContent = `Science: ${s.science} · Стоимость проверки: ${view.submissionCost}`;
   $('submit').disabled = s.status !== 'playing' || !view.slots.every(slot => s.selected[slot.id]);

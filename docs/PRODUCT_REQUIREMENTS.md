@@ -742,3 +742,33 @@ conditions. Retain this positive exemplar without requiring the author's intende
 proof route or claiming deeper abstract inference was observed. Difficulty was
 subjectively medium. Repetition is evaluated by the cognitive work it creates,
 not merely by counting identical operators or sentence openings.
+
+### Three-slot workspace and starting bridges — accepted 2026-10-07
+
+Case 06 was explicitly accepted as a satisfying three-slot puzzle after three
+pair investigations and one successful formula verification. The actual route
+followed known stable anchors, rejected continuations and joined a final stable
+chain. Subjective medium / medium-high difficulty is not a calibrated band.
+Ordinary later puzzles should offer meaningful thought given limited natural
+target demand; onboarding should teach rather than merely fill progression.
+Approximate spoken recipe-demand counts do not replace the accepted corpus.
+
+Accepted UI intent: candidates, selected-pair states, pair/formula actions,
+target clues and observations should share a scan-friendly desktop workspace.
+Repeat-click deselects a candidate. Pair states reflect observed knowledge only:
+stable / incompatible / unknown / incomplete. Distinguish outcomes by text/icon
+and color, pair type, and initial vs current-investigation origin. Highlight
+matching selected-pair observations. Do not auto-check tag constraints or exclude
+candidates for the player. General grammar/economy reference belongs in one
+expandable place; keep the task and a few short core rules visible.
+
+Starting-knowledge clarification supersedes the earlier initial presentation
+rule of showing all prior pair polarities: at the start, present only STABLE
+pair observations, as partial bridges. Once the player researches pairs, retain
+and show every result, including INCOMPATIBLE. This does not equate tags with
+empirical compatibility or make stable pairs sufficient for the target. Preserve
+case 06's mixed initial state as historical evidence; do not rewrite a completed
+or active model. New blind models must precommit stable-only starting observations
+and budget against that information. Cross-investigation storage/reuse of prior
+negative results is not specified by this clarification; do not silently delete
+durable history or infer an automatic re-test/refund policy.

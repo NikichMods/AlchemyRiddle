@@ -51,3 +51,12 @@ Previous case 05 is completed and persisted before restart.
 Player checkpoint: `docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`.
 Next: blind human play. Capture reasoning and subjective response before
 explaining the intended path; do not treat this as mature/boss acceptance.
+
+## Human outcome — 2026-10-07
+
+Completed with three pair investigations and one successful synthesis; explicit
+positive acceptance. Actual route: f3e2 incompatible, f1e1 incompatible, p2f2
+stable, then p2f2e2 success. Final state/narration and UI findings are canonical
+in the case-06 player checkpoint. No model changes during play. Subsequent user
+clarification selects stable-only initial bridges for future fixtures; preserve
+this mixed starting-knowledge case as historical evidence.

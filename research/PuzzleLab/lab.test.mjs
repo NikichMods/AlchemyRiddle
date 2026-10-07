@@ -7,6 +7,24 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('repeat-click selection clears only its slot, remains free and requires reselecting for submission', () => {
+  const s = createState(harbor); s.selected={...harbor.answer};
+  act(harbor,s,{type:'toggleSelect',slot:'essence',card:'e2'});
+  assert.deepEqual(s.selected,{powder:'p2',fluid:'f2'});
+  assert.throws(() => act(harbor,s,{type:'submit'}));
+  assert.equal(s.science,1); assert.equal(s.research,4); assert.equal(s.history.length,0);
+  act(harbor,s,{type:'toggleSelect',slot:'essence',card:'e2'});
+  assert.deepEqual(s.selected,harbor.answer);
+  act(harbor,s,{type:'toggleSelect',slot:'essence',card:'e1'});
+  assert.equal(s.selected.essence,'e1');
+  assert.throws(() => act(harbor,s,{type:'toggleSelect',slot:'essence',card:'p1'}));
+  assert.equal(s.selected.essence,'e1');
+  const two = createState(fixture);
+  act(fixture,two,{type:'toggleSelect',slot:'powder',card:'p1'});
+  act(fixture,two,{type:'toggleSelect',slot:'powder',card:'p1'});
+  assert.deepEqual(two.selected,{}); assert.equal(two.science,1);
+});
+
 test('three-slot model requires clues and both adjacent edges, with four initial hypotheses', () => {
   validate(harbor);
   const all = candidates(harbor);
@@ -167,6 +185,9 @@ test('three-slot HTTP exposes only prior and earned observations; third slot and
   const action = body => fetch(base+'/api/action',{method:'POST',headers,body:JSON.stringify(body)});
   assert.equal((await action({type:'pairTest',slots:['powder','essence']})).status,400);
   for (const slot of harbor.slots) await action({type:'select',slot:slot.id,card:harbor.answer[slot.id]});
+  await action({type:'toggleSelect',slot:'essence',card:harbor.answer.essence});
+  assert.equal((await action({type:'submit'})).status,400);
+  await action({type:'toggleSelect',slot:'essence',card:harbor.answer.essence});
   const observed = await (await action({type:'pairTest',slots:['powder','fluid']})).json();
   assert.equal(observed.state.research,3); assert.equal(observed.state.science,1);
   assert.equal(observed.state.knownRelations.length,6); assert.equal(observed.state.status,'playing');

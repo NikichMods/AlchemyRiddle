@@ -1,12 +1,41 @@
 <!doctype html>
 <!-- SPDX-License-Identifier: MPL-2.0 -->
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Puzzle Lab</title><link rel="stylesheet" href="/style.css"></head>
-<body><main><header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge">Синтетический опыт</span></header>
-<h1 id="title">Загрузка исследования…</h1><p id="description"></p>
-<div class="layout"><section><h2>Кандидаты</h2><p class="muted">Выберите по одной карточке. Пометки — ваши гипотезы, они ничего не исключают автоматически.</p><div id="cards"></div>
-<section id="pair-research" class="panel" hidden><h2>Исследование пар</h2><p>Формула требует двух стабильных пар: порошок + жидкость и жидкость + эссенция. Стабильность пары сама по себе не гарантирует правильную формулу. Свойства на карточках не определяют совместимость.</p><p id="research-budget"></p><div id="pair-actions"></div><h3>Известные результаты</h3><ul id="relations"></ul><p class="muted">Это все прежние наблюдения для данного набора веществ. Выбор пары бесплатен; новое исследование тратит заряд. Заряды не пополняются. Порошок + эссенция отдельно не исследуются.</p></section>
-<section class="submission"><h2>Ваша формула</h2><p id="selection"></p><p id="budget"></p><button id="submit" disabled>Проверить формулу</button><p id="result" role="status" aria-live="polite"></p></section></section>
-<aside><section class="panel"><h2>Сведения о составе</h2><ol id="clues"></ol><details><summary>Как читать условия</summary><p>Все сведения верны одновременно. «Ровно одно» означает: одно утверждение верно, остальные ложны. «Если А, то Б» запрещает только сочетание верного А с ложным Б; обратное из него не следует.</p></details></section>
-<section class="panel"><h2>Правила опыта</h2><p>«Ровно один» — из выбранных компонентов это свойство есть у одного и отсутствует у остальных. У компонента может быть несколько свойств: каждое сведение проверяется отдельно.</p><p>Проверка формулы сообщает только успех или неудачу. Science не пополняется; после исчерпания бюджета проверок опыт заканчивается. Выбор и пометки бесплатны.</p><p class="muted">Состояние хранится до остановки сервера или замены задачи. Перед завершением сохраните журнал.</p></section></aside></div>
-<section class="panel"><h2>Записи исследователя</h2><label for="notes">Ход рассуждений и места, где возникли сомнения</label><textarea id="notes" maxlength="4000" rows="3"></textarea><span id="saved" role="status"></span><h3>Проверки</h3><ol id="history"></ol><button id="export">Скачать журнал</button></section>
-<p id="error" role="alert"></p><footer>Исследовательский стенд · формулы и названия вымышлены</footer></main><script type="module" src="/app.mjs"></script></body></html>
+<body><main>
+<header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge">Синтетический опыт</span></header>
+<h1 id="title">Загрузка исследования…</h1><p id="task"></p>
+<div class="workspace">
+  <section class="board" aria-label="Кандидаты и действия">
+    <h2>Кандидаты <span class="heading-note">Клик — выбрать, повторный — снять выбор</span></h2>
+    <div id="cards"></div>
+    <section id="pair-research" hidden aria-label="Выбранные пары">
+      <div class="section-heading"><h2>Выбранные пары</h2><span id="research-budget"></span></div>
+      <div id="pair-actions" aria-live="polite"></div>
+    </section>
+    <section class="submission" aria-label="Полная формула">
+      <div><h2>Ваша формула</h2><p id="selection"></p><span id="budget"></span></div>
+      <button id="submit" disabled>Проверить формулу</button>
+      <p id="result" role="status" aria-live="polite"></p>
+    </section>
+    <p id="error" role="alert"></p>
+  </section>
+  <aside class="evidence" aria-label="Условия и наблюдения">
+    <section class="clue-panel"><h2>Сведения о составе</h2><ol id="clues"></ol></section>
+    <section id="knowledge" hidden><h2>Наблюдения о парах</h2><div id="relations" aria-live="polite"></div></section>
+  </aside>
+</div>
+<p id="quick-rules" class="quick-rules"></p>
+<details class="reference"><summary>Как устроен опыт</summary>
+  <p id="description"></p>
+  <p>«Ровно один» — свойство есть у одного выбранного компонента и отсутствует у остальных. «Если А, то Б» запрещает только верное А вместе с ложным Б; обратное не следует. Все сведения верны одновременно. Свойства перечислены полностью; названия не добавляют правил.</p>
+  <p id="pair-help" hidden>Формуле нужны стабильные пары порошок + жидкость и жидкость + эссенция. Стабильность пары не гарантирует правильную формулу и не определяется совпадением тегов. Порошок + эссенция отдельно не исследуются. В журнале показаны прежние и новые наблюдения для данного набора веществ.</p>
+  <p>Выбор и пометки бесплатны. Пометка — ваша гипотеза: карточка остаётся доступна. Исследование неизвестной пары тратит заряд; известную повторять не нужно. Проверка полной формулы тратит Science и сообщает только успех или неудачу. Ресурсы не пополняются; исчерпание зарядов исследования не мешает оставшейся проверке формулы. После успеха или исчерпания Science опыт завершён.</p>
+  <p>Состояние хранится до остановки сервера или замены задачи. Перед завершением сохраните журнал.</p>
+</details>
+<details class="notebook"><summary>Записи и история действий</summary>
+  <label for="notes">Ход рассуждений и места, где возникли сомнения</label>
+  <textarea id="notes" maxlength="4000" rows="3"></textarea><span id="saved" role="status"></span>
+  <h3>Действия</h3><ol id="history"></ol>
+</details>
+<button id="export" class="export">Скачать журнал</button>
+</main><script type="module" src="/app.mjs"></script></body></html>

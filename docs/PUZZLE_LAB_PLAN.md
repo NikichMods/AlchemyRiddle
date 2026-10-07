@@ -1,6 +1,6 @@
 # Puzzle Lab local research tool — working plan
 
-Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 precommitted for three-slot play. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
+Status: **V0 implemented on research/puzzle-lab-v0; cases 03, 04 and 05 accepted as positive two-slot exemplars; case 06 accepted after three-slot play; workspace revision ready for review. Not production UI architecture; no Graveyard Keeper runtime behavior is changed**.
 
 ## Current execution checkpoint — 2026-10-07
 
@@ -19,7 +19,7 @@ browser reload for presentation/fixture edits. Answer and evaluator stay on the
 server; debug routes require explicit `--debug`. One Science/one submission is
 this fixture's bounded calibration budget, not accepted production balance.
 
-Verified locally on Node 24.19.0: fourteen deterministic/HTTP tests pass, including
+Verified locally on Node 24.19.0: fifteen deterministic/HTTP tests pass, including
 clue truth tables, uniqueness, budget exhaustion, invalid requests, session
 continuity and player/debug separation. Browser checks prove initial rendering,
 selection, notes, personal marking, failed submission and exhausted-budget UI.
@@ -41,7 +41,7 @@ remains unproved; do not present the stream change as proof of that root cause.
 
 Current active fixture: `lab-v0-06`, synthetic target Тихая гавань, with
 three slots, three varied target clues, prior adjacent-pair observations and paid pair research.
-Initial checkpoint/next point:
+Completed checkpoint/next point:
 `docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`. No player-facing
 difficulty labels or progression indicators are added; progression presentation
 is a separate open product decision. The user found the colored tags attractive
@@ -50,7 +50,7 @@ and the revised layout somewhat better; finer UI polish is deferred.
 Run the current case:
 `node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/harbor-06.json`.
 The original `fixture.json` is retained as historical negative onboarding
-evidence. Fourteen deterministic/HTTP tests now pass, including the fourth case's
+evidence. Fifteen deterministic/HTTP tests now pass, including the fourth case's
 uniqueness, per-clue necessity and overlap/forbidden-conjunction semantics.
 
 Case 02 feedback: the player independently articulated the correct answer,
@@ -93,7 +93,7 @@ claiming increased abstract proof depth. Exact final state and narration are in
 the case-05 checkpoint. UI watch item for the next pass: red cross resembles a
 close/remove action; use a different manual-exclusion marker, keeping cards
 visible and restoration available. The icon feedback was initially deferred; the next harness UI pass implements it without changing marking semantics.
-Case 06 is precommitted before play. The bounded harness extension supports three
+Case 06 was precommitted before play and is now completed. The bounded harness extension supports three
 slots, prior stable/incompatible observations and unknown adjacent-pair tests.
 Science 1 funds one formula check; four separate Research Charges fund pair tests
 at cost 1. No refill; spent research charges do not block remaining synthesis.
@@ -101,7 +101,7 @@ All prior observations on the surface are shown without relevance labels, and
 no survivor set or deductions are calculated for the player. This is one frozen
 knowledge state of the accepted three-slot core, not a generator or game mod.
 The marker now uses a slashed circle instead of a close-like red cross.
-Next: blind-play case 06, capture the actual route and subjective experience,
+Next: review the compact workspace with the preserved completed case, then precommit a stable-start example,
 then continue calibration
 toward mature/boss and three-slot calibration. Technical
 smoke tests and successful deduction are not blanket acceptance of puzzle quality.
@@ -300,3 +300,50 @@ research controls, to avoid burying them beneath the observation journal.
 Collaboration preference is canonical in AGENTS.md: execute obvious agreed next
 steps autonomously; check before major unaccepted direction/mechanics/scope
 decisions. Do not ask for permission merely to carry out an already accepted step.
+
+## Compact workspace checkpoint — 2026-10-07
+
+Case 06 completed successfully: three pair investigations, no failed synthesis,
+one successful complete formula; Science 0, Research Charges 1. Explicit positive
+acceptance, subjective medium / medium-high. Detailed exact history/narration:
+`docs/prototypes/PUZZLE_LAB_V0_06_STATE.md`.
+
+Requested workspace changes are implemented: three candidate columns with
+repeat-click selection/deselection; pair actions and formula action immediately
+below them; observed pair statuses beside each action; target clues and relation
+journal alongside candidates. Stable/incompatible entries differ by color and
+symbol; initial/current-investigation observations and pair types are separated;
+matching selected pairs highlighted. General rules consolidated under a single
+reference disclosure, notes/history under another. No automatic tag reasoning.
+
+Tests: all 15 pass, including server toggle semantics, invalid incomplete synthesis
+and unchanged pair/Science budgets. Isolated browser verification confirmed
+repeat-click deselection, unknown/known-incompatible states, new observation
+classification and matching highlight. At actual 1600x900 viewport the core fit
+without scrolling; other sizes are not claimed from that check. A requested
+1280x800 viewport override reported 1600x1000 in the page, so it is not evidence
+for the nominal size; override reset. Small screens use a stacked layout.
+
+The server must restart for new action semantics. Preserve the completed case
+by reconstructing its previously recorded three pair actions and successful
+submission, then verify the resulting state matches the saved checkpoint. This
+technical restoration is not a second human playtest.
+
+New accepted initial presentation: only STABLE pair observations at entry; once
+research begins, keep and display all new outcomes. Do not retrofit case 06's
+frozen mixed-polarity model. This supersedes the previous all-polarities initial
+surface for new fixtures. Cross-investigation negative-history reuse remains
+unspecified; do not delete durable history. Next: review layout, then precommit a
+new three-slot example under the stable-start policy; mature/boss quality open.
+Completed-state restoration was browser-verified against the pre-restart record:
+three pair outcomes in the same order, one synthesis success, selected p2/f2/e2,
+Science 0, one Research Charge, eight observations (three personally tested),
+empty notes and all marks off. The current visible viewport measured 1151x1065
+and the core ended at y~781. Two-slot browser regression also passed.
+
+QA session note: localhost ports on the same hostname share the browser cookie;
+a secondary-port browser session can replace the primary Lab cookie. Run all
+secondary UI checks before final primary-session restoration, or use a separate
+hostname/profile. Final primary restoration was rechecked through page reload
+only after temporary servers/tabs were closed; budgets, journal and selection
+still matched the completed player record.

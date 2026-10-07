@@ -86,10 +86,14 @@ export function act(f, state, action) {
   if (action.type === 'notes') {
     if (typeof action.text !== 'string' || action.text.length > 4000) throw new Error('Недопустимая заметка');
     state.notes = action.text;
-  } else if (action.type === 'select' || action.type === 'mark') {
+  } else if (action.type === 'select' || action.type === 'toggleSelect' || action.type === 'mark') {
     const slot = f.slots.find(s => s.id === action.slot);
     if (!slot?.cards.some(c => c.id === action.card)) throw new Error('Неизвестная карточка');
     if (action.type === 'select') state.selected[slot.id] = action.card;
+    else if (action.type === 'toggleSelect') {
+      if (state.selected[slot.id] === action.card) delete state.selected[slot.id];
+      else state.selected[slot.id] = action.card;
+    }
     else state.marks[action.card] = !state.marks[action.card];
   } else if (action.type === 'pairTest') {
     if (!f.compatibility || !adjacent(f,action.slots)) throw new Error('Исследуйте только соседние пары');
