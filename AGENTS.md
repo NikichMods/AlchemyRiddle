@@ -2,7 +2,7 @@
 
 This repository follows the canonical global development rules in `NikichMods/DevRules`.
 
-Before substantive technical work, read:
+For local Codex startup/recovery, follow `DevRules/CODEX_WORKFLOW.md`. Read the engineering/Git contract before substantive technical work; consult CI and new-project bootstrap guidance when relevant. Global policy files:
 - `ENGINEERING_RULES.md`
 - `CI_POLICY.md`
 - `GIT_WORKFLOW.md`
@@ -25,7 +25,7 @@ The project is in **design/research phase**. The main solution-space comparison 
 
 Canonical product requirements and acceptance envelope: `docs/PRODUCT_REQUIREMENTS.md`.
 
-Canonical design/research status and open questions: `docs/DESIGN_RESEARCH.md`.
+Canonical design/research status and open questions: `docs/DESIGN_RESEARCH.md`, starting with its Current recovery entry point. Dated migration checkpoints and prototype records preserve supporting evidence; their names do not determine current priority.
 
 When blind/player-facing paper prototypes are active, `docs/PAPER_PROTOTYPE_PROTOCOL.md` is mandatory execution guidance. Read it before starting or resuming a prototype, including after a chat migration.
 
@@ -51,7 +51,7 @@ Cross-project Graveyard Keeper 1.407 research is centralized in `NikichMods/Grav
 
 Reusable vanilla facts discovered here must be promoted to the appropriate shared canonical research document and indexed in `docs/RESEARCH_INDEX.md`. Product-specific puzzle semantics, UX choices, candidate identity, release state, and acceptance remain canonical in this repository.
 
-At bootstrap, the shared research index contains farming/fertilizer, crafting, UI and other reusable facts, but no canonical alchemy-system research entry. Treat exact alchemy mechanics as open until established from current evidence.
+Shared alchemy mechanics and accepted loaded-runtime facts are now canonical in `NikichMods/GraveyardKeeperResearch/docs/ALCHEMY_SYSTEM.md`; project aggregate corpus evidence is in `docs/RUNTIME_CORPUS_ANALYSIS.md`. Consult that evidence before reopening a host-mechanics question. Remaining product/generator questions are owned here.
 
 ## Evidence and anti-spoiler contract
 

@@ -2,6 +2,14 @@
 
 Status: **OPEN — adaptive knowledge-aware selected as the three-slot puzzle core; full production architecture and implementation gates remain open**
 
+## Current recovery entry point
+
+The selected two-slot and three-slot architecture remains accepted; production remains BLOCKED. No runtime test is currently required. The highest-leverage open generator question is inference quality / intellectual interest, distinct from numerical difficulty.
+
+Next: revise positive matched examples to require genuine cross-clue inference; blind-calibrate a minimal easy/rich and mature/boss two-slot spread plus a representative three-slot case; distill the inference-quality acceptance contract; then run a bounded real-corpus serviceability screen. The first matched HARD/MAX examples are negative evidence, not accepted positive exemplars.
+
+Read `PRODUCT_REQUIREMENTS.md`, the relevant accepted sections below, and `PAPER_PROTOTYPE_PROTOCOL.md` before play. The dated `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md` retains the consolidated accepted model and continuation history; use this section for the current resume pointer, not the checkpoint filename. Update this section when a material milestone changes the next step; preserve detailed historical evidence separately.
+
 ## Research objective
 
 Establish whether Graveyard Keeper 1.407's vanilla alchemy can support a coherent, targetable deduction puzzle with an added information layer, and identify the smallest mechanism that satisfies `docs/PRODUCT_REQUIREMENTS.md`.

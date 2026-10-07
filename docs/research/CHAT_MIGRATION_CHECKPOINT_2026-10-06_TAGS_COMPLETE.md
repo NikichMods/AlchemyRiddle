@@ -1,6 +1,6 @@
 # Chat migration checkpoint — 2026-10-06 — property model complete
 
-Status: **canonical recovery checkpoint for the next chat**.
+Status: **historical consolidated recovery checkpoint and continuation evidence**. Current resume priority is maintained in `docs/DESIGN_RESEARCH.md` under Current recovery entry point; accepted product semantics remain owned by the canonical requirements/design docs.
 
 This checkpoint resolves any ambiguity between older intermediate research notes
 and later accepted decisions. Repository state and this checkpoint outrank chat
