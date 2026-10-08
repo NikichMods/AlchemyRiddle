@@ -99,3 +99,20 @@ Gentle action-oriented composition guidance is raised as a possible direction;
 no replacement text selected. The header note stays absent. Collaboration-rule
 changes will be reviewed in chat before any private instruction-file mutation;
 personal draft is not stored in this public repository.
+
+## Subsequent accepted guidance refinement
+
+User accepts the general action prompt under composition:
+“Сопоставляйте свойства выбранных компонентов с условиями, чтобы подобрать
+подходящий состав.” Implemented in `?roles=1`, without an implication-specific
+lesson. Further playtests will assess its usefulness.
+
+User finds “какие сочетания подходят” ambiguous: it leaves the object of suitability
+unspecified. Replace the research sentence with “Исследуйте неизвестные пары,
+чтобы узнать, какие из них стабильны.” This names the actual observation rather
+than suggesting that a stable pair alone proves the full formula.
+
+Powder now resembles the ordinary font to the user; Fluid and Essence stand out
+well. Keep the current Powder hue for now: stronger yellow risks renewed Animal
+resemblance. This is a deferred visual refinement, not a claim of solved hue
+separation. Mechanics, fixture and recorded player trace remain unchanged.

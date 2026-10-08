@@ -9,11 +9,13 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 User accepts the direct compatibility/action wording and authorizes lighter
 less-orange Powder plus cooler lavender Essence, keeping Fluid. Implemented in
 `?roles=1`; remove the vague extra “connection” paragraph. Composition header note
-remains absent; a new gentle action prompt is only a proposal. Read latest section
+now uses the accepted gentle component/property comparison prompt. Pair research
+copy explicitly names stability as its result. Read latest section
 in `research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`. Current chat also prepares
-collaboration/verification preferences for user review before private persistence;
+collaboration/verification preferences were accepted for private persistence;
 do not copy them into public project docs. No new puzzle or mechanics. Next:
-review palette and proposed communication rules. Production BLOCKED.
+review the guidance in playtests; retain Powder hue pending a stronger alternative.
+Production BLOCKED.
 
 ### UI review: synthesis accepted; guidance correction discussed — 2026-10-09
 

@@ -117,11 +117,12 @@ function render() {
   const s = view.state;
   const shared = view.economy?.mode === 'sharedScience';
   document.body.classList.toggle('role-preview',showClueRoles);
-  // Removed by user decision; wait for fresh-player evidence before adding a lesson.
-  $('clue-guide').hidden=true;
-  $('clue-guide').textContent='';
+  $('clue-guide').hidden=!showClueRoles;
+  $('clue-guide').textContent=showClueRoles
+    ? 'Сопоставляйте свойства выбранных компонентов с условиями, чтобы подобрать подходящий состав.'
+    : '';
   $('compatibility-guide').textContent=showClueRoles
-    ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией. Исследуйте неизвестные пары, чтобы выяснить, какие сочетания подходят.'
+    ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией. Исследуйте неизвестные пары, чтобы узнать, какие из них стабильны.'
     : 'Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.';
   $('experiment-guide').hidden=true;
   $('experiment-guide').textContent='';
