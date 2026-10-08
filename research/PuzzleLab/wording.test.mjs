@@ -12,7 +12,7 @@ const f=JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.u
 const t=(slot,tag='А')=>({slot,tag});
 const literal=(slot,count)=>({kind:'exactly',count,terms:[t(slot)]});
 
-test('all sixteen active templates cover their admitted shapes and slot grammar',()=>{
+test('all twenty-eight active templates cover their admitted shapes and slot grammar',()=>{
   const models=[literal('powder',1),literal('powder',0),
     {kind:'exactly',count:1,terms:[t('powder'),t('essence','Б')]},
     {kind:'implies',if:t('powder'),then:t('essence','Б')},
@@ -22,13 +22,24 @@ test('all sixteen active templates cover their admitted shapes and slot grammar'
   for(const c of models) for(const id of eligibleTemplates(f,c,{authoring:true})) {
     ids.add(id);assert.ok(renderTemplate(f,c,id,legacyClueText).endsWith('.'));
   }
-  assert.equal(ids.size,16);
+  assert.equal(ids.size,28);
   for(const s of f.slots) {
     const c=literal(s.id,0),noun=s.name.toLowerCase();
     assert.match(renderTemplate(f,c,'lacks-note-v1',legacyClueText),new RegExp(`нуж${s.id==='powder'?'ен':'на'} ${noun}`));
     const implication={kind:'implies',if:t('essence'),then:t(s.id)};
     assert.ok(renderTemplate(f,implication,'implies-plain-v1',legacyClueText).includes(`${noun} долж${s.id==='powder'?'ен':'на'}`));
+    assert.ok(renderTemplate(f,literal(s.id,1),'has-scope-v1',legacyClueText).includes(`долж${s.id==='powder'?'ен':'на'} входить ${noun}`));
+    assert.ok(renderTemplate(f,implication,'implies-choice-v1',legacyClueText).includes(`с ${s.id==='powder'?'порошком':s.id==='fluid'?'жидкостью':'эссенцией'} со свойством`));
+    for(const c of [literal(s.id,0),literal(s.id,1),implication]) {
+      const texts=new Set();
+      for(let variantOffset=0;variantOffset<4;variantOffset++) {
+        const next=authorWording({...f,clues:[c]},legacyClueText,{variantOffset});
+        validateWording(next,legacyClueText);texts.add(next.wording.entries[0].text);
+      }
+      assert.equal(texts.size,4);
+    }
   }
+  for(const c of models) assert.equal(new Set(eligibleTemplates(f,c,{authoring:true}).map(id=>renderTemplate(f,c,id,legacyClueText))).size,4);
   assert.equal(renderTemplate(f,models[4],'forbids-plain-v1',legacyClueText),
     'Для этой смеси нельзя одновременно взять жидкость со свойством «А» и эссенцию со свойством «Б».');
   assert.equal(renderTemplate(f,models[4],'forbids-note-v1',legacyClueText),
@@ -102,7 +113,7 @@ test('authoring is deterministic, answer-independent and retains all formula out
   assert.equal(view.clueAsides.filter(Boolean).length,1);
   assert.ok(!('wording' in view)&&!('answer' in view));
   const repeated={...f,clues:[literal('powder',1),literal('fluid',1),literal('essence',1)]};
-  assert.deepEqual(authorWording(repeated,legacyClueText).wording.entries.map(e=>e.templateId),['has-plain-v1','has-note-v1','has-plain-v1']);
+  assert.deepEqual(authorWording(repeated,legacyClueText).wording.entries.map(e=>e.templateId),['has-plain-v1','has-note-v1','has-choice-v1']);
 });
 
 test('legacy fixtures remain opt-in and corrupt frozen records fail validation',()=>{

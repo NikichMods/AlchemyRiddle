@@ -17,22 +17,34 @@ The examples below are independent, not a combined recipe.
 | --- | --- | --- |
 | has-plain-v1 | One positive literal | Эссенция имеет свойство «А». |
 | has-note-v1 | One positive literal | У эссенции в этой смеси должно быть свойство «А». |
+| has-choice-v1 | One positive literal | Для этой смеси нужна эссенция со свойством «А». |
+| has-scope-v1 | One positive literal | В состав должна входить эссенция со свойством «А». |
 | lacks-plain-v1 | One negative literal | Порошок не имеет свойства «А». |
 | lacks-note-v1 | One negative literal | Для этой смеси нужен порошок без свойства «А». |
+| lacks-choice-v1 | One negative literal | Для этого состава выбирайте порошок без свойства «А». |
+| lacks-scope-v1 | One negative literal | В этой смеси у порошка не должно быть свойства «А». |
 | xor-plain-v2 | Exactly one of two assertions | Выполняется ровно одно из двух условий: либо порошок имеет свойство «А», либо эссенция имеет свойство «Б». |
-| xor-note-v1 | Exactly one of two assertions | В этой смеси либо порошок имеет свойство «А», либо эссенция имеет свойство «Б» — но не оба одновременно. |
+| xor-note-v1 | Exactly one of two assertions | В этой смеси либо порошок имеет свойство «А», либо эссенция имеет свойство «Б» — но не оба условия одновременно. |
 | xor-either-v1 | Exactly one of two assertions | Для этой смеси нужно одно из двух: порошок имеет свойство «А» или эссенция имеет свойство «Б». Одновременно оба условия выполняться не должны. |
 | xor-one-v1 | Exactly one of two assertions | Из этих двух условий должно выполняться только одно: порошок имеет свойство «А» или эссенция имеет свойство «Б». |
 | implies-plain-v1 | A implies B | Если порошок имеет свойство «А», эссенция должна иметь свойство «Б». |
 | implies-note-v1 | A implies B | При выборе порошка со свойством «А» нужна эссенция со свойством «Б». |
+| implies-choice-v1 | A implies B | Для этой смеси порошок со свойством «А» можно взять только с эссенцией со свойством «Б». |
+| implies-scope-v1 | A implies B | Если в смеси используется порошок со свойством «А», у эссенции должно быть свойство «Б». |
 | forbids-plain-v1 | Not both A and B, target-specific | Для этой смеси нельзя одновременно взять жидкость со свойством «А» и эссенцию со свойством «Б». |
 | forbids-note-v1 | Not both A and B, target-specific | В этом составе сочетание жидкости со свойством «А» и эссенции со свойством «Б» не допускается. |
+| forbids-choice-v1 | Not both A and B, target-specific | Если для этой смеси берёте жидкость со свойством «А», выбирайте эссенцию без свойства «Б». |
+| forbids-scope-v1 | Not both A and B, target-specific | В этой смеси жидкость со свойством «А» и эссенция со свойством «Б» не должны встречаться вместе. |
 | count-two-plain-v1 | Three selected slots, same property, count 2 | Среди трёх выбранных компонентов ровно два имеют свойство «А». |
 | count-two-note-v1 | Three selected slots, same property, count 2 | Свойство «А» должно быть у двух выбранных компонентов, а у третьего его быть не должно. |
+| count-two-choice-v1 | Three selected slots, same property, count 2 | Два выбранных компонента должны иметь свойство «А», а один — не иметь его. |
+| count-two-scope-v1 | Three selected slots, same property, count 2 | В этой тройке свойство «А» есть ровно у двух компонентов. |
 | shared-plain-v1 | SharedTag, all selected slots | У всех выбранных компонентов есть хотя бы одно общее свойство. |
 | shared-note-v1 | SharedTag, all selected slots | Нужно хотя бы одно свойство, которое есть у каждого выбранного компонента. |
+| shared-choice-v1 | SharedTag, all selected slots | Все выбранные компоненты должны иметь хотя бы одно общее свойство. |
+| shared-scope-v1 | SharedTag, all selected slots | Среди свойств выбранных компонентов хотя бы одно должно встречаться у каждого из них. |
 
-SharedTag is included because the existing Lab supports it. Its two new phrasings
+SharedTag is included because the existing Lab supports it. Its four phrasings
 remain drafts; they do not add a new logical family. The shared property need not
 be the only common property or be named in advance.
 
@@ -91,12 +103,12 @@ Research authoring defaults to no aside; one can be explicitly attached. This
 does not fix production frequency or a stochastic selection algorithm.
 Template/aside choice must not depend on which answer, branch or reagent is true.
 
-Case-15 refinement: sixteen active core phrases; four exact-one variants and two
-for every other covered family. Explicit authoring variantOffset rotates choice
+Post-case-15 review: twenty-eight active core phrases; four variants for each
+of the seven covered families. Twelve added templates preserve existing IDs/text. Explicit authoring variantOffset rotates choice
 across cases as well as within a repeated family, independent of hidden truth.
 Persist exact chosen IDs/text; no synonym swapping during play. Keep recognisable
 anchors (named slots, exact properties, conditional scope and exactly-one).
-Two new variants are semantically reviewed, not independently player-accepted.
+The added variants are semantically reviewed, not independently player-accepted.
 
 Example, independent of any live case:
 

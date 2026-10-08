@@ -109,8 +109,8 @@ old feedback/display envelope. UI module loads only for opted-in cases, so alrea
 running legacy servers do not require a restart or a new asset route.
 
 Asides have thirty active timeless IDs in `authoringAsides`; retired historical IDs
-remain valid only for frozen records. XOR has four active variants; other covered
-families have two. `--variant-offset=N` selects a deterministic alternate independent
+remain valid only for frozen records. Each of the seven covered wording families
+has four active variants (28 total). `--variant-offset=N` selects a deterministic alternate independent
 of answer/chemistry, persisted as exact template ID/text. No per-play paraphrasing.
 
 State is held in server memory, associated with an HttpOnly session cookie.

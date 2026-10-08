@@ -3,9 +3,9 @@
 import {asides,authoringAsides} from './keeper-asides.mjs';
 export {asides,authoringAsides};
 const forms = {
-  Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',need:'нужен',must:'должен'},
-  Жидкость: {nom:'жидкость',gen:'жидкости',acc:'жидкость',need:'нужна',must:'должна'},
-  Эссенция: {nom:'эссенция',gen:'эссенции',acc:'эссенцию',need:'нужна',must:'должна'}
+  Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',ins:'порошком',need:'нужен',must:'должен'},
+  Жидкость: {nom:'жидкость',gen:'жидкости',acc:'жидкость',ins:'жидкостью',need:'нужна',must:'должна'},
+  Эссенция: {nom:'эссенция',gen:'эссенции',acc:'эссенцию',ins:'эссенцией',need:'нужна',must:'должна'}
 };
 const capital = s => s[0].toUpperCase()+s.slice(1);
 function family(f,c) {
@@ -31,7 +31,7 @@ export function eligibleTemplates(f,c,{authoring=false}={}) {
     const current=['xor-plain-v2','xor-note-v1','xor-either-v1','xor-one-v1'];
     return authoring?current:[...current,'xor-plain-v1'];
   }
-  return [`${type}-plain-v1`,`${type}-note-v1`];
+  return [`${type}-plain-v1`,`${type}-note-v1`,`${type}-choice-v1`,`${type}-scope-v1`];
 }
 export function renderTemplate(f,c,id,fallback) {
   if(!eligibleTemplates(f,c).includes(id)) throw new Error('Ineligible wording template');
@@ -47,6 +47,18 @@ export function renderTemplate(f,c,id,fallback) {
   const noun=t=>forms[f.slots.find(s=>s.id===t.slot).name];
   const assertion=t=>`${noun(t).nom} имеет свойство «${t.tag}»`;
   const part=(t,gram='nom')=>`${noun(t)[gram]} со свойством «${t.tag}»`;
+  if(id==='has-choice-v1') {const t=c.terms[0];return `Для этой смеси ${noun(t).need} ${part(t)}.`;}
+  if(id==='has-scope-v1') {const t=c.terms[0];return `В состав ${noun(t).must} входить ${part(t)}.`;}
+  if(id==='lacks-choice-v1') {const t=c.terms[0];return `Для этого состава выбирайте ${noun(t).acc} без свойства «${t.tag}».`;}
+  if(id==='lacks-scope-v1') {const t=c.terms[0];return `В этой смеси у ${noun(t).gen} не должно быть свойства «${t.tag}».`;}
+  if(id==='implies-choice-v1') return `Для этой смеси ${part(c.if)} можно взять только с ${part(c.then,'ins')}.`;
+  if(id==='implies-scope-v1') return `Если в смеси используется ${part(c.if)}, у ${noun(c.then).gen} должно быть свойство «${c.then.tag}».`;
+  if(id==='forbids-choice-v1') return `Если для этой смеси берёте ${part(c.left,'acc')}, выбирайте ${noun(c.right).acc} без свойства «${c.right.tag}».`;
+  if(id==='forbids-scope-v1') return `В этой смеси ${part(c.left)} и ${part(c.right)} не должны встречаться вместе.`;
+  if(id==='count-two-choice-v1') return `Два выбранных компонента должны иметь свойство «${c.terms[0].tag}», а один — не иметь его.`;
+  if(id==='count-two-scope-v1') return `В этой тройке свойство «${c.terms[0].tag}» есть ровно у двух компонентов.`;
+  if(id==='shared-choice-v1') return 'Все выбранные компоненты должны иметь хотя бы одно общее свойство.';
+  if(id==='shared-scope-v1') return 'Среди свойств выбранных компонентов хотя бы одно должно встречаться у каждого из них.';
   if(id==='xor-either-v1') return `Для этой смеси нужно одно из двух: ${assertion(c.terms[0])} или ${assertion(c.terms[1])}. Одновременно оба условия выполняться не должны.`;
   if(id==='xor-one-v1') return `Из этих двух условий должно выполняться только одно: ${assertion(c.terms[0])} или ${assertion(c.terms[1])}.`;
   switch(family(f,c)) {

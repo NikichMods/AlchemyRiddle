@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Full wording variety review — 2026-10-08
+
+User requests about four natural variants per supported condition and the complete
+Russian review list, including all Keeper asides. Future-case authoring now has
+28 core phrases: four for each of seven covered shapes, plus thirty active asides.
+See CLUE_TEMPLATE_SHEET.md and research/PuzzleLab/wording.mjs. Twelve additional
+templates have new immutable IDs; previous text/played fixtures remain unchanged.
+Exact implication direction, target scope, counts and all-component intersection
+retained. Selection remains answer-independent and frozen before play. Full Lab
+suite: 41 passing tests. Individual new lines await player wording review; no new
+trial opened. Next experimental evidence remains error recovery with precommitted
+support in a fresh case. Production BLOCKED.
+
 ### Coherent-voice trial completed and recovery support — case 15, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
