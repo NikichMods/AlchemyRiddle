@@ -1,5 +1,15 @@
 # Puzzle quality — Lab calibration synthesis
 
+Latest human supplement, 2026-10-08: case 14 independently solved with three
+target-relevant pair checks and one success (11 Science spent, 9 remain, no refill).
+Verdict clear/pleasant/confident; varied one-to-four-tag surface appreciated.
+Semicolon XOR disliked as robotic while the prohibition clause sounded natural.
+Small italic separate aside liked but voice mismatch with the formal condition
+reported. Evaluate human wording of the condition itself, not merely decoration.
+Future either/or wording and thirty optional Keeper asides preserve logic and
+frozen historical text. Positive one-player evidence, not causal wording or pacing
+calibration. See prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md.
+
 2026-10-07. Status: **completed evidence synthesis; working evaluation rubric**.
 Owning product direction: [PRODUCT_REQUIREMENTS.md](PRODUCT_REQUIREMENTS.md).
 This operationalizes accepted principles; it does not accept production balance,

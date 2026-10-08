@@ -1,5 +1,16 @@
 # Human-readable clue wording — case 13 follow-up
 
+Current refinement after case 14, 2026-10-08: human wording is required in the
+condition itself, not only its aside. Semicolon XOR felt robotic and conflicted
+with the human note; target-prohibition wording was praised as natural. New
+authoring uses xor-plain-v2: "Выполняется ровно одно из двух условий: либо …,
+либо …". Old xor-plain-v1 text is immutable and still validates. Generic future
+count fallback also avoids semicolon lists under plain-fallback-v2; old fallback
+remains readable. Optional aside pool has thirty lines in keeper-asides.mjs,
+without answer dependence, new hints or invented past player events. Small italic
+separate presentation is liked; cross-line voice coherence needs further evidence.
+No new requirement to lengthen a solved puzzle or increase aside frequency.
+
 2026-10-08. User rejects singleton "exactly zero of these statements" as unnatural.
 Direct predicate/negation is the accepted repair. Also requested an explicit
 distinction: stable adjacent pairs are necessary, but all target composition
@@ -35,7 +46,7 @@ not count as reasoning diversity. Surface wording and effective logical work are
 separate review axes; simplify under actual field constants before labeling depth.
 
 Completed bounded artifact: [CLUE_TEMPLATE_SHEET.md](CLUE_TEMPLATE_SHEET.md),
-with 14 core phrases, three independent optional Keeper asides, applicability
+with 14 active core phrases, thirty independent optional Keeper asides, applicability
 guards and semantic checks. Future Lab integration is implemented through explicit
 offline authoring and validated frozen wording records; production integration is
 not implemented. No extra blind

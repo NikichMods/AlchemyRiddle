@@ -957,3 +957,11 @@ that every target composition condition must also hold. User proposes reviewed
 natural and optionally immersive variants with exact predicate semantics retained.
 See CLUE_WORDING_POLICY.md. No free-form phrase generator or new feedback oracle
 accepted. Surface variation does not establish effective reasoning diversity.
+
+Case-14 accepted refinement: conditions themselves should sound human; a lively
+aside cannot repair a formal/robotic main sentence. Avoid semicolon XOR lists in
+new text; preserve exactly-one with explicit either/or. Prefer short Keeper notes
+with occasional character, without claiming conversations, prior mistakes or
+other events the player did not experience. Small italic separate asides are liked;
+optional pool expanded to thirty in research. No lore NPC delivery, new deductions,
+mandatory note frequency or production implementation accepted.

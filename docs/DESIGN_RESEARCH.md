@@ -4,16 +4,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
-### Active Keeper-wording trial — case 14, 2026-10-08
+### Keeper-wording trial completed — case 14, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
-User authorizes a fresh readability trial after template integration. Final private
-model and exact text precommitted, source/converted truth agrees on all 27 tuples.
-Two necessary conditions plus one separate Keeper aside; no priors or paid history,
-Science 20. Preserve prior completed cases; do not reveal deductions or route data.
-Browser handoff on 4177/tab 4 verified including separated aside and empty durable
-session. Next interaction is first player choice. Production
-remains BLOCKED; no causal wording or human difficulty claim yet.
+Independently solved: three pair checks, one success, 11 Science spent, 9 remain,
+no refill or off-target checks. Positive verdict: clear, pleasant, confident;
+rich tag surface appreciated. Original model/text and solved session on 4177 held.
+Semicolon XOR felt robotic; separate small italic note liked, but main condition
+and aside sounded like different authors. Smooth target-prohibition wording praised.
+User requests human wording throughout and about thirty varied optional asides.
+Future authoring uses either/or XOR and comma-list/explicit-zero fallback under new
+IDs; played old IDs preserved. Keeper aside pool expanded 3 -> 30. Thirty-five
+tests pass. No pricing/ranking/chemistry change or new blind case. Next evidence:
+coherent condition-plus-note voice in future play; readability benefit is not yet
+causally established. Production remains BLOCKED.
 
 ### Knowledge trial completed and wording repair — case 13, 2026-10-08
 

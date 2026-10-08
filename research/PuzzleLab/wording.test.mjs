@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,rmSync,writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {authorWording,eligibleTemplates,renderTemplate,validateWording} from './wording.mjs';
+import {authorWording,asides,eligibleTemplates,renderTemplate,validateWording} from './wording.mjs';
 import {authorFile} from './author-wording.mjs';
 import {createLab} from './server.mjs';
 import {legacyClueText,publicView,createState,candidates,validFormula,validate} from './rules.mjs';
@@ -19,7 +19,7 @@ test('all fourteen templates cover their admitted shapes and slot grammar',()=>{
     {kind:'notTogether',left:t('fluid'),right:t('essence','Б')},
     {kind:'exactly',count:2,terms:f.slots.map(s=>t(s.id))},{kind:'sharedTag'}];
   const ids=new Set();
-  for(const c of models) for(const id of eligibleTemplates(f,c)) {
+  for(const c of models) for(const id of eligibleTemplates(f,c,{authoring:true})) {
     ids.add(id);assert.ok(renderTemplate(f,c,id,legacyClueText).endsWith('.'));
   }
   assert.equal(ids.size,14);
@@ -41,12 +41,33 @@ test('out-of-scope counts, duplicate terms and unfamiliar slot labels use plain 
     {...count,terms:[t('powder'),t('fluid'),t('essence','Б')]},
     {...count,terms:[t('powder'),t('powder'),t('fluid')]},
     {kind:'exactly',count:1,terms:[t('powder'),t('powder')]}]) {
-    assert.deepEqual(eligibleTemplates(f,c),['plain-fallback-v1']);
+    assert.deepEqual(eligibleTemplates(f,c,{authoring:true}),['plain-fallback-v2']);
     assert.equal(renderTemplate(f,c,'plain-fallback-v1',legacyClueText),legacyClueText(f,c));
+    assert.ok(!renderTemplate(f,c,'plain-fallback-v2',legacyClueText).includes(';'));
     assert.throws(()=>renderTemplate(f,c,'count-two-note-v1',legacyClueText));
   }
-  assert.deepEqual(eligibleTemplates({...f,slots:f.slots.slice(0,2)}, {...count,terms:count.terms.slice(0,2)}),['plain-fallback-v1']);
-  assert.deepEqual(eligibleTemplates({...f,slots:f.slots.map(s=>({...s,name:'Other'}))},literal('powder',1)),['plain-fallback-v1']);
+  assert.deepEqual(eligibleTemplates({...f,slots:f.slots.slice(0,2)}, {...count,terms:count.terms.slice(0,2)},{authoring:true}),['plain-fallback-v2']);
+  assert.deepEqual(eligibleTemplates({...f,slots:f.slots.map(s=>({...s,name:'Other'}))},literal('powder',1),{authoring:true}),['plain-fallback-v2']);
+});
+
+test('new XOR wording uses either/or while frozen v1 wording remains valid',()=>{
+  const c={kind:'exactly',count:1,terms:[t('powder'),t('fluid')]};
+  const model={...f,clues:[c]};
+  const current=authorWording(model,legacyClueText);
+  assert.equal(current.wording.entries[0].templateId,'xor-plain-v2');
+  assert.equal(current.wording.entries[0].text,'Выполняется ровно одно из двух условий: либо порошок имеет свойство «А», либо жидкость имеет свойство «А».');
+  const old={...model,wording:{version:1,entries:[{templateId:'xor-plain-v1',text:'Выполняется ровно одно из двух условий: порошок имеет свойство «А»; жидкость имеет свойство «А».'}]}};
+  validateWording(old,legacyClueText);
+  assert.deepEqual(publicView(old,createState(old)).clues,[old.wording.entries[0].text]);
+});
+
+test('all thirty unique optional asides persist independently of clause and answer',()=>{
+  assert.equal(Object.keys(asides).length,30);assert.equal(new Set(Object.values(asides)).size,30);
+  for(const [asideId,asideText] of Object.entries(asides)) {
+    const next=authorWording(f,legacyClueText,{asideId});validate(next);
+    assert.equal(publicView(next,createState(next)).clueAsides[0],asideText);
+    assert.deepEqual(next.wording,authorWording({...f,answer:{}},legacyClueText,{asideId}).wording);
+  }
 });
 
 test('authoring is deterministic, answer-independent and retains all formula outcomes',()=>{

@@ -19,7 +19,7 @@ The examples below are independent, not a combined recipe.
 | has-note-v1 | One positive literal | У эссенции в этой смеси должно быть свойство «А». |
 | lacks-plain-v1 | One negative literal | Порошок не имеет свойства «А». |
 | lacks-note-v1 | One negative literal | Для этой смеси нужен порошок без свойства «А». |
-| xor-plain-v1 | Exactly one of two assertions | Выполняется ровно одно из двух условий: порошок имеет свойство «А»; эссенция имеет свойство «Б». |
+| xor-plain-v2 | Exactly one of two assertions | Выполняется ровно одно из двух условий: либо порошок имеет свойство «А», либо эссенция имеет свойство «Б». |
 | xor-note-v1 | Exactly one of two assertions | В этой смеси либо порошок имеет свойство «А», либо эссенция имеет свойство «Б» — но не оба одновременно. |
 | implies-plain-v1 | A implies B | Если порошок имеет свойство «А», эссенция должна иметь свойство «Б». |
 | implies-note-v1 | A implies B | При выборе порошка со свойством «А» нужна эссенция со свойством «Б». |
@@ -47,6 +47,33 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 | note-label-v1 | Записать крупнее, чтобы не перепутать банки. |
 | note-underline-v1 | Подчеркнуть. Лучше дважды. |
 | note-legible-v1 | Оставить место между строками. Это ещё придётся перечитывать. |
+| note-quill-v1 | Перо положить подальше от реагентов. |
+| note-ink-v1 | Чернила оставить для записей. |
+| note-jar-v1 | Подписать банку, а не крышку. |
+| note-lid-v1 | Крышки переставляются слишком легко. |
+| note-cleanup-v1 | Запись должна пережить уборку. |
+| note-mortar-v1 | Не класть этот лист под ступку. |
+| note-stains-v1 | Для пятен оставить другой лист. |
+| note-margins-v1 | На полях ещё есть место. Пока. |
+| note-unhurried-v1 | Почерк разобрать проще, если не спешить. |
+| note-abbreviations-v1 | Здесь обойтись без сокращений. |
+| note-sermon-v1 | Это заметка, а не проповедь. Покороче. |
+| note-scroll-v1 | Свиток красивый. Читаемость полезнее. |
+| note-flourish-v1 | Не украшать буквы до неузнаваемости. |
+| note-signature-v1 | Внизу оставить место для подписи. |
+| note-drying-v1 | Свернуть позже. Чернилам дать высохнуть. |
+| note-kindling-v1 | Этот лист хранить с записями, а не с растопкой. |
+| note-neatness-v1 | Если получится красиво — хорошо. Если разборчиво — лучше. |
+| note-cup-v1 | Убрать от кружки. Бумаге пить не положено. |
+| note-working-v1 | Рабочая запись. Парадный почерк необязателен. |
+| note-morgue-v1 | Морг отдельно, письменный стол отдельно. |
+| note-corpses-v1 | Покойники почерк не оценят. Мне ещё читать. |
+| note-trade-v1 | Не отдавать этот лист вместе с товаром. |
+| note-tomorrow-v1 | Главное, чтобы завтра это смог прочесть я сам. |
+| note-margin-scroll-v1 | Пометку на полях не превращать в ещё один свиток. |
+| note-draft-v1 | Спрятать от сквозняка. Рабочие записи летать не обязаны. |
+| note-lunch-v1 | Не забыть про обед. Эта запись его не заменит. |
+| note-grand-v1 | Записать спокойно. В торжественном тоне смесь не нуждается. |
 
 These are intentions, not assertions that the player previously made mistakes,
 performed experiments, met NPCs or completed quests. Do not claim new chemical
@@ -99,6 +126,11 @@ validated persisted IDs and exact text, separate aside rendering. Slot forms cov
 Unsupported shapes/names retain plain fallback. No completed fixture was edited
 or restarted. Six additional tests cover template grammar, scope/fallbacks,
 answer independence/outcome preservation, corrupted records, exclusive file writes
-and HTTP persistence across restart. Complete Lab suite: 33 passing tests.
-Next evidence is human readability in a separately precommitted future trial;
-no new trial is opened by this integration. Production remains BLOCKED.
+and HTTP persistence across restart. Original integration: 33 passing tests. Case-14 refinement: 35 passing tests.
+Case 14 was independently solved and liked; its semicolon XOR was rejected.
+Future XOR uses xor-plain-v2 with either/or; historical xor-plain-v1 remains valid.
+Future fallback uses comma-list count text or explicit zero negations under
+plain-fallback-v2; old fallback IDs remain readable. Thirty optional asides now
+provide more variety without changing optional frequency or puzzle semantics.
+Next evidence is whether human conditions and asides sound like one voice; no
+additional trial is opened by this refinement. Production remains BLOCKED.

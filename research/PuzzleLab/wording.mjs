@@ -1,15 +1,12 @@
 // SPDX-License-Identifier: MPL-2.0
 // Versioned authoring templates. Never change v1 text under an existing ID.
+import {asides} from './keeper-asides.mjs';
+export {asides};
 const forms = {
   Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',need:'нужен',must:'должен'},
   Жидкость: {nom:'жидкость',gen:'жидкости',acc:'жидкость',need:'нужна',must:'должна'},
   Эссенция: {nom:'эссенция',gen:'эссенции',acc:'эссенцию',need:'нужна',must:'должна'}
 };
-export const asides = Object.freeze({
-  'note-label-v1':'Записать крупнее, чтобы не перепутать банки.',
-  'note-underline-v1':'Подчеркнуть. Лучше дважды.',
-  'note-legible-v1':'Оставить место между строками. Это ещё придётся перечитывать.'
-});
 const capital = s => s[0].toUpperCase()+s.slice(1);
 function family(f,c) {
   if (!f.slots.every(s=>Object.hasOwn(forms,s.name))) return 'fallback';
@@ -27,13 +24,22 @@ function family(f,c) {
     new Set(c.terms.map(t=>t.tag)).size===1) return 'count-two';
   return 'fallback';
 }
-export function eligibleTemplates(f,c) {
+export function eligibleTemplates(f,c,{authoring=false}={}) {
   const type=family(f,c);
-  return type==='fallback'?['plain-fallback-v1']:[`${type}-plain-v1`,`${type}-note-v1`];
+  if(type==='fallback') return authoring?['plain-fallback-v2']:['plain-fallback-v2','plain-fallback-v1'];
+  if(type==='xor') return authoring?['xor-plain-v2','xor-note-v1']:['xor-plain-v2','xor-note-v1','xor-plain-v1'];
+  return [`${type}-plain-v1`,`${type}-note-v1`];
 }
 export function renderTemplate(f,c,id,fallback) {
   if(!eligibleTemplates(f,c).includes(id)) throw new Error('Ineligible wording template');
   if(id==='plain-fallback-v1') return fallback(f,c);
+  if(id==='plain-fallback-v2') {
+    if(c.kind!=='exactly') return fallback(f,c);
+    const term=t=>`${f.slots.find(s=>s.id===t.slot).name.toLowerCase()} имеет свойство «${t.tag}»`;
+    if(c.terms.length===1) return fallback(f,c);
+    if(c.count===0) return c.terms.map(t=>`${f.slots.find(s=>s.id===t.slot).name} не имеет свойства «${t.tag}».`).join(' ');
+    return `Должно выполняться ровно ${c.count} из этих условий: ${c.terms.map(term).join(', ')}.`;
+  }
   const note=id.endsWith('-note-v1');
   const noun=t=>forms[f.slots.find(s=>s.id===t.slot).name];
   const assertion=t=>`${noun(t).nom} имеет свойство «${t.tag}»`;
@@ -41,7 +47,9 @@ export function renderTemplate(f,c,id,fallback) {
   switch(family(f,c)) {
     case 'has': {const t=c.terms[0];return note?`У ${noun(t).gen} в этой смеси должно быть свойство «${t.tag}».`:`${capital(assertion(t))}.`;}
     case 'lacks': {const t=c.terms[0];return note?`Для этой смеси ${noun(t).need} ${noun(t).nom} без свойства «${t.tag}».`:`${capital(noun(t).nom)} не имеет свойства «${t.tag}».`;}
-    case 'xor': return note?`В этой смеси либо ${assertion(c.terms[0])}, либо ${assertion(c.terms[1])} — но не оба условия одновременно.`:`Выполняется ровно одно из двух условий: ${c.terms.map(assertion).join('; ')}.`;
+    case 'xor': return note?`В этой смеси либо ${assertion(c.terms[0])}, либо ${assertion(c.terms[1])} — но не оба условия одновременно.`:
+      id==='xor-plain-v1'?`Выполняется ровно одно из двух условий: ${c.terms.map(assertion).join('; ')}.`:
+      `Выполняется ровно одно из двух условий: либо ${assertion(c.terms[0])}, либо ${assertion(c.terms[1])}.`;
     case 'implies': return note?`При выборе ${part(c.if,'gen')} ${noun(c.then).need} ${part(c.then)}.`:`Если ${assertion(c.if)}, ${noun(c.then).nom} ${noun(c.then).must} иметь свойство «${c.then.tag}».`;
     case 'forbids': return note?`В этом составе сочетание ${part(c.left,'gen')} и ${part(c.right,'gen')} не допускается.`:`Для этой смеси нельзя одновременно взять ${part(c.left,'acc')} и ${part(c.right,'acc')}.`;
     case 'count-two': return note?`Свойство «${c.terms[0].tag}» должно быть у двух выбранных компонентов, а у третьего его быть не должно.`:`Среди трёх выбранных компонентов ровно два имеют свойство «${c.terms[0].tag}».`;
@@ -70,7 +78,7 @@ export function authorWording(f,fallback,{asideId,asideAt=0}={}) {
     throw new Error('Invalid authoring aside');
   const occurrences=new Map();
   const entries=f.clues.map(c=>{
-    const ids=eligibleTemplates(f,c), key=ids[0], n=occurrences.get(key)??0;
+    const ids=eligibleTemplates(f,c,{authoring:true}), key=ids[0], n=occurrences.get(key)??0;
     occurrences.set(key,n+1);
     const templateId=ids[n%ids.length];
     return {templateId,text:renderTemplate(f,c,templateId,fallback)};

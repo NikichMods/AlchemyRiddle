@@ -1,6 +1,7 @@
 # Corpus case 14 — Keeper wording human trial
 
-Status: ACTIVE, browser handed off; awaiting first player choice (2026-10-08).
+Status: COMPLETED, independently solved and reviewed (2026-10-08).
+The precommit and original wording below remain historical evidence.
 User authorizes the fresh readability trial after versioned wording integration.
 Production remains BLOCKED. This is formative evidence from one familiar player,
 not an isolated causal comparison or population study.
@@ -69,3 +70,37 @@ Science 20, no observations, final submission disabled pending a full selection.
 Layout checked by screenshot. Durable private session exists with model hash
 matching, empty selection/history and status playing. No player action performed
 by facilitator. Continue this session; do not create a replacement.
+
+## Human outcome and wording refinement
+
+Frozen file/hash-bound durable state verified unchanged. Three new paid pair
+checks and one successful whole submission; no refill, 11 Science spent, 9 remain.
+Anonymous trace: p1:f1 negative, p1:f3 stable, f3:e3 stable, successful p1:f3:e3.
+Initial six tag-valid hypotheses; all checks lie on then-unrefuted tag-valid
+proposals, zero off-target checks. Public completed snapshot and derived audit:
+research/PuzzleLab/fixtures/corpus-14.completed.public.json and corpus-14-audit.json.
+No facilitator deduction, changed model or extra hint during play.
+
+Player appreciated the visually lively range of one-to-four-tag cards. Independently
+assumed one XOR branch, rejected its first pair, established the second pair,
+used the forbidden-combination clue to select an essence and certified/submitted.
+Final verdict: clear, understandable, confident, pleasant; overall liked.
+Retain as positive ordinary corpus evidence with a three-check reasoning path.
+No reliable solving duration or population pacing/causal wording benefit established.
+
+Opening feedback distinguishes condition text from puzzle outcome: semicolon XOR
+was logically correct but unnatural/uncomfortable. Small italic aside was liked
+as a distinct note, yet sounded like a human annotating a robot's formal condition.
+Second prohibition wording was explicitly praised as smooth and natural; the same
+aside would fit it. Player wants all condition text human, not just the decoration.
+Use "Выполняется ровно одно из двух условий: либо …, либо …" for future XORs.
+Preserve exact-one semantics and the played xor-plain-v1 record.
+
+User authorizes expanding optional Keeper notes toward 30 varied unforced lines.
+Clarified agent's previous count: fourteen condition templates, only three asides.
+Future pool now has 30 asides; none adds clue information or invented past events.
+Optional, separate presentation and at-most-one per case retained. Semantic rules,
+prices, ranking and chemistry unchanged. New XOR/fallback IDs used for future
+authoring; old IDs remain readable. Thirty-five Lab tests pass. Next evidence is
+whether the human condition and note now feel like one voice in future play.
+No new blind case opened or completed-case restart performed.

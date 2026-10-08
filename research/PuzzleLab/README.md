@@ -5,11 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-Active authorized Keeper-wording trial: corpus case 14 on 4177, initially empty
-selection/history, no priors, Science 20. Read
+Completed Keeper-wording trial: corpus case 14 on 4177, three paid pair checks,
+one success, Science 9, no refill. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md` and the prototype protocol before
 resuming. Exact wording/one separate aside and hidden model precommitted privately;
-public initial snapshot tracked. Do not replace prior solved sessions.
+public initial/completed snapshots tracked. Do not replace prior solved sessions.
+Semicolon XOR rejected; future authoring uses new either/or template ID and thirty
+optional asides. Original played text preserved. Full suite now has 35 checks.
 
 Completed trial: corpus case 13 on 4176, two new pair checks and one success.
 It began with one prior stable pair and three necessary
@@ -20,7 +22,8 @@ Completed contrast: corpus case 12 on 4175, independently solved with five pair
 checks and one success. Durable private state is solved. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md` before resuming. Initial public
 snapshot is tracked; full model stays private. Case-11 state below is historical,
-and its solved session remains on 4174. Test suite now has 33 checks.
+and its solved session remains on 4174. The original wording integration passed
+33 checks; subsequent case-14 refinement has 35.
 
 Completed trial: anonymous real-corpus case 11, solved with 13 pair checks and
 two submissions. Current browser state is solved; do not replace it by assumption. Checkpoint:
@@ -61,8 +64,10 @@ Existing fixture preparers still emit a raw model; this authoring step is explic
 `wording.version=1` and one entry per clue persist template ID and exact text, plus
 optional aside ID/text. Plain/note alternatives rotate only for repeated eligible
 families, using their order; selection never reads the answer or compatibility.
-No aside by default; the author may attach one explicitly. Unsupported AST shapes
-or unfamiliar slot labels use `plain-fallback-v1`. Template IDs are immutable: change
+No aside by default; the author may attach one explicitly from thirty lines in
+`keeper-asides.mjs`. Future XOR uses `xor-plain-v2`; `xor-plain-v1` remains valid for
+frozen texts. Unsupported AST shapes or unfamiliar slot labels use
+`plain-fallback-v2`; historical `plain-fallback-v1` remains readable. IDs are immutable: change
 wording with a new version/ID. Validation rejects mismatched text, wrong scopes,
 unknown IDs and more than one aside. Source and existing output cannot be overwritten.
 
