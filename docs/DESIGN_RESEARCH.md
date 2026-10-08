@@ -11,7 +11,8 @@ User authorizes a fresh readability trial after template integration. Final priv
 model and exact text precommitted, source/converted truth agrees on all 27 tuples.
 Two necessary conditions plus one separate Keeper aside; no priors or paid history,
 Science 20. Preserve prior completed cases; do not reveal deductions or route data.
-Next interaction is first player choice after browser handoff on 4177. Production
+Browser handoff on 4177/tab 4 verified including separated aside and empty durable
+session. Next interaction is first player choice. Production
 remains BLOCKED; no causal wording or human difficulty claim yet.
 
 ### Knowledge trial completed and wording repair — case 13, 2026-10-08

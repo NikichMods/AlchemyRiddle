@@ -1,6 +1,6 @@
 # Corpus case 14 — Keeper wording human trial
 
-Status: PRECOMMITTED, awaiting browser handoff (2026-10-08).
+Status: ACTIVE, browser handed off; awaiting first player choice (2026-10-08).
 User authorizes the fresh readability trial after versioned wording integration.
 Production remains BLOCKED. This is formative evidence from one familiar player,
 not an isolated causal comparison or population study.
@@ -62,3 +62,10 @@ Case-specific cookie/hash-bound state restores after refresh/restart. Prior solv
 cases on 4174/4175/4176 remain preserved. Read PAPER_PROTOTYPE_PROTOCOL.md and
 recover durable state before resuming; never replace a session by assumption.
 Next interaction: first player choice. Show no hidden path or route estimate.
+
+Browser handoff verified: in-app tab 4 at http://127.0.0.1:4177/, correct title,
+nine unselected cards, two conditions, one visibly separate italic Keeper aside,
+Science 20, no observations, final submission disabled pending a full selection.
+Layout checked by screenshot. Durable private session exists with model hash
+matching, empty selection/history and status playing. No player action performed
+by facilitator. Continue this session; do not create a replacement.
