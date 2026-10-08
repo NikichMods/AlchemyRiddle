@@ -4,6 +4,21 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Interest-ceiling track selected; case 19 precommitted — 2026-10-09
+
+User selects the interesting upper-envelope track after current-state recovery.
+Read `prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md` and the prototype protocol.
+A fresh synthetic three-slot candidate uses existing grammar, four necessary
+clues and four frozen stable priors; a private multi-stage public proof and two
+five-new-check policy witnesses are verified. Interesting/boss quality remains
+unproven until independent play. No compound grammar, generator weight, economy,
+tutorial or runtime change. Illustrative priors are not mature-save calibration;
+no true answer edge is initially known in this candidate, not a withholding rule.
+Private fixture and durable sessions: current task workspace `interest-case-19/`;
+port 4182, debug disabled. Next interaction: first player choice. Preserve all
+earlier completed models. Production BLOCKED. Previous unselected-track entry
+below is the historical handoff, superseded only in next-track selection.
+
 ### Chat closure audit; next track deliberately unselected — 2026-10-08
 
 Start with `research/CHAT_HANDOFF_2026-10-08_NEXT_STEP_CHOICES.md`: consolidated

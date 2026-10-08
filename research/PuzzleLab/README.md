@@ -5,6 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+2026-10-09: user selected interest-ceiling research; synthetic case 19 is
+precommitted for independent play on 4182. Start with
+`docs/prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md` and current DESIGN_RESEARCH
+entry. Existing grammar and harness unchanged; four necessary clues, frozen
+illustrative prior knowledge, verified public-policy routes. Difficulty/interest
+await human evidence. Preserve all prior sessions. Production remains BLOCKED.
+
 2026-10-08 chat closure: cases 16–18 are solved synthetic examples, preserved on
 4179–4181. Case 18 did not establish boss difficulty. Current Lab suite: 42 passing
 tests. Explicit tutorial, compound boss hypothesis, wording/role clarity and event
