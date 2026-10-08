@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Named boss example opened — case 18, 2026-10-08
+
+User currently requests test examples, not analysis or evaluation questions.
+A fresh synthetic boss-style three-slot fixture with four originally named cards
+per slot and four different necessary clue families is precommitted in
+`prototypes/PUZZLE_LAB_V0_BOSS_18_STATE.md`, served on 4181. Unique solution;
+every card participates in a tag-valid proposal. Difficulty remains uncalibrated.
+Explicit adjacent-pair instructions and existing recovery support included.
+Next interaction: first player choice; preserve earlier sessions, including
+case 16 on 4179 and case 17 on 4180. Production remains BLOCKED.
+
 ### New-player introduction opened — case 17, 2026-10-08
 
 User reports slot-role confusion during diagonal reading and uncertainty about
