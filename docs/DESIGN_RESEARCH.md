@@ -4,6 +4,21 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Knowledge-aware selection check completed — 2026-10-08
+
+Latest authorized check: research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md.
+Fixed 209 records / 19 targets; original zero/one/four global stable samples,
+cached original estimates plus 2,304 missing-context replays. Accepted route and
+repetition terms retained. No paid query of known edges; earned shortcuts remain
+unpenalized. Preferred-3 selected means 3.746/3.680/3.251; repetition decreases.
+Knowledge is sparse: relevant priors in only 11/209 and 56/209 packages for one/four
+global relations. Dense mature saves, negative memory and availability untested.
+Individual preferred-5 routes reach nine; no universal short-path guarantee.
+Private next candidate selected with one relevant known edge and three necessary
+clauses, distinct target from cases 11/12. No new blind trial opened; precommit and
+owning authorization needed for play. Production BLOCKED. Prior solved sessions
+remain preserved; entries below retain their evidence.
+
 ### Corpus contrast completed — case 12, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md. Independently solved:

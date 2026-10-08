@@ -212,6 +212,14 @@ Historical Lab pools and the completed screen's 6/9 thresholds are evidence only
 
 ## Current conclusions and remaining questions
 
+Latest knowledge check (2026-10-08):
+research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md. Both soft preferences coexist
+with sparse positive prior knowledge in the fixed 209-package pool. New queries
+exclude known edges; earned short paths retain zero lower-bound penalty. This
+does not establish dense save-state robustness, stored negative knowledge or
+availability readiness. Individual preferred-5 routes still reach nine even when
+selected means remain below seven. Preserve mean/tail and machine/human distinctions.
+
 Additive route-ranking checkpoint (2026-10-07):
 [generator selection comparison](research/GENERATOR_ROUTE_RANKING_2026-10-07.md).
 Old reproducible gates/diversity score are preserved. Same-pool weak mean-route

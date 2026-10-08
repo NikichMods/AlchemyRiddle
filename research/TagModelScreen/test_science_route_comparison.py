@@ -5,6 +5,17 @@ from science_route_comparison import Investigation
 
 
 class ScienceRoutes(unittest.TestCase):
+    def test_earned_complete_chain_resolves_without_querying_known_edges(self):
+        triples=(('p1','f1','e1'),('p2','f2','e2'))
+        priors=(('PF','p1','f1'),('FE','f1','e1'))
+        for policy in ('balanced','candidate_first'):
+            def forbidden(edge):self.fail('known certified chain triggered research')
+            investigator=Investigation(triples,priors,forbidden,policy,stop_unique=True)
+            result=investigator.replay(20261008)
+            self.assertEqual(result['tests'],0)
+            self.assertEqual(result['science'],5)
+            self.assertFalse(set(investigator.edges)&set(priors))
+
     def test_initial_choices_do_not_read_hidden_outcomes(self):
         triples = (('p1', 'f1', 'e1'), ('p2', 'f2', 'e2'))
         def forbidden(edge):

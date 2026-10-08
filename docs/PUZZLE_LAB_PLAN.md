@@ -5,6 +5,11 @@ for the laboratory; inference-quality synthesis complete; production remains BLO
 
 ## Current execution checkpoint — 2026-10-07
 
+Latest subsequent checkpoint, 2026-10-08: knowledge-aware selection check complete
+in research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md. A private three-clue candidate
+with one known stable edge is selected but not opened. Existing cases remain solved;
+no further blind play authorized by the computational screen itself.
+
 Completed trial: anonymous real-corpus case 11, recorded in
 prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md. Generator gates, weak route term and
 field floor retained. Shared Science 20, pair 2, triple 5, unlimited +10 Lab refill.

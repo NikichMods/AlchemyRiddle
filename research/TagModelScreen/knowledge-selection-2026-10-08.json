@@ -1,0 +1,217 @@
+{
+  "complete": true,
+  "records": 209,
+  "targets": 19,
+  "newReplays": 2304,
+  "knownEdgeQueries": 0,
+  "comparisons": [
+    {
+      "globalKnown": 0,
+      "preferred": 3,
+      "changed": 13,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.740405701754386,
+        "meansAbove5": 4,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 0,
+        "meanRepetition": 0.19736842105263158,
+        "selectedWithRelevantKnowledge": 0,
+        "meanRelevantKnown": 0,
+        "maxSampledChecks": 7
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 3.746436403508772,
+        "meansAbove5": 4,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 0,
+        "meanRepetition": 0.14912280701754385,
+        "selectedWithRelevantKnowledge": 0,
+        "meanRelevantKnown": 0,
+        "maxSampledChecks": 7
+      },
+      "earnedShortcutsPenalized": 0
+    },
+    {
+      "globalKnown": 0,
+      "preferred": 5,
+      "changed": 15,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.9673793859649122,
+        "meansAbove5": 8,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 0,
+        "meanRepetition": 0.19736842105263158,
+        "selectedWithRelevantKnowledge": 0,
+        "meanRelevantKnown": 0,
+        "maxSampledChecks": 9
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 4.010964912280702,
+        "meansAbove5": 9,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 0,
+        "meanRepetition": 0.14912280701754385,
+        "selectedWithRelevantKnowledge": 0,
+        "meanRelevantKnown": 0,
+        "maxSampledChecks": 9
+      },
+      "earnedShortcutsPenalized": 0
+    },
+    {
+      "globalKnown": 1,
+      "preferred": 3,
+      "changed": 13,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.6740679824561404,
+        "meansAbove5": 4,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 3,
+        "meanRepetition": 0.19736842105263158,
+        "selectedWithRelevantKnowledge": 3,
+        "meanRelevantKnown": 0.05263157894736842,
+        "maxSampledChecks": 7
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 3.680098684210526,
+        "meansAbove5": 4,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 3,
+        "meanRepetition": 0.14912280701754385,
+        "selectedWithRelevantKnowledge": 3,
+        "meanRelevantKnown": 0.05263157894736842,
+        "maxSampledChecks": 7
+      },
+      "earnedShortcutsPenalized": 0
+    },
+    {
+      "globalKnown": 1,
+      "preferred": 5,
+      "changed": 14,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.8958333333333335,
+        "meansAbove5": 9,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 3,
+        "meanRepetition": 0.20614035087719298,
+        "selectedWithRelevantKnowledge": 3,
+        "meanRelevantKnown": 0.05263157894736842,
+        "maxSampledChecks": 9
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 3.953673245614035,
+        "meansAbove5": 9,
+        "meansAbove7": 0,
+        "meansBelow2": 0,
+        "sampleMinBelow2": 3,
+        "meanRepetition": 0.15350877192982457,
+        "selectedWithRelevantKnowledge": 3,
+        "meanRelevantKnown": 0.05263157894736842,
+        "maxSampledChecks": 9
+      },
+      "earnedShortcutsPenalized": 0
+    },
+    {
+      "globalKnown": 4,
+      "preferred": 3,
+      "changed": 12,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.323190789473684,
+        "meansAbove5": 5,
+        "meansAbove7": 0,
+        "meansBelow2": 7,
+        "sampleMinBelow2": 12,
+        "meanRepetition": 0.2149122807017544,
+        "selectedWithRelevantKnowledge": 14,
+        "meanRelevantKnown": 0.24561403508771928,
+        "maxSampledChecks": 6
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 3.250548245614035,
+        "meansAbove5": 5,
+        "meansAbove7": 0,
+        "meansBelow2": 7,
+        "sampleMinBelow2": 12,
+        "meanRepetition": 0.17543859649122806,
+        "selectedWithRelevantKnowledge": 13,
+        "meanRelevantKnown": 0.22807017543859648,
+        "maxSampledChecks": 6
+      },
+      "earnedShortcutsPenalized": 0
+    },
+    {
+      "globalKnown": 4,
+      "preferred": 5,
+      "changed": 14,
+      "before": {
+        "selections": 57,
+        "heldOutMean": 3.477521929824561,
+        "meansAbove5": 6,
+        "meansAbove7": 0,
+        "meansBelow2": 5,
+        "sampleMinBelow2": 12,
+        "meanRepetition": 0.20614035087719298,
+        "selectedWithRelevantKnowledge": 16,
+        "meanRelevantKnown": 0.3157894736842105,
+        "maxSampledChecks": 9
+      },
+      "after": {
+        "selections": 57,
+        "heldOutMean": 3.4972587719298245,
+        "meansAbove5": 6,
+        "meansAbove7": 0,
+        "meansBelow2": 6,
+        "sampleMinBelow2": 12,
+        "meanRepetition": 0.15350877192982457,
+        "selectedWithRelevantKnowledge": 14,
+        "meanRelevantKnown": 0.2807017543859649,
+        "maxSampledChecks": 9
+      },
+      "earnedShortcutsPenalized": 0
+    }
+  ],
+  "knowledgeCoverage": [
+    {
+      "globalKnown": 0,
+      "recordsWithFieldKnown": 0,
+      "recordsWithTargetRelevantKnown": 0
+    },
+    {
+      "globalKnown": 1,
+      "recordsWithFieldKnown": 24,
+      "recordsWithTargetRelevantKnown": 11
+    },
+    {
+      "globalKnown": 4,
+      "recordsWithFieldKnown": 102,
+      "recordsWithTargetRelevantKnown": 56
+    }
+  ],
+  "inputHashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "generator-route-ranking-private.json": "27a2860f8a2eb5c1cc9fd18033b86ba9cb36c9a93fc9be1962b3bf4699ccbe85",
+    "coverage-gap-private.json": "40c04e8fe38af6b8fa470514259f8526fa5d8ce9e282c4cb7f71c6486a77760d"
+  },
+  "sourceHashes": {
+    "knowledge_selection_check.py": "bd3d2c96c5d0b17e1c4da08a4fe0c441e28944e346ede1117218b841b29b53b3",
+    "generator_route_ranking.py": "1b1fa601702fa40598711af349140b3ebc6dc9dbb6b1270d7bef9507a4af6ddd"
+  },
+  "seconds": 0.61,
+  "caveat": "Sparse global positive priors, full availability; not dense saves, negative memory or human routes."
+}
