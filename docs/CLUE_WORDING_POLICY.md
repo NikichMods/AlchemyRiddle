@@ -1,5 +1,29 @@
 # Human-readable clue wording — case 13 follow-up
 
+## Current contextual Keeper aside decision — 2026-10-08
+
+The reviewed editorial pool is now **13 context-gated clue notes** (active for
+explicit future-case authoring) and **9 approved event-response texts**
+(stored, **not yet wired to the event UI**). Old 24 standalone asides and earlier
+versions remain valid only for already-authored cases. Exact approved lines,
+matching structures, accepted/reserved distinction and the earlier 16 voice
+references are canonical in
+[KEEPER_CONTEXT_SCENARIOS.md](KEEPER_CONTEXT_SCENARIOS.md).
+
+Match first on the *visible clue AST*, not on a hidden answer or free-form
+paraphrase: specific slot roles, tag labels, logical family, count/direction.
+Event notes may match only outcomes already shown to the player. A valid match
+does **not** require display: remarks are sparse and secondary to mechanics.
+No generic grousing, fear, compulsory pun, obligatory joke or repeated
+comedic construction with merely substituted nouns. Natural human reaction,
+positive research attitude, concise writing and immediate comprehensibility
+take priority. Previously praised longer personal thoughts are unplaced
+editorial references, **not active generic clue notes**.
+
+The earlier chronologically dated 24/30-note review descriptions below are
+retained as historical context, not present-tense counts.
+
+
 Current full review, 2026-10-08: all 28 condition phrases (four per seven covered
 shapes) are user-accepted as wording. This does not certify generator difficulty
 or production integration. Explicit authoring offset enables between-case variety;
