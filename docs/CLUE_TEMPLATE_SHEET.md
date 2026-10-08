@@ -2,9 +2,10 @@
 
 2026-10-08. Design/research artifact; implemented in future-case Lab authoring,
 not a production mod change.
-The six plain-language directions and occasional Keeper-note character are user
-accepted. This sheet instantiates that direction with stable template identities;
-it does not claim that every new line received individual player acceptance.
+All 28 core phrases were user-accepted in the full wording review. Case 18 later
+challenged the obligation-like implication-choice presentation and exposed an
+accusative grammar defect; its future versioned repair remains open. This sheet
+preserves existing identities and does not certify comprehension or difficulty.
 No completed case is rewritten. No real recipe or ingredient identity is present.
 
 ## Template set
@@ -45,7 +46,7 @@ The examples below are independent, not a combined recipe.
 | shared-scope-v1 | SharedTag, all selected slots | Среди свойств выбранных компонентов хотя бы одно должно встречаться у каждого из них. |
 
 SharedTag is included because the existing Lab supports it. Its four phrasings
-remain drafts; they do not add a new logical family. The shared property need not
+were accepted in the full review; they do not add a new logical family. The shared property need not
 be the only common property or be named in advance.
 
 Count-two templates require exactly three distinct slot terms for the same tag.

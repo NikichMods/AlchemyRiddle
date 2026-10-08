@@ -733,9 +733,10 @@ Accepted product direction:
 
 Warm/heat-colour grouping is rejected as a current tag direction.
 
-Organ remains the leading next systemic candidate. If a consistent Organ rule
-creates a small number of four-property cards, that is no longer a reason to
-discard it.
+Subsequent taxonomy closure accepted Dark + Organ as the working property model
+for continued design; Organ is no longer pending candidate acceptance. The
+enriched model is sufficient; reopen taxonomy only for a concrete deficiency.
+See `research/CHAT_MIGRATION_CHECKPOINT_2026-10-06_TAGS_COMPLETE.md`.
 
 
 ### Difficulty ceiling should arrive early enough for partial-play players
@@ -971,7 +972,9 @@ aside cannot repair a formal/robotic main sentence. Avoid semicolon XOR lists in
 new text; preserve exactly-one with explicit either/or. Prefer short Keeper notes
 with occasional character, without claiming conversations, prior mistakes or
 other events the player did not experience. Small italic separate asides are liked;
-optional pool expanded to thirty in research. No lore NPC delivery, new deductions,
+optional pool expanded to thirty historically. Current future authoring instead
+uses 13 exact-context clue notes and nine stored event reactions; event UI is not
+implemented. See KEEPER_CONTEXT_SCENARIOS.md. No lore NPC delivery, new deductions,
 mandatory note frequency or production implementation accepted.
 
 Case-15 accepted research support: after a paid failed synthesis that violates

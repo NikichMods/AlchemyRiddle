@@ -5,6 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+2026-10-08 chat closure: cases 16–18 are solved synthetic examples, preserved on
+4179–4181. Case 18 did not establish boss difficulty. Current Lab suite: 42 passing
+tests. Explicit tutorial, compound boss hypothesis, wording/role clarity and event
+UI remain distinct next-step options; no next track selected. Start with
+`docs/research/CHAT_HANDOFF_2026-10-08_NEXT_STEP_CHOICES.md` and DESIGN_RESEARCH.md.
+The following dated case entries retain their historical evidence.
+
 Completed coherent Keeper-voice trial: corpus case 15 on 4178, six new pair checks,
 two submissions, one refill, Science 8. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md` and the prototype protocol before

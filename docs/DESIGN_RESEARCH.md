@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Chat closure audit; next track deliberately unselected — 2026-10-08
+
+Start with `research/CHAT_HANDOFF_2026-10-08_NEXT_STEP_CHOICES.md`: consolidated
+implemented/research-only/product state, open ideas, private session recovery,
+four next-track alternatives and limitations. User requests next-chat selection
+discussion, not automatic tutorial or new boss implementation. New compound
+multi-property boss conditions are a hypothesis, not accepted grammar/gate.
+Cases 16, 17 and 18 all confirmed solved in durable state; originals preserved.
+Latest runtime code remains the 42-test version; this checkpoint edits docs only.
+Production BLOCKED. Next action: recover audit and discuss which bounded track
+to pursue. Older next-step entries below are historical proposals.
+
 ### Explicit tutorial direction and game comparison — 2026-10-08
 
 User reports predominantly positive playtester impressions and requests a combined

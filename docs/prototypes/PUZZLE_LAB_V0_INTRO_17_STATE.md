@@ -1,6 +1,8 @@
 # Two-slot introduction — case 17
 
-Status: PRECOMMITTED, awaiting first player choice (2026-10-08).
+Status: SOLVED in durable state; original precommit below remains historical.
+Closure audit 2026-10-08 confirms Science 15 and one history event. No narrated
+tutorial-comprehension acceptance; use migration-current-state.json privately.
 User requests a quick initial two-slot example after observing a new player.
 Synthetic fixture; not a corpus sample or generator-quality measurement.
 Production remains BLOCKED; case 16 and older sessions preserved.

@@ -29,6 +29,14 @@ shapes) are user-accepted as wording. This does not certify generator difficulty
 or production integration. Explicit authoring offset enables between-case variety;
 surface variation never counts as reasoning diversity. See CLUE_TEMPLATE_SHEET.md.
 
+Later case-18 evidence challenges the obligation-like `implies-choice-v1`
+presentation: a player read it as requiring both properties. Its essence form
+also uses nominative where accusative is needed. Future repair needs a new
+immutable template ID and reviewed wording; no saved text or evaluator changed.
+Role-scanning cues and explicit tutorial are separate pending work. Do not infer
+a new requirement that every conditional antecedent be true in the answer.
+Current options: research/CHAT_HANDOFF_2026-10-08_NEXT_STEP_CHOICES.md.
+
 Keeper-aside review: user rejects the general clipped/aphoristic voice, invented
 writing props (quill/lids/mortar), ambiguous standalone "лист", forced explanations
 and jokes needing translation. Write plausible personal thoughts in ordinary

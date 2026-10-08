@@ -1,6 +1,8 @@
 # Contextual Keeper note — case 16
 
-Status: PRECOMMITTED, awaiting first player choice (2026-10-08).
+Status: SOLVED in durable state; original precommit below remains historical.
+Closure audit 2026-10-08 confirms Science 7 and five history events. No separate
+wording or recovery acceptance inferred; use migration-current-state.json privately.
 User requests one test example after the contextual-note review. This is a
 synthetic teaching fixture, not a sampled real-corpus winner or generator audit.
 Production remains BLOCKED. Earlier played sessions remain intact.
