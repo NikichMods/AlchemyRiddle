@@ -57,9 +57,36 @@ stay unchanged in quotes/badges; each alternate retains exact predicate meaning.
 - Count: Среди трёх компонентов ровно два имеют свойство «А» / Свойство «А»
   должно быть у двух выбранных компонентов, а у третьего его быть не должно.
 
-Immersive framing such as В заметке о составе указано: … can prefix a precise
-assertion. It must not replace properties with imagery or imply chemistry.
-Phrase choice must not act as a hidden answer tell.
+User review, 2026-10-08: all six plain-language example pairs are accepted as
+wording directions. This does not accept a runtime phrase generator. Generic
+"Запись алхимика" framing is rejected as insufficiently connected to this game.
+Future flavor drafts require identifiable Graveyard Keeper context. They must
+not replace properties with imagery, imply chemistry or act as an answer tell.
+
+### Lore-grounded drafts, not yet accepted
+
+Bounded reference review: Clotho is the game's alchemy introduction; the official
+game description emphasizes practical resource use, ethically dubious economy
+and macabre humor. This supports proposing Clotho-related notes or the Keeper's
+own laboratory notes. It does not establish canonical authorship/dialogue for
+new mod clues. No new delivery mechanism or NPC integration is selected.
+
+Sources (accessed 2026-10-08):
+- https://graveyardkeeper.fandom.com/ru/wiki/%D0%9A%D0%BB%D0%BE%D1%82%D0%BE
+- https://store.steampowered.com/app/599140/Graveyard_Keeper/
+
+Illustrative independent drafts, not a recipe or quotations from the game:
+- Proposed Clotho-associated note: Клото отдельно подчеркнула: порошок не
+  должен иметь свойства «Трупное». Остальное на полях разобрать не удалось.
+- Keeper's laboratory note: Порошок без свойства «Трупное». Записать крупнее,
+  пока снова не перепутал банки.
+- Keeper's laboratory note: Для этой смеси нельзя одновременно взять жидкость
+  со свойством «Насекомое» и эссенцию со свойством «Орган». Подчеркнуть дважды.
+  В прошлый раз одного подчёркивания оказалось мало.
+
+Flavor must stay separate from the exact assertion. Legibility matters more than
+making each condition a joke. These drafts await player review; existing completed
+cases remain frozen and no renderer or production behavior changes here.
 
 Presentation boundary: automatic review rejected restarting completed case 13 to
 show new wording, citing original player-facing text preservation. No restart

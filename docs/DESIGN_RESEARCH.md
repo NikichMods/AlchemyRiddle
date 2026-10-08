@@ -21,6 +21,12 @@ Next bounded artifact: reviewed phrase sheet, with exact scope/count/negation an
 implication semantics. Effective logical simplification remains a separate quality
 review gap. No new trial/feedback oracle started; production BLOCKED.
 
+Phrase review update, 2026-10-08: user accepts all six plain-language example
+pairs, rejects generic "alchemist's note" flavor and requests grounding in the
+actual game lore. CLUE_WORDING_POLICY.md records acceptance plus bounded source
+review and unaccepted Clotho/Keeper-note drafts. Full phrase generator and any
+NPC/delivery integration remain unselected; no further blind case opened.
+
 ### Knowledge-aware selection check completed — 2026-10-08
 
 Latest authorized check: research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md.
