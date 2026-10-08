@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Explicit tutorial direction and game comparison — 2026-10-08
+
+User reports predominantly positive playtester impressions and requests a combined
+review of case-18 expectations, conditional contribution and clear onboarding.
+Explicit visible teaching, including separate pair-compatibility onboarding, is
+required; simply giving an easy puzzle is insufficient. Owning clarification in
+PRODUCT_REQUIREMENTS.md; actual-game comparison and proposed teaching sequence in
+ONBOARDING_COMPARISON.md. Every condition remains binding, while an individual
+route need not explicitly invoke every clue. No all-antecedents-active gate,
+tutorial UI format, new difficulty score or generator weight accepted here.
+Proposed next step: compact guided teaching scenario and independent transfer
+check. Preserve solved case 18; no live fixture or runtime source changed.
+
 ### Case 18 solved; boss intent and conditional presentation challenged — 2026-10-08
 
 Read `prototypes/PUZZLE_LAB_V0_BOSS_18_STATE.md`. Two stable pair tests and one

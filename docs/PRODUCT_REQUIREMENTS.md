@@ -687,6 +687,14 @@ Accepted product direction:
 - explicit teaching is front-loaded and compact; the current semantic target is
   roughly the first **four** investigations of each arity carrying most genuine
   concept introduction, followed by rich/hard play;
+- onboarding clarification, 2026-10-08: an easy puzzle alone is insufficient.
+  Introductory investigations must visibly and clearly teach the intended player
+  actions and information model. Separately explain three-slot adjacent-pair
+  experiments, what stable/incompatible observations establish, and why a stable
+  chain still must satisfy every composition condition. All conditions remain
+  binding even if an individual reasoning path does not explicitly use each one.
+  Exact UI delivery and tutorial scripts remain design/prototype work; see
+  `ONBOARDING_COMPARISON.md` for the bounded game comparison and proposed sequence.
 - the mature/MAX envelope should become available roughly around the **sixth or
   seventh** investigation of an arity rather than being reserved for the tail;
 - the full 16 two-slot / 19 three-slot variant sets are completionist capacity,
