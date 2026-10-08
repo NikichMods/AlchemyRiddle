@@ -92,3 +92,35 @@ is discussing this recommendation, not starting another blind trial by assumptio
 Estimation boundary: cached ranking stops on either a certified chain or a unique
 unrefuted public survivor, unlike the case-11 exact certification-only policy
 distributions. Neither model includes lost constraints or misreading.
+
+## Accepted soft preference — 2026-10-08
+
+User accepts avoiding repeated structure within a puzzle as a soft preference,
+explicitly preserving fallback when alternatives are unsuitable. Implemented in
+research selection only; no production or Lab model change.
+
+Penalty units: 0.25 for each pair of clauses sharing an operator family, plus 0.75
+for each pair of symmetric XOR clauses (same tag across each clause's endpoints).
+Selection adds 0.25 times those units to the existing score. A double symmetric
+XOR therefore costs 0.25; other repeated-operator pairs cost 0.0625. Direction
+variants of implication share a family. These are provisional implementation
+weights, not human-calibrated difficulty values. No infinite penalty, exclusion,
+mandatory extra clue or family ban. Existing hard gates and route strength 0.25
+remain intact. Historical case-11 builder explicitly retains zero new penalty
+for reproduction; played artifact is frozen.
+
+Fixed-pool check: 209 packages, 19 targets, three orders, preferred 3 and 5,
+114 selections per arm, existing cached fresh-state/held-out routes only.
+Preferred-3 changes 11/57 selections: held-out mean 3.698 -> 3.755, mean repetition
+units 0.180 -> 0.154; means above five 3 -> 5. Preferred-5 changes 22/57: mean
+3.938 -> 3.988, repetition 0.180 -> 0.123; above-five 7 -> 7. Double symmetric
+XOR selections 0 -> 0 and 1 -> 0 respectively. This is a bounded tradeoff, not
+a claim every pacing/diversity metric improves. No target coverage is removed.
+
+Same isolated case-11 target counterfactual selects a two-clue, zero-repetition
+package instead of double symmetric XOR; held-out estimate 2.969 -> 3.594.
+Neither a replacement blind trial nor a change to the completed trial.
+Artifact: research/TagModelScreen/repetition-selection-2026-10-08.json.
+Sixteen Python checks pass, including single-option fallback, preference at equal
+pace, and retaining a repeated package over a much worse-paced diverse one.
+Human acceptance and mistake visibility remain open; no new blind case launched.

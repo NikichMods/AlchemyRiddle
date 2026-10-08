@@ -24,7 +24,8 @@ def run(corpus, pool, fixture_path, facilitator_path):
     three.assert_accepted_baseline(model)
     data = json.loads(pool.read_text(encoding='utf-8'))
     rows = data['candidates']
-    scores = [ranking.baseline_score(r, [], 0)+0.25*ranking.length_penalty(r['route'][0]['mean'],3) for r in rows]
+    # Historical case-11 precommit: reproduce its original selection, not current defaults.
+    scores = [ranking.selection_score(r, [], 0, 0.25, 3, 0, repetition_strength=0) for r in rows]
     index = random.Random(20301013).choice([i for i, value in enumerate(scores) if value == min(scores)])
     row = rows[index]
     source_target = tuple(data['target'])

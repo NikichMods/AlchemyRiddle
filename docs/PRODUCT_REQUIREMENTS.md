@@ -2,6 +2,14 @@
 
 ## Problem
 
+Accepted generator refinement (2026-10-08): avoid repeated structure within one
+ordinary puzzle through a finite soft selection penalty. Give extra emphasis to
+two symmetric exactly-one clauses with same-property endpoints. Preserve valid
+fallbacks when diverse alternatives are unavailable or worse under other quality
+criteria; do not mandate a third clue or ban a logical family. Existing gates,
+weak pacing correction and field floor remain. Numeric weights are provisional
+research implementation details; human error reduction is not established.
+
 Vanilla Graveyard Keeper teaches enough of farming/fertilizer progression for the player to encounter a need for a specific alchemical product, but it does not provide a sufficiently legible route from:
 
 `I need product X -> what should I investigate -> what experiment should I run -> what did that result teach me -> why should the next experiment move me toward X?`
@@ -809,9 +817,12 @@ names with ambiguous flavor/metaphor. Case 03's target-specific forbidden pairin
 and varied sentence roles received positive feedback; this does not by itself
 prove deep inference quality.
 
-Player calibration refinement, 2026-10-07: outside a deliberately bounded
-tutorial, reject clue packages made of parallel repetitions of the same logical
-form (case 02: three exact-one property counts). Rich cards, mathematical clue
+Player calibration refinement, 2026-10-07; soft fallback clarified 2026-10-08:
+outside deliberately bounded teaching, discourage clue packages made of parallel
+repetitions of the same logical form (case 02: three exact-one property counts)
+through the accepted finite ranking preference, preserving fallback when needed.
+The case-02 negative human judgment remains evidence, not a universal family ban.
+Rich cards, mathematical clue
 necessity and a valid deductive path do not by themselves compensate for felt
 repetition. Prefer conditions with distinct cognitive roles that interact;
 cosmetic rewording is insufficient. This does not impose a blanket ban on any

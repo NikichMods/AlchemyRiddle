@@ -18,6 +18,7 @@ from field_feasibility import supports_necessary_clues
 
 ROOT = Path(__file__).resolve().parents[2]
 SEED = 20261007
+REPETITION_STRENGTH = 0.25
 
 
 def length_penalty(mean, preferred, earned=False):
@@ -45,7 +46,24 @@ def baseline_score(row, chosen, step):
     return score
 
 
-def select_sequence(options, order, seed, strength, preferred, context):
+def structural_repetition(row):
+    """Finite cost, never a gate; identical symmetric XORs receive extra emphasis."""
+    families = [reasoning.family_root(f) for f in row['families']]
+    repeated = sum(n*(n-1)//2 for n in collections.Counter(families).values())
+    symmetric_xors = sum(c[0] == 'xor' and c[2] == c[4] for c in row.get('clues', []))
+    return .25*repeated + .75*symmetric_xors*(symmetric_xors-1)/2
+
+
+def selection_score(row, chosen, step, strength, preferred, context,
+                    repetition_strength=REPETITION_STRENGTH):
+    return (baseline_score(row, chosen, step) + strength*length_penalty(
+        row['route'][context]['mean'], preferred,
+        row['route'][context]['observedStablePriors'] > 0)
+        + repetition_strength*structural_repetition(row))
+
+
+def select_sequence(options, order, seed, strength, preferred, context,
+                    repetition_strength=REPETITION_STRENGTH):
     rng = random.Random(seed)
     chosen = []
     records = []
@@ -53,9 +71,8 @@ def select_sequence(options, order, seed, strength, preferred, context):
         candidates = options[target]
         if not candidates:
             continue
-        scores = [baseline_score(r, chosen, len(chosen)) + strength*length_penalty(
-            r['route'][context]['mean'], preferred,
-            r['route'][context]['observedStablePriors'] > 0) for r in candidates]
+        scores = [selection_score(r, chosen, len(chosen), strength, preferred, context,
+                                  repetition_strength) for r in candidates]
         best = min(scores)
         index = rng.choice([i for i, s in enumerate(scores) if abs(s-best) < 1e-10])
         selected = candidates[index]
@@ -247,7 +264,8 @@ def run(input_path, private_path, public_path):
                                                      beforeStructure=x['structure'], afterStructure=y['structure'],
                                                      oldScoreBefore=a['oldScore'], oldScoreAfter=b['oldScore']))
     public = dict(scope='19 ordinary three-slot variants; full ingredient availability; sampled fixed candidate pool',
-                  complete=True, counters=dict(counters), coveredTargets=sum(bool(x) for x in options),
+                  complete=True, repetitionStrength=REPETITION_STRENGTH,
+                  counters=dict(counters), coveredTargets=sum(bool(x) for x in options),
                   targets=len(formulas), candidatesPerTarget=[len(x) for x in options],
                   comparisons=comparisons, reviewedStructuralChanges=examples,
                   estimator=dict(policies=['balanced', 'candidate_first'], seedsPerPolicy=16,

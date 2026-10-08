@@ -314,3 +314,9 @@ at close cached pacing. Played target has two varied two-clue alternatives on
 other fields with larger static branch descriptors. Variety supports engagement,
 not proven error reduction. A proposed narrow soft preference against double
 symmetric XOR is not yet accepted. No third-clue rule or new feedback introduced.
+
+Subsequent acceptance (2026-10-08): within-puzzle structural repetition now has a
+finite soft ranking penalty, emphasizing double symmetric XOR and preserving
+fallback. Existing quality gates and weak route term remain. Details and bounded
+comparison: research/INTRA_PACKAGE_REVIEW_2026-10-08.md, accepted-refinement section.
+The earlier pending decision is closed. Human benefit remains uncalibrated.

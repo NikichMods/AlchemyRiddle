@@ -129,11 +129,12 @@ def run(corpus, original_pool, private_output, public_output):
     selected = []
     if candidates:
         for preferred in (3, 5):
-            scores = [ranking.baseline_score(r, [], 0)+0.25*ranking.length_penalty(r['route'][0]['mean'], preferred)
+            scores = [ranking.selection_score(r, [], 0, 0.25, preferred, 0)
                       for r in candidates]
             best = random.Random(seed).choice([i for i, x in enumerate(scores) if x == min(scores)])
             row = candidates[best]
             selected.append(dict(preferred=preferred, strength=0.25,
+                                 repetitionStrength=ranking.REPETITION_STRENGTH,
                                  estimate=row['route'][0], heldOut=row['route'][1], structure=row['structure']))
     source_paths = [Path(__file__), Path(ranking.__file__), Path(reasoning.__file__), Path(three.__file__),
                     Path(bounded.__file__), ranking.ROOT/'research/TagModelScreen/science_route_comparison.py']

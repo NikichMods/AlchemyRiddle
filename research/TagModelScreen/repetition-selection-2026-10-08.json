@@ -1,0 +1,71 @@
+{
+  "complete": true,
+  "records": 209,
+  "targets": 19,
+  "freshKnowledgeOnly": true,
+  "routeStrength": 0.25,
+  "repetitionStrength": 0.25,
+  "comparisons": [
+    {
+      "preferred": 3,
+      "selections": 57,
+      "changed": 11,
+      "before": {
+        "meanHeldOutChecks": 3.6979166666666665,
+        "above5": 3,
+        "meanRepetition": 0.17982456140350878,
+        "symmetricDoubleXor": 0,
+        "crossSlotClauses": 1.6842105263157894
+      },
+      "after": {
+        "meanHeldOutChecks": 3.755482456140351,
+        "above5": 5,
+        "meanRepetition": 0.15350877192982457,
+        "symmetricDoubleXor": 0,
+        "crossSlotClauses": 1.6666666666666667
+      }
+    },
+    {
+      "preferred": 5,
+      "selections": 57,
+      "changed": 22,
+      "before": {
+        "meanHeldOutChecks": 3.9375,
+        "above5": 7,
+        "meanRepetition": 0.17982456140350878,
+        "symmetricDoubleXor": 1,
+        "crossSlotClauses": 1.6140350877192982
+      },
+      "after": {
+        "meanHeldOutChecks": 3.987938596491228,
+        "above5": 7,
+        "meanRepetition": 0.12280701754385964,
+        "symmetricDoubleXor": 0,
+        "crossSlotClauses": 1.5964912280701755
+      }
+    }
+  ],
+  "case11TargetCounterfactual": [
+    {
+      "repetitionStrength": 0,
+      "repetition": 1.0,
+      "heldOutMean": 2.96875,
+      "clueCount": 2
+    },
+    {
+      "repetitionStrength": 0.25,
+      "repetition": 0.0,
+      "heldOutMean": 3.59375,
+      "clueCount": 2
+    }
+  ],
+  "inputHashes": {
+    "generator-route-ranking-private.json": "27a2860f8a2eb5c1cc9fd18033b86ba9cb36c9a93fc9be1962b3bf4699ccbe85",
+    "coverage-gap-private.json": "40c04e8fe38af6b8fa470514259f8526fa5d8ce9e282c4cb7f71c6486a77760d"
+  },
+  "sourceHashes": {
+    "repetition_selection_check.py": "37c4dfea17e10a70d3cd0745cfa194bcf6b58051ba2b6b4ba56525d7e04d6e24",
+    "generator_route_ranking.py": "1b1fa601702fa40598711af349140b3ebc6dc9dbb6b1270d7bef9507a4af6ddd"
+  },
+  "caveat": "Finite ranking preference only; no fields, rules or simulated routes changed. Human benefit uncalibrated."
+}

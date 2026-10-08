@@ -42,6 +42,23 @@ class Ranking(unittest.TestCase):
         self.assertEqual(records[0]['index'], 0)
         self.assertEqual(len(options[0]), 2)
 
+    def test_repetition_is_soft_and_can_lose_to_pacing(self):
+        repeated = row('xor', 'PF', 3)
+        repeated.update(families=('xor', 'xor'),
+                        clues=[('xor',0,'A',2,'A'),('xor',1,'B',2,'B')])
+        varied = row('xor', 'PF', 3)
+        varied['families'] = ('xor', 'imp_pos_fwd')
+        self.assertEqual(ranking.structural_repetition(repeated), 1)
+        self.assertEqual(ranking.select_sequence([[repeated]], [0], 0, .25, 3, 0)[0]['index'], 0)
+        self.assertEqual(ranking.select_sequence([[repeated,varied]], [0], 0, .25, 3, 0)[0]['index'], 1)
+        varied['route'][0]['mean'] = 9
+        self.assertEqual(ranking.select_sequence([[repeated,varied]], [0], 0, .25, 3, 0)[0]['index'], 0)
+
+    def test_symmetry_emphasis_does_not_ban_interacting_repeated_operators(self):
+        repeated = row('imp_pos_fwd', 'PF', 3)
+        repeated['families'] = ('imp_pos_fwd', 'imp_pos_rev')
+        self.assertEqual(ranking.structural_repetition(repeated), .25)
+
 
 if __name__ == '__main__':
     unittest.main()

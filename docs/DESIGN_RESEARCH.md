@@ -27,6 +27,16 @@ soft preference against double symmetric XOR plus within-package review. No new
 weight, third clue, feedback or trial accepted. Preserve prior gates, weak route
 correction and field floor. Production remains BLOCKED.
 
+Subsequent user acceptance: finite soft penalty for within-package repetition,
+with fallback retained. Implemented in research selection; extra emphasis on
+double symmetric XOR, ordinary repeated families weaker. Working strength 0.25;
+no hard rejection. Frozen-pool check reduces repetition with held-out mean cost
+about 0.05–0.06 checks; preferred-3 above-five selections rise 3/57 -> 5/57.
+See the accepted-refinement section in the review. Sixteen Python tests pass.
+The next open validation is human perception of a diverse selected package,
+separate from mistake visibility. No new blind trial started. Earlier proposed
+weight decision above is now closed; production remains BLOCKED.
+
 ### Bounded diagnostic recovery — 2026-10-07
 
 Latest checkpoint: the one missing target is now covered by the authorized
