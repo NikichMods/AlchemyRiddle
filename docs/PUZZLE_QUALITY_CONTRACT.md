@@ -339,3 +339,14 @@ modest positive corpus evidence. Does not prove soft penalty caused improvement:
 target/field, player learning and outcomes differ from case 11. No error occurred,
 so visibility/recovery of mistakes remains untested. Do not equate formal-policy
 route maxima with all legal human routes. No duration/difficulty-band acceptance.
+
+## Corpus case 13: earned shortcut and wording — 2026-10-08
+
+Known stable pair plus two relevant new checks, one success, 9 Science; user found
+it somewhat disappointingly quick. Valid knowledge reuse, not sufficient interest
+acceptance. Three source operator types simplified to two direct literals and a
+forbidden combination. Distinguish source-family variety, effective reasoning and
+wording quality. Do not restore length by hiding knowledge or compulsory checks.
+Singleton exactly-zero wording rejected; direct assertions/negations and explicit
+stable-pairs-plus-composition reminder implemented. Natural/immersive variation
+proposed with precise semantics; see CLUE_WORDING_POLICY.md. Preserve played text.

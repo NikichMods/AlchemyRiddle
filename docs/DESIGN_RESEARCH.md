@@ -4,15 +4,22 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
-### Active knowledge trial — corpus case 13, 2026-10-08
+### Knowledge trial completed and wording repair — case 13, 2026-10-08
 
-User explicitly authorized opening the selected known-pair candidate. Recover
-prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md first.
-One known stable pair, three necessary clauses, nine anonymous cards. Science 20,
-pair 2, full triple 5, unlimited +10 Lab refill. Model frozen privately; port 4176,
-private durable corpus-13-sessions. Awaiting first player move; no facilitator hints.
-Never change/restart the trial by assumption. Preserve prior solved sessions;
-production BLOCKED. Entries below describe preceding completed evidence.
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md. Independently solved with
+one prior stable pair, two new target-relevant pair tests and one successful
+submission. Science spent 9, 11 remain. Verdict somewhat disappointingly quick:
+valid earned shortcut, not positive ordinary/mature-interest acceptance.
+Singleton negation plus XOR with an absent endpoint reduce to direct property
+filters. Source-family diversity/three necessary clues do not certify rich work.
+No extra checks or penalty for earned knowledge added.
+User requests human wording and explicit stable-pairs-plus-all-composition rule.
+Implemented direct one-term predicates/negations and reminder; 27 Node tests pass.
+Original played model/state text snapshot preserved. Proposed natural/immersive
+variation captured in CLUE_WORDING_POLICY.md; full phrase generator not implemented.
+Next bounded artifact: reviewed phrase sheet, with exact scope/count/negation and
+implication semantics. Effective logical simplification remains a separate quality
+review gap. No new trial/feedback oracle started; production BLOCKED.
 
 ### Knowledge-aware selection check completed — 2026-10-08
 

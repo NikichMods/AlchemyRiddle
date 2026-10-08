@@ -5,7 +5,8 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-Active trial: corpus case 13 on 4176, one prior stable pair and three necessary
+Completed trial: corpus case 13 on 4176, two new pair checks and one success.
+It began with one prior stable pair and three necessary
 clauses. Read docs/prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md before resuming.
 Hidden model/durable state private; solved prior cases below remain preserved.
 
@@ -13,7 +14,7 @@ Completed contrast: corpus case 12 on 4175, independently solved with five pair
 checks and one success. Durable private state is solved. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md` before resuming. Initial public
 snapshot is tracked; full model stays private. Case-11 state below is historical,
-and its solved session remains on 4174. Test suite now has 26 checks.
+and its solved session remains on 4174. Test suite now has 27 checks.
 
 Completed trial: anonymous real-corpus case 11, solved with 13 pair checks and
 two submissions. Current browser state is solved; do not replace it by assumption. Checkpoint:
@@ -39,7 +40,7 @@ node research/PuzzleLab/audit-calibration.mjs --write
 
 If child-process isolation is restricted, use
 `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
-There are 26 deterministic/HTTP tests (include `economy.test.mjs` in the test command). The offline audit validates all ten frozen
+There are 27 deterministic/HTTP tests (include `economy.test.mjs` in the test command). The offline audit validates all ten frozen
 fixtures, replays recorded pair histories and emits aggregate structural evidence
 with fixture hashes in `calibration-audit.json`; it does not score human interest.
 

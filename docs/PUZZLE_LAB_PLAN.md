@@ -532,3 +532,11 @@ Ordinary/normal acceptance; no reported confusion or lost condition. Full result
 prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md. Preserve solved session. Do not claim
 causal validation of repetition weight or mistake recovery; no further trial
 launched. Human/save-state generalization remains open, production BLOCKED.
+
+## Case 13 complete and human wording repair — 2026-10-08
+
+Two relevant new checks, one success, 11 Science remain; somewhat disappointingly
+quick with a known anchor. No lost-clause error. Direct singleton wording and
+stable-pairs-plus-composition reminder authorized/implemented after trial. Original
+state preserved; 27 Node checks pass. CLUE_WORDING_POLICY.md captures proposed
+reviewed variants; no new blind case or automatic condition feedback introduced.

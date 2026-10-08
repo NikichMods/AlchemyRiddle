@@ -1,0 +1,56 @@
+{
+  "id": "lab-v0-corpus-13",
+  "fixtureFileSha256": "75a80779480b37dc2fdc1bc7e29e4c5324228791aa8bb32682cc275a065e2581",
+  "initialTagValid": 8,
+  "pairTrace": [
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p2",
+        "fluid": "f1"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p3",
+        "fluid": "f1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    }
+  ],
+  "submissions": [
+    {
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e1",
+        "powder": "p3"
+      },
+      "success": true,
+      "cost": 5,
+      "clueSatisfied": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "status": "solved",
+  "science": 11,
+  "offTargetPairTests": 0,
+  "scienceSpent": 9,
+  "refills": 0
+}

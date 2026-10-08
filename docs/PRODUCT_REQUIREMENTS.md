@@ -948,3 +948,12 @@ The synthesis adds no production mechanics or numeric difficulty thresholds.
 Removal of bottom notes/history/export controls applies to the current Lab UI;
 it does not remove the production requirement to preserve investigation knowledge
 across interruption. Pair observations and facilitator action evidence remain.
+
+## Human clue wording refinement — 2026-10-08
+
+Singleton property assertions/negations must read directly, not exactly zero/one
+of one statement. Stable pair observations are necessary chemistry facts; remind
+that every target composition condition must also hold. User proposes reviewed
+natural and optionally immersive variants with exact predicate semantics retained.
+See CLUE_WORDING_POLICY.md. No free-form phrase generator or new feedback oracle
+accepted. Surface variation does not establish effective reasoning diversity.

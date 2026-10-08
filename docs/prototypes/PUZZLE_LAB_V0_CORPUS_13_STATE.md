@@ -1,6 +1,7 @@
 # Corpus case 13 — accumulated-knowledge human trial
 
-Status: PRECOMMITTED, awaiting first player choice (2026-10-08).
+Status: COMPLETED, independently solved (2026-10-08).
+Original precommit below is historical.
 User explicitly authorized opening the previously selected candidate with one
 known stable pair and three necessary clauses. Different target from cases 11/12;
 not a one-factor controlled contrast. Production remains BLOCKED.
@@ -62,3 +63,45 @@ Browser handoff verified: tab 3, port 4176, correct case title, empty selection,
 Science 20, three displayed clues and exactly one stable prior under Было известно.
 No personal research/results. Screenshot layout checked; no paid/selection action
 performed by facilitator. Awaiting first player choice.
+
+## Human outcome
+
+Frozen file and hash-bound durable session identity verified unchanged. Two new
+pair checks, one successful whole submission; no refill, 9 Science spent, 11 remain.
+Anonymous trace: p2:f1 negative, p3:f1 stable, successful p3:f1:e1 submission.
+Existing f1:e1 stable prior reused. All checks lie on then-unrefuted tag-valid
+hypotheses; initially eight tag-valid triples. Public completed snapshot:
+research/PuzzleLab/fixtures/corpus-13.completed.public.json; derived audit:
+research/PuzzleLab/corpus-13-audit.json. No facilitator hint/model change during play.
+
+Player independently translated singleton exactly-zero into not-Corpse, correctly
+read XOR and forbidden combination, used the prior and tested the two remaining
+powders. Solved without a mistake, but verdict somewhat disappointingly quick.
+Retain as evidence knowledge can support an earned short path, not satisfying
+ordinary/mature interest acceptance. Do not add compulsory paid checks or punish
+known chemistry to restore duration. No reliable solve duration measured.
+
+Effective work: first clause is a direct negative literal. Second clause has a
+Fish endpoint absent from the entire field, so it reduces to a Dark essence
+literal. Third clause is a real forbidden combination. Three source-family/clause
+labels therefore do not establish three interesting interacting deductions.
+This is a proxy/review gap, not a failure of necessary-clue or unique-answer gates.
+Soft operator variety may coexist with thin effective reasoning.
+
+User feedback before solve: singleton exactly-zero is logically valid but not
+human language; render direct lack of property. Explicitly remind that stable
+pairs alone do not imply the target formula. Proposed natural/immersive phrase
+variation must preserve exact meaning. Preserve as wording direction rather than
+silently implement an unconstrained phrase generator.
+
+After recording the complete original public state, authorized text repairs:
+direct single-term assertions/negations, no exactly-zero surface, explicit
+stable-pairs-plus-composition rule. AST/chemistry/costs unchanged; original snapshot
+not regenerated. See docs/CLUE_WORDING_POLICY.md. Twenty-seven Node tests pass.
+Next: small reviewed phrase sheet; inspect effective simplification separately
+from source-family diversity before making further quality claims. No new trial.
+
+Presentation boundary: proposed restart to show corrected wording was rejected by
+automatic approval review as altering completed player-facing phrasing. No server
+restart performed. Future clue renderer corrected; original play snapshot and
+running case loaded clue renderer retained.

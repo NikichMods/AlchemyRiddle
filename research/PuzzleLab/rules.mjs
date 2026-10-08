@@ -27,6 +27,13 @@ export function satisfies(f, tuple, clue) {
 }
 export function clueText(f, clue) {
   const term = t => `${f.slots.find(s => s.id === t.slot).name.toLowerCase()} имеет свойство «${t.tag}»`;
+  if (clue.kind === 'exactly' && clue.terms.length === 1) {
+    const t=clue.terms[0], slot=f.slots.find(s=>s.id===t.slot).name;
+    return clue.count === 0 ? `${slot} не имеет свойства «${t.tag}».`
+      : `${slot} имеет свойство «${t.tag}».`;
+  }
+  if (clue.kind === 'exactly' && clue.count === 0)
+    return `Ни одно из следующих утверждений не выполняется: ${clue.terms.map(term).join('; ')}.`;
   if (clue.kind === 'sharedTag') return f.slots.length === 2
     ? 'У выбранных порошка и жидкости есть хотя бы одно общее свойство.'
     : 'У всех трёх выбранных компонентов есть хотя бы одно общее свойство.';

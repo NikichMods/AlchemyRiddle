@@ -7,6 +7,19 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('single property assertions render directly; zero counts preserve negative meaning', () => {
+  const term={slot:fixture.slots[0].id,tag:'Трупное'};
+  const negative={kind:'exactly',count:0,terms:[term]};
+  assert.equal(clueText(fixture,negative),`${fixture.slots[0].name} не имеет свойства «Трупное».`);
+  assert.equal(clueText(fixture,{...negative,count:1}),`${fixture.slots[0].name} имеет свойство «Трупное».`);
+  assert.match(clueText(fixture,{...negative,terms:[term,{...term,slot:fixture.slots[1].id}]}),/^Ни одно/);
+  for(const tuple of candidates(fixture)) {
+    const has=fixture.slots[0].cards.find(c=>c.id===tuple[fixture.slots[0].id]).tags.includes(term.tag);
+    assert.equal(satisfies(fixture,tuple,negative),!has);
+    assert.equal(satisfies(fixture,tuple,{...negative,count:1}),has);
+  }
+});
+
 test('count clauses may reference a globally known property absent from one slot', () => {
   const f={slots:[{id:'powder',name:'Порошок',cards:[{id:'p',tags:['A']}]},
     {id:'fluid',name:'Жидкость',cards:[{id:'f',tags:['B']},{id:'g',tags:['A']}]}],
