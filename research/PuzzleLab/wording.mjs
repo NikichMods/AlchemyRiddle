@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MPL-2.0
 // Versioned authoring templates. Never change v1 text under an existing ID.
-import {asides,authoringAsides} from './keeper-asides.mjs';
+import {asides,authoringAsides,clueAsideFits} from './keeper-asides.mjs';
 export {asides,authoringAsides};
 const forms = {
   Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',ins:'порошком',need:'нужен',must:'должен'},
@@ -92,7 +92,7 @@ export function validateWording(f,fallback) {
 export function authorWording(f,fallback,{asideId,asideAt=0,variantOffset=0}={}) {
   if(f.wording!==undefined) throw new Error('Case wording already frozen');
   if(!Number.isSafeInteger(variantOffset) || variantOffset<0) throw new Error('Invalid wording variant offset');
-  if(asideId!==undefined && (!Object.hasOwn(authoringAsides,asideId) || !Number.isInteger(asideAt) || asideAt<0 || asideAt>=f.clues.length))
+  if(asideId!==undefined && (!Object.hasOwn(authoringAsides,asideId) || !Number.isInteger(asideAt) || asideAt<0 || asideAt>=f.clues.length || !clueAsideFits(f,f.clues[asideAt],asideId)))
     throw new Error('Invalid authoring aside');
   const occurrences=new Map();
   const entries=f.clues.map(c=>{
