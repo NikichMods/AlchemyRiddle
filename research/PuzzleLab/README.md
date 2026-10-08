@@ -108,7 +108,7 @@ explains incomplete selection, shortage or completion. Legacy fixtures retain th
 old feedback/display envelope. UI module loads only for opted-in cases, so already
 running legacy servers do not require a restart or a new asset route.
 
-Asides have thirty active timeless IDs in `authoringAsides`; retired historical IDs
+Asides have 24 current review candidates in `authoringAsides`; retired historical IDs
 remain valid only for frozen records. Each of the seven covered wording families
 has four active variants (28 total). `--variant-offset=N` selects a deterministic alternate independent
 of answer/chemistry, persisted as exact template ID/text. No per-play paraphrasing.

@@ -1,10 +1,20 @@
 # Human-readable clue wording — case 13 follow-up
 
-Current case-15 refinement: sixteen active condition phrases, thirty active
-timeless asides. Four exact-one variants; explicit authoring variant offset enables
-between-case variation. Retire temporal/re-reading asides for new cases while
-retaining old IDs/text for frozen records. Variant clarity requires player evidence;
+Current full review, 2026-10-08: all 28 condition phrases (four per seven covered
+shapes) are user-accepted as wording. This does not certify generator difficulty
+or production integration. Explicit authoring offset enables between-case variety;
 surface variation never counts as reasoning diversity. See CLUE_TEMPLATE_SHEET.md.
+
+Keeper-aside review: user rejects the general clipped/aphoristic voice, invented
+writing props (quill/lids/mortar), ambiguous standalone "лист", forced explanations
+and jokes needing translation. Write plausible personal thoughts in ordinary
+Russian, with occasional practical/macabre humor and distractions such as lunch
+or other Keeper work. No obligatory two-part punchline; not every note must be
+about handwriting. A reading must work without staging an unseen writing scene.
+The proposal retains six old lines and adds eighteen new ones: 24 review candidates,
+not a quota of thirty. This editorial shortlist is not individual line acceptance.
+Old IDs/text remain valid for historical records, but rejected lines are no longer
+eligible for future authoring. No repeated-play/event/answer-dependent flavor.
 
 Current refinement after case 14, 2026-10-08: human wording is required in the
 condition itself, not only its aside. Semicolon XOR felt robotic and conflicted
@@ -52,7 +62,7 @@ not count as reasoning diversity. Surface wording and effective logical work are
 separate review axes; simplify under actual field constants before labeling depth.
 
 Completed bounded artifact: [CLUE_TEMPLATE_SHEET.md](CLUE_TEMPLATE_SHEET.md),
-with sixteen active core phrases, thirty independent optional Keeper asides, applicability
+with 28 accepted core phrases, 24 optional Keeper-aside review candidates, applicability
 guards and semantic checks. Future Lab integration is implemented through explicit
 offline authoring and validated frozen wording records; production integration is
 not implemented. No extra blind

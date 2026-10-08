@@ -72,8 +72,8 @@ test('new XOR wording uses either/or while frozen v1 wording remains valid',()=>
   assert.deepEqual(publicView(old,createState(old)).clues,[old.wording.entries[0].text]);
 });
 
-test('all thirty unique optional asides persist independently of clause and answer',()=>{
-  assert.equal(Object.keys(authoringAsides).length,30);assert.equal(new Set(Object.values(authoringAsides)).size,30);
+test('all twenty-four unique optional asides persist independently of clause and answer',()=>{
+  assert.equal(Object.keys(authoringAsides).length,24);assert.equal(new Set(Object.values(authoringAsides)).size,24);
   for(const [asideId,asideText] of Object.entries(authoringAsides)) {
     const next=authorWording(f,legacyClueText,{asideId});validate(next);
     assert.equal(publicView(next,createState(next)).clueAsides[0],asideText);
@@ -81,8 +81,8 @@ test('all thirty unique optional asides persist independently of clause and answ
   }
 });
 
-test('temporal asides remain valid in old records but are unavailable for new cases',()=>{
-  for(const asideId of ['note-tomorrow-v1','note-legible-v1','note-drying-v1']) {
+test('all retired asides remain valid in old records but are unavailable for new cases',()=>{
+  for(const asideId of Object.keys(asides).filter(id=>!Object.hasOwn(authoringAsides,id))) {
     assert.throws(()=>authorWording(f,legacyClueText,{asideId}));
     const old=authorWording(f,legacyClueText);
     Object.assign(old.wording.entries[0],{asideId,asideText:asides[asideId]});validateWording(old,legacyClueText);

@@ -4,6 +4,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Keeper-aside voice repair and condition acceptance — 2026-10-08
+
+User accepts all 28 logical-condition phrases. The thirty-note aside review instead
+rejects the general clipped/aphoristic voice, forced explanatory punchlines and
+unprovided writing-scene props. Prefer plausible personal thoughts, occasional
+Keeper humor and everyday distractions; see CLUE_WORDING_POLICY.md. Proposed
+future-case shortlist: six retained lines plus eighteen new ones (24 total), with
+no count padding. Specific new lines await user review. Old IDs/text stay immutable
+and validate historical records; only the explicit new pool is authorable. All 41
+Lab tests pass, including retirement of every removed ID. No played case, core
+condition or feedback mechanic changed; no new trial opened. After wording review,
+next evidence remains error recovery in a fresh precommitted supported case.
+Production BLOCKED.
+
 ### Full wording variety review — 2026-10-08
 
 User requests about four natural variants per supported condition and the complete

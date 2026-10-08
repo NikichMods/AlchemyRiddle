@@ -56,43 +56,41 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 
 ## Optional independent Keeper asides
 
-Current authoring pool: thirty timeless notes. Historical note-tomorrow-v1,
-note-legible-v1 and note-drying-v1 remain in the immutable registry only for old
-fixtures. New replacements do not promise tomorrow, later or another reading.
-Case-15 feedback rejects that temporal mismatch with a perceived one-off puzzle.
+Current pool: 24 review candidates, six retained lines and eighteen new ones.
+User rejects the old pool's general clipped/aphoristic voice, invented writing props,
+ambiguous standalone "лист" and jokes that need decoding. The replacement uses
+ordinary personal thoughts, practical concerns, everyday distractions and occasional
+Keeper humor; not every note needs a punchline or handwriting topic. New lines are
+proposed, not individually accepted. Thirty was a desired size, not a forced quota.
+Historical IDs/text remain immutable and readable; only this explicit pool is
+eligible for new authoring. See CLUE_WORDING_POLICY.md for the owning voice rules.
 
 | ID | Russian text |
 | --- | --- |
 | note-label-v1 | Записать крупнее, чтобы не перепутать банки. |
 | note-underline-v1 | Подчеркнуть. Лучше дважды. |
-| note-quill-v1 | Перо положить подальше от реагентов. |
 | note-ink-v1 | Чернила оставить для записей. |
 | note-jar-v1 | Подписать банку, а не крышку. |
-| note-lid-v1 | Крышки переставляются слишком легко. |
-| note-cleanup-v1 | Запись должна пережить уборку. |
-| note-mortar-v1 | Не класть этот лист под ступку. |
-| note-stains-v1 | Для пятен оставить другой лист. |
-| note-margins-v1 | На полях ещё есть место. Пока. |
-| note-unhurried-v1 | Почерк разобрать проще, если не спешить. |
-| note-abbreviations-v1 | Здесь обойтись без сокращений. |
 | note-sermon-v1 | Это заметка, а не проповедь. Покороче. |
-| note-scroll-v1 | Свиток красивый. Читаемость полезнее. |
-| note-flourish-v1 | Не украшать буквы до неузнаваемости. |
-| note-signature-v1 | Внизу оставить место для подписи. |
-| note-kindling-v1 | Этот лист хранить с записями, а не с растопкой. |
-| note-neatness-v1 | Если получится красиво — хорошо. Если разборчиво — лучше. |
-| note-cup-v1 | Убрать от кружки. Бумаге пить не положено. |
-| note-working-v1 | Рабочая запись. Парадный почерк необязателен. |
-| note-morgue-v1 | Морг отдельно, письменный стол отдельно. |
-| note-corpses-v1 | Покойники почерк не оценят. Мне ещё читать. |
-| note-trade-v1 | Не отдавать этот лист вместе с товаром. |
-| note-margin-scroll-v1 | Пометку на полях не превращать в ещё один свиток. |
-| note-draft-v1 | Спрятать от сквозняка. Рабочие записи летать не обязаны. |
-| note-lunch-v1 | Не забыть про обед. Эта запись его не заменит. |
-| note-grand-v1 | Записать спокойно. В торжественном тоне смесь не нуждается. |
 | note-self-legible-v1 | Главное, чтобы это смог прочесть я сам. |
-| note-spacing-v1 | Оставить место между строками. Буквам тоже нужен воздух. |
-| note-dry-paper-v1 | Бумагу держать сухой. Для жидкости есть банки. |
+| keeper-lunch-v1 | За опытами бы про обед не забыть. Есть-то всё равно придётся. |
+| keeper-large-writing-v1 | Надо бы записать это покрупнее. Мелко и аккуратно у меня всё равно не выходит. |
+| keeper-fancy-writing-v1 | Ладно, красивый почерк оставим для чего-нибудь другого. |
+| keeper-own-record-v1 | Запишу как есть. Мне это понимать, а не на продажу выставлять. |
+| keeper-spacing-v1 | Надо оставить немного места между строками. |
+| keeper-readable-v1 | Можно и без красивых букв. Лишь бы понятно было. |
+| keeper-cemetery-v1 | Надо бы не забыть, что у меня ещё и кладбище есть. |
+| keeper-other-work-v1 | Вот бы с остальными делами можно было так же спокойно разобраться. |
+| keeper-short-v1 | Не буду здесь расписывать всё на полстраницы. У меня и так дел хватает. |
+| keeper-kindling-v1 | Эту запись лучше не пускать на растопку. Жалко будет. |
+| keeper-neatness-v1 | Ну, если ещё и красиво получится, я только за. Но сначала пусть будет понятно. |
+| keeper-cup-v1 | Надо убрать записи подальше от кружки, а то ещё чаем их залью. |
+| keeper-working-v1 | Это я для себя записываю, можно без торжественной речи. |
+| keeper-shovel-v1 | Может, хоть здесь получится обойтись без лопаты. |
+| keeper-corpses-v1 | Хорошо хоть покойникам не нужно объяснять, чем я тут занят. |
+| keeper-trade-v1 | Надо бы не отдать эти записи вместе с товаром. Покупателю от них никакого толку. |
+| keeper-break-v1 | Надо бы выкроить время и на что-нибудь, кроме работы. |
+| keeper-important-v1 | Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду. |
 
 These are intentions, not assertions that the player previously made mistakes,
 performed experiments, met NPCs or completed quests. Do not claim new chemical
@@ -108,7 +106,8 @@ of the seven covered families. Twelve added templates preserve existing IDs/text
 across cases as well as within a repeated family, independent of hidden truth.
 Persist exact chosen IDs/text; no synonym swapping during play. Keep recognisable
 anchors (named slots, exact properties, conditional scope and exactly-one).
-The added variants are semantically reviewed, not independently player-accepted.
+User accepts all 28 condition phrases in the full review. This is wording acceptance,
+not generator-quality or production acceptance.
 
 Example, independent of any live case:
 

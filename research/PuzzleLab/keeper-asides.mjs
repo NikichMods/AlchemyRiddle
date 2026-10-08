@@ -33,8 +33,33 @@ export const asides = Object.freeze({
   'note-grand-v1':'Записать спокойно. В торжественном тоне смесь не нуждается.',
   'note-self-legible-v1':'Главное, чтобы это смог прочесть я сам.',
   'note-spacing-v1':'Оставить место между строками. Буквам тоже нужен воздух.',
-  'note-dry-paper-v1':'Бумагу держать сухой. Для жидкости есть банки.'
+  'note-dry-paper-v1':'Бумагу держать сухой. Для жидкости есть банки.',
+  'keeper-lunch-v1':'За опытами бы про обед не забыть. Есть-то всё равно придётся.',
+  'keeper-large-writing-v1':'Надо бы записать это покрупнее. Мелко и аккуратно у меня всё равно не выходит.',
+  'keeper-fancy-writing-v1':'Ладно, красивый почерк оставим для чего-нибудь другого.',
+  'keeper-own-record-v1':'Запишу как есть. Мне это понимать, а не на продажу выставлять.',
+  'keeper-spacing-v1':'Надо оставить немного места между строками.',
+  'keeper-readable-v1':'Можно и без красивых букв. Лишь бы понятно было.',
+  'keeper-cemetery-v1':'Надо бы не забыть, что у меня ещё и кладбище есть.',
+  'keeper-other-work-v1':'Вот бы с остальными делами можно было так же спокойно разобраться.',
+  'keeper-short-v1':'Не буду здесь расписывать всё на полстраницы. У меня и так дел хватает.',
+  'keeper-kindling-v1':'Эту запись лучше не пускать на растопку. Жалко будет.',
+  'keeper-neatness-v1':'Ну, если ещё и красиво получится, я только за. Но сначала пусть будет понятно.',
+  'keeper-cup-v1':'Надо убрать записи подальше от кружки, а то ещё чаем их залью.',
+  'keeper-working-v1':'Это я для себя записываю, можно без торжественной речи.',
+  'keeper-shovel-v1':'Может, хоть здесь получится обойтись без лопаты.',
+  'keeper-corpses-v1':'Хорошо хоть покойникам не нужно объяснять, чем я тут занят.',
+  'keeper-trade-v1':'Надо бы не отдать эти записи вместе с товаром. Покупателю от них никакого толку.',
+  'keeper-break-v1':'Надо бы выкроить время и на что-нибудь, кроме работы.',
+  'keeper-important-v1':'Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду.'
 });
 // Retained for frozen historical records, not eligible for new authoring.
-const retired=new Set(['note-tomorrow-v1','note-legible-v1','note-drying-v1']);
-export const authoringAsides=Object.freeze(Object.fromEntries(Object.entries(asides).filter(([id])=>!retired.has(id))));
+// Explicit review pool: old lines remain byte-identical, but do not become defaults.
+const current=[
+  'note-label-v1','note-underline-v1','note-ink-v1','note-jar-v1','note-sermon-v1','note-self-legible-v1',
+  'keeper-lunch-v1','keeper-large-writing-v1','keeper-fancy-writing-v1','keeper-own-record-v1',
+  'keeper-spacing-v1','keeper-readable-v1','keeper-cemetery-v1','keeper-other-work-v1',
+  'keeper-short-v1','keeper-kindling-v1','keeper-neatness-v1','keeper-cup-v1','keeper-working-v1',
+  'keeper-shovel-v1','keeper-corpses-v1','keeper-trade-v1','keeper-break-v1','keeper-important-v1'
+];
+export const authoringAsides=Object.freeze(Object.fromEntries(current.map(id=>[id,asides[id]])));
