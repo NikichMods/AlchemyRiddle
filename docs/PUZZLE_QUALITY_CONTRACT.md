@@ -1,5 +1,17 @@
 # Puzzle quality — Lab calibration synthesis
 
+Latest supplement, case 19 (2026-10-09): explicitly accepted as a solid full
+investigative puzzle. Four new pair checks, one success, Science 7, no refill or
+wrong synthesis. Narration shows interacting implication/XOR/count branch rejection,
+transfer between analogous candidates, rejection of an already-known stable chain
+through composition and experimental certification of a new chain. One first pair
+check was outside all tag-valid hypotheses. Subjective medium-high/high is not a
+calibrated band or maximum; interesting upper ceiling remains open. The conditional
+helps reject alternatives despite an inactive antecedent in the final answer.
+Repeated role-word scanning confusion is a separate presentation finding; no
+causal attribution of the off-target test or selected styling solution. Read
+prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md for exact evidence and limitations.
+
 Latest supplement, case 15: six paid pair checks, failed then successful synthesis,
 one refill; two off-target checks after slot/property confusion. Player independently
 noticed tag-invalid XOR despite stable edges, citing prior taught error experience.

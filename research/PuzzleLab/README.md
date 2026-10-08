@@ -5,6 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+2026-10-09: case 19 solved and positively accepted as a solid research puzzle;
+four new pair checks, one success, Science 7. Subjective medium-high/high, not
+maximum. Repeated slot-role scanning weakness recorded; visual treatment not
+selected or implemented. No new trial. Start with current DESIGN_RESEARCH entry
+and `docs/prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md`; preserve solved session
+on 4182. The precommit entry below is historical.
+
 2026-10-09: user selected interest-ceiling research; synthetic case 19 is
 precommitted for independent play on 4182. Start with
 `docs/prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md` and current DESIGN_RESEARCH

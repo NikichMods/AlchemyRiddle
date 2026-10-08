@@ -855,6 +855,14 @@ not merely by counting identical operators or sentence openings.
 
 ### Three-slot workspace and starting bridges — accepted 2026-10-07
 
+Role-scanning clarification, repeated in cases 16 and 19: conditions should make
+the component role (Powder/Fluid/Essence) quickly recognizable together with its
+property. Colored properties alone leave a reading asymmetry and reported role
+confusion. Preserve complete readable role names, exact clue meaning and property
+identity; typography, reuse of existing slot symbols and other visual treatments
+remain unselected. This is a legibility requirement, not authorization for an
+automatic deduction, a new role-color code or retrospective changes to played text.
+
 Case 06 was explicitly accepted as a satisfying three-slot puzzle after three
 pair investigations and one successful formula verification. The actual route
 followed known stable anchors, rejected continuations and joined a final stable

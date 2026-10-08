@@ -4,6 +4,23 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Case 19 accepted as solid research; role scanning remains weak — 2026-10-09
+
+Read `prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md`: solved durable human session,
+four new pair checks and one success, Science 7, no refill/wrong submission.
+Independent narration combines implication, XOR and count to reject mineral
+branches, rejects a known stable chain through composition, then certifies a new
+chain. Positive interest acceptance; subjective medium-high/high, explicitly not
+maximum. Upper ceiling still unproven. One paid check lay outside tag-valid target
+hypotheses; no inference that slot confusion caused it. Actual route may differ
+from the five-check policy witnesses and need not exhaust all alternatives.
+Repeated role-word scanning confusion: property tags highlighted, slot nouns plain.
+Quick role recognition is wanted; exact typography/icon/color treatment unselected.
+No UI/template/grammar/generator change or new trial. Preserve solved case 19 on
+4182 and recover actual session from private migration-current-state.json.
+Next interaction: discuss scanning options and next upper-interest experiment.
+Production remains BLOCKED.
+
 ### Interest-ceiling track selected; case 19 precommitted — 2026-10-09
 
 User selects the interesting upper-envelope track after current-state recovery.

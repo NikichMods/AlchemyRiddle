@@ -1,6 +1,8 @@
 # Interest ceiling — synthetic case 19
 
-2026-10-09. Status: PRECOMMITTED; awaiting first independent player choice.
+2026-10-09. Status: SOLVED; positive research-puzzle acceptance, ceiling unproven.
+Durable session confirms four new pair checks and one successful submission,
+Science 7; no wrong submission or refill. Original precommit below preserved.
 User selects the interesting upper-envelope track after recovery discussion.
 This is one authored positive candidate, not a calibrated boss or production work.
 Production remains BLOCKED. Preserve solved cases 16–18 and their sessions.
@@ -72,7 +74,7 @@ No Keeper aside/event reaction or tutorial UI; prior cases are unchanged.
   population comprehension, calibrated difficulty or production anti-bruteforce
   balance. One target guess can still succeed by chance.
 
-## Next interaction and evaluation
+## Original next interaction and evaluation (historical)
 
 First player choice in the Lab. Provide raw observations and preserve earned
 state; no facilitator deductions. Player feedback after a natural stopping point
@@ -80,3 +82,68 @@ should establish whether facts actually interacted, where reasoning felt
 interesting or flat, and whether prior knowledge helped or burdened the route.
 Record observed reasoning separately from action count and subjective difficulty.
 Do not solicit a questionnaire during play or call this a proven boss in advance.
+
+## Human outcome and actual route — 2026-10-09
+
+The user explicitly likes the example as a full, solid investigative puzzle.
+Subjective difficulty: medium-high, possibly entering high or high; explicitly
+not maximum. Preserve that range rather than assigning a calibrated band.
+
+Durable actual session: `sessions/1d0c5f8d-b269-4b58-81a1-cb18159f3e06.json`.
+Private `migration-current-state.json` records its exact solved state and next
+interaction. Do not recover the empty facilitator session instead. Session model
+hash is `46e54e06b4ea022ea8d2a0a2371ea0e23fa1d01e95b9e1c638889a72cafba830`
+(server hashes compact parsed JSON, distinct from the frozen file-byte hash).
+
+Observed paid actions, in order:
+1. Powder/fluid `p1:f3`: incompatible.
+2. Powder/fluid `p3:f3`: incompatible.
+3. Powder/fluid `p3:f4`: stable.
+4. Fluid/essence `f4:e1`: stable.
+5. Whole formula: successful. Science 20 -> 7; no refill or wrong synthesis.
+
+Narrated reasoning independently rejects the remembered mineral-powder/Plant-fluid
+bridge through implication plus XOR; examines the Water count, then transfers
+the contradiction to the second mineral powder without another experiment.
+The user next constructs an already-known stable chain, checks every composition
+condition, rejects it through the forbidden combination and rejects a replacement
+through exact-two Water. A later tag-valid branch fails experimentally; a Fluid
+substitution preserves the relevant composition constraints and both final edges
+are certified before submission. The unvisited last Powder branch need not be
+exhausted for this justified success.
+
+The first paid pair lies on no tuple satisfying all visible tag conditions;
+three later pair checks lie on then-unrefuted tag-valid hypotheses. Record the
+first as avoidable target-specific cost during incomplete constraint integration,
+not as a mandatory check or proof that slot confusion caused the experiment.
+No full-mixture brute-force sequence was observed. Four actual checks versus
+five in the two preflight policies illustrates legitimate route variation.
+
+This is positive evidence of interacting clues and meaningful investigation for
+this informed player. It does not establish the upper ceiling, fresh-player
+understanding, mature-save distribution, corpus frequency or measured duration.
+The conditional's antecedent need not be true in the final answer to support
+substantial branch rejection; this route visibly uses that distinction.
+
+## Repeated slot-scanning feedback and proposed response
+
+The user again reports that colored property names can be scanned quickly while
+plain Powder/Fluid/Essence nouns cannot. Role confusion occurs in the narration;
+the requested improvement is quick recognition of which component each property
+belongs to. Earlier case-16 observation now has another concrete occurrence.
+Current renderer `clueContents` styles quoted properties only; role words remain
+plain text. This verifies a presentation asymmetry, not a population-level cause.
+
+Discuss options before implementation: stronger neutral type for role words;
+reuse existing slot silhouettes beside the full role names; separate slot colors;
+or structured slot/property fragments. Working recommendation is neutral role
+emphasis with existing monochrome silhouettes if useful, preserving continuous
+sentences and property colors. New color codes risk competing with tag meaning;
+icon-only labels risk learned-symbol burden; fully boxed expressions risk reading
+as inputs or flattening logical sentence scope. Hover can supplement scanning,
+but should not be required to read the condition.
+
+No concrete styling solution or UI change selected yet. Preserve exact frozen
+wording, fixture and historical rendering evidence; do not retrospectively alter
+the played case. No new prototype opened. Next interaction: discuss the bounded
+slot-scanning treatment and how to extend interest beyond this accepted exemplar.
