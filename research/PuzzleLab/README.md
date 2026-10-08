@@ -5,13 +5,16 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-2026-10-09: role-word readability positively received. The `?roles=1` preview now
-adds mild consistent role colors, concise implication/pair/experiment guidance,
-subdued relocated refill and an alchemical synthesis button with dynamic cost.
-Normal URLs retain historical presentation. No mechanics/fixture change; 42 tests
-pass. Browser currently uses a separate fresh visual-review session; actual solved
+2026-10-09: accepted role presentation is now the default on every Lab URL.
+Instructions, headings, clues and help share role shapes/colors/bold names;
+ingredient names remain intact. The top task links to composition and pair
+evidence; pair verdicts consistently use compatibility terminology. Subdued
+refill and the alchemical synthesis button retain dynamic costs. No mechanics or
+fixture change. Browser currently uses a separate fresh visual-review session; actual solved
 case 19 remains durable and must not be confused with that preview. See
 `docs/research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`.
+
+The dated entries below preserve historical research stages, not current UI defaults.
 
 2026-10-09: explicit role-scanning presentation trial implemented. Append
 `?roles=1` to a Lab URL for bold complete slot words plus small monochrome card

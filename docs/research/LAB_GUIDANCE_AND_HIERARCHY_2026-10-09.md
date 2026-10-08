@@ -116,3 +116,25 @@ Powder now resembles the ordinary font to the user; Fluid and Essence stand out
 well. Keep the current Powder hue for now: stronger yellow risks renewed Animal
 resemblance. This is a deferred visual refinement, not a claim of solved hue
 separation. Mechanics, fixture and recorded player trace remain unchanged.
+
+## Accepted consistent language and player route
+
+User approves moving the general route into the top task: select one reagent per
+role, use “Сведения о составе” for component choice and “Совместимость пар” for
+their combinations. The composition-header prompt is now removed as redundant.
+Pair guidance retains its explanation and uses “совместимы” for the experiment
+result. Positive/negative verdicts are “Совместимо / Несовместимо”; synthesis
+guidance and help use the same concept. Internal `stable` data identity is unchanged.
+
+Role nouns receive shared shape, muted color and bold treatment in instructions,
+role headings, relation headings, clues and reference help. Rendering is scoped
+to role-bearing text, never ingredient names. Repeated rendering avoids nesting
+role decorations. This accepted presentation now applies without a query flag;
+existing `?roles=1` links remain valid. Powder hue is retained pending a stronger
+alternative. No paid experiments, economy or deduction semantics are changed.
+
+Verification: syntax and diff checks pass; all 42 existing tests pass with
+`--test-isolation=none` (sandbox blocks the default child-process runner).
+Browser confirms the new route, removed composition prompt, compatibility
+verdicts and shared role cues. Two free selection toggles preserve Science 20;
+no nested role labels or role decoration inside ingredient names.

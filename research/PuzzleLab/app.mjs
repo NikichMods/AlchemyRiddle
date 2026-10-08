@@ -3,8 +3,8 @@ let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder
 const $ = id => document.getElementById(id);
 let view;
 let queue = Promise.resolve();
-// Explicit presentation trial; old URLs retain the historical clue rendering.
-const showClueRoles = new URLSearchParams(location.search).get('roles') === '1';
+// Accepted presentation: role cues now apply on every URL.
+const showClueRoles = true;
 const slotShapes = {
   powder:'M1 31 Q6 28 10 20 Q14 10 20 10 Q26 10 30 20 Q34 28 39 31 Z M4 17 h1 M35 18 h1 M29 6 h1',
   fluid:'M14 2 H26 V9 L36 25 Q39 32 31 32 H9 Q1 32 4 25 L14 9 Z',
@@ -42,21 +42,21 @@ function relationJournal(s) {
     for (let i=0; i<view.slots.length-1; i++) {
       const slots = [view.slots[i].id,view.slots[i+1].id];
       const column = document.createElement('section');
-      const title = document.createElement('h4'); title.textContent = `${view.slots[i].name} ↔ ${view.slots[i+1].name}`; column.append(title);
+      const title = document.createElement('h4'); setRoleText(title, `${view.slots[i].name} ↔ ${view.slots[i+1].name}`); column.append(title);
       const list = document.createElement('ul');
       for (const r of observations.filter(r => r.slots.every((id,index) => id === slots[index]))) {
         const li = document.createElement('li');
         li.className = `relation ${r.stable ? 'stable' : 'incompatible'} ${pairMatches(r,slots,s.selected) ? 'current' : ''}`;
         const names = document.createElement('span'); names.className = 'relation-names';
         names.textContent = r.slots.map(id => name(r.tuple[id])).join(' + ');
-        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Стабильно' : '⊘ Несовместимо';
+        const verdict = document.createElement('span'); verdict.className = 'verdict'; verdict.textContent = r.stable ? '✓ Совместимо' : '⊘ Несовместимо';
         const refs = document.createElement('span'); refs.className = 'relation-refs';
         const connector = document.createElement('span'); connector.textContent = '↔';
         refs.append(cardRef(r.tuple[r.slots[0]]),connector,cardRef(r.tuple[r.slots[1]]),verdict);
         const choice = document.createElement('button'); choice.className = 'relation-choice';
         choice.id = `pair-${r.slots.map(id=>r.tuple[id]).join('-')}`;
         choice.setAttribute('aria-label',`Выбрать только пару: ${r.slots.map(id=>name(r.tuple[id])).join(' + ')}`);
-        choice.title = `${names.textContent} — ${r.stable ? 'стабильно' : 'несовместимо'}. Выбрать только эту пару`;
+        choice.title = `${names.textContent} — ${r.stable ? 'совместимо' : 'несовместимо'}. Выбрать только эту пару`;
         choice.onclick = () => action({type:'selectPair',slots:r.slots,tuple:r.tuple});
         const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
         choice.onmouseenter = () => highlight(true); choice.onmouseleave = () => highlight(false);
@@ -112,40 +112,51 @@ function clueContents(text) {
   }
   return parts;
 }
+function setRoleText(element, text) {
+  element.replaceChildren(roleContents(text));
+}
+function decorateRoleText(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) {
+    if (!walker.currentNode.parentElement.closest('.clue-role')) nodes.push(walker.currentNode);
+  }
+  for (const node of nodes) node.replaceWith(roleContents(node.textContent));
+}
 function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
   const shared = view.economy?.mode === 'sharedScience';
   document.body.classList.toggle('role-preview',showClueRoles);
-  $('clue-guide').hidden=!showClueRoles;
-  $('clue-guide').textContent=showClueRoles
-    ? 'Сопоставляйте свойства выбранных компонентов с условиями, чтобы подобрать подходящий состав.'
-    : '';
-  $('compatibility-guide').textContent=showClueRoles
-    ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией. Исследуйте неизвестные пары, чтобы узнать, какие из них стабильны.'
-    : 'Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.';
+  $('clue-guide').hidden=true;
+  $('clue-guide').textContent='';
+  setRoleText($('compatibility-guide'), view.slots.length === 3
+    ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией. Исследуйте неизвестные пары, чтобы узнать, какие из них совместимы.'
+    : 'Порошок должен быть совместим с жидкостью. Исследуйте неизвестные пары, чтобы узнать, какие из них совместимы.');
   $('experiment-guide').hidden=true;
   $('experiment-guide').textContent='';
-  $('pair-action-guide').textContent=showClueRoles
-    ? 'Выберите соседнюю пару, совместимость которой хотите узнать.'
-    : 'Для формулы нужны две стабильные пары. Исследование проверяет одну пару, финальная проверка — всю смесь.';
+  $('pair-action-guide').textContent='Выберите соседнюю пару, совместимость которой хотите узнать.';
   $('case-badge').textContent = shared ? 'Корпусный опыт' : 'Синтетический опыт';
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
-    ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть стабильными.'
+    ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть совместимыми.'
     : 'Найдите смесь из порошка и жидкости, которая подходит под все сведения о составе.';
   if (shared) $('description').textContent = view.description;
   $('economy-help').textContent = shared
     ? `Пара стоит ${view.pairTestCost} Science, вся смесь — ${view.submissionCost} Science. Запас общий, лимита попыток нет. Кнопка пополнения добавляет ${view.economy.refillAmount} Science. В лаборатории пополнение бесплатно: получение науки в игре здесь не моделируется. Уже изученные пары повторно оплачивать не нужно.`
     : 'Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.';
-  $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> Для тройки нужны две стабильные пары: порошок с жидкостью и жидкость с эссенцией. Их состояние показано справа. Кнопка «Исследовать» узнаёт результат одной пары за '+(shared ? 'Science.' : 'заряд.')+' Уже известные результаты сохраняются в «Совместимости пар».';
-  $('task').textContent = view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.';
+  $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> '+(view.slots.length === 3 ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией.' : 'Порошок должен быть совместим с жидкостью.')+' Результаты показаны в «Совместимости пар». Кнопка «Исследовать» проверяет одну пару; цена указана на кнопке.';
+  setRoleText($('task'), view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.');
+  const route = document.createElement('span'); route.className='task-route';
+  route.textContent='Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.';
+  $('task').append(route);
+  decorateRoleText(document.querySelector('.reference'));
   document.body.classList.toggle('three-slot', view.slots.length === 3);
   document.body.classList.toggle('many-candidates',view.slots.some(slot=>slot.cards.length>3));
   $('cards').replaceChildren();
   for (const slot of view.slots) {
     const group = document.createElement('fieldset');
-    const legend = document.createElement('legend'); legend.textContent = slot.name;
+    const legend = document.createElement('legend'); setRoleText(legend, slot.name);
     if(showClueRoles)legend.className=`role-${slot.id}`;
     group.append(legend);
     for (const card of slot.cards) {
@@ -166,7 +177,7 @@ function render() {
     const li = document.createElement('li'); li.append(clueContents(text));
     if(view.clueAsides?.[i]) {
       const aside=document.createElement('div');aside.className='keeper-aside';
-      aside.textContent=view.clueAsides[i];li.append(aside);
+      setRoleText(aside,view.clueAsides[i]);li.append(aside);
     }
     return li;
   }));
@@ -188,9 +199,9 @@ function render() {
       const complete = slots.every(id => s.selected[id]);
       const known = s.knownRelations.find(r => pairMatches(r,slots,s.selected));
       const panel = document.createElement('section'); panel.className=`pair-control ${known ? known.stable ? 'stable' : 'incompatible' : complete ? 'unknown' : 'incomplete'}`;
-      const heading = document.createElement('h3'); heading.textContent = `${slot.name} ↔ ${view.slots[i+1].name}`;
+      const heading = document.createElement('h3'); setRoleText(heading, `${slot.name} ↔ ${view.slots[i+1].name}`);
       const status = document.createElement('span'); status.className='verdict';
-      status.textContent = known ? known.stable ? '✓ Стабильно' : '⊘ Несовместимо' : complete ? '? Не исследовано' : '— Выберите пару';
+      status.textContent = known ? known.stable ? '✓ Совместимо' : '⊘ Несовместимо' : complete ? '? Не исследовано' : '— Выберите пару';
       const names = document.createElement('p'); names.className='pair-names';
       const arrow = document.createElement('span'); arrow.textContent='↔';
       names.append(cardRef(s.selected[slots[0]]),arrow,cardRef(s.selected[slots[1]]));
@@ -212,7 +223,7 @@ function render() {
       edges.every(r => r?.stable) ? 'stable' : 'unknown';
     summary.className = `formula-compatibility ${state}`;
     const label = document.createElement('span'); label.className = 'verdict';
-    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:showClueRoles?'✓ Обе пары стабильны.':'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'Совместимость смеси пока неизвестна.'}[state];
+    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:view.slots.length===3?'✓ Обе пары совместимы.':'✓ Пара совместима.',unknown:'Совместимость смеси пока неизвестна.'}[state];
     summary.append(label);
   }
   const submissions = s.history.filter(h=>h.type!=='pairTest' && h.type!=='refill');
@@ -232,7 +243,7 @@ function render() {
     $('submit').setAttribute('aria-label',`Смешать и проверить · ${view.submissionCost} Science`);
     $('synthesis-guide').hidden=false;
     $('synthesis-guide').textContent=view.slots.length===3
-      ? 'Формула верна, если соблюдены условия состава и обе соседние пары стабильны.'
+      ? 'Формула верна, если соблюдены условия состава и обе соседние пары совместимы.'
       : 'Формула верна, если выбранные компоненты соблюдают условия состава.';
   }
   $('refill').hidden = !shared;

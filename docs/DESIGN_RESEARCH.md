@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Consistent role presentation and player route accepted — 2026-10-09
+
+User accepts the top instruction linking component choice to “Сведения о составе”
+and pair checks to “Совместимость пар”. Remove the redundant composition-header
+prompt. Use compatibility terminology consistently in player-facing verdicts,
+guidance and help. Role names carry the same shape/color/bold cue throughout
+instructions, headings and help; ingredient names remain intact. Accepted
+presentation is now the default, no `?roles=1` requirement. Powder hue retained.
+Read latest section in `research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`.
+No puzzle/mechanics changes. Next: assess the revised route and role cues in
+playtests. Production remains BLOCKED.
+
 ### Direct pair guidance accepted; role palette refined — 2026-10-09
 
 User accepts the direct compatibility/action wording and authorizes lighter
