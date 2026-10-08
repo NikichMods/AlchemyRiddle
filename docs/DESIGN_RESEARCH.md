@@ -4,6 +4,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Active Keeper-wording trial — case 14, 2026-10-08
+
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
+User authorizes a fresh readability trial after template integration. Final private
+model and exact text precommitted, source/converted truth agrees on all 27 tuples.
+Two necessary conditions plus one separate Keeper aside; no priors or paid history,
+Science 20. Preserve prior completed cases; do not reveal deductions or route data.
+Next interaction is first player choice after browser handoff on 4177. Production
+remains BLOCKED; no causal wording or human difficulty claim yet.
+
 ### Knowledge trial completed and wording repair — case 13, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md. Independently solved with

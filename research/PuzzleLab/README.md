@@ -5,6 +5,12 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+Active authorized Keeper-wording trial: corpus case 14 on 4177, initially empty
+selection/history, no priors, Science 20. Read
+`docs/prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md` and the prototype protocol before
+resuming. Exact wording/one separate aside and hidden model precommitted privately;
+public initial snapshot tracked. Do not replace prior solved sessions.
+
 Completed trial: corpus case 13 on 4176, two new pair checks and one success.
 It began with one prior stable pair and three necessary
 clauses. Read docs/prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md before resuming.
