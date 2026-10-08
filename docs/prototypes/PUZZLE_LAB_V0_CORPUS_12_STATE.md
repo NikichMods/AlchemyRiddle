@@ -53,3 +53,7 @@ Next interaction: player reads board and makes first choice. Capture first
 impression, clause roles, rereading/lost branches, actions and competence feeling.
 Do not reveal simulated path/mean or supply new deductions. No reliable solve-time
 measurement; do not time development/narration. Production remains BLOCKED.
+
+Browser handoff verified: tab 2 on 4175, title matches case 12, all selections empty,
+no observations, Science 20, refill available, submission disabled until complete
+selection. Screenshot layout checked. No player action performed by facilitator.

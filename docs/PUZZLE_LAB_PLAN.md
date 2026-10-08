@@ -505,3 +505,12 @@ See research/INTRA_PACKAGE_REVIEW_2026-10-08.md: 209 retained packages, 19 targe
 groups, same-count varied alternatives at close cached pace. No new corpus search
 or human trial. Next owning decision: proposed narrow within-package soft
 preference, separate from mistake visibility/recovery. No new weight accepted.
+
+## Active fresh human contrast — 2026-10-08
+
+Case 12 is precommitted and opened on loopback 4175. Recovery:
+prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
+Fresh target, two different displayed clause roles, no priors, shared 20 Science,
+costs 2/5 and unlimited +10 refill. Player-facing start verified with no selections
+or experiments. Keep prior solved case on 4174; restore private durable state
+before resuming. No further test or automatic clue feedback authorized.

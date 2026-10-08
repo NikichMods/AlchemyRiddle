@@ -34,7 +34,7 @@ node research/PuzzleLab/audit-calibration.mjs --write
 
 If child-process isolation is restricted, use
 `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.
-There are 25 deterministic/HTTP tests (include `economy.test.mjs` in the test command). The offline audit validates all ten frozen
+There are 26 deterministic/HTTP tests (include `economy.test.mjs` in the test command). The offline audit validates all ten frozen
 fixtures, replays recorded pair histories and emits aggregate structural evidence
 with fixture hashes in `calibration-audit.json`; it does not score human interest.
 
