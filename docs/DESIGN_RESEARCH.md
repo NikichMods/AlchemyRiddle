@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### UI review: synthesis accepted; guidance correction discussed — 2026-10-09
+
+User accepts subdued refill and alchemical main button. Powder/Animal and
+Essence/Dark color resemblance reported; replacement palette unselected.
+Composition-header note explicitly removed pending more playtest evidence;
+accepted explicit onboarding remains. Pair guidance is criticized for conflating
+actual compatibility with prior knowledge and introducing undefined “connection”
+language; replacement copy is still discussed. Read latest review in
+`research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`. Current priority is reasoned
+discussion of the user's goals and proposed collaboration preferences, not another
+automatic UI expansion or global policy change. Completed case 19 preserved.
+Production remains BLOCKED.
+
 ### Lab guidance and action hierarchy preview — 2026-10-09
 
 User accepts improved role readability and authorizes mild pastel role colors,

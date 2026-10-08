@@ -117,8 +117,9 @@ function render() {
   const s = view.state;
   const shared = view.economy?.mode === 'sharedScience';
   document.body.classList.toggle('role-preview',showClueRoles);
-  $('clue-guide').hidden=!showClueRoles;
-  $('clue-guide').textContent='Соблюдайте все условия. «Если А, то Б»: выбрали А — нужно Б. Без А это правило не ограничивает Б.';
+  // Removed by user decision; wait for fresh-player evidence before adding a lesson.
+  $('clue-guide').hidden=true;
+  $('clue-guide').textContent='';
   $('compatibility-guide').textContent=showClueRoles
     ? 'Нужны две стабильные пары: порошок + жидкость и жидкость + эссенция. Изучать обе перед ответом не обязательно.'
     : 'Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.';

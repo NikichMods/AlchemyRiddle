@@ -3,7 +3,7 @@
 2026-10-09. Research-only UI refinement authorized by the user after case 19.
 The user reports the bold-word/monochrome-icon trial more readable. That is
 positive subjective acceptance, not measured error reduction. This follow-up
-palette/copy/button treatment awaits visual review. Production remains BLOCKED.
+palette/copy/button treatment receives the review below. Production remains BLOCKED.
 
 ## Implemented bounded preview
 
@@ -52,3 +52,31 @@ is private beside case 19 and shows the enabled-button QA selection.
 
 Next interaction: visual/copy review. No further blind case, compound grammar,
 generator weight or production mechanism selected by this UI work.
+
+## Subsequent user review and correction
+
+User accepts the subdued refill and distinctive main synthesis button. Role palette
+needs refinement: Powder sand resembles Animal, Essence resembles Dark's outline;
+Fluid does not feel confusing to this user. Preserve the semantic color direction
+but do not claim three new hues can be entirely disjoint from a broad tag palette.
+No replacement color values selected during this review.
+
+User explicitly removes the composition-header note and defers extra clarification
+until further playtest evidence. Implemented: `clue-guide` stays hidden and empty.
+This does not cancel the accepted explicit-onboarding requirement or alter logical
+semantics. General distinction: a solve route may not explicitly use every clue,
+but the final formula must satisfy every clue. Inactive implication premises are
+one special case of that broader route-versus-validity distinction; the previous
+UI note failed to explain the relationship to the user's broader concern.
+
+Pair guidance is criticized as unclear: a mixture's actual compatibility and the
+player's prior knowledge of it are separate facts. Saying that stable pairs are
+required but investigating them is optional creates a novice-facing question
+without explaining that distinction. “Confirms a connection” introduces an
+undefined concept. Replacement copy should directly name which components can
+mix and what experiments let the player learn; proposed wording still unselected.
+
+The current interaction is discussion of design reasoning and collaboration
+expectations. Do not interpret it as authorization to add a new global personal
+policy: user requests commentary first and anticipates a later persistence request.
+Personal preferences belong outside this public repository. No new prototype.
