@@ -4,6 +4,15 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Upper-envelope objective clarified — 2026-10-09
+
+User clarifies that “interest ceiling” was shorthand for the upper envelope of
+both interest and difficulty, not a request to optimize interest alone. Seek a
+fair, engaging peak challenge: difficulty may rise, while intellectual interest
+remains a distinct quality requirement. Do not equate extra reading, bookkeeping
+or repetitive elimination with the desired difficulty. The proposed deeper
+existing-grammar follow-up remains a proposal; no new fixture is opened.
+
 ### Consistent role presentation and player route accepted — 2026-10-09
 
 User accepts the top instruction linking component choice to “Сведения о составе”
