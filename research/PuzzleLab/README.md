@@ -5,6 +5,10 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+Active trial: corpus case 13 on 4176, one prior stable pair and three necessary
+clauses. Read docs/prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md before resuming.
+Hidden model/durable state private; solved prior cases below remain preserved.
+
 Completed contrast: corpus case 12 on 4175, independently solved with five pair
 checks and one success. Durable private state is solved. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md` before resuming. Initial public

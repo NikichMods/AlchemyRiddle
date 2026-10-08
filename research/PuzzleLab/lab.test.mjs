@@ -16,6 +16,10 @@ test('count clauses may reference a globally known property absent from one slot
   assert.equal(satisfies(f,{powder:'p',fluid:'g'},f.clues[0]),false);
   assert.throws(()=>validate({...f,clues:[{kind:'exactly',count:1,terms:[{slot:'missing',tag:'B'}]}]}));
   assert.throws(()=>validate({...f,clues:[{kind:'exactly',count:1,terms:[{slot:'powder',tag:'unknown'}]}]}));
+  const absent={kind:'exactly',count:0,terms:[{slot:'powder',tag:'C'},{slot:'fluid',tag:'C'}]};
+  validate({...f,propertyVocabulary:['C'],clues:[...f.clues,absent]});
+  assert.equal(satisfies(f,f.answer,absent),true);
+  assert.throws(()=>validate({...f,propertyVocabulary:['C','C']}));
 });
 
 test('tenth contrast has necessary clues and fits its precommitted investigative budget', () => {

@@ -47,6 +47,9 @@ export function clueText(f, clue) {
   throw new Error('Unsupported clue kind');
 }
 export function validate(f) {
+  if (f.propertyVocabulary && (!Array.isArray(f.propertyVocabulary) ||
+      f.propertyVocabulary.some(t => typeof t !== 'string' || !t.trim()) ||
+      new Set(f.propertyVocabulary).size !== f.propertyVocabulary.length)) throw new Error('Invalid property vocabulary');
   const shared = f.economy?.mode === 'sharedScience';
   if (f.economy && (!shared || !Number.isInteger(f.economy.refillAmount) || f.economy.refillAmount < 1)) throw new Error('Invalid economy');
   if (![2,3].includes(f.slots.length) || new Set(f.slots.map(s => s.id)).size !== f.slots.length) throw new Error('V0 requires two or three distinct slots');
@@ -57,7 +60,8 @@ export function validate(f) {
     if (c.kind === 'sharedTag') continue;
     const terms = c.kind === 'exactly' ? c.terms : c.kind === 'implies' ? [c.if, c.then] : c.kind === 'notTogether' ? [c.left,c.right] : [];
     if (!terms.length || terms.some(t => !f.slots.some(s => s.id === t.slot) ||
-        !f.slots.some(s => s.cards.some(card => card.tags.includes(t.tag))))) throw new Error('Invalid clue terms');
+        !(f.propertyVocabulary?.includes(t.tag) ||
+          f.slots.some(s => s.cards.some(card => card.tags.includes(t.tag)))))) throw new Error('Invalid clue terms');
     if (c.kind === 'exactly' && (!Number.isInteger(c.count) || c.count < 0 || c.count > terms.length)) throw new Error('Invalid count');
   }
   if (f.compatibility) {

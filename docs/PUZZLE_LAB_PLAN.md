@@ -5,6 +5,11 @@ for the laboratory; inference-quality synthesis complete; production remains BLO
 
 ## Current execution checkpoint — 2026-10-07
 
+Latest active trial (2026-10-08): user authorized opening corpus case 13, precommit
+prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md. One prior stable edge, three necessary
+conditions, new target, same Science economy. Port 4176; private durable state.
+No further case or new feedback mechanism authorized.
+
 Latest subsequent checkpoint, 2026-10-08: knowledge-aware selection check complete
 in research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md. A private three-clue candidate
 with one known stable edge is selected but not opened. Existing cases remain solved;

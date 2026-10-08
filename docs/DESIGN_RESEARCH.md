@@ -4,6 +4,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Active knowledge trial — corpus case 13, 2026-10-08
+
+User explicitly authorized opening the selected known-pair candidate. Recover
+prototypes/PUZZLE_LAB_V0_CORPUS_13_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md first.
+One known stable pair, three necessary clauses, nine anonymous cards. Science 20,
+pair 2, full triple 5, unlimited +10 Lab refill. Model frozen privately; port 4176,
+private durable corpus-13-sessions. Awaiting first player move; no facilitator hints.
+Never change/restart the trial by assumption. Preserve prior solved sessions;
+production BLOCKED. Entries below describe preceding completed evidence.
+
 ### Knowledge-aware selection check completed — 2026-10-08
 
 Latest authorized check: research/KNOWLEDGE_SELECTION_CHECK_2026-10-08.md.
