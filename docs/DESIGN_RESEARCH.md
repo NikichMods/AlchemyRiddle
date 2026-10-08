@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Keeper voice accepted; broader mild-dark shortlist — 2026-10-08
+
+User likes the new conversational voice, explicitly accepts previous shortlist
+items 7/13/20/21/24, and authorizes rewriting the first six too. Reduce handwriting
+dominance; broaden everyday Keeper concerns and mild black humor without gore;
+allow natural punctuation variety. Current proposal keeps those five exact lines
+and adds nineteen new ones (24 total). Individual additions await wording review.
+See CLUE_WORDING_POLICY.md / CLUE_TEMPLATE_SHEET.md. Previous IDs/text remain
+readable for historical cases; future authoring uses the explicit current pool.
+All 41 Lab tests pass. No clue/chemistry/economy/support change or fresh trial.
+All 28 condition phrases remain accepted. Next experiment remains a precommitted
+fresh case with error-recovery support, after this wording review. Production BLOCKED.
+
 ### Keeper-aside voice repair and condition acceptance — 2026-10-08
 
 User accepts all 28 logical-condition phrases. The thirty-note aside review instead

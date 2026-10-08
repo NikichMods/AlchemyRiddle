@@ -11,8 +11,15 @@ and jokes needing translation. Write plausible personal thoughts in ordinary
 Russian, with occasional practical/macabre humor and distractions such as lunch
 or other Keeper work. No obligatory two-part punchline; not every note must be
 about handwriting. A reading must work without staging an unseen writing scene.
-The proposal retains six old lines and adds eighteen new ones: 24 review candidates,
-not a quota of thirty. This editorial shortlist is not individual line acceptance.
+Follow-up review accepts the conversational voice and specifically keeper-lunch-v1,
+keeper-cemetery-v1, keeper-shovel-v1, keeper-corpses-v1 and keeper-important-v1.
+User authorizes rewriting even the six retained old notes, reducing handwriting
+dominance, more varied punctuation and more mild black humor (no graphic cruelty).
+Punctuation should follow an actual thought/pause, not a new mandatory pattern.
+The current 24-line proposal preserves those five accepted lines and adds nineteen
+new ones: ordinary Keeper work, cemetery, rest, lunch, curiosity, commerce and a
+small writing-related subset. These new lines remain review candidates, not
+individual acceptance. There is no quota of thirty.
 Old IDs/text remain valid for historical records, but rejected lines are no longer
 eligible for future authoring. No repeated-play/event/answer-dependent flavor.
 

@@ -56,41 +56,42 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 
 ## Optional independent Keeper asides
 
-Current pool: 24 review candidates, six retained lines and eighteen new ones.
-User rejects the old pool's general clipped/aphoristic voice, invented writing props,
-ambiguous standalone "лист" and jokes that need decoding. The replacement uses
-ordinary personal thoughts, practical concerns, everyday distractions and occasional
-Keeper humor; not every note needs a punchline or handwriting topic. New lines are
-proposed, not individually accepted. Thirty was a desired size, not a forced quota.
-Historical IDs/text remain immutable and readable; only this explicit pool is
-eligible for new authoring. See CLUE_WORDING_POLICY.md for the owning voice rules.
+Current pool: 24 lines, five individually accepted and nineteen new review candidates.
+User accepts the conversational voice and keeper-lunch/cemetery/shovel/corpses/
+important-v1, authorizes rewriting the first six retained old notes too, and requests
+less handwriting dominance, natural punctuation variety and more mild black humor.
+No graphic cruelty or obligatory punchline. The shortlist now covers Keeper work,
+cemetery, rest, lunch, curiosity, commerce and a small writing-related subset.
+Thirty was a desired size, not a forced quota. Historical IDs/text remain immutable
+and readable; only this explicit pool is eligible for new authoring. See
+CLUE_WORDING_POLICY.md for the owning voice rules. Five accepted lines are first.
 
 | ID | Russian text |
 | --- | --- |
-| note-label-v1 | Записать крупнее, чтобы не перепутать банки. |
-| note-underline-v1 | Подчеркнуть. Лучше дважды. |
-| note-ink-v1 | Чернила оставить для записей. |
-| note-jar-v1 | Подписать банку, а не крышку. |
-| note-sermon-v1 | Это заметка, а не проповедь. Покороче. |
-| note-self-legible-v1 | Главное, чтобы это смог прочесть я сам. |
 | keeper-lunch-v1 | За опытами бы про обед не забыть. Есть-то всё равно придётся. |
-| keeper-large-writing-v1 | Надо бы записать это покрупнее. Мелко и аккуратно у меня всё равно не выходит. |
-| keeper-fancy-writing-v1 | Ладно, красивый почерк оставим для чего-нибудь другого. |
-| keeper-own-record-v1 | Запишу как есть. Мне это понимать, а не на продажу выставлять. |
-| keeper-spacing-v1 | Надо оставить немного места между строками. |
-| keeper-readable-v1 | Можно и без красивых букв. Лишь бы понятно было. |
 | keeper-cemetery-v1 | Надо бы не забыть, что у меня ещё и кладбище есть. |
-| keeper-other-work-v1 | Вот бы с остальными делами можно было так же спокойно разобраться. |
-| keeper-short-v1 | Не буду здесь расписывать всё на полстраницы. У меня и так дел хватает. |
-| keeper-kindling-v1 | Эту запись лучше не пускать на растопку. Жалко будет. |
-| keeper-neatness-v1 | Ну, если ещё и красиво получится, я только за. Но сначала пусть будет понятно. |
-| keeper-cup-v1 | Надо убрать записи подальше от кружки, а то ещё чаем их залью. |
-| keeper-working-v1 | Это я для себя записываю, можно без торжественной речи. |
 | keeper-shovel-v1 | Может, хоть здесь получится обойтись без лопаты. |
 | keeper-corpses-v1 | Хорошо хоть покойникам не нужно объяснять, чем я тут занят. |
-| keeper-trade-v1 | Надо бы не отдать эти записи вместе с товаром. Покупателю от них никакого толку. |
-| keeper-break-v1 | Надо бы выкроить время и на что-нибудь, кроме работы. |
 | keeper-important-v1 | Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду. |
+| keeper-thought-v1 | Так... записать бы это так, чтобы самому было понятно. |
+| keeper-memory-v1 | Подчеркну, пожалуй. С моей памятью лишним не будет. |
+| keeper-ink-v1 | Чернила пусть остаются для записей, мне и без них есть чем заняться. |
+| keeper-jars-v1 | Надо подписать банки... а то придётся гадать ещё и над ними. |
+| keeper-sermon-v1 | Можно бы и покороче... я ведь смесь готовлю, а не проповедь. |
+| keeper-first-v1 | Так, сначала с этим разберусь. Остальные дела пока никуда не денутся. |
+| keeper-burial-v1 | Надо бы найти занятие, где результат не приходится закапывать. |
+| keeper-order-v1 | На кладбище хоть понятно, куда всё складывать. |
+| keeper-workload-v1 | Никто ведь не обещал, что на кладбище будет меньше работы... |
+| keeper-complaints-v1 | А если бы покойники жаловались? Нет, лучше об этом не думать. |
+| keeper-rest-v1 | Отдохнуть бы... только не так основательно, как мои подопечные. |
+| keeper-jobs-v1 | Кладбище, огород, алхимия... и всё это почему-то моя работа. |
+| keeper-idle-v1 | Можно было бы просто посидеть... но тогда это почему-то называется ленью. |
+| keeper-curiosity-v1 | Любопытно, конечно. Но за одно любопытство мне никто не заплатит. |
+| keeper-help-v1 | Хорошо бы кто-нибудь взял на себя остальные дела. Хотя бы лопату подержал. |
+| keeper-garden-v1 | Вот бы и огород сам с собой разобрался, пока я занят. |
+| keeper-sale-v1 | Покупателю эти записи не отдавать. Ему товар нужен, а не мои размышления. |
+| keeper-brains-v1 | Ну, хоть кто-нибудь на кладбище должен шевелить мозгами. |
+| keeper-pause-v1 | Надо бы сделать перерыв, пока я не начал разговаривать с банками. |
 
 These are intentions, not assertions that the player previously made mistakes,
 performed experiments, met NPCs or completed quests. Do not claim new chemical

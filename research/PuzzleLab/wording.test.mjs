@@ -102,10 +102,10 @@ test('variant offsets select four exact-one phrasings without depending on truth
 });
 
 test('authoring is deterministic, answer-independent and retains all formula outcomes',()=>{
-  const next=authorWording(f,legacyClueText,{asideId:'note-label-v1'});
+  const next=authorWording(f,legacyClueText,{asideId:'keeper-thought-v1'});
   validate(next);
   assert.deepEqual(next,JSON.parse(JSON.stringify(next)));
-  assert.deepEqual(next.wording,authorWording({...f,answer:{},compatibility:{}},legacyClueText,{asideId:'note-label-v1'}).wording);
+  assert.deepEqual(next.wording,authorWording({...f,answer:{},compatibility:{}},legacyClueText,{asideId:'keeper-thought-v1'}).wording);
   for(const row of candidates(f))assert.equal(validFormula(f,row),validFormula(next,row));
   assert.deepEqual(f,JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.url))));
   const view=publicView(next,createState(next));
@@ -119,16 +119,16 @@ test('authoring is deterministic, answer-independent and retains all formula out
 test('legacy fixtures remain opt-in and corrupt frozen records fail validation',()=>{
   assert.ok(!('clueAsides' in publicView(f,createState(f))));
   assert.deepEqual(publicView(f,createState(f)).clues,f.clues.map(c=>legacyClueText(f,c)));
-  const base=authorWording(f,legacyClueText,{asideId:'note-label-v1'});
+  const base=authorWording(f,legacyClueText,{asideId:'keeper-thought-v1'});
   for(const mutate of [x=>x.wording.version=2,x=>x.wording.entries.pop(),
     x=>x.wording.entries[0].text+=' extra',x=>x.wording.entries[0].templateId='unknown',
     x=>x.wording.entries[0].asideId='unknown',x=>x.wording.entries[0].asideText='fake',
-    x=>Object.assign(x.wording.entries[1],{asideId:'note-label-v1',asideText:x.wording.entries[0].asideText})]) {
+    x=>Object.assign(x.wording.entries[1],{asideId:'keeper-thought-v1',asideText:x.wording.entries[0].asideText})]) {
     const altered=structuredClone(base);mutate(altered);assert.throws(()=>validate(altered));
   }
   assert.throws(()=>authorWording(base,legacyClueText));
   assert.throws(()=>authorWording(f,legacyClueText,{asideId:'unknown'}));
-  assert.throws(()=>authorWording(f,legacyClueText,{asideId:'note-label-v1',asideAt:-1}));
+  assert.throws(()=>authorWording(f,legacyClueText,{asideId:'keeper-thought-v1',asideAt:-1}));
   validateWording(f,legacyClueText);
 });
 
@@ -137,9 +137,9 @@ test('file authoring persists reloadable wording and refuses all source/output o
   try {
     const input=join(dir,'source.json'),output=join(dir,'new.json');
     const source=JSON.stringify(f);writeFileSync(input,source);
-    assert.equal(authorFile(input,output,{asideId:'note-underline-v1'}),f.clues.length);
+    assert.equal(authorFile(input,output,{asideId:'keeper-lunch-v1'}),f.clues.length);
     const loaded=JSON.parse(readFileSync(output,'utf8'));validate(loaded);
-    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(f,legacyClueText,{asideId:'note-underline-v1'}),createState(f)));
+    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(f,legacyClueText,{asideId:'keeper-lunch-v1'}),createState(f)));
     const bytes=readFileSync(output,'utf8');
     assert.throws(()=>authorFile(input,input));assert.throws(()=>authorFile(input,output));
     assert.throws(()=>authorFile(output,join(dir,'refrozen.json')));
@@ -152,7 +152,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
   let server;
   try {
     const fixturePath=join(dir,'new.json'),stateDirectory=join(dir,'sessions');
-    const next=authorWording(f,legacyClueText,{asideId:'note-underline-v1'});
+    const next=authorWording(f,legacyClueText,{asideId:'keeper-lunch-v1'});
     writeFileSync(fixturePath,JSON.stringify(next));
     const start=async()=>{
       server=createLab({fixturePath,stateDirectory});
@@ -162,7 +162,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
     const first=await fetch(await start()),cookie=first.headers.get('set-cookie').split(';')[0];
     const before=await first.json();
     assert.deepEqual(before.clues,next.wording.entries.map(e=>e.text));
-    assert.equal(before.clueAsides[0],'Подчеркнуть. Лучше дважды.');
+    assert.equal(before.clueAsides[0],'За опытами бы про обед не забыть. Есть-то всё равно придётся.');
     assert.ok(!('answer' in before)&&!('compatibility' in before));
     await new Promise(r=>server.close(r));server=undefined;
     const after=await (await fetch(await start(),{headers:{cookie}})).json();

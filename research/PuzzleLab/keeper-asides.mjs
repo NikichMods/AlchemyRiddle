@@ -51,15 +51,34 @@ export const asides = Object.freeze({
   'keeper-corpses-v1':'Хорошо хоть покойникам не нужно объяснять, чем я тут занят.',
   'keeper-trade-v1':'Надо бы не отдать эти записи вместе с товаром. Покупателю от них никакого толку.',
   'keeper-break-v1':'Надо бы выкроить время и на что-нибудь, кроме работы.',
-  'keeper-important-v1':'Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду.'
+  'keeper-important-v1':'Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду.',
+  'keeper-thought-v1':'Так... записать бы это так, чтобы самому было понятно.',
+  'keeper-memory-v1':'Подчеркну, пожалуй. С моей памятью лишним не будет.',
+  'keeper-ink-v1':'Чернила пусть остаются для записей, мне и без них есть чем заняться.',
+  'keeper-jars-v1':'Надо подписать банки... а то придётся гадать ещё и над ними.',
+  'keeper-sermon-v1':'Можно бы и покороче... я ведь смесь готовлю, а не проповедь.',
+  'keeper-first-v1':'Так, сначала с этим разберусь. Остальные дела пока никуда не денутся.',
+  'keeper-burial-v1':'Надо бы найти занятие, где результат не приходится закапывать.',
+  'keeper-order-v1':'На кладбище хоть понятно, куда всё складывать.',
+  'keeper-workload-v1':'Никто ведь не обещал, что на кладбище будет меньше работы...',
+  'keeper-complaints-v1':'А если бы покойники жаловались? Нет, лучше об этом не думать.',
+  'keeper-rest-v1':'Отдохнуть бы... только не так основательно, как мои подопечные.',
+  'keeper-jobs-v1':'Кладбище, огород, алхимия... и всё это почему-то моя работа.',
+  'keeper-idle-v1':'Можно было бы просто посидеть... но тогда это почему-то называется ленью.',
+  'keeper-curiosity-v1':'Любопытно, конечно. Но за одно любопытство мне никто не заплатит.',
+  'keeper-help-v1':'Хорошо бы кто-нибудь взял на себя остальные дела. Хотя бы лопату подержал.',
+  'keeper-garden-v1':'Вот бы и огород сам с собой разобрался, пока я занят.',
+  'keeper-sale-v1':'Покупателю эти записи не отдавать. Ему товар нужен, а не мои размышления.',
+  'keeper-brains-v1':'Ну, хоть кто-нибудь на кладбище должен шевелить мозгами.',
+  'keeper-pause-v1':'Надо бы сделать перерыв, пока я не начал разговаривать с банками.'
 });
 // Retained for frozen historical records, not eligible for new authoring.
 // Explicit review pool: old lines remain byte-identical, but do not become defaults.
 const current=[
-  'note-label-v1','note-underline-v1','note-ink-v1','note-jar-v1','note-sermon-v1','note-self-legible-v1',
-  'keeper-lunch-v1','keeper-large-writing-v1','keeper-fancy-writing-v1','keeper-own-record-v1',
-  'keeper-spacing-v1','keeper-readable-v1','keeper-cemetery-v1','keeper-other-work-v1',
-  'keeper-short-v1','keeper-kindling-v1','keeper-neatness-v1','keeper-cup-v1','keeper-working-v1',
-  'keeper-shovel-v1','keeper-corpses-v1','keeper-trade-v1','keeper-break-v1','keeper-important-v1'
+  'keeper-lunch-v1','keeper-cemetery-v1','keeper-shovel-v1','keeper-corpses-v1','keeper-important-v1',
+  'keeper-thought-v1','keeper-memory-v1','keeper-ink-v1','keeper-jars-v1','keeper-sermon-v1',
+  'keeper-first-v1','keeper-burial-v1','keeper-order-v1','keeper-workload-v1','keeper-complaints-v1',
+  'keeper-rest-v1','keeper-jobs-v1','keeper-idle-v1','keeper-curiosity-v1','keeper-help-v1',
+  'keeper-garden-v1','keeper-sale-v1','keeper-brains-v1','keeper-pause-v1'
 ];
 export const authoringAsides=Object.freeze(Object.fromEntries(current.map(id=>[id,asides[id]])));
