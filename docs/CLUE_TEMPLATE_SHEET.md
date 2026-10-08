@@ -54,66 +54,20 @@ assertions, these templates are ineligible. Preserve exact scope in a plain coun
 fallback. Zero assertions use explicit negations; a single assertion uses a
 positive/negative literal. Do not manufacture variety by hiding a boundary case.
 
-## Optional independent Keeper asides
+## Contextual Keeper notes — current authoring
 
-Current pool: 24 review candidates. User accepts the conversational voice and
-previous lunch/cemetery/shovel/corpses/important-v1 lines, then requests rewriting
-these first five in the freer voice of the remaining nineteen too. The five v2
-replacements use natural pauses/questions/exclamation and mild cemetery humor.
-They await individual wording review; old v1 text/acceptance remains historical.
-All other nineteen current lines are unchanged. No graphic cruelty, obligatory
-punchline or count padding. Historical IDs/text remain immutable/readable; only
-this explicit pool is eligible for new authoring. See CLUE_WORDING_POLICY.md.
+The old 24 standalone review candidates are historical only. For **new** Lab
+authoring, the active pool is **13 user-approved context-specific clue asides**.
+They are selectable only when their required public clue operator, tag names
+and slot roles match exactly (see `clueAsideFits`). No generic random aside
+is forced onto a clue. Frozen historical aside ID/text remains readable.
 
-| ID | Russian text |
-| --- | --- |
-| keeper-lunch-v2 | Так... поесть бы ещё. Покойникам проще, им обед не нужен. |
-| keeper-cemetery-v2 | А кладбище кто будет приводить в порядок? А, да... опять я. |
-| keeper-shovel-v2 | Вот за это алхимию и люблю: можно хоть немного побыть без лопаты. |
-| keeper-corpses-v2 | С покойниками всё-таки проще — не спрашивают, долго ли я ещё буду возиться. |
-| keeper-important-v2 | Если кто заглянет — я работаю! И вообще, думать тоже считается. |
-| keeper-thought-v1 | Так... записать бы это так, чтобы самому было понятно. |
-| keeper-memory-v1 | Подчеркну, пожалуй. С моей памятью лишним не будет. |
-| keeper-ink-v1 | Чернила пусть остаются для записей, мне и без них есть чем заняться. |
-| keeper-jars-v1 | Надо подписать банки... а то придётся гадать ещё и над ними. |
-| keeper-sermon-v1 | Можно бы и покороче... я ведь смесь готовлю, а не проповедь. |
-| keeper-first-v1 | Так, сначала с этим разберусь. Остальные дела пока никуда не денутся. |
-| keeper-burial-v1 | Надо бы найти занятие, где результат не приходится закапывать. |
-| keeper-order-v1 | На кладбище хоть понятно, куда всё складывать. |
-| keeper-workload-v1 | Никто ведь не обещал, что на кладбище будет меньше работы... |
-| keeper-complaints-v1 | А если бы покойники жаловались? Нет, лучше об этом не думать. |
-| keeper-rest-v1 | Отдохнуть бы... только не так основательно, как мои подопечные. |
-| keeper-jobs-v1 | Кладбище, огород, алхимия... и всё это почему-то моя работа. |
-| keeper-idle-v1 | Можно было бы просто посидеть... но тогда это почему-то называется ленью. |
-| keeper-curiosity-v1 | Любопытно, конечно. Но за одно любопытство мне никто не заплатит. |
-| keeper-help-v1 | Хорошо бы кто-нибудь взял на себя остальные дела. Хотя бы лопату подержал. |
-| keeper-garden-v1 | Вот бы и огород сам с собой разобрался, пока я занят. |
-| keeper-sale-v1 | Покупателю эти записи не отдавать. Ему товар нужен, а не мои размышления. |
-| keeper-brains-v1 | Ну, хоть кто-нибудь на кладбище должен шевелить мозгами. |
-| keeper-pause-v1 | Надо бы сделать перерыв, пока я не начал разговаривать с банками. |
+A separate registry of **9 user-approved event reactions** is persisted for
+future pair-check and full-submission feedback. Their UI display is **not**
+implemented yet; they must not be attached to unrelated logical conditions.
 
-These are intentions, not assertions that the player previously made mistakes,
-performed experiments, met NPCs or completed quests. Do not claim new chemical
-outcomes, extra restrictions, danger, ingredient origin or recipe purpose.
-The aside stays visually separate from the exact condition. Plain conditions are
-the default style; use an occasional aside, not a compulsory joke on every clue.
-Research authoring defaults to no aside; one can be explicitly attached. This
-does not fix production frequency or a stochastic selection algorithm.
-Template/aside choice must not depend on which answer, branch or reagent is true.
-
-Post-case-15 review: twenty-eight active core phrases; four variants for each
-of the seven covered families. Twelve added templates preserve existing IDs/text. Explicit authoring variantOffset rotates choice
-across cases as well as within a repeated family, independent of hidden truth.
-Persist exact chosen IDs/text; no synonym swapping during play. Keep recognisable
-anchors (named slots, exact properties, conditional scope and exactly-one).
-User accepts all 28 condition phrases in the full review. This is wording acceptance,
-not generator-quality or production acceptance.
-
-Example, independent of any live case:
-
-> Для этой смеси нужен порошок без свойства «Трупное».
->
-> Записать крупнее, чтобы не перепутать банки.
+Full accepted wording, applicability, unplaced earlier voice references and
+deferred candidates: [KEEPER_CONTEXT_SCENARIOS.md](KEEPER_CONTEXT_SCENARIOS.md).
 
 ## Semantic review
 
