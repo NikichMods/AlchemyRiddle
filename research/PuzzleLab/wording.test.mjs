@@ -5,12 +5,17 @@ import {readFileSync,mkdtempSync,rmSync,writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {authorWording,asides,authoringAsides,eligibleTemplates,renderTemplate,validateWording} from './wording.mjs';
+import {clueAsideContexts,clueAsideFits,eventAsides} from './keeper-asides.mjs';
 import {authorFile} from './author-wording.mjs';
 import {createLab} from './server.mjs';
 import {legacyClueText,publicView,createState,candidates,validFormula,validate} from './rules.mjs';
 const f=JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.url)));
 const t=(slot,tag='А')=>({slot,tag});
 const literal=(slot,count)=>({kind:'exactly',count,terms:[t(slot)]});
+// Adds a true clue without changing the original fixture's unique solution.
+const contextModel={...f,clues:[...f.clues,{kind:'exactly',count:1,terms:[t('essence','Орган')]}]};
+const contextAt=f.clues.length;
+const asideId='clue-has-organ-v1';
 
 test('all twenty-eight active templates cover their admitted shapes and slot grammar',()=>{
   const models=[literal('powder',1),literal('powder',0),
@@ -72,13 +77,48 @@ test('new XOR wording uses either/or while frozen v1 wording remains valid',()=>
   assert.deepEqual(publicView(old,createState(old)).clues,[old.wording.entries[0].text]);
 });
 
-test('all twenty-four unique optional asides persist independently of clause and answer',()=>{
-  assert.equal(Object.keys(authoringAsides).length,24);assert.equal(new Set(Object.values(authoringAsides)).size,24);
-  for(const [asideId,asideText] of Object.entries(authoringAsides)) {
-    const next=authorWording(f,legacyClueText,{asideId});validate(next);
-    assert.equal(publicView(next,createState(next)).clueAsides[0],asideText);
-    assert.deepEqual(next.wording,authorWording({...f,answer:{}},legacyClueText,{asideId}).wording);
+test('thirteen active clue notes are unique, context-gated, and answer-independent',()=>{
+  assert.equal(Object.keys(authoringAsides).length,13);
+  assert.equal(new Set(Object.values(authoringAsides)).size,13);
+  for(const id of Object.keys(authoringAsides)) {
+    const rule=clueAsideContexts[id];
+    let c;
+    const pair=()=>structuredClone(rule.terms);
+    switch(rule.kind) {
+      case 'xor':c={kind:'exactly',count:1,terms:pair()};break;
+      case 'count-two':c={kind:'exactly',count:2,terms:f.slots.map(s=>t(s.id,rule.tag))};break;
+      case 'has':case 'lacks':c={kind:'exactly',count:rule.kind==='has'?1:0,terms:[rule.term]};break;
+      case 'implies':c={kind:'implies',if:rule.if,then:rule.then};break;
+      case 'forbids':c={kind:'notTogether',left:rule.terms[0],right:rule.terms[1]};break;
+      case 'shared':c={kind:'sharedTag'};break;
+      default:assert.fail('Unknown context');
+    }
+    const model={...f,clues:[c]};
+    assert.equal(clueAsideFits(model,c,id),true);
+    assert.equal(clueAsideFits(f,f.clues[0],id),false);
+    const next=authorWording(model,legacyClueText,{asideId:id});
+    validateWording(next,legacyClueText);
+    assert.equal(publicView(next,createState(next)).clueAsides[0],authoringAsides[id]);
+    assert.deepEqual(next.wording,authorWording({...model,answer:{}},legacyClueText,{asideId:id}).wording);
+    assert.throws(()=>authorWording(f,legacyClueText,{asideId:id}));
+    if(rule.kind==='xor') {
+      assert.equal(clueAsideFits(model,{...c,terms:pair().reverse()},id),true);
+      assert.equal(clueAsideFits(model,{...c,count:2},id),false);
+    }
+    if(rule.kind==='forbids')assert.equal(clueAsideFits(model,{...c,left:rule.terms[1],right:rule.terms[0]},id),true);
   }
+});
+
+test('nine approved event replies are stored but not exposed as clue notes',()=>{
+  assert.equal(Object.keys(eventAsides).length,9);
+  for(const e of Object.values(eventAsides)) {
+    assert.ok(['pairTest','submit'].includes(e.trigger));
+    assert.ok(e.text && typeof e.text==='string');
+    if(e.trigger==='pairTest')assert.equal(typeof e.stable,'boolean');
+    if(e.trigger==='submit')assert.equal(typeof e.success,'boolean');
+  }
+  assert.equal(new Set(Object.values(eventAsides).map(e=>e.text)).size,9);
+  assert.ok(Object.values(eventAsides).every(e=>!Object.values(authoringAsides).includes(e.text)));
 });
 
 test('all retired asides remain valid in old records but are unavailable for new cases',()=>{
@@ -102,10 +142,10 @@ test('variant offsets select four exact-one phrasings without depending on truth
 });
 
 test('authoring is deterministic, answer-independent and retains all formula outcomes',()=>{
-  const next=authorWording(f,legacyClueText,{asideId:'keeper-thought-v1'});
+  const next=authorWording(contextModel,legacyClueText,{asideId,asideAt:contextAt});
   validate(next);
   assert.deepEqual(next,JSON.parse(JSON.stringify(next)));
-  assert.deepEqual(next.wording,authorWording({...f,answer:{},compatibility:{}},legacyClueText,{asideId:'keeper-thought-v1'}).wording);
+  assert.deepEqual(next.wording,authorWording({...contextModel,answer:{},compatibility:{}},legacyClueText,{asideId,asideAt:contextAt}).wording);
   for(const row of candidates(f))assert.equal(validFormula(f,row),validFormula(next,row));
   assert.deepEqual(f,JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.url))));
   const view=publicView(next,createState(next));
@@ -119,16 +159,16 @@ test('authoring is deterministic, answer-independent and retains all formula out
 test('legacy fixtures remain opt-in and corrupt frozen records fail validation',()=>{
   assert.ok(!('clueAsides' in publicView(f,createState(f))));
   assert.deepEqual(publicView(f,createState(f)).clues,f.clues.map(c=>legacyClueText(f,c)));
-  const base=authorWording(f,legacyClueText,{asideId:'keeper-thought-v1'});
+  const base=authorWording(contextModel,legacyClueText,{asideId,asideAt:contextAt});
   for(const mutate of [x=>x.wording.version=2,x=>x.wording.entries.pop(),
     x=>x.wording.entries[0].text+=' extra',x=>x.wording.entries[0].templateId='unknown',
     x=>x.wording.entries[0].asideId='unknown',x=>x.wording.entries[0].asideText='fake',
-    x=>Object.assign(x.wording.entries[1],{asideId:'keeper-thought-v1',asideText:x.wording.entries[0].asideText})]) {
+    x=>Object.assign(x.wording.entries[1],{asideId,asideText:x.wording.entries[contextAt].asideText})]) {
     const altered=structuredClone(base);mutate(altered);assert.throws(()=>validate(altered));
   }
   assert.throws(()=>authorWording(base,legacyClueText));
   assert.throws(()=>authorWording(f,legacyClueText,{asideId:'unknown'}));
-  assert.throws(()=>authorWording(f,legacyClueText,{asideId:'keeper-thought-v1',asideAt:-1}));
+  assert.throws(()=>authorWording(contextModel,legacyClueText,{asideId,asideAt:-1}));
   validateWording(f,legacyClueText);
 });
 
@@ -136,10 +176,10 @@ test('file authoring persists reloadable wording and refuses all source/output o
   const dir=mkdtempSync(join(tmpdir(),'alchemy-wording-'));
   try {
     const input=join(dir,'source.json'),output=join(dir,'new.json');
-    const source=JSON.stringify(f);writeFileSync(input,source);
-    assert.equal(authorFile(input,output,{asideId:'keeper-lunch-v2'}),f.clues.length);
+    const source=JSON.stringify(contextModel);writeFileSync(input,source);
+    assert.equal(authorFile(input,output,{asideId,asideAt:contextAt}),contextModel.clues.length);
     const loaded=JSON.parse(readFileSync(output,'utf8'));validate(loaded);
-    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(f,legacyClueText,{asideId:'keeper-lunch-v2'}),createState(f)));
+    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(contextModel,legacyClueText,{asideId,asideAt:contextAt}),createState(contextModel)));
     const bytes=readFileSync(output,'utf8');
     assert.throws(()=>authorFile(input,input));assert.throws(()=>authorFile(input,output));
     assert.throws(()=>authorFile(output,join(dir,'refrozen.json')));
@@ -152,7 +192,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
   let server;
   try {
     const fixturePath=join(dir,'new.json'),stateDirectory=join(dir,'sessions');
-    const next=authorWording(f,legacyClueText,{asideId:'keeper-lunch-v2'});
+    const next=authorWording(contextModel,legacyClueText,{asideId,asideAt:contextAt});
     writeFileSync(fixturePath,JSON.stringify(next));
     const start=async()=>{
       server=createLab({fixturePath,stateDirectory});
@@ -162,7 +202,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
     const first=await fetch(await start()),cookie=first.headers.get('set-cookie').split(';')[0];
     const before=await first.json();
     assert.deepEqual(before.clues,next.wording.entries.map(e=>e.text));
-    assert.equal(before.clueAsides[0],'Так... поесть бы ещё. Покойникам проще, им обед не нужен.');
+    assert.equal(before.clueAsides[contextAt],'„Орган“... Церковный или из морга?');
     assert.ok(!('answer' in before)&&!('compatibility' in before));
     await new Promise(r=>server.close(r));server=undefined;
     const after=await (await fetch(await start(),{headers:{cookie}})).json();
