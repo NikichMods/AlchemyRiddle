@@ -31,9 +31,16 @@ Bounded template set completed in CLUE_TEMPLATE_SHEET.md: 14 core phrases and
 three optional independent Keeper asides; scope/event guards, 32 semantic cases
 plus a pairwise-only shared-property counterexample checked against the existing
 Lab evaluator. No renderer, evaluator, played case or production behavior changed.
-Next wording step is future research-case integration with persisted template
-identity and grammar checks. Full runtime selection and NPC/delivery integration
-remain unimplemented; no new blind trial opened.
+Future research-case integration now completed: explicit authoring utility stores
+versioned template/aside IDs and rendered text, validates applicability, and refuses
+source/output overwrites. Repeated eligible families alternate plain/note variants;
+selection is answer-independent. No aside by default, at most one explicitly added.
+UI separates aside from condition; legacy fixtures keep the old path. Full Lab
+suite: 33 passing tests including persisted HTTP restart, slot grammar, rejected
+corrupt records and unchanged formula outcomes. Completed cases untouched.
+Next wording evidence is human readability in a separately precommitted future
+trial. Production and NPC/delivery integration remain unimplemented; no new blind
+trial opened.
 
 ### Knowledge-aware selection check completed — 2026-10-08
 

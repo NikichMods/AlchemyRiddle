@@ -14,7 +14,7 @@ Completed contrast: corpus case 12 on 4175, independently solved with five pair
 checks and one success. Durable private state is solved. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md` before resuming. Initial public
 snapshot is tracked; full model stays private. Case-11 state below is historical,
-and its solved session remains on 4174. Test suite now has 27 checks.
+and its solved session remains on 4174. Test suite now has 33 checks.
 
 Completed trial: anonymous real-corpus case 11, solved with 13 pair checks and
 two submissions. Current browser state is solved; do not replace it by assumption. Checkpoint:
@@ -34,9 +34,35 @@ From the repository root, using Node.js 24 built-ins:
 
 ```sh
 node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/depth-10.json
-node --test research/PuzzleLab/lab.test.mjs
+node --test research/PuzzleLab/lab.test.mjs research/PuzzleLab/economy.test.mjs research/PuzzleLab/wording.test.mjs
 node research/PuzzleLab/audit-calibration.mjs --write
 ```
+
+## Wording for future, unplayed cases
+
+Prepare a new private case before precommit/handoff, then author its wording:
+
+```sh
+node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT
+node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=note-label-v1 --aside-at=0
+```
+
+These are alternative commands; output must not already exist. Never use a played
+case as the input for a replacement handoff. Keep real-corpus inputs/outputs private.
+Use the authored output as the fixture for validation, hashing, precommit and serving.
+Existing fixture preparers still emit a raw model; this authoring step is explicit.
+
+`wording.version=1` and one entry per clue persist template ID and exact text, plus
+optional aside ID/text. Plain/note alternatives rotate only for repeated eligible
+families, using their order; selection never reads the answer or compatibility.
+No aside by default; the author may attach one explicitly. Unsupported AST shapes
+or unfamiliar slot labels use `plain-fallback-v1`. Template IDs are immutable: change
+wording with a new version/ID. Validation rejects mismatched text, wrong scopes,
+unknown IDs and more than one aside. Source and existing output cannot be overwritten.
+
+The UI renders asides separately from conditions. Legacy fixtures without wording
+retain their original rendering path; no solved case is reauthored or restarted.
+See `docs/CLUE_TEMPLATE_SHEET.md`. This is research-only, not a production mod.
 
 If child-process isolation is restricted, use
 `node --test --test-isolation=none research/PuzzleLab/lab.test.mjs`.

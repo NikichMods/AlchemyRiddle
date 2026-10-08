@@ -123,7 +123,14 @@ function render() {
     }
     $('cards').append(group);
   }
-  $('clues').replaceChildren(...view.clues.map(text => {const li = document.createElement('li'); li.append(clueContents(text)); return li;}));
+  $('clues').replaceChildren(...view.clues.map((text,i) => {
+    const li = document.createElement('li'); li.append(clueContents(text));
+    if(view.clueAsides?.[i]) {
+      const aside=document.createElement('div');aside.className='keeper-aside';
+      aside.textContent=view.clueAsides[i];li.append(aside);
+    }
+    return li;
+  }));
   $('selection').replaceChildren(...view.slots.filter(slot=>s.selected[slot.id]).map(slot => {
     const tile = document.createElement('div'); tile.className = `formula-tile ${s.selected[slot.id] ? 'filled' : 'empty'}`;
     const label = document.createElement('span'); label.textContent = s.selected[slot.id] ? name(s.selected[slot.id]) : `Выберите: ${slot.name.toLowerCase()}`;

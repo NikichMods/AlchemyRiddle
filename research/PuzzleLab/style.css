@@ -89,6 +89,7 @@ button:hover:not(:disabled){filter:brightness(1.1)}
 .evidence{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid #40565f;padding-top:18px}
 #clues{padding-left:21px;margin:0 0 16px}
 #clues li{margin-bottom:12px;font-size:16px;line-height:1.5}
+.keeper-aside{margin-top:4px;font-size:14px;color:#a5b9bf;font-style:italic}
 #knowledge{border-left:1px solid #354b53;padding-left:18px}
 .pair-rule{font-size:15px;color:#c5d7d3;margin:0 0 12px}
 .observation-source h3{color:#b7c9cb;font-size:13px;margin:0 0 8px}

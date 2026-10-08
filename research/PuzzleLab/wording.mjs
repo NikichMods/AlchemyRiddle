@@ -1,0 +1,82 @@
+// SPDX-License-Identifier: MPL-2.0
+// Versioned authoring templates. Never change v1 text under an existing ID.
+const forms = {
+  Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',need:'нужен',must:'должен'},
+  Жидкость: {nom:'жидкость',gen:'жидкости',acc:'жидкость',need:'нужна',must:'должна'},
+  Эссенция: {nom:'эссенция',gen:'эссенции',acc:'эссенцию',need:'нужна',must:'должна'}
+};
+export const asides = Object.freeze({
+  'note-label-v1':'Записать крупнее, чтобы не перепутать банки.',
+  'note-underline-v1':'Подчеркнуть. Лучше дважды.',
+  'note-legible-v1':'Оставить место между строками. Это ещё придётся перечитывать.'
+});
+const capital = s => s[0].toUpperCase()+s.slice(1);
+function family(f,c) {
+  if (!f.slots.every(s=>Object.hasOwn(forms,s.name))) return 'fallback';
+  if (c.kind==='sharedTag') return 'shared';
+  if (c.kind==='implies') return 'implies';
+  if (c.kind==='notTogether') return 'forbids';
+  if (c.kind!=='exactly') return 'fallback';
+  if(c.terms.length===1) return c.count===0?'lacks':c.count===1?'has':'fallback';
+  // Two assertions about the very same term are not two independent conditions.
+  if(c.terms.length===2 && c.count===1 &&
+    (c.terms[0].slot!==c.terms[1].slot || c.terms[0].tag!==c.terms[1].tag)) return 'xor';
+  if(f.slots.length===3 && c.count===2 && c.terms.length===3 &&
+    new Set(c.terms.map(t=>t.slot)).size===3 &&
+    f.slots.every(s=>c.terms.some(t=>t.slot===s.id)) &&
+    new Set(c.terms.map(t=>t.tag)).size===1) return 'count-two';
+  return 'fallback';
+}
+export function eligibleTemplates(f,c) {
+  const type=family(f,c);
+  return type==='fallback'?['plain-fallback-v1']:[`${type}-plain-v1`,`${type}-note-v1`];
+}
+export function renderTemplate(f,c,id,fallback) {
+  if(!eligibleTemplates(f,c).includes(id)) throw new Error('Ineligible wording template');
+  if(id==='plain-fallback-v1') return fallback(f,c);
+  const note=id.endsWith('-note-v1');
+  const noun=t=>forms[f.slots.find(s=>s.id===t.slot).name];
+  const assertion=t=>`${noun(t).nom} имеет свойство «${t.tag}»`;
+  const part=(t,gram='nom')=>`${noun(t)[gram]} со свойством «${t.tag}»`;
+  switch(family(f,c)) {
+    case 'has': {const t=c.terms[0];return note?`У ${noun(t).gen} в этой смеси должно быть свойство «${t.tag}».`:`${capital(assertion(t))}.`;}
+    case 'lacks': {const t=c.terms[0];return note?`Для этой смеси ${noun(t).need} ${noun(t).nom} без свойства «${t.tag}».`:`${capital(noun(t).nom)} не имеет свойства «${t.tag}».`;}
+    case 'xor': return note?`В этой смеси либо ${assertion(c.terms[0])}, либо ${assertion(c.terms[1])} — но не оба условия одновременно.`:`Выполняется ровно одно из двух условий: ${c.terms.map(assertion).join('; ')}.`;
+    case 'implies': return note?`При выборе ${part(c.if,'gen')} ${noun(c.then).need} ${part(c.then)}.`:`Если ${assertion(c.if)}, ${noun(c.then).nom} ${noun(c.then).must} иметь свойство «${c.then.tag}».`;
+    case 'forbids': return note?`В этом составе сочетание ${part(c.left,'gen')} и ${part(c.right,'gen')} не допускается.`:`Для этой смеси нельзя одновременно взять ${part(c.left,'acc')} и ${part(c.right,'acc')}.`;
+    case 'count-two': return note?`Свойство «${c.terms[0].tag}» должно быть у двух выбранных компонентов, а у третьего его быть не должно.`:`Среди трёх выбранных компонентов ровно два имеют свойство «${c.terms[0].tag}».`;
+    case 'shared': return note?'Нужно хотя бы одно свойство, которое есть у каждого выбранного компонента.':'У всех выбранных компонентов есть хотя бы одно общее свойство.';
+  }
+}
+export function validateWording(f,fallback) {
+  if(f.wording===undefined) return;
+  const w=f.wording;
+  if(!w || w.version!==1 || !Array.isArray(w.entries) || w.entries.length!==f.clues.length)
+    throw new Error('Invalid wording record');
+  let asideCount=0;
+  for(const [i,e] of w.entries.entries()) {
+    if(!e || typeof e.templateId!=='string' ||
+      (e.asideId!==undefined && !Object.hasOwn(asides,e.asideId))) throw new Error('Invalid wording entry');
+    const text=renderTemplate(f,f.clues[i],e.templateId,fallback);
+    if(e.text!==text || e.asideText!==(e.asideId===undefined?undefined:asides[e.asideId]))
+      throw new Error('Wording text does not match its versioned template');
+    if(e.asideId!==undefined) asideCount++;
+  }
+  if(asideCount>1) throw new Error('Only one optional Keeper aside per case');
+}
+export function authorWording(f,fallback,{asideId,asideAt=0}={}) {
+  if(f.wording!==undefined) throw new Error('Case wording already frozen');
+  if(asideId!==undefined && (!Object.hasOwn(asides,asideId) || !Number.isInteger(asideAt) || asideAt<0 || asideAt>=f.clues.length))
+    throw new Error('Invalid authoring aside');
+  const occurrences=new Map();
+  const entries=f.clues.map(c=>{
+    const ids=eligibleTemplates(f,c), key=ids[0], n=occurrences.get(key)??0;
+    occurrences.set(key,n+1);
+    const templateId=ids[n%ids.length];
+    return {templateId,text:renderTemplate(f,c,templateId,fallback)};
+  });
+  if(asideId!==undefined) Object.assign(entries[asideAt],{asideId,asideText:asides[asideId]});
+  const next={...f,wording:{version:1,entries}};
+  validateWording(next,fallback);
+  return next;
+}

@@ -1,6 +1,7 @@
 # Keeper-note templates — bounded wording review
 
-2026-10-08. Design/research artifact, not a runtime renderer or production change.
+2026-10-08. Design/research artifact; implemented in future-case Lab authoring,
+not a production mod change.
 The six plain-language directions and occasional Keeper-note character are user
 accepted. This sheet instantiates that direction with stable template identities;
 it does not claim that every new line received individual player acceptance.
@@ -52,7 +53,8 @@ performed experiments, met NPCs or completed quests. Do not claim new chemical
 outcomes, extra restrictions, danger, ingredient origin or recipe purpose.
 The aside stays visually separate from the exact condition. Plain conditions are
 the default style; use an occasional aside, not a compulsory joke on every clue.
-No frequency or stochastic selection algorithm is fixed by this review.
+Research authoring defaults to no aside; one can be explicitly attached. This
+does not fix production frequency or a stochastic selection algorithm.
 Template/aside choice must not depend on which answer, branch or reagent is true.
 
 Example, independent of any live case:
@@ -91,8 +93,12 @@ four implication, four prohibition, eight count-two, eight shared intersections.
 An additional three-slot pairwise-only overlap counterexample is rejected by both
 definitions. No game corpus or answer data used; no renderer/evaluator changed.
 
-Next implementation step, when undertaken: integrate reviewed templates into
-future research cases with explicit, persisted template/aside identity; retain
-plain fallbacks and frozen historical texts. Recheck grammar for actual slot names
-and supported AST shapes. Production remains BLOCKED. This artifact does not
-authorize another blind case, NPC dialogue delivery or a gameplay change.
+Future-case research integration completed: `wording.mjs`, `author-wording.mjs`,
+validated persisted IDs and exact text, separate aside rendering. Slot forms cover
+Порошок/Жидкость/Эссенция including reversed implications and case endings.
+Unsupported shapes/names retain plain fallback. No completed fixture was edited
+or restarted. Six additional tests cover template grammar, scope/fallbacks,
+answer independence/outcome preservation, corrupted records, exclusive file writes
+and HTTP persistence across restart. Complete Lab suite: 33 passing tests.
+Next evidence is human readability in a separately precommitted future trial;
+no new trial is opened by this integration. Production remains BLOCKED.

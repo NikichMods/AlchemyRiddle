@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+import {validateWording} from './wording.mjs';
 export function candidates(f) {
   return f.slots.reduce((rows, slot) => rows.flatMap(row => slot.cards.map(card => ({...row, [slot.id]: card.id}))), [{}]);
 }
@@ -26,6 +27,10 @@ export function satisfies(f, tuple, clue) {
   throw new Error('Unsupported clue kind');
 }
 export function clueText(f, clue) {
+  const index=f.clues?.indexOf(clue);
+  return f.wording && index>=0 ? f.wording.entries[index].text : legacyClueText(f,clue);
+}
+export function legacyClueText(f, clue) {
   const term = t => `${f.slots.find(s => s.id === t.slot).name.toLowerCase()} имеет свойство «${t.tag}»`;
   if (clue.kind === 'exactly' && clue.terms.length === 1) {
     const t=clue.terms[0], slot=f.slots.find(s=>s.id===t.slot).name;
@@ -71,6 +76,7 @@ export function validate(f) {
           f.slots.some(s => s.cards.some(card => card.tags.includes(t.tag)))))) throw new Error('Invalid clue terms');
     if (c.kind === 'exactly' && (!Number.isInteger(c.count) || c.count < 0 || c.count > terms.length)) throw new Error('Invalid count');
   }
+  validateWording(f,legacyClueText);
   if (f.compatibility) {
     if (f.slots.length !== 3 || (!shared && (!Number.isInteger(f.researchCharges) || f.researchCharges < 1)) ||
         !Number.isInteger(f.pairTestCost) || f.pairTestCost < 1) throw new Error('Invalid pair research budget');
@@ -96,6 +102,7 @@ export function createState(f) {
 export function publicView(f, state) {
   return {id: f.id, title: f.title, description: f.description, slots: f.slots,
     clues: f.clues.map(c => clueText(f, c)), submissionCost: f.submissionCost, state,
+    ...(f.wording ? {clueAsides:f.wording.entries.map(e=>e.asideText??null)} : {}),
     ...(f.economy ? {economy:f.economy} : {}),
     ...(f.compatibility ? {pairTestCost:f.pairTestCost} : {})};
 }

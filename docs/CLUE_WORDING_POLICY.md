@@ -11,13 +11,13 @@ the following statements hold". Canonical property spelling/slot names retained.
 Evaluator and fixture AST unchanged. A completed trial's original public wording
 snapshot remains frozen; corrected rendering must not rewrite its recorded play.
 
-## Proposed controlled variation
+## Controlled variation in future research cases
 
 User suggests calm natural wording and potentially immersive variants, with exact
-logic preserved. Retain as a design direction; a full phrase generator is not yet
-implemented or accepted as a production seam. Recommended mechanism: small
-reviewed templates per predicate/operator, selected deterministically at authoring
-time. Persist template identity with the immutable case. No free-form runtime
+logic preserved. The bounded Lab authoring layer uses small reviewed templates
+per predicate/operator, selected deterministically at authoring time. A full
+production phrase generator is not implemented or accepted as a production seam.
+Persist template identity and exact text with the immutable case. No free-form runtime
 language generation or unrecorded paraphrasing during play.
 
 | Meaning | Base wording | Precision boundary |
@@ -36,7 +36,9 @@ separate review axes; simplify under actual field constants before labeling dept
 
 Completed bounded artifact: [CLUE_TEMPLATE_SHEET.md](CLUE_TEMPLATE_SHEET.md),
 with 14 core phrases, three independent optional Keeper asides, applicability
-guards and semantic checks. Runtime integration is not implemented. No extra blind
+guards and semantic checks. Future Lab integration is implemented through explicit
+offline authoring and validated frozen wording records; production integration is
+not implemented. No extra blind
 case, automatic clue checking or partial failure explanation introduced here.
 
 ## Concrete draft variants for review
@@ -68,7 +70,7 @@ not replace properties with imagery, imply chemistry or act as an answer tell.
 
 User review, 2026-10-08: prefer short notes by the Keeper, occasionally with
 character. Plain exact conditions remain primary; restrained personal asides are
-accepted as the flavor direction. No runtime template selection is implemented.
+accepted as the flavor direction. Template selection is offline, never during play.
 Clotho is an appropriate world reference, but "Клото отдельно подчеркнула"
 creates dissonance when the player never had that conversation. Do not invent
 past conversations, completed quests, experiments or NPC statements as flavor.
@@ -100,7 +102,8 @@ Illustrative independent drafts, not a recipe or quotations from the game:
 Flavor must stay separate from the exact assertion. Legibility matters more than
 making each condition a joke. Keeper-note style is accepted; individual templates
 still need semantic/event-scope review before use. Existing completed cases remain
-frozen and no renderer or production behavior changes here.
+frozen. The future-case renderer now supports explicit versioned wording plus a
+separate optional aside; existing unannotated fixtures use the legacy path.
 
 Presentation boundary: automatic review rejected restarting completed case 13 to
 show new wording, citing original player-facing text preservation. No restart
