@@ -3,6 +3,13 @@ let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder
 const $ = id => document.getElementById(id);
 let view;
 let queue = Promise.resolve();
+// Explicit presentation trial; old URLs retain the historical clue rendering.
+const showClueRoles = new URLSearchParams(location.search).get('roles') === '1';
+const slotShapes = {
+  powder:'M1 31 Q6 28 10 20 Q14 10 20 10 Q26 10 30 20 Q34 28 39 31 Z M4 17 h1 M35 18 h1 M29 6 h1',
+  fluid:'M14 2 H26 V9 L36 25 Q39 32 31 32 H9 Q1 32 4 25 L14 9 Z',
+  essence:'M10 3 H30 L39 17 L30 31 H10 L1 17 Z'
+};
 const name = id => view.slots.flatMap(s => s.cards).find(c => c.id === id)?.name ?? '—';
 function cardRef(id) {
   const slot = view.slots.find(s => s.cards.some(c => c.id === id));
@@ -14,11 +21,7 @@ function cardRef(id) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
     svg.setAttribute('viewBox','0 0 40 34'); svg.setAttribute('aria-hidden','true');
     const path = document.createElementNS(svg.namespaceURI,'path');
-    path.setAttribute('d', {
-      powder:'M1 31 Q6 28 10 20 Q14 10 20 10 Q26 10 30 20 Q34 28 39 31 Z M4 17 h1 M35 18 h1 M29 6 h1',
-      fluid:'M14 2 H26 V9 L36 25 Q39 32 31 32 H9 Q1 32 4 25 L14 9 Z',
-      essence:'M10 3 H30 L39 17 L30 31 H10 L1 17 Z'
-    }[slot.id]);
+    path.setAttribute('d', slotShapes[slot.id]);
     svg.append(path); badge.append(svg);
   }
   badge.append(label);
@@ -81,11 +84,31 @@ function tagBadge(tag) {
   badge.textContent = tag;
   return badge;
 }
+const roleForms = {
+  powder:['порошок','порошка','порошку','порошком','порошке'],
+  fluid:['жидкость','жидкости','жидкостью'],
+  essence:['эссенция','эссенции','эссенцию','эссенцией']
+};
+const rolePattern = new RegExp(`(?<![\\p{L}\\p{N}_])(${Object.values(roleForms).flat().join('|')})(?![\\p{L}\\p{N}_])`,'giu');
+function roleContents(text) {
+  const parts = document.createDocumentFragment();
+  for (const part of text.split(rolePattern)) {
+    const slot = Object.keys(roleForms).find(id=>roleForms[id].includes(part.toLowerCase()));
+    if (!slot || !view.slots.some(s=>s.id===slot)) {parts.append(document.createTextNode(part));continue;}
+    const label=document.createElement('strong');label.className='clue-role';
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 40 34');svg.setAttribute('aria-hidden','true');
+    svg.setAttribute('focusable','false');
+    const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',slotShapes[slot]);
+    svg.append(path);label.append(svg,document.createTextNode(part));parts.append(label);
+  }
+  return parts;
+}
 function clueContents(text) {
   const parts = document.createDocumentFragment();
   for (const part of text.split(/(«[^»]+»)/g)) {
     if (part.startsWith('«') && part.endsWith('»')) parts.append(tagBadge(part.slice(1,-1)));
-    else parts.append(document.createTextNode(part));
+    else parts.append(showClueRoles ? roleContents(part) : document.createTextNode(part));
   }
   return parts;
 }

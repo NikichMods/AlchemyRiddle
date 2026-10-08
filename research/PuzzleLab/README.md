@@ -5,6 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+2026-10-09: explicit role-scanning presentation trial implemented. Append
+`?roles=1` to a Lab URL for bold complete slot words plus small monochrome card
+silhouettes in clues; omit it for the original rendering. Same model/session,
+no wording or mechanics changes. Solved case 19 is shown with this variant on
+4182; human review pending. All 42 tests pass. See
+`docs/research/SLOT_ROLE_PRESENTATION_2026-10-09.md`.
+
 2026-10-09: case 19 solved and positively accepted as a solid research puzzle;
 four new pair checks, one success, Science 7. Subjective medium-high/high, not
 maximum. Repeated slot-role scanning weakness recorded; visual treatment not

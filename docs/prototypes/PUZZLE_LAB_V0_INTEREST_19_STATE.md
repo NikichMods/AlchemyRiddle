@@ -143,7 +143,9 @@ icon-only labels risk learned-symbol burden; fully boxed expressions risk readin
 as inputs or flattening logical sentence scope. Hover can supplement scanning,
 but should not be required to read the condition.
 
-No concrete styling solution or UI change selected yet. Preserve exact frozen
-wording, fixture and historical rendering evidence; do not retrospectively alter
-the played case. No new prototype opened. Next interaction: discuss the bounded
-slot-scanning treatment and how to extend interest beyond this accepted exemplar.
+At the outcome review, styling was still unselected. Subsequent user direction
+authorizes trying bold complete role words plus small monochrome card silhouettes.
+The implementation is explicitly enabled by `?roles=1`; plain URL preserves the
+historical display. See `research/SLOT_ROLE_PRESENTATION_2026-10-09.md` (relative
+to docs). Same solved session; no wording/model changes or new prototype.
+Next interaction: visual review of the trial before further upper-interest work.

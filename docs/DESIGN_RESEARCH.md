@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Slot-role presentation trial implemented — 2026-10-09
+
+User authorizes bold complete role names plus small monochrome existing card
+silhouettes. Read `research/SLOT_ROLE_PRESENTATION_2026-10-09.md`. Explicit
+`?roles=1` enables trial rendering; ordinary URLs preserve the original. Current
+browser shows solved case 19 on `http://127.0.0.1:4182/?roles=1`; same session,
+Science 7. Clue text equality verified, six decorated role occurrences, all 42
+tests pass. No grammar/template/fixture/economy changes or new trial. Human visual
+acceptance and error reduction remain unproved. Next interaction: review this
+appearance before returning to upper-interest work. Production remains BLOCKED.
+
 ### Case 19 accepted as solid research; role scanning remains weak — 2026-10-09
 
 Read `prototypes/PUZZLE_LAB_V0_INTEREST_19_STATE.md`: solved durable human session,

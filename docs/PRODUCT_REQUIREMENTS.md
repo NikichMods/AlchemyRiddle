@@ -859,8 +859,12 @@ Role-scanning clarification, repeated in cases 16 and 19: conditions should make
 the component role (Powder/Fluid/Essence) quickly recognizable together with its
 property. Colored properties alone leave a reading asymmetry and reported role
 confusion. Preserve complete readable role names, exact clue meaning and property
-identity; typography, reuse of existing slot symbols and other visual treatments
-remain unselected. This is a legibility requirement, not authorization for an
+identity. Subsequent user selection, 2026-10-09: try bold complete role words with
+small monochrome existing card silhouettes; explicit Lab comparison implemented
+in `?roles=1` mode, with ordinary URLs preserving historical rendering. Human
+readability acceptance remains pending; see
+`research/SLOT_ROLE_PRESENTATION_2026-10-09.md`. This is a legibility requirement,
+not authorization for an
 automatic deduction, a new role-color code or retrospective changes to played text.
 
 Case 06 was explicitly accepted as a satisfying three-slot puzzle after three

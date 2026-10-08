@@ -89,6 +89,9 @@ button:hover:not(:disabled){filter:brightness(1.1)}
 .evidence{display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid #40565f;padding-top:18px}
 #clues{padding-left:21px;margin:0 0 16px}
 #clues li{margin-bottom:12px;font-size:16px;line-height:1.5}
+.clue-role{display:inline-flex;align-items:baseline;gap:4px;font-weight:700;color:inherit;white-space:nowrap}
+.clue-role svg{width:20px;height:17px;align-self:center;flex-shrink:0;overflow:visible}
+.clue-role path{fill:currentColor;fill-opacity:.12;stroke:currentColor;stroke-opacity:.85;stroke-width:1.4}
 .keeper-aside{margin-top:4px;font-size:14px;color:#a5b9bf;font-style:italic}
 #submit-reason,#selected-history{font-size:14px;color:#bacbd0}
 #composition-reminder{color:#f0b4a5}
