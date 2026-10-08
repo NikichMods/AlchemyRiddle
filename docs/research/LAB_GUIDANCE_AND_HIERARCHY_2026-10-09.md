@@ -138,3 +138,8 @@ Verification: syntax and diff checks pass; all 42 existing tests pass with
 Browser confirms the new route, removed composition prompt, compatibility
 verdicts and shared role cues. Two free selection toggles preserve Science 20;
 no nested role labels or role decoration inside ingredient names.
+
+Human review: user confirms the revised interface looks good, specifically
+accepting the separate “Используйте” route line and consistent role treatment.
+This is subjective UI acceptance, not evidence of novice comprehension or a
+change to the research/production gate.
