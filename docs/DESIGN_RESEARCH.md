@@ -4,6 +4,21 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Case 18 solved; boss intent and conditional presentation challenged — 2026-10-08
+
+Read `prototypes/PUZZLE_LAB_V0_BOSS_18_STATE.md`. Two stable pair tests and one
+successful submission; Science 11. Player reports no boss difficulty, reads
+only-with implication as mandatory conjunction, experiences the fourth condition
+as unused, and critiques empty late-game starting knowledge. Audit confirms the
+stronger unintended reading produces one candidate coincidentally equal to the
+answer; intended tag semantics leave ten. All four clues remain formally necessary
+in the full graph, which does not establish public reasoning depth or usefulness.
+User requests discussion before far-reaching changes. Presentation marked
+undesirable; no new logical gate, weight or template edit yet. External examples
+support conditional clue use, not a universal requirement for active antecedents.
+Preserve solved fixture/session; next interaction is discussion of wording,
+conditional contribution and boss evaluation under plausible prior knowledge.
+
 ### Named boss example opened — case 18, 2026-10-08
 
 User currently requests test examples, not analysis or evaluation questions.
