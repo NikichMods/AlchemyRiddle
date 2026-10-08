@@ -63,7 +63,18 @@ wording directions. This does not accept a runtime phrase generator. Generic
 Future flavor drafts require identifiable Graveyard Keeper context. They must
 not replace properties with imagery, imply chemistry or act as an answer tell.
 
-### Lore-grounded drafts, not yet accepted
+### Accepted flavor direction and event consistency
+
+User review, 2026-10-08: prefer short notes by the Keeper, occasionally with
+character. Plain exact conditions remain primary; restrained personal asides are
+accepted as the flavor direction. No runtime template selection is implemented.
+Clotho is an appropriate world reference, but "Клото отдельно подчеркнула"
+creates dissonance when the player never had that conversation. Do not invent
+past conversations, completed quests, experiments or NPC statements as flavor.
+Any wording claiming such an event requires established player-state evidence.
+Keeper notes may present the supplied constraint without claiming an unperformed
+discovery. Asides implying prior mistakes are illustrative, not universal defaults.
+NPC delivery/integration remains unselected.
 
 Bounded reference review: Clotho is the game's alchemy introduction; the official
 game description emphasizes practical resource use, ethically dubious economy
@@ -76,8 +87,9 @@ Sources (accessed 2026-10-08):
 - https://store.steampowered.com/app/599140/Graveyard_Keeper/
 
 Illustrative independent drafts, not a recipe or quotations from the game:
-- Proposed Clotho-associated note: Клото отдельно подчеркнула: порошок не
-  должен иметь свойства «Трупное». Остальное на полях разобрать не удалось.
+- Reviewed Clotho-associated note (not eligible without a matching real event):
+  Клото отдельно подчеркнула: порошок не должен иметь свойства «Трупное».
+  Остальное на полях разобрать не удалось.
 - Keeper's laboratory note: Порошок без свойства «Трупное». Записать крупнее,
   пока снова не перепутал банки.
 - Keeper's laboratory note: Для этой смеси нельзя одновременно взять жидкость
@@ -85,8 +97,9 @@ Illustrative independent drafts, not a recipe or quotations from the game:
   В прошлый раз одного подчёркивания оказалось мало.
 
 Flavor must stay separate from the exact assertion. Legibility matters more than
-making each condition a joke. These drafts await player review; existing completed
-cases remain frozen and no renderer or production behavior changes here.
+making each condition a joke. Keeper-note style is accepted; individual templates
+still need semantic/event-scope review before use. Existing completed cases remain
+frozen and no renderer or production behavior changes here.
 
 Presentation boundary: automatic review rejected restarting completed case 13 to
 show new wording, citing original player-facing text preservation. No restart

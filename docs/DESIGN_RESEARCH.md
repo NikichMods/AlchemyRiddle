@@ -24,8 +24,12 @@ review gap. No new trial/feedback oracle started; production BLOCKED.
 Phrase review update, 2026-10-08: user accepts all six plain-language example
 pairs, rejects generic "alchemist's note" flavor and requests grounding in the
 actual game lore. CLUE_WORDING_POLICY.md records acceptance plus bounded source
-review and unaccepted Clotho/Keeper-note drafts. Full phrase generator and any
-NPC/delivery integration remain unselected; no further blind case opened.
+review. User subsequently prefers short Keeper notes with occasional character.
+Flavor must not invent conversations or other past player events: Clotho-linked
+wording claiming a conversation is ineligible without that actual event.
+Full phrase generator and NPC/delivery integration remain unselected; next wording
+step is a bounded template set with exact logical and event-scope review, not a new
+mechanic or blind trial.
 
 ### Knowledge-aware selection check completed — 2026-10-08
 
