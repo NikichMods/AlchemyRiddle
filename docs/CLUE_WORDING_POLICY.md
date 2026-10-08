@@ -1,5 +1,11 @@
 # Human-readable clue wording — case 13 follow-up
 
+Current case-15 refinement: sixteen active condition phrases, thirty active
+timeless asides. Four exact-one variants; explicit authoring variant offset enables
+between-case variation. Retire temporal/re-reading asides for new cases while
+retaining old IDs/text for frozen records. Variant clarity requires player evidence;
+surface variation never counts as reasoning diversity. See CLUE_TEMPLATE_SHEET.md.
+
 Current refinement after case 14, 2026-10-08: human wording is required in the
 condition itself, not only its aside. Semicolon XOR felt robotic and conflicted
 with the human note; target-prohibition wording was praised as natural. New
@@ -46,7 +52,7 @@ not count as reasoning diversity. Surface wording and effective logical work are
 separate review axes; simplify under actual field constants before labeling depth.
 
 Completed bounded artifact: [CLUE_TEMPLATE_SHEET.md](CLUE_TEMPLATE_SHEET.md),
-with 14 active core phrases, thirty independent optional Keeper asides, applicability
+with sixteen active core phrases, thirty independent optional Keeper asides, applicability
 guards and semantic checks. Future Lab integration is implemented through explicit
 offline authoring and validated frozen wording records; production integration is
 not implemented. No extra blind

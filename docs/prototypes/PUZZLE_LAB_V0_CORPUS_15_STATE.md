@@ -1,6 +1,7 @@
 # Corpus case 15 — coherent Keeper voice trial
 
-Status: ACTIVE, browser handed off; awaiting first player choice (2026-10-08).
+Status: COMPLETED, independently solved and reviewed (2026-10-08).
+Original precommit below remains historical.
 User authorizes a fresh human trial after case-14 semicolon/voice feedback.
 Production remains BLOCKED. One familiar player; formative, not a causal comparison.
 
@@ -64,3 +65,43 @@ one separate small italic Keeper aside, Science 20, no observations, submission
 disabled pending selection. Screenshot checked; no experiment/selection performed
 by facilitator. One durable session, empty selection/history, playing, fixture
 hash matches. Continue that session rather than starting another.
+
+## Human outcome and accepted follow-up
+
+Frozen fixture/hash-bound state verified unchanged. Six new paid pair checks,
+two submissions (failure then success), one refill. 22 Science spent, 8 remain.
+Anonymous paid trace: p1:f2 negative, p3:f2 negative, f1:e3 negative, p1:f1 stable,
+f1:e1 stable, p2:f1 stable. Failed p1:f1:e1 had both edges stable but XOR false;
+successful p2:f1:e1 satisfied both conditions. Repeat known-pair request was free.
+Two of six checks supported no then-unrefuted tag-valid proposal. Initial six
+tag-valid hypotheses. Public completed state and derived audit persisted in
+research/PuzzleLab/fixtures/corpus-15.completed.public.json and corpus-15-audit.json.
+No facilitator deduction, changed model, new feedback or price during play.
+
+Player liked lively/dense tag surface. Initially explored both mineral powders
+with the non-Slime fluid, then swapped slot/property roles while reading implication.
+Found a stable but tag-invalid chain and submitted; independently rechecked XOR,
+noticed the mistake and corrected to a valid chain. Prior experience explicitly
+helped recognize the need to recheck clues. No reliable duration measured.
+Retain as successful solve with recovery/UI findings, not clean coherent-voice
+acceptance or proof that ordinary players will detect this error unaided.
+
+"Tomorrow I can read this myself" aside rejected: unnecessary temporal expectation
+clashes with the perceived one-off puzzle. New authoring retires time/re-reading
+asides, preserving their immutable old IDs; thirty active notes remain.
+User requests multiple exact phrasings per logical condition and weighs variety
+against recognition. Future XOR has four reviewed semantic variants, other
+covered families at least two; explicit variant offset enables between-case
+variation. Readability benefit still needs player evidence.
+
+Accepted new research support for future, separately precommitted cases:
+- after paid failed synthesis, general composition recheck reminder only when the
+  submitted tuple violates visible tag conditions; no failed-clause/ingredient hint;
+- persistent submitted-mixture journal, plus selected-mixture prior-result notice;
+- explicit disabled-submit reason including insufficient Science; repeats stay paid.
+
+This changes feedback from the previous binary-only envelope and is opt-in via
+researchSupport.version=1. Never add it retrospectively to this played model.
+No pre-submission clause checking or candidate elimination. Forty-one tests pass;
+separate synthetic browser QA verified reminder, history, shortage reason and
+refill/reload. Production remains BLOCKED; no new blind case opened.

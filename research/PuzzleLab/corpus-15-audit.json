@@ -1,0 +1,124 @@
+{
+  "id": "lab-v0-corpus-15",
+  "fixtureFileSha256": "6d2d45e1e82e00a63613619e3dd31373bdee41e6c690d87f9f1c4ded8b53bb9a",
+  "initialTagValid": 6,
+  "pairTrace": [
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p3",
+        "fluid": "f2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 3
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e3"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 0
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p2",
+        "fluid": "f1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    }
+  ],
+  "submissions": [
+    {
+      "tuple": {
+        "fluid": "f1",
+        "powder": "p1",
+        "essence": "e1"
+      },
+      "success": false,
+      "cost": 5,
+      "clueSatisfied": [
+        false,
+        true
+      ]
+    },
+    {
+      "tuple": {
+        "powder": "p2",
+        "fluid": "f1",
+        "essence": "e1"
+      },
+      "success": true,
+      "cost": 5,
+      "clueSatisfied": [
+        true,
+        true
+      ]
+    }
+  ],
+  "status": "solved",
+  "science": 8,
+  "offTargetPairTests": 2,
+  "scienceSpent": 22,
+  "refills": 1
+}

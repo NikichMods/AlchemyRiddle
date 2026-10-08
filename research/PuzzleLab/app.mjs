@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder;
 const $ = id => document.getElementById(id);
 let view;
 let queue = Promise.resolve();
@@ -185,6 +186,22 @@ function render() {
   $('submit').disabled = s.status !== 'playing' || s.science < view.submissionCost || !view.slots.every(slot => s.selected[slot.id]);
   const lastSubmission = submissions.at(-1);
   $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Финальных проверок не осталось.' : lastSubmission && !lastSubmission.success ? 'Формула не подошла. Можно продолжить исследование.' : '';
+  const support=Boolean(view.researchSupport);
+  const previous=support?selectedSubmission(view):undefined;
+  $('submit-reason').hidden=!support;
+  $('submit-reason').textContent=support?submitBlockReason(view):'';
+  $('composition-reminder').hidden=!support || !compositionReminder(previous);
+  $('composition-reminder').textContent=support?compositionReminder(previous):'';
+  $('selected-history').hidden=!previous;
+  $('selected-history').textContent=previous?`Эта смесь уже проверена: ${previous.success?'формула найдена':'формула не подошла'}.${s.status==='playing'?` Повторная проверка стоит ${view.submissionCost} Science.`:''}`:'';
+  $('mixture-history').hidden=!support || !recordedSubmissions(view).length;
+  $('mixtures').replaceChildren(...(support?recordedSubmissions(view):[]).map((h,i)=>{
+    const li=document.createElement('li'),refs=document.createElement('span');refs.className='mixture-refs';
+    for(const slot of view.slots)refs.append(cardRef(h.tuple[slot.id]));
+    const verdict=document.createElement('span');verdict.textContent=`${h.success?'✓ Формула найдена':'Формула не подошла'} · −${h.cost} Science`;
+    li.setAttribute('aria-label',`Проверка ${i+1}: ${view.slots.map(slot=>name(h.tuple[slot.id])).join(' + ')} — ${h.success?'успех':'неудача'}`);
+    li.append(refs,verdict);return li;
+  }));
   if (focused && $(focused) !== document.activeElement) $(focused)?.focus({preventScroll:true});
 }
 async function request(path, body) {
@@ -193,18 +210,24 @@ async function request(path, body) {
 }
 function action(body) {
   queue = queue.then(async () => {
-    try {view = await request('/api/action', body); render(); $('error').textContent = '';}
+    try {view = await request('/api/action', body); await loadSupport(); render(); $('error').textContent = '';}
     catch(e) {$('error').textContent = e.message;}
   });
   return queue;
 }
 $('submit').onclick = () => action({type:'submit'});
 $('refill').onclick = () => action({type:'refill'});
-try {view = await request('/api/state'); render();}
+async function loadSupport() {
+  if(view.researchSupport && !submitBlockReason) {
+    const module=await import('./support.mjs');
+    ({submitBlockReason,submissions:recordedSubmissions,selectedSubmission,compositionReminder}=module);
+  }
+}
+try {view = await request('/api/state'); await loadSupport(); render();}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
 // Finite requests keep the embedded browser's navigation from waiting on a
 // permanent stream. Read only public presentation files; never reset sessions.
-const presentationFiles = ['/', '/app.mjs', '/style.css'];
+const presentationFiles = ['/', '/app.mjs', '/style.css',...(view?.researchSupport?['/support.mjs']:[])];
 let revision;
 async function checkPresentation() {
   try {

@@ -14,7 +14,7 @@ from intra_package_review import holds
 from science_route_comparison import Investigation
 
 
-def run(private, case=14, require_xor=False):
+def run(private, case=14, require_xor=False, research_support=False):
     assert case >= 14
     corpus = private / 'ordinary-3.json'
     pool = private / 'generator-route-ranking-private.json'
@@ -77,6 +77,8 @@ def run(private, case=14, require_xor=False):
         knownRelations=[], science=20, pairTestCost=2, submissionCost=5,
         economy=dict(mode='sharedScience', refillAmount=10),
         answer={s: mapping[t] for s, t in zip(SLOTS, target)})
+    if research_support:
+        fixture['researchSupport'] = dict(version=1)
     alias_live = [tuple(mapping[x] for x in t) for t in row['triples']]
     routes = {policy: Investigation(alias_live, (), lambda e: f'{e[1]}:{e[2]}' in stable,
               policy, stop_unique=True).distribution() for policy in ('balanced', 'candidate_first')}
@@ -89,7 +91,9 @@ def run(private, case=14, require_xor=False):
         conversionTruth=[dict(tuple={s: mapping[x] for s, x in zip(SLOTS, t)},
                              values=[t in m for m in masks]) for t in tuples],
         sampling=f'Fresh targets excluding cases 11 through {case-1}; ordinary per-target winners first, then fixed-seed choice within the prior two-clue mixed-family/display-kind cached-mean 2–5 envelope. Required XOR: {require_xor}. Trial sampling, not a new generator gate.',
-        semantics='Complete properties; all clauses AND both adjacent stable pairs. No priors; binary deterministic experiments, no partial synthesis feedback.',
+        semantics='Complete properties; all clauses AND both adjacent stable pairs. No priors; binary deterministic experiments. '
+                  + ('After paid failed synthesis, a general composition reminder appears only for a tag-invalid submission; no failed clause or correct component disclosed. Submitted-mixture history and button block reasons enabled.'
+                     if research_support else 'No partial synthesis feedback.'),
         economy=dict(initialScience=20, pairCost=2, wholeCost=5, refill=10,
                      limit=None, refillBurden='Zero in Lab; game acquisition unmodeled'),
         stopping='Correct submission ends; incorrect stays active. Unlimited refill. Logical deduction can justify submission without certifying every edge.',
@@ -104,5 +108,6 @@ if __name__ == '__main__':
     parser.add_argument('private', type=Path)
     parser.add_argument('--case', type=int, default=14)
     parser.add_argument('--require-xor', action='store_true')
+    parser.add_argument('--research-support', action='store_true')
     args = parser.parse_args()
-    run(args.private, args.case, args.require_xor)
+    run(args.private, args.case, args.require_xor, args.research_support)

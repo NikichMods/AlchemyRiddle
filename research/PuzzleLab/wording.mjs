@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MPL-2.0
 // Versioned authoring templates. Never change v1 text under an existing ID.
-import {asides} from './keeper-asides.mjs';
-export {asides};
+import {asides,authoringAsides} from './keeper-asides.mjs';
+export {asides,authoringAsides};
 const forms = {
   Порошок: {nom:'порошок',gen:'порошка',acc:'порошок',need:'нужен',must:'должен'},
   Жидкость: {nom:'жидкость',gen:'жидкости',acc:'жидкость',need:'нужна',must:'должна'},
@@ -27,7 +27,10 @@ function family(f,c) {
 export function eligibleTemplates(f,c,{authoring=false}={}) {
   const type=family(f,c);
   if(type==='fallback') return authoring?['plain-fallback-v2']:['plain-fallback-v2','plain-fallback-v1'];
-  if(type==='xor') return authoring?['xor-plain-v2','xor-note-v1']:['xor-plain-v2','xor-note-v1','xor-plain-v1'];
+  if(type==='xor') {
+    const current=['xor-plain-v2','xor-note-v1','xor-either-v1','xor-one-v1'];
+    return authoring?current:[...current,'xor-plain-v1'];
+  }
   return [`${type}-plain-v1`,`${type}-note-v1`];
 }
 export function renderTemplate(f,c,id,fallback) {
@@ -44,6 +47,8 @@ export function renderTemplate(f,c,id,fallback) {
   const noun=t=>forms[f.slots.find(s=>s.id===t.slot).name];
   const assertion=t=>`${noun(t).nom} имеет свойство «${t.tag}»`;
   const part=(t,gram='nom')=>`${noun(t)[gram]} со свойством «${t.tag}»`;
+  if(id==='xor-either-v1') return `Для этой смеси нужно одно из двух: ${assertion(c.terms[0])} или ${assertion(c.terms[1])}. Одновременно оба условия выполняться не должны.`;
+  if(id==='xor-one-v1') return `Из этих двух условий должно выполняться только одно: ${assertion(c.terms[0])} или ${assertion(c.terms[1])}.`;
   switch(family(f,c)) {
     case 'has': {const t=c.terms[0];return note?`У ${noun(t).gen} в этой смеси должно быть свойство «${t.tag}».`:`${capital(assertion(t))}.`;}
     case 'lacks': {const t=c.terms[0];return note?`Для этой смеси ${noun(t).need} ${noun(t).nom} без свойства «${t.tag}».`:`${capital(noun(t).nom)} не имеет свойства «${t.tag}».`;}
@@ -72,15 +77,16 @@ export function validateWording(f,fallback) {
   }
   if(asideCount>1) throw new Error('Only one optional Keeper aside per case');
 }
-export function authorWording(f,fallback,{asideId,asideAt=0}={}) {
+export function authorWording(f,fallback,{asideId,asideAt=0,variantOffset=0}={}) {
   if(f.wording!==undefined) throw new Error('Case wording already frozen');
-  if(asideId!==undefined && (!Object.hasOwn(asides,asideId) || !Number.isInteger(asideAt) || asideAt<0 || asideAt>=f.clues.length))
+  if(!Number.isSafeInteger(variantOffset) || variantOffset<0) throw new Error('Invalid wording variant offset');
+  if(asideId!==undefined && (!Object.hasOwn(authoringAsides,asideId) || !Number.isInteger(asideAt) || asideAt<0 || asideAt>=f.clues.length))
     throw new Error('Invalid authoring aside');
   const occurrences=new Map();
   const entries=f.clues.map(c=>{
     const ids=eligibleTemplates(f,c,{authoring:true}), key=ids[0], n=occurrences.get(key)??0;
     occurrences.set(key,n+1);
-    const templateId=ids[n%ids.length];
+    const templateId=ids[(n+variantOffset)%ids.length];
     return {templateId,text:renderTemplate(f,c,templateId,fallback)};
   });
   if(asideId!==undefined) Object.assign(entries[asideAt],{asideId,asideText:asides[asideId]});

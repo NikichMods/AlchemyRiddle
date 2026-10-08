@@ -59,6 +59,8 @@ export function legacyClueText(f, clue) {
   throw new Error('Unsupported clue kind');
 }
 export function validate(f) {
+  if(f.researchSupport!==undefined && (!f.researchSupport || f.researchSupport.version!==1))
+    throw new Error('Invalid research support version');
   if (f.propertyVocabulary && (!Array.isArray(f.propertyVocabulary) ||
       f.propertyVocabulary.some(t => typeof t !== 'string' || !t.trim()) ||
       new Set(f.propertyVocabulary).size !== f.propertyVocabulary.length)) throw new Error('Invalid property vocabulary');
@@ -103,6 +105,7 @@ export function publicView(f, state) {
   return {id: f.id, title: f.title, description: f.description, slots: f.slots,
     clues: f.clues.map(c => clueText(f, c)), submissionCost: f.submissionCost, state,
     ...(f.wording ? {clueAsides:f.wording.entries.map(e=>e.asideText??null)} : {}),
+    ...(f.researchSupport ? {researchSupport:f.researchSupport} : {}),
     ...(f.economy ? {economy:f.economy} : {}),
     ...(f.compatibility ? {pairTestCost:f.pairTestCost} : {})};
 }
@@ -147,7 +150,8 @@ export function act(f, state, action) {
     if (!f.slots.every(s => s.cards.some(c => c.id === state.selected[s.id]))) throw new Error('Выберите карточку в каждом слоте');
     state.science -= f.submissionCost;
     const success = f.slots.every(s => state.selected[s.id] === f.answer[s.id]);
-    state.history.push({tuple: {...state.selected}, success, cost: f.submissionCost});
+    state.history.push({tuple: {...state.selected}, success, cost: f.submissionCost,
+      ...(f.researchSupport && !success ? {compositionMismatch:!f.clues.every(c=>satisfies(f,state.selected,c))} : {})});
     state.status = success ? 'solved' : !shared && state.science < f.submissionCost ? 'exhausted' : 'playing';
   } else throw new Error('Неизвестное действие');
 }

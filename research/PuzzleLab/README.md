@@ -5,11 +5,13 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-Active coherent Keeper-voice trial: corpus case 15 on 4178, initially empty
-selection/history, no priors, Science 20. Read
+Completed coherent Keeper-voice trial: corpus case 15 on 4178, six new pair checks,
+two submissions, one refill, Science 8. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md` and the prototype protocol before
 resuming. Final private model and exact text frozen; public initial snapshot tracked.
 Do not replace or restart prior solved cases.
+Future research support is opt-in; original case 15 remains binary-feedback only.
+Current full suite has 41 tests.
 
 Completed Keeper-wording trial: corpus case 14 on 4177, three paid pair checks,
 one success, Science 9, no refill. Read
@@ -49,7 +51,7 @@ From the repository root, using Node.js 24 built-ins:
 
 ```sh
 node research/PuzzleLab/server.mjs --fixture=research/PuzzleLab/fixtures/depth-10.json
-node --test research/PuzzleLab/lab.test.mjs research/PuzzleLab/economy.test.mjs research/PuzzleLab/wording.test.mjs
+node --test research/PuzzleLab/lab.test.mjs research/PuzzleLab/economy.test.mjs research/PuzzleLab/wording.test.mjs research/PuzzleLab/support.test.mjs
 node research/PuzzleLab/audit-calibration.mjs --write
 ```
 
@@ -60,6 +62,7 @@ Prepare a new private case before precommit/handoff, then author its wording:
 ```sh
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=note-label-v1 --aside-at=0
+node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --variant-offset=1
 ```
 
 These are alternative commands; output must not already exist. Never use a played
@@ -93,6 +96,22 @@ The default `fixture.json` remains original negative onboarding case 01 for
 reproduction. Select historical cases explicitly with `--fixture=path/to/file.json`.
 
 ## State and presentation
+
+Future opted-in fixtures may contain `researchSupport: {version: 1}`. The builder
+exposes `--research-support`; freeze it before player choice. Paid failed synthesis
+stores a general compositionMismatch flag only after checking visible tag conditions;
+no failed-clause list or correct component is disclosed, and no pre-submit validation
+appears. Reminder is shown for a selected previously submitted invalid mixture.
+Submitted mixtures/outcomes persist in the existing history and appear in a journal.
+Selected repeats are labelled, remain allowed and cost Science. Disabled submit
+explains incomplete selection, shortage or completion. Legacy fixtures retain the
+old feedback/display envelope. UI module loads only for opted-in cases, so already
+running legacy servers do not require a restart or a new asset route.
+
+Asides have thirty active timeless IDs in `authoringAsides`; retired historical IDs
+remain valid only for frozen records. XOR has four active variants; other covered
+families have two. `--variant-offset=N` selects a deterministic alternate independent
+of answer/chemistry, persisted as exact template ID/text. No per-play paraphrasing.
 
 State is held in server memory, associated with an HttpOnly session cookie.
 HTML/CSS/browser-JS changes reload presentation and preserve current state.

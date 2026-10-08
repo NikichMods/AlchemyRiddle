@@ -1,0 +1,295 @@
+{
+  "id": "lab-v0-corpus-15",
+  "title": "Неизвестная смесь · опыт 15",
+  "description": "Соберите смесь: один порошок, одна жидкость и одна эссенция. Все сведения о составе верны одновременно. Свойства перечислены полностью. Для искомой формулы нужны две стабильные пары и соблюдение всех условий состава. Две стабильные пары сами по себе ещё не гарантируют успех.",
+  "slots": [
+    {
+      "id": "powder",
+      "name": "Порошок",
+      "cards": [
+        {
+          "id": "p1",
+          "name": "Порошок №1",
+          "tags": [
+            "Насекомое",
+            "Минеральное",
+            "Растительное"
+          ]
+        },
+        {
+          "id": "p2",
+          "name": "Порошок №2",
+          "tags": [
+            "Животное",
+            "Насекомое"
+          ]
+        },
+        {
+          "id": "p3",
+          "name": "Порошок №3",
+          "tags": [
+            "Минеральное"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fluid",
+      "name": "Жидкость",
+      "cards": [
+        {
+          "id": "f1",
+          "name": "Жидкость №1",
+          "tags": [
+            "Трупное",
+            "Тёмное",
+            "Орган",
+            "Слизь"
+          ]
+        },
+        {
+          "id": "f2",
+          "name": "Жидкость №2",
+          "tags": [
+            "Тёмное",
+            "Растительное"
+          ]
+        },
+        {
+          "id": "f3",
+          "name": "Жидкость №3",
+          "tags": [
+            "Растительное",
+            "Слизь"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "essence",
+      "name": "Эссенция",
+      "cards": [
+        {
+          "id": "e1",
+          "name": "Эссенция №1",
+          "tags": [
+            "Растительное",
+            "Слизь"
+          ]
+        },
+        {
+          "id": "e2",
+          "name": "Эссенция №2",
+          "tags": [
+            "Трупное"
+          ]
+        },
+        {
+          "id": "e3",
+          "name": "Эссенция №3",
+          "tags": [
+            "Трупное",
+            "Насекомое",
+            "Орган",
+            "Растительное"
+          ]
+        }
+      ]
+    }
+  ],
+  "clues": [
+    "Выполняется ровно одно из двух условий: либо порошок имеет свойство «Минеральное», либо жидкость имеет свойство «Слизь».",
+    "Если порошок имеет свойство «Насекомое», эссенция должна иметь свойство «Слизь»."
+  ],
+  "submissionCost": 5,
+  "state": {
+    "science": 8,
+    "selected": {
+      "powder": "p2",
+      "fluid": "f1",
+      "essence": "e1"
+    },
+    "marks": {},
+    "notes": "",
+    "history": [
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f2"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f2"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e3"
+        },
+        "stable": false,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f1"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e1"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "tuple": {
+          "fluid": "f1",
+          "powder": "p1",
+          "essence": "e1"
+        },
+        "success": false,
+        "cost": 5
+      },
+      {
+        "type": "pairTest",
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f1"
+        },
+        "stable": true,
+        "cost": 2
+      },
+      {
+        "type": "refill",
+        "amount": 10
+      },
+      {
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f1",
+          "essence": "e1"
+        },
+        "success": true,
+        "cost": 5
+      }
+    ],
+    "status": "solved",
+    "knownRelations": [
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f2"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p3",
+          "fluid": "f2"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e3"
+        },
+        "stable": false
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p1",
+          "fluid": "f1"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "fluid",
+          "essence"
+        ],
+        "tuple": {
+          "fluid": "f1",
+          "essence": "e1"
+        },
+        "stable": true
+      },
+      {
+        "slots": [
+          "powder",
+          "fluid"
+        ],
+        "tuple": {
+          "powder": "p2",
+          "fluid": "f1"
+        },
+        "stable": true
+      }
+    ]
+  },
+  "clueAsides": [
+    "Главное, чтобы завтра это смог прочесть я сам.",
+    null
+  ],
+  "economy": {
+    "mode": "sharedScience",
+    "refillAmount": 10
+  },
+  "pairTestCost": 2
+}

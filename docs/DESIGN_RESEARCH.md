@@ -4,15 +4,22 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
-### Active coherent-voice trial — case 15, 2026-10-08
+### Coherent-voice trial completed and recovery support — case 15, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
-User authorizes fresh wording play after case-14 feedback. Final private model/text
-frozen; all 27 source/converted predicate rows agree. Fresh ordinary winning target
-excludes cases 11–14; two necessary clauses, new either/or wording and one separate
-Keeper note. Browser handoff on 4178/tab 5 verified: Science 20, no priors/history,
-empty durable selection, separated aside. Next is first player choice; no hints
-or new deductions from facilitator. Production BLOCKED.
+Independently solved: six paid pair checks, failed then successful submission,
+one refill, 22 Science spent, 8 remain. Two off-target checks; failed stable chain
+violated XOR. Player independently rechecked/corrected, noting previous experience
+helped. Time-bound aside rejected; tags liked. Model/original text held, solved
+session remains on 4178. Not a clean coherent-voice or unaided-error-recovery acceptance.
+User authorizes general post-paid composition reminder, submitted-mixture memory,
+disabled-submit explanations and varied exact phrasing. Implemented as opt-in
+researchSupport.version=1 for future frozen cases; no retrospective feedback change.
+Four active XOR variants, explicit between-case variant offset; thirty active
+timeless notes, retired IDs preserved. Forty-one tests pass and synthetic browser
+QA confirms new reminder/history/shortage/refill/reload. Next evidence: error
+recovery with this support in a separately precommitted trial. Production BLOCKED;
+no new blind case opened.
 
 ### Keeper-wording trial completed — case 14, 2026-10-08
 

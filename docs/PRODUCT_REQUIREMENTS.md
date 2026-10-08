@@ -965,3 +965,13 @@ with occasional character, without claiming conversations, prior mistakes or
 other events the player did not experience. Small italic separate asides are liked;
 optional pool expanded to thirty in research. No lore NPC delivery, new deductions,
 mandatory note frequency or production implementation accepted.
+
+Case-15 accepted research support: after a paid failed synthesis that violates
+visible tag constraints, give a general composition-recheck reminder without
+identifying a failed clause, correct component or hidden pair. No pre-submission
+constraint oracle. Persist/show checked mixtures and outcomes; a disabled submit
+button explains the actual reason including missing Science. Repeated whole
+checks remain possible and paid. This refines the old binary-only feedback policy
+for future opted-in Lab trials; production readiness is not established.
+Keeper notes avoid temporal/re-reading promises. Multiple exact phrasings per
+operator are wanted; controlled variation must retain recognizable logical scope.

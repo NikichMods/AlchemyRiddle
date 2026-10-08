@@ -30,5 +30,11 @@ export const asides = Object.freeze({
   'note-margin-scroll-v1':'Пометку на полях не превращать в ещё один свиток.',
   'note-draft-v1':'Спрятать от сквозняка. Рабочие записи летать не обязаны.',
   'note-lunch-v1':'Не забыть про обед. Эта запись его не заменит.',
-  'note-grand-v1':'Записать спокойно. В торжественном тоне смесь не нуждается.'
+  'note-grand-v1':'Записать спокойно. В торжественном тоне смесь не нуждается.',
+  'note-self-legible-v1':'Главное, чтобы это смог прочесть я сам.',
+  'note-spacing-v1':'Оставить место между строками. Буквам тоже нужен воздух.',
+  'note-dry-paper-v1':'Бумагу держать сухой. Для жидкости есть банки.'
 });
+// Retained for frozen historical records, not eligible for new authoring.
+const retired=new Set(['note-tomorrow-v1','note-legible-v1','note-drying-v1']);
+export const authoringAsides=Object.freeze(Object.fromEntries(Object.entries(asides).filter(([id])=>!retired.has(id))));

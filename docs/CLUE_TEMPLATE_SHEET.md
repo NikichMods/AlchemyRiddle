@@ -21,6 +21,8 @@ The examples below are independent, not a combined recipe.
 | lacks-note-v1 | One negative literal | Для этой смеси нужен порошок без свойства «А». |
 | xor-plain-v2 | Exactly one of two assertions | Выполняется ровно одно из двух условий: либо порошок имеет свойство «А», либо эссенция имеет свойство «Б». |
 | xor-note-v1 | Exactly one of two assertions | В этой смеси либо порошок имеет свойство «А», либо эссенция имеет свойство «Б» — но не оба одновременно. |
+| xor-either-v1 | Exactly one of two assertions | Для этой смеси нужно одно из двух: порошок имеет свойство «А» или эссенция имеет свойство «Б». Одновременно оба условия выполняться не должны. |
+| xor-one-v1 | Exactly one of two assertions | Из этих двух условий должно выполняться только одно: порошок имеет свойство «А» или эссенция имеет свойство «Б». |
 | implies-plain-v1 | A implies B | Если порошок имеет свойство «А», эссенция должна иметь свойство «Б». |
 | implies-note-v1 | A implies B | При выборе порошка со свойством «А» нужна эссенция со свойством «Б». |
 | forbids-plain-v1 | Not both A and B, target-specific | Для этой смеси нельзя одновременно взять жидкость со свойством «А» и эссенцию со свойством «Б». |
@@ -42,11 +44,15 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 
 ## Optional independent Keeper asides
 
+Current authoring pool: thirty timeless notes. Historical note-tomorrow-v1,
+note-legible-v1 and note-drying-v1 remain in the immutable registry only for old
+fixtures. New replacements do not promise tomorrow, later or another reading.
+Case-15 feedback rejects that temporal mismatch with a perceived one-off puzzle.
+
 | ID | Russian text |
 | --- | --- |
 | note-label-v1 | Записать крупнее, чтобы не перепутать банки. |
 | note-underline-v1 | Подчеркнуть. Лучше дважды. |
-| note-legible-v1 | Оставить место между строками. Это ещё придётся перечитывать. |
 | note-quill-v1 | Перо положить подальше от реагентов. |
 | note-ink-v1 | Чернила оставить для записей. |
 | note-jar-v1 | Подписать банку, а не крышку. |
@@ -61,7 +67,6 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 | note-scroll-v1 | Свиток красивый. Читаемость полезнее. |
 | note-flourish-v1 | Не украшать буквы до неузнаваемости. |
 | note-signature-v1 | Внизу оставить место для подписи. |
-| note-drying-v1 | Свернуть позже. Чернилам дать высохнуть. |
 | note-kindling-v1 | Этот лист хранить с записями, а не с растопкой. |
 | note-neatness-v1 | Если получится красиво — хорошо. Если разборчиво — лучше. |
 | note-cup-v1 | Убрать от кружки. Бумаге пить не положено. |
@@ -69,11 +74,13 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 | note-morgue-v1 | Морг отдельно, письменный стол отдельно. |
 | note-corpses-v1 | Покойники почерк не оценят. Мне ещё читать. |
 | note-trade-v1 | Не отдавать этот лист вместе с товаром. |
-| note-tomorrow-v1 | Главное, чтобы завтра это смог прочесть я сам. |
 | note-margin-scroll-v1 | Пометку на полях не превращать в ещё один свиток. |
 | note-draft-v1 | Спрятать от сквозняка. Рабочие записи летать не обязаны. |
 | note-lunch-v1 | Не забыть про обед. Эта запись его не заменит. |
 | note-grand-v1 | Записать спокойно. В торжественном тоне смесь не нуждается. |
+| note-self-legible-v1 | Главное, чтобы это смог прочесть я сам. |
+| note-spacing-v1 | Оставить место между строками. Буквам тоже нужен воздух. |
+| note-dry-paper-v1 | Бумагу держать сухой. Для жидкости есть банки. |
 
 These are intentions, not assertions that the player previously made mistakes,
 performed experiments, met NPCs or completed quests. Do not claim new chemical
@@ -83,6 +90,13 @@ the default style; use an occasional aside, not a compulsory joke on every clue.
 Research authoring defaults to no aside; one can be explicitly attached. This
 does not fix production frequency or a stochastic selection algorithm.
 Template/aside choice must not depend on which answer, branch or reagent is true.
+
+Case-15 refinement: sixteen active core phrases; four exact-one variants and two
+for every other covered family. Explicit authoring variantOffset rotates choice
+across cases as well as within a repeated family, independent of hidden truth.
+Persist exact chosen IDs/text; no synonym swapping during play. Keep recognisable
+anchors (named slots, exact properties, conditional scope and exactly-one).
+Two new variants are semantically reviewed, not independently player-accepted.
 
 Example, independent of any live case:
 

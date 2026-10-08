@@ -14,12 +14,13 @@ export function authorFile(input,output,options={}) {
 if(process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const [input,output,...args]=process.argv.slice(2);
   try {
-    if(!input || !output || args.some(a=>!a.startsWith('--aside=')&&!a.startsWith('--aside-at=')))
-      throw new Error('Usage: author-wording.mjs INPUT NEW_OUTPUT [--aside=ID --aside-at=ZERO_BASED_INDEX]');
+    if(!input || !output || args.some(a=>!a.startsWith('--aside=')&&!a.startsWith('--aside-at=')&&!a.startsWith('--variant-offset=')))
+      throw new Error('Usage: author-wording.mjs INPUT NEW_OUTPUT [--aside=ID --aside-at=ZERO_BASED_INDEX] [--variant-offset=N]');
     const asideId=args.find(a=>a.startsWith('--aside='))?.slice(8);
     const at=args.find(a=>a.startsWith('--aside-at='));
     if(at && asideId===undefined) throw new Error('--aside-at requires --aside');
-    const count=authorFile(input,output,{asideId,...(at?{asideAt:Number(at.slice(11))}:{})});
+    const offset=args.find(a=>a.startsWith('--variant-offset='));
+    const count=authorFile(input,output,{asideId,...(at?{asideAt:Number(at.slice(11))}:{}),...(offset?{variantOffset:Number(offset.slice(17))}:{})});
     console.log(`Persisted ${count} clue wording records. No answer data printed.`);
   } catch(e) {console.error(e.message);process.exitCode=1;}
 }

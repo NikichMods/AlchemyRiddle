@@ -1,5 +1,14 @@
 # Puzzle quality — Lab calibration synthesis
 
+Latest supplement, case 15: six paid pair checks, failed then successful synthesis,
+one refill; two off-target checks after slot/property confusion. Player independently
+noticed tag-invalid XOR despite stable edges, citing prior taught error experience.
+This supports explicit recovery affordances, not a claim that natural wording alone
+prevents mistakes. Future opt-in support includes a general post-paid tag-mismatch
+reminder, submitted-mixture memory and disabled-submit reasons. Keep feedback-policy
+identity in precommit; new supported human routes cannot be treated as the old
+binary-only condition. Temporal aside rejected; controlled operator variants desired.
+
 Latest human supplement, 2026-10-08: case 14 independently solved with three
 target-relevant pair checks and one success (11 Science spent, 9 remain, no refill).
 Verdict clear/pleasant/confident; varied one-to-four-tag surface appreciated.

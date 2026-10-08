@@ -18,7 +18,7 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
     writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state},null,2));
     renameSync(path+'.tmp',path);
   };
-  const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css'};
+  const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css', '/support.mjs':'support.mjs'};
   const server = http.createServer(async (req, res) => {
     const host = req.headers.host;
     const port = server.address().port;

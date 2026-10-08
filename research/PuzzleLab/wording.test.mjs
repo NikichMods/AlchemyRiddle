@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,rmSync,writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {authorWording,asides,eligibleTemplates,renderTemplate,validateWording} from './wording.mjs';
+import {authorWording,asides,authoringAsides,eligibleTemplates,renderTemplate,validateWording} from './wording.mjs';
 import {authorFile} from './author-wording.mjs';
 import {createLab} from './server.mjs';
 import {legacyClueText,publicView,createState,candidates,validFormula,validate} from './rules.mjs';
@@ -12,7 +12,7 @@ const f=JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.u
 const t=(slot,tag='А')=>({slot,tag});
 const literal=(slot,count)=>({kind:'exactly',count,terms:[t(slot)]});
 
-test('all fourteen templates cover their admitted shapes and slot grammar',()=>{
+test('all sixteen active templates cover their admitted shapes and slot grammar',()=>{
   const models=[literal('powder',1),literal('powder',0),
     {kind:'exactly',count:1,terms:[t('powder'),t('essence','Б')]},
     {kind:'implies',if:t('powder'),then:t('essence','Б')},
@@ -22,7 +22,7 @@ test('all fourteen templates cover their admitted shapes and slot grammar',()=>{
   for(const c of models) for(const id of eligibleTemplates(f,c,{authoring:true})) {
     ids.add(id);assert.ok(renderTemplate(f,c,id,legacyClueText).endsWith('.'));
   }
-  assert.equal(ids.size,14);
+  assert.equal(ids.size,16);
   for(const s of f.slots) {
     const c=literal(s.id,0),noun=s.name.toLowerCase();
     assert.match(renderTemplate(f,c,'lacks-note-v1',legacyClueText),new RegExp(`нуж${s.id==='powder'?'ен':'на'} ${noun}`));
@@ -62,12 +62,32 @@ test('new XOR wording uses either/or while frozen v1 wording remains valid',()=>
 });
 
 test('all thirty unique optional asides persist independently of clause and answer',()=>{
-  assert.equal(Object.keys(asides).length,30);assert.equal(new Set(Object.values(asides)).size,30);
-  for(const [asideId,asideText] of Object.entries(asides)) {
+  assert.equal(Object.keys(authoringAsides).length,30);assert.equal(new Set(Object.values(authoringAsides)).size,30);
+  for(const [asideId,asideText] of Object.entries(authoringAsides)) {
     const next=authorWording(f,legacyClueText,{asideId});validate(next);
     assert.equal(publicView(next,createState(next)).clueAsides[0],asideText);
     assert.deepEqual(next.wording,authorWording({...f,answer:{}},legacyClueText,{asideId}).wording);
   }
+});
+
+test('temporal asides remain valid in old records but are unavailable for new cases',()=>{
+  for(const asideId of ['note-tomorrow-v1','note-legible-v1','note-drying-v1']) {
+    assert.throws(()=>authorWording(f,legacyClueText,{asideId}));
+    const old=authorWording(f,legacyClueText);
+    Object.assign(old.wording.entries[0],{asideId,asideText:asides[asideId]});validateWording(old,legacyClueText);
+  }
+});
+
+test('variant offsets select four exact-one phrasings without depending on truth',()=>{
+  const c={kind:'exactly',count:1,terms:[t('powder'),t('fluid')]},model={...f,clues:[c]};
+  const texts=new Set();
+  for(let variantOffset=0;variantOffset<4;variantOffset++) {
+    const w=authorWording(model,legacyClueText,{variantOffset});texts.add(w.wording.entries[0].text);
+    validateWording(w,legacyClueText);
+    assert.deepEqual(w.wording,authorWording({...model,answer:{}},legacyClueText,{variantOffset}).wording);
+  }
+  assert.equal(texts.size,4);
+  for(const variantOffset of [-1,0.5,NaN,Infinity]) assert.throws(()=>authorWording(model,legacyClueText,{variantOffset}));
 });
 
 test('authoring is deterministic, answer-independent and retains all formula outcomes',()=>{
