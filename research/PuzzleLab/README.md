@@ -18,8 +18,8 @@ one success, Science 9, no refill. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md` and the prototype protocol before
 resuming. Exact wording/one separate aside and hidden model precommitted privately;
 public initial/completed snapshots tracked. Do not replace prior solved sessions.
-Semicolon XOR rejected; future authoring uses new either/or template ID and thirty
-optional asides. Original played text preserved. Full suite now has 35 checks.
+Semicolon XOR rejected; future authoring uses new either/or template ID and thirteen context-gated
+optional clue asides. Original played text preserved. Full suite now has 35 checks.
 
 Completed trial: corpus case 13 on 4176, two new pair checks and one success.
 It began with one prior stable pair and three necessary
@@ -57,11 +57,19 @@ node research/PuzzleLab/audit-calibration.mjs --write
 
 ## Wording for future, unplayed cases
 
+See `docs/KEEPER_CONTEXT_SCENARIOS.md` for the approved 13 clue-note
+contexts and 9 stored (not yet displayed) event-response contexts. The example
+`--aside=clue-has-organ-v1` below is eligible **only** if the chosen clue
+at the specified zero-based index asserts that the essence has tag «Орган».
+An ineligible note is rejected at authoring time; no default remark is added.
+
+
+
 Prepare a new private case before precommit/handoff, then author its wording:
 
 ```sh
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT
-node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=keeper-lunch-v2 --aside-at=0
+node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=clue-has-organ-v1 --aside-at=0
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --variant-offset=1
 ```
 
@@ -73,7 +81,7 @@ Existing fixture preparers still emit a raw model; this authoring step is explic
 `wording.version=1` and one entry per clue persist template ID and exact text, plus
 optional aside ID/text. Plain/note alternatives rotate only for repeated eligible
 families, using their order; selection never reads the answer or compatibility.
-No aside by default; the author may attach one explicitly from thirty lines in
+No aside by default; the author may attach one explicitly from thirteen context-eligible lines in
 `keeper-asides.mjs`. Future XOR uses `xor-plain-v2`; `xor-plain-v1` remains valid for
 frozen texts. Unsupported AST shapes or unfamiliar slot labels use
 `plain-fallback-v2`; historical `plain-fallback-v1` remains readable. IDs are immutable: change
@@ -108,8 +116,9 @@ explains incomplete selection, shortage or completion. Legacy fixtures retain th
 old feedback/display envelope. UI module loads only for opted-in cases, so already
 running legacy servers do not require a restart or a new asset route.
 
-Asides have 24 current review candidates in `authoringAsides`; retired historical IDs
-remain valid only for frozen records. Each of the seven covered wording families
+Asides have 13 user-approved context-gated clue notes in `authoringAsides`;
+9 additional approved event replies are stored but are not yet shown by the UI.
+Retired historical IDs remain valid only for frozen records. Each of the seven covered wording families
 has four active variants (28 total). `--variant-offset=N` selects a deterministic alternate independent
 of answer/chemistry, persisted as exact template ID/text. No per-play paraphrasing.
 
