@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Direct pair guidance accepted; role palette refined — 2026-10-09
+
+User accepts the direct compatibility/action wording and authorizes lighter
+less-orange Powder plus cooler lavender Essence, keeping Fluid. Implemented in
+`?roles=1`; remove the vague extra “connection” paragraph. Composition header note
+remains absent; a new gentle action prompt is only a proposal. Read latest section
+in `research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`. Current chat also prepares
+collaboration/verification preferences for user review before private persistence;
+do not copy them into public project docs. No new puzzle or mechanics. Next:
+review palette and proposed communication rules. Production BLOCKED.
+
 ### UI review: synthesis accepted; guidance correction discussed — 2026-10-09
 
 User accepts subdued refill and alchemical main button. Powder/Animal and

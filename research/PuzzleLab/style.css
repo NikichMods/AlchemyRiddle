@@ -154,7 +154,7 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 .reference li{margin-bottom:9px;line-height:1.55}
 
 /* Explicit roles=1 trial: muted role colors, local guidance, primary synthesis. */
-.role-preview{--role-powder:#d4bea0;--role-fluid:#a4c6d5;--role-essence:#cbb5d6}
+.role-preview{--role-powder:#d8d1b4;--role-fluid:#a4c6d5;--role-essence:#c5bce6}
 .role-preview .role-powder,.role-preview .ref-powder{color:var(--role-powder)}
 .role-preview .role-fluid,.role-preview .ref-fluid{color:var(--role-fluid)}
 .role-preview .role-essence,.role-preview .ref-essence{color:var(--role-essence)}

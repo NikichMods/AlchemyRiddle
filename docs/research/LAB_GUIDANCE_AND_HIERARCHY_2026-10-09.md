@@ -80,3 +80,22 @@ The current interaction is discussion of design reasoning and collaboration
 expectations. Do not interpret it as authorization to add a new global personal
 policy: user requests commentary first and anticipates a later persistence request.
 Personal preferences belong outside this public repository. No new prototype.
+
+## Approved next refinement
+
+User explicitly accepts the proposed direct player-facing compatibility copy:
+“Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией. Исследуйте
+неизвестные пары, чтобы выяснить, какие сочетания подходят.” Implemented in the
+preview; remove the second undefined-connection paragraph instead of stacking
+another explanation. Pair requirements and optional prior certification unchanged.
+
+User authorizes lighter less-orange Powder and cooler lavender Essence. New
+working preview values: Powder `#d8d1b4`, Fluid retained `#a4c6d5`, Essence
+`#c5bce6`. The aim is reduced perceived resemblance to Animal/Dark while retaining
+material associations, not a claim of globally unique role hues. Human review
+pending. All word/shape cues remain.
+
+Gentle action-oriented composition guidance is raised as a possible direction;
+no replacement text selected. The header note stays absent. Collaboration-rule
+changes will be reviewed in chat before any private instruction-file mutation;
+personal draft is not stored in this public repository.
