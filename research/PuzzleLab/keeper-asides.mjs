@@ -76,14 +76,231 @@ export const asides = Object.freeze({
   'keeper-shovel-v2':'Вот за это алхимию и люблю: можно хоть немного побыть без лопаты.',
   'keeper-corpses-v2':'С покойниками всё-таки проще — не спрашивают, долго ли я ещё буду возиться.',
   'keeper-important-v2':'Если кто заглянет — я работаю! И вообще, думать тоже считается.'
+  'clue-xor-insect-slime-v1':'Хорошо, что выбирать можно глазами. На ощупь — увольте.',
+  'clue-count-corpse-v1':'Два с „Трупным“? Ну, это по моей части.',
+  'clue-has-organ-v1':'„Орган“... Церковный или из морга?',
+  'clue-lacks-slime-v1':'Без „Слизи“? Уже звучит гораздо приятнее.',
+  'clue-has-dark-v1':'„Тёмное“? Вот эту страницу инквизитору лучше не показывать.',
+  'clue-count-plant-v1':'Похоже, я алхимик с уклоном в садоводство.',
+  'clue-implies-donkey-v1':'Животному подавай растительное. Прямо как ослу морковку.',
+  'clue-xor-suspicious-v1':'Что ни выбери — всё звучит подозрительно.',
+  'clue-forbids-slime-corpse-v1':'Да я, собственно, и не настаивал.',
+  'clue-lacks-mineral-v1':'Камни мне ещё для надгробий пригодятся.',
+  'clue-count-slime-v1':'Два со „Слизью“? Пожалуй, крышки стоит закрыть поплотнее.',
+  'clue-shared-jerry-v1':'Общее у троих... Джерри бы начал с выпивки.',
+  'clue-has-insect-v1':'„Насекомое“? Лишь бы из банки никто не выполз.',
 });
-// Retained for frozen historical records, not eligible for new authoring.
-// Explicit review pool: old lines remain byte-identical, but do not become defaults.
+// Existing historical IDs above remain immutable for already-authored cases.
+// New active clue asides are gated by exact public clue semantics; event replies
+// are approved editorial assets, not yet connected to the event UI.
 const current=[
-  'keeper-lunch-v2','keeper-cemetery-v2','keeper-shovel-v2','keeper-corpses-v2','keeper-important-v2',
-  'keeper-thought-v1','keeper-memory-v1','keeper-ink-v1','keeper-jars-v1','keeper-sermon-v1',
-  'keeper-first-v1','keeper-burial-v1','keeper-order-v1','keeper-workload-v1','keeper-complaints-v1',
-  'keeper-rest-v1','keeper-jobs-v1','keeper-idle-v1','keeper-curiosity-v1','keeper-help-v1',
-  'keeper-garden-v1','keeper-sale-v1','keeper-brains-v1','keeper-pause-v1'
+  "clue-xor-insect-slime-v1",
+  "clue-count-corpse-v1",
+  "clue-has-organ-v1",
+  "clue-lacks-slime-v1",
+  "clue-has-dark-v1",
+  "clue-count-plant-v1",
+  "clue-implies-donkey-v1",
+  "clue-xor-suspicious-v1",
+  "clue-forbids-slime-corpse-v1",
+  "clue-lacks-mineral-v1",
+  "clue-count-slime-v1",
+  "clue-shared-jerry-v1",
+  "clue-has-insect-v1"
 ];
 export const authoringAsides=Object.freeze(Object.fromEntries(current.map(id=>[id,asides[id]])));
+export const clueAsideContexts=Object.freeze({
+  "clue-xor-insect-slime-v1": {
+    "kind": "xor",
+    "terms": [
+      {
+        "slot": "powder",
+        "tag": "Насекомое"
+      },
+      {
+        "slot": "fluid",
+        "tag": "Слизь"
+      }
+    ]
+  },
+  "clue-count-corpse-v1": {
+    "kind": "count-two",
+    "tag": "Трупное"
+  },
+  "clue-has-organ-v1": {
+    "kind": "has",
+    "term": {
+      "slot": "essence",
+      "tag": "Орган"
+    }
+  },
+  "clue-lacks-slime-v1": {
+    "kind": "lacks",
+    "term": {
+      "slot": "fluid",
+      "tag": "Слизь"
+    }
+  },
+  "clue-has-dark-v1": {
+    "kind": "has",
+    "term": {
+      "slot": "essence",
+      "tag": "Тёмное"
+    }
+  },
+  "clue-count-plant-v1": {
+    "kind": "count-two",
+    "tag": "Растительное"
+  },
+  "clue-implies-donkey-v1": {
+    "kind": "implies",
+    "if": {
+      "slot": "powder",
+      "tag": "Животное"
+    },
+    "then": {
+      "slot": "essence",
+      "tag": "Растительное"
+    }
+  },
+  "clue-xor-suspicious-v1": {
+    "kind": "xor",
+    "terms": [
+      {
+        "slot": "fluid",
+        "tag": "Тёмное"
+      },
+      {
+        "slot": "essence",
+        "tag": "Трупное"
+      }
+    ]
+  },
+  "clue-forbids-slime-corpse-v1": {
+    "kind": "forbids",
+    "terms": [
+      {
+        "slot": "fluid",
+        "tag": "Слизь"
+      },
+      {
+        "slot": "essence",
+        "tag": "Трупное"
+      }
+    ]
+  },
+  "clue-lacks-mineral-v1": {
+    "kind": "lacks",
+    "term": {
+      "slot": "powder",
+      "tag": "Минеральное"
+    }
+  },
+  "clue-count-slime-v1": {
+    "kind": "count-two",
+    "tag": "Слизь"
+  },
+  "clue-shared-jerry-v1": {
+    "kind": "shared",
+    "slots": 3
+  },
+  "clue-has-insect-v1": {
+    "kind": "has",
+    "term": {
+      "slot": "essence",
+      "tag": "Насекомое"
+    }
+  }
+});
+export const eventAsides=Object.freeze({
+  "pair-stable-insect-slime-v1": {
+    "text": "А ведь поладили. Та ещё парочка.",
+    "trigger": "pairTest",
+    "stable": true,
+    "tags": [
+      "Насекомое",
+      "Слизь"
+    ]
+  },
+  "pair-unstable-insect-slime-v1": {
+    "text": "Не сошлись. Да и компания, прямо скажем, на любителя.",
+    "trigger": "pairTest",
+    "stable": false,
+    "tags": [
+      "Насекомое",
+      "Слизь"
+    ]
+  },
+  "submit-failed-curiosity-v1": {
+    "text": "Не то. Интересно, что я упустил?",
+    "trigger": "submit",
+    "success": false
+  },
+  "submit-success-beauty-v1": {
+    "text": "Вот теперь всё сошлось. Красота.",
+    "trigger": "submit",
+    "success": true
+  },
+  "pair-unstable-plant-corpse-v1": {
+    "text": "Не срослось. Бывает даже с растениями.",
+    "trigger": "pairTest",
+    "stable": false,
+    "tags": [
+      "Растительное",
+      "Трупное"
+    ]
+  },
+  "pair-unstable-discovery-v1": {
+    "text": "Не подошли? Отлично, эту пару можно вычеркнуть.",
+    "trigger": "pairTest",
+    "stable": false,
+    "firstObservation": true
+  },
+  "pair-unstable-mineral-slime-v1": {
+    "text": "Не склеились. А я-то на слизь рассчитывал.",
+    "trigger": "pairTest",
+    "stable": false,
+    "tags": [
+      "Минеральное",
+      "Слизь"
+    ]
+  },
+  "pair-stable-insect-corpse-v1": {
+    "text": "Сошлись. В морге такое соседство не удивило бы.",
+    "trigger": "pairTest",
+    "stable": true,
+    "tags": [
+      "Насекомое",
+      "Трупное"
+    ]
+  },
+  "submit-success-after-failure-v1": {
+    "text": "Вот оно! Хорошо, что первой догадкой я не ограничился.",
+    "trigger": "submit",
+    "success": true,
+    "priorFailedSubmission": true
+  }
+});
+
+const sameTerm=(a,b)=>a?.slot===b?.slot && a?.tag===b?.tag;
+const samePair=(got,want)=>Array.isArray(got) && got.length===2 &&
+  (sameTerm(got[0],want[0]) && sameTerm(got[1],want[1]) ||
+   sameTerm(got[0],want[1]) && sameTerm(got[1],want[0]));
+// For new authoring only; historical frozen wording is validated against its
+// exact saved ID/text, never against today's eligibility filters.
+export function clueAsideFits(f,c,id) {
+  const rule=clueAsideContexts[id];
+  if(!rule || !c) return false;
+  switch(rule.kind) {
+    case 'xor':return c.kind==='exactly' && c.count===1 && samePair(c.terms,rule.terms);
+    case 'count-two':return c.kind==='exactly' && c.count===2 && f.slots.length===3 &&
+      c.terms?.length===3 && new Set(c.terms.map(t=>t.slot)).size===3 &&
+      f.slots.every(s=>c.terms.some(t=>t.slot===s.id && t.tag===rule.tag));
+    case 'has':case 'lacks':return c.kind==='exactly' && c.count===(rule.kind==='has'?1:0) &&
+      c.terms?.length===1 && sameTerm(c.terms[0],rule.term);
+    case 'implies':return c.kind==='implies' && sameTerm(c.if,rule.if) && sameTerm(c.then,rule.then);
+    case 'forbids':return c.kind==='notTogether' && samePair([c.left,c.right],rule.terms);
+    case 'shared':return c.kind==='sharedTag' && f.slots.length===rule.slots;
+    default:return false;
+  }
+}
