@@ -1,6 +1,6 @@
 # Corpus case 15 — coherent Keeper voice trial
 
-Status: PRECOMMITTED, awaiting browser handoff (2026-10-08).
+Status: ACTIVE, browser handed off; awaiting first player choice (2026-10-08).
 User authorizes a fresh human trial after case-14 semicolon/voice feedback.
 Production remains BLOCKED. One familiar player; formative, not a causal comparison.
 
@@ -57,3 +57,10 @@ case-specific cookie and hash-bound durable state resume after refresh/restart.
 Read PAPER_PROTOTYPE_PROTOCOL.md and recover exact durable state before resuming.
 Next interaction: first player choice after browser handoff. Never replace session
 or disclose intended route/policy estimates by assumption.
+
+Browser handoff verified: in-app tab 5, http://127.0.0.1:4178/, correct title,
+nine unselected cards, two conditions using the corrected either/or wording,
+one separate small italic Keeper aside, Science 20, no observations, submission
+disabled pending selection. Screenshot checked; no experiment/selection performed
+by facilitator. One durable session, empty selection/history, playing, fixture
+hash matches. Continue that session rather than starting another.
