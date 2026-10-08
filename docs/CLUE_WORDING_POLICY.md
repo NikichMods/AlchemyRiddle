@@ -16,10 +16,12 @@ keeper-cemetery-v1, keeper-shovel-v1, keeper-corpses-v1 and keeper-important-v1.
 User authorizes rewriting even the six retained old notes, reducing handwriting
 dominance, more varied punctuation and more mild black humor (no graphic cruelty).
 Punctuation should follow an actual thought/pause, not a new mandatory pattern.
-The current 24-line proposal preserves those five accepted lines and adds nineteen
-new ones: ordinary Keeper work, cemetery, rest, lunch, curiosity, commerce and a
-small writing-related subset. These new lines remain review candidates, not
-individual acceptance. There is no quota of thirty.
+The latest user request rewrites those first five too, in the freer voice of the
+remaining nineteen. New lunch/cemetery/shovel/corpses/important-v2 lines replace
+their v1 counterparts for future authoring; v1 text remains historical and accepted
+as an earlier wording. All 24 current lines are review candidates, not individual
+acceptance. Topics remain ordinary Keeper work, cemetery, rest, lunch, curiosity,
+commerce and a small writing-related subset. There is no quota of thirty.
 Old IDs/text remain valid for historical records, but rejected lines are no longer
 eligible for future authoring. No repeated-play/event/answer-dependent flavor.
 

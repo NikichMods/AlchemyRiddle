@@ -61,7 +61,7 @@ Prepare a new private case before precommit/handoff, then author its wording:
 
 ```sh
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT
-node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=keeper-lunch-v1 --aside-at=0
+node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --aside=keeper-lunch-v2 --aside-at=0
 node research/PuzzleLab/author-wording.mjs PRIVATE_UNPLAYED_INPUT NEW_PRIVATE_OUTPUT --variant-offset=1
 ```
 

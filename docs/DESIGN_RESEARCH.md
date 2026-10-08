@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### First five Keeper notes rewritten in the freer voice — 2026-10-08
+
+User requests rewriting the first five of the latest 24-line list too. Future
+authoring now uses lunch/cemetery/shovel/corpses/important-v2, with natural pauses,
+questions/exclamation and mild cemetery humor; other nineteen lines unchanged.
+These replacements await individual wording review. Previously accepted v1 text
+stays immutable/readable in the historical registry. All 41 Lab tests pass; no
+logic, chemistry, economy, feedback or played case changed. All 28 condition
+phrases remain accepted. Next evidence after wording review remains error recovery
+in a fresh precommitted supported case. Production BLOCKED.
+
 ### Keeper voice accepted; broader mild-dark shortlist — 2026-10-08
 
 User likes the new conversational voice, explicitly accepts previous shortlist

@@ -70,12 +70,17 @@ export const asides = Object.freeze({
   'keeper-garden-v1':'Вот бы и огород сам с собой разобрался, пока я занят.',
   'keeper-sale-v1':'Покупателю эти записи не отдавать. Ему товар нужен, а не мои размышления.',
   'keeper-brains-v1':'Ну, хоть кто-нибудь на кладбище должен шевелить мозгами.',
-  'keeper-pause-v1':'Надо бы сделать перерыв, пока я не начал разговаривать с банками.'
+  'keeper-pause-v1':'Надо бы сделать перерыв, пока я не начал разговаривать с банками.',
+  'keeper-lunch-v2':'Так... поесть бы ещё. Покойникам проще, им обед не нужен.',
+  'keeper-cemetery-v2':'А кладбище кто будет приводить в порядок? А, да... опять я.',
+  'keeper-shovel-v2':'Вот за это алхимию и люблю: можно хоть немного побыть без лопаты.',
+  'keeper-corpses-v2':'С покойниками всё-таки проще — не спрашивают, долго ли я ещё буду возиться.',
+  'keeper-important-v2':'Если кто заглянет — я работаю! И вообще, думать тоже считается.'
 });
 // Retained for frozen historical records, not eligible for new authoring.
 // Explicit review pool: old lines remain byte-identical, but do not become defaults.
 const current=[
-  'keeper-lunch-v1','keeper-cemetery-v1','keeper-shovel-v1','keeper-corpses-v1','keeper-important-v1',
+  'keeper-lunch-v2','keeper-cemetery-v2','keeper-shovel-v2','keeper-corpses-v2','keeper-important-v2',
   'keeper-thought-v1','keeper-memory-v1','keeper-ink-v1','keeper-jars-v1','keeper-sermon-v1',
   'keeper-first-v1','keeper-burial-v1','keeper-order-v1','keeper-workload-v1','keeper-complaints-v1',
   'keeper-rest-v1','keeper-jobs-v1','keeper-idle-v1','keeper-curiosity-v1','keeper-help-v1',

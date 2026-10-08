@@ -56,23 +56,22 @@ positive/negative literal. Do not manufacture variety by hiding a boundary case.
 
 ## Optional independent Keeper asides
 
-Current pool: 24 lines, five individually accepted and nineteen new review candidates.
-User accepts the conversational voice and keeper-lunch/cemetery/shovel/corpses/
-important-v1, authorizes rewriting the first six retained old notes too, and requests
-less handwriting dominance, natural punctuation variety and more mild black humor.
-No graphic cruelty or obligatory punchline. The shortlist now covers Keeper work,
-cemetery, rest, lunch, curiosity, commerce and a small writing-related subset.
-Thirty was a desired size, not a forced quota. Historical IDs/text remain immutable
-and readable; only this explicit pool is eligible for new authoring. See
-CLUE_WORDING_POLICY.md for the owning voice rules. Five accepted lines are first.
+Current pool: 24 review candidates. User accepts the conversational voice and
+previous lunch/cemetery/shovel/corpses/important-v1 lines, then requests rewriting
+these first five in the freer voice of the remaining nineteen too. The five v2
+replacements use natural pauses/questions/exclamation and mild cemetery humor.
+They await individual wording review; old v1 text/acceptance remains historical.
+All other nineteen current lines are unchanged. No graphic cruelty, obligatory
+punchline or count padding. Historical IDs/text remain immutable/readable; only
+this explicit pool is eligible for new authoring. See CLUE_WORDING_POLICY.md.
 
 | ID | Russian text |
 | --- | --- |
-| keeper-lunch-v1 | За опытами бы про обед не забыть. Есть-то всё равно придётся. |
-| keeper-cemetery-v1 | Надо бы не забыть, что у меня ещё и кладбище есть. |
-| keeper-shovel-v1 | Может, хоть здесь получится обойтись без лопаты. |
-| keeper-corpses-v1 | Хорошо хоть покойникам не нужно объяснять, чем я тут занят. |
-| keeper-important-v1 | Если кто-нибудь спросит, я занят важным делом. Это вполне похоже на правду. |
+| keeper-lunch-v2 | Так... поесть бы ещё. Покойникам проще, им обед не нужен. |
+| keeper-cemetery-v2 | А кладбище кто будет приводить в порядок? А, да... опять я. |
+| keeper-shovel-v2 | Вот за это алхимию и люблю: можно хоть немного побыть без лопаты. |
+| keeper-corpses-v2 | С покойниками всё-таки проще — не спрашивают, долго ли я ещё буду возиться. |
+| keeper-important-v2 | Если кто заглянет — я работаю! И вообще, думать тоже считается. |
 | keeper-thought-v1 | Так... записать бы это так, чтобы самому было понятно. |
 | keeper-memory-v1 | Подчеркну, пожалуй. С моей памятью лишним не будет. |
 | keeper-ink-v1 | Чернила пусть остаются для записей, мне и без них есть чем заняться. |

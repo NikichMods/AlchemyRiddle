@@ -137,9 +137,9 @@ test('file authoring persists reloadable wording and refuses all source/output o
   try {
     const input=join(dir,'source.json'),output=join(dir,'new.json');
     const source=JSON.stringify(f);writeFileSync(input,source);
-    assert.equal(authorFile(input,output,{asideId:'keeper-lunch-v1'}),f.clues.length);
+    assert.equal(authorFile(input,output,{asideId:'keeper-lunch-v2'}),f.clues.length);
     const loaded=JSON.parse(readFileSync(output,'utf8'));validate(loaded);
-    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(f,legacyClueText,{asideId:'keeper-lunch-v1'}),createState(f)));
+    assert.deepEqual(publicView(loaded,createState(loaded)),publicView(authorWording(f,legacyClueText,{asideId:'keeper-lunch-v2'}),createState(f)));
     const bytes=readFileSync(output,'utf8');
     assert.throws(()=>authorFile(input,input));assert.throws(()=>authorFile(input,output));
     assert.throws(()=>authorFile(output,join(dir,'refrozen.json')));
@@ -152,7 +152,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
   let server;
   try {
     const fixturePath=join(dir,'new.json'),stateDirectory=join(dir,'sessions');
-    const next=authorWording(f,legacyClueText,{asideId:'keeper-lunch-v1'});
+    const next=authorWording(f,legacyClueText,{asideId:'keeper-lunch-v2'});
     writeFileSync(fixturePath,JSON.stringify(next));
     const start=async()=>{
       server=createLab({fixturePath,stateDirectory});
@@ -162,7 +162,7 @@ test('HTTP serves frozen wording and optional aside unchanged after a server res
     const first=await fetch(await start()),cookie=first.headers.get('set-cookie').split(';')[0];
     const before=await first.json();
     assert.deepEqual(before.clues,next.wording.entries.map(e=>e.text));
-    assert.equal(before.clueAsides[0],'За опытами бы про обед не забыть. Есть-то всё равно придётся.');
+    assert.equal(before.clueAsides[0],'Так... поесть бы ещё. Покойникам проще, им обед не нужен.');
     assert.ok(!('answer' in before)&&!('compatibility' in before));
     await new Promise(r=>server.close(r));server=undefined;
     const after=await (await fetch(await start(),{headers:{cookie}})).json();
