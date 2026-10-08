@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Upper-envelope case 20 precommitted — 2026-10-09
+
+User authorizes a fresh upper interest/difficulty investigation. Read
+`prototypes/PUZZLE_LAB_V0_INTEREST_20_STATE.md` and the prototype protocol.
+Existing grammar, same 4x4x4 field/four clues/four positive priors/seven public
+tag hypotheses as the previous positive example; changed clue dependencies and
+a verified post-experiment inference pivot. Two public policy witnesses use six
+new pair checks within starting Science. Human quality/ceiling unproved.
+Serve on 4183; preserve solved case 19 on 4182 and its actual private session.
+Next: first independent player choice, raw observations only. Production BLOCKED.
+
 ### Upper-envelope objective clarified — 2026-10-09
 
 User clarifies that “interest ceiling” was shorthand for the upper envelope of

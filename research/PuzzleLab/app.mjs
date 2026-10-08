@@ -136,7 +136,7 @@ function render() {
   $('experiment-guide').hidden=true;
   $('experiment-guide').textContent='';
   $('pair-action-guide').textContent='Выберите соседнюю пару, совместимость которой хотите узнать.';
-  $('case-badge').textContent = shared ? 'Корпусный опыт' : 'Синтетический опыт';
+  $('case-badge').textContent = 'Исследовательский опыт';
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
     ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть совместимыми.'

@@ -5,6 +5,12 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+2026-10-09: fresh synthetic upper interest/difficulty case 20 is open on 4183,
+first independent choice pending. Frozen private fixture, facilitator proof,
+public-policy witnesses and starting browser session are recorded in
+`docs/prototypes/PUZZLE_LAB_V0_INTEREST_20_STATE.md`. Prior solved case 19 remains
+preserved on 4182. No grammar or economy change; no facilitator actions in case 20.
+
 2026-10-09: accepted role presentation is now the default on every Lab URL.
 Instructions, headings, clues and help share role shapes/colors/bold names;
 ingredient names remain intact. The top task links to composition and pair
