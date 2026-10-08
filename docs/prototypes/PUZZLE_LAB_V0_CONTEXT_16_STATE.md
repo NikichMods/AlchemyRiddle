@@ -40,3 +40,15 @@ eligibility, frozen authored wording. Full harness suite previously passed 42
 tests at this revision; no harness source changed for this example.
 Serve only the private fixture on `http://127.0.0.1:4179/`, without debug routes.
 Next interaction: first player choice following browser handoff.
+
+## Player observations and switch to introduction
+
+2026-10-08: user reports repeatedly misreading component roles while scanning
+conditions (essence mistaken for fluid), and a new player's question whether
+powder/essence can be tested as a pair. Capture as UX findings, not a diagnosed
+cause or accepted visual implementation. Future condition presentation should
+make slot roles easy to scan. Three-slot instructions should explicitly identify
+the two researched adjacent pairs and explain the absence of a powder/essence
+pair experiment. Do not add these retrospectively to this frozen case.
+User requests a fresh two-slot introduction: case 17, port 4180. Case 16's
+durable state remains authoritative; no completed solve inferred from narration.

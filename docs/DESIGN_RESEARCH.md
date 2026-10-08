@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### New-player introduction opened — case 17, 2026-10-08
+
+User reports slot-role confusion during diagonal reading and uncertainty about
+powder/essence pair testing. Findings recorded in the case-16 checkpoint;
+future scan-friendly slot cues and explicit adjacent-pair instructions need
+design/implementation. Existing played text remains frozen.
+On request, a simple synthetic two-slot case is precommitted in
+`prototypes/PUZZLE_LAB_V0_INTRO_17_STATE.md`, served on 4180. Exactly one solution,
+three necessary simple conditions, existing opt-in recovery support. Next
+interaction: first player choice. Preserve case 16's durable session on 4179.
+
 ### Contextual note test opened — case 16, 2026-10-08
 
 User requests one test example. A fresh synthetic three-slot case is precommitted
