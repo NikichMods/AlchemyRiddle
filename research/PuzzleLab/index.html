@@ -10,18 +10,19 @@
     <div id="cards"></div>
   </section>
   <aside class="evidence" aria-label="Условия и наблюдения">
-    <section class="clue-panel"><h2>Сведения о составе</h2><ol id="clues"></ol></section>
-    <section id="knowledge" hidden><h2>Совместимость пар</h2><p class="pair-rule">Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.</p><div id="relations" aria-live="polite"></div></section>
+    <section class="clue-panel"><h2>Сведения о составе</h2><p id="clue-guide" class="panel-guide" hidden></p><ol id="clues"></ol></section>
+    <section id="knowledge" hidden><h2>Совместимость пар</h2><p id="compatibility-guide" class="pair-rule">Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.</p><p id="experiment-guide" class="panel-guide" hidden></p><div id="relations" aria-live="polite"></div></section>
   </aside>
   <section class="actions" aria-label="Исследования и финальный ответ">
     <section id="pair-research" hidden aria-label="Выбранные пары">
       <div class="section-heading"><h2>Исследование пар</h2><span id="research-budget"></span></div>
-      <p class="pair-rule">Для формулы нужны две стабильные пары. Исследование проверяет одну пару, финальная проверка — всю смесь.</p>
+      <p id="pair-action-guide" class="pair-rule">Для формулы нужны две стабильные пары. Исследование проверяет одну пару, финальная проверка — всю смесь.</p>
       <div id="pair-actions" aria-live="polite"></div>
     </section>
     <section class="submission" aria-label="Полная формула">
       <div class="formula-content"><h2>Выбранная смесь</h2><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
       <span id="budget"></span>
+      <p id="synthesis-guide" class="panel-guide" hidden></p>
       <button id="refill" hidden>Пополнить Science</button>
       <button id="submit" disabled><span aria-hidden="true">✦</span> Смешать и проверить</button>
       <p id="submit-reason" hidden></p>
@@ -29,6 +30,7 @@
       <p id="result" role="status" aria-live="polite"></p>
       <p id="composition-reminder" role="status" hidden></p>
     </section>
+    <aside id="lab-supply" hidden><span id="supply-budget"></span><span class="supply-note">Пополнение в лаборатории</span></aside>
     <p id="error" role="alert"></p>
     <section id="mixture-history" hidden><h2>Проверенные смеси</h2><ol id="mixtures"></ol></section>
   </section>

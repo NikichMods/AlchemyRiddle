@@ -152,3 +152,31 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 .reference{max-width:960px;border-top:1px solid #354b53;padding-top:12px;margin-top:16px}
 .reference h3{font-size:16px;margin-top:16px}
 .reference li{margin-bottom:9px;line-height:1.55}
+
+/* Explicit roles=1 trial: muted role colors, local guidance, primary synthesis. */
+.role-preview{--role-powder:#d4bea0;--role-fluid:#a4c6d5;--role-essence:#cbb5d6}
+.role-preview .role-powder,.role-preview .ref-powder{color:var(--role-powder)}
+.role-preview .role-fluid,.role-preview .ref-fluid{color:var(--role-fluid)}
+.role-preview .role-essence,.role-preview .ref-essence{color:var(--role-essence)}
+.panel-guide{font-size:14px;line-height:1.5;color:#afc1c5;margin:0 0 14px}
+.role-preview #compatibility-guide{font-size:14px;line-height:1.5;margin-bottom:9px}
+.role-preview #pair-action-guide{font-size:14px}
+.role-preview #budget{font-size:14px;line-height:1.5;color:#c5d7d3}
+.role-preview #synthesis-guide{margin:0;color:#a8bdc0}
+.role-preview #lab-supply{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;border-top:1px dashed #354b53;padding:12px 0;margin-top:15px;font-size:13px;color:#a8bdc0}
+.role-preview #supply-budget{font-weight:600;color:#c5d7d3}
+.role-preview .supply-note{color:#829a9f;font-size:12px}
+.role-preview #refill{font-size:12px;background:transparent;color:#a8bdc0;border-color:#40555c;padding:5px 8px;box-shadow:none}
+.role-preview #submit{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:88px;position:relative;overflow:hidden;border:1px solid #c3ad76;border-radius:12px;background:radial-gradient(ellipse at 20% 50%,#42796d 0,transparent 65%),linear-gradient(130deg,#244d49,#183932);color:#f0e5bf;box-shadow:inset 0 0 0 4px #173b36,inset 0 0 0 5px #a8955c66,0 4px 14px #0003;padding:14px 18px;text-align:left}
+.role-preview #submit:before,.role-preview #submit:after{content:'';position:absolute;width:24px;height:24px;border:1px solid #c3ad7666;transform:rotate(45deg);pointer-events:none}
+.role-preview #submit:before{left:-14px;top:calc(50% - 12px)}
+.role-preview #submit:after{right:-14px;top:calc(50% - 12px)}
+.role-preview #submit:disabled{opacity:.65}
+.role-preview #submit:hover:not(:disabled){filter:brightness(1.13);border-color:#e4cd93}
+.role-preview #submit .synthesis-seal{width:52px;height:52px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.1}
+.role-preview #submit .seal-inner{stroke-opacity:.35}
+.role-preview #submit .seal-liquid{fill:#8ebdaa;fill-opacity:.3;stroke-opacity:.6}
+.role-preview #submit .seal-bubble{fill:currentColor;stroke:none}
+.role-preview #submit .synthesis-label{display:flex;flex-direction:column;gap:3px;margin:0;color:inherit}
+.role-preview #submit .synthesis-title{font-weight:700;font-size:17px;line-height:1.3}
+.role-preview #submit .synthesis-cost{color:#c4d9ca;font-size:13px;line-height:1.4}

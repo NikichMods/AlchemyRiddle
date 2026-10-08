@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Lab guidance and action hierarchy preview — 2026-10-09
+
+User accepts improved role readability and authorizes mild pastel role colors,
+subdued relocated refill, cost on a distinctive alchemical final button and concise
+local guidance about implication, pair knowledge and experiments. Read
+`research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`. Implemented in `?roles=1`;
+all composition rules remain binding, inactive implications do not force their
+antecedent, and pair certification is optional before submission. Current browser
+is a separate fresh preview due session change; solved human case 19 is preserved
+privately, not replayed. Free QA selection cleared; no paid actions. Exact clue
+text unchanged, 42 tests pass; new visual/copy review pending. Next interaction:
+review this UI before further interest-ceiling experiments. Production BLOCKED.
+
 ### Slot-role presentation trial implemented — 2026-10-09
 
 User authorizes bold complete role names plus small monochrome existing card

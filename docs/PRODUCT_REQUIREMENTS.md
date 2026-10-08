@@ -861,8 +861,11 @@ property. Colored properties alone leave a reading asymmetry and reported role
 confusion. Preserve complete readable role names, exact clue meaning and property
 identity. Subsequent user selection, 2026-10-09: try bold complete role words with
 small monochrome existing card silhouettes; explicit Lab comparison implemented
-in `?roles=1` mode, with ordinary URLs preserving historical rendering. Human
-readability acceptance remains pending; see
+in `?roles=1` mode, with ordinary URLs preserving historical rendering. User
+subsequently reports improved readability. Follow-up mild pastel role palette
+and concise contextual guidance/action hierarchy are authorized; implementation
+and review boundary in `research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`.
+No measured reading-error reduction established. Original comparison in
 `research/SLOT_ROLE_PRESENTATION_2026-10-09.md`. This is a legibility requirement,
 not authorization for an
 automatic deduction, a new role-color code or retrospective changes to played text.

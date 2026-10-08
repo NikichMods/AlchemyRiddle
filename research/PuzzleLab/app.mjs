@@ -95,7 +95,7 @@ function roleContents(text) {
   for (const part of text.split(rolePattern)) {
     const slot = Object.keys(roleForms).find(id=>roleForms[id].includes(part.toLowerCase()));
     if (!slot || !view.slots.some(s=>s.id===slot)) {parts.append(document.createTextNode(part));continue;}
-    const label=document.createElement('strong');label.className='clue-role';
+    const label=document.createElement('strong');label.className=`clue-role role-${slot}`;
     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
     svg.setAttribute('viewBox','0 0 40 34');svg.setAttribute('aria-hidden','true');
     svg.setAttribute('focusable','false');
@@ -116,6 +116,17 @@ function render() {
   const focused = document.activeElement?.id;
   const s = view.state;
   const shared = view.economy?.mode === 'sharedScience';
+  document.body.classList.toggle('role-preview',showClueRoles);
+  $('clue-guide').hidden=!showClueRoles;
+  $('clue-guide').textContent='Соблюдайте все условия. «Если А, то Б»: выбрали А — нужно Б. Без А это правило не ограничивает Б.';
+  $('compatibility-guide').textContent=showClueRoles
+    ? 'Нужны две стабильные пары: порошок + жидкость и жидкость + эссенция. Изучать обе перед ответом не обязательно.'
+    : 'Для искомой формулы нужны две стабильные пары и выполнение всех сведений о составе. Не каждая смесь из стабильных пар подходит.';
+  $('experiment-guide').hidden=!showClueRoles;
+  $('experiment-guide').textContent='Начальных сведений может не хватить. Исследуйте пары: стабильность подтверждает связь, несовместимость исключает её из формулы.';
+  $('pair-action-guide').textContent=showClueRoles
+    ? 'Выберите соседнюю пару, совместимость которой хотите узнать.'
+    : 'Для формулы нужны две стабильные пары. Исследование проверяет одну пару, финальная проверка — всю смесь.';
   $('case-badge').textContent = shared ? 'Корпусный опыт' : 'Синтетический опыт';
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
@@ -132,7 +143,9 @@ function render() {
   $('cards').replaceChildren();
   for (const slot of view.slots) {
     const group = document.createElement('fieldset');
-    const legend = document.createElement('legend'); legend.textContent = slot.name; group.append(legend);
+    const legend = document.createElement('legend'); legend.textContent = slot.name;
+    if(showClueRoles)legend.className=`role-${slot.id}`;
+    group.append(legend);
     for (const card of slot.cards) {
       const selected = s.selected[slot.id] === card.id;
       const box = document.createElement('div'); box.className = `card ${selected ? 'selected' : ''}`;
@@ -197,12 +210,29 @@ function render() {
       edges.every(r => r?.stable) ? 'stable' : 'unknown';
     summary.className = `formula-compatibility ${state}`;
     const label = document.createElement('span'); label.className = 'verdict';
-    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'Совместимость смеси пока неизвестна.'}[state];
+    label.textContent = {incomplete:'Выберите по одному компоненту в каждом столбце',incompatible:'⊘ Есть несовместимая пара',stable:showClueRoles?'✓ Обе пары стабильны.':'✓ Обе пары стабильны. Сверьте сведения о составе.',unknown:'Совместимость смеси пока неизвестна.'}[state];
     summary.append(label);
   }
   const submissions = s.history.filter(h=>h.type!=='pairTest' && h.type!=='refill');
   const initialScience = s.science + submissions.reduce((total,h)=>total+h.cost,0);
   $('budget').textContent = shared ? `Science: ${s.science} · проверка смеси: ${view.submissionCost}` : `Финальных проверок: ${Math.floor(s.science/view.submissionCost)} из ${Math.floor(initialScience/view.submissionCost)} · цена ${view.submissionCost} Science`;
+  $('budget').hidden=showClueRoles && shared;
+  $('lab-supply').hidden=!showClueRoles || !shared;
+  if(showClueRoles && shared){
+    $('lab-supply').append($('refill'));
+    $('supply-budget').textContent=`Запас: ${s.science} Science`;
+  }
+  if(showClueRoles){
+    if(!$('submit').querySelector('.synthesis-label')){
+      $('submit').innerHTML='<svg class="synthesis-seal" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="29"/><circle class="seal-inner" cx="32" cy="32" r="23"/><path d="M24 16h16m-12 0v13L18 45q-2 4 3 4h22q5 0 3-4L36 29V16M22 38h20M28 10v-3m8 3v-3M10 28H7m3 8H7m47-8h3m-3 8h3M28 54v3m8-3v3"/><path class="seal-liquid" d="M22 39h20l4 7q1 3-3 3H21q-4 0-3-3Z"/><circle class="seal-bubble" cx="29" cy="33" r="1.6"/><circle class="seal-bubble" cx="35" cy="28" r="1.2"/></svg><span class="synthesis-label"><span class="synthesis-title">Смешать и проверить</span><span class="synthesis-cost"></span></span>';
+    }
+    $('submit').querySelector('.synthesis-cost').textContent=`−${view.submissionCost} Science`;
+    $('submit').setAttribute('aria-label',`Смешать и проверить · ${view.submissionCost} Science`);
+    $('synthesis-guide').hidden=false;
+    $('synthesis-guide').textContent=view.slots.length===3
+      ? 'Формула верна, если соблюдены условия состава и обе соседние пары стабильны.'
+      : 'Формула верна, если выбранные компоненты соблюдают условия состава.';
+  }
   $('refill').hidden = !shared;
   $('refill').textContent = `Пополнить запас · +${view.economy?.refillAmount ?? 0} Science`;
   $('refill').disabled = s.status !== 'playing';

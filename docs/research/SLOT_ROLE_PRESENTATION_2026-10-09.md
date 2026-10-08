@@ -1,7 +1,9 @@
 # Slot-role scanning — explicit presentation trial
 
 2026-10-09. User authorizes trying bold complete role names with small monochrome
-versions of the existing card silhouettes. Human readability acceptance pending.
+versions of the existing card silhouettes. The user subsequently reports improved
+readability; no measured error reduction. Follow-up palette/guidance/button preview
+is owned by `LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md` and awaits its own review.
 Research Lab only; production remains BLOCKED. No new puzzle or logical rule.
 
 ## Owner, scope and preservation
@@ -32,7 +34,9 @@ Browser verifies six decorated role occurrences including accusative essence;
 all four clue textContent strings exactly match the original rendering. Visual
 inspection at the current desktop viewport shows small monochrome silhouettes,
 bold complete words, retained property colors and readable wrapping. Solved state
-and Science 7 preserved. Screenshot is private beside case 19 (`role-preview.png`).
+and Science 7 preserved during this original review. Screenshot is private beside
+case 19 (`role-preview.png`). Later browser-session changes are documented in the
+follow-up record; recover the actual solved session rather than a preview.
 
 No new tests written for this reversible presentation trial. No model/wording
 changes. Next interaction: user's visual comparison, then retain/refine/reject
