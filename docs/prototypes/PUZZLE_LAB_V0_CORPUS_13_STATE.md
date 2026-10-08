@@ -57,3 +57,8 @@ latest durable player state before continuing, never start a substitute session.
 Next interaction: first player choice. Observe interpretation/use of the prior,
 clause roles, useful new experiments, reuse of observations and final reaction.
 Do not reveal route estimates or intended path. No reliable duration measurement.
+
+Browser handoff verified: tab 3, port 4176, correct case title, empty selection,
+Science 20, three displayed clues and exactly one stable prior under Было известно.
+No personal research/results. Screenshot layout checked; no paid/selection action
+performed by facilitator. Awaiting first player choice.
