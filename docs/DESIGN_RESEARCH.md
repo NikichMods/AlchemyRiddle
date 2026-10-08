@@ -4,6 +4,27 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Keeper contextual note bank accepted — 2026-10-08
+
+The latest editorial review approves **13 exact, context-gated notes for
+logical clues** and **9 event reactions** for pair/full-mixture results.
+Old 24-phrase future-authoring pool is retired; every historical ID/text
+remains valid for frozen research cases. Clue notes now require a matching
+visible AST (slots/tags/operator/count) during future authoring; no automatic
+random insertion. Event text is stored but **not yet connected to event UI**.
+The earlier 16 praised general-voice lines are documented but are **not**
+eligible as contextual clue asides. Accepted text, contexts and deferred
+candidates: `docs/KEEPER_CONTEXT_SCENARIOS.md`.
+
+The existing `validFormula` / `validate` invariant already requires
+exactly one composition that simultaneously satisfies all clues and stable
+adjacent pairs. No new uniqueness rule is required. Whether the player can
+infer it efficiently remains a distinct puzzle-quality evaluation. No vanilla
+mechanics, previously played cases or production runtime were modified.
+Next step is testing the new authoring guards; the event display would need
+its own implementation and acceptance. Production remains BLOCKED.
+
+
 ### First five Keeper notes rewritten in the freer voice — 2026-10-08
 
 User requests rewriting the first five of the latest 24-line list too. Future
