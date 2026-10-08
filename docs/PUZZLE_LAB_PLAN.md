@@ -514,3 +514,11 @@ Fresh target, two different displayed clause roles, no priors, shared 20 Science
 costs 2/5 and unlimited +10 refill. Player-facing start verified with no selections
 or experiments. Keep prior solved case on 4174; restore private durable state
 before resuming. No further test or automatic clue feedback authorized.
+
+## Case 12 completed — 2026-10-08
+
+Five target-relevant pair checks, one success, 15 Science spent, no refill, 5 remain.
+Ordinary/normal acceptance; no reported confusion or lost condition. Full result:
+prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md. Preserve solved session. Do not claim
+causal validation of repetition weight or mistake recovery; no further trial
+launched. Human/save-state generalization remains open, production BLOCKED.

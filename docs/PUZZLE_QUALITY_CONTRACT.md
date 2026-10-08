@@ -320,3 +320,14 @@ finite soft ranking penalty, emphasizing double symmetric XOR and preserving
 fallback. Existing quality gates and weak route term remain. Details and bounded
 comparison: research/INTRA_PACKAGE_REVIEW_2026-10-08.md, accepted-refinement section.
 The earlier pending decision is closed. Human benefit remains uncalibrated.
+
+## Corpus contrast case 12 — 2026-10-08
+
+See prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md. Five target-relevant pair checks,
+one successful submission, no refill, independently solved. Clause roles correctly
+used in successive anchor/completion/rejection steps. Initial tag richness liked;
+verdict normal ordinary puzzle, without strong excitement or complaint. Retain as
+modest positive corpus evidence. Does not prove soft penalty caused improvement:
+target/field, player learning and outcomes differ from case 11. No error occurred,
+so visibility/recovery of mistakes remains untested. Do not equate formal-policy
+route maxima with all legal human routes. No duration/difficulty-band acceptance.

@@ -4,15 +4,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
-### Active corpus contrast — case 12, 2026-10-08
+### Corpus contrast completed — case 12, 2026-10-08
 
-User authorized one fresh human trial after accepted soft repetition preference.
-Start with prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
-Different target, two distinct displayed rule kinds, no known pairs, Science 20,
-costs 2/5, unlimited +10 Lab refill. Full model frozen privately before first move;
-port 4175, private durable corpus-12-sessions. Awaiting first player choice.
-Preserve case 11 and never edit/restart the live model by assumption. Production
-BLOCKED. Entries below preserve completed prior calibration/refinement.
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md. Independently solved:
+five pair checks, one success, 15 Science spent, 5 remain, no refill. All five
+checks support a then-unrefuted tag-valid hypothesis. Both clue roles correctly
+narrated; first anchored branch rejected, second completed. Rich tags attractive;
+player verdict ordinary/normal, no strong positives or negatives, pleasant early
+stable outcomes possibly lucky. Retain as normal successful corpus evidence.
+Frozen model identity/blind integrity held; no reliable solve-time measurement.
+No lost-clause branch or failed submission; mistake recovery therefore untested.
+Soft repetition preference retained, causal benefit unproven (new target/field,
+learning and outcomes differ). No new trial/feedback authorized. Production
+BLOCKED; broader human/save-state calibration remains open. Preserve solved state
+on 4175 and prior case 11 on 4174. Entries below retain prior reasoning.
 
 ### Human calibration completed — corpus case 11, 2026-10-08
 

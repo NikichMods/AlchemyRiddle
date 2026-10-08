@@ -5,7 +5,8 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
-Active contrast: corpus case 12 on 4175 with durable private model/state. Read
+Completed contrast: corpus case 12 on 4175, independently solved with five pair
+checks and one success. Durable private state is solved. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md` before resuming. Initial public
 snapshot is tracked; full model stays private. Case-11 state below is historical,
 and its solved session remains on 4174. Test suite now has 26 checks.

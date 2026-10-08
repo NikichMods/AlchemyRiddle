@@ -1,6 +1,7 @@
 # Corpus case 12 — blind human contrast
 
-Status: PRECOMMITTED, awaiting first player choice (2026-10-08).
+Status: COMPLETED, independently solved and reviewed (2026-10-08).
+The initial precommit below is preserved.
 User authorized one fresh contrast after the soft repetition penalty. Hypothesis:
 different visible clause roles feel richer and easier to distinguish. Error
 reduction is unproven. One familiar-player case is formative, not population evidence.
@@ -57,3 +58,46 @@ measurement; do not time development/narration. Production remains BLOCKED.
 Browser handoff verified: tab 2 on 4175, title matches case 12, all selections empty,
 no observations, Science 20, refill available, submission disabled until complete
 selection. Screenshot layout checked. No player action performed by facilitator.
+
+## Completed human outcome
+
+Frozen fixture file/hash-bound session identity verified unchanged. Solved with
+five distinct paid pair checks, one successful submission, no refill. Science
+spent 15 (10 pairs +5 submission), 5 remain. Public completed state:
+research/PuzzleLab/fixtures/corpus-12.completed.public.json. Derived audit:
+research/PuzzleLab/corpus-12-audit.json. No facilitator intervention or model edit.
+
+Anonymous trace: p1:f1 stable, f1:e2 negative, p1:f2 stable, f2:e1 negative,
+f2:e3 stable, successful p1:f2:e3. Initial six tag-valid hypotheses; every tested
+edge lies on a then-unrefuted tag-valid triple (zero off-target checks).
+
+Narration: initial tag richness felt attractive, including a four-tag card.
+Both exactly-one and forbidden pairing were correctly interpreted; the player
+restated the latter in both implication directions. With no priors, chose to
+experiment. First stable anchor led to a uniquely tag-constrained continuation;
+negative result rejected that branch. Second stable anchor satisfied the other
+condition and required a different essence property. Player tested its two
+options, rejected one, certified the other and submitted successfully. Negative
+observations were used immediately; no lost-clause branch, failed submission or
+reported confusion. No reliable solve duration measured.
+
+Player verdict: ordinary, normal puzzle, no striking positive or negative feature;
+early stable pairs felt pleasant, potentially lucky. This is modest positive
+ordinary-case evidence, not strong excitement or confirmed difficulty class.
+Early positive outcomes supported progress, but narrative also exhibits correct
+property deductions and branch rejection. Do not reduce success to luck or claim
+luck played no role. No human choice/outcome probabilities were measured.
+
+Precommitted policy means 3.4/3.3, ranges 3–4/2–4 (certified OR unique survivor).
+Actual five checks use a different branch-selection route and final certification.
+These ranges bound those policies, not all legal human paths. The actual five
+falls within desired ordinary investigation range and all five support the target.
+
+Judgment: retain as a normal successful corpus example. Trial integrity held.
+The two visible rule roles were understood and used without the case-11 failure.
+This supports the accepted soft preference provisionally, not its causal effect:
+different target/field, sequential experience and early outcomes are confounders.
+No failure occurred, so mistake visibility/recovery remains untested.
+Next recovery: solved state, no further player action needed. Preserve soft term
+and existing gates. Do not start another trial or add feedback by assumption;
+production remains BLOCKED and broader human/save-state calibration remains open.

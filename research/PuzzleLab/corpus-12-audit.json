@@ -1,0 +1,97 @@
+{
+  "id": "lab-v0-corpus-12",
+  "fixtureFileSha256": "760d03b37d562f7457ad92e13fd4e15c53c7fc615aa4392e94f3586c21afcbd5",
+  "initialTagValid": 6,
+  "pairTrace": [
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f1"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f1",
+        "essence": "e2"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 3
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "powder",
+        "fluid"
+      ],
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f2"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 2
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f2",
+        "essence": "e1"
+      },
+      "stable": false,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    },
+    {
+      "type": "pairTest",
+      "slots": [
+        "fluid",
+        "essence"
+      ],
+      "tuple": {
+        "fluid": "f2",
+        "essence": "e3"
+      },
+      "stable": true,
+      "cost": 2,
+      "onUnrefutedTagValid": 1
+    }
+  ],
+  "submissions": [
+    {
+      "tuple": {
+        "powder": "p1",
+        "fluid": "f2",
+        "essence": "e3"
+      },
+      "success": true,
+      "cost": 5,
+      "clueSatisfied": [
+        true,
+        true
+      ]
+    }
+  ],
+  "status": "solved",
+  "science": 5,
+  "offTargetPairTests": 0,
+  "refills": 0,
+  "scienceSpent": 15
+}
