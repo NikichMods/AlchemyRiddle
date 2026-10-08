@@ -4,6 +4,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Contextual note test opened — case 16, 2026-10-08
+
+User requests one test example. A fresh synthetic three-slot case is precommitted
+in `prototypes/PUZZLE_LAB_V0_CONTEXT_16_STATE.md`, served on 4179, with one exactly
+matching accepted clue aside and the already accepted opt-in recovery support.
+Event reactions remain stored only. This tests wording/context comprehension;
+it is not real-corpus generator evidence. Recover the frozen private fixture and
+durable session before play; next interaction is the first player choice.
+All 42 harness tests passed; fixture uniqueness and clue necessity verified.
+Production remains BLOCKED.
+
 ### Keeper contextual note bank accepted — 2026-10-08
 
 The latest editorial review approves **13 exact, context-gated notes for
