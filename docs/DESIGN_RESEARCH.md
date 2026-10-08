@@ -4,6 +4,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Active corpus contrast — case 12, 2026-10-08
+
+User authorized one fresh human trial after accepted soft repetition preference.
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_12_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
+Different target, two distinct displayed rule kinds, no known pairs, Science 20,
+costs 2/5, unlimited +10 Lab refill. Full model frozen privately before first move;
+port 4175, private durable corpus-12-sessions. Awaiting first player choice.
+Preserve case 11 and never edit/restart the live model by assumption. Production
+BLOCKED. Entries below preserve completed prior calibration/refinement.
+
 ### Human calibration completed — corpus case 11, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_11_STATE.md for completed human evidence.

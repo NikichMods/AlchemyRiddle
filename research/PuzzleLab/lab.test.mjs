@@ -7,6 +7,17 @@ import {createLab} from './server.mjs';
 const fixture = JSON.parse(readFileSync(new URL('./fixture.json', import.meta.url)));
 const harbor = JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json', import.meta.url)));
 
+test('count clauses may reference a globally known property absent from one slot', () => {
+  const f={slots:[{id:'powder',name:'Порошок',cards:[{id:'p',tags:['A']}]},
+    {id:'fluid',name:'Жидкость',cards:[{id:'f',tags:['B']},{id:'g',tags:['A']}]}],
+    clues:[{kind:'exactly',count:1,terms:[{slot:'powder',tag:'B'},{slot:'fluid',tag:'B'}]}],
+    science:1,submissionCost:1,answer:{powder:'p',fluid:'f'}};
+  validate(f);assert.equal(satisfies(f,{powder:'p',fluid:'f'},f.clues[0]),true);
+  assert.equal(satisfies(f,{powder:'p',fluid:'g'},f.clues[0]),false);
+  assert.throws(()=>validate({...f,clues:[{kind:'exactly',count:1,terms:[{slot:'missing',tag:'B'}]}]}));
+  assert.throws(()=>validate({...f,clues:[{kind:'exactly',count:1,terms:[{slot:'powder',tag:'unknown'}]}]}));
+});
+
 test('tenth contrast has necessary clues and fits its precommitted investigative budget', () => {
   const f=JSON.parse(readFileSync(new URL('./fixtures/depth-10.json',import.meta.url)));
   validate(f);assert.ok(f.slots.every(s=>s.cards.length===4));

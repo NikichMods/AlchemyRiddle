@@ -56,7 +56,8 @@ export function validate(f) {
   for (const c of f.clues) {
     if (c.kind === 'sharedTag') continue;
     const terms = c.kind === 'exactly' ? c.terms : c.kind === 'implies' ? [c.if, c.then] : c.kind === 'notTogether' ? [c.left,c.right] : [];
-    if (!terms.length || terms.some(t => !f.slots.find(s => s.id === t.slot)?.cards.some(card => card.tags.includes(t.tag)))) throw new Error('Invalid clue terms');
+    if (!terms.length || terms.some(t => !f.slots.some(s => s.id === t.slot) ||
+        !f.slots.some(s => s.cards.some(card => card.tags.includes(t.tag))))) throw new Error('Invalid clue terms');
     if (c.kind === 'exactly' && (!Number.isInteger(c.count) || c.count < 0 || c.count > terms.length)) throw new Error('Invalid count');
   }
   if (f.compatibility) {
