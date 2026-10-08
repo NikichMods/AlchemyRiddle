@@ -16,9 +16,16 @@ Simulation assumes perfect constraint tracking; it cannot call this human route
 a worst tie-break or validate average human pacing. Single-case baseline supplied
 no prior history and scores only between-package diversity; repeated XOR inside
 one puzzle has no explicit preference. No new weights or mechanics accepted.
-Next proposed bounded question: within-package repetition and branch-tracking
-burden in existing candidates before another blind trial. Preserve old gates,
-weak correction and field floor. Human pacing remains open; production BLOCKED.
+Authorized within-package review is complete:
+research/INTRA_PACKAGE_REVIEW_2026-10-08.md. All 209 retained records pass replayed
+structural checks. All 19 targets have same-clue-count mixed/repeated alternatives
+at close cached pacing; played target has two varied two-clue alternatives on
+different fields. Branch-maintenance descriptors increase, so variety is not an
+established error-reduction mechanism. Pre-error sparsity and post-error inability
+to notice the lost constraint are distinct human findings. Proposed next decision:
+soft preference against double symmetric XOR plus within-package review. No new
+weight, third clue, feedback or trial accepted. Preserve prior gates, weak route
+correction and field floor. Production remains BLOCKED.
 
 ### Bounded diagnostic recovery — 2026-10-07
 

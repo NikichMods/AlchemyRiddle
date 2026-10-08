@@ -1,0 +1,155 @@
+{
+  "complete": true,
+  "scope": "frozen eligible pool, static descriptors only",
+  "records": 209,
+  "targetGroupsWithCandidates": 19,
+  "validatedGates": "cached tag hypotheses, unique full answer, all omission witnesses, field floor",
+  "cohorts": {
+    "2clues_singleOperator": {
+      "count": 92,
+      "means": {
+        "heldOutMean": 3.9759,
+        "tagValid": 7.2174,
+        "maxBranchWidth": 4.7935,
+        "crossClueDeadBranches": 0.5652,
+        "maxForgottenClueExtra": 8.7935,
+        "meanForgottenClueExtra": 7.2283
+      }
+    },
+    "2clues_mixedOperators": {
+      "count": 103,
+      "means": {
+        "heldOutMean": 4.2902,
+        "tagValid": 8.9612,
+        "maxBranchWidth": 6.0291,
+        "crossClueDeadBranches": 0.3883,
+        "maxForgottenClueExtra": 10.0583,
+        "meanForgottenClueExtra": 7.1893
+      }
+    },
+    "3clues_singleOperator": {
+      "count": 4,
+      "means": {
+        "heldOutMean": 3.3594,
+        "tagValid": 6,
+        "maxBranchWidth": 4,
+        "crossClueDeadBranches": 1.5,
+        "maxForgottenClueExtra": 5.25,
+        "meanForgottenClueExtra": 3.8333
+      }
+    },
+    "3clues_mixedOperators": {
+      "count": 10,
+      "means": {
+        "heldOutMean": 3.5234,
+        "tagValid": 7.1,
+        "maxBranchWidth": 5.4,
+        "crossClueDeadBranches": 0.9,
+        "maxForgottenClueExtra": 6.9,
+        "meanForgottenClueExtra": 4.5333
+      }
+    }
+  },
+  "case11": {
+    "reference": {
+      "clues": 2,
+      "distinctOperators": 1,
+      "doubleSymmetricXor": true,
+      "repeatedOperatorPairs": 1,
+      "sameTagBinaryClauses": 2,
+      "sharedPredicateOccurrences": 0,
+      "tagValid": 5,
+      "maxBranchWidth": 3,
+      "crossClueDeadBranches": 0,
+      "maxForgottenClueExtra": 7,
+      "meanForgottenClueExtra": 7,
+      "selectionMean": 3.0625,
+      "heldOutMean": 2.96875
+    },
+    "nearVaried": 2,
+    "nearVariedTwoClues": 2,
+    "nearVariedSameField": 0,
+    "comparisons": [
+      {
+        "sameField": false,
+        "descriptors": {
+          "clues": 2,
+          "distinctOperators": 2,
+          "doubleSymmetricXor": false,
+          "repeatedOperatorPairs": 0,
+          "sameTagBinaryClauses": 0,
+          "sharedPredicateOccurrences": 0,
+          "tagValid": 6,
+          "maxBranchWidth": 6,
+          "crossClueDeadBranches": 2,
+          "maxForgottenClueExtra": 12,
+          "meanForgottenClueExtra": 9,
+          "selectionMean": 3.46875,
+          "heldOutMean": 3.59375
+        }
+      },
+      {
+        "sameField": false,
+        "descriptors": {
+          "clues": 2,
+          "distinctOperators": 2,
+          "doubleSymmetricXor": false,
+          "repeatedOperatorPairs": 0,
+          "sameTagBinaryClauses": 0,
+          "sharedPredicateOccurrences": 0,
+          "tagValid": 6,
+          "maxBranchWidth": 6,
+          "crossClueDeadBranches": 2,
+          "maxForgottenClueExtra": 12,
+          "meanForgottenClueExtra": 9,
+          "selectionMean": 3.5625,
+          "heldOutMean": 3.609375
+        }
+      }
+    ]
+  },
+  "doubleSymmetricXor": {
+    "count": 2,
+    "means": {
+      "heldOutMean": 4.0625,
+      "tagValid": 8.5,
+      "maxBranchWidth": 4.5,
+      "crossClueDeadBranches": 0.5,
+      "maxForgottenClueExtra": 6.5,
+      "meanForgottenClueExtra": 5.75
+    }
+  },
+  "matchedTargetSameClueCount": {
+    "groups": 19,
+    "repeated": {
+      "count": 19,
+      "means": {
+        "heldOutMean": 3.8199,
+        "tagValid": 7.2632,
+        "maxBranchWidth": 5,
+        "crossClueDeadBranches": 0.4737,
+        "maxForgottenClueExtra": 8.8421,
+        "meanForgottenClueExtra": 7.4211
+      }
+    },
+    "varied": {
+      "count": 19,
+      "means": {
+        "heldOutMean": 3.861,
+        "tagValid": 7.7368,
+        "maxBranchWidth": 5.6842,
+        "crossClueDeadBranches": 0.6842,
+        "maxForgottenClueExtra": 10.5789,
+        "meanForgottenClueExtra": 7.8158
+      }
+    }
+  },
+  "inputHashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "generator-route-ranking-private.json": "27a2860f8a2eb5c1cc9fd18033b86ba9cb36c9a93fc9be1962b3bf4699ccbe85",
+    "coverage-gap-private.json": "40c04e8fe38af6b8fa470514259f8526fa5d8ce9e282c4cb7f71c6486a77760d"
+  },
+  "sourceHash": "3cf64de43187be0a162e78b05772598adf8212c6945ab2acf88eef729ac5f4e9",
+  "seconds": 0.032,
+  "caveat": "Static burden descriptors are uncalibrated; no human probability or new ranking weight."
+}

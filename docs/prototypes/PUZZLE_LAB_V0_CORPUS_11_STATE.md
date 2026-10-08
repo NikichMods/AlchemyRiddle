@@ -111,3 +111,11 @@ Next bounded step proposed: compare existing pool candidates on within-package
 repetition and branch-tracking burden; determine a review/soft preference before
 another blind case. Changing weights, adding clues or automatic deduction requires
 an owning decision; do not silently implement those from this outcome.
+
+Follow-up clarification (2026-10-08): clues felt sparse/boring before the error.
+Afterwards the perceived problem was insufficient clues, not an apparent mistake;
+another player might never notice the lost assumption without an explanation.
+Same operators between clauses and same-tag endpoints inside each may impede
+scanning; causation remains unproven. Avoiding this experience is a design aim.
+A third clue is a reported desire, not an accepted clue-count rule. Authorized
+review completed: docs/research/INTRA_PACKAGE_REVIEW_2026-10-08.md.

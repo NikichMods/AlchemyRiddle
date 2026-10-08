@@ -498,3 +498,10 @@ be read as a matching/compatible set, while property tags already use colors.
 Retain slot silhouettes/codes and the current restrained palette for now.
 Next: distill quality acceptance criteria from cases, then bounded corpus screen;
 no need to produce another example merely to extend the count.
+
+## Within-package review completed — 2026-10-08
+
+See research/INTRA_PACKAGE_REVIEW_2026-10-08.md: 209 retained packages, 19 target
+groups, same-count varied alternatives at close cached pace. No new corpus search
+or human trial. Next owning decision: proposed narrow within-package soft
+preference, separate from mistake visibility/recovery. No new weight accepted.

@@ -305,3 +305,12 @@ not guarantee variety within one package, especially when a fresh selection has
 no preceding history. Formal validity survives; pleasant difficulty acceptance
 for this package does not follow. Review repetition and branch-tracking burden
 before another human case; no new numeric penalty or additional clue accepted.
+
+Follow-up review completed: research/INTRA_PACKAGE_REVIEW_2026-10-08.md. Clues felt
+sparse before the error; later the player perceived insufficient guidance without
+recognizing the lost condition. This is separate evidence from the logical mistake.
+All 19 target groups in 209 retained packages support same-count operator variety
+at close cached pacing. Played target has two varied two-clue alternatives on
+other fields with larger static branch descriptors. Variety supports engagement,
+not proven error reduction. A proposed narrow soft preference against double
+symmetric XOR is not yet accepted. No third-clue rule or new feedback introduced.
