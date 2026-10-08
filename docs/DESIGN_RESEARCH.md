@@ -4,6 +4,15 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Active coherent-voice trial — case 15, 2026-10-08
+
+Start with prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.
+User authorizes fresh wording play after case-14 feedback. Final private model/text
+frozen; all 27 source/converted predicate rows agree. Fresh ordinary winning target
+excludes cases 11–14; two necessary clauses, new either/or wording and one separate
+Keeper note. Science 20, no priors/history. Next is browser handoff on 4178 and
+first player choice; no hints or new deductions from facilitator. Production BLOCKED.
+
 ### Keeper-wording trial completed — case 14, 2026-10-08
 
 Start with prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md and PAPER_PROTOTYPE_PROTOCOL.md.

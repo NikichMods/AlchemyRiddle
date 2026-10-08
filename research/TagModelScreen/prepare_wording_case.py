@@ -14,15 +14,17 @@ from intra_package_review import holds
 from science_route_comparison import Investigation
 
 
-def run(private):
+def run(private, case=14, require_xor=False):
+    assert case >= 14
     corpus = private / 'ordinary-3.json'
     pool = private / 'generator-route-ranking-private.json'
-    fixture_path = private / 'corpus-14.raw.json'
-    facilitator_path = private / 'corpus-14.facilitator.raw.json'
+    fixture_path = private / f'corpus-{case}.raw.json'
+    facilitator_path = private / f'corpus-{case}.facilitator.raw.json'
     assert not private.resolve().is_relative_to(ranking.ROOT)
     assert not fixture_path.exists() and not facilitator_path.exists()
     previous = [private / name for name in ('corpus-11-facilitator.json',
                 'corpus-12b-facilitator.json', 'corpus-13b-facilitator.json')]
+    previous += [private / f'corpus-{n}-facilitator.json' for n in range(14, case)]
     excluded = {tuple(json.loads(p.read_text(encoding='utf-8'))['sourceTarget']) for p in previous}
     model = three.load_model(corpus)
     three.assert_accepted_baseline(model)
@@ -36,10 +38,11 @@ def run(private):
         # Trial sampling only: preserve ordinary ranking and the prior contrast envelope.
         if (len(row['clues']) == 2 and len(reasoning.option_family_set(row)) == 2
                 and len({convert(c)['kind'] for c in row['clues']}) == 2
-                and 2 <= row['validation'][0]['mean'] <= 5):
+                and 2 <= row['validation'][0]['mean'] <= 5
+                and (not require_xor or any(c[0] == 'xor' for c in row['clues']))):
             choices.append((ti, winner['index'], row))
     assert choices, 'No fresh ordinary winner; do not loosen gates to force a trial'
-    ti, ri, row = random.Random(20261008 + 14014).choice(choices)
+    ti, ri, row = random.Random(20261008 + case * 1000 + case).choice(choices)
     target = tuple(data['targets'][ti])
     tuples = list(itertools.product(*row['surface']))
     masks = [{t for t in tuples if holds(c, t, model.tags)} for c in row['clues']]
@@ -50,7 +53,7 @@ def run(private):
     assert all(len(m & compatible) > 1 for m in masks)
     assert supports_necessary_clues(len(compatible), len(masks))
     mapping, cards = {}, []
-    rng = random.Random(20261008 + 14015)
+    rng = random.Random(20261008 + case * 1000 + case + 1)
     for slot, label, prefix, source in zip(SLOTS, ('Порошок', 'Жидкость', 'Эссенция'),
                                          ('p', 'f', 'e'), row['surface']):
         order = list(source)
@@ -64,7 +67,7 @@ def run(private):
         cards.append(dict(id=slot, name=label, cards=entries))
     stable = sorted({f'{mapping[e[1]]}:{mapping[e[2]]}' for t in tuples
                     for e in ranking.bounded.edges(t) if reasoning.stable_relation(model, e)})
-    fixture = dict(id='lab-v0-corpus-14', title='Неизвестная смесь · опыт 14',
+    fixture = dict(id=f'lab-v0-corpus-{case}', title=f'Неизвестная смесь · опыт {case}',
         description='Соберите смесь: один порошок, одна жидкость и одна эссенция. '
                     'Все сведения о составе верны одновременно. Свойства перечислены полностью. '
                     'Для искомой формулы нужны две стабильные пары и соблюдение всех условий состава. '
@@ -85,7 +88,7 @@ def run(private):
         rawFixtureSha256=ranking.sha(fixture_path),
         conversionTruth=[dict(tuple={s: mapping[x] for s, x in zip(SLOTS, t)},
                              values=[t in m for m in masks]) for t in tuples],
-        sampling='Fresh targets excluding 11/12/13; ordinary per-target winners first, then fixed-seed choice within the prior two-clue mixed-family/display-kind cached-mean 2–5 envelope. Not a new generator gate.',
+        sampling=f'Fresh targets excluding cases 11 through {case-1}; ordinary per-target winners first, then fixed-seed choice within the prior two-clue mixed-family/display-kind cached-mean 2–5 envelope. Required XOR: {require_xor}. Trial sampling, not a new generator gate.',
         semantics='Complete properties; all clauses AND both adjacent stable pairs. No priors; binary deterministic experiments, no partial synthesis feedback.',
         economy=dict(initialScience=20, pairCost=2, wholeCost=5, refill=10,
                      limit=None, refillBurden='Zero in Lab; game acquisition unmodeled'),
@@ -99,4 +102,7 @@ def run(private):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('private', type=Path)
-    run(parser.parse_args().private)
+    parser.add_argument('--case', type=int, default=14)
+    parser.add_argument('--require-xor', action='store_true')
+    args = parser.parse_args()
+    run(args.private, args.case, args.require_xor)

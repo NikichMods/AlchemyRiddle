@@ -5,6 +5,12 @@ MPL-2.0. No third-party packages, game assets or real recipes are included.
 
 ## Current research state
 
+Active coherent Keeper-voice trial: corpus case 15 on 4178, initially empty
+selection/history, no priors, Science 20. Read
+`docs/prototypes/PUZZLE_LAB_V0_CORPUS_15_STATE.md` and the prototype protocol before
+resuming. Final private model and exact text frozen; public initial snapshot tracked.
+Do not replace or restart prior solved cases.
+
 Completed Keeper-wording trial: corpus case 14 on 4177, three paid pair checks,
 one success, Science 9, no refill. Read
 `docs/prototypes/PUZZLE_LAB_V0_CORPUS_14_STATE.md` and the prototype protocol before
