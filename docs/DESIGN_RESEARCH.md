@@ -27,9 +27,13 @@ actual game lore. CLUE_WORDING_POLICY.md records acceptance plus bounded source
 review. User subsequently prefers short Keeper notes with occasional character.
 Flavor must not invent conversations or other past player events: Clotho-linked
 wording claiming a conversation is ineligible without that actual event.
-Full phrase generator and NPC/delivery integration remain unselected; next wording
-step is a bounded template set with exact logical and event-scope review, not a new
-mechanic or blind trial.
+Bounded template set completed in CLUE_TEMPLATE_SHEET.md: 14 core phrases and
+three optional independent Keeper asides; scope/event guards, 32 semantic cases
+plus a pairwise-only shared-property counterexample checked against the existing
+Lab evaluator. No renderer, evaluator, played case or production behavior changed.
+Next wording step is future research-case integration with persisted template
+identity and grammar checks. Full runtime selection and NPC/delivery integration
+remain unimplemented; no new blind trial opened.
 
 ### Knowledge-aware selection check completed — 2026-10-08
 

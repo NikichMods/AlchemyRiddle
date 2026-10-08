@@ -34,8 +34,9 @@ extra property, chemical compatibility or author intent. Synonym variation does
 not count as reasoning diversity. Surface wording and effective logical work are
 separate review axes; simplify under actual field constants before labeling depth.
 
-Next artifact recommendation: a small phrase sheet with base/alternative templates
-and predicate equivalence examples, reviewed before integration. No extra blind
+Completed bounded artifact: [CLUE_TEMPLATE_SHEET.md](CLUE_TEMPLATE_SHEET.md),
+with 14 core phrases, three independent optional Keeper asides, applicability
+guards and semantic checks. Runtime integration is not implemented. No extra blind
 case, automatic clue checking or partial failure explanation introduced here.
 
 ## Concrete draft variants for review
