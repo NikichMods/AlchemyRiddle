@@ -3,6 +3,51 @@
 2026-10-09. Separate research-harness deployment; production remains BLOCKED.
 No puzzle mechanics, generator, ranking, economy or accepted board UI changes.
 
+## Current immediate outcome: one 2x2 puzzle first
+
+User narrows the next step to one ordinary starting 2x2 puzzle opening through
+an external URL; defer the five-level series until that works. Use an unchanged
+private copy of existing synthetic `lab-v0-easy-01`, «Тихий свет» (two powders,
+two fluids, two necessary conditions, one answer), fixture SHA256
+`afee9cef67f4e770acce819e10b3e1198fe09305efbeeaf68b07af0f6bd2e08d`.
+Existing source/FACILITATOR.md is the complete precommit; copy it privately with
+the fixture. Keep its costs, finite budget and stop semantics unchanged. This
+does not rehabilitate its historical REVISE-as-onboarding verdict or add a
+guided tutorial. It represents no unknown vanilla recipe.
+
+The previous case-20 friends copy/tunnel is stopped with its data preserved;
+the original solved human instance on 4183 is unaffected. The 2x2 instance uses
+a new private directory and separate sessions on the freed 4184 port.
+
+A fresh 2026.10.0/global/HTTP2 tunnel returned the exact 2x2 public model over
+HTTPS at startup (including ID and candidate shape), then browser access about
+40 seconds later returned 1033. Subsequent HTTPS API/HTML/JS/CSS requests all
+returned 530/1033; local cloudflared metrics still reported one connection and
+one served request. Thus brief API success is directly established; sustained
+page accessibility is not. Smaller puzzle content alone did not fix access.
+
+Launcher Start now probes the exact fixture ID/shape and complete served
+HTML/JS/CSS against local assets before printing successful public response.
+Status repeats the live probe rather than representing an earlier successful
+startup as current availability. No address is claimed working solely from
+process startup or edge registration. A failed public probe leaves the local
+instance available for diagnosis and labels external access unconfirmed.
+
+Cloudflare [documents Russian ISP disruptions](https://developers.cloudflare.com/support/troubleshooting/general-troubleshooting/service-disruption/)
+and [defines 1033](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1033/)
+as inability to find a healthy connector. ISP restrictions are a hypothesis for
+this host, not a proven cause. An existing local network-filter service is
+present; no service, firewall, proxy or VPN settings were changed. Existing VPN
+availability is requested from the user as potential comparison evidence.
+The host filter's published TCP/UDP port lists do not include tunnel port 7844;
+its mere presence does not establish it as the cause. Do not stop or reconfigure
+it on that assumption. A second controlled 2x2 launch with full-asset probing
+timed out on HTTPS API both at startup and on a later live Status check. The
+local 2x2 board is visibly verified in the browser; its private precommit and
+initial public snapshot are frozen separately. No player action was performed.
+Original solved case-20 session bytes still match the prior recorded private
+SHA256; root 4183 returns 200. No working external link is established.
+
 ## Scope and identity
 
 User authorizes a temporary Cloudflare Quick Tunnel on the host PC, without an

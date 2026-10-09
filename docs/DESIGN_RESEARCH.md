@@ -6,6 +6,15 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+User narrows the immediate outcome: one ordinary synthetic 2x2 puzzle must open
+through an external link before any five-level sequence work. The new isolated
+instance reuses frozen `lab-v0-easy-01` / «Тихий свет» unchanged; this is a hosting
+check, not a newly accepted guided tutorial. Original solved case 20 remains on
+4183. First HTTPS API response from a new tunnel was verified but subsequent
+browser access returned 1033 again; brief API success does not complete access.
+Launcher now checks exact public puzzle and complete HTML/JS/CSS assets, and
+Status probes current access rather than showing stale startup success.
+
 See `research/PUZZLE_LAB_FRIENDS_PLAYTEST.md` for the isolated temporary-tunnel
 deployment, request boundary, durable anonymous sessions, operational checks and
 network outcome. Preserve original solved case 20 on 4183. User authorizes the
