@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Two condition forms connected; decay deferred — 2026-10-09
+
+User accepts connecting shared-property and three-term mixed-count conditions,
+prioritizes simple/reliable later BepInEx transfer, and declines added smooth
+recency decay for now. Research candidate enumeration, frozen-spec replay, Lab
+conversion, reporting and count-control diagnostics now support both forms.
+Existing strength/necessity/interaction gates and ranking weights retained.
+Read implementation follow-up in `research/CONDITION_VARIETY_MAP_2026-10-09.md`.
+Synthetic truth tables, admissible-package witnesses and Lab conversion checked;
+real-corpus reserve and human interest effects remain unmeasured. Preserve solved
+case 20 on 4183. No new puzzle or production implementation. Production BLOCKED.
+
 ### Condition-variety map audited — 2026-10-09
 
 Read `research/CONDITION_VARIETY_MAP_2026-10-09.md`. User considers current wording

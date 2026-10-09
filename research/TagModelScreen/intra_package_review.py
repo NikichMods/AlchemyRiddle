@@ -21,15 +21,22 @@ def terms(spec):
         return [(('P', 'F', 'E').index(spec[1]), spec[2])]
     if kind == 'count':
         return [(i, spec[1]) for i in range(3)]
+    if kind == 'count_mixed':
+        return list(enumerate(spec[1]))
+    if kind == 'shared':
+        # No fixed named-property assertions; effective scope comes from masks.
+        return []
     return [(spec[1], spec[2]), (spec[3], spec[4])]
 
 
 def holds(spec, triple, tags):
     kind = spec[0]
+    if kind == 'shared':
+        return bool(set.intersection(*(set(tags[item]) for item in triple)))
     values = [tag in tags[triple[slot]] for slot, tag in terms(spec)]
     if kind == 'literal':
         return values[0] == spec[3]
-    if kind == 'count':
+    if kind in ('count', 'count_mixed'):
         return sum(values) == spec[2]
     if kind == 'xor':
         return values[0] != values[1]

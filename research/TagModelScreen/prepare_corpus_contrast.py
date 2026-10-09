@@ -21,6 +21,10 @@ def convert(spec):
         return dict(kind='exactly',count=int(spec[3]),terms=[term(('P','F','E').index(spec[1]),spec[2])])
     if spec[0]=='count':
         return dict(kind='exactly',count=spec[2],terms=[term(i,spec[1]) for i in range(3)])
+    if spec[0]=='count_mixed':
+        return dict(kind='exactly',count=spec[2],terms=[term(i,tag) for i,tag in enumerate(spec[1])])
+    if spec[0]=='shared':
+        return dict(kind='sharedTag')
     _,a,ta,b,tb=spec
     if spec[0]=='xor':return dict(kind='exactly',count=1,terms=[term(a,ta),term(b,tb)])
     if spec[0].startswith('imp_pos'):return dict(kind='implies',**{'if':term(a,ta),'then':term(b,tb)})

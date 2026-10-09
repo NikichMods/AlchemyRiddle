@@ -355,3 +355,10 @@ compatible triples for k necessary clues and a unique answer. The research
 ranking generator rejects impossible fields/package sizes before sampling
 packages. This is necessary, not sufficient; all later gates remain. Historical
 aggregate artifacts are unchanged. Tests: `test_field_feasibility.py`.
+
+Condition-variety follow-up (2026-10-09): the three-slot candidate builder now
+includes unnamed shared-property intersection and exact counts of three mixed
+property assertions, one per role. Frozen-spec replay and Lab conversion support
+both. Existing quality gates and recency weights are unchanged; all-count packages
+remain controls. Tests: `test_condition_variety.py`. See
+`docs/research/CONDITION_VARIETY_MAP_2026-10-09.md` for scope and evidence limits.

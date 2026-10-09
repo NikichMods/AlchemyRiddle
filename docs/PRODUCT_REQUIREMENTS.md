@@ -242,6 +242,14 @@ ordinary gameplay production uses.
 
 ### Reasoning-motif diversity is curriculum-aware
 
+Clarification accepted 2026-10-09: current text variation is sufficient; prioritize
+condition variety. Connect shared-property and three-assertion mixed exact-count
+forms to research candidate generation using existing Lab semantics. Prefer
+simple, portable representations suitable for later BepInEx implementation.
+Keep existing finite recent-repetition preferences; smooth age decay and a new
+structure-classification/quota mechanism are not required now. This does not
+waive existing interaction-quality checks or deliberate curriculum practice.
+
 Accepted generator requirement:
 - avoid accidental campaign-level repetition not only of reagent identities, but
   also of exact property signatures and recently used reasoning motifs;

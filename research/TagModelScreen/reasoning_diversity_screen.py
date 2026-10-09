@@ -29,7 +29,7 @@ from pathlib import Path
 import progression_variable_field_screen as base
 
 
-FAMILY_ORDER = ("literal", "count", "xor", "imp_pos", "imp_neg")
+FAMILY_ORDER = ("literal", "count", "xor", "imp_pos", "imp_neg", "shared", "count_mixed")
 
 
 def clone_tags(model):
@@ -160,6 +160,26 @@ def generate_true_weak_clues(model, tags, target, surface):
             ("count", tag, value),
             lambda triple, t=tag, v=value:
                 sum(t in tags[item] for item in triple) == v,
+        )
+
+    # Existing Lab semantics: one unnamed common property across all three roles.
+    add(
+        "shared", ("shared",), ("shared",),
+        lambda triple: bool(set.intersection(*(set(tags[item]) for item in triple))),
+    )
+
+    # One distinct assertion per role; homogeneous counts already appear above.
+    # Store only tag IDs and an integer count, with no compound-expression tree.
+    for role_tags in itertools.product(vocab, repeat=3):
+        if len(set(role_tags)) == 1:
+            continue
+        value = sum(tag in tags[item] for item, tag in zip(target, role_tags))
+        add(
+            "count_mixed",
+            ("count_mixed", tuple(sorted(role_tags)), value),
+            ("count_mixed", role_tags, value),
+            lambda triple, ts=role_tags, v=value:
+                sum(tag in tags[item] for item, tag in zip(triple, ts)) == v,
         )
 
     for a, b in itertools.combinations(range(3), 2):

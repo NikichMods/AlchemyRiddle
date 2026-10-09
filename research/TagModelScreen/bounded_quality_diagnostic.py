@@ -91,9 +91,10 @@ def summarize_package(clues,combo,tuples,tags):
     scopes=[scope(m,tuples) for m in masks]
     derived=constant_counts=unique_endpoints=immediate=0
     for ci,(family,spec,mask) in enumerate(chosen):
-        if family=='count':
-            tag=spec[1]
-            constant_counts+=sum(len({tag in tags[t[s]] for t in tuples})==1 for s in range(len(tuples[0])))
+        if family in ('count','count_mixed'):
+            role_tags = [spec[1]]*len(tuples[0]) if family=='count' else spec[1]
+            constant_counts+=sum(len({tag in tags[t[s]] for t in tuples})==1
+                                 for s,tag in enumerate(role_tags))
         if family.startswith('imp'):
             if spec[0]=='imp_pf':a,b,ta,tb=0,1,spec[1],spec[2]
             elif spec[0]=='imp_fp':a,b,ta,tb=1,0,spec[1],spec[2]
@@ -110,7 +111,7 @@ def summarize_package(clues,combo,tuples,tags):
                 constantCountTerms=constant_counts,derivedAntecedents=derived,
                 immediatelyHandedAntecedents=immediate,uniqueConditionalEndpoints=unique_endpoints,
                 crossSlotClauses=sum(len(s)>1 for s in scopes),
-                controlProxy=all(len(s)<=1 for s in scopes) or all(f=='count' for f in families))
+                controlProxy=all(len(s)<=1 for s in scopes) or all(f in ('count','count_mixed') for f in families))
 
 
 def package_samples(clues,rng):
