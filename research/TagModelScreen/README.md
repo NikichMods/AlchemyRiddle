@@ -369,3 +369,10 @@ anchored reserve diagnostics. Exact witnesses stay private; outputs cannot be
 overwritten and the accepted corpus hash is checked. Results and limitations:
 `docs/research/CONDITION_VARIETY_CORPUS_2026-10-09.md`. New sampling policy is not
 adopted by this diagnostic; historical artifacts remain unchanged.
+
+Optional `--family-first --draw-offset N` compares three equal-budget arms on
+the same fields: old-flat, expanded-flat, expanded family-first. Family draws
+use root operators, permit repeated families and exclude reused predicates.
+Trial/results: `docs/research/FAMILY_FIRST_COMPARISON_2026-10-09.md`.
+Focused sampler checks: `test_family_first.py`. This is not a default production
+or ranking-generator switch.

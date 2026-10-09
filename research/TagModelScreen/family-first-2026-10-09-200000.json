@@ -1,0 +1,98 @@
+{
+  "complete": true,
+  "seed": 20261009,
+  "drawOffset": 200000,
+  "familyFirstComparison": true,
+  "targets": 19,
+  "fields": 152,
+  "seconds": 9.297,
+  "inputSha256": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+  "sourceSha256": {
+    "condition_variety_comparison.py": "40540b4fb2ff3d047341ff26a7ffbe1873612c6da99b0681c68dbe1b1eee44ef",
+    "reasoning_diversity_screen.py": "d7a6e633988e1ce750c14d98477fb8f754e84b66fbe4356033a5597840dc69f1",
+    "bounded_quality_diagnostic.py": "13231987d4167df0eba405ad61cd974adb0e2baf5c740c75263b572ef5fce549"
+  },
+  "budgets": {
+    "pairedPerFieldPerArm": 512,
+    "targetedPerAvailableFamilyField": 256,
+    "seconds": 180
+  },
+  "availableNewClues": {
+    "count_mixed": 76904,
+    "shared": 7
+  },
+  "fieldsWithNewClues": {
+    "count_mixed": 152,
+    "shared": 7
+  },
+  "arms": {
+    "baseline": {
+      "counters": {
+        "attempts": 77824,
+        "eligible": 628,
+        "completeAnswer": 22976,
+        "existingOptionGates": 825,
+        "necessity": 4988,
+        "ordinaryQuality": 227,
+        "duplicateDraw": 725,
+        "fieldFloor": 47455
+      },
+      "coveredTargets": 18,
+      "coveredFields": 60,
+      "familyPackages": {
+        "imp_neg": 174,
+        "xor": 576,
+        "imp_pos": 138,
+        "count": 90,
+        "literal": 73
+      }
+    },
+    "expanded": {
+      "counters": {
+        "attempts": 77824,
+        "completeAnswer": 20473,
+        "existingOptionGates": 733,
+        "eligible": 359,
+        "necessity": 7193,
+        "ordinaryQuality": 1149,
+        "fieldFloor": 47883,
+        "duplicateDraw": 34
+      },
+      "coveredTargets": 18,
+      "coveredFields": 60,
+      "familyPackages": {
+        "count_mixed": 336,
+        "xor": 238,
+        "literal": 30,
+        "imp_pos": 56,
+        "imp_neg": 54,
+        "count": 2
+      }
+    },
+    "family_first": {
+      "counters": {
+        "attempts": 77824,
+        "necessity": 5469,
+        "completeAnswer": 21983,
+        "ordinaryQuality": 421,
+        "existingOptionGates": 724,
+        "eligible": 598,
+        "duplicateDraw": 1552,
+        "fieldFloor": 47077
+      },
+      "coveredTargets": 18,
+      "coveredFields": 62,
+      "familyPackages": {
+        "count": 216,
+        "xor": 336,
+        "count_mixed": 226,
+        "literal": 162,
+        "imp_neg": 117,
+        "imp_pos": 138,
+        "shared": 6
+      }
+    }
+  },
+  "baselinePlusNewCoveredTargets": 18,
+  "caveat": "Paired arms have equal attempts, not identical packages. Targeted arms have extra effort; they prove sampled reserve, not equal-effort improvement or human interest."
+}

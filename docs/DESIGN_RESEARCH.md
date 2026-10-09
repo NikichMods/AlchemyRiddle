@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Family-first trial positive; adoption not yet selected — 2026-10-09
+
+User selects testing random family-first draws, not one-of-each quotas. Read
+`research/FAMILY_FIRST_COMPARISON_2026-10-09.md`. Three draw passes on identical
+152 fields: mean eligible packages old-flat 626.3, expanded-flat 362.7,
+family-first 594.0; all cover 18/19 targets. Mixed-count presence falls from
+90.9% to 38.6%; shared property appears in 31/1782 family-first records. All
+1782 records independently replayed, Lab agrees on 3824 masks; 27 tests pass.
+Recommend this simple sampler as next research baseline, but it remains opt-in
+comparison only. No production/default ranking switch or quotas/decay/weights.
+Human interest/routes and broader field robustness unmeasured. Preserve case 20.
+
 ### Real-corpus variety comparison complete; flat sampling imbalance — 2026-10-09
 
 Read `research/CONDITION_VARIETY_CORPUS_2026-10-09.md`. Verified 19 ordinary targets,

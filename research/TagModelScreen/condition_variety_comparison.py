@@ -1,6 +1,6 @@
 """Bounded paired corpus screen; public aggregates, private exact witnesses."""
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import hashlib
 import json
 import random
@@ -40,7 +40,28 @@ def admissible(model, raw, combo, triples, target_index, compatible):
                 masks=masks, structure=structure), 'eligible'
 
 
-def run(corpus, private, public):
+def family_groups(clues):
+    groups = defaultdict(list)
+    for i, clue in enumerate(clues):
+        groups[reasoning.family_root(clue[0])].append(i)
+    return dict(sorted(groups.items()))
+
+
+def draw_family_first(groups, k, rng):
+    """Uniform available root family, then uniform unused predicate; repeats allowed."""
+    chosen = []
+    for _ in range(k):
+        available = [(family, [i for i in ids if i not in chosen])
+                     for family, ids in groups.items()]
+        available = [(family, ids) for family, ids in available if ids]
+        if not available:
+            raise ValueError('Not enough distinct predicates')
+        _, ids = rng.choice(available)
+        chosen.append(rng.choice(ids))
+    return tuple(sorted(chosen))
+
+
+def run(corpus, private, public, family_first=False, draw_offset=0):
     if private.resolve().is_relative_to(ROOT) or private.exists() or public.exists():
         raise ValueError('Private identities must remain outside Git; never overwrite a pass')
     started = time.monotonic()
@@ -48,7 +69,9 @@ def run(corpus, private, public):
         raise ValueError('Input does not match the accepted corpus identity')
     model = three.load_model(corpus)
     three.assert_accepted_baseline(model)
-    counters = {arm: Counter() for arm in ('baseline', 'expanded', 'targeted_shared', 'targeted_count_mixed')}
+    arms = ('baseline', 'expanded', 'family_first') if family_first else (
+        'baseline', 'expanded', 'targeted_shared', 'targeted_count_mixed')
+    counters = {arm: Counter() for arm in arms}
     targets = {arm: set() for arm in counters}
     fields_hit = {arm: set() for arm in counters}
     family_packages = {arm: Counter() for arm in counters}
@@ -67,9 +90,12 @@ def run(corpus, private, public):
                 clue_fields[family] += bool(amount)
             pools = {'baseline': [c for c in raw if c[0] not in NEW], 'expanded': raw,
                      'targeted_shared': raw, 'targeted_count_mixed': raw}
+            if family_first:
+                pools = {'baseline': pools['baseline'], 'expanded': raw, 'family_first': raw}
             for arm, clues in pools.items():
-                rng = random.Random(SEED + ti * 100 + fi)
-                budget = 512 if arm in ('baseline', 'expanded') else 256
+                rng = random.Random(SEED + ti * 100 + fi + draw_offset)
+                budget = 256 if arm.startswith('targeted_') else 512
+                groups = family_groups(clues) if arm == 'family_first' else None
                 anchor = arm.removeprefix('targeted_') if arm.startswith('targeted_') else None
                 anchors = [i for i, c in enumerate(clues) if c[0] == anchor] if anchor else []
                 if anchor and not anchors:
@@ -83,7 +109,9 @@ def run(corpus, private, public):
                     if len(clues) < k:
                         counters[arm]['insufficientClues'] += 1
                         continue
-                    if anchor:
+                    if groups is not None:
+                        combo = draw_family_first(groups, k, rng)
+                    elif anchor:
                         a = rng.choice(anchors)
                         combo = tuple(sorted([a] + rng.sample([i for i in range(len(clues)) if i != a], k - 1)))
                     else:
@@ -100,7 +128,8 @@ def run(corpus, private, public):
                     fields_hit[arm].add((ti, fi))
                     family_packages[arm].update(set(reasoning.family_root(f) for f in row['families']))
                     records.append(dict(arm=arm, target=ti, field=fi, surface=surface, **row))
-    report = dict(complete=True, seed=SEED, targets=len(model.formulas), fields=len(model.formulas) * 8,
+    report = dict(complete=True, seed=SEED, drawOffset=draw_offset, familyFirstComparison=family_first,
+                  targets=len(model.formulas), fields=len(model.formulas) * 8,
                   seconds=round(time.monotonic() - started, 3),
                   inputSha256=hashlib.sha256(corpus.read_bytes()).hexdigest(),
                   sourceSha256={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in
@@ -110,8 +139,7 @@ def run(corpus, private, public):
                   arms={arm: dict(counters=dict(counters[arm]), coveredTargets=len(targets[arm]),
                                  coveredFields=len(fields_hit[arm]), familyPackages=dict(family_packages[arm]))
                         for arm in counters},
-                  baselinePlusNewCoveredTargets=len(targets['baseline'] | targets['targeted_shared'] |
-                                                   targets['targeted_count_mixed']),
+                  baselinePlusNewCoveredTargets=len(set.union(*targets.values())),
                   caveat='Paired arms have equal attempts, not identical packages. Targeted arms have extra effort; '
                          'they prove sampled reserve, not equal-effort improvement or human interest.')
     private.write_text(json.dumps(dict(report=report, witnesses=records), indent=2), encoding='utf-8')
@@ -123,5 +151,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('corpus', 'private', 'public'):
         parser.add_argument(name, type=Path)
+    parser.add_argument('--family-first', action='store_true')
+    parser.add_argument('--draw-offset', type=int, default=0)
     args = parser.parse_args()
-    run(args.corpus, args.private, args.public)
+    run(args.corpus, args.private, args.public, args.family_first, args.draw_offset)

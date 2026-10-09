@@ -1,0 +1,72 @@
+# Family-first sampling comparison — 2026-10-09
+
+User selects a trial of family-first random sampling, not quotas for final
+puzzles or mandatory one-of-each. Existing ranking/recency weights, gates,
+curriculum and production boundary remain unchanged.
+
+Reuse `condition_variety_comparison.py` with `--family-first`: same accepted
+19-target corpus, same 152 seeded 3x3x3 fields, 512 attempts per arm per field.
+Three arms: old flat pool, expanded flat pool, expanded family-first. For each
+predicate draw choose uniformly among available root families, then uniformly
+among unused predicates in that family. Directions share their implication
+root. Family repetitions are permitted; only reuse of the identical predicate
+within one package is excluded. Absent/exhausted families are unavailable.
+Equal family probability is a trial baseline, not calibrated product weights.
+
+Predeclare three draw-offset passes: 0, 100000, 200000. Fields remain identical
+between passes; only package draws vary. Three-minute cap per pass; exact
+witnesses private, aggregate artifacts immutable. Primary offset zero must
+reproduce the preceding baseline/expanded counters. Report eligible packages,
+coverage, new-family representation and duplication; no route replay or human
+interest claim. This uses existing corpus/gates and extends the bounded helper,
+without a new research framework or production sampling-policy installation.
+
+## Results
+
+All three passes complete in 9.218 / 9.250 / 9.297 seconds. Each arm receives
+77,824 attempts per pass on the same 152 fields. Offset-zero baseline and expanded
+results exactly reproduce the preceding comparison's arm counters and coverage.
+
+| Measure over three passes | Old flat | Expanded flat | Expanded family-first |
+|---|---:|---:|---:|
+| Eligible packages by pass | 618 / 633 / 628 | 378 / 351 / 359 | 576 / 608 / 598 |
+| Mean eligible packages | 626.3 | 362.7 | 594.0 |
+| Covered targets each pass | 18/19 | 18/19 | 18/19 |
+| Covered fields by pass | 59 / 61 / 60 | 58 / 59 / 60 | 61 / 62 / 62 |
+| Packages containing mixed count, pooled | 0 | 989/1088 (90.9%) | 688/1782 (38.6%) |
+| Packages containing shared property, pooled | 0 | 0 | 31/1782 (1.7%) |
+
+Family-first raises sampled eligible yield by 63.8% against expanded flat at
+equal attempt count, while remaining about 5.2% below old-flat yield. Thus it
+recovers most of the loss introduced by the expanded flat enumeration, exposes
+both new forms, and reduces mixed-count concentration without banning repeated
+families. It does not improve target coverage. Counts are sampled index packages,
+not independent human puzzles or player probabilities; pooled passes can rediscover
+the same package and share identical fields. This is draw-seed robustness, not
+independent field/corpus validation or a statistical significance claim.
+
+Independent verification: replay all 1,782 family-first records from frozen
+specifications; every individual mask, unique complete-model target and clue
+necessity agrees. After conversion, actual Lab JavaScript `satisfies` agrees on
+all 3,824 condition masks across those records. All 27 research tests pass,
+including four sampler checks: family-size bias removed, repeated families
+permitted, implication directions grouped, predicate reuse excluded, insufficient
+pool rejected and seeded draws reproducible.
+
+Artifacts: `research/TagModelScreen/family-first-2026-10-09-{0,100000,200000}.json`.
+Exact witnesses/replay data remain private. Generic helper metadata still names
+the unused targeted-arm budget/caveat; no targeted arm runs in these passes.
+
+## Decision implication
+
+Recommend family-first as the next research sampling baseline: simple grouping
+and two draws per predicate, no new operator, quota, decay or dependency.
+Equal family chances here are deliberately untuned. A later curriculum can
+change available motifs/chances while preserving this mechanism. Do not infer
+that selected final puzzles must have equal family frequencies.
+
+Current implementation is an opt-in bounded-comparison arm, not a silent switch
+of `generator_route_ranking` or production code. Before wider adoption, record
+the user's choice and assess resulting packages/routes; human readability,
+interest and difficulty remain unproved. Existing ranking, quality gates,
+curriculum semantics and solved case 20 are preserved.
