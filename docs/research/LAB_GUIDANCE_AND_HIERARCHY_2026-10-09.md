@@ -169,3 +169,16 @@ Full regression suite was not repeated for this bounded presentation change.
 
 Next research discussion: logical-structure variety, wording variety and
 answer-order sensitivity. Positional difficulty bias remains unaccepted.
+
+## Follow-up review: paired observation headings
+
+User positively accepts prose without role icons. Prior and earned-observation
+headings now form the explicit pair “Было известно из предыдущих опытов” /
+“Стало известно из текущих опытов”. No observation semantics change.
+
+Correction to the earlier case-20 wording audit: `count-two-choice-v1` and
+`count-two-scope-v1` have distinct render branches in the checked-in source.
+Together with plain/note this family already has four different phrasings.
+The repeated case-19/20 phrase is caused by using default authoring selection,
+not duplicate count-two templates. The previous diagnosis of duplicate prose
+was wrong; future diversity work must begin from the actual template bank.

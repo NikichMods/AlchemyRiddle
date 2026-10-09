@@ -127,7 +127,8 @@ real-corpus prevalence and mature-save calibration.
   warning on later reselection. Softer failure accent and brief feedback are
   discussed, not yet implemented. No additional logical oracle is authorized.
 - Repeated exact-two Water wording: both manually authored cases used the default
-  variant offset. Several count-two template IDs render identical prose. Wider
+  variant offset. Later source inspection corrects the initial duplicate-template
+  diagnosis: this family has four distinct renderings. Wider
   text variety and wider logical-structure variety are separate open questions;
   do not silently rewrite frozen clues or assume more IDs equal more variety.
 - User proposes soft answer-position bias by difficulty under ordinal browsing.
