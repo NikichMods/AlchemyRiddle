@@ -269,6 +269,17 @@ that server. The original solved human session still matches its frozen private
 SHA256. Ask whether the owner/other chat stopped it before attempting a competing
 restart. The original checkout and session contents remain untouched.
 
+The user then disabled Happ's visible packet-analysis toggle and reconnected.
+The Xray process creation time confirms a new core instance. The bounded SOCKS
+TLS comparison was unchanged (required SNI resets; region name/no SNI reaches
+certificate rejection), and a fresh IPv4 HTTP2 tunnel still timed out publicly
+with TCP/UDP pre-check failures and handshake EOF. Thus the tested local toggle
+does not explain/remove the failure; actual generated configuration and provider
+handling remain unknown. Restore packet analysis and keep Global OFF. Next
+bounded diagnostic is another existing VPN exit, if available; the user is asked
+about availability. Do not claim server-side filtering or destination rewriting
+as proven, and do not compensate by weakening TLS verification.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)

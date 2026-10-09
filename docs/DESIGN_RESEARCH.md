@@ -9,11 +9,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 User narrows the immediate outcome: one ordinary synthetic 2x2 puzzle must open
 through an external link before any five-level sequence work. The new isolated
 instance reuses frozen `lab-v0-easy-01` / «Тихий свет» unchanged; this is a hosting
-check, not a newly accepted guided tutorial. Original solved case 20 remains on
-4183. First HTTPS API response from a new tunnel was verified but subsequent
+check, not a newly accepted guided tutorial. Original solved case-20 session
+bytes remain unchanged; its 4183 server currently does not respond, and whether
+the owner/another chat intentionally stopped it is awaiting clarification.
+First HTTPS API response from a new tunnel was verified but subsequent
 browser access returned 1033 again; brief API success does not complete access.
 Launcher now checks exact public puzzle and complete HTML/JS/CSS assets, and
 Status probes current access rather than showing stale startup success.
+Selective VPN domain and exact endpoint-IP rules have not yielded public access.
+A Global Proxy control verified German HTTPS egress but failed tunnel SRV DNS.
+After restoring selective mode, endpoint SOCKS TCP connects, while TLS with the
+required tunnel SNI resets. Disabling Happ packet analysis and reconnecting did
+not remove that difference. Restore the original packet-analysis setting; next
+bounded diagnostic is another existing VPN exit, if available. Cause unproven;
+do not label the generated link working or repeat already-failed local checks.
 
 See `research/PUZZLE_LAB_FRIENDS_PLAYTEST.md` for the isolated temporary-tunnel
 deployment, request boundary, durable anonymous sessions, operational checks and
