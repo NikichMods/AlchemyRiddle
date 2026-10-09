@@ -488,6 +488,10 @@ rejected-action recording, restart persistence, public separation, exact panel
 Host/Origin and control-command allowlist. Actual public HTTPS QA recorded page,
 help and three actions with independent second player; QA is marked test. Hosted
 CI and final browser panel verification are recorded at the candidate boundary.
+Hosted suite passed for initial panel source `312eefb01b8bb19b1f1e9bee1e03de815365e8e1`
+([run 38006591009](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38006591009)).
+Browser control verification showed the external puzzle confirmed; normal UI
+reports plain Russian status and keeps raw command diagnostics collapsed.
 
 Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
 chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was

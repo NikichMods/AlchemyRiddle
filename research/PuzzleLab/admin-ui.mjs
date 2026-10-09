@@ -51,7 +51,12 @@ function render(){
 async function refresh(){try{data=await request('/api/overview');render();}catch(e){$('warnings').textContent=e.message;}}
 for(const button of document.querySelectorAll('[data-mode]'))button.onclick=async()=>{
   busy=true;render();$('command-result').textContent='Выполняем…';
-  try{const result=await request('/api/control',{mode:button.dataset.mode});$('command-result').textContent=result.message;}catch(e){$('command-result').textContent=e.message;}
+  try{
+    const mode=button.dataset.mode,result=await request('/api/control',{mode});$('command-details').textContent=result.message;
+    $('command-result').textContent=mode==='Stop'?'Плейтест остановлен. Все прохождения сохранены.':
+      /PublicPuzzleConfirmed\s*:\s*True|Public puzzle and assets verified/.test(result.message)?'Внешняя ссылка отвечает: загадка и файлы страницы проверены с этого компьютера.':
+      mode==='Start'?'Команда запуска выполнена. Проверьте внешнюю ссылку.':'Внешний доступ не подтверждён. Подробности — в техническом отчёте.';
+  }catch(e){$('command-result').textContent='Команда не выполнена. Подробности — в техническом отчёте.';$('command-details').textContent=e.message;}
   finally{busy=false;await refresh();}
 };
 $('refresh').onclick=refresh;$('technical').onchange=render;$('heartbeats').onchange=showDetail;
