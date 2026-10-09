@@ -21,9 +21,13 @@ A Global Proxy control verified German HTTPS egress but failed tunnel SRV DNS.
 After restoring selective mode, endpoint SOCKS TCP connects, while TLS with the
 required tunnel SNI resets. Disabling Happ packet analysis and reconnecting did
 not remove that difference. No other VPN exit is available. Read-only socket
-inspection confirms cloudflared enters Happ's TUN, but does not establish the
-selected Xray outbound. The daemon log lacks per-request routing evidence;
-next evidence is the in-app Xray log during an edge connection attempt. Cause unproven;
+inspection confirms cloudflared enters Happ's TUN. The user-provided Info core
+log now confirms edge requests select proxy and enter the selected VPN outbound
+with the original Cloudflare destination IP retained. A native TUN TLS comparison
+resets for the required HTTP2 SNI but reaches certificate verification for another
+SNI/no SNI on the same IP/port. Blanket port blocking and local destination-name
+replacement do not explain these observations. Next evidence is VPN-provider
+outbound/error handling for the correlated request; exact reset origin unproven;
 do not label the generated link working or repeat already-failed local checks.
 
 See `research/PUZZLE_LAB_FRIENDS_PLAYTEST.md` for the isolated temporary-tunnel

@@ -302,6 +302,29 @@ subscription databases or dump process memory. Next evidence is the in-app Xray
 log while the connector retries; ask the user to show its log view. No settings,
 service restart, TLS trust change or alternative deployment made in this step.
 
+After the user selects Info and reconnects, their core-log paste and private
+diagnostic archive supply the missing per-request evidence. Requests at local
+22:08:09 and 22:08:20 target global edge IPs on TCP 7844, sniff the expected HTTP2
+SNI, select `[tun-in -> proxy]`, and emit a VLESS outbound request to the original
+Cloudflare IP via the selected VPN endpoint on 443. Thus the actual connector's
+proxy route is directly observed. Destination-name replacement is not supported
+for these attempts. The report's selected config is not a full generated TUN
+config; avoid treating its ordinary SOCKS/HTTP inbounds as the TUN definition.
+The user reports the separate TUN log empty; empty log is not a TUN failure.
+
+A bounded native TCP/TLS probe through TUN (no SOCKS intermediary) to the same
+published edge IP/7844 reproduces required-SNI ECONNRESET versus alternate-SNI
+and no-SNI certificate-chain rejection using Node's default roots. Certificate
+verification remains enabled. This is a handshake-progress comparison, not
+successful authenticated TLS or a usable tunnel. It makes blanket TCP-7844
+blocking insufficient as an explanation and confirms the SNI-dependent symptom
+on the connector's transport path. Exact reset origin (provider processing,
+upstream network, edge behavior) remains unknown. Next useful evidence is the
+VPN provider's correlated destination/dial/error logs and any TLS-name handling.
+No provider message sent. Restore routine Warning logging after collection;
+retain raw report/config/logs privately, never in Git. No mechanics or server
+code changed by this diagnostic step.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
