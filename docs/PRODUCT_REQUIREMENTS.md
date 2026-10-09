@@ -259,6 +259,18 @@ not quality thresholds or accepted ranking/recency weights. Main three-slot
 research builders use the shared sampler; historical diagnostic/control arms
 remain explicit. Production implementation remains separately gated.
 
+Accepted rare-opportunity principle 2026-10-09: final selection may give a
+bounded soft preference to an otherwise suitable package using a motif with
+few known usable opportunities. The purpose is to avoid wasting rare opportunities,
+not maximize rare-motif frequency or reduce variety of the player's experience.
+Corpus opportunity scarcity and the player's recent exposure are different
+signals: scarcity does not override recurrence safeguards, curriculum practice,
+quality or suitable difficulty. Do not force rare forms into every target, use
+inverse observed selection counts as automatic weights, or promote weak-sample
+rarity to a permanent production fact. Numerical bonus/calibration is unselected;
+compare final-selection diversity, repeated signatures and route suitability
+before adoption of any weight. Existing ranking remains unchanged for now.
+
 Accepted generator requirement:
 - avoid accidental campaign-level repetition not only of reagent identities, but
   also of exact property signatures and recently used reasoning motifs;

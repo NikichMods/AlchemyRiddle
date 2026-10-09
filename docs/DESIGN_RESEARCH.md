@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Rare-opportunity preference principle accepted; weights open — 2026-10-09
+
+User wants suitable rare opportunities valued without making rare motifs dominate
+or reducing player-experience variety. Canonical requirement is in
+`PRODUCT_REQUIREMENTS.md`: bounded soft final-selection preference coordinated
+with recent exposure, curriculum and quality, not a frequency quota or mandatory
+rare-form selection. Scarcity evidence concerns usable opportunities, not just
+observed output counts. Next comparison should examine diversity, exact-repeat
+concentration and route suitability; weights/calibration remain unselected.
+Current family-first sampler and ranking weights retained. No new fixture or
+production change; preserve solved case 20. Production BLOCKED.
+
 ### Family-first accepted as main research sampling baseline — 2026-10-09
 
 User accepts family-first after the paired trial. It changes proposal sampling,
