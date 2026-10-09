@@ -228,6 +228,25 @@ their usual Zapret setup; because the service is now absent, simply starting tha
 service is unavailable. No service recreation or configuration change is made
 by the agent. Active Happ routing remains the next unverified boundary.
 
+User screenshots confirm Mixed/Xray TUN and all four requested domain rules in
+the selected profile. They do not prove the connector's selected outbound.
+The user then enabled Global Proxy and reconnected for a bounded comparison.
+A control HTTPS request to Cloudflare trace returned `loc=DE`/`colo=FRA` without
+publishing the client IP. The new HTTP2 tunnel failed at edge discovery: SRV DNS
+queries returned no usable records, and the public probe returned 530. Ordinary
+A records resolved through the host; Google DoH returned the expected SRV records.
+Thus German egress is verified for that control request, not a working connector.
+Xray's documented handling of non-A/AAAA queries depends on DNS forwarding, which
+is consistent with this symptom but does not establish the exact Happ fault.
+
+Next narrow test: restore Global OFF, retain the existing domain rules, and add
+only the twenty explicit global-region IPv4 tunnel endpoint addresses published
+by Cloudflare as /32 proxy destinations. This avoids relying on TLS domain
+sniffing, preserves normal default-direct routing, and avoids broad Cloudflare
+CIDR/port rules. Success still requires a fresh complete public probe. No system
+DNS edit, disabled TLS verification, private subscription edit or unsupported
+internal cloudflared deployment flag is introduced.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
