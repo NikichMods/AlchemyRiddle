@@ -1,0 +1,571 @@
+{
+  "complete": true,
+  "exactPriorAggregateReplay": true,
+  "poolRuns": 12,
+  "targetOrders": 12,
+  "startingKnowledge": [
+    0,
+    1,
+    4
+  ],
+  "preferredChecks": [
+    3,
+    5
+  ],
+  "reserves": [
+    0,
+    64
+  ],
+  "verifiedDistinctRetainedPackages": 2256,
+  "estimatedUniquePublicContexts": 3282,
+  "sampledRouteReplays": 315072,
+  "comparisons": [
+    {
+      "context": 0,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "imp_pos": 646,
+            "xor": 1079,
+            "imp_neg": 526,
+            "count_mixed": 881,
+            "count": 844,
+            "literal": 687,
+            "shared": 46
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 50,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5661463656853676,
+            "distinctFamilies": 6.319444444444445,
+            "maxSemanticRepeat": 1.0208333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.01863766339869281,
+            "heldOutMean": 3.5522446753585695,
+            "selectedAbove5": 0.019517066085693535,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "imp_pos": 662,
+            "xor": 1066,
+            "imp_neg": 521,
+            "count_mixed": 879,
+            "count": 844,
+            "literal": 655,
+            "shared": 76
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 50,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5901520248247243,
+            "distinctFamilies": 6.527777777777778,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.016871766067538124,
+            "heldOutMean": 3.5389164056826434,
+            "selectedAbove5": 0.019471677559912852,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.02400565913935666,
+          "min": -0.17208232238685905,
+          "max": 0.15707055823552363,
+          "increased": 63,
+          "decreased": 33
+        },
+        "maxSemanticRepeat": {
+          "mean": -0.006944444444444444,
+          "min": -1,
+          "max": 0,
+          "increased": 0,
+          "decreased": 1
+        },
+        "heldOutMean": {
+          "mean": -0.013328269675925911,
+          "min": -0.2959558823529411,
+          "max": 0.2274305555555558,
+          "increased": 42,
+          "decreased": 77
+        },
+        "adjacentFamilyOverlap": {
+          "mean": -0.001765897331154684,
+          "min": -0.058823529411764705,
+          "max": 0.020833333333333332,
+          "increased": 11,
+          "decreased": 18
+        }
+      }
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 775,
+            "xor": 988,
+            "imp_neg": 618,
+            "count_mixed": 803,
+            "literal": 676,
+            "imp_pos": 680,
+            "shared": 28
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 213,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.577334790643248,
+            "distinctFamilies": 6.194444444444445,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.010565597766884531,
+            "heldOutMean": 3.956234468613834,
+            "selectedAbove5": 0.0835375816993464,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "count": 761,
+            "xor": 972,
+            "imp_neg": 619,
+            "count_mixed": 801,
+            "literal": 672,
+            "imp_pos": 684,
+            "shared": 61
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 212,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.6064171718544342,
+            "distinctFamilies": 6.423611111111111,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.011395356753812636,
+            "heldOutMean": 3.9612818145197894,
+            "selectedAbove5": 0.08312908496732026,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.029082381211185854,
+          "min": -0.1347836590803504,
+          "max": 0.16561340169135041,
+          "increased": 63,
+          "decreased": 28
+        },
+        "maxSemanticRepeat": {
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "increased": 0,
+          "decreased": 0
+        },
+        "heldOutMean": {
+          "mean": 0.005047345905954974,
+          "min": -0.3151041666666665,
+          "max": 0.40711805555555536,
+          "increased": 63,
+          "decreased": 59
+        },
+        "adjacentFamilyOverlap": {
+          "mean": 0.0008297589869281046,
+          "min": -0.029411764705882353,
+          "max": 0.058823529411764705,
+          "increased": 13,
+          "decreased": 8
+        }
+      }
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "imp_pos": 643,
+            "xor": 1075,
+            "imp_neg": 529,
+            "count_mixed": 877,
+            "count": 844,
+            "literal": 693,
+            "shared": 47
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 46,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5680085350180453,
+            "distinctFamilies": 6.326388888888889,
+            "maxSemanticRepeat": 1.0277777777777777,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.017425364242919388,
+            "heldOutMean": 3.4944388417982934,
+            "selectedAbove5": 0.017928467683369642,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "imp_pos": 665,
+            "xor": 1060,
+            "imp_neg": 523,
+            "count_mixed": 878,
+            "count": 841,
+            "literal": 656,
+            "shared": 76
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 44,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5913853808319702,
+            "distinctFamilies": 6.527777777777778,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.01622540509259259,
+            "heldOutMean": 3.476988726624909,
+            "selectedAbove5": 0.017111474219317357,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.02337684581392496,
+          "min": -0.1828037334633379,
+          "max": 0.17465346370055546,
+          "increased": 61,
+          "decreased": 37
+        },
+        "maxSemanticRepeat": {
+          "mean": -0.013888888888888888,
+          "min": -1,
+          "max": 0,
+          "increased": 0,
+          "decreased": 2
+        },
+        "heldOutMean": {
+          "mean": -0.017450115173384167,
+          "min": -0.25607638888888884,
+          "max": 0.2274305555555558,
+          "increased": 41,
+          "decreased": 81
+        },
+        "adjacentFamilyOverlap": {
+          "mean": -0.0011999591503267975,
+          "min": -0.058823529411764705,
+          "max": 0.0392156862745098,
+          "increased": 13,
+          "decreased": 19
+        }
+      }
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 774,
+            "xor": 991,
+            "imp_neg": 616,
+            "count_mixed": 801,
+            "literal": 675,
+            "imp_pos": 683,
+            "shared": 31
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 196,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5791553277928396,
+            "distinctFamilies": 6.215277777777778,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.010735804738562092,
+            "heldOutMean": 3.8804072627314814,
+            "selectedAbove5": 0.07691085693536674,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "count": 767,
+            "xor": 978,
+            "imp_neg": 623,
+            "count_mixed": 805,
+            "literal": 667,
+            "imp_pos": 681,
+            "shared": 59
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 197,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.6041478728863217,
+            "distinctFamilies": 6.409722222222222,
+            "maxSemanticRepeat": 1.0138888888888888,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.011088984204793028,
+            "heldOutMean": 3.879894159631445,
+            "selectedAbove5": 0.07722857661583152,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.024992545093481814,
+          "min": -0.1347836590803504,
+          "max": 0.16561340169135041,
+          "increased": 66,
+          "decreased": 28
+        },
+        "maxSemanticRepeat": {
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "increased": 0,
+          "decreased": 0
+        },
+        "heldOutMean": {
+          "mean": -0.0005131031000363397,
+          "min": -0.3151041666666665,
+          "max": 0.4071180555555558,
+          "increased": 62,
+          "decreased": 62
+        },
+        "adjacentFamilyOverlap": {
+          "mean": 0.0003531794662309368,
+          "min": -0.029411764705882353,
+          "max": 0.058823529411764705,
+          "increased": 11,
+          "decreased": 8
+        }
+      }
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "imp_pos": 666,
+            "xor": 1056,
+            "imp_neg": 561,
+            "count_mixed": 858,
+            "count": 844,
+            "literal": 673,
+            "shared": 51
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 35,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.5798237481859245,
+            "distinctFamilies": 6.354166666666667,
+            "maxSemanticRepeat": 1.0277777777777777,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.015836056644880175,
+            "heldOutMean": 3.158778991920842,
+            "selectedAbove5": 0.01359386347131445,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "imp_pos": 673,
+            "xor": 1047,
+            "imp_neg": 559,
+            "count_mixed": 853,
+            "count": 839,
+            "literal": 654,
+            "shared": 73
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 31,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.597560829117228,
+            "distinctFamilies": 6.506944444444445,
+            "maxSemanticRepeat": 1.0486111111111112,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.014938214869281045,
+            "heldOutMean": 3.1500916990059915,
+            "selectedAbove5": 0.01205065359477124,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.017737080931303304,
+          "min": -0.17927718063314035,
+          "max": 0.15967658970333387,
+          "increased": 55,
+          "decreased": 31
+        },
+        "maxSemanticRepeat": {
+          "mean": 0.020833333333333332,
+          "min": -1,
+          "max": 1,
+          "increased": 4,
+          "decreased": 1
+        },
+        "heldOutMean": {
+          "mean": -0.008687292914851121,
+          "min": -0.2100694444444442,
+          "max": 0.3814338235294117,
+          "increased": 50,
+          "decreased": 68
+        },
+        "adjacentFamilyOverlap": {
+          "mean": -0.0008978417755991287,
+          "min": -0.058823529411764705,
+          "max": 0.029411764705882353,
+          "increased": 11,
+          "decreased": 14
+        }
+      }
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 770,
+            "xor": 993,
+            "imp_neg": 623,
+            "count_mixed": 792,
+            "imp_pos": 679,
+            "literal": 681,
+            "shared": 36
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 72,
+          "above5": 171,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.584300874776085,
+            "distinctFamilies": 6.25,
+            "maxSemanticRepeat": 1.0069444444444444,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.010914522058823529,
+            "heldOutMean": 3.498804650621823,
+            "selectedAbove5": 0.06703885257806826,
+            "selectedAbove7": 0.0
+          }
+        },
+        "64": {
+          "families": {
+            "count": 761,
+            "xor": 977,
+            "imp_neg": 623,
+            "count_mixed": 800,
+            "imp_pos": 677,
+            "literal": 672,
+            "shared": 63
+          },
+          "selected": 2544,
+          "availableRareTargetSteps": 120,
+          "above5": 178,
+          "above7": 0,
+          "means": {
+            "selected": 17.666666666666668,
+            "entropy": 2.607282965734533,
+            "distinctFamilies": 6.4375,
+            "maxSemanticRepeat": 1.0208333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.010423049428104575,
+            "heldOutMean": 3.486859667188635,
+            "selectedAbove5": 0.0698075526506899,
+            "selectedAbove7": 0.0
+          }
+        }
+      },
+      "paired": {
+        "entropy": {
+          "mean": 0.022982090958447984,
+          "min": -0.1347836590803504,
+          "max": 0.16561340169135041,
+          "increased": 60,
+          "decreased": 29
+        },
+        "maxSemanticRepeat": {
+          "mean": 0.013888888888888888,
+          "min": 0,
+          "max": 1,
+          "increased": 2,
+          "decreased": 0
+        },
+        "heldOutMean": {
+          "mean": -0.01194498343318808,
+          "min": -0.606770833333333,
+          "max": 0.3515625,
+          "increased": 52,
+          "decreased": 64
+        },
+        "adjacentFamilyOverlap": {
+          "mean": -0.0004914726307189542,
+          "min": -0.058823529411764705,
+          "max": 0.03125,
+          "increased": 10,
+          "decreased": 9
+        }
+      }
+    }
+  ],
+  "estimator": {
+    "policies": [
+      "balanced",
+      "candidate_first"
+    ],
+    "seedsPerPolicy": 16,
+    "heldOutSeedsPerPolicy": 32,
+    "stop": "certified or unique public survivor"
+  },
+  "hashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "rare-search-2026-10-10-v1.json": "db45d19b9059c75a745c2c2423c7fb0118e9932501c4bf17693fe876cf63799b",
+    "rare_search_selection.py": "d978e8702c75334bde86e70abdd6353d06510ee1fbabf3e02c9e2d56def9e24f",
+    "generator_route_ranking.py": "52c04ed90646bb64eeea4dce3f0cac205f492ed56784faeb3684f892da21c84b",
+    "family-first-private-0.json": "0e9e46b553b367566614961389ead64892e85963b208f6d3a56cd2448618f073",
+    "family-first-private-100000.json": "2a6d4f25ce9950a2b4725423bef9ec0001b89e125708274e1ce280c26440b1a4",
+    "family-first-private-200000.json": "20b2b716ace2ad724d82856888c3387e9b58faedb82ab7d886aed72be9ab7edf"
+  },
+  "caveat": "Unchanged selection weights; no rare bonus. Same frozen fields, dependent target orders. Public-policy simulations, not measured human route or interest. Only shared empirically rare."
+}

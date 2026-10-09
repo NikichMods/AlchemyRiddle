@@ -4,6 +4,22 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Reserve-64 downstream selection and routes compared — 2026-10-10
+
+Read `research/RARE_SEARCH_SELECTION_2026-10-10.md`. All 24 baseline/reserve-64
+pool runs match prior aggregates; 2,256 distinct retained packages independently
+verified. Unchanged selector, 12 search seeds x 12 orders x six settings; 315,072
+route replays with held-out seeds. Shared selections 239->408 /15,264 per arm,
+mean family entropy improves in all settings; adjacent exact templates remain
+zero. Held-out mean 3.590->3.582 overall, but small local costs: six paired
+max-template-repeat increases and four-known/preferred-5 above-five tail
+171->178 /2,544. Not strict dominance or human-experience evidence. Only one
+rare target per sequence; repeated rare campaign exposure untested.
+Recommend adopting reserve 64 as research search baseline, with unchanged gates,
+weights and no rarity bonus. Adoption not yet performed; user decision pending.
+Private complete pools/selections now frozen. 36 tests pass. Separate branch,
+solved case 20/network work untouched; production BLOCKED.
+
 ### Bounded rare-family search compared at equal budget — 2026-10-10
 
 Read `research/RARE_SEARCH_COMPARISON_2026-10-10.md`. Twelve paired runs on the
