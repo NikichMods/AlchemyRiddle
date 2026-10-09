@@ -358,6 +358,25 @@ Next: user applies selective rules and reconnects; verify website and agent
 separately, then test the actual puzzle URL from an independent Russian visitor
 connection without VPN. Do not promise VPN-free play based on the offline probe.
 
+## Happ rule persistence checkpoint, 2026-10-10
+
+The user's earlier private support report contains 32 proxy domain rules and
+20 proxy IP rules, including the Cloudflare additions. A subsequent user
+screenshot contains only the seven baseline domain rules plus five newly added
+ngrok rules. Those seven baseline rules exactly match the report's embedded
+default profile snapshot. This establishes loss/reversion of the visible edited
+set, but does not establish its cause. Subscription update success entries do
+not prove that an update overwrote routing. The separate on-disk routing file
+predates these edits and is not evidence of the current active runtime profile.
+
+A private recovery text file combines all 52 report rules and the five new
+ngrok rules, deduplicated (57 lines). It is outside Git; personal domains and
+raw support reports must remain private. No Happ setting was changed by the
+agent. Next check: user restores the complete Proxy field, saves, reopens the
+editor and reconnects to verify persistence before interpreting further network
+tests. Earlier core logs still directly establish proxy routing for the recorded
+Cloudflare attempts; later missing rules do not invalidate that observation.
+
 ## Official references
 
 - [Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/):
