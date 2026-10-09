@@ -12,7 +12,8 @@ h3{font-size:13px;margin:0 0 6px}
 h4{font-size:13px;font-weight:600;color:#b2c8ce;margin:0 0 7px}
 p{margin:6px 0}
 #task{color:#c0d0d2;margin:0 0 16px}
-.workspace{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(320px,1fr);grid-template-areas:'board actions' 'evidence actions';gap:20px 26px;align-items:start}
+.workspace{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(320px,1fr);grid-template-areas:'investigation actions';gap:20px 26px;align-items:start}
+.investigation{grid-area:investigation;display:flex;flex-direction:column;gap:20px;min-width:0}
 .board{grid-area:board}.actions{grid-area:actions}.evidence{grid-area:evidence}
 .heading-note{font-size:11px;font-weight:400;color:#a5b9bf;margin-left:10px}
 #cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -125,7 +126,7 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 #history li{margin-bottom:8px}
 .export{font-size:14px;background:transparent;color:#b7cecb;border-color:#527079;padding:7px 12px}
 [hidden]{display:none!important}
-@media(max-width:1050px){.workspace{grid-template-columns:1fr;grid-template-areas:'board' 'evidence' 'actions'}.actions{border-left:0;border-top:1px solid #40565f;padding:14px 0 0}.relation-columns{gap:18px}.card{min-height:88px}}
+@media(max-width:1050px){.workspace{grid-template-columns:1fr;grid-template-areas:'investigation' 'actions'}.actions{border-left:0;border-top:1px solid #40565f;padding:14px 0 0}.relation-columns{gap:18px}.card{min-height:88px}}
 @media(max-width:600px){main{padding:14px}.three-slot #cards{grid-template-columns:1fr}#cards{grid-template-columns:1fr}fieldset+fieldset{border-left:0;border-top:1px solid #40565f;padding:10px 0 0}.evidence{grid-template-columns:1fr}#knowledge{border-left:0;border-top:1px solid #354b53;padding:14px 0 0}h1{font-size:25px}}
 
 /* Compact reagent identities: silhouette plus readable code, never color alone. */

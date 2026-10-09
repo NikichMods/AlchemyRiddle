@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Case 20 solved: boss-like reception, route-order sensitivity — 2026-10-09
+
+Read `prototypes/PUZZLE_LAB_V0_INTEREST_20_STATE.md`. Actual session: 11 new pair
+checks, deliberate failed-mixture UX probe, two refills, successful synthesis,
+Science 8. Positive dense/enjoyable/boss-like response, explicitly qualified by
+answer-position and powder-order effects. Intended global inference pivot not
+independently demonstrated; upper difficulty robustness remains open.
+Prior heading clarified and layout columns decoupled. Icon density, failure
+feedback ordering/color, text/condition variety and soft answer-position bias are
+proposals/findings to discuss, not new generator gates or policies. No new puzzle.
+Preserve solved 4183 session; next: review findings and choose bounded follow-up.
+Production BLOCKED.
+
 ### Upper-envelope case 20 precommitted — 2026-10-09
 
 User authorizes a fresh upper interest/difficulty investigation. Read

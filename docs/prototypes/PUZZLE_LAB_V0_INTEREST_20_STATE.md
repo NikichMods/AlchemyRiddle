@@ -1,6 +1,6 @@
 # Upper interest/difficulty envelope — synthetic case 20
 
-2026-10-09. Status: OPEN, precommitted and displayed; independent play not yet started.
+2026-10-09. Status: SOLVED; positive dense/boss-like experience, difficulty robustness unproved.
 Production remains BLOCKED. No new grammar, generator weight, economy or runtime
 mechanic. Preserve case 19 and all earlier player sessions.
 
@@ -61,7 +61,7 @@ optimal strategy or robustness guarantees. Four positive priors are illustrative
 not sampled mature-save knowledge. Authored synthetic success would not establish
 real-corpus prevalence or generator quality. A shorter justified path is valid.
 
-## Initial player state and next interaction
+## Initial player state (historical)
 
 No components selected, no actions, Science 20, four frozen known compatible
 pairs. Exact public snapshot is private `initial.public.json`; the Lab displays
@@ -79,3 +79,62 @@ Private `migration-current-state.json` captures this exact starting state.
 No player action, paid test, refill or submission performed by the facilitator.
 The UI badge now says “Исследовательский опыт”: resource mode must not imply
 real-corpus provenance. This case is explicitly synthetic.
+
+## Human outcome and interpretation
+
+User independently solves the case and reports a powerful, dense, enjoyable
+investigation with no negative overall impression; a boss/max-difficulty label
+would fit this experience. User explicitly identifies ordinal dependence:
+Powders were examined from first to fourth, and the answer's later position may
+have prolonged the route; starting with the fourth could have been much quicker.
+Record boss-like subjective acceptance, not a calibrated difficulty threshold.
+
+Actual durable session above: 11 new pair checks, one deliberate composition-invalid
+submission to inspect failure UX, two +10 refills, then successful submission.
+Science 8 remains. Do not count the deliberate first submission as a deduction
+mistake. Private `outcome-audit.json` verifies four pair checks belonging to no
+tag-valid hypothesis and one additional pair already excluded by earned negatives.
+These show avoidable target-specific cost, not user failure or a prescribed policy.
+Six other checks support still-live hypotheses. Preflight policies used six checks;
+those are alternative witnesses, not an optimum or required human route.
+
+Narration repeatedly rechecks conditional/XOR/count interactions and rejects an
+initial compatible chain through composition. Later pair failures reject branches;
+player comments that checking compatibility first can be cheaper cognitively even
+when it costs Science. No all-tuple full-mixture enumeration occurred. The entire
+powder list was examined; length alone does not establish deeper inference.
+
+Interest is positively supported for this player. The proposed post-experiment
+pivot was not explicitly articulated as a global deduction in narration; do not
+claim that its intended proof was demonstrated. Distinguish satisfying branch
+investigation from repeatable structural boss depth, population comprehension,
+real-corpus prevalence and mature-save calibration.
+
+## UX observations and dispositions
+
+- Start-prior heading is vague. Implement “Из предыдущих опытов”.
+- Repeated role icons in all prose cause mild visual overload. Proposed next
+  trial: retain color/bold words in prose, shapes in column/pair headings and
+  card identities. Not yet selected/implemented; preserve the existing baseline.
+- Full selection and failure feedback cause empty space beneath candidates.
+  Source has right actions spanning both rows of the shared grid. Fix by grouping
+  board/evidence into an independently flowing left column. Separate QA copy
+  replays only the deliberate first failure; post-failure evidence gap is 20px
+  while the right column is 1056px tall. Original solved session unchanged.
+- Selected-history warning precedes immediate failure message, and the reminder
+  appears after continuation text. Reproduced in QA. Proposed: immediate result,
+  applicable general composition reminder, then continuation; repeated-mixture
+  warning on later reselection. Softer failure accent and brief feedback are
+  discussed, not yet implemented. No additional logical oracle is authorized.
+- Repeated exact-two Water wording: both manually authored cases used the default
+  variant offset. Several count-two template IDs render identical prose. Wider
+  text variety and wider logical-structure variety are separate open questions;
+  do not silently rewrite frozen clues or assume more IDs equal more variety.
+- User proposes soft answer-position bias by difficulty under ordinal browsing.
+  This is a hypothesis, not accepted generator policy. Risk: difficulty becomes
+  positional search length and the bias teaches reverse-order shortcuts. Suggest
+  assessing natural-order sensitivity before adopting any positional weighting;
+  no cultural browsing claim is established by this one observed route.
+
+Next interaction: discuss these findings and select the bounded presentation/
+quality follow-up. Preserve solved model and exact state in migration-current-state.

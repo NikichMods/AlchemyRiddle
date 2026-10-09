@@ -37,7 +37,7 @@ function relationJournal(s) {
     const observations = s.knownRelations.filter(r => tested.some(h => pairMatches(h,r.slots,r.tuple)) === fresh);
     if (!observations.length) continue;
     const section = document.createElement('section'); section.className = `observation-source ${fresh ? 'new' : 'prior'}`;
-    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Мои исследования' : 'Было известно'; section.append(heading);
+    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Мои исследования' : 'Из предыдущих опытов'; section.append(heading);
     const columns = document.createElement('div'); columns.className = 'relation-columns';
     for (let i=0; i<view.slots.length-1; i++) {
       const slots = [view.slots[i].id,view.slots[i+1].id];
