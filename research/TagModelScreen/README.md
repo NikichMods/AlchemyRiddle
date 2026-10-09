@@ -362,3 +362,10 @@ property assertions, one per role. Frozen-spec replay and Lab conversion support
 both. Existing quality gates and recency weights are unchanged; all-count packages
 remain controls. Tests: `test_condition_variety.py`. See
 `docs/research/CONDITION_VARIETY_MAP_2026-10-09.md` for scope and evidence limits.
+
+`condition_variety_comparison.py CORPUS.json PRIVATE.json AGGREGATES.json` compares
+old/expanded candidate draws on 152 fixed fields at equal effort, plus separate
+anchored reserve diagnostics. Exact witnesses stay private; outputs cannot be
+overwritten and the accepted corpus hash is checked. Results and limitations:
+`docs/research/CONDITION_VARIETY_CORPUS_2026-10-09.md`. New sampling policy is not
+adopted by this diagnostic; historical artifacts remain unchanged.

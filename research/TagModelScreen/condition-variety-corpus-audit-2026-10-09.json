@@ -1,0 +1,7 @@
+{
+  "independentlyReplayedPackages": 1124,
+  "targetedPackagesForLabReplay": 128,
+  "newPredicateMaskPackagesAbsentFromSampledBaseline": 339,
+  "distinctSampledBaselinePredicateMaskPackages": 477,
+  "distinctNewFormPredicateMaskPackages": 413
+}

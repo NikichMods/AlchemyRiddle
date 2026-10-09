@@ -4,6 +4,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Real-corpus variety comparison complete; flat sampling imbalance — 2026-10-09
+
+Read `research/CONDITION_VARIETY_CORPUS_2026-10-09.md`. Verified 19 ordinary targets,
+152 identical seeded fields, unchanged gates. Equal effort: old pool 618 eligible
+packages vs expanded 378; both cover 18/19 targets. Mixed counts occur in all
+fields and 346/378 expanded packages. Shared property is weak-clue eligible in
+7 fields; targeted checks find 24 valid packages across 2 targets, mixed-count
+checks find 104 across 15. Both forms supply reserve; naive flat enumeration
+sampling is imbalanced. All 1,124 accepted records independently replayed; Lab
+agrees on 275 converted diagnostic predicates. Human benefit/pacing unmeasured.
+Next proposed decision: compare family-first or bounded extra exploration,
+without quotas, relaxed gates, decay or new weights. Neither sampling policy is
+accepted yet. Preserve solved case 20; no new player puzzle. Production BLOCKED.
+
 ### Two condition forms connected; decay deferred — 2026-10-09
 
 User accepts connecting shared-property and three-term mixed-count conditions,
