@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Case-20 presentation follow-up implemented — 2026-10-09
+
+User accepts lighter prose (color/bold role words without icons; shapes retained
+in headings and identities), complete prior heading and result-first negative
+feedback. Red button flash explicitly rejected. Fresh result, applicable reminder
+and continuation precede any later-reselection warning; tab-local refresh
+preserves this distinction. Five support tests and isolated browser QA pass.
+Solved case 20 remains preserved, Science 8; no new puzzle or mechanics.
+Read latest section in `research/LAB_GUIDANCE_AND_HIERARCHY_2026-10-09.md`.
+Next: discuss logical/wording variety and sensitivity to card order. Do not adopt
+answer-position difficulty bias without a separate decision. Production BLOCKED.
+
 ### Case 20 solved: boss-like reception, route-order sensitivity — 2026-10-09
 
 Read `prototypes/PUZZLE_LAB_V0_INTEREST_20_STATE.md`. Actual session: 11 new pair

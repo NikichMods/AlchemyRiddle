@@ -3,10 +3,24 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {act,candidates,createState,publicView,satisfies,validFormula,validate} from './rules.mjs';
-import {submitBlockReason,selectedSubmission,submissions,compositionReminder} from './support.mjs';
+import {submitBlockReason,selectedSubmission,submissions,compositionReminder,submissionFeedback} from './support.mjs';
 const fixture=JSON.parse(readFileSync(new URL('./fixture.json',import.meta.url)));
 const harbor=JSON.parse(readFileSync(new URL('./fixtures/harbor-06.json',import.meta.url)));
 const supported=f=>({...f,science:20,submissionCost:5,economy:{mode:'sharedScience',refillAmount:10},researchSupport:{version:1}});
+
+test('fresh result survives refresh; leaving and reselecting shows repeat warning; paid repeat is fresh',()=>{
+  const f=supported(fixture),state=createState(f);
+  const wrong=candidates(f).find(t=>!validFormula(f,t));state.selected=wrong;
+  assert.deepEqual(submissionFeedback(publicView(f,state)),{fresh:false,revisited:false});
+  act(f,state,{type:'submit'});
+  assert.deepEqual(submissionFeedback(publicView(f,JSON.parse(JSON.stringify(state)))),{fresh:true,revisited:false});
+  state.selected={...f.answer};
+  assert.deepEqual(submissionFeedback(publicView(f,state),1),{fresh:false,revisited:false});
+  state.selected=wrong;
+  assert.deepEqual(submissionFeedback(publicView(f,state),1),{fresh:false,revisited:true});
+  act(f,state,{type:'submit'});
+  assert.deepEqual(submissionFeedback(publicView(f,state),1),{fresh:true,revisited:false});
+});
 
 test('composition reminder is paid-only, post-submission, nonspecific and opt-in',()=>{
   const f=supported(fixture);validate(f);

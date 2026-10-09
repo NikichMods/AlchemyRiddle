@@ -143,3 +143,29 @@ Human review: user confirms the revised interface looks good, specifically
 accepting the separate “Используйте” route line and consistent role treatment.
 This is subjective UI acceptance, not evidence of novice comprehension or a
 change to the research/production gate.
+
+## Case-20 feedback presentation accepted and implemented
+
+User corrects the prior heading to the complete “Было известно из предыдущих
+опытов”. Role icons are removed from connected prose (task, conditions, guidance,
+reference); colored bold role words remain. Shapes stay in column legends, pair
+headings and card identities. Ingredient names remain whole.
+
+User explicitly rejects a red button flash: a negative experiment is an
+observation, not player misconduct. Keep the button's accepted appearance. Fresh
+negative feedback now reads result -> applicable paid composition reminder ->
+continuation, with muted warm accents. No new clause-specific answer oracle.
+The repeated-mixture warning appears only on later reselection, not immediately
+after the submission. Selection departure is recorded in tab-local sessionStorage;
+refresh preserves fresh versus revisited presentation. This does not alter the
+saved model, chemistry, costs or history. Solved state suppresses repeat warning.
+
+Five support tests pass, including a new fresh/refresh/revisit/paid-repeat test;
+syntax and diff checks pass. Browser QA in an isolated failed-mixture copy confirms
+the message order, hidden immediate repeat warning, later warning surviving
+reload, zero prose role icons and retained heading icons. Original solved case-20
+session remains untouched; the temporary QA helper is closed after checking.
+Full regression suite was not repeated for this bounded presentation change.
+
+Next research discussion: logical-structure variety, wording variety and
+answer-order sensitivity. Positional difficulty bias remains unaccepted.

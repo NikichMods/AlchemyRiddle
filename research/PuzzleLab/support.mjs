@@ -14,3 +14,9 @@ export function compositionReminder(record) {
   return record?.success===false && record.compositionMismatch===true
     ? 'Сверьте выбранные компоненты со сведениями о составе.' : '';
 }
+// Presentation only: distinguish a just-observed outcome from a later revisit.
+export function submissionFeedback(view, departedAt=0) {
+  const history=submissions(view),record=selectedSubmission(view);
+  const fresh=Boolean(record && record===history.at(-1) && departedAt<history.length);
+  return {fresh,revisited:Boolean(record && !fresh)};
+}

@@ -95,7 +95,9 @@ button:hover:not(:disabled){filter:brightness(1.1)}
 .clue-role path{fill:currentColor;fill-opacity:.12;stroke:currentColor;stroke-opacity:.85;stroke-width:1.4}
 .keeper-aside{margin-top:4px;font-size:14px;color:#a5b9bf;font-style:italic}
 #submit-reason,#selected-history{font-size:14px;color:#bacbd0}
-#composition-reminder{color:#f0b4a5}
+#result.experiment-negative{color:#d8c5a2}
+#composition-reminder{color:#cdbfa8;font-size:14px;margin:0}
+#experiment-next{color:#bacbd0;font-size:14px;margin:0}
 #mixtures{padding-left:22px}
 #mixtures li{margin:10px 0;font-size:14px}
 .mixture-refs{display:flex;gap:6px;margin-bottom:4px}

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
-let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder;
+let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder,submissionFeedback;
 const $ = id => document.getElementById(id);
 let view;
 let queue = Promise.resolve();
@@ -37,7 +37,7 @@ function relationJournal(s) {
     const observations = s.knownRelations.filter(r => tested.some(h => pairMatches(h,r.slots,r.tuple)) === fresh);
     if (!observations.length) continue;
     const section = document.createElement('section'); section.className = `observation-source ${fresh ? 'new' : 'prior'}`;
-    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Мои исследования' : 'Из предыдущих опытов'; section.append(heading);
+    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Мои исследования' : 'Было известно из предыдущих опытов'; section.append(heading);
     const columns = document.createElement('div'); columns.className = 'relation-columns';
     for (let i=0; i<view.slots.length-1; i++) {
       const slots = [view.slots[i].id,view.slots[i+1].id];
@@ -90,17 +90,20 @@ const roleForms = {
   essence:['эссенция','эссенции','эссенцию','эссенцией']
 };
 const rolePattern = new RegExp(`(?<![\\p{L}\\p{N}_])(${Object.values(roleForms).flat().join('|')})(?![\\p{L}\\p{N}_])`,'giu');
-function roleContents(text) {
+function roleContents(text, {icons=false}={}) {
   const parts = document.createDocumentFragment();
   for (const part of text.split(rolePattern)) {
     const slot = Object.keys(roleForms).find(id=>roleForms[id].includes(part.toLowerCase()));
     if (!slot || !view.slots.some(s=>s.id===slot)) {parts.append(document.createTextNode(part));continue;}
     const label=document.createElement('strong');label.className=`clue-role role-${slot}`;
+    if(icons){
     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
     svg.setAttribute('viewBox','0 0 40 34');svg.setAttribute('aria-hidden','true');
     svg.setAttribute('focusable','false');
     const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',slotShapes[slot]);
-    svg.append(path);label.append(svg,document.createTextNode(part));parts.append(label);
+    svg.append(path);label.append(svg);
+    }
+    label.append(document.createTextNode(part));parts.append(label);
   }
   return parts;
 }
@@ -113,7 +116,7 @@ function clueContents(text) {
   return parts;
 }
 function setRoleText(element, text) {
-  element.replaceChildren(roleContents(text));
+  element.replaceChildren(roleContents(text,{icons:/^(H[1-6]|LEGEND)$/.test(element.tagName)}));
 }
 function decorateRoleText(root) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -251,14 +254,20 @@ function render() {
   $('refill').disabled = s.status !== 'playing';
   $('submit').disabled = s.status !== 'playing' || s.science < view.submissionCost || !view.slots.every(slot => s.selected[slot.id]);
   const lastSubmission = submissions.at(-1);
-  $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : s.status === 'exhausted' ? 'Формула не подошла. Финальных проверок не осталось.' : lastSubmission && !lastSubmission.success ? 'Формула не подошла. Можно продолжить исследование.' : '';
   const support=Boolean(view.researchSupport);
   const previous=support?selectedSubmission(view):undefined;
+  const departedAt=Number(sessionStorage.getItem(`lab-feedback-departed:${view.id}`)??0);
+  const feedback=support?submissionFeedback(view,departedAt):{fresh:Boolean(lastSubmission),revisited:false};
+  const failed=feedback.fresh && lastSubmission?.success===false;
+  $('result').textContent = s.status === 'solved' ? 'Формула найдена! Ваше исследование завершено.' : failed ? 'Формула не подошла.' : '';
+  $('result').classList.toggle('experiment-negative',failed);
   $('submit-reason').hidden=!support;
   $('submit-reason').textContent=support?submitBlockReason(view):'';
-  $('composition-reminder').hidden=!support || !compositionReminder(previous);
-  $('composition-reminder').textContent=support?compositionReminder(previous):'';
-  $('selected-history').hidden=!previous;
+  $('composition-reminder').hidden=!support || !failed || !compositionReminder(previous);
+  $('composition-reminder').textContent=support && failed?compositionReminder(previous):'';
+  $('experiment-next').hidden=!failed;
+  $('experiment-next').textContent=failed?(s.status==='exhausted'?'Финальных проверок не осталось.':'Можно продолжить исследование.'):'';
+  $('selected-history').hidden=!previous || !feedback.revisited || s.status!=='playing';
   $('selected-history').textContent=previous?`Эта смесь уже проверена: ${previous.success?'формула найдена':'формула не подошла'}.${s.status==='playing'?` Повторная проверка стоит ${view.submissionCost} Science.`:''}`:'';
   $('mixture-history').hidden=!support || !recordedSubmissions(view).length;
   $('mixtures').replaceChildren(...(support?recordedSubmissions(view):[]).map((h,i)=>{
@@ -276,7 +285,15 @@ async function request(path, body) {
 }
 function action(body) {
   queue = queue.then(async () => {
-    try {view = await request('/api/action', body); await loadSupport(); render(); $('error').textContent = '';}
+    try {
+      const before=view;
+      view = await request('/api/action', body);
+      if(view.slots.some(slot=>before.state.selected[slot.id]!==view.state.selected[slot.id])){
+        const count=before.state.history.filter(h=>typeof h.success==='boolean').length;
+        sessionStorage.setItem(`lab-feedback-departed:${view.id}`,String(count));
+      }
+      await loadSupport(); render(); $('error').textContent = '';
+    }
     catch(e) {$('error').textContent = e.message;}
   });
   return queue;
@@ -286,7 +303,7 @@ $('refill').onclick = () => action({type:'refill'});
 async function loadSupport() {
   if(view.researchSupport && !submitBlockReason) {
     const module=await import('./support.mjs');
-    ({submitBlockReason,submissions:recordedSubmissions,selectedSubmission,compositionReminder}=module);
+    ({submitBlockReason,submissions:recordedSubmissions,selectedSubmission,compositionReminder,submissionFeedback}=module);
   }
 }
 try {view = await request('/api/state'); await loadSupport(); render();}
