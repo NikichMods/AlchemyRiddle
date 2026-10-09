@@ -70,3 +70,30 @@ of `generator_route_ranking` or production code. Before wider adoption, record
 the user's choice and assess resulting packages/routes; human readability,
 interest and difficulty remain unproved. Existing ranking, quality gates,
 curriculum semantics and solved case 20 are preserved.
+
+## Accepted and applied to main research builders
+
+User accepts family-first as the algorithm's baseline. Clarification: this is
+not stricter filtering; the unchanged gates receive differently sampled proposals.
+Compared with the old narrow pool the measured mean yield is about 5% lower,
+with broader represented families; compared with expanded flat it is higher.
+Adequacy is bounded to this research envelope, not guaranteed for every save/target.
+
+Shared implementation now lives in `reasoning_diversity_screen.py` and is used
+by its `build_options` and `generator_route_ranking.py`. The comparison arm uses
+the same helper. Existing frozen evidence and specialized historical/control
+searches are not rewritten. Main ranking/recency weights, clue predicates and
+acceptance thresholds are unchanged. No quotas or smooth decay introduced.
+
+Integration verification: all 27 research tests pass. Full main-ranking run on
+the verified corpus completes in 13.36 seconds: 152 fields, 33,280 package
+attempts after the existing field-floor skip, 504 eligible packages and a
+199-candidate reservoir covering 18/19 targets. Selection-policy replays 19,104;
+independent-seed validation replays 38,208. This run uses the main tool's historical
+field/draw setup and reservoir; its counts are not directly paired with the trial
+table above. Artifact: `family-first-ranking-adopted-2026-10-09.json`; exact
+pool/witnesses remain private. This proves pipeline execution, not a new tuning
+decision from its multi-weight experiment arms or player interest acceptance.
+
+Current state: family-first is the accepted main research sampling baseline.
+Production remains BLOCKED and no player fixture has been opened or changed.

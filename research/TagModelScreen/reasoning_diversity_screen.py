@@ -297,6 +297,27 @@ def family_root(value):
     return value
 
 
+def family_groups(clues):
+    groups = defaultdict(list)
+    for i, clue in enumerate(clues):
+        groups[family_root(clue[0])].append(i)
+    return dict(sorted(groups.items()))
+
+
+def draw_family_first(groups, k, rng):
+    """Uniform available root family, then uniform unused predicate; repeats allowed."""
+    chosen = []
+    for _ in range(k):
+        available = [(family, [i for i in ids if i not in chosen])
+                     for family, ids in groups.items()]
+        available = [(family, ids) for family, ids in available if ids]
+        if not available:
+            raise ValueError('Not enough distinct predicates')
+        _, ids = rng.choice(available)
+        chosen.append(rng.choice(ids))
+    return tuple(sorted(chosen))
+
+
 def option_from_combo(model, clues, combo, triples, target_index):
     full = (1 << len(triples)) - 1
     mask = full
@@ -377,14 +398,13 @@ def build_options(
             )
             if len(clues) < 2:
                 continue
+            groups = family_groups(clues)
             seen = set()
             for _ in range(packages_per_surface):
                 count = 2 if rng.random() < 0.5 else 3
                 if len(clues) < count:
                     continue
-                combo = tuple(sorted(rng.sample(
-                    range(len(clues)), count
-                )))
+                combo = draw_family_first(groups, count, rng)
                 if combo in seen:
                     continue
                 seen.add(combo)

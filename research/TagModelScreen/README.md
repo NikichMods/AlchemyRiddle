@@ -376,3 +376,11 @@ use root operators, permit repeated families and exclude reused predicates.
 Trial/results: `docs/research/FAMILY_FIRST_COMPARISON_2026-10-09.md`.
 Focused sampler checks: `test_family_first.py`. This is not a default production
 or ranking-generator switch.
+
+Subsequent user acceptance: family-first now is the main three-slot research
+sampling baseline (`reasoning_diversity_screen.build_options` and
+`generator_route_ranking`). Shared helper resides in the reasoning module;
+comparison imports it. Historical/control probes and frozen artifacts retain
+their explicit semantics. Integration evidence:
+`family-first-ranking-adopted-2026-10-09.json`, documented in the trial follow-up.
+Production implementation remains separately gated.

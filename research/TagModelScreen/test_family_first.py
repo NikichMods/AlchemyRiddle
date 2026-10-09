@@ -1,7 +1,7 @@
 """Family-first draws must remove multiplicity bias without forbidding repetitions."""
 import random
 import unittest
-from condition_variety_comparison import family_groups, draw_family_first
+from reasoning_diversity_screen import family_groups, draw_family_first
 
 
 class FamilyFirst(unittest.TestCase):

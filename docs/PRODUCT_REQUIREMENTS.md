@@ -250,6 +250,15 @@ Keep existing finite recent-repetition preferences; smooth age decay and a new
 structure-classification/quota mechanism are not required now. This does not
 waive existing interaction-quality checks or deliberate curriculum practice.
 
+Accepted sampling baseline 2026-10-09 after the paired corpus trial: choose an
+available logical root family first, then a concrete unused predicate within it.
+Uniform family chance is the current simple research baseline, not an obligation
+to equalize final-puzzle frequencies. Repeated families remain legal; identical
+predicate reuse within a package is excluded. This changes proposal sampling,
+not quality thresholds or accepted ranking/recency weights. Main three-slot
+research builders use the shared sampler; historical diagnostic/control arms
+remain explicit. Production implementation remains separately gated.
+
 Accepted generator requirement:
 - avoid accidental campaign-level repetition not only of reagent identities, but
   also of exact property signatures and recently used reasoning motifs;

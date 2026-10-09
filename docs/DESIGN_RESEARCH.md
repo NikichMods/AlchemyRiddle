@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Family-first accepted as main research sampling baseline — 2026-10-09
+
+User accepts family-first after the paired trial. It changes proposal sampling,
+not filter strictness: unchanged quality/necessity/ranking/recency criteria.
+Shared helper now drives main three-slot `build_options` and route-ranking
+generation; comparison imports the same implementation. Repetitions legal,
+no final-puzzle family quotas or smooth decay. Read implementation follow-up in
+`research/FAMILY_FIRST_COMPARISON_2026-10-09.md`. All 27 tests pass; full ranking
+pipeline completes with 199 reservoir candidates covering 18/19 targets and
+independent-seed route validation. New route tuning/interest unaccepted.
+Historical/control probes retained; production BLOCKED. Preserve solved case 20.
+
 ### Family-first trial positive; adoption not yet selected — 2026-10-09
 
 User selects testing random family-first draws, not one-of-each quotas. Read

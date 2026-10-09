@@ -141,6 +141,7 @@ def run(input_path, private_path, public_path):
         for surface in surfaces:
             counters['fields'] += 1
             raw, triples, target_index = reasoning.generate_true_weak_clues(model, model.tags, formula.triple, surface)
+            groups = reasoning.family_groups(raw)
             full = (1 << len(triples))-1
             compatible = sum(1 << i for i, t in enumerate(triples)
                              if all(reasoning.stable_relation(model, e) for e in bounded.edges(t)))
@@ -157,7 +158,7 @@ def run(input_path, private_path, public_path):
                     continue
                 if len(raw) < k:
                     continue
-                combo = tuple(sorted(rng.sample(range(len(raw)), k)))
+                combo = reasoning.draw_family_first(groups, k, rng)
                 if combo in seen:
                     continue
                 seen.add(combo)

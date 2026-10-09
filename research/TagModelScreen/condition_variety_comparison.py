@@ -1,6 +1,6 @@
 """Bounded paired corpus screen; public aggregates, private exact witnesses."""
 import argparse
-from collections import Counter, defaultdict
+from collections import Counter
 import hashlib
 import json
 import random
@@ -11,6 +11,7 @@ import bounded_quality_diagnostic as quality
 from field_feasibility import supports_necessary_clues
 import progression_variable_field_screen as three
 import reasoning_diversity_screen as reasoning
+from reasoning_diversity_screen import family_groups, draw_family_first
 
 ROOT = Path(__file__).resolve().parents[2]
 NEW = {'shared', 'count_mixed'}
@@ -38,27 +39,6 @@ def admissible(model, raw, combo, triples, target_index, compatible):
         return None, 'ordinaryQuality'
     return dict(families=row['families'], clues=[raw[i][2] for i in combo],
                 masks=masks, structure=structure), 'eligible'
-
-
-def family_groups(clues):
-    groups = defaultdict(list)
-    for i, clue in enumerate(clues):
-        groups[reasoning.family_root(clue[0])].append(i)
-    return dict(sorted(groups.items()))
-
-
-def draw_family_first(groups, k, rng):
-    """Uniform available root family, then uniform unused predicate; repeats allowed."""
-    chosen = []
-    for _ in range(k):
-        available = [(family, [i for i in ids if i not in chosen])
-                     for family, ids in groups.items()]
-        available = [(family, ids) for family, ids in available if ids]
-        if not available:
-            raise ValueError('Not enough distinct predicates')
-        _, ids = rng.choice(available)
-        chosen.append(rng.choice(ids))
-    return tuple(sorted(chosen))
 
 
 def run(corpus, private, public, family_first=False, draw_offset=0):
