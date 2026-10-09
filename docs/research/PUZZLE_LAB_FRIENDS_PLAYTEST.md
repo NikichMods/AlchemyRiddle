@@ -330,6 +330,34 @@ code changed by this diagnostic step.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
   documents subscription-scoped profiles and reconnect for applying changes.
 
+## ngrok preflight — 2026-10-10
+
+User considers ngrok and asks about Russian visitor access and selective Happ
+rules before registration. This is not a completed ngrok deployment. Official
+[ERR_NGROK_9040](https://ngrok.com/docs/errors/err_ngrok_9040) describes IP-based
+agent rejection; a dated first-person Russian-IP report exists, but it does not
+establish a current blanket visitor restriction. Agent/dashboard and visitor
+connectivity must be assessed separately.
+
+A bounded ordinary-selective-mode host check reports RU for a separate country
+control request. ngrok.com fails TLS EOF and dashboard access fails, whereas a
+random unassigned ngrok-free.app hostname returns ngrok's HTTP 404/3200 offline
+endpoint response. This proves a public-edge response on this host's tested
+path, not playable content, not every domain/provider, and not a friend's network.
+The control does not establish identical egress for every destination under
+selective routing. No live puzzle or account is published by this check.
+
+Suggested subscription-scoped Proxy suffix rules: ngrok.com, ngrok-agent.com,
+ngrok-free.app, ngrok-free.dev and ngrok.app, using the existing `domain:` syntax.
+The first covers dashboard/API/download subdomains; official default agent
+ingress is connect.ngrok-agent.com:443. Both free-domain families appear in
+current official docs/blog; use the actual account-assigned hostname for the
+server's exact external-origin allowlist. Do not replace exact host checks with
+a blanket provider wildcard. No route/profile changes made by the agent.
+Next: user applies selective rules and reconnects; verify website and agent
+separately, then test the actual puzzle URL from an independent Russian visitor
+connection without VPN. Do not promise VPN-free play based on the offline probe.
+
 ## Official references
 
 - [Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/):
