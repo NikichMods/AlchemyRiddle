@@ -210,6 +210,15 @@ Neither successful proxy routing nor a VPN-specific failure is proven. Next
 evidence required: active subscription/profile Proxy rules and current VPN mode
 in the Happ UI. No working URL or HTTPS session-persistence result is established.
 
+The user identified the running Flowseal Zapret bundle as a possible TLS cause.
+Read-only inspection of its registered service command shows no TCP/UDP 7844 in
+the WinDivert port filters, making direct handling of tunnel traffic unlikely;
+this does not rule out effects on VPN outer transport or other network layers.
+A bounded temporary-stop/public-probe/restore diagnostic was attempted, but
+Windows denied opening the service for stop. The test did not run, the service
+remained Running, and no settings or startup mode changed. This is an OS service
+permission limit, not evidence for or against the conflict hypothesis.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
