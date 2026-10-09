@@ -219,6 +219,15 @@ Windows denied opening the service for stop. The test did not run, the service
 remained Running, and no settings or startup mode changed. This is an OS service
 permission limit, not evidence for or against the conflict hypothesis.
 
+The user then disabled Zapret. Inspection found neither its service nor a winws
+process. Both the existing tunnel probe and a fresh same-version/global/HTTP2
+friend-harness start still timed out publicly with repeated TLS handshake EOF.
+Original 4183 returned 200. Disabling Zapret did not remove the observed failure;
+this does not support Zapret as the primary cause. The user is asked to restore
+their usual Zapret setup; because the service is now absent, simply starting that
+service is unavailable. No service recreation or configuration change is made
+by the agent. Active Happ routing remains the next unverified boundary.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
