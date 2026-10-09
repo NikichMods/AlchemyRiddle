@@ -384,3 +384,10 @@ comparison imports it. Historical/control probes and frozen artifacts retain
 their explicit semantics. Integration evidence:
 `family-first-ranking-adopted-2026-10-09.json`, documented in the trial follow-up.
 Production implementation remains separately gated.
+
+`rare_opportunity_screen.py PRIVATE_INPUT_ROOT AGGREGATES.json` compares bounded
+rarity preference on the frozen family-first pool and held-out route estimates.
+It uses opportunity target coverage from earlier witnesses, never published
+exact formula rows. No default score change; trial and limits:
+`docs/research/RARE_OPPORTUNITY_COMPARISON_2026-10-10.md`. Checks:
+`test_rare_opportunity.py`.

@@ -4,6 +4,20 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Rare-opportunity comparison complete on isolated research branch — 2026-10-10
+
+Read `research/RARE_OPPORTUNITY_COMPARISON_2026-10-10.md`. Frozen 199-package pool,
+12 orders, 6 settings, bounded bonuses with recent-exposure suppression. Small
+bonus increases shared-property selections 56 to 62 of 1296, without increased
+paired semantic repeats; family entropy unchanged/improved. Fresh preferred-3
+already uses 11/12 opportunities and gains none. Small route-tail tradeoff in
+fresh preferred-5 (20/216 to 21/216 above-five means) despite lower overall mean.
+32 tests and original retained-selection replay pass. Only one rare reservoir
+candidate limits calibration: no default weight adopted. Next proposed bounded
+audit is rare-candidate loss before selection, not stronger weighting. Separate
+`research/rare-opportunity-screen` branch/worktree prevents conflict with network
+playtest preparation. Main algorithms/fixtures unchanged; production BLOCKED.
+
 ### Rare-opportunity preference principle accepted; weights open — 2026-10-09
 
 User wants suitable rare opportunities valued without making rare motifs dominate

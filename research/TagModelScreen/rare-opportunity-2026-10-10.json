@@ -1,0 +1,1030 @@
+{
+  "complete": true,
+  "targets": 19,
+  "poolCandidates": 199,
+  "opportunityTargetCoverage": {
+    "count": 18,
+    "xor": 18,
+    "count_mixed": 18,
+    "imp_neg": 17,
+    "literal": 18,
+    "imp_pos": 17,
+    "shared": 2
+  },
+  "prior": {
+    "count": 0,
+    "xor": 0,
+    "count_mixed": 0,
+    "imp_neg": 0,
+    "literal": 0,
+    "imp_pos": 0,
+    "shared": 0.5789473684210527
+  },
+  "orders": 12,
+  "hashes": {
+    "family-first-private-0.json": "0e9e46b553b367566614961389ead64892e85963b208f6d3a56cd2448618f073",
+    "family-first-private-100000.json": "2a6d4f25ce9950a2b4725423bef9ec0001b89e125708274e1ce280c26440b1a4",
+    "family-first-private-200000.json": "20b2b716ace2ad724d82856888c3387e9b58faedb82ab7d886aed72be9ab7edf",
+    "family-first-ranking-adopted-private.json": "135a8ed049b1a3548cd2e30fa9658aef5d1eda525cd18141c862c88c12c34d93",
+    "rare_opportunity_screen.py": "8364ac5b6ff88a445e50d74790ebe060f84d781b83fd41cd4ce3607b16623c58"
+  },
+  "results": [
+    {
+      "context": 0,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 69,
+            "literal": 58,
+            "xor": 90,
+            "imp_pos": 50,
+            "count_mixed": 78,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6483896307539787,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.021241830065359478,
+            "heldOutMean": 3.5539641203703702,
+            "selectedAbove5": 0.032407407407407406,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.511863425925926,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6561113269875567,
+            "heldOutMean": 3.567997685185185,
+            "distinctFamilies": 7
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 69,
+            "literal": 58,
+            "xor": 90,
+            "imp_pos": 50,
+            "count_mixed": 78,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6483896307539787,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.021241830065359478,
+            "heldOutMean": 3.5539641203703702,
+            "selectedAbove5": 0.032407407407407406,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.511863425925926,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6561113269875567,
+            "heldOutMean": 3.567997685185185,
+            "distinctFamilies": 7
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 69,
+            "literal": 58,
+            "xor": 90,
+            "imp_pos": 50,
+            "count_mixed": 78,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6483896307539787,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.021241830065359478,
+            "heldOutMean": 3.5539641203703702,
+            "selectedAbove5": 0.032407407407407406,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.511863425925926,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6561113269875567,
+            "heldOutMean": 3.567997685185185,
+            "distinctFamilies": 7
+          }
+        },
+        "1": {
+          "families": {
+            "count": 69,
+            "literal": 58,
+            "xor": 90,
+            "imp_pos": 50,
+            "count_mixed": 78,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6483896307539787,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.021241830065359478,
+            "heldOutMean": 3.5539641203703702,
+            "selectedAbove5": 0.032407407407407406,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.511863425925926,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6561113269875567,
+            "heldOutMean": 3.567997685185185,
+            "distinctFamilies": 7
+          }
+        },
+        "2": {
+          "families": {
+            "count": 69,
+            "literal": 58,
+            "xor": 90,
+            "imp_pos": 50,
+            "count_mixed": 78,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6483896307539787,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.021241830065359478,
+            "heldOutMean": 3.5539641203703702,
+            "selectedAbove5": 0.032407407407407406,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.511863425925926,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6561113269875567,
+            "heldOutMean": 3.567997685185185,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 66,
+            "literal": 59,
+            "imp_neg": 54,
+            "xor": 82,
+            "count_mixed": 69,
+            "imp_pos": 61,
+            "shared": 7
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6272235598054636,
+            "distinctFamilies": 6.583333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.012254901960784314,
+            "heldOutMean": 3.913194444444444,
+            "selectedAbove5": 0.09259259259259259,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.5925029822998074,
+            "heldOutMean": 3.910300925925926,
+            "distinctFamilies": 6.333333333333333
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6387970856406824,
+            "heldOutMean": 3.914158950617284,
+            "distinctFamilies": 6.666666666666667
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 64,
+            "literal": 60,
+            "imp_neg": 54,
+            "xor": 82,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6589225518218527,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.9087818287037037,
+            "selectedAbove5": 0.09722222222222221,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.6403195485797917,
+            "heldOutMean": 3.927372685185185,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.665123552902539,
+            "heldOutMean": 3.9025848765432096,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 64,
+            "literal": 60,
+            "imp_neg": 54,
+            "xor": 82,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6589225518218527,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.9087818287037037,
+            "selectedAbove5": 0.09722222222222221,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.6403195485797917,
+            "heldOutMean": 3.927372685185185,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.665123552902539,
+            "heldOutMean": 3.9025848765432096,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "1": {
+          "families": {
+            "count": 64,
+            "literal": 60,
+            "imp_neg": 54,
+            "xor": 82,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6589225518218527,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.9087818287037037,
+            "selectedAbove5": 0.09722222222222221,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.6403195485797917,
+            "heldOutMean": 3.927372685185185,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.665123552902539,
+            "heldOutMean": 3.9025848765432096,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "2": {
+          "families": {
+            "count": 62,
+            "literal": 59,
+            "imp_neg": 54,
+            "xor": 81,
+            "count_mixed": 68,
+            "imp_pos": 61,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.677489293897114,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.015522875816993464,
+            "heldOutMean": 3.891710069444444,
+            "selectedAbove5": 0.08796296296296297,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.67994337243866,
+            "heldOutMean": 3.8721064814814814,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.676671267716599,
+            "heldOutMean": 3.898244598765432,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 68,
+            "literal": 59,
+            "xor": 89,
+            "imp_pos": 53,
+            "count_mixed": 74,
+            "imp_neg": 55,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.644465904855836,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.02369281045751634,
+            "heldOutMean": 3.4997106481481484,
+            "selectedAbove5": 0.027777777777777776,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.455439814814815,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6508796924566997,
+            "heldOutMean": 3.5144675925925926,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 68,
+            "literal": 59,
+            "xor": 89,
+            "imp_pos": 53,
+            "count_mixed": 74,
+            "imp_neg": 55,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.644465904855836,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.02369281045751634,
+            "heldOutMean": 3.4997106481481484,
+            "selectedAbove5": 0.027777777777777776,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.455439814814815,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6508796924566997,
+            "heldOutMean": 3.5144675925925926,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 67,
+            "literal": 59,
+            "xor": 89,
+            "imp_pos": 53,
+            "count_mixed": 74,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6543147294262655,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.025326797385620915,
+            "heldOutMean": 3.4958043981481484,
+            "selectedAbove5": 0.027777777777777776,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.455439814814815,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.664011458550606,
+            "heldOutMean": 3.509259259259259,
+            "distinctFamilies": 7
+          }
+        },
+        "1": {
+          "families": {
+            "count": 67,
+            "literal": 59,
+            "xor": 89,
+            "imp_pos": 53,
+            "count_mixed": 74,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6543147294262655,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.025326797385620915,
+            "heldOutMean": 3.4958043981481484,
+            "selectedAbove5": 0.027777777777777776,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.455439814814815,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.664011458550606,
+            "heldOutMean": 3.509259259259259,
+            "distinctFamilies": 7
+          }
+        },
+        "2": {
+          "families": {
+            "count": 67,
+            "literal": 59,
+            "xor": 89,
+            "imp_pos": 53,
+            "count_mixed": 74,
+            "imp_neg": 55,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6543147294262655,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.025326797385620915,
+            "heldOutMean": 3.4958043981481484,
+            "selectedAbove5": 0.027777777777777776,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.625224542053245,
+            "heldOutMean": 3.455439814814815,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.664011458550606,
+            "heldOutMean": 3.509259259259259,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 65,
+            "literal": 58,
+            "imp_neg": 54,
+            "xor": 83,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 8
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.636085107667225,
+            "distinctFamilies": 6.666666666666667,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.816189236111111,
+            "selectedAbove5": 0.08333333333333333,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.5925029822998074,
+            "heldOutMean": 3.839699074074074,
+            "distinctFamilies": 6.333333333333333
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6506124827896973,
+            "heldOutMean": 3.8083526234567904,
+            "distinctFamilies": 6.777777777777778
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 64,
+            "literal": 59,
+            "imp_neg": 53,
+            "xor": 83,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.655810894436204,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.79296875,
+            "selectedAbove5": 0.07870370370370369,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.632010831094006,
+            "heldOutMean": 3.779513888888889,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6637442488836034,
+            "heldOutMean": 3.7974537037037037,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 64,
+            "literal": 59,
+            "imp_neg": 53,
+            "xor": 83,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.655810894436204,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.79296875,
+            "selectedAbove5": 0.07870370370370369,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.632010831094006,
+            "heldOutMean": 3.779513888888889,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6637442488836034,
+            "heldOutMean": 3.7974537037037037,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "1": {
+          "families": {
+            "count": 64,
+            "literal": 59,
+            "imp_neg": 53,
+            "xor": 83,
+            "count_mixed": 68,
+            "imp_pos": 62,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.655810894436204,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013888888888888888,
+            "heldOutMean": 3.79296875,
+            "selectedAbove5": 0.07870370370370369,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.632010831094006,
+            "heldOutMean": 3.779513888888889,
+            "distinctFamilies": 6.666666666666667
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6637442488836034,
+            "heldOutMean": 3.7974537037037037,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "2": {
+          "families": {
+            "count": 62,
+            "literal": 58,
+            "imp_neg": 53,
+            "xor": 82,
+            "count_mixed": 68,
+            "imp_pos": 61,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.674377636511466,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.015522875816993464,
+            "heldOutMean": 3.773365162037037,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.671634654952874,
+            "heldOutMean": 3.706886574074074,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.675291963697663,
+            "heldOutMean": 3.7955246913580245,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 71,
+            "literal": 57,
+            "xor": 87,
+            "imp_pos": 52,
+            "count_mixed": 79,
+            "imp_neg": 53,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6397595814217762,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.03145424836601307,
+            "heldOutMean": 3.129412615740741,
+            "selectedAbove5": 0.013888888888888888,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.661729240500935,
+            "heldOutMean": 3.1067708333333335,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.632436361728723,
+            "heldOutMean": 3.13695987654321,
+            "distinctFamilies": 6.777777777777778
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 71,
+            "literal": 57,
+            "xor": 87,
+            "imp_pos": 52,
+            "count_mixed": 79,
+            "imp_neg": 53,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6397595814217762,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.03145424836601307,
+            "heldOutMean": 3.129412615740741,
+            "selectedAbove5": 0.013888888888888888,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.661729240500935,
+            "heldOutMean": 3.1067708333333335,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.632436361728723,
+            "heldOutMean": 3.13695987654321,
+            "distinctFamilies": 6.777777777777778
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 69,
+            "literal": 57,
+            "xor": 87,
+            "imp_pos": 53,
+            "count_mixed": 78,
+            "imp_neg": 53,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.661423265170158,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.03594771241830065,
+            "heldOutMean": 3.113064236111111,
+            "selectedAbove5": 0.013888888888888888,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.661729240500935,
+            "heldOutMean": 3.1067708333333335,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.661321273393232,
+            "heldOutMean": 3.115162037037037,
+            "distinctFamilies": 7
+          }
+        },
+        "1": {
+          "families": {
+            "count": 69,
+            "literal": 57,
+            "xor": 87,
+            "imp_pos": 53,
+            "count_mixed": 78,
+            "imp_neg": 53,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.661423265170158,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.03594771241830065,
+            "heldOutMean": 3.113064236111111,
+            "selectedAbove5": 0.013888888888888888,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.661729240500935,
+            "heldOutMean": 3.1067708333333335,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.661321273393232,
+            "heldOutMean": 3.115162037037037,
+            "distinctFamilies": 7
+          }
+        },
+        "2": {
+          "families": {
+            "count": 69,
+            "literal": 57,
+            "xor": 87,
+            "imp_pos": 53,
+            "count_mixed": 78,
+            "imp_neg": 53,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.661423265170158,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.03594771241830065,
+            "heldOutMean": 3.113064236111111,
+            "selectedAbove5": 0.013888888888888888,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.661729240500935,
+            "heldOutMean": 3.1067708333333335,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.661321273393232,
+            "heldOutMean": 3.115162037037037,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "arms": {
+        "0": {
+          "families": {
+            "count": 62,
+            "literal": 59,
+            "imp_neg": 52,
+            "xor": 83,
+            "count_mixed": 70,
+            "imp_pos": 60,
+            "shared": 10
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.654417674978102,
+            "distinctFamilies": 6.833333333333333,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.012254901960784314,
+            "heldOutMean": 3.431712962962963,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.662719654493289,
+            "heldOutMean": 3.3483796296296293,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6516503484730394,
+            "heldOutMean": 3.459490740740741,
+            "distinctFamilies": 6.777777777777778
+          }
+        },
+        "0.25": {
+          "families": {
+            "count": 62,
+            "literal": 60,
+            "imp_neg": 52,
+            "xor": 84,
+            "count_mixed": 69,
+            "imp_pos": 59,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6640889035412796,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.01184640522875817,
+            "heldOutMean": 3.4265769675925926,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.662719654493289,
+            "heldOutMean": 3.3483796296296293,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.66454531989061,
+            "heldOutMean": 3.4526427469135803,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "0.5": {
+          "families": {
+            "count": 62,
+            "literal": 60,
+            "imp_neg": 52,
+            "xor": 84,
+            "count_mixed": 69,
+            "imp_pos": 59,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6640889035412796,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.01184640522875817,
+            "heldOutMean": 3.4265769675925926,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.662719654493289,
+            "heldOutMean": 3.3483796296296293,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.66454531989061,
+            "heldOutMean": 3.4526427469135803,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "1": {
+          "families": {
+            "count": 62,
+            "literal": 60,
+            "imp_neg": 52,
+            "xor": 84,
+            "count_mixed": 69,
+            "imp_pos": 59,
+            "shared": 11
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.6640889035412796,
+            "distinctFamilies": 6.916666666666667,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.01184640522875817,
+            "heldOutMean": 3.4265769675925926,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.662719654493289,
+            "heldOutMean": 3.3483796296296293,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.66454531989061,
+            "heldOutMean": 3.4526427469135803,
+            "distinctFamilies": 6.888888888888889
+          }
+        },
+        "2": {
+          "families": {
+            "count": 61,
+            "literal": 59,
+            "imp_neg": 52,
+            "xor": 84,
+            "count_mixed": 69,
+            "imp_pos": 59,
+            "shared": 12
+          },
+          "means": {
+            "selected": 18,
+            "entropy": 2.672749689651824,
+            "distinctFamilies": 7,
+            "maxSemanticRepeat": 1.0833333333333333,
+            "adjacentSemanticRepeats": 0,
+            "adjacentFamilyOverlap": 0.013480392156862746,
+            "heldOutMean": 3.4265769675925926,
+            "selectedAbove5": 0.07407407407407407,
+            "selectedAbove7": 0.0
+          },
+          "originalThreeMeans": {
+            "entropy": 2.662719654493289,
+            "heldOutMean": 3.3483796296296293,
+            "distinctFamilies": 7
+          },
+          "additionalNineMeans": {
+            "entropy": 2.6760930347046696,
+            "heldOutMean": 3.4526427469135803,
+            "distinctFamilies": 7
+          }
+        }
+      }
+    }
+  ],
+  "caveat": "Frozen full-availability sample, no new field validation or human-interest proof. Sparse prior not a calibrated production weight; repeated target encounters not simulated."
+}

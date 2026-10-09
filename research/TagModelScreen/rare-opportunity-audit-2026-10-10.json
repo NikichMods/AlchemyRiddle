@@ -1,0 +1,221 @@
+{
+  "originalStoredSelectionsReproduced": true,
+  "comparisons": [
+    {
+      "context": 0,
+      "preferred": 3,
+      "weight": 0.25,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 3,
+      "weight": 0.5,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 3,
+      "weight": 1,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 3,
+      "weight": 2,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "weight": 0.25,
+      "changed": 20,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "weight": 0.5,
+      "changed": 20,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "weight": 1,
+      "changed": 20,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 0,
+      "preferred": 5,
+      "weight": 2,
+      "changed": 40,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "weight": 0.25,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "weight": 0.5,
+      "changed": 2,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "weight": 1,
+      "changed": 2,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 3,
+      "weight": 2,
+      "changed": 2,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "weight": 0.25,
+      "changed": 17,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "weight": 0.5,
+      "changed": 17,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "weight": 1,
+      "changed": 17,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 1,
+      "preferred": 5,
+      "weight": 2,
+      "changed": 37,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.05555555555555555,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "weight": 0.25,
+      "changed": 0,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "weight": 0.5,
+      "changed": 5,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "weight": 1,
+      "changed": 5,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 3,
+      "weight": 2,
+      "changed": 5,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "weight": 0.25,
+      "changed": 13,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "weight": 0.5,
+      "changed": 13,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "weight": 1,
+      "changed": 13,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    },
+    {
+      "context": 2,
+      "preferred": 5,
+      "weight": 2,
+      "changed": 20,
+      "ordersWithIncreasedSemanticRepeat": 0,
+      "maxAbove5FractionDelta": 0.0,
+      "repeatDetails": []
+    }
+  ]
+}
