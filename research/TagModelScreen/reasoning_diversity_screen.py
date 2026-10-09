@@ -27,9 +27,15 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 import progression_variable_field_screen as base
+from field_feasibility import supports_necessary_clues
 
 
 FAMILY_ORDER = ("literal", "count", "xor", "imp_pos", "imp_neg", "shared", "count_mixed")
+PACKAGE_SEARCH_BUDGET = 512
+RARE_SEARCH_RESERVE = 64
+# Current corpus opportunity evidence, not a permanent production rarity table.
+# See RARE_SEARCH_SELECTION_2026-10-10.md; helper supports multiple roots.
+RESEARCH_RARE_FAMILIES = frozenset({'shared'})
 
 
 def clone_tags(model):
@@ -318,6 +324,44 @@ def draw_family_first(groups, k, rng):
     return tuple(sorted(chosen))
 
 
+def focused_rare_pair(groups, rare, rng):
+    """Share bounded attention between available rare roots, then one partner."""
+    available = sorted(f for f in rare if groups.get(f))
+    if not available:
+        return None
+    anchor = rng.choice(groups[rng.choice(available)])
+    partners = [i for values in groups.values() for i in values if i != anchor]
+    if not partners:
+        return None
+    return tuple(sorted((anchor, rng.choice(partners))))
+
+
+def rare_package_proposals(groups, compatible_count, seed,
+                           reserve=RARE_SEARCH_RESERVE, rare=RESEARCH_RARE_FAMILIES,
+                           budget=PACKAGE_SEARCH_BUDGET):
+    """Tested bounded search; independent normal/focused proposal streams.
+
+    compatible_count=None preserves capacity-screen gates: main ranking provides
+    the complete-model count and retains its necessary-clue floor.
+    """
+    if budget < 0 or not 0 <= reserve <= budget:
+        raise ValueError('Reserve must fit the unchanged total budget')
+    normal_rng = random.Random(seed)
+    focused_rng = random.Random(seed + 10000000)
+    active = any(groups.get(f) for f in rare)
+    predicate_count = sum(map(len, groups.values()))
+    for attempt in range(budget):
+        k = normal_rng.choice((2, 3))
+        supported = compatible_count is None or supports_necessary_clues(compatible_count, k)
+        normal = (draw_family_first(groups, k, normal_rng)
+                  if supported and predicate_count >= k else None)
+        if active and attempt < reserve:
+            focused = focused_rare_pair(groups, rare, focused_rng)
+            yield focused if focused is not None else normal
+        else:
+            yield normal
+
+
 def option_from_combo(model, clues, combo, triples, target_index):
     full = (1 << len(triples)) - 1
     mask = full
@@ -387,12 +431,12 @@ def build_options(
     rng = random.Random(seed)
     result = []
 
-    for formula in model.formulas:
+    for ti, formula in enumerate(model.formulas):
         target = formula.triple
         options = {}
-        for surface in sampled_surfaces(
+        for fi, surface in enumerate(sampled_surfaces(
             model, target, surfaces_per_formula, rng
-        ):
+        )):
             clues, triples, target_index = generate_true_weak_clues(
                 model, tags, target, surface
             )
@@ -400,11 +444,11 @@ def build_options(
                 continue
             groups = family_groups(clues)
             seen = set()
-            for _ in range(packages_per_surface):
-                count = 2 if rng.random() < 0.5 else 3
-                if len(clues) < count:
+            reserve = min(RARE_SEARCH_RESERVE, packages_per_surface // 8)
+            for combo in rare_package_proposals(groups, None,
+                    seed + ti * 100000 + fi, reserve=reserve, budget=packages_per_surface):
+                if combo is None:
                     continue
-                combo = draw_family_first(groups, count, rng)
                 if combo in seen:
                     continue
                 seen.add(combo)

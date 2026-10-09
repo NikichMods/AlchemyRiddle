@@ -4,6 +4,24 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Bounded rare-family search adopted in main research builders — 2026-10-10
+
+User accepts the proposed search change. Read
+`research/RARE_SEARCH_ADOPTION_2026-10-10.md`. Shared helper now supplies main
+route-ranking and capacity builders: 64/512 focused rare-pair attempts when
+available, ordinary fallback, unchanged gates/retention/selection weights.
+Current evidence profile only marks shared rare; multiple roots supported.
+Main pipeline completes: 564 eligible/200 retained, 17/19 targets, 33,280 attempts
+including 128 focused attempts on two fields. Exact ordered pool, initial
+knowledge, route/held-out estimates and 18 default selection sequences match
+the already-tested repeat-0/reserve-64 candidate. All 200 packages independently
+verified; second caller exercised on 38 fields; 38 tests pass.
+This particular run retains no shared package; policy is bounded opportunity
+search, not guaranteed rare retention. Paired control also serves 17 targets;
+historical coupled-RNG 18-target run is not the matched control. Production
+BLOCKED; broader field/availability and human experience evidence remain open.
+Separate research branch; solved case 20 and network work preserved.
+
 ### Reserve-64 downstream selection and routes compared — 2026-10-10
 
 Read `research/RARE_SEARCH_SELECTION_2026-10-10.md`. All 24 baseline/reserve-64
@@ -15,8 +33,8 @@ zero. Held-out mean 3.590->3.582 overall, but small local costs: six paired
 max-template-repeat increases and four-known/preferred-5 above-five tail
 171->178 /2,544. Not strict dominance or human-experience evidence. Only one
 rare target per sequence; repeated rare campaign exposure untested.
-Recommend adopting reserve 64 as research search baseline, with unchanged gates,
-weights and no rarity bonus. Adoption not yet performed; user decision pending.
+This comparison recommended reserve 64 with unchanged gates and no rarity bonus;
+subsequent user acceptance/integration is recorded in the checkpoint above.
 Private complete pools/selections now frozen. 36 tests pass. Separate branch,
 solved case 20/network work untouched; production BLOCKED.
 

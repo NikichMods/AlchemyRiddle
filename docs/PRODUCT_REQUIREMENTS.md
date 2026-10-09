@@ -271,6 +271,21 @@ rarity to a permanent production fact. Numerical bonus/calibration is unselected
 compare final-selection diversity, repeated signatures and route suitability
 before adoption of any weight. Existing ranking remains unchanged for now.
 
+Accepted bounded rare-family search 2026-10-10: use 64 of the existing 512
+package attempts per searchable field for pairs containing an available rare
+condition family; other attempts remain ordinary family-first. Missing rare
+families use the full ordinary budget. This is search attention, not a required
+rare clue, extra attempt allowance or final-content quota. Preserve all main
+quality/necessity gates, uniform bounded retention and existing selection weights;
+no added rarity bonus is selected. Main research builders share the tested helper.
+Auxiliary capacity screens with smaller budgets use at most one eighth of their
+budget, capped at 64, preserving their own diagnostic gates. Current research
+opportunity profile marks shared property rare from frozen corpus evidence;
+multiple roots are supported, but broader rarity calibration remains open.
+This accepts a research search policy, not permanent production rarity weights
+or readiness for BepInEx implementation. Evidence and integration follow-up:
+`research/RARE_SEARCH_ADOPTION_2026-10-10.md`.
+
 Accepted generator requirement:
 - avoid accidental campaign-level repetition not only of reagent identities, but
   also of exact property signatures and recently used reasoning motifs;

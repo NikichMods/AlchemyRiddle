@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "exactOrderedPoolMatch": true,
+  "exactKnowledgeMatch": true,
+  "exactRouteAndHeldOutMatch": true,
+  "verifiedPackages": 200,
+  "exactDefaultSelectionSequences": 18,
+  "capacityBuilder": {
+    "fieldsInvoked": 38,
+    "budget": 512,
+    "reserve": 64,
+    "optionCount": 6378
+  },
+  "hashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "rare-search-selection-private-v1.json": "cf6b6d6151e97291391d09d9dbd56caf7b343360884d11d103ef276034c3da88",
+    "rare-search-adopted-ranking-private-v1.json": "04f9d830583892f1bd2c38234668af142e12304b3c087e9ee72c4eb3b7a1cbd8",
+    "verify_rare_search_adoption.py": "8760f79e9885ce45a731861e863f45037b19b286ad29850132957db78ea2d569"
+  },
+  "caveat": "Exact match to tested repeat 0, not a promise of rare retention in every random run."
+}

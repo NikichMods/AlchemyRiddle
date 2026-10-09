@@ -117,6 +117,8 @@ def sha(path):
 
 def run(input_path, private_path, public_path):
     assert not private_path.resolve().is_relative_to(ROOT)
+    if private_path.exists() or public_path.exists():
+        raise ValueError('Completed research artifacts are immutable')
     start = time.monotonic()
     deadline = start + 360
     model = three.load_model(input_path)
@@ -138,7 +140,8 @@ def run(input_path, private_path, public_path):
         surfaces = reasoning.sampled_surfaces(model, formula.triple, 8, rng)
         reservoir = []
         accepted = 0
-        for surface in surfaces:
+        retention_rng = random.Random(SEED + 800000 + ti)
+        for fi, surface in enumerate(surfaces):
             counters['fields'] += 1
             raw, triples, target_index = reasoning.generate_true_weak_clues(model, model.tags, formula.triple, surface)
             groups = reasoning.family_groups(raw)
@@ -149,16 +152,17 @@ def run(input_path, private_path, public_path):
                 counters['rejectFieldWitnessFloor'] += 1
                 continue
             seen = set()
-            for _ in range(512):
+            if any(groups.get(f) for f in reasoning.RESEARCH_RARE_FAMILIES):
+                counters['rareSearchableFields'] += 1
+                counters['focusedPackageAttempts'] += reasoning.RARE_SEARCH_RESERVE
+            for combo in reasoning.rare_package_proposals(groups, compatible.bit_count(),
+                    SEED + ti * 100 + fi):
                 check_cap()
                 counters['packageAttempts'] += 1
-                k = rng.choice((2, 3))
-                if not supports_necessary_clues(compatible.bit_count(), k):
+                if combo is None:
                     counters['rejectPackageWitnessFloor'] += 1
                     continue
-                if len(raw) < k:
-                    continue
-                combo = reasoning.draw_family_first(groups, k, rng)
+                k = len(combo)
                 if combo in seen:
                     continue
                 seen.add(combo)
@@ -187,7 +191,7 @@ def run(input_path, private_path, public_path):
                 if len(reservoir) < 12:
                     reservoir.append(row)
                 else:
-                    slot = rng.randrange(accepted)
+                    slot = retention_rng.randrange(accepted)
                     if slot < 12:
                         reservoir[slot] = row
         options.append(reservoir)
@@ -266,6 +270,9 @@ def run(input_path, private_path, public_path):
                                                      oldScoreBefore=a['oldScore'], oldScoreAfter=b['oldScore']))
     public = dict(scope='19 ordinary three-slot variants; full ingredient availability; sampled fixed candidate pool',
                   complete=True, repetitionStrength=REPETITION_STRENGTH,
+                  search=dict(policy='bounded rare-family pairs plus family-first',
+                              budget=reasoning.PACKAGE_SEARCH_BUDGET, reserve=reasoning.RARE_SEARCH_RESERVE,
+                              rareFamilies=sorted(reasoning.RESEARCH_RARE_FAMILIES)),
                   counters=dict(counters), coveredTargets=sum(bool(x) for x in options),
                   targets=len(formulas), candidatesPerTarget=[len(x) for x in options],
                   comparisons=comparisons, reviewedStructuralChanges=examples,

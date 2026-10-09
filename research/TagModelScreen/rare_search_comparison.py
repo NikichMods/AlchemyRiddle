@@ -13,41 +13,11 @@ import generator_route_ranking as ranking
 import progression_variable_field_screen as three
 import reasoning_diversity_screen as reasoning
 from rare_opportunity_screen import opportunity_prior
+from reasoning_diversity_screen import (PACKAGE_SEARCH_BUDGET as BUDGET,
+    focused_rare_pair as focused_pair, rare_package_proposals as proposals)
 
-BUDGET = 512
 RESERVES = (0, 64, 128)
 REPEATS = 12
-
-
-def focused_pair(groups, rare, rng):
-    """Share attention between available rare roots, then sample a partner."""
-    available = sorted(f for f in rare if groups.get(f))
-    if not available:
-        return None
-    anchor = rng.choice(groups[rng.choice(available)])
-    partners = [i for values in groups.values() for i in values if i != anchor]
-    if not partners:
-        return None
-    return tuple(sorted((anchor, rng.choice(partners))))
-
-
-def proposals(groups, compatible_count, seed, reserve, rare):
-    if not 0 <= reserve <= BUDGET:
-        raise ValueError('Reserve must fit the unchanged total budget')
-    normal_rng = random.Random(seed)
-    focused_rng = random.Random(seed + 10000000)
-    active = any(groups.get(f) for f in rare)
-    for attempt in range(BUDGET):
-        # Always consume the ordinary stream: identical remaining proposals in
-        # each paired arm, independent of focused-search and reservoir draws.
-        k = normal_rng.choice((2, 3))
-        normal = (reasoning.draw_family_first(groups, k, normal_rng)
-                  if supports_necessary_clues(compatible_count, k) else None)
-        if active and attempt < reserve:
-            focused = focused_pair(groups, rare, focused_rng)
-            yield focused if focused is not None else normal
-        else:
-            yield normal
 
 
 def run(corpus, private_root, private_path, public_path):
