@@ -201,6 +201,15 @@ global proxy or broad Cloudflare network rules. Native Windows UI control is
 unavailable in this agent session, so applying the Happ UI change requires the
 user; blind edits to its live storage are not a supported substitute.
 
+After the user reported adding the narrow domain rules and reconnecting, only
+the 2x2 friend harness was restarted. The new public API probe timed out; edge
+TLS handshakes repeatedly ended with EOF while startup connectivity pre-checks
+passed. Original 4183 still returned 200. The previously located routing metadata
+file predates this test and does not establish whether current UI edits applied.
+Neither successful proxy routing nor a VPN-specific failure is proven. Next
+evidence required: active subscription/profile Proxy rules and current VPN mode
+in the Happ UI. No working URL or HTTPS session-persistence result is established.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
