@@ -1,0 +1,1638 @@
+{
+  "complete": true,
+  "budgetPerSearchableField": 512,
+  "reserves": [
+    0,
+    64,
+    128
+  ],
+  "repeats": 12,
+  "searchableFields": 65,
+  "rareFamilies": [
+    "shared"
+  ],
+  "priorCoverage": {
+    "count": 18,
+    "xor": 18,
+    "count_mixed": 18,
+    "imp_neg": 17,
+    "literal": 18,
+    "imp_pos": 17,
+    "shared": 2
+  },
+  "results": [
+    {
+      "repeat": 0,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19622,
+        "necessity": 4225,
+        "eligible": 565,
+        "existingOptionGates": 602,
+        "duplicate": 668,
+        "ordinaryQuality": 340,
+        "unsupportedSize": 7258
+      },
+      "families": {
+        "imp_pos": 145,
+        "xor": 306,
+        "count": 214,
+        "count_mixed": 206,
+        "literal": 162,
+        "imp_neg": 108,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "imp_pos": 17,
+        "xor": 17,
+        "count": 17,
+        "count_mixed": 17,
+        "literal": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 83,
+        "imp_neg": 37,
+        "literal": 49,
+        "xor": 114,
+        "count_mixed": 69,
+        "imp_pos": 51
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 0,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19615,
+        "necessity": 4261,
+        "eligible": 564,
+        "existingOptionGates": 605,
+        "duplicate": 670,
+        "ordinaryQuality": 338,
+        "unsupportedSize": 7227
+      },
+      "families": {
+        "imp_pos": 143,
+        "xor": 305,
+        "count": 214,
+        "count_mixed": 207,
+        "literal": 162,
+        "imp_neg": 108,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "imp_pos": 17,
+        "xor": 17,
+        "count": 17,
+        "count_mixed": 17,
+        "literal": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 84,
+        "imp_neg": 38,
+        "literal": 51,
+        "xor": 113,
+        "count_mixed": 69,
+        "imp_pos": 48
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 0,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19604,
+        "necessity": 4286,
+        "eligible": 565,
+        "existingOptionGates": 608,
+        "duplicate": 685,
+        "ordinaryQuality": 337,
+        "unsupportedSize": 7195
+      },
+      "families": {
+        "imp_pos": 143,
+        "xor": 305,
+        "count": 214,
+        "count_mixed": 208,
+        "literal": 162,
+        "imp_neg": 108,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "imp_pos": 17,
+        "xor": 17,
+        "count": 17,
+        "count_mixed": 17,
+        "literal": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 83,
+        "imp_neg": 37,
+        "literal": 51,
+        "xor": 113,
+        "count_mixed": 70,
+        "imp_pos": 49
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 1,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4192,
+        "completeAnswer": 19727,
+        "existingOptionGates": 654,
+        "eligible": 571,
+        "duplicate": 679,
+        "ordinaryQuality": 323,
+        "unsupportedSize": 7134
+      },
+      "families": {
+        "count": 215,
+        "count_mixed": 217,
+        "imp_pos": 150,
+        "literal": 165,
+        "xor": 305,
+        "imp_neg": 102,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 17,
+        "count_mixed": 18,
+        "imp_pos": 17,
+        "literal": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 75,
+        "count_mixed": 80,
+        "imp_pos": 42,
+        "literal": 58,
+        "xor": 107,
+        "imp_neg": 42
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 1,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4228,
+        "completeAnswer": 19728,
+        "existingOptionGates": 653,
+        "eligible": 568,
+        "duplicate": 679,
+        "ordinaryQuality": 323,
+        "unsupportedSize": 7101
+      },
+      "families": {
+        "count": 215,
+        "count_mixed": 215,
+        "imp_pos": 149,
+        "literal": 164,
+        "xor": 302,
+        "imp_neg": 102,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count": 17,
+        "count_mixed": 18,
+        "imp_pos": 17,
+        "literal": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 74,
+        "count_mixed": 78,
+        "imp_pos": 48,
+        "literal": 56,
+        "xor": 107,
+        "imp_neg": 40,
+        "shared": 1
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 1,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4264,
+        "completeAnswer": 19696,
+        "existingOptionGates": 657,
+        "eligible": 566,
+        "duplicate": 698,
+        "ordinaryQuality": 322,
+        "unsupportedSize": 7077
+      },
+      "families": {
+        "count": 213,
+        "count_mixed": 215,
+        "imp_pos": 148,
+        "literal": 164,
+        "xor": 302,
+        "imp_neg": 101,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count": 17,
+        "count_mixed": 18,
+        "imp_pos": 17,
+        "literal": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 74,
+        "count_mixed": 79,
+        "imp_pos": 48,
+        "literal": 55,
+        "xor": 105,
+        "imp_neg": 41,
+        "shared": 1
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 2,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4298,
+        "completeAnswer": 19638,
+        "eligible": 519,
+        "ordinaryQuality": 358,
+        "duplicate": 660,
+        "existingOptionGates": 631,
+        "unsupportedSize": 7176
+      },
+      "families": {
+        "count": 170,
+        "literal": 168,
+        "imp_pos": 110,
+        "xor": 299,
+        "imp_neg": 98,
+        "count_mixed": 199,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 17,
+        "literal": 17,
+        "imp_pos": 15,
+        "xor": 17,
+        "imp_neg": 17,
+        "count_mixed": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 60,
+        "imp_pos": 37,
+        "literal": 72,
+        "imp_neg": 38,
+        "xor": 116,
+        "count_mixed": 75
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 2,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4328,
+        "completeAnswer": 19633,
+        "eligible": 517,
+        "ordinaryQuality": 356,
+        "duplicate": 660,
+        "existingOptionGates": 635,
+        "unsupportedSize": 7151
+      },
+      "families": {
+        "count": 169,
+        "literal": 168,
+        "imp_pos": 109,
+        "xor": 299,
+        "imp_neg": 96,
+        "count_mixed": 199,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 17,
+        "literal": 17,
+        "imp_pos": 15,
+        "xor": 17,
+        "imp_neg": 17,
+        "count_mixed": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 58,
+        "imp_pos": 39,
+        "literal": 75,
+        "imp_neg": 38,
+        "xor": 112,
+        "count_mixed": 76
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 2,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4358,
+        "completeAnswer": 19617,
+        "eligible": 515,
+        "ordinaryQuality": 354,
+        "duplicate": 671,
+        "existingOptionGates": 640,
+        "unsupportedSize": 7125
+      },
+      "families": {
+        "count": 168,
+        "literal": 168,
+        "imp_pos": 109,
+        "xor": 297,
+        "imp_neg": 96,
+        "count_mixed": 198,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 17,
+        "literal": 17,
+        "imp_pos": 15,
+        "xor": 17,
+        "imp_neg": 17,
+        "count_mixed": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 59,
+        "imp_pos": 38,
+        "literal": 72,
+        "imp_neg": 38,
+        "xor": 115,
+        "count_mixed": 75
+      },
+      "retained": 200,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 3,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19576,
+        "eligible": 522,
+        "necessity": 4330,
+        "duplicate": 701,
+        "existingOptionGates": 639,
+        "ordinaryQuality": 312,
+        "unsupportedSize": 7200
+      },
+      "families": {
+        "xor": 296,
+        "imp_pos": 135,
+        "count_mixed": 184,
+        "imp_neg": 88,
+        "count": 176,
+        "literal": 159,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "xor": 18,
+        "imp_pos": 17,
+        "count_mixed": 18,
+        "imp_neg": 15,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 64,
+        "xor": 110,
+        "imp_pos": 55,
+        "literal": 52,
+        "imp_neg": 35,
+        "count_mixed": 74,
+        "shared": 2
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 3,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19566,
+        "eligible": 525,
+        "necessity": 4357,
+        "duplicate": 711,
+        "existingOptionGates": 643,
+        "ordinaryQuality": 311,
+        "unsupportedSize": 7167
+      },
+      "families": {
+        "xor": 296,
+        "imp_pos": 136,
+        "count_mixed": 186,
+        "imp_neg": 88,
+        "count": 176,
+        "literal": 159,
+        "shared": 5
+      },
+      "targetCoverage": {
+        "xor": 18,
+        "imp_pos": 17,
+        "count_mixed": 18,
+        "imp_neg": 15,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 64,
+        "xor": 108,
+        "imp_pos": 56,
+        "literal": 51,
+        "imp_neg": 35,
+        "count_mixed": 74,
+        "shared": 5
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 3,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19559,
+        "eligible": 525,
+        "necessity": 4381,
+        "duplicate": 722,
+        "existingOptionGates": 649,
+        "ordinaryQuality": 309,
+        "unsupportedSize": 7135
+      },
+      "families": {
+        "xor": 296,
+        "imp_pos": 136,
+        "count_mixed": 186,
+        "imp_neg": 88,
+        "count": 176,
+        "literal": 159,
+        "shared": 5
+      },
+      "targetCoverage": {
+        "xor": 18,
+        "imp_pos": 17,
+        "count_mixed": 18,
+        "imp_neg": 15,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 64,
+        "xor": 108,
+        "imp_pos": 56,
+        "literal": 51,
+        "imp_neg": 35,
+        "count_mixed": 74,
+        "shared": 5
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 4,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19693,
+        "necessity": 4217,
+        "existingOptionGates": 657,
+        "ordinaryQuality": 336,
+        "duplicate": 677,
+        "eligible": 561,
+        "unsupportedSize": 7139
+      },
+      "families": {
+        "literal": 188,
+        "count_mixed": 199,
+        "count": 201,
+        "imp_neg": 98,
+        "xor": 303,
+        "imp_pos": 137,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "literal": 18,
+        "count_mixed": 18,
+        "count": 17,
+        "imp_neg": 17,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "imp_neg": 36,
+        "literal": 80,
+        "count_mixed": 80,
+        "imp_pos": 55,
+        "xor": 97,
+        "count": 73,
+        "shared": 1
+      },
+      "retained": 207,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 4,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19691,
+        "necessity": 4249,
+        "existingOptionGates": 658,
+        "ordinaryQuality": 335,
+        "duplicate": 681,
+        "eligible": 559,
+        "unsupportedSize": 7107
+      },
+      "families": {
+        "literal": 188,
+        "count_mixed": 198,
+        "count": 199,
+        "imp_neg": 97,
+        "xor": 301,
+        "imp_pos": 137,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "literal": 18,
+        "count_mixed": 18,
+        "count": 17,
+        "imp_neg": 17,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "imp_neg": 35,
+        "literal": 77,
+        "count_mixed": 78,
+        "imp_pos": 56,
+        "xor": 99,
+        "count": 74,
+        "shared": 2
+      },
+      "retained": 207,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 4,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19680,
+        "necessity": 4276,
+        "existingOptionGates": 661,
+        "ordinaryQuality": 335,
+        "duplicate": 694,
+        "eligible": 559,
+        "unsupportedSize": 7075
+      },
+      "families": {
+        "literal": 187,
+        "count_mixed": 199,
+        "count": 199,
+        "imp_neg": 97,
+        "xor": 301,
+        "imp_pos": 136,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "literal": 18,
+        "count_mixed": 18,
+        "count": 17,
+        "imp_neg": 17,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "imp_neg": 35,
+        "literal": 77,
+        "count_mixed": 81,
+        "imp_pos": 56,
+        "xor": 97,
+        "count": 72,
+        "shared": 3
+      },
+      "retained": 207,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 5,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19695,
+        "eligible": 548,
+        "necessity": 4205,
+        "ordinaryQuality": 321,
+        "existingOptionGates": 618,
+        "duplicate": 726,
+        "unsupportedSize": 7167
+      },
+      "families": {
+        "count_mixed": 229,
+        "imp_pos": 145,
+        "xor": 286,
+        "imp_neg": 101,
+        "count": 203,
+        "literal": 141,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 69,
+        "imp_pos": 44,
+        "xor": 114,
+        "imp_neg": 30,
+        "count_mixed": 83,
+        "literal": 59,
+        "shared": 1
+      },
+      "retained": 200,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 5,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19684,
+        "eligible": 547,
+        "necessity": 4236,
+        "ordinaryQuality": 316,
+        "existingOptionGates": 621,
+        "duplicate": 738,
+        "unsupportedSize": 7138
+      },
+      "families": {
+        "count_mixed": 230,
+        "imp_pos": 144,
+        "xor": 285,
+        "imp_neg": 101,
+        "count": 201,
+        "literal": 140,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 70,
+        "imp_pos": 46,
+        "xor": 112,
+        "imp_neg": 30,
+        "count_mixed": 81,
+        "literal": 58,
+        "shared": 2
+      },
+      "retained": 200,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 5,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19681,
+        "eligible": 545,
+        "necessity": 4263,
+        "ordinaryQuality": 315,
+        "existingOptionGates": 621,
+        "duplicate": 749,
+        "unsupportedSize": 7106
+      },
+      "families": {
+        "count_mixed": 230,
+        "imp_pos": 142,
+        "xor": 284,
+        "imp_neg": 101,
+        "count": 200,
+        "literal": 140,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "imp_neg": 16,
+        "count": 18,
+        "literal": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 70,
+        "imp_pos": 44,
+        "xor": 112,
+        "imp_neg": 31,
+        "count_mixed": 82,
+        "literal": 58,
+        "shared": 2
+      },
+      "retained": 200,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 6,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4205,
+        "completeAnswer": 19709,
+        "eligible": 550,
+        "duplicate": 647,
+        "ordinaryQuality": 344,
+        "existingOptionGates": 670,
+        "unsupportedSize": 7155
+      },
+      "families": {
+        "count": 211,
+        "xor": 294,
+        "count_mixed": 213,
+        "imp_neg": 83,
+        "literal": 160,
+        "imp_pos": 132
+      },
+      "targetCoverage": {
+        "count": 17,
+        "xor": 17,
+        "count_mixed": 17,
+        "imp_neg": 17,
+        "literal": 17,
+        "imp_pos": 17
+      },
+      "retainedFamilies": {
+        "count_mixed": 72,
+        "imp_neg": 34,
+        "count": 82,
+        "xor": 100,
+        "literal": 63,
+        "imp_pos": 44
+      },
+      "retained": 199,
+      "servedTargets": 17,
+      "rareMaskPackages": 0,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 6,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4228,
+        "completeAnswer": 19697,
+        "eligible": 552,
+        "duplicate": 660,
+        "ordinaryQuality": 342,
+        "existingOptionGates": 676,
+        "unsupportedSize": 7125
+      },
+      "families": {
+        "count": 211,
+        "xor": 294,
+        "count_mixed": 215,
+        "imp_neg": 83,
+        "literal": 160,
+        "imp_pos": 132,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count": 17,
+        "xor": 17,
+        "count_mixed": 17,
+        "imp_neg": 17,
+        "literal": 17,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 72,
+        "imp_neg": 34,
+        "count": 82,
+        "xor": 100,
+        "literal": 62,
+        "imp_pos": 44,
+        "shared": 1
+      },
+      "retained": 199,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 6,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "necessity": 4254,
+        "completeAnswer": 19696,
+        "eligible": 552,
+        "duplicate": 669,
+        "ordinaryQuality": 339,
+        "existingOptionGates": 677,
+        "unsupportedSize": 7093
+      },
+      "families": {
+        "count": 211,
+        "xor": 294,
+        "count_mixed": 215,
+        "imp_neg": 83,
+        "literal": 159,
+        "imp_pos": 132,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "count": 17,
+        "xor": 17,
+        "count_mixed": 17,
+        "imp_neg": 17,
+        "literal": 17,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 72,
+        "imp_neg": 34,
+        "count": 82,
+        "xor": 100,
+        "literal": 62,
+        "imp_pos": 44,
+        "shared": 1
+      },
+      "retained": 199,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 7,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19891,
+        "eligible": 572,
+        "ordinaryQuality": 346,
+        "necessity": 4091,
+        "duplicate": 624,
+        "existingOptionGates": 600,
+        "unsupportedSize": 7156
+      },
+      "families": {
+        "count_mixed": 217,
+        "imp_neg": 97,
+        "count": 211,
+        "literal": 165,
+        "xor": 303,
+        "imp_pos": 157,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "count": 17,
+        "literal": 16,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "literal": 53,
+        "xor": 106,
+        "count_mixed": 78,
+        "imp_neg": 34,
+        "count": 77,
+        "imp_pos": 54,
+        "shared": 1
+      },
+      "retained": 202,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 7,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19888,
+        "eligible": 570,
+        "ordinaryQuality": 345,
+        "necessity": 4128,
+        "duplicate": 627,
+        "existingOptionGates": 599,
+        "unsupportedSize": 7123
+      },
+      "families": {
+        "count_mixed": 217,
+        "imp_neg": 97,
+        "count": 209,
+        "literal": 165,
+        "xor": 302,
+        "imp_pos": 154,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "count": 17,
+        "literal": 16,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "literal": 54,
+        "xor": 106,
+        "count_mixed": 81,
+        "imp_neg": 34,
+        "count": 75,
+        "imp_pos": 52,
+        "shared": 1
+      },
+      "retained": 202,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 7,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19879,
+        "eligible": 569,
+        "ordinaryQuality": 343,
+        "necessity": 4147,
+        "duplicate": 638,
+        "existingOptionGates": 607,
+        "unsupportedSize": 7097
+      },
+      "families": {
+        "count_mixed": 217,
+        "imp_neg": 96,
+        "count": 208,
+        "literal": 163,
+        "xor": 303,
+        "imp_pos": 154,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "count": 17,
+        "literal": 16,
+        "xor": 18,
+        "imp_pos": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "literal": 52,
+        "xor": 108,
+        "count_mixed": 81,
+        "imp_neg": 33,
+        "count": 76,
+        "imp_pos": 51,
+        "shared": 2
+      },
+      "retained": 202,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 8,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19640,
+        "necessity": 4310,
+        "eligible": 520,
+        "existingOptionGates": 642,
+        "duplicate": 636,
+        "ordinaryQuality": 342,
+        "unsupportedSize": 7190
+      },
+      "families": {
+        "count_mixed": 191,
+        "imp_pos": 129,
+        "count": 176,
+        "literal": 150,
+        "xor": 295,
+        "imp_neg": 89,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "count": 17,
+        "literal": 17,
+        "xor": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 64,
+        "imp_pos": 50,
+        "count": 67,
+        "literal": 64,
+        "xor": 101,
+        "imp_neg": 34,
+        "shared": 1
+      },
+      "retained": 192,
+      "servedTargets": 17,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 8,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19637,
+        "necessity": 4348,
+        "eligible": 517,
+        "existingOptionGates": 642,
+        "duplicate": 640,
+        "ordinaryQuality": 340,
+        "unsupportedSize": 7156
+      },
+      "families": {
+        "count_mixed": 191,
+        "imp_pos": 127,
+        "count": 175,
+        "literal": 148,
+        "xor": 295,
+        "imp_neg": 88,
+        "shared": 2
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "count": 17,
+        "literal": 17,
+        "xor": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 67,
+        "imp_pos": 49,
+        "count": 67,
+        "literal": 59,
+        "xor": 103,
+        "imp_neg": 33,
+        "shared": 1
+      },
+      "retained": 192,
+      "servedTargets": 17,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 8,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19633,
+        "necessity": 4379,
+        "eligible": 519,
+        "existingOptionGates": 646,
+        "duplicate": 644,
+        "ordinaryQuality": 339,
+        "unsupportedSize": 7120
+      },
+      "families": {
+        "count_mixed": 192,
+        "imp_pos": 128,
+        "count": 175,
+        "literal": 148,
+        "xor": 295,
+        "imp_neg": 88,
+        "shared": 4
+      },
+      "targetCoverage": {
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "count": 17,
+        "literal": 17,
+        "xor": 17,
+        "imp_neg": 16,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 66,
+        "imp_pos": 50,
+        "count": 67,
+        "literal": 60,
+        "xor": 102,
+        "imp_neg": 33,
+        "shared": 2
+      },
+      "retained": 192,
+      "servedTargets": 17,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 9,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19689,
+        "eligible": 541,
+        "necessity": 4196,
+        "existingOptionGates": 620,
+        "duplicate": 652,
+        "ordinaryQuality": 339,
+        "unsupportedSize": 7243
+      },
+      "families": {
+        "count": 190,
+        "count_mixed": 202,
+        "imp_pos": 108,
+        "xor": 313,
+        "literal": 176,
+        "imp_neg": 112
+      },
+      "targetCoverage": {
+        "count": 18,
+        "count_mixed": 18,
+        "imp_pos": 16,
+        "xor": 18,
+        "literal": 17,
+        "imp_neg": 18
+      },
+      "retainedFamilies": {
+        "imp_neg": 40,
+        "literal": 63,
+        "imp_pos": 40,
+        "xor": 112,
+        "count": 72,
+        "count_mixed": 70
+      },
+      "retained": 201,
+      "servedTargets": 18,
+      "rareMaskPackages": 0,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 9,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19689,
+        "eligible": 539,
+        "necessity": 4230,
+        "existingOptionGates": 624,
+        "duplicate": 654,
+        "ordinaryQuality": 338,
+        "unsupportedSize": 7206
+      },
+      "families": {
+        "count": 189,
+        "count_mixed": 202,
+        "imp_pos": 108,
+        "xor": 311,
+        "literal": 175,
+        "imp_neg": 111,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 18,
+        "count_mixed": 18,
+        "imp_pos": 16,
+        "xor": 18,
+        "literal": 17,
+        "imp_neg": 18,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "imp_neg": 40,
+        "literal": 63,
+        "imp_pos": 43,
+        "xor": 110,
+        "count": 71,
+        "count_mixed": 72,
+        "shared": 1
+      },
+      "retained": 202,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 9,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19693,
+        "eligible": 537,
+        "necessity": 4253,
+        "existingOptionGates": 627,
+        "duplicate": 670,
+        "ordinaryQuality": 333,
+        "unsupportedSize": 7167
+      },
+      "families": {
+        "count": 188,
+        "count_mixed": 201,
+        "imp_pos": 107,
+        "xor": 311,
+        "literal": 174,
+        "imp_neg": 111,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "count": 18,
+        "count_mixed": 18,
+        "imp_pos": 16,
+        "xor": 18,
+        "literal": 17,
+        "imp_neg": 18,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "imp_neg": 40,
+        "literal": 63,
+        "imp_pos": 41,
+        "xor": 113,
+        "count": 71,
+        "count_mixed": 69,
+        "shared": 1
+      },
+      "retained": 202,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 10,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19754,
+        "eligible": 536,
+        "ordinaryQuality": 330,
+        "existingOptionGates": 628,
+        "necessity": 4227,
+        "duplicate": 707,
+        "unsupportedSize": 7098
+      },
+      "families": {
+        "literal": 163,
+        "imp_pos": 140,
+        "xor": 280,
+        "count": 208,
+        "count_mixed": 194,
+        "imp_neg": 107,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 74,
+        "xor": 111,
+        "literal": 52,
+        "count_mixed": 73,
+        "imp_pos": 47,
+        "imp_neg": 41,
+        "shared": 1
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 10,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19739,
+        "eligible": 535,
+        "ordinaryQuality": 326,
+        "existingOptionGates": 631,
+        "necessity": 4265,
+        "duplicate": 709,
+        "unsupportedSize": 7075
+      },
+      "families": {
+        "literal": 163,
+        "imp_pos": 140,
+        "xor": 279,
+        "count": 208,
+        "count_mixed": 194,
+        "imp_neg": 107,
+        "shared": 1
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 75,
+        "xor": 107,
+        "literal": 51,
+        "count_mixed": 72,
+        "imp_pos": 50,
+        "imp_neg": 45,
+        "shared": 1
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 1,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 10,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19734,
+        "eligible": 538,
+        "ordinaryQuality": 325,
+        "existingOptionGates": 629,
+        "necessity": 4293,
+        "duplicate": 718,
+        "unsupportedSize": 7043
+      },
+      "families": {
+        "literal": 162,
+        "imp_pos": 140,
+        "xor": 279,
+        "count": 208,
+        "count_mixed": 198,
+        "imp_neg": 106,
+        "shared": 5
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "imp_pos": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 18,
+        "imp_neg": 17,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count": 76,
+        "xor": 108,
+        "literal": 50,
+        "count_mixed": 72,
+        "imp_pos": 51,
+        "imp_neg": 40,
+        "shared": 3
+      },
+      "retained": 199,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 11,
+      "reserve": 0,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19767,
+        "eligible": 569,
+        "necessity": 4197,
+        "ordinaryQuality": 329,
+        "duplicate": 616,
+        "existingOptionGates": 634,
+        "unsupportedSize": 7168
+      },
+      "families": {
+        "literal": 172,
+        "xor": 330,
+        "count": 194,
+        "count_mixed": 199,
+        "imp_pos": 128,
+        "imp_neg": 117,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "imp_neg": 18,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 68,
+        "imp_pos": 50,
+        "literal": 58,
+        "xor": 120,
+        "count": 68,
+        "imp_neg": 37
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 3,
+      "retainedRareTargets": 0
+    },
+    {
+      "repeat": 11,
+      "reserve": 64,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19763,
+        "eligible": 563,
+        "necessity": 4230,
+        "ordinaryQuality": 325,
+        "duplicate": 627,
+        "existingOptionGates": 636,
+        "unsupportedSize": 7136
+      },
+      "families": {
+        "literal": 171,
+        "xor": 326,
+        "count": 191,
+        "count_mixed": 199,
+        "imp_pos": 125,
+        "imp_neg": 116,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "imp_neg": 18,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 66,
+        "imp_pos": 48,
+        "literal": 58,
+        "xor": 122,
+        "count": 69,
+        "imp_neg": 37,
+        "shared": 1
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 1
+    },
+    {
+      "repeat": 11,
+      "reserve": 128,
+      "counters": {
+        "attempts": 33280,
+        "completeAnswer": 19741,
+        "eligible": 560,
+        "necessity": 4260,
+        "ordinaryQuality": 325,
+        "duplicate": 645,
+        "existingOptionGates": 643,
+        "unsupportedSize": 7106
+      },
+      "families": {
+        "literal": 171,
+        "xor": 325,
+        "count": 189,
+        "count_mixed": 199,
+        "imp_pos": 122,
+        "imp_neg": 115,
+        "shared": 3
+      },
+      "targetCoverage": {
+        "literal": 17,
+        "xor": 18,
+        "count": 17,
+        "count_mixed": 17,
+        "imp_pos": 17,
+        "imp_neg": 18,
+        "shared": 1
+      },
+      "retainedFamilies": {
+        "count_mixed": 67,
+        "imp_pos": 47,
+        "literal": 59,
+        "xor": 121,
+        "count": 68,
+        "imp_neg": 38
+      },
+      "retained": 203,
+      "servedTargets": 18,
+      "rareMaskPackages": 2,
+      "retainedRareTargets": 0
+    }
+  ],
+  "hashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "rare_search_comparison.py": "b576cf4eccb7a4570af47231307751b3e325a87e842a6b753f073c77352d0d45",
+    "family-first-private-0.json": "0e9e46b553b367566614961389ead64892e85963b208f6d3a56cd2448618f073",
+    "family-first-private-100000.json": "2a6d4f25ce9950a2b4725423bef9ec0001b89e125708274e1ce280c26440b1a4",
+    "family-first-private-200000.json": "20b2b716ace2ad724d82856888c3387e9b58faedb82ab7d886aed72be9ab7edf"
+  },
+  "caveat": "Same frozen fields; independent per-field proposal streams. Not exact old RNG replay. Counts overlap. No final ranking, route cost or human-experience validation."
+}

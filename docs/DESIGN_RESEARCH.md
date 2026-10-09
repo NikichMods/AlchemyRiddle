@@ -4,6 +4,22 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Bounded rare-family search compared at equal budget — 2026-10-10
+
+Read `research/RARE_SEARCH_COMPARISON_2026-10-10.md`. Twelve paired runs on the
+same frozen fields; 512 attempts per searchable field, reserve 0/64/128. Reserve
+64 finds 25 shared-containing eligible packages versus 14 baseline, retains rare
+opportunities in 10/12 runs versus 6/12, with mean eligible count down 0.27%.
+Other-family eligible target coverage and total served targets unchanged in each
+pair. Reserve 128 finds more but retains rare opportunity in 9/12 runs. All 74
+rare occurrences (12 unique packages) independently replayed; 36 tests pass.
+Only shared is empirically rare here; general multiple-root search tested
+synthetically. Equal attempts, not equal runtime; controlled independent RNG
+streams differ from prior exact replay. Main generator and weights unchanged.
+Next proposed check: unchanged final selection and held-out route validation of
+reserve-64 pool before adoption. Human variety and broader-field transfer open.
+Separate research branch, solved case 20/network work untouched. Production BLOCKED.
+
 ### Rare loss localized to package search, not shared reservoir eviction — 2026-10-10
 
 Read `research/RARE_RETENTION_AUDIT_2026-10-10.md`. Exact main-run replay matches

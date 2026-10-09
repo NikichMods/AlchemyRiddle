@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "replayedRecords": 74,
+  "distinctPackages": 12,
+  "checks": [
+    "predicate masks",
+    "unique complete-model target",
+    "each clue necessary"
+  ],
+  "hashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "rare-search-private-v1.json": "110395840f63b4c877111a9592334ecaae2106b8255deb90429d386b3a4c3c65",
+    "verify_rare_search.py": "5a84839fdd77ecfe07f5a1e34ba0ee206c143ee32f59b6aeda436968961c5a1a"
+  }
+}
