@@ -288,6 +288,20 @@ port 443 is not a supported remedy. Next choices are a provider-side connectivit
 check or an explicitly accepted alternative tunnel service. No alternative
 account, deployment, purchase or service switch has been authorized yet.
 
+User chooses continued route diagnosis. Read-only inspection finds cloudflared
+edge TCP sockets using the Happ TUN source/interface. During a bounded socket
+sampling interval and explicit SOCKS TLS comparison, no direct Xray-owned TCP
+socket to the published global edge endpoints on 7844 was observed. This confirms
+the connector enters TUN; absence in sampled sockets does not prove the selected
+proxy outbound or eliminate short-lived connections. The TLS SNI comparison is
+unchanged. The accessible daemon log contains lifecycle/DNS-protection events,
+not per-request routing decisions. No Xray access/error log or generated config
+file was found in the examined app data/core/temp locations; the service-owned
+core command line is not exposed to the current token. Do not broaden into
+subscription databases or dump process memory. Next evidence is the in-app Xray
+log while the connector retries; ask the user to show its log view. No settings,
+service restart, TLS trust change or alternative deployment made in this step.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)

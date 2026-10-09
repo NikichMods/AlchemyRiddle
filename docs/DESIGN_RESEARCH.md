@@ -20,8 +20,10 @@ Selective VPN domain and exact endpoint-IP rules have not yielded public access.
 A Global Proxy control verified German HTTPS egress but failed tunnel SRV DNS.
 After restoring selective mode, endpoint SOCKS TCP connects, while TLS with the
 required tunnel SNI resets. Disabling Happ packet analysis and reconnecting did
-not remove that difference. Restore the original packet-analysis setting; next
-bounded diagnostic is another existing VPN exit, if available. Cause unproven;
+not remove that difference. No other VPN exit is available. Read-only socket
+inspection confirms cloudflared enters Happ's TUN, but does not establish the
+selected Xray outbound. The daemon log lacks per-request routing evidence;
+next evidence is the in-app Xray log during an edge connection attempt. Cause unproven;
 do not label the generated link working or repeat already-failed local checks.
 
 See `research/PUZZLE_LAB_FRIENDS_PLAYTEST.md` for the isolated temporary-tunnel
