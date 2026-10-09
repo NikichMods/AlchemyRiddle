@@ -423,6 +423,19 @@ recovery lists and session files remain outside Git. Never publish ngrok.yml.
 References: [official agent onboarding](https://ngrok.com/agent-setup/prompt.md),
 [free plan limits](https://ngrok.com/docs/pricing-limits/free-plan-limits).
 
+Current research-data envelope: durable state retains current selection, remaining
+Science, playing/solved/exhausted status and paid-action history (submitted tuple,
+success/cost; pair outcomes and refills where supported by the frozen fixture).
+It is not a timestamped click/event log: selection changes overwrite current
+selection, and actions have no timestamps. File creation/modification times are
+operational metadata, not reliable completion durations. Anonymous cookie
+sessions are not unique persons; different browsers/cookie resets create extra
+sessions, and polling/probes create empty QA sessions. Explicit private automated
+QA identifiers must be excluded before reporting human results. No player names,
+identity mapping, visit analytics or facilitator dashboard are implemented.
+Future timing/sequence instrumentation and participant identifiers require a
+separate agreed measurement design; do not silently change an ongoing trial.
+
 Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
 chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was
 downloaded through the official download-page link; Authenticode status Valid,
