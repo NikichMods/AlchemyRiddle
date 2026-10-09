@@ -280,6 +280,14 @@ bounded diagnostic is another existing VPN exit, if available; the user is asked
 about availability. Do not claim server-side filtering or destination rewriting
 as proven, and do not compensate by weakening TLS verification.
 
+The user confirms that no alternative VPN exit is available in the existing
+subscription. The current connector still reports TLS EOF/timeouts on 7844.
+Another-exit comparison cannot be performed with the available setup. Cloudflare
+documents 7844 for both supported tunnel transports; substituting ordinary HTTPS
+port 443 is not a supported remedy. Next choices are a provider-side connectivity
+check or an explicitly accepted alternative tunnel service. No alternative
+account, deployment, purchase or service switch has been authorized yet.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
