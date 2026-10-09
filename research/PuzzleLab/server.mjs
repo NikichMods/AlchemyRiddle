@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 import {randomUUID, createHash} from 'node:crypto';
 import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
+import {newTelemetry, recordAction, recordPage} from './telemetry.mjs';
 const root = new URL('./', import.meta.url);
 export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory, publicOrigin, approvedNgrokOrigin} = {}) {
   let external;
@@ -18,12 +19,13 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
   let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
   validate(fixture);
   const sessions = new Map();
+  const telemetry = new Map();
   if (stateDirectory) mkdirSync(stateDirectory,{recursive:true});
   const modelHash = () => createHash('sha256').update(JSON.stringify(fixture)).digest('hex');
-  const persist = (id,state) => {
+  const persist = (id,state,log=telemetry.get(id)) => {
     if (!stateDirectory) return;
     const path = resolve(stateDirectory,`${id}.json`);
-    writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state},null,2));
+    writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state,...(log?{telemetry:log}:{})},null,2));
     renameSync(path+'.tmp',path);
   };
   const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css', '/support.mjs':'support.mjs'};
@@ -55,7 +57,7 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
       if (req.method === 'GET' && path === '/api/debug' && debug) {
         json({fixture, rows: candidates(fixture).map(tuple => ({tuple, clues: fixture.clues.map(c => satisfies(fixture, tuple, c))})), sessions: [...sessions.values()]}); return;
       }
-      if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
+      if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST') || (stateDirectory && path === '/api/events' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
       if (req.method === 'POST' && req.headers['content-type']?.split(';')[0].trim() !== 'application/json') {json({error:'Expected application/json'},415);return;}
       // Cookies do not isolate localhost ports: the public instance must not
       // replace the preserved owner's cookie while being checked locally.
@@ -65,12 +67,13 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
         const path = resolve(stateDirectory,`${id}.json`);
         if (existsSync(path)) {
           const saved = JSON.parse(readFileSync(path,'utf8'));
-          if (saved.fixtureHash === modelHash()) sessions.set(id,saved.state);
+          if (saved.fixtureHash === modelHash()) {sessions.set(id,saved.state);telemetry.set(id,saved.telemetry??newTelemetry(id,true));}
         }
       }
       if (!sessions.has(id)) {
         if (external && sessions.size >= 500) {json({error:'Лимит сессий; обратитесь к ведущему'},503);return;}
         id = randomUUID(); sessions.set(id, createState(fixture));
+        if(stateDirectory)telemetry.set(id,newTelemetry(id));
         persist(id,sessions.get(id));
         res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/${externalRequest ? '; Secure' : ''}${external ? '; Max-Age=2592000' : ''}`);
       }
@@ -79,8 +82,17 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
         let body = ''; for await (const chunk of req) {body += chunk; if (body.length > 20000) throw new Error('Слишком большой запрос');}
         // Another tab can finish an action while this request body is arriving.
         const next = structuredClone(sessions.get(id));
-        act(fixture, next, JSON.parse(body));
-        persist(id,next); sessions.set(id,next); state=next;
+        const action=JSON.parse(body);
+        const log=telemetry.has(id)?structuredClone(telemetry.get(id)):null;
+        if(path==='/api/events') {
+          recordPage(log,action);persist(id,next,log);telemetry.set(id,log);json({ok:true});return;
+        }
+        try {act(fixture, next, action);} catch(error) {
+          if(log){recordAction(log,action,sessions.get(id),sessions.get(id),error.message);persist(id,sessions.get(id),log);telemetry.set(id,log);}
+          throw error;
+        }
+        if(log)recordAction(log,action,sessions.get(id),next);
+        persist(id,next,log); if(log)telemetry.set(id,log); sessions.set(id,next); state=next;
       }
       json(publicView(fixture, state));
     } catch (error) {

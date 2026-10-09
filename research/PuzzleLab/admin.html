@@ -1,0 +1,14 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Пульт Puzzle Lab</title><link rel="stylesheet" href="/admin.css">
+<main><header><p class="eyebrow">PUZZLE LAB · ТОЛЬКО НА ЭТОМ КОМПЬЮТЕРЕ</p><h1>Пульт ведущего</h1><p id="puzzle"></p></header>
+<section><h2>Стенд и внешний доступ</h2><p id="processes">Проверяем состояние…</p><p><a id="public-link" target="_blank" rel="noreferrer"></a></p>
+<div class="buttons"><button data-mode="Start">Запустить плейтест</button><button data-mode="Stop" class="danger">Остановить плейтест</button><button data-mode="Status">Проверить внешнюю ссылку</button><button id="refresh">Обновить данные</button><a class="button" href="/api/export" download>Скачать отчёт JSON</a></div>
+<p class="muted">Запуск и остановка управляют отдельным стендом и туннелем вместе. Эта панель остаётся открытой. Проверка ссылки выполняется с этого компьютера.</p><pre id="command-result" role="status"></pre></section>
+<section><h2>Прохождения</h2><div id="totals" class="totals"></div>
+<p class="muted">Считаем анонимные сессии, а не уникальных людей. Два браузера одного человека — две сессии. Входы технических проверок без действий не входят в счётчик.</p>
+<label><input id="technical" type="checkbox"> Показывать мои, тестовые и пустые сессии</label>
+<div class="table-wrap"><table><thead><tr><th>Участник</th><th>Состояние</th><th>Время до завершения</th><th>Вкладка видима</th><th>Опыты / финальные проверки</th><th>Категория</th><th></th></tr></thead><tbody id="sessions"></tbody></table></div></section>
+<section id="detail" hidden><h2 id="detail-title"></h2><p id="coverage"></p><p class="muted">Видимая вкладка не доказывает внимание или рассуждение. Пауза между действиями тоже не обязательно означает затруднение.</p>
+<label><input id="heartbeats" type="checkbox"> Показывать служебные отметки связи</label><ol id="timeline"></ol></section>
+<footer><p id="warnings" role="alert"></p><p id="updated" class="muted"></p><p class="muted">Ответы неизвестных рецептов здесь не раскрываются. Данные прохождений и отчёты хранятся приватно; не добавляйте их в Git.</p></footer></main>
+<script type="module" src="/admin-ui.mjs"></script></html>

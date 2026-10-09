@@ -423,7 +423,7 @@ recovery lists and session files remain outside Git. Never publish ngrok.yml.
 References: [official agent onboarding](https://ngrok.com/agent-setup/prompt.md),
 [free plan limits](https://ngrok.com/docs/pricing-limits/free-plan-limits).
 
-Current research-data envelope: durable state retains current selection, remaining
+Before instrumentation, research-data envelope: durable state retains current selection, remaining
 Science, playing/solved/exhausted status and paid-action history (submitted tuple,
 success/cost; pair outcomes and refills where supported by the frozen fixture).
 It is not a timestamped click/event log: selection changes overwrite current
@@ -433,8 +433,61 @@ sessions are not unique persons; different browsers/cookie resets create extra
 sessions, and polling/probes create empty QA sessions. Explicit private automated
 QA identifiers must be excluded before reporting human results. No player names,
 identity mapping, visit analytics or facilitator dashboard are implemented.
-Future timing/sequence instrumentation and participant identifiers require a
+Timing/sequence instrumentation and participant identifiers require a
 separate agreed measurement design; do not silently change an ongoing trial.
+
+## Private facilitator panel and instrumentation — 2026-10-10
+
+User explicitly accepts journal and private panel together: automatic random
+animal pseudonyms, the existing player interface, local process controls, session
+summary and action timeline. No registration, changed puzzle mechanics/economy,
+new campaign or production code. Panel binds only 127.0.0.1:4185, separate from
+the tunneled player server on 4184. Exact loopback Host/Origin checks protect
+control requests; fixed Start/Stop/Status commands only, no arbitrary shell input.
+Stopping the playtest keeps the panel and all sessions. Private Open-Panel wrapper
+reuses the recorded panel process and opens its local URL; after reboot open it
+again and press Start. Never tunnel the panel port. Existing command wrappers
+remain available as a fallback.
+
+Private durable session envelope now includes versioned telemetry outside public
+player state. Server records ordered, timestamped accepted/rejected semantic
+actions, resulting selection/resources/status and earned experiment outcomes.
+Browser reports page/visibility/help events and visible-tab heartbeats every
+15 seconds. No IP/user-agent analytics, keystroke capture or notes text in event
+records. Public API never includes nickname, timeline or another session. Public
+admin/source/export/facilitator routes stay unavailable. Pseudonyms identify
+cookie sessions, not real people; same person using another browser counts twice.
+Panel permits private player/owner/test categorization and excludes test/owner
+and untouched probe sessions from the default counts. QA cookies are recognized
+privately; panel uses hashed session keys, not session-cookie credentials.
+
+Time-to-completion uses server event timestamps from first recorded page/action
+to terminal status. Visible-tab estimate unions overlapping tabs and credits at
+most 20 seconds between signals, stopping at recorded completion. Visibility
+does not establish attention or deductive reasoning; active thinking and confusion
+need participant feedback. Legacy sessions retain results but carry incomplete
+coverage, with unknown historical timing and click order, not reconstructed data.
+Event cap 20,000 per session marks truncation and hides incomplete visible-time
+estimates. Export is local JSON with summaries/events/earned history, never the
+answer, hidden graph or raw cookie. Keep exported reports outside public Git.
+
+HTTPS presentation-update polling is reduced from 2 seconds to 60 seconds to
+avoid exhausting free ngrok request budgets; player actions remain immediate and
+local development polling remains 2 seconds. This does not change puzzle feedback.
+
+Windows integration found two launcher lifecycle defects: inherited background
+pipe handles delayed the panel's Start response, and Process.Path could be null
+immediately after creation. Controls now capture output in private files and wait
+for launcher exit, record configured resolved executable paths, and wait for
+owned process termination. Corrected live Stop/Start/Status requests completed
+successfully, restoring the same public URL and stored state/log; original solved
+case-20 hash unchanged. Earlier timeout run is not passing control evidence.
+
+48 local tests pass, including telemetry ordering, migration, multi-tab timing,
+rejected-action recording, restart persistence, public separation, exact panel
+Host/Origin and control-command allowlist. Actual public HTTPS QA recorded page,
+help and three actions with independent second player; QA is marked test. Hosted
+CI and final browser panel verification are recorded at the candidate boundary.
 
 Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
 chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was

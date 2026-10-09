@@ -247,3 +247,19 @@ processes running; sleep/reboot interrupts access. Account dev domain is normall
 reused on restart, but availability and visitor access require separate checks.
 The launcher verifies public responses from this computer; an independent
 visitor network must still be tested. Retain the same browser cookies to resume.
+
+## Private facilitator panel
+
+`panel.ps1 -Mode Start|Stop|Status -PrivateDirectory PRIVATE_DIR -NodePath NODE_EXE`
+starts a separate local panel at http://127.0.0.1:4185. Never expose that port with
+a tunnel. It reads private saved sessions and offers fixed playtest Start/Stop/
+Status controls, animal pseudonyms, owner/test categorization, summaries, action
+timelines and local JSON export. Stopping the panel does not stop the playtest.
+
+Durable sessions include private versioned telemetry: server-accepted/rejected
+actions and earned results; page/help/visibility signals. No timeline or nickname
+is exposed to players. Historical sessions have incomplete coverage and unknown
+timing. Counts represent cookie sessions, not distinct people. Visible-tab time
+is an estimate, not proof of attention. Default summaries exclude untouched
+probes and marked owner/test sessions. Exports contain private trial evidence:
+keep them outside Git. Tests include `telemetry.test.mjs`.

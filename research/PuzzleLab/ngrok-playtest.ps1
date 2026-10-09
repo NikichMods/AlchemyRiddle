@@ -17,8 +17,8 @@ function Find-OwnedProcess($entry) {
       $process.StartTime.ToUniversalTime().ToString('o') -eq ([DateTime]$entry.startedAt).ToUniversalTime().ToString('o')) { return $process }
   return $null
 }
-function Process-Record($process) {
-  return @{id=$process.Id;path=$process.Path;startedAt=$process.StartTime.ToUniversalTime().ToString('o')}
+function Process-Record($process,[string]$expectedPath) {
+  return @{id=$process.Id;path=$expectedPath;startedAt=$process.StartTime.ToUniversalTime().ToString('o')}
 }
 function Probe-Public($url) {
   $headers=@{'ngrok-skip-browser-warning'='puzzle-lab-check'}
@@ -36,7 +36,7 @@ function Probe-Public($url) {
 $record=$null
 if (Test-Path -LiteralPath $recordPath) { $record=Get-Content -LiteralPath $recordPath -Raw | ConvertFrom-Json }
 if ($Mode -eq 'Stop') {
-  if ($record) { foreach ($entry in @($record.tunnel,$record.server)) { $owned=Find-OwnedProcess $entry; if ($owned) {Stop-Process -InputObject $owned} } }
+  if ($record) { foreach ($entry in @($record.tunnel,$record.server)) { $owned=Find-OwnedProcess $entry; if ($owned) {Stop-Process -InputObject $owned;Wait-Process -InputObject $owned -Timeout 5 -ErrorAction SilentlyContinue} } }
   Write-Output 'Playtest stopped; sessions retained. Original Lab untouched.'
   exit
 }
@@ -83,7 +83,7 @@ try {
     Start-Sleep -Milliseconds 200
   }
   if (!$ready) {throw 'Local Puzzle Lab did not start.'}
-  @{url=$url;port=$Port;server=(Process-Record $server);tunnel=(Process-Record $tunnel)} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $recordPath -Encoding UTF8
+  @{url=$url;port=$Port;server=(Process-Record $server $NodePath);tunnel=(Process-Record $tunnel $agentPath)} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $recordPath -Encoding UTF8
 } catch {
   foreach ($process in @($server,$tunnel)) {if ($process -and !$process.HasExited) {Stop-Process -InputObject $process}}
   throw

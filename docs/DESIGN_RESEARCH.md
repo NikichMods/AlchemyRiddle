@@ -6,6 +6,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+2026-10-10 follow-up: user accepts action instrumentation and a private local
+facilitator panel together. `research/PuzzleLab/admin.mjs` / `panel.ps1` provide
+loopback-only statistics, per-session animal pseudonyms, earned-action timeline,
+local JSON export and fixed process controls. Telemetry stays outside public
+state and Git; legacy timings/click order remain unknown, labelled incomplete.
+Only the separate 4184 friends instance is restarted to activate logging; original
+case-20 state unchanged. Owning data semantics and verification are in
+`research/PUZZLE_LAB_FRIENDS_PLAYTEST.md`. Production and five-task campaign scope
+remain unchanged.
+
 2026-10-10 update: user selected ngrok and configured a new account locally.
 Separate synthetic 2x2 instance now responds through its actual public HTTPS
 endpoint; browser Visit Site, refresh persistence, two independent players,

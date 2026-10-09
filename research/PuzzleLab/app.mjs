@@ -306,11 +306,24 @@ async function loadSupport() {
     ({submitBlockReason,submissions:recordedSubmissions,selectedSubmission,compositionReminder,submissionFeedback}=module);
   }
 }
-try {view = await request('/api/state'); await loadSupport(); render();}
+const telemetryTab=crypto.randomUUID();
+let telemetryReady=false;
+function pageEvent(kind){
+  if(!telemetryReady)return;
+  fetch('/api/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,tab:telemetryTab}),keepalive:true}).catch(()=>{});
+}
+document.addEventListener('visibilitychange',()=>pageEvent(document.hidden?'hidden':'visible'));
+window.addEventListener('pagehide',()=>pageEvent('hidden'));
+document.querySelector('.reference').addEventListener('toggle',e=>pageEvent(e.target.open?'help_open':'help_close'));
+setInterval(()=>{if(!document.hidden)pageEvent('heartbeat');},15000);
+try {view = await request('/api/state'); await loadSupport(); render(); telemetryReady=true;pageEvent(document.hidden?'hidden':'page');}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
 // Finite requests keep the embedded browser's navigation from waiting on a
 // permanent stream. Read only public presentation files; never reset sessions.
 const presentationFiles = ['/', '/app.mjs', '/style.css',...(view?.researchSupport?['/support.mjs']:[])];
+// Public dev-domain plans have a monthly request budget. Player actions remain
+// immediate; only the background presentation-update check runs less often.
+const presentationPollMs=location.protocol==='https:'?60000:2000;
 let revision;
 async function checkPresentation() {
   try {
@@ -327,6 +340,6 @@ async function checkPresentation() {
   } catch {
     // Temporary loss of the dev server must not erase the player's board.
   }
-  setTimeout(checkPresentation, 2000);
+  setTimeout(checkPresentation, presentationPollMs);
 }
 checkPresentation();
