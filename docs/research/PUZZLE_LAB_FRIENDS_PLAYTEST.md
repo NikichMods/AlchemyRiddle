@@ -176,3 +176,19 @@ Official status page inspection did not show a general Tunnel incident at the
 time; absence of a posted incident is not proof that the service is healthy.
 Root cause remains unestablished. A mobile-data visitor check is requested;
 the generated URL must not be described as working merely from registration.
+Final bounded US/QUIC comparison also returned 530 and failed edge connections
+with QUIC timeouts; the extra diagnostic tunnel was stopped. The separate main
+friend server/tunnel remain running for the requested mobile-network check.
+Deployment status: **local READY; external access BLOCKED by observed 1033/530**,
+not completed. No evidence yet establishes availability from a friend's network.
+Further useful evidence is an independent visitor result or a changed host
+network/service condition, rather than repeating the same successful local tests.
+
+Hosted Puzzle Lab CI passed for source `1d01066b503d1a367d386965ae634e187b3a7935`
+([run 37953244942](https://github.com/NikichMods/AlchemyRiddle/actions/runs/37953244942)).
+This verifies the HTTP/evaluator suite on Node 24/Linux, not the Windows launcher
+or Cloudflare network. Private desktop Start/Stop/Status command files reference
+the retained isolated worktree and absolute bundled Node path, so ordinary
+desktop launch does not depend on the chat's PATH. Default next launch selects
+official 2026.10.0; the live version comparison instance is 2026.9.3. No public
+link, raw logs, cookie or player data are tracked in this document.
