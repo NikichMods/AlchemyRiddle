@@ -23,6 +23,30 @@ test('public configuration rejects wildcard/bad origins, debug, reload and missi
   for(const overrides of [{publicOrigin:'http://bounded-playtest.trycloudflare.com'},{publicOrigin:'https://elsewhere.example'},{publicOrigin:publicOrigin+'/'},{debug:true},{liveReload:true},{stateDirectory:undefined}])
     assert.throws(()=>createLab({fixturePath,publicOrigin,stateDirectory,...overrides}));
 });
+test('ngrok requires explicit exact approval and keeps other hosts forbidden',async()=>{
+  const directory=mkdtempSync(join(tmpdir(),'lab-ngrok-'));
+  const origin='https://selected-playtest.ngrok-free.dev';
+  assert.throws(()=>createLab({fixturePath,publicOrigin:origin,stateDirectory:directory}));
+  assert.throws(()=>createLab({fixturePath,publicOrigin:origin,approvedNgrokOrigin:'https://other.ngrok-free.dev',stateDirectory:directory}));
+  const server=createLab({fixturePath,publicOrigin:origin,approvedNgrokOrigin:origin,stateDirectory:directory});await listen(server);
+  const headers={Host:new URL(origin).host};
+  try {
+    const a=await request(server,'/api/state',{headers}),b=await request(server,'/api/state',{headers});
+    assert.equal(a.status,200);assert.equal(b.status,200);
+    assert.notEqual(a.headers['set-cookie'][0],b.headers['set-cookie'][0]);
+    assert.match(a.headers['set-cookie'][0],/; Secure; Max-Age=2592000$/);
+    for(const path of ['/api/debug','/facilitator','/fixture.json','/rules.mjs']) assert.equal((await request(server,path,{headers})).status,404);
+    for(const altered of [{Host:'other.ngrok-free.dev'},{Origin:'https://other.ngrok-free.dev'},{'Sec-Fetch-Site':'cross-site'}])
+      assert.equal((await request(server,'/api/state',{headers:{...headers,...altered}})).status,403);
+    const cookie=a.headers['set-cookie'][0].split(';')[0];
+    const actionHeaders={...headers,Cookie:cookie,Origin:origin,'Content-Type':'application/json'};
+    const body=JSON.stringify({type:'select',slot:'powder',card:'p1'});
+    assert.equal((await request(server,'/api/action',{headers:{...actionHeaders,Origin:''},body})).status,403);
+    const changed=await request(server,'/api/action',{headers:actionHeaders,body});assert.equal(changed.status,200);
+    assert.equal(JSON.parse(changed.body).state.selected.powder,'p1');
+    assert.deepEqual(JSON.parse((await request(server,'/api/state',{headers:{...headers,Cookie:b.headers['set-cookie'][0].split(';')[0]}})).body).state,JSON.parse(b.body).state);
+  } finally {await close(server);rmSync(directory,{recursive:true,force:true});}
+});
 test('exact tunnel origin, request boundary, spoiler separation and two durable players',async()=>{
   const directory=mkdtempSync(join(tmpdir(),'lab-tunnel-'));
   let server=createLab({fixturePath,publicOrigin,stateDirectory:directory});await listen(server);

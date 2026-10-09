@@ -379,6 +379,46 @@ Cloudflare attempts; later missing rules do not invalidate that observation.
 
 ## Official references
 
+## Ngrok running checkpoint, 2026-10-10
+
+User completed local account-token setup. Official agent authenticated and
+assigned its account dev-domain endpoint. Public HTTPS API returned 200 with
+unchanged `lab-v0-easy-01`, two slots of two cards and secure persistent HttpOnly
+cookie. The real browser showed ngrok Visit Site once, then the complete puzzle;
+selected card survived refresh and process restart. Two independent automated
+cookie clients confirmed isolation, one paid action persisted in history, and
+both resumed identical states after Stop/Start. These private sessions are QA,
+not human trial results. Public fixture/debug/facilitator/rules requests returned
+404; HTML, JS, CSS and support assets match local source. Endpoint hostname
+remained unchanged across the exercised restart. No third-party visitor-network
+result yet; local requests to a public address are not that evidence.
+
+`ngrok-playtest.ps1` is the retained Start/Stop/Status launcher; the private
+command wrappers now reference it. Stop verifies process executable/start time,
+stops only the owned tunnel and separate Lab, and keeps all sessions. Start
+rejects occupied ports, original port 4183 and private directories within Git.
+It discovers the actual ngrok HTTPS endpoint and configures it as both exact
+public origin and explicitly approved ngrok origin. The server still matches
+Host and action Origin against that single address; no request wildcard is
+accepted. Automatic approval review rejected initial generic ngrok-family
+recognition; explicit per-start ngrok-origin approval was implemented instead.
+Full HTTP/evaluator suite passes 46/46; PowerShell syntax parsed successfully.
+Stop/Start and public asset checks exercised on Windows. Hosted CI for this
+new source is pending; prior Cloudflare CI is not evidence for this revision.
+
+Operating instructions: keep the computer awake, network/VPN connection,
+ngrok process and Lab running. Stop-Playtest ends availability immediately;
+reboot, sleep or lost connectivity interrupt it. The assigned account dev domain
+is reused on normal restarts (verified once); domain/account changes may change
+the URL. A stable address does not mean an always-running website. Free-plan
+Visit Site screen is visitor-facing. Players should retain the same browser
+profile/cookies to resume. Clearing cookies or another browser creates a new
+player. No signup/email gate added. Credential, live hostname, raw logs,
+recovery lists and session files remain outside Git. Never publish ngrok.yml.
+
+References: [official agent onboarding](https://ngrok.com/agent-setup/prompt.md),
+[free plan limits](https://ngrok.com/docs/pricing-limits/free-plan-limits).
+
 Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
 chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was
 downloaded through the official download-page link; Authenticode status Valid,

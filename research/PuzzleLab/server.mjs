@@ -6,12 +6,13 @@ import {resolve} from 'node:path';
 import {randomUUID, createHash} from 'node:crypto';
 import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
 const root = new URL('./', import.meta.url);
-export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory, publicOrigin} = {}) {
+export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory, publicOrigin, approvedNgrokOrigin} = {}) {
   let external;
   if (publicOrigin) {
     external = new URL(publicOrigin);
     if (external.origin !== publicOrigin || external.protocol !== 'https:' ||
-        !/^[a-z0-9-]+\.trycloudflare\.com$/.test(external.hostname) || external.port ||
+        !(/^[a-z0-9-]+\.trycloudflare\.com$/.test(external.hostname) ||
+          (publicOrigin === approvedNgrokOrigin && /^[a-z0-9-]+\.(?:ngrok-free\.dev|ngrok-free\.app|ngrok\.app)$/.test(external.hostname))) || external.port ||
         debug || liveReload || !stateDirectory) throw new Error('Public Lab requires an exact HTTPS Quick Tunnel origin, durable state, no debug and no reload');
   }
   let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
@@ -108,8 +109,10 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const stateArg = args.find(a => a.startsWith('--state-dir='));
   const port = portArg ? Number(portArg.slice(7)) : 4173;
   const publicArg = args.find(a => a.startsWith('--public-origin='));
+  const ngrokArg = args.find(a => a.startsWith('--approved-ngrok-origin='));
   const server = createLab({debug: args.includes('--debug'), liveReload: !publicArg,
     ...(publicArg ? {publicOrigin:publicArg.slice(16)} : {}),
+    ...(ngrokArg ? {approvedNgrokOrigin:ngrokArg.slice(24)} : {}),
     ...(stateArg ? {stateDirectory:resolve(stateArg.slice(12))} : {}),
     ...(fixtureArg ? {fixturePath: resolve(fixtureArg.slice(10))} : {})});
   server.on('error', e => {console.error(e.message); process.exitCode = 1;});

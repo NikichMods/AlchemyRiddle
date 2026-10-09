@@ -6,6 +6,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+2026-10-10 update: user selected ngrok and configured a new account locally.
+Separate synthetic 2x2 instance now responds through its actual public HTTPS
+endpoint; browser Visit Site, refresh persistence, two independent players,
+paid-action persistence and Stop/Start recovery verified on this computer.
+Independent visitor-network availability (especially Russia without VPN) remains
+unverified. Use `research/PuzzleLab/ngrok-playtest.ps1` and the private retained
+Start/Stop/Status wrappers. Exact ngrok origin requires explicit approval at
+startup; debug/reload remain forbidden. Earlier Cloudflare failure below is
+historical evidence, not the current deployment status. No five-task campaign
+or puzzle mechanics changes. See owning friends-playtest record.
+
 User narrows the immediate outcome: one ordinary synthetic 2x2 puzzle must open
 through an external link before any five-level sequence work. The new isolated
 instance reuses frozen `lab-v0-easy-01` / «Тихий свет» unchanged; this is a hosting

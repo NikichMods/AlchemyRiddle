@@ -229,3 +229,21 @@ Use `--fixture=PRIVATE_FIXTURE --state-dir=PRIVATE_STATE_DIRECTORY --port=4174`.
 Optional state directory atomically persists actions and restores the cookie's
 session after restart when the fixture hash matches. Keep it outside Git. Without
 this option the historical memory-only behavior above applies.
+
+## Separate ngrok friends playtest
+
+Use `ngrok-playtest.ps1 -Mode Start|Stop|Status -PrivateDirectory PRIVATE_DIR
+-NodePath NODE_EXE` (default port 4184). Private directory must be outside Git,
+with frozen synthetic `fixture.json`, `sessions/`, and `ngrok/ngrok.exe` plus
+locally authenticated `ngrok/ngrok.yml`. Never commit tokens or player data.
+Start discovers the actual HTTPS endpoint and explicitly approves only that
+origin for the public server. Debug and reload are disabled; Host/Origin checks
+and secure durable cookies remain required. Occupied ports and 4183 are rejected.
+Stop terminates only recorded owned processes and preserves sessions. Status
+checks the actual puzzle and full assets, not registration alone.
+
+Visitors may see ngrok's Visit Site screen. Keep computer, network and both
+processes running; sleep/reboot interrupts access. Account dev domain is normally
+reused on restart, but availability and visitor access require separate checks.
+The launcher verifies public responses from this computer; an independent
+visitor network must still be tested. Retain the same browser cookies to resume.
