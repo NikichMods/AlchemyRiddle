@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Rare loss localized to package search, not shared reservoir eviction — 2026-10-10
+
+Read `research/RARE_RETENTION_AUDIT_2026-10-10.md`. Exact main-run replay matches
+504 eligible/199 retained packages. Shared property available on 8 fields, six
+fail existing field floor; search finds one valid package and keeps it. Complete
+shared-package enumeration on the same two searchable fields finds 12 eligible
+two-clue packages on one field/target, four distinct survivor masks: 11 missed
+by original random search. No shared reservoir loss, though negative implication
+loses one target during general retention. All 12 replayed; 32 tests pass.
+Next proposed trial: bounded rare-family exploration, two-clue first, equal total
+effort and unchanged gates. No new weight/retention/sampling policy adopted.
+Separate research branch; network work/fixtures untouched. Production BLOCKED.
+
 ### Rare-opportunity comparison complete on isolated research branch — 2026-10-10
 
 Read `research/RARE_OPPORTUNITY_COMPARISON_2026-10-10.md`. Frozen 199-package pool,

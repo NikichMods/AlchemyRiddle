@@ -391,3 +391,8 @@ It uses opportunity target coverage from earlier witnesses, never published
 exact formula rows. No default score change; trial and limits:
 `docs/research/RARE_OPPORTUNITY_COMPARISON_2026-10-10.md`. Checks:
 `test_rare_opportunity.py`.
+
+`rare_retention_audit.py CORPUS RETAINED_POOL PRIVATE_OUTPUT AGGREGATES` exactly
+replays the accepted main reservoir, then exhaustively checks shared-family
+packages on its two searchable shared fields. It does not mutate the generator.
+Owning evidence: `docs/research/RARE_RETENTION_AUDIT_2026-10-10.md`.

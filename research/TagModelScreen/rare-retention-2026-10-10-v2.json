@@ -1,0 +1,145 @@
+{
+  "complete": true,
+  "exactReservoirReplay": true,
+  "seconds": 6.015,
+  "counters": {
+    "fields": 152,
+    "attempts": 33280,
+    "eligible": 504,
+    "fieldFloor": 87,
+    "packageFloor": 7178
+  },
+  "poolCandidates": 199,
+  "families": {
+    "literal": {
+      "rawFields": 152,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 8559,
+      "eligiblePackages": 157,
+      "retainedPackages": 62,
+      "eligibleTargets": 17,
+      "retainedTargets": 17,
+      "rejections": {
+        "necessity": 1406,
+        "completeAnswer": 6715,
+        "eligible": 157,
+        "ordinaryQuality": 101,
+        "existingOptionGates": 180
+      }
+    },
+    "count": {
+      "rawFields": 151,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 8646,
+      "eligiblePackages": 190,
+      "retainedPackages": 69,
+      "eligibleTargets": 17,
+      "retainedTargets": 17,
+      "rejections": {
+        "necessity": 1682,
+        "completeAnswer": 6459,
+        "eligible": 190,
+        "ordinaryQuality": 159,
+        "existingOptionGates": 156
+      }
+    },
+    "xor": {
+      "rawFields": 152,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 8955,
+      "eligiblePackages": 282,
+      "retainedPackages": 105,
+      "eligibleTargets": 18,
+      "retainedTargets": 18,
+      "rejections": {
+        "necessity": 1770,
+        "completeAnswer": 6607,
+        "eligible": 282,
+        "ordinaryQuality": 60,
+        "existingOptionGates": 236
+      }
+    },
+    "imp_pos": {
+      "rawFields": 152,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 8917,
+      "eligiblePackages": 114,
+      "retainedPackages": 41,
+      "eligibleTargets": 18,
+      "retainedTargets": 18,
+      "rejections": {
+        "completeAnswer": 7186,
+        "necessity": 1347,
+        "eligible": 114,
+        "existingOptionGates": 225,
+        "ordinaryQuality": 45
+      }
+    },
+    "imp_neg": {
+      "rawFields": 152,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 8889,
+      "eligiblePackages": 89,
+      "retainedPackages": 43,
+      "eligibleTargets": 16,
+      "retainedTargets": 15,
+      "rejections": {
+        "completeAnswer": 7344,
+        "necessity": 1184,
+        "eligible": 89,
+        "ordinaryQuality": 56,
+        "existingOptionGates": 216
+      }
+    },
+    "shared": {
+      "rawFields": 8,
+      "fieldFloorRejected": 6,
+      "uniqueDrawnPackages": 198,
+      "eligiblePackages": 1,
+      "retainedPackages": 1,
+      "eligibleTargets": 1,
+      "retainedTargets": 1,
+      "rejections": {
+        "necessity": 152,
+        "completeAnswer": 41,
+        "eligible": 1,
+        "existingOptionGates": 4
+      }
+    },
+    "count_mixed": {
+      "rawFields": 152,
+      "fieldFloorRejected": 87,
+      "uniqueDrawnPackages": 9090,
+      "eligiblePackages": 183,
+      "retainedPackages": 73,
+      "eligibleTargets": 18,
+      "retainedTargets": 18,
+      "rejections": {
+        "necessity": 1833,
+        "completeAnswer": 6670,
+        "eligible": 183,
+        "ordinaryQuality": 202,
+        "existingOptionGates": 202
+      }
+    }
+  },
+  "sharedDistinctMaskPackages": 1,
+  "sharedRetainedRecords": 1,
+  "exhaustiveSharedFields": 2,
+  "exhaustiveSharedCounters": {
+    "necessity": 325277,
+    "completeAnswer": 546,
+    "existingOptionGates": 54,
+    "eligible": 12
+  },
+  "exhaustiveSharedDistinctMasks": 4,
+  "sampledMissedSharedPackages": 11,
+  "hashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "family-first-ranking-adopted-private.json": "135a8ed049b1a3548cd2e30fa9658aef5d1eda525cd18141c862c88c12c34d93",
+    "rare_retention_audit.py": "8b0eebdb8141bf73e8488e921cec66635d5de90b3b74a17adff05a667899d30a",
+    "generator_route_ranking.py": "52c04ed90646bb64eeea4dce3f0cac205f492ed56784faeb3684f892da21c84b",
+    "reasoning_diversity_screen.py": "9ee49df004102973e15ef9a5e92593c242920138d6d14a3e2ce87e69d8f65a9c"
+  },
+  "caveat": "Exact replay of one frozen main run, not exhaustive rare-condition capacity. Family presence counts overlap; raw eligibility is not proof of a valid package."
+}
