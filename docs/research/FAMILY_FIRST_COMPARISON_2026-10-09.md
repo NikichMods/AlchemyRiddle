@@ -97,3 +97,29 @@ decision from its multi-weight experiment arms or player interest acceptance.
 
 Current state: family-first is the accepted main research sampling baseline.
 Production remains BLOCKED and no player fixture has been opened or changed.
+
+## Follow-up: reserve counts versus final selection
+
+User asks what package counts mean for game deployment and whether rare families
+remain represented. The 362.7/594.0 means count accepted sampled packages across
+all 19 targets and 152 fields per complete pass, not game puzzle inventory, an
+exhaustive combinatorial count, per-target reserve or unique player experiences.
+Multiple packages can serve the same target/field, be logically equivalent or
+recur between draw passes. Future availability/knowledge/curriculum constraints
+remain outside this full-availability screen. The unserved nineteenth target is
+an unresolved bounded-search gap, not proof of impossibility.
+
+Inspected actual final selections in the adopted ranking integration artifact:
+fresh knowledge context, preferred route 3, accepted weak strength 0.25, three
+target orders: 54 selections, not 54 distinct puzzles. Family presence counts:
+literal 16, homogeneous count 18, XOR 23, positive implication 15, mixed count 19,
+negative implication/forbidden combination 12, shared property 2. Every major
+family appears in this sampled selection cohort; frequencies are unequal and
+shared property remains rare (only one of the 199 reservoir packages contains
+it). No general guarantee for every sequence/save/target or finer submotif.
+
+Uniform chance applies only to available root families at proposal draw time.
+Predicate availability, quality/necessity filters, reservoir retention and final
+ranking/curriculum can change the resulting frequencies. Rare-family presence
+must therefore be audited after selection, not inferred from proposal symmetry.
+This finding introduces no frequency quota or override of quality requirements.
