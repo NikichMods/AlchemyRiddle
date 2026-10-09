@@ -379,6 +379,19 @@ Cloudflare attempts; later missing rules do not invalidate that observation.
 
 ## Official references
 
+Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
+chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was
+downloaded through the official download-page link; Authenticode status Valid,
+signer ngrok, Inc.; executable SHA256
+`d339bcbd0713233337e860163f5249eea679cf26750a5700510dbc241d201748`.
+Private account setup helper uses hidden token input and an explicit private
+config file outside Git. The user enters the credential locally; it must never
+be requested in chat or copied to source/logs. No ngrok endpoint has been started.
+Neither local 4183 nor 4184 listener was observed at this checkpoint; original
+case-20 files were not changed or restarted. Next: local account setup, exact
+ngrok public-origin support retaining existing Host/Origin/session protections,
+then start and verify the separate synthetic 2x2 instance and actual external URL.
+
 - [Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/):
   no account/domain; hostname changes per creation; link ends on stop; 200
   in-flight request limit; no SSE; no uptime guarantee. Lab uses finite polling.
