@@ -7,7 +7,8 @@ param(
   [string]$CloudflaredPath,
   [int]$Port = 4184,
   [ValidateSet('auto','http2','quic')][string]$Protocol = 'auto',
-  [ValidateSet('global','us')][string]$Region = 'global'
+  [ValidateSet('global','us')][string]$Region = 'global',
+  [ValidateSet('auto','4','6')][string]$EdgeIPVersion = 'auto'
 )
 $ErrorActionPreference = 'Stop'
 $PrivateDirectory = [IO.Path]::GetFullPath($PrivateDirectory)
@@ -76,7 +77,7 @@ $probe = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback,$Port)
 try { $probe.Start() } finally { $probe.Stop() }
 $tunnel = $null; $server = $null
 try {
-  $tunnelArgs = @('tunnel','--no-autoupdate','--url',"http://127.0.0.1:$Port",'--protocol',$Protocol)
+  $tunnelArgs = @('tunnel','--no-autoupdate','--url',"http://127.0.0.1:$Port",'--protocol',$Protocol,'--edge-ip-version',$EdgeIPVersion)
   if ($Region -eq 'us') { $tunnelArgs += @('--region','us') }
   $tunnel = Start-Process -FilePath $CloudflaredPath -ArgumentList $tunnelArgs -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $PrivateDirectory 'tunnel.stdout.log') -RedirectStandardError (Join-Path $PrivateDirectory 'tunnel.stderr.log')
   $deadline = [DateTime]::UtcNow.AddSeconds(55)
@@ -94,7 +95,7 @@ try {
     Start-Sleep -Milliseconds 200
   }
   if (!$ready -or $tunnel.HasExited) { throw 'Playtest startup failed. Inspect private logs.' }
-  $record = @{url=$url;port=$Port;protocol=$Protocol;region=$Region;fixtureSHA256=(Get-FileHash -LiteralPath $fixture).Hash.ToLower();server=@{id=$server.Id;path=$server.Path;startedAt=$server.StartTime.ToUniversalTime().ToString('o')};tunnel=@{id=$tunnel.Id;path=$tunnel.Path;startedAt=$tunnel.StartTime.ToUniversalTime().ToString('o')}}
+  $record = @{url=$url;port=$Port;protocol=$Protocol;region=$Region;edgeIPVersion=$EdgeIPVersion;fixtureSHA256=(Get-FileHash -LiteralPath $fixture).Hash.ToLower();server=@{id=$server.Id;path=$server.Path;startedAt=$server.StartTime.ToUniversalTime().ToString('o')};tunnel=@{id=$tunnel.Id;path=$tunnel.Path;startedAt=$tunnel.StartTime.ToUniversalTime().ToString('o')}}
   $record | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $recordPath -Encoding utf8
   # A URL and registered connection do not prove that the puzzle can be reached.
   $publicProbe = Test-PublicPuzzle $url $fixture

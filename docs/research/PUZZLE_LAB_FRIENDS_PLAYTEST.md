@@ -247,6 +247,28 @@ CIDR/port rules. Success still requires a fresh complete public probe. No system
 DNS edit, disabled TLS verification, private subscription edit or unsupported
 internal cloudflared deployment flag is introduced.
 
+After the user added the /32 endpoint rules and restored selective mode, a fresh
+global/HTTP2 connector with IPv4 still failed publicly. DNS and API pre-checks
+passed; TCP/UDP 7844 checks failed and connector handshakes ended with EOF. The
+launcher now exposes `-EdgeIPVersion 4` for repeatable IPv4-only endpoint tests
+and records the setting rather than depending on an inherited environment flag.
+
+A bounded local SOCKS CONNECT to one published endpoint on 7844 succeeded. TLS
+with SNI `h2.cftunnel.com` reset; TLS to the same IP via the same proxy with a
+region-discovery name or no SNI reached certificate verification, where Node's
+ordinary trust store rejected the leaf chain. TLS verification was never disabled.
+Google DoH returned no A records for `h2.cftunnel.com`. These observations support
+an SNI/destination-override hypothesis, not a proven Happ configuration fault or
+a successful tunnel. Xray documents that sniffing can replace a destination IP
+with the detected name; `routeOnly` or a domain exclusion prevents that rewrite:
+[Sniffing configuration](https://xtls.github.io/en/config/inbound.html).
+Next evidence: actual Happ Xray/TUN sniffing settings before changing them.
+
+During this check original port 4183 stopped responding; the agent did not stop
+that server. The original solved human session still matches its frozen private
+SHA256. Ask whether the owner/other chat stopped it before attempting a competing
+restart. The original checkout and session contents remain untouched.
+
 - [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
   distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
 - [Happ routing](https://www.happ.su/main/dev-docs/routing)
