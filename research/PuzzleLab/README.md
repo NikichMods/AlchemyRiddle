@@ -3,6 +3,12 @@
 Local research harness, not a game mod or published website. Original source is
 MPL-2.0. No third-party packages, game assets or real recipes are included.
 
+For a separate temporary friends instance through Cloudflare Quick Tunnel, see
+[`docs/research/PUZZLE_LAB_FRIENDS_PLAYTEST.md`](../../docs/research/PUZZLE_LAB_FRIENDS_PLAYTEST.md)
+and `playtest.ps1`. Public mode uses a frozen private synthetic fixture and
+separate durable sessions; it never enables facilitator/debug access. Five-task
+progression and a guided tutorial remain separate unimplemented product work.
+
 ## Current research state
 
 2026-10-09: synthetic upper interest/difficulty case 20 is solved on 4183,

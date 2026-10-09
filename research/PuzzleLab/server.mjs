@@ -6,7 +6,14 @@ import {resolve} from 'node:path';
 import {randomUUID, createHash} from 'node:crypto';
 import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
 const root = new URL('./', import.meta.url);
-export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory} = {}) {
+export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory, publicOrigin} = {}) {
+  let external;
+  if (publicOrigin) {
+    external = new URL(publicOrigin);
+    if (external.origin !== publicOrigin || external.protocol !== 'https:' ||
+        !/^[a-z0-9-]+\.trycloudflare\.com$/.test(external.hostname) || external.port ||
+        debug || liveReload || !stateDirectory) throw new Error('Public Lab requires an exact HTTPS Quick Tunnel origin, durable state, no debug and no reload');
+  }
   let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
   validate(fixture);
   const sessions = new Map();
@@ -22,10 +29,15 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
   const server = http.createServer(async (req, res) => {
     const host = req.headers.host;
     const port = server.address().port;
-    if (![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(host)) {res.writeHead(403).end(); return;}
-    if (req.headers.origin && req.headers.origin !== `http://${host}`) {res.writeHead(403).end(); return;}
+    const externalRequest = external && host === external.host;
+    if (!externalRequest && ![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(host)) {res.writeHead(403).end(); return;}
+    const origin = externalRequest ? external.origin : `http://${host}`;
+    if ((req.headers.origin && req.headers.origin !== origin) ||
+        req.headers['sec-fetch-site'] === 'cross-site' ||
+        (externalRequest && req.method === 'POST' && req.headers.origin !== origin)) {res.writeHead(403).end(); return;}
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'");
     const path = new URL(req.url, `http://${host}`).pathname;
     const json = (value, status = 200) => {res.writeHead(status, {'Content-Type': 'application/json; charset=utf-8'}); res.end(JSON.stringify(value));};
@@ -43,7 +55,10 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
         json({fixture, rows: candidates(fixture).map(tuple => ({tuple, clues: fixture.clues.map(c => satisfies(fixture, tuple, c))})), sessions: [...sessions.values()]}); return;
       }
       if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
-      const cookieName = stateDirectory ? `lab_${createHash('sha256').update(fixture.id).digest('hex').slice(0,12)}` : 'lab';
+      if (req.method === 'POST' && req.headers['content-type']?.split(';')[0].trim() !== 'application/json') {json({error:'Expected application/json'},415);return;}
+      // Cookies do not isolate localhost ports: the public instance must not
+      // replace the preserved owner's cookie while being checked locally.
+      const cookieName = external ? (externalRequest ? '__Host-lab' : 'lab_playtest') : stateDirectory ? `lab_${createHash('sha256').update(fixture.id).digest('hex').slice(0,12)}` : 'lab';
       let id = req.headers.cookie?.match(new RegExp(`(?:^|; )${cookieName}=([^;]+)`))?.[1];
       if (stateDirectory && /^[a-f0-9-]{36}$/.test(id ?? '') && !sessions.has(id)) {
         const path = resolve(stateDirectory,`${id}.json`);
@@ -53,19 +68,25 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
         }
       }
       if (!sessions.has(id)) {
+        if (external && sessions.size >= 500) {json({error:'Лимит сессий; обратитесь к ведущему'},503);return;}
         id = randomUUID(); sessions.set(id, createState(fixture));
         persist(id,sessions.get(id));
-        res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/`);
+        res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/${externalRequest ? '; Secure' : ''}${external ? '; Max-Age=2592000' : ''}`);
       }
       let state = sessions.get(id);
       if (req.method === 'POST') {
         let body = ''; for await (const chunk of req) {body += chunk; if (body.length > 20000) throw new Error('Слишком большой запрос');}
-        const next = structuredClone(state);
+        // Another tab can finish an action while this request body is arriving.
+        const next = structuredClone(sessions.get(id));
         act(fixture, next, JSON.parse(body));
         persist(id,next); sessions.set(id,next); state=next;
       }
       json(publicView(fixture, state));
-    } catch (error) {json({error: error.message}, 400);}
+    } catch (error) {
+      if (external && (error.code || error instanceof SyntaxError || error instanceof TypeError)) {
+        json({error:'Не удалось обработать запрос'}, error.code ? 500 : 400);
+      } else json({error: error.message}, 400);
+    }
   });
   const watchers = [];
   if (liveReload) {
@@ -86,7 +107,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const portArg = args.find(a => a.startsWith('--port='));
   const stateArg = args.find(a => a.startsWith('--state-dir='));
   const port = portArg ? Number(portArg.slice(7)) : 4173;
-  const server = createLab({debug: args.includes('--debug'), liveReload: true,
+  const publicArg = args.find(a => a.startsWith('--public-origin='));
+  const server = createLab({debug: args.includes('--debug'), liveReload: !publicArg,
+    ...(publicArg ? {publicOrigin:publicArg.slice(16)} : {}),
     ...(stateArg ? {stateDirectory:resolve(stateArg.slice(12))} : {}),
     ...(fixtureArg ? {fixturePath: resolve(fixtureArg.slice(10))} : {})});
   server.on('error', e => {console.error(e.message); process.exitCode = 1;});

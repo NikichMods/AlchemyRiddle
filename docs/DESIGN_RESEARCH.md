@@ -4,6 +4,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Separate friends-access task — 2026-10-09
+
+See `research/PUZZLE_LAB_FRIENDS_PLAYTEST.md` for the isolated temporary-tunnel
+deployment, request boundary, durable anonymous sessions, operational checks and
+network outcome. Preserve original solved case 20 on 4183. User authorizes the
+temporary link; no email gate selected, no friend messaging. Desired five-task
+playtest progression (teaching first, boss-like fifth, persistent level selector,
+sequential unlock) is recorded there with remaining decisions. No campaign or
+tutorial is silently implemented by the hosting task. Generator weights,
+mechanics and accepted board UI unchanged; production BLOCKED. Main research
+priority remains the rare-opportunity comparison below.
+
 ### Rare-opportunity preference principle accepted; weights open — 2026-10-09
 
 User wants suitable rare opportunities valued without making rare motifs dominate
