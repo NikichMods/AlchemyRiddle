@@ -4,6 +4,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Condition-variety map audited — 2026-10-09
+
+Read `research/CONDITION_VARIETY_MAP_2026-10-09.md`. User considers current wording
+variety sufficient; prioritize condition variety and soft recent-repetition
+preference. Lab semantics already cover requested base forms; the inspected
+automated candidate builder omits shared-property and three-term mixed-count
+forms. Existing research ranking has recency/balance terms, not smooth age decay.
+Proposed bounded next step: extend that candidate pool before tuning memory;
+exact window/weights remain unselected. No new structure-diversity machinery:
+retain accepted interaction-quality checks because different families alone do
+not guarantee interesting dependencies. Map prepared for review; no code, weights,
+fixture or session changes. Preserve solved case 20 on 4183. Production BLOCKED.
+
 ### Case-20 presentation follow-up implemented — 2026-10-09
 
 User accepts lighter prose (color/bold role words without icons; shapes retained
