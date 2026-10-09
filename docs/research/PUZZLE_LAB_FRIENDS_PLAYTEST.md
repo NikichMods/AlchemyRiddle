@@ -181,6 +181,31 @@ research observations and friend-facing expectations about data retention.
 No account system, email registration, full analytics or public-service
 architecture is needed merely to host a few friends.
 
+## Selective VPN diagnostic, pending application
+
+Read-only host inspection confirms an active VPN TUN interface and the current
+HTTP2 connector socket entering that interface. This does **not** establish its
+eventual proxy/direct outbound. Startup connectivity pre-checks passed DNS and
+TCP/UDP 7844, but later logs show repeated control-stream/edge disconnects and
+a DNS refresh timeout. Passing a short handshake is not sustained availability.
+The user supplied prior selective-VPN context; local routing metadata contains
+multiple same-named profiles, so changes must target the active subscription.
+No VPN, routing, firewall or Zapret settings have been changed.
+
+Next bounded diagnostic: preserve the current profile and add only Quick Tunnel
+creation/discovery names plus `h2.cftunnel.com` to its proxy destinations for the
+current HTTP2 transport, reconnect the VPN, then restart only the friend harness
+and repeat full public asset/session checks. Domain rules may depend on TUN
+sniffing; their presence alone does not prove the connector's outbound. Avoid
+global proxy or broad Cloudflare network rules. Native Windows UI control is
+unavailable in this agent session, so applying the Happ UI change requires the
+user; blind edits to its live storage are not a supported substitute.
+
+- [Tunnel firewall destinations and TLS SNI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/configure-tunnels/tunnel-with-firewall/)
+  distinguish region discovery names from HTTP2 `h2.cftunnel.com` on port 7844.
+- [Happ routing](https://www.happ.su/main/dev-docs/routing)
+  documents subscription-scoped profiles and reconnect for applying changes.
+
 ## Official references
 
 - [Quick Tunnels](https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/):
