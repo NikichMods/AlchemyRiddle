@@ -403,8 +403,12 @@ Host and action Origin against that single address; no request wildcard is
 accepted. Automatic approval review rejected initial generic ngrok-family
 recognition; explicit per-start ngrok-origin approval was implemented instead.
 Full HTTP/evaluator suite passes 46/46; PowerShell syntax parsed successfully.
-Stop/Start and public asset checks exercised on Windows. Hosted CI for this
-new source is pending; prior Cloudflare CI is not evidence for this revision.
+Stop/Start and public asset checks exercised on Windows. Hosted CI passed for
+exact source `bdb8a86050b432e6c4b95ae80a89f12cf5951f2f`
+([run 38004004714](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38004004714));
+that suite verifies HTTP/evaluator behavior, not Windows launching or visitor
+network accessibility. Original solved case-20 session and frozen 2x2 fixture
+SHA256 values still match their preserved values.
 
 Operating instructions: keep the computer awake, network/VPN connection,
 ngrok process and Lab running. Stop-Playtest ends availability immediately;
