@@ -492,6 +492,13 @@ Hosted suite passed for initial panel source `312eefb01b8bb19b1f1e9bee1e03de8153
 ([run 38006591009](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38006591009)).
 Browser control verification showed the external puzzle confirmed; normal UI
 reports plain Russian status and keeps raw command diagnostics collapsed.
+Final panel UI source `0069e957b0e8e1a6b3275ac1336741d9c045223b` also passed
+[hosted CI run 38006697067](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38006697067).
+The actual browser timeline rendered ordered page/help/card/submit events for a
+marked QA session; ordinary view was restored. Both server and tunnel remain
+running with the original assigned URL. The private panel is not an external
+visitor-network verification and does not identify which real person owns a
+cookie session.
 
 Ngrok preparation checkpoint, 2026-10-10: the user has created an account and
 chosen Share Localhost. Official Windows amd64 standalone agent 3.39.11 was
