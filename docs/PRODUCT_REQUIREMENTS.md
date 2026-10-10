@@ -15,7 +15,9 @@ Follow-up accepted: use compact ⊘ / ↶ icons (slashed circle supersedes the f
 show a dashed frame. Known/earned journal pair choices toggle: first click selects
 only that pair, second clears its two selected components while preserving an
 unrelated third choice. The mockup grouping below was implemented, then rejected
-by the user for lost hierarchy on 2026-10-10; replacement is under design:
+by the user for lost hierarchy on 2026-10-10; the subsequently selected replacement
+is the two-zone workbench documented in
+`research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md`. Historical grouping:
 candidates
 upper left; chosen research/formula upper right; synthesis, clues and compatibility
 journal below from left to right. A useful research witness alone does not prove

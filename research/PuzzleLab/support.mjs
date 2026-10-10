@@ -20,3 +20,19 @@ export function submissionFeedback(view, departedAt=0) {
   const fresh=Boolean(record && record===history.at(-1) && departedAt<history.length);
   return {fresh,revisited:Boolean(record && !fresh)};
 }
+
+// Presentation receives only the player's public observations, never the hidden graph.
+export function selectedPairStates(view, slotId) {
+  const selected=view.state.selected, index=view.slots.findIndex(s=>s.id===slotId);
+  const edge=i=>{
+    const slots=view.slots.slice(i,i+2).map(s=>s.id);
+    const label=slots.map(s=>({powder:'П',fluid:'Ж',essence:'Э'}[s]??s)).join('–');
+    if(!slots.every(s=>selected[s]))return {status:'incomplete',label};
+    const known=(view.state.knownRelations??[]).find(r=>r.slots.length===2 && slots.every(s=>r.slots.includes(s)&&r.tuple[s]===selected[s]));
+    return {status:known?(known.stable?'stable':'incompatible'):'unknown',label};
+  };
+  if(!view.pairTestCost)return [{status:'incomplete',label:''},{status:'incomplete',label:''}];
+  if(index===0){const e=edge(0);return [e,e];}
+  if(index===view.slots.length-1){const e=edge(index-1);return [e,e];}
+  return [edge(index-1),edge(index)];
+}

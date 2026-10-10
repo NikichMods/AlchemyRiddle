@@ -1,3 +1,4 @@
+import {selectedPairStates} from './support.mjs';
 // SPDX-License-Identifier: MPL-2.0
 let submitBlockReason,recordedSubmissions,selectedSubmission,compositionReminder,submissionFeedback;
 const $ = id => document.getElementById(id);
@@ -139,7 +140,7 @@ function render() {
     : 'Порошок должен быть совместим с жидкостью. Исследуйте неизвестные пары, чтобы узнать, какие из них совместимы.');
   $('experiment-guide').hidden=true;
   $('experiment-guide').textContent='';
-  $('pair-action-guide').textContent='Выберите соседнюю пару, совместимость которой хотите узнать.';
+  $('pair-action-guide').textContent='Выберите компоненты в соседних столбцах. Здесь можно проверить пару и прочитать результат.';
   $('case-badge').textContent = 'Исследовательский опыт';
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
@@ -176,11 +177,24 @@ function render() {
       choose.append(text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
       const mark = document.createElement('button'); mark.className='mark'; mark.id=`mark-${card.id}`;
-      mark.textContent=marked ? '↶' : '⊘';
+      if(marked) mark.textContent='↶';
+      else mark.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M6 18 18 6"/></svg>';
       mark.setAttribute('aria-pressed',String(marked));
       mark.setAttribute('aria-label',`${marked ? 'Вернуть' : 'Вычеркнуть'}: ${card.name}`);
       mark.title='Бесплатная личная пометка; не меняет выбор и правила загадки';
       mark.onclick=()=>action({type:'mark',slot:slot.id,card:card.id});
+      if(selected) {
+        const edges=selectedPairStates(view,slot.id);
+        edges.forEach((edge,i)=>{
+          const frame=document.createElement('span');frame.className='pair-frame '+(i?'right':'left')+' '+edge.status;frame.setAttribute('aria-hidden','true');box.append(frame);
+        });
+        if(view.pairTestCost){
+          const hint=document.createElement('span');hint.className='card-pair-hint';
+          const unique=edges.filter((e,i)=>!i||e.label!==edges[i-1].label);
+          hint.textContent=unique.map(e=>({stable:'✓',incompatible:'⊘',unknown:'?',incomplete:'—'}[e.status])+' '+e.label).join(' · ');
+          hint.setAttribute('aria-label',unique.map(e=>e.label+': '+({stable:'совместимо',incompatible:'несовместимо',unknown:'не исследовано',incomplete:'пара не выбрана'}[e.status])).join('; '));box.append(hint);
+        }
+      }
       box.append(mark); group.append(box);
     }
     $('cards').append(group);
@@ -199,8 +213,9 @@ function render() {
     tile.append(cardRef(s.selected[slot.id]),label); return tile;
   }));
   if (!$('selection').childElementCount) $('selection').textContent='Пока ничего не выбрано';
-  $('pair-research').hidden = !view.pairTestCost || !view.slots.slice(0,-1).some((slot,i)=>s.selected[slot.id] && s.selected[view.slots[i+1].id]);
+  $('pair-research').hidden = !view.pairTestCost;
   $('knowledge').hidden = !view.pairTestCost;
+  document.querySelector('.compatibility-workbench').hidden=!view.pairTestCost;
   $('pair-help').hidden = !view.pairTestCost;
   $('pair-tips').hidden = !view.pairTestCost;
   $('formula-compatibility').hidden = !view.pairTestCost;

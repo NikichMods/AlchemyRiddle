@@ -6,6 +6,15 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Current 2026-10-10 follow-up: user selects the two-zone workbench, independent
+public-knowledge pair outlines (split liquid), centered exclusion control and
+soft order preparation. Implemented and locally verified (55 tests plus public
+browser refresh/earned-negative QA). Authoring-only permutation preference runs
+before a new fixture precommit; active trial 04 retains its exact model/order and
+all human sessions. Details/default/proxy comparison:
+`research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md`. Older proposal entries below are
+history. Production and accepted legacy route/diversity weights unchanged.
+
 Latest 2026-10-10: user rejects the implemented mockup layout for lost hierarchy,
 accepts dim/dashed marks and pair toggles, and corrects elimination icon to ⊘.
 New proposal groups selected-pair controls with observations and splits the

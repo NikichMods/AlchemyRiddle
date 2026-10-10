@@ -149,3 +149,13 @@ changed by this correction.
 Icon-only verification: JavaScript syntax and whitespace checks pass; the actual
 public page reload displays ⊘ for exclusion. A private viewport screenshot was
 visually inspected. No process restart or session actions were necessary.
+
+## Workbench activation — 2026-10-10
+
+User selected the two-zone workbench, split liquid outline, centered exclusion
+SVG and soft preparation-order pass. Implementation and verification are owned by
+../research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md. The pass was verified against a
+separate private review copy; the live frozen fixture/order/hash remain unchanged.
+Existing classified browser QA session spends 2 Science to verify an earned
+negative right edge and persists marks/selection after reload. Human sessions
+are not reset; no serving process restart. 55 local tests pass.

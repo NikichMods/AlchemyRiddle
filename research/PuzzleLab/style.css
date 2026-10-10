@@ -200,12 +200,44 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 .card.marked .choose{opacity:.55}
 .card.marked .mark{color:#b9dfcc;font-size:24px}
 .card.marked .mark:hover{background:#2b433b}
-.workspace{grid-template-columns:minmax(230px,1fr) minmax(230px,1fr) minmax(320px,1fr);grid-template-areas:'board board side' 'synthesis clues knowledge';gap:20px}
-.board{grid-area:board}
-.experiment-selection{grid-area:side;border-left:1px solid #40565f;padding-left:20px}
-.formula-content{border-top:1px solid #40565f;padding-top:14px;margin-top:14px}
-.clue-panel{grid-area:clues;border-top:1px solid #40565f;padding-top:16px}
-#knowledge{grid-area:knowledge;border-top:1px solid #40565f;padding-top:16px}
-.synthesis-panel{grid-area:synthesis;border-top:1px solid #40565f;padding-top:16px}
-body:not(.three-slot) .workspace{grid-template-columns:minmax(0,2fr) minmax(320px,1fr);grid-template-areas:'board side' 'synthesis clues'}
-@media(max-width:1050px){.workspace,body:not(.three-slot) .workspace{grid-template-columns:1fr;grid-template-areas:'board' 'clues' 'knowledge' 'side' 'synthesis'}.experiment-selection,#knowledge{border-left:0;padding-left:0}.experiment-selection{border-top:1px solid #40565f;padding-top:16px}}
+
+/* Workbench: clues and candidates stay together; current experiments own their journal. */
+.workspace,body:not(.three-slot) .workspace{grid-template-columns:minmax(0,2.15fr) minmax(350px,1fr);grid-template-areas:'hypothesis compatibility' 'synthesis compatibility';gap:18px 24px}
+.hypothesis{grid-area:hypothesis;min-width:0}
+.hypothesis>h2,.compatibility-workbench h2,.synthesis-panel>h2{font-size:18px;color:#dce8e4}
+.clue-panel{border:0;padding:0 0 12px;margin-bottom:12px;border-bottom:1px solid #40565f}
+#clues{margin:0;padding-left:22px}#clues li{font-size:15px;margin-bottom:7px}
+.board{grid-area:auto}.board h3,.clue-panel h3{font-size:14px;color:#a9bdc1}
+.compatibility-workbench{grid-area:compatibility;border-left:1px solid #40565f;padding-left:22px;min-width:0}
+.frame-key{font-size:12px;color:#9fb4bb;margin-bottom:14px;line-height:1.5}
+#knowledge{border-left:0;padding:14px 0 0;margin-top:12px;border-top:1px solid #40565f}
+#knowledge>h3{font-size:14px}.pair-control.incomplete{display:grid}.pair-control.incomplete button,.pair-control.incomplete .pair-names{display:none}
+.synthesis-panel{grid-area:synthesis;border-top:1px solid #40565f;padding-top:12px}
+.formula-content{border:0;margin:0;padding:0}.formula-content h3{font-size:14px;color:#a9bdc1}
+#selection{display:flex;flex-wrap:wrap;gap:4px 18px;margin:5px 0}.formula-tile{display:flex;gap:6px;align-items:center;font-size:13px}
+.role-preview #submit{min-height:66px;margin-top:8px}.role-preview #submit .synthesis-seal{width:38px;height:38px}
+.role-preview #lab-supply{margin-top:7px;padding:7px 0}
+.card.selected{border-color:transparent;box-shadow:none}
+.pair-frame{position:absolute;top:-1px;bottom:-1px;width:50%;pointer-events:none;border:2px solid #a4b8c0;z-index:1}
+.pair-frame.left{left:-1px;border-right:0;border-radius:8px 0 0 8px}.pair-frame.right{right:-1px;border-left:0;border-radius:0 8px 8px 0}
+.pair-frame.stable{border-color:#76ce8f}.pair-frame.incompatible{border-color:#ee8c86}
+.card-pair-hint{position:absolute;bottom:12px;left:9px;max-width:calc(100% - 50px);font-size:11px;color:#d0dce0;pointer-events:none}
+.card .mark{display:flex;align-items:center;justify-content:center;line-height:1}.card .mark svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+@media(max-width:1050px){.workspace,body:not(.three-slot) .workspace{grid-template-columns:minmax(0,1.7fr) minmax(310px,1fr);gap:16px}.compatibility-workbench{padding-left:16px}.choose strong{font-size:14px}fieldset+fieldset{padding-left:8px}#cards{gap:8px}}
+@media(max-width:760px){.workspace,body:not(.three-slot) .workspace{grid-template-columns:1fr;grid-template-areas:'hypothesis' 'compatibility' 'synthesis'}.compatibility-workbench{border-left:0;border-top:1px solid #40565f;padding:14px 0 0}}
+
+/* Keep the small three-by-three investigation and final action in one desktop view. */
+.task-route{display:none}
+#task{margin-bottom:12px}
+.card,.many-candidates .card{min-height:80px}
+.card .choose,.many-candidates .card .choose{min-height:80px;padding:7px 9px 30px}
+.choose strong{font-size:14px;line-height:1.25}
+.tags{margin-top:5px}.tag{font-size:11px;min-height:20px}
+fieldset legend{margin-bottom:6px}
+#clues li{font-size:14px;line-height:1.4;margin-bottom:5px}
+.clue-panel{padding-bottom:9px;margin-bottom:9px}
+.role-preview #submit{min-height:58px}
+.synthesis-panel>h2{margin-bottom:7px}
+
+#selection{flex-direction:row}
+#compatibility-guide{display:none}

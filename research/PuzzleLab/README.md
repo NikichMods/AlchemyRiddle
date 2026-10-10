@@ -269,3 +269,21 @@ timing. Counts represent cookie sessions, not distinct people. Visible-tab time
 is an estimate, not proof of attention. Default summaries exclude untouched
 probes and marked owner/test sessions. Exports contain private trial evidence:
 keep them outside Git. Tests include `telemetry.test.mjs`.
+
+## Presentation ordering before a new playtest
+
+After model/wording generation, run the authoring-only pass before freezing the
+new fixture and facilitator precommit:
+
+```text
+node research/PuzzleLab/author-card-order.mjs PRIVATE_INPUT.json PRIVATE_NEW_OUTPUT.json NEW-CASE-ID SEED
+```
+
+Keep both output and adjacent `.order-audit.json` outside public Git. It reorders
+cards only; identity must be new, source and existing output cannot be overwritten.
+The default strength is 2 on its own 0..1 score, with at most 128 seeded sampled
+orders (exhaustive below that size). Optional programmatic settings are exported
+by `prepareCardOrder`; preserve the returned audit. Revalidate/precommit the exact
+output before first play. This pass supplements the existing model-generation
+criteria and does not run on requests, refreshes or already-started cases.
+See `docs/research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md` for scoring/limitations.

@@ -5,21 +5,21 @@
 <header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge" id="case-badge">Синтетический опыт</span></header>
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
 <div class="workspace">
+<section class="hypothesis"><h2>1. Соберите гипотезу</h2>    <section class="clue-panel"><h3>Сведения о составе</h3><p id="clue-guide" class="panel-guide" hidden></p><ol id="clues"></ol></section>
   <section class="board" aria-label="Кандидаты">
-    <h2>Кандидаты</h2>
+    <h3>Кандидаты</h3>
     <div id="cards"></div>
   </section>
-  <aside class="experiment-selection" aria-label="Исследования и выбранная смесь">
-    <section id="pair-research" hidden aria-label="Выбранные пары">
-      <div class="section-heading"><h2>Исследование пар</h2><span id="research-budget"></span></div>
+</section>
+<aside class="compatibility-workbench" aria-label="Исследование совместимости"><div class="section-heading"><h2>2. Исследуйте сочетания</h2><span id="research-budget"></span></div><p class="frame-key">Рамки выбранных карточек: ? неизвестно · ✓ совместимо · ⊘ несовместимо. У жидкости слева связь с порошком, справа — с эссенцией.</p>    <section id="pair-research" hidden aria-label="Выбранные пары">
+      <h3>Выбранные пары</h3>
       <p id="pair-action-guide" class="pair-rule">Выберите соседнюю пару, совместимость которой хотите узнать.</p>
       <div id="pair-actions" aria-live="polite"></div>
     </section>
-      <div class="formula-content"><h2>Выбранная смесь</h2><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
-  </aside>
-    <section class="clue-panel"><h2>Сведения о составе</h2><p id="clue-guide" class="panel-guide" hidden></p><ol id="clues"></ol></section>
-    <section id="knowledge" hidden><h2>Совместимость пар</h2><p id="compatibility-guide" class="pair-rule"></p><p id="experiment-guide" class="panel-guide" hidden></p><div id="relations" aria-live="polite"></div></section>
-  <section class="synthesis-panel" aria-label="Финальная проверка">
+    <section id="knowledge" hidden><h3>Известные сочетания</h3><p id="compatibility-guide" class="pair-rule"></p><p id="experiment-guide" class="panel-guide" hidden></p><div id="relations" aria-live="polite"></div></section>
+</aside>
+  <section class="synthesis-panel" aria-label="Финальная проверка"><h2>3. Проверьте формулу</h2>      <div class="formula-content"><h3>Выбранная смесь</h3><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
+
       <span id="budget"></span>
       <p id="synthesis-guide" class="panel-guide" hidden></p>
       <button id="refill" hidden>Пополнить Science</button>

@@ -1,6 +1,6 @@
 # Puzzle Lab hierarchy and answer-order proposal — 2026-10-10
 
-Status: design proposal; no new layout or generator weights implemented.
+Status: user selected the recommended workbench and soft presentation-order preparation; implemented in the research Lab. Production remains blocked.
 The user rejects the implemented three-column mockup grouping because it loses
 hierarchy. Elimination dim/dashed behavior and pair deselection are accepted;
 the elimination control must be a slashed circle, superseding the first cross.
@@ -68,3 +68,49 @@ These principles support the proposal; they do not validate this specific game
 layout. Next layout acceptance needs a visible prototype and a small human check:
 can a player locate clues, investigate the selected pair, find its observation,
 and return to the hypothesis without facilitator navigation help?
+
+## Implementation and verification
+
+The workbench keeps conditions above candidates at left, current pair controls
+and prior/earned journal at right, then a compact selected formula/final action
+below candidates. No locked progression. Liquid outlines have independent halves;
+public observation symbols supplement color. Unknown and incomplete remain neutral.
+The exclusion symbol is a centered SVG circle/slash inside its circular hover
+background, avoiding font baseline alignment differences.
+
+`research/PuzzleLab/card-order.mjs` is an authoring-only presentation pass;
+`author-card-order.mjs` prepares a new private fixture with a fresh ID, refuses
+source/output overwrites and writes a private adjacent audit. The serving process
+never imports these files and never changes a frozen field. Run after model and
+wording generation, before precommit and first play. This is the implemented Lab
+preparation seam, not integration into a nonexistent finished production generator.
+All subsequent Lab authoring must include this pass; old frozen cases stay intact.
+
+For each ordering, residual tuples satisfy all public conditions and exclude
+known negative edges; positive observations supply optional pair-first branches.
+Score is mean of (1/forward-rank + 1/reverse-rank)/2 over the whole residual list
+and each answer-containing positive branch. Irrelevant positive branches do not
+force the answer. Select among permutations with positive weight exp(-2*score).
+Strength 2 is a bounded research default for this separate 0..1 score, not a
+replacement for existing 0.25 route/diversity weights or production calibration.
+Small fields are exhaustive when within the 128-order default pool limit;
+larger pools use bounded seeded shuffle samples including the original order.
+Every order remains eligible. Seed, strength, ranks, expected scores and pool
+coverage are retained privately for reproducibility. Singleton/two-option
+branches may offer no positional improvement; that is not a validity failure.
+
+55 local tests pass, including two independent liquid states, no hidden-graph
+access, seeded reproducibility, model immutability, public negative pruning,
+optional positive priors, singleton cases, lower expected positional score and
+continued early-hit eligibility. The current private frozen trial was passed
+through the real authoring CLI into a separate non-serving review artifact:
+128 orders, uniform expected proxy 0.5609375, weighted 0.5550747. This is a small
+mechanical improvement on one negative diagnostic case, not measured human
+engagement or calibrated guessing probability. Active fixture hash unchanged.
+
+Public HTTPS browser QA uses the existing facilitator-classified test session:
+known compatible left edge, unknown then earned incompatible right edge,
+excluded-card appearance and selected-state/mark persistence after reload.
+Only that test session spends 2 Science on a pair check; no human session reset
+or fixture replacement. No server/tunnel restart required. Screenshots remain
+private. Independent visitor-network availability is not newly established.
