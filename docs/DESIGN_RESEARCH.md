@@ -4,6 +4,22 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Working generator baseline accepted; campaign simulation requested — 2026-10-10
+
+User accepts the current research generator as the working baseline, not a claim
+of finished calibration or production readiness. Baseline source: `29cb7fd`.
+Next task is a browser campaign simulation: progression/level inspection,
+cross-investigation knowledge and cumulative Science consumption. Read the
+reviewable proposal in `research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
+Two independent 16/19 core ladders and illustrative mixed chronology, not a fixed
+35-investigation natural game route. Exact step content and knowledge-transfer
+rules still need closure; do not silently classify arbitrary fixtures as levels.
+Online sibling branch `research/puzzle-lab-tunnel` at inspected `c7f3b1c` already
+has durable single-fixture sessions, telemetry and private local facilitator
+controls. Reuse/integrate that work rather than recreate hosting/admin features;
+do not mutate its running instance or sessions. No cross-thread message sent.
+Proposal currently changes no live Lab or campaign mechanics. Production BLOCKED.
+
 ### Bounded rare-family search adopted in main research builders — 2026-10-10
 
 User accepts the proposed search change. Read
