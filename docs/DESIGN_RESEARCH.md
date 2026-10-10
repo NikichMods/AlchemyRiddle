@@ -6,6 +6,17 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Current 2026-10-10 follow-up: user selects a new easy/post-tutorial trial.
+Active `lab-friends-easy-03`, `Эликсир спокойного сна`, uses the accepted two-slot
+composition core: 3x3 field, three necessary short conditions, 30 Science, no
+refill, no hidden compatibility. Precommit, preservation and public-route checks:
+`prototypes/PUZZLE_LAB_FRIENDS_EASY_03_STATE.md`. Previous three-slot trial 02 and
+all its sessions/statistics are archived privately before replacing the model
+at the same assigned ngrok origin. Difficulty awaits human play; original case
+20, generator weights and production remain unchanged. Historical entries below
+refer to earlier deployments, not the current active field.
+
+
 Current 2026-10-10: user correctly recognizes first three-slot friends trial as
 case-19 reuse; it is not a fresh puzzle and is archived privately. Active
 replacement is `lab-friends-three-slot-02`, `Эликсир ночного зрения`: new synthetic

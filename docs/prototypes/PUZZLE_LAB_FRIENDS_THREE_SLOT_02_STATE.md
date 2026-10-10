@@ -1,6 +1,10 @@
 # Friends three-slot trial 02 — Elixir of night vision
 
-2026-10-10. Current synthetic candidate, intended medium-high; human difficulty
+ARCHIVED 2026-10-10 after user selected easy trial 03. Model and sessions retained
+in private `archives/three-slot-02-2026-10-10/`; manifest verified unchanged.
+Historical verification below describes trial 02.
+
+2026-10-10. Synthetic candidate, intended medium-high; human difficulty
 unverified. Production BLOCKED. Private answer and traces must not surface in play.
 
 User recognizes trial 01 as a renamed case-19 variant. Correct the interpretation:
