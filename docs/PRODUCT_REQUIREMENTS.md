@@ -230,13 +230,44 @@ Accepted product direction:
 - if the player voluntarily starts one, generate it from the player's current
   two-slot difficulty state rather than assigning a permanent "late paint"
   difficulty;
-- whether optional completions advance the arity experience counter remains a
-  balance detail, but they must never be required to reach the top difficulty
-  bands.
+- completing an optional investigation counts as ordinary two-slot practice
+  (explicitly accepted 2026-10-10), but optional work must never be required to
+  reach the top difficulty bands.
 
 For the current ordinary corpus classification, eight decorative colour variants
 are in this optional group. White and black paint are not: they also have
 ordinary gameplay production uses.
+
+### Campaign stand clarification — 2026-10-10
+
+Accepted for the browser campaign simulation; production implementation remains
+separately gated. See `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md` and
+`research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
+
+- Show each investigation's difficulty and arity in player mode as well as in
+  developer mode. The normal UI label need not say “provisional”; evidence must
+  still distinguish intended bands from measured human difficulty. Numbered
+  curriculum assignments remain proposed until content/feasibility review.
+- Preserve global reagent identities, properties and compatibility across a
+  campaign. Generator uses earned knowledge rather than hiding it to create work.
+- Explicit pair experiments immediately preserve stable and incompatible results
+  across investigations, including unfinished or unsuccessful formula hypotheses.
+  Known/solved three-slot formulas establish their two adjacent stable relations.
+  A failed mixture alone does not establish either pair's polarity. This resolves
+  campaign reuse of negative observations, previously left unspecified; historical
+  stable-only starting fixtures stay reproducible. Two-slot success does not
+  automatically establish a three-slot relation.
+- Every new campaign stand mode, including online/guest play, provides a modest
+  Science refill control. Count actual paid actions cumulatively per player;
+  record refills separately. This is a stand allowance, not a new vanilla economy
+  mechanic or a retrospective rewrite of finite-budget prototype evidence.
+- Synthetic names should vary phrase construction and use coherent dark-fantasy
+  imagery with restrained magical science, humour and self-irony. Target names
+  must not hint at hidden answers. Reagent naming should generally resonate with
+  visible properties, with rare deliberately contrary cosmetic jokes allowed.
+  Target-title independence and a small authored archetype catalogue are proposed
+  implementation safeguards. Vanilla item/product names remain canonical; this
+  does not authorize replacing them with generated names in the production mod.
 
 
 

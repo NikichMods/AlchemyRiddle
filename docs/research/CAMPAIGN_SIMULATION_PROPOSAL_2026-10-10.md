@@ -1,7 +1,8 @@
 # Browser campaign simulation — reviewable proposal, 2026-10-10
 
-Status: user requests the capability; consequential semantics below are proposed,
-not implemented or accepted merely by being written here. Current research
+Status: user requests the capability; transfer, difficulty-label, refill and
+optional-practice principles were accepted 2026-10-10. Numbered curriculum and
+implementation remain proposed, not implemented merely by being written here. Current research
 generator `29cb7fd` is accepted as working baseline. Production remains BLOCKED.
 
 ## Intended outcome and existing implementation
@@ -34,9 +35,11 @@ two-slot formula variants and 19 three-slot variants. This provides 35 core
 completionist investigation positions, not 35 logical condition types or an
 expected natural game playthrough. Eight optional decorative two-slot variants
 are additional side content; don't make them necessary to reach mature play.
+They have no fixed extra late rungs: start from current two-slot state, and count
+completion as ordinary two-slot practice (explicitly accepted 2026-10-10).
 
 Proposed developer view shows both ladders and an illustrative mixed chronology.
-Each entry shows its within-arity position, arity, intended band, pedagogical role,
+Each developer entry shows its within-arity position, arity, intended band, pedagogical role,
 target and state (unstarted/active/solved). Mixed chronology is an approximate
 scenario of target demand/capability exposure, not fixed game story order.
 The full 35-step view supports coverage inspection. A shorter natural-demand
@@ -46,10 +49,11 @@ arity, without claiming every player solves those exact counts.
 The accepted progression shape is compact explicit teaching in roughly the first
 four investigations of each arity, richer combinations, mature/MAX around six or
 seven, then varied mature play, occasional relief and selected boss peaks.
-Exact step assignments remain tuning. Label these intended difficulty bands,
-not calibrated measured difficulty; don't use paid-check count alone as a label.
-The next content artifact must be an explicit 16/19 step map before filling all
-levels. Existing independently authored fixtures are exemplars, not automatically
+Exact step assignments remain tuning. Show difficulty and arity to all players;
+omit “provisional” in the normal UI, but record intended rather than calibrated
+measured difficulty in research evidence. Don't use paid-check count alone as a
+label. The explicit proposed 16/19 map is now in
+`CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. Existing independently authored fixtures are exemplars, not automatically
 a coherent campaign.
 
 Player mode progresses through its scenario with one active unsolved puzzle.
@@ -59,7 +63,7 @@ an unvisited rung cannot silently invent knowledge of all earlier experiments;
 use a named explicit starting-state scenario, or an actual saved checkpoint.
 Developer sandbox experiments must not contaminate player progression/statistics.
 
-## Consistent synthetic world and knowledge proposal
+## Consistent synthetic world and accepted knowledge rules
 
 Use a coherent synthetic corpus for public play; do not expose unknown vanilla
 formula answers while imitating corpus shape/progression. Recipe counts, arity,
@@ -72,7 +76,7 @@ card positions such as P1/G2 are not identity keys. A renamed/reordered card mus
 still refer to the same reagent; two independent fixtures using the same position
 code must not create false prior knowledge. Audit exemplars before any reuse.
 
-Proposed carry-forward rules:
+Carry-forward rules accepted 2026-10-10:
 
 - An explicit paid pair experiment immediately records its observed stable or
   incompatible outcome, even if the full formula hypothesis later fails or the
@@ -84,9 +88,8 @@ Proposed carry-forward rules:
 - A failed whole-mixture test records that mixture result. It alone does not
   identify which adjacent relation was incompatible; avoid fabricated pair facts.
 - Preserve incompatible observations across levels as well as stable ones.
-  The prior stable-only initial-Lab presentation does not settle this campaign
-  decision: PRODUCT_REQUIREMENTS explicitly leaves cross-investigation negative
-  reuse unspecified. This proposal needs acceptance before implementation.
+  This resolves the previously unspecified negative-reuse decision for the
+  campaign. Historical stable-only initial-Lab models remain reproducible.
 - Generator input includes actual earned knowledge. Don't hide it to manufacture
   difficulty. A shortened later solution can be legitimate progress.
 
@@ -94,6 +97,12 @@ Store observed facts and source (experiment/known formula) separately from playe
 hypotheses. Showing relevant earned facts does not automatically solve composition
 conditions for the player. Existing route estimator accepts stable priors only;
 negative-prior simulations must be extended/verified rather than claimed supported.
+
+Name the synthetic world through a portable curated semantic catalogue with
+varied complete phrase forms; proposed examples and anti-answer safeguards are
+in `CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. Target titles must not hint at the
+hidden answer; reagent names normally resonate with visible tags. This synthetic
+authoring does not replace real vanilla names in the future mod.
 
 ## Player profile, Science and research evidence
 
@@ -112,7 +121,8 @@ Explicit tutorial demonstrations and historical finite-budget fixtures require
 their own declared protocol; don't silently mutate them into campaign economy.
 
 Native Science acquisition remains outside the stand. Refill support is an
-explicit stand allowance; log it so affordability failures are distinguishable
+explicit stand allowance required in every new campaign mode, including guests
+and online players; log it so affordability failures are distinguishable
 from puzzle difficulty. This measures subsystem costs, not vanilla grind/Faith/
 inventory/progression economy. Science spending is a contextual per-player
 measure; new puzzle seeds and starting knowledge affect it.
@@ -126,7 +136,7 @@ deductions, flat enumeration and abandoned/blocked progression.
 
 ## Implementation order and acceptance checks
 
-1. Agree transfer rules and review the explicit ladder/mixed-scenario map.
+1. Review/tune the explicit ladder/mixed-scenario map; transfer rules are accepted.
 2. Establish the consistent synthetic world and freeze campaign identity/content.
 3. Integrate the existing Lab/panel work with the accepted research baseline;
    implement profile, one active frozen puzzle, progression and spending ledger.

@@ -12,8 +12,16 @@ Next task is a browser campaign simulation: progression/level inspection,
 cross-investigation knowledge and cumulative Science consumption. Read the
 reviewable proposal in `research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
 Two independent 16/19 core ladders and illustrative mixed chronology, not a fixed
-35-investigation natural game route. Exact step content and knowledge-transfer
-rules still need closure; do not silently classify arbitrary fixtures as levels.
+35-investigation natural game route. Read the explicit proposed map and naming
+design in `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. User accepts both
+pair polarities carrying forward, solved/known three-slot adjacent stable facts,
+global reagent/graph consistency and generation from earned knowledge. Optional
+decorative completion counts as two-slot practice; no fixed extra late rungs.
+All campaign players see difficulty/arity and can refill Science. Synthetic
+names vary construction; target names must not hint at answers, reagent names
+normally resonate with visible tags. Vanilla names remain canonical. Exact step
+content and playable synthetic world still need construction/validation; do not
+silently classify arbitrary fixtures as levels or call intended bands measured.
 Online sibling branch `research/puzzle-lab-tunnel` at inspected `c7f3b1c` already
 has durable single-fixture sessions, telemetry and private local facilitator
 controls. Reuse/integrate that work rather than recreate hosting/admin features;
