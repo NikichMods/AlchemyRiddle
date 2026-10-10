@@ -65,3 +65,31 @@ A future game-like test must define a concrete product need, legitimate reagent
 and prior knowledge, station/technology readiness, Science acquisition burden
 and ingredient availability. This board does not simulate these. Do not add
 timers, inventory cost, refill or generator weights without a separate decision.
+
+## Deployment verification
+
+Source `eb893ca7358c2b5ede97daa576c729c611ea87aa`; 50 local tests pass and
+[hosted CI 38047691191](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38047691191)
+passes for that exact candidate. Prior source's finite-budget CI also passed.
+Private preparation SHA matches the active deployed fixture. Old 2x2 archive
+manifest confirms 36 retained model/session/category files are byte-identical;
+statistics export and old QA metadata retained separately. Original case-20
+human session SHA remains unchanged.
+
+Actual assigned HTTPS origin serves this new ID, three four-card columns,
+30 Science, two stable priors and disabled refill. Paid pair action persists at
+28 Science across GET refresh and Stop/Start; second independent session stays
+at 30 with no history. Public debug/model/admin/export/control routes return 404;
+forged refill returns 400. Same ngrok URL retained on restart. Browser reload
+preserves a free card selection; final user-facing browser restored empty choice
+and 30 Science. Refill absent, finite-reserve note displayed. Panel on local 4185
+shows new trial and running server/tunnel; QA and demo owner sessions excluded.
+Screenshot and QA identifiers stay private, outside Git.
+
+Both processes and local panel are running at handoff. They had no listeners at
+the start of this task; why they stopped is not established. Reboot/sleep or manual
+termination can interrupt this computer-hosted setup. Use retained Open-Panel
+shortcut after reboot, then Start playtest; Stop in the panel closes external
+access while retaining state. No autostart service added. HTTPS/browser checks
+were performed on this computer through its current network. Availability on an
+independent friend's network, particularly Russia without VPN, is still unverified.
