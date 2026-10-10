@@ -92,3 +92,20 @@ test('exact tunnel origin, request boundary, spoiler separation and two durable 
     assert.deepEqual(JSON.parse((await request(server,'/api/state',{headers:{Cookie:cookie}})).body),JSON.parse(concurrent.body));
   } finally {await close(server);rmSync(directory,{recursive:true,force:true});}
 });
+
+test('external links can open only the top-level public document',async()=>{
+  for(const origin of [publicOrigin,'https://selected-playtest.ngrok-free.dev']) {
+    const directory=mkdtempSync(join(tmpdir(),'lab-navigation-'));
+    const server=createLab({fixturePath,publicOrigin:origin,approvedNgrokOrigin:origin,stateDirectory:directory});await listen(server);
+    const headers={Host:new URL(origin).host,'Sec-Fetch-Site':'cross-site','Sec-Fetch-Mode':'navigate','Sec-Fetch-Dest':'document'};
+    try {
+      const page=await request(server,'/',{headers});assert.equal(page.status,200);assert.ok(page.headers['content-type'].startsWith('text/html'));
+      assert.equal(page.headers['content-security-policy'].includes("frame-ancestors 'none'"),true);
+      assert.equal(page.headers['set-cookie'],undefined);
+      for(const path of ['/api/state','/app.mjs','/api/debug','/facilitator']) assert.equal((await request(server,path,{headers})).status,403);
+      for(const altered of [{'Sec-Fetch-Dest':'iframe'},{'Sec-Fetch-Mode':'cors'},{'Sec-Fetch-Dest':''},{Origin:'https://evil.example'},{Host:'other.ngrok-free.dev'}])
+        assert.equal((await request(server,'/',{headers:{...headers,...altered}})).status,403);
+      for(const path of ['/','/api/action','/api/events']) assert.equal((await request(server,path,{headers:{...headers,Origin:origin,'Content-Type':'application/json'},body:'{}'})).status,403);
+    } finally {await close(server);rmSync(directory,{recursive:true,force:true});}
+  }
+});

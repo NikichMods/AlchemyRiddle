@@ -34,15 +34,18 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
     const port = server.address().port;
     const externalRequest = external && host === external.host;
     if (!externalRequest && ![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(host)) {res.writeHead(403).end(); return;}
+    const path = new URL(req.url, `http://${host}`).pathname;
     const origin = externalRequest ? external.origin : `http://${host}`;
+    // External links may be cross-site navigations; APIs and embedded requests stay blocked.
+    const publicNavigation = externalRequest && req.method === 'GET' && path === '/' &&
+      req.headers['sec-fetch-mode'] === 'navigate' && req.headers['sec-fetch-dest'] === 'document';
     if ((req.headers.origin && req.headers.origin !== origin) ||
-        req.headers['sec-fetch-site'] === 'cross-site' ||
+        (req.headers['sec-fetch-site'] === 'cross-site' && !publicNavigation) ||
         (externalRequest && req.method === 'POST' && req.headers.origin !== origin)) {res.writeHead(403).end(); return;}
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'");
-    const path = new URL(req.url, `http://${host}`).pathname;
     const json = (value, status = 200) => {res.writeHead(status, {'Content-Type': 'application/json; charset=utf-8'}); res.end(JSON.stringify(value));};
     try {
       if (req.method === 'GET' && assets[path]) {
