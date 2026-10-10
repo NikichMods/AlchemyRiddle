@@ -2,6 +2,16 @@
 
 ## Problem
 
+### Puzzle Lab player-owned elimination and uniqueness
+
+Accepted 2026-10-10 after friends-playtest feedback: restore visible per-card
+`Вычеркнуть` / `Вернуть` controls. Marks are free, reversible, durable personal
+hypotheses; they do not change selection, spend Science or automatically certify
+an exclusion. Keep properties readable. State at the start that the puzzle has
+exactly one solution. Enforce that claim against the complete precommitted model,
+including hidden compatibility where present, not only its composition clues.
+This does not replace prior knowledge or perform deductions for the player.
+
 ### Concrete alchemical target names
 
 Accepted 2026-10-10 for Puzzle Lab naming: the investigation title identifies

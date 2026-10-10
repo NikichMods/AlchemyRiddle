@@ -6,6 +6,18 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Current 2026-10-10: friends-playtest feedback restores free persistent card
+elimination toggles and requests an explicit unique-solution statement. Both are
+implemented on both arities; complete-model uniqueness remains validated.
+User selects a fresh post-tutorial three-slot trial: active
+`lab-friends-three-slot-04`, `Эликсир бодрости`, 3x3x3, two necessary conditions,
+two prior stable pairs, 30 shared Science without refill. Three-check public
+policy witnesses plus final synthesis verified; human difficulty uncalibrated.
+Recovery: `prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_04_STATE.md`. Trial 03 and its
+sessions/export archived privately; same assigned public link and local panel.
+Original case 20, generator weights and production unchanged. Below is history.
+
+
 Current 2026-10-10 follow-up: user selects a new easy/post-tutorial trial.
 Active `lab-friends-easy-03`, `Эликсир спокойного сна`, uses the accepted two-slot
 composition core: 3x3 field, three necessary short conditions, 30 Science, no

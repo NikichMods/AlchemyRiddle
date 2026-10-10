@@ -1,6 +1,10 @@
 # Friends easy trial 03 — Elixir of peaceful sleep
 
-2026-10-10. Current private synthetic post-tutorial easy candidate. Human
+ARCHIVED 2026-10-10 after user selected three-slot trial 04. All model/session
+evidence retained in private `archives/easy-03-2026-10-10/`; manifest verified.
+The record below preserves the original trial and verification.
+
+2026-10-10. Private synthetic post-tutorial easy candidate. Human
 complexity/interest unverified. Production BLOCKED. No unknown vanilla formula.
 
 ## Identity and recovery
