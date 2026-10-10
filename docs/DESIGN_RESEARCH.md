@@ -21,6 +21,7 @@ Corpus/reverse mapping/exact traces stay private. Next: isolated browser campaig
 integration with actual profile/actions, saved levels, knowledge and Science.
 No human difficulty/boss calibration claimed. Weights/gates retained; negative
 earned shortcuts receive the existing exemption. Production BLOCKED, sibling untouched.
+Code/evidence source `efb9f83`; CI 38049052919 passes compilation and 49 tests.
 
 ### Working generator baseline accepted; campaign simulation requested — 2026-10-10
 

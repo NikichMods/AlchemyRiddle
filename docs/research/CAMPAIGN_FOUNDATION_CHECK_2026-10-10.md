@@ -135,6 +135,12 @@ separate online worktree remains untouched. Next is isolated Lab/online integrat
 with a real profile, frozen investigations, ladder/difficulty presentation,
 knowledge and Science actions/reloads.
 
+Code/evidence candidate: `efb9f830015d77402d715607498449f304f073ac`.
+GitHub Actions [38049052919](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38049052919)
+passes compilation and the same private-input-free unit suite on Python 3.12.
+CI does not contain the private corpus replays; those are the local frozen
+evidence above. The workflow now tests contracts as well as compiling helpers.
+
 Human learning, interest, reading burden, intended difficulty/boss bands, actual
 progression/inventory demand, vanilla affordability and all arbitrary knowledge
 states remain unproved. Half of the 60%-initial-knowledge positions need no new
