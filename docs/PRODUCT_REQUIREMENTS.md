@@ -2,6 +2,15 @@
 
 ## Problem
 
+### Concrete alchemical target names
+
+Accepted 2026-10-10 for Puzzle Lab naming: the investigation title identifies
+the substance being made, using a concrete alchemical product and legible
+purpose, e.g. an elixir, potion or other appropriate preparation. Avoid abstract
+poetic process names that obscure what the player is synthesizing. For synthetic
+trials the target/effect is fictional, not an assertion about vanilla recipes.
+Keep the target name consistent on the player board and facilitator panel.
+
 Accepted generator refinement (2026-10-08): avoid repeated structure within one
 ordinary puzzle through a finite soft selection penalty. Give extra emphasis to
 two symmetric exactly-one clauses with same-property endpoints. Preserve valid

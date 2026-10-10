@@ -10,8 +10,18 @@ three-slot trial: two known stable adjacent pairs, 30 shared Science, no refill.
 Existing player interface and experiment semantics retained; finite-budget
 configuration is opt-in only. No real recipe, generator change, campaign or signup.
 
-- ID `lab-friends-three-slot-01`, title `Переплетение течений`.
-- SHA256 `c34a82997d6b7d0b294a3ea7cc1d48bb0e32256f8e46051aa331a5e3ec6009cd`.
+- ID `lab-friends-three-slot-01`, current title `Эликсир ясного разума`.
+- Current SHA256 `a02c4c31ca930ac2eed23dfe74251a220da653acde8ef3d6a834c58592658e61`.
+- Original prepared title `Переплетение течений`, SHA256
+  `c34a82997d6b7d0b294a3ea7cc1d48bb0e32256f8e46051aa331a5e3ec6009cd`,
+  retained unchanged in private preparation; no longer the deployed title.
+
+2026-10-10 user-authorized title-only amendment: private `title-2026-10-10/`
+under preparation retains previous model/precommit and exact session copies.
+Seven active session envelopes migrated to the renamed model hash with state
+and telemetry verified unchanged. Rules, answer, priors, clues and budget unchanged.
+Current private precommit binds the renamed fixture. Naming preference is owned
+by PRODUCT_REQUIREMENTS.md. Public HTTPS rechecked after restart.
 - Private preparation: `friends-three-slot-01/` beside the existing private
   playtest directory, outside Git. Immutable fixture, authoring script,
   precommit, initial state and aggregate audit remain local.
