@@ -241,3 +241,14 @@ fieldset legend{margin-bottom:6px}
 
 #selection{flex-direction:row}
 #compatibility-guide{display:none}
+
+/* Final action beside the formula, rather than below a tall duplicate summary. */
+.synthesis-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(245px,.65fr);gap:4px 14px;align-items:start}
+.synthesis-panel>h2{grid-column:1/-1}
+.formula-content{grid-column:1;grid-row:2}.formula-content h3{display:none}
+.formula-compatibility{padding:4px 8px;margin:4px 0}.formula-compatibility .verdict{font-size:13px}
+.role-preview #submit{grid-column:2;grid-row:2/span 2;margin:0;min-height:64px;padding:10px 14px}
+#synthesis-guide{grid-column:1;grid-row:3;font-size:12px}
+#lab-supply,#result,#submit-reason,#composition-reminder,#experiment-next,#selected-history,#error,#mixture-history{grid-column:1/-1}
+#submit-reason:empty{display:none}
+@media(max-width:760px){.synthesis-panel{grid-template-columns:1fr}.formula-content,#synthesis-guide,.role-preview #submit{grid-column:1;grid-row:auto}.formula-content h3{display:block}}

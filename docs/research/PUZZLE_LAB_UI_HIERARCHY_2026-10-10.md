@@ -114,3 +114,9 @@ excluded-card appearance and selected-state/mark persistence after reload.
 Only that test session spends 2 Science on a pair check; no human session reset
 or fixture replacement. No server/tunnel restart required. Screenshots remain
 private. Independent visitor-network availability is not newly established.
+
+Final desktop refinement: the synthesis action sits beside its compact selected
+formula/status, rather than underneath a tall duplicate summary. At narrow mobile
+widths it returns to a single column. Public icon geometry confirms exact shared
+centers and no horizontal overflow. Hosted CI lookup from the local shell failed
+to connect; do not present it as successful CI evidence.
