@@ -150,6 +150,7 @@ function render() {
     : 'Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.';
   $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> '+(view.slots.length === 3 ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией.' : 'Порошок должен быть совместим с жидкостью.')+' Результаты показаны в «Совместимости пар». Кнопка «Исследовать» проверяет одну пару; цена указана на кнопке.';
   setRoleText($('task'), view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.');
+  const unique = document.createElement('span'); unique.className='task-unique'; unique.textContent='У загадки ровно одно решение.'; $('task').append(unique);
   const route = document.createElement('span'); route.className='task-route';
   route.textContent=view.pairTestCost ? 'Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.' : 'Используйте «Сведения о составе», чтобы выбрать компоненты и определить формулу.';
   $('task').append(route);
@@ -164,7 +165,8 @@ function render() {
     group.append(legend);
     for (const card of slot.cards) {
       const selected = s.selected[slot.id] === card.id;
-      const box = document.createElement('div'); box.className = `card ${selected ? 'selected' : ''}`;
+      const marked = Boolean(s.marks[card.id]);
+      const box = document.createElement('div'); box.className = `card ${selected ? 'selected' : ''} ${marked ? 'marked' : ''}`;
       const choose = document.createElement('button'); choose.className = 'choose'; choose.id = `select-${card.id}`;
       choose.setAttribute('aria-pressed',String(selected)); choose.setAttribute('aria-label',card.name);
       choose.title = selected ? 'Снять выбор' : 'Выбрать';
@@ -172,7 +174,13 @@ function render() {
       const text = document.createElement('strong'); text.textContent = card.name;
       choose.append(text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
-      group.append(box);
+      const mark = document.createElement('button'); mark.className='mark'; mark.id=`mark-${card.id}`;
+      mark.textContent=marked ? 'Вернуть' : 'Вычеркнуть';
+      mark.setAttribute('aria-pressed',String(marked));
+      mark.setAttribute('aria-label',`${marked ? 'Вернуть' : 'Вычеркнуть'}: ${card.name}`);
+      mark.title='Бесплатная личная пометка; не меняет выбор и правила загадки';
+      mark.onclick=()=>action({type:'mark',slot:slot.id,card:card.id});
+      box.append(mark); group.append(box);
     }
     $('cards').append(group);
   }
