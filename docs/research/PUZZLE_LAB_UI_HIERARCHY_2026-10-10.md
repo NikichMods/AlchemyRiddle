@@ -120,3 +120,10 @@ formula/status, rather than underneath a tall duplicate summary. At narrow mobil
 widths it returns to a single column. Public icon geometry confirms exact shared
 centers and no horizontal overflow. Hosted CI lookup from the local shell failed
 to connect; do not present it as successful CI evidence.
+
+Final public viewport check: 852px high, synthesis button bottom 816.42px, no
+horizontal overflow. The main action is visible without scrolling in this tested
+desktop viewport; long accumulated journals may still extend below it. Two-slot
+composition-only cases reclaim the hidden compatibility column. Browser proof
+is retained privately; the test session's 28 Science reflects one QA pair check,
+not a change to the 30-Science starting budget.

@@ -252,3 +252,4 @@ fieldset legend{margin-bottom:6px}
 #lab-supply,#result,#submit-reason,#composition-reminder,#experiment-next,#selected-history,#error,#mixture-history{grid-column:1/-1}
 #submit-reason:empty{display:none}
 @media(max-width:760px){.synthesis-panel{grid-template-columns:1fr}.formula-content,#synthesis-guide,.role-preview #submit{grid-column:1;grid-row:auto}.formula-content h3{display:block}}
+body:not(.three-slot) .workspace{grid-template-columns:1fr;grid-template-areas:'hypothesis' 'synthesis'}
