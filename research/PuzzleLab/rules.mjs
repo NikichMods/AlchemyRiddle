@@ -123,7 +123,9 @@ export function act(f, state, action) {
     const observed = state.knownRelations.find(r => r.slots.every((id,i) => id === action.slots[i]) &&
       r.slots.every(id => r.tuple[id] === action.tuple?.[id]));
     if (!observed) throw new Error('Такой пары нет в журнале');
-    state.selected = {...observed.tuple};
+    if (action.slots.every(id => state.selected[id] === observed.tuple[id])) {
+      for (const id of action.slots) delete state.selected[id];
+    } else state.selected = {...observed.tuple};
   } else if (action.type === 'select' || action.type === 'toggleSelect' || action.type === 'mark') {
     const slot = f.slots.find(s => s.id === action.slot);
     if (!slot?.cards.some(c => c.id === action.card)) throw new Error('Неизвестная карточка');

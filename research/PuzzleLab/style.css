@@ -190,3 +190,22 @@ textarea{display:block;width:100%;resize:vertical;margin:8px 0;background:#101e2
 .card .mark{display:block;margin:0 8px 8px auto;padding:4px 8px;min-height:30px;font-size:12px;background:transparent;color:#adc5c6;border-color:#4b6971}
 .card.marked .choose strong{text-decoration:line-through;text-decoration-thickness:2px;color:#91a7ac}
 .card.marked{border-style:dashed}
+
+/* Restore the earlier compact elimination controls and the agreed block order. */
+.card .mark{position:absolute;right:8px;bottom:7px;display:grid;place-items:center;width:32px;height:32px;min-height:32px;margin:0;padding:0;border:0;border-radius:50%;background:transparent;color:#ffaaa5;font-size:26px;line-height:1}
+.card .mark:hover{background:#462e32}
+.card .choose{padding-bottom:40px}
+.many-candidates .card .choose{padding-bottom:40px}
+.card.marked{background:#101e24;border-style:dashed}
+.card.marked .choose{opacity:.55}
+.card.marked .mark{color:#b9dfcc;font-size:24px}
+.card.marked .mark:hover{background:#2b433b}
+.workspace{grid-template-columns:minmax(230px,1fr) minmax(230px,1fr) minmax(320px,1fr);grid-template-areas:'board board side' 'synthesis clues knowledge';gap:20px}
+.board{grid-area:board}
+.experiment-selection{grid-area:side;border-left:1px solid #40565f;padding-left:20px}
+.formula-content{border-top:1px solid #40565f;padding-top:14px;margin-top:14px}
+.clue-panel{grid-area:clues;border-top:1px solid #40565f;padding-top:16px}
+#knowledge{grid-area:knowledge;border-top:1px solid #40565f;padding-top:16px}
+.synthesis-panel{grid-area:synthesis;border-top:1px solid #40565f;padding-top:16px}
+body:not(.three-slot) .workspace{grid-template-columns:minmax(0,2fr) minmax(320px,1fr);grid-template-areas:'board side' 'synthesis clues'}
+@media(max-width:1050px){.workspace,body:not(.three-slot) .workspace{grid-template-columns:1fr;grid-template-areas:'board' 'clues' 'knowledge' 'side' 'synthesis'}.experiment-selection,#knowledge{border-left:0;padding-left:0}.experiment-selection{border-top:1px solid #40565f;padding-top:16px}}

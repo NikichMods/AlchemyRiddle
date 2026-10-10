@@ -5,24 +5,21 @@
 <header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge" id="case-badge">Синтетический опыт</span></header>
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
 <div class="workspace">
-  <div class="investigation">
   <section class="board" aria-label="Кандидаты">
     <h2>Кандидаты</h2>
     <div id="cards"></div>
   </section>
-  <aside class="evidence" aria-label="Условия и наблюдения">
-    <section class="clue-panel"><h2>Сведения о составе</h2><p id="clue-guide" class="panel-guide" hidden></p><ol id="clues"></ol></section>
-    <section id="knowledge" hidden><h2>Совместимость пар</h2><p id="compatibility-guide" class="pair-rule"></p><p id="experiment-guide" class="panel-guide" hidden></p><div id="relations" aria-live="polite"></div></section>
-  </aside>
-  </div>
-  <section class="actions" aria-label="Исследования и финальный ответ">
+  <aside class="experiment-selection" aria-label="Исследования и выбранная смесь">
     <section id="pair-research" hidden aria-label="Выбранные пары">
       <div class="section-heading"><h2>Исследование пар</h2><span id="research-budget"></span></div>
       <p id="pair-action-guide" class="pair-rule">Выберите соседнюю пару, совместимость которой хотите узнать.</p>
       <div id="pair-actions" aria-live="polite"></div>
     </section>
-    <section class="submission" aria-label="Полная формула">
       <div class="formula-content"><h2>Выбранная смесь</h2><div id="selection"></div><div id="formula-compatibility" hidden aria-live="polite"></div></div>
+  </aside>
+    <section class="clue-panel"><h2>Сведения о составе</h2><p id="clue-guide" class="panel-guide" hidden></p><ol id="clues"></ol></section>
+    <section id="knowledge" hidden><h2>Совместимость пар</h2><p id="compatibility-guide" class="pair-rule"></p><p id="experiment-guide" class="panel-guide" hidden></p><div id="relations" aria-live="polite"></div></section>
+  <section class="synthesis-panel" aria-label="Финальная проверка">
       <span id="budget"></span>
       <p id="synthesis-guide" class="panel-guide" hidden></p>
       <button id="refill" hidden>Пополнить Science</button>
@@ -32,7 +29,6 @@
       <p id="composition-reminder" role="status" hidden></p>
       <p id="experiment-next" hidden></p>
       <p id="selected-history" hidden></p>
-    </section>
     <aside id="lab-supply" hidden><span id="supply-budget"></span><span class="supply-note">Пополнение в лаборатории</span></aside>
     <p id="error" role="alert"></p>
     <section id="mixture-history" hidden><h2>Проверенные смеси</h2><ol id="mixtures"></ol></section>
@@ -41,7 +37,7 @@
 <details class="reference"><summary>Как устроен опыт</summary>
   <p id="description"></p>
   <ol class="help-steps">
-    <li><strong>Выберите компоненты.</strong> Нажмите по одной карточке в каждом столбце. Выбранные карточки обведены. Повторное нажатие снимает выбор; выбирать можно бесплатно. «Вычеркнуть» — ваша бесплатная пометка: она сохраняется после обновления, не меняет выбор и снимается кнопкой «Вернуть».</li>
+    <li><strong>Выберите компоненты.</strong> Нажмите по одной карточке в каждом столбце. Выбранные карточки обведены. Повторное нажатие снимает выбор; выбирать можно бесплатно. Кнопка × — ваша бесплатная пометка: она затемняет карточку и сохраняется после обновления. Выбор не меняется; кнопка ↶ возвращает карточку.</li>
     <li id="pair-help" hidden></li>
     <li><strong>Сверьте состав и смешайте.</strong> У выбранной смеси должны выполняться все «Сведения о составе». Когда готовы проверить свой ответ, нажмите «Смешать и проверить» — это финальный опыт со всей смесью.</li>
   </ol>
@@ -53,7 +49,7 @@
     <li>«Не могут быть вместе» — два указанных компонента нельзя включать в одну формулу.</li>
   </ul>
   <h3>Под рукой</h3>
-  <p>П, Ж и Э обозначают столбец, цифра — карточку в нём. Наведите курсор на известную пару: её карточки подсветятся. Нажмите на пару, чтобы выбрать только её.</p>
+  <p>П, Ж и Э обозначают столбец, цифра — карточку в нём. Наведите курсор на известную пару: её карточки подсветятся. Нажмите на пару, чтобы выбрать только её; повторный клик снимает выбор её компонентов.</p>
   <p id="economy-help">Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.</p>
   <p id="pair-tips" hidden>Исследования помогают узнать пары заранее. Если хотите рискнуть, можно сразу проверить всю выбранную смесь.</p>
   <p>Обновление страницы сохраняет текущее прохождение; новая загадка начинается с пустого выбора.</p>

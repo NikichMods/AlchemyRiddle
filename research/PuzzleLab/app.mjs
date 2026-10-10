@@ -56,7 +56,8 @@ function relationJournal(s) {
         const choice = document.createElement('button'); choice.className = 'relation-choice';
         choice.id = `pair-${r.slots.map(id=>r.tuple[id]).join('-')}`;
         choice.setAttribute('aria-label',`Выбрать только пару: ${r.slots.map(id=>name(r.tuple[id])).join(' + ')}`);
-        choice.title = `${names.textContent} — ${r.stable ? 'совместимо' : 'несовместимо'}. Выбрать только эту пару`;
+        choice.title = `${names.textContent} — ${r.stable ? 'совместимо' : 'несовместимо'}. Повторный клик снимает выбор пары`;
+        choice.setAttribute('aria-pressed',String(pairMatches(r,slots,s.selected))); 
         choice.onclick = () => action({type:'selectPair',slots:r.slots,tuple:r.tuple});
         const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
         choice.onmouseenter = () => highlight(true); choice.onmouseleave = () => highlight(false);
@@ -175,7 +176,7 @@ function render() {
       choose.append(text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
       const mark = document.createElement('button'); mark.className='mark'; mark.id=`mark-${card.id}`;
-      mark.textContent=marked ? 'Вернуть' : 'Вычеркнуть';
+      mark.textContent=marked ? '↶' : '×';
       mark.setAttribute('aria-pressed',String(marked));
       mark.setAttribute('aria-label',`${marked ? 'Вернуть' : 'Вычеркнуть'}: ${card.name}`);
       mark.title='Бесплатная личная пометка; не меняет выбор и правила загадки';

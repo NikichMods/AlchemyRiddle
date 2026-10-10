@@ -113,7 +113,10 @@ test('journal pair selection replaces all slots atomically, accepts earned negat
   act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
   assert.deepEqual(s,{...before,selected:prior.tuple});
   act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
-  assert.deepEqual(s.selected,prior.tuple);
+  assert.deepEqual(s,{...before,selected:{}});
+  s.selected={...prior.tuple,essence:harbor.answer.essence};
+  act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
+  assert.deepEqual(s.selected,{essence:harbor.answer.essence});
   const invalid=structuredClone(s);
   assert.throws(()=>act(harbor,s,{type:'selectPair',slots:['powder','essence'],tuple:{powder:'p1',essence:'e1'}}));
   assert.throws(()=>act(harbor,s,{type:'selectPair',slots:['powder','fluid'],tuple:{powder:'p2',fluid:'f2'}}));
@@ -123,7 +126,7 @@ test('journal pair selection replaces all slots atomically, accepts earned negat
   act(harbor,s,{type:'pairTest',slots:['fluid','essence']});
   const earned=structuredClone(s);
   act(harbor,s,{type:'selectPair',slots:['fluid','essence'],tuple:{fluid:'f2',essence:'e1'}});
-  assert.deepEqual(s,{...earned,selected:{fluid:'f2',essence:'e1'}});
+  assert.deepEqual(s,{...earned,selected:{powder:'p2'}});
   s.status='solved';
   act(harbor,s,{type:'selectPair',slots:prior.slots,tuple:prior.tuple});
   assert.equal(s.status,'solved'); assert.equal(s.research,3); assert.equal(s.science,1); assert.equal(s.history.length,1);
