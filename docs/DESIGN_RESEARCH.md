@@ -6,6 +6,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Current 2026-10-10: user correctly recognizes first three-slot friends trial as
+case-19 reuse; it is not a fresh puzzle and is archived privately. Active
+replacement is `lab-friends-three-slot-02`, `Эликсир ночного зрения`: new synthetic
+field, properties, conditions and hidden compatibility; same two priors / 30
+Science / no refill envelope. Recovery and aggregate preflight are owned by
+`prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_02_STATE.md`. A separate observed ngrok
+heartbeat outage at 17:06 Moscow recovered automatically at 17:07; no reset
+origin established. Same external URL retained. Preserve both prior trial archives
+and original case 20. Production and canonical generator weights unchanged.
+
 2026-10-10 next playtest: user selects one synthetic three-slot medium-high
 candidate, two prior stable pairs and 30 shared Science, explicitly no refill.
 `lab-friends-three-slot-01` derives from positively received case 19 with fresh

@@ -1,6 +1,8 @@
 # Friends three-slot trial 01
 
-2026-10-10. Precommitted synthetic candidate; human difficulty unverified.
+2026-10-10. ARCHIVED: user recognizes this as case-19 reuse, not a new puzzle.
+Retained privately with exact sessions/export; active trial is THREE_SLOT_02.
+Historical precommit and verification below retained; human difficulty unverified.
 Production remains BLOCKED. Never surface private answer/policy traces in play.
 
 ## Scope and frozen identity
