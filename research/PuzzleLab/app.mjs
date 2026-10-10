@@ -57,7 +57,7 @@ function relationJournal(s) {
         choice.id = `pair-${r.slots.map(id=>r.tuple[id]).join('-')}`;
         choice.setAttribute('aria-label',`Выбрать только пару: ${r.slots.map(id=>name(r.tuple[id])).join(' + ')}`);
         choice.title = `${names.textContent} — ${r.stable ? 'совместимо' : 'несовместимо'}. Повторный клик снимает выбор пары`;
-        choice.setAttribute('aria-pressed',String(pairMatches(r,slots,s.selected))); 
+        choice.setAttribute('aria-pressed',String(pairMatches(r,slots,s.selected)));
         choice.onclick = () => action({type:'selectPair',slots:r.slots,tuple:r.tuple});
         const highlight = active => r.slots.forEach(id => $(`select-${r.tuple[id]}`)?.closest('.card').classList.toggle('journal-linked',active));
         choice.onmouseenter = () => highlight(true); choice.onmouseleave = () => highlight(false);

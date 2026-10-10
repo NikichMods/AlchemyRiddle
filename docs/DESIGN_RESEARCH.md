@@ -6,6 +6,19 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Current feedback 2026-10-10: trial 04's returning playtester reports first-synthesis
+success by following the first known pair and first composition-fitting extension,
+with a guessing/boring-clue experience. Frozen-model audit confirms that shortcut;
+trial 04 is retained as a negative diagnostic example for intended deduction,
+not an accepted easy level. Owning feedback/audit is appended to
+`prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_04_STATE.md`. No replacement fixture,
+generator gates/weights or economy change selected. Next proposed comparison is
+cheap residual enumeration after each prior versus informative research.
+User-authorized UI revised: historic icon/dim/dashed personal marks, journal pair
+second-click deselection, and desktop blocks arranged per supplied mockup.
+Existing active fixture/sessions retained; original case 20 unchanged.
+
+
 Current 2026-10-10: friends-playtest feedback restores free persistent card
 elimination toggles and requests an explicit unique-solution statement. Both are
 implemented on both arities; complete-model uniqueness remains validated.

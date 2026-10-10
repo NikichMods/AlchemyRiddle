@@ -80,3 +80,59 @@ First independent player choice. Show raw observations and preserve the journal;
 do not derive the solution for the player. After natural completion, collect
 whether marking and the unique-solution statement clarified the task, and whether
 the smaller three-slot field fits the intended post-tutorial ease.
+
+## Human feedback and presentation revision (2026-10-10)
+
+User reports a returning playtester selected the first known stable pair, chose
+the first essence satisfying the composition clues, and succeeded on the first
+synthesis without pair research. The tester reports a sense of guessing rather
+than competence, boring/non-thought-provoking clues, and a perceived advantage
+for residual enumeration. This is reported human evidence, not a reconstructed
+identity or measured duration. Do not replace it with the earlier policy witness
+or treat the user's separate screenshot as the same session: its displayed
+journal includes paid pair checks, unlike the narrated one-synthesis route.
+
+A direct frozen-model audit confirms: the first prior has two composition-valid
+extensions, one full answer, and the first extension in card order is the answer.
+Worst-case direct residual synthesis enumeration costs 10 Science against a 30
+pool. The other prior has one composition-valid extension and no full answer.
+Do not reveal these branch details during independent play. Existing 3-check
+policy witnesses are valid routes, not shortest-policy evidence or proof that
+users benefit from choosing them. The candidate fails its intended subjective
+post-tutorial deduction experience in this reported playtest; uniqueness and clue
+necessity are insufficient. Retain this frozen candidate as diagnostic evidence,
+not a positively accepted difficulty example. This does not reject the entire
+three-slot core. Recommended next investigation: compare the cheapest residual
+search after each prior with informative research and ask whether the clauses
+create a useful inference; selection weights/gates remain unchanged pending
+agreement, rather than raising prices or adding arbitrary checks.
+
+User explicitly requests compact historic elimination controls, second-click
+pair deselection and the supplied desktop block order. History `ccf3c34` confirms
+`×` / `↶` icon controls and dashed excluded cards. Current restoration also dims
+the marked card; properties remain legible, existing personal mark semantics stay.
+Journal first click selects only that pair. When its two components are already
+selected, clicking clears those two slots and retains an unrelated third choice.
+No Science or journal outcomes change; observations remain visible. Regression
+checks include known positive/earned negative pairs, retained third selection and
+invalid/unearned relation rejection. Repeated pair choice is now a toggle, an
+explicit user-authorized selection behavior change; formula semantics unchanged.
+
+Desktop layout matches the supplied grouping: candidate board at upper left,
+pair research and selected formula at upper right; below, final synthesis left,
+composition clues middle, compatibility journal right. Narrow screens stack
+board, clues, journal, chosen research/formula, synthesis, preserving accessible
+controls and a reading order before paid verification. Original model, priors,
+answer and fixture hash unchanged. Local source suite: 51 pass. Source
+`63e771e71f88cf44a542e07ac8af4542d9c58e4b` CI success:
+https://github.com/NikichMods/AlchemyRiddle/actions/runs/38065902583
+A subsequent whitespace-only cleanup accompanies this record.
+
+Owned player/tunnel restarted to activate server selection semantics; no session
+files removed or model replacement. A live before/restart comparison checks 8
+existing states, with 7 equal and 1 different during overlapping live access;
+no before snapshot was retained to attribute that difference. Do not claim all
+states byte-identical from that observation. Browser QA confirms pair select then
+second-click deselect, free mark persistence after reload, icon return and empty
+final choice at 30 Science. Preview remains classified test. Desktop screenshots
+with marked/unmarked cards kept privately; no independent-network claim added.
