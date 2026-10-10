@@ -9,7 +9,10 @@ Subsequent user clarification, same date: the campaign world should preserve the
 accepted real corpus structure with renamed ingredients/products and unchanged
 tags, rather than invent independent formulas/relations. See
 `../CURRENT_ROADMAP.md`. Editorial examples below are naming proposals, not
-newly assigned recipe facts; exact alias/world construction is still pending.
+newly assigned recipe facts. Alias/world construction is now checked in
+`CAMPAIGN_FOUNDATION_CHECK_2026-10-10.md`; editorial acceptance of all titles and
+actual playable curriculum remains pending. First-slice implementation decisions:
+`CAMPAIGN_BROWSER_HANDOFF_2026-10-10.md`.
 
 ## Accepted clarifications
 

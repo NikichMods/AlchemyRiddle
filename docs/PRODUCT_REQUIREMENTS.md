@@ -240,6 +240,26 @@ ordinary gameplay production uses.
 
 ### Campaign stand clarification — 2026-10-10
 
+Implementation direction accepted 2026-10-10 after foundation verification:
+- First playable slice: the first two investigations of each arity, plus a
+  separate late/mature investigation from an explicitly named earned-knowledge
+  scenario or actual checkpoint. Do not fabricate prior play in a fresh profile.
+- Hand-author an illustrative, plausible sequence of product needs for testing.
+  It need not reconstruct or prove a typical real player's chronology; it must
+  respect accepted accessibility/demand evidence and declare simulation limits.
+- Begin with a privately prepared candidate bank and knowledge-aware selection.
+  Check its suitability for the slice and differing earned states before browser
+  integration. The existing 205-package three-slot sample is evidence, not a
+  complete all-difficulty campaign bank. Extend offline preparation with existing
+  gates if needed; runtime generation is a fallback requiring demonstrated need,
+  not already selected. Never hide earned knowledge or relax validity to fill a rung.
+- Assess human difficulty/interest through playtests after the route works, using
+  condition interaction, plausible alternatives, actual actions and costs as
+  supporting evidence. Metrics alone do not certify difficulty labels.
+- Browser implementation is deferred to the next chat; no live friend-session
+  replacement or production implementation follows from accepting this plan.
+Execution/recovery: `research/CAMPAIGN_BROWSER_HANDOFF_2026-10-10.md`.
+
 Accepted for the browser campaign simulation; production implementation remains
 separately gated. See `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md` and
 `research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.

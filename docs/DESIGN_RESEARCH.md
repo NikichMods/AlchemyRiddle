@@ -4,6 +4,23 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Browser campaign implementation plan accepted; next-chat handoff — 2026-10-10
+
+Start with `research/CAMPAIGN_BROWSER_HANDOFF_2026-10-10.md` and
+`CURRENT_ROADMAP.md`. User accepts the first two investigations of each arity
+plus a separate explicit late-state checkpoint, an illustrative plausible authored
+demand route, and bank-first knowledge-aware selection subject to pre-integration
+coverage/suitability checks. Offline expansion retains gates; runtime generation
+is conditional fallback, not selected by default. Human calibration follows a
+working route. Scope/ordering decisions belong to `PRODUCT_REQUIREMENTS.md`.
+Browser work is deliberately deferred to the next chat; no new fixture/profile
+or running instance changed. Foundation source `efb9f83`, documentation checkpoint
+`2e61fd7`; implementation and numbered curriculum assignments still pending.
+Sibling inspected latest at `cb69e45`; recheck live branch/files before integration,
+including concrete target-name requirement and single-fixture session ownership.
+Reuse its hosting/panel work, preserve current friends and historical cases.
+Production BLOCKED. Private environment locator accompanies this public handoff.
+
 ### Renamed campaign corpus and earned-knowledge sequences checked — 2026-10-10
 
 Read `research/CAMPAIGN_FOUNDATION_CHECK_2026-10-10.md` before continuing.

@@ -10,6 +10,11 @@ the privately renamed real corpus, mixed-polarity research ledger/routes and 72
 complete automatic three-slot sequences. Browser campaign/profile integration
 is still pending; this document's outcome is not already a live campaign.
 
+Implementation ordering/slice/bank-first direction are now accepted in
+`../PRODUCT_REQUIREMENTS.md`; recover through `CAMPAIGN_BROWSER_HANDOFF_2026-10-10.md`.
+The numbered full curriculum remains a proposal. Historical sibling inspection
+below is not the latest integration base; recheck its current branch before reuse.
+
 ## Intended outcome and existing implementation
 
 The user wants to inspect and play an approximate complete alchemy research
@@ -80,8 +85,8 @@ not guarantee that experienced players cannot recognize signatures/topology.
 The stand remains an approximation of gameplay availability, demand and economy,
 not proof of installed-mod behavior. Navigation: `../CURRENT_ROADMAP.md`.
 
-Before carrying knowledge, define stable global reagent identities, property
-assignments and the three-slot relation graph for that campaign version. Local
+Foundation now defines stable global reagent identities, property assignments
+and the three-slot relation graph; browser integration must preserve them. Local
 card positions such as P1/G2 are not identity keys. A renamed/reordered card must
 still refer to the same reagent; two independent fixtures using the same position
 code must not create false prior knowledge. Audit exemplars before any reuse.
@@ -105,8 +110,9 @@ Carry-forward rules accepted 2026-10-10:
 
 Store observed facts and source (experiment/known formula) separately from player
 hypotheses. Showing relevant earned facts does not automatically solve composition
-conditions for the player. Existing route estimator accepts stable priors only;
-negative-prior simulations must be extended/verified rather than claimed supported.
+conditions for the player. Mixed positive/negative priors are now supported and
+verified in the research ledger and route estimator (foundation report).
+Connecting that support to durable browser profiles remains pending.
 
 Name the renamed stand world through a portable curated semantic catalogue with
 varied complete phrase forms; proposed examples and anti-answer safeguards are
