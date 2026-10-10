@@ -5,29 +5,50 @@ import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
 import {randomUUID, createHash} from 'node:crypto';
 import {act, candidates, createState, publicView, satisfies, validate} from './rules.mjs';
+import {createCampaign} from './campaign.mjs';
+import {newTelemetry, recordAction, recordPage} from './telemetry.mjs';
 const root = new URL('./', import.meta.url);
-export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory} = {}) {
-  let fixture = JSON.parse(readFileSync(fixturePath, 'utf8'));
+export function createLab({fixturePath = new URL('fixture.json', root), debug = false, liveReload = false, stateDirectory, publicOrigin, approvedNgrokOrigin, campaign} = {}) {
+  if(campaign && !stateDirectory)throw new Error('Campaign requires durable isolated state');
+  let external;
+  if (publicOrigin) {
+    external = new URL(publicOrigin);
+    if (external.origin !== publicOrigin || external.protocol !== 'https:' ||
+        !(/^[a-z0-9-]+\.trycloudflare\.com$/.test(external.hostname) ||
+          (publicOrigin === approvedNgrokOrigin && /^[a-z0-9-]+\.(?:ngrok-free\.dev|ngrok-free\.app|ngrok\.app)$/.test(external.hostname))) || external.port ||
+        debug || liveReload || campaign?.developer || !stateDirectory) throw new Error('Public Lab requires an exact HTTPS Quick Tunnel origin, durable state, no debug and no reload');
+  }
+  let fixture = campaign ? campaign.bank.packages[0].fixture : JSON.parse(readFileSync(fixturePath, 'utf8'));
   validate(fixture);
   const sessions = new Map();
+  const telemetry = new Map();
   if (stateDirectory) mkdirSync(stateDirectory,{recursive:true});
-  const modelHash = () => createHash('sha256').update(JSON.stringify(fixture)).digest('hex');
-  const persist = (id,state) => {
+  const mutationQueues = new Map();
+  const modelHash = () => campaign?.bankHash ?? createHash('sha256').update(JSON.stringify(fixture)).digest('hex');
+  const persist = (id,state,log=telemetry.get(id)) => {
     if (!stateDirectory) return;
     const path = resolve(stateDirectory,`${id}.json`);
-    writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state},null,2));
+    writeFileSync(path+'.tmp',JSON.stringify({fixtureHash:modelHash(),state,...(log?{telemetry:log}:{})},null,2));
     renameSync(path+'.tmp',path);
   };
   const assets = {'/': 'index.html', '/app.mjs': 'app.mjs', '/style.css': 'style.css', '/support.mjs':'support.mjs'};
   const server = http.createServer(async (req, res) => {
     const host = req.headers.host;
     const port = server.address().port;
-    if (![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(host)) {res.writeHead(403).end(); return;}
-    if (req.headers.origin && req.headers.origin !== `http://${host}`) {res.writeHead(403).end(); return;}
+    const externalRequest = external && host === external.host;
+    if (!externalRequest && ![ `127.0.0.1:${port}`, `localhost:${port}` ].includes(host)) {res.writeHead(403).end(); return;}
+    const path = new URL(req.url, `http://${host}`).pathname;
+    const origin = externalRequest ? external.origin : `http://${host}`;
+    // External links may be cross-site navigations; APIs and embedded requests stay blocked.
+    const publicNavigation = externalRequest && req.method === 'GET' && path === '/' &&
+      req.headers['sec-fetch-mode'] === 'navigate' && req.headers['sec-fetch-dest'] === 'document';
+    if ((req.headers.origin && req.headers.origin !== origin) ||
+        (req.headers['sec-fetch-site'] === 'cross-site' && !publicNavigation) ||
+        (externalRequest && req.method === 'POST' && req.headers.origin !== origin)) {res.writeHead(403).end(); return;}
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('Referrer-Policy', 'no-referrer');
     res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'");
-    const path = new URL(req.url, `http://${host}`).pathname;
     const json = (value, status = 200) => {res.writeHead(status, {'Content-Type': 'application/json; charset=utf-8'}); res.end(JSON.stringify(value));};
     try {
       if (req.method === 'GET' && assets[path]) {
@@ -42,33 +63,63 @@ export function createLab({fixturePath = new URL('fixture.json', root), debug = 
       if (req.method === 'GET' && path === '/api/debug' && debug) {
         json({fixture, rows: candidates(fixture).map(tuple => ({tuple, clues: fixture.clues.map(c => satisfies(fixture, tuple, c))})), sessions: [...sessions.values()]}); return;
       }
-      if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
-      const cookieName = stateDirectory ? `lab_${createHash('sha256').update(fixture.id).digest('hex').slice(0,12)}` : 'lab';
+      if (!((path === '/api/state' && req.method === 'GET') || (path === '/api/action' && req.method === 'POST') || (stateDirectory && path === '/api/events' && req.method === 'POST'))) {json({error:'Not found'}, 404); return;}
+      if (req.method === 'POST' && req.headers['content-type']?.split(';')[0].trim() !== 'application/json') {json({error:'Expected application/json'},415);return;}
+      // Cookies do not isolate localhost ports: the public instance must not
+      // replace the preserved owner's cookie while being checked locally.
+      const campaignCookie = campaign ? `campaign_${createHash('sha256').update(`${campaign.bank.id}:${campaign.bank.worldId}:${campaign.developer?'sandbox':'player'}:${stateDirectory}`).digest('hex').slice(0,12)}` : null;
+      const cookieName = campaignCookie ? (externalRequest ? '__Host-'+campaignCookie : campaignCookie) :
+        external ? (externalRequest ? '__Host-lab' : 'lab_playtest') :
+        stateDirectory ? `lab_${createHash('sha256').update(fixture.id).digest('hex').slice(0,12)}` : 'lab';
       let id = req.headers.cookie?.match(new RegExp(`(?:^|; )${cookieName}=([^;]+)`))?.[1];
       if (stateDirectory && /^[a-f0-9-]{36}$/.test(id ?? '') && !sessions.has(id)) {
         const path = resolve(stateDirectory,`${id}.json`);
         if (existsSync(path)) {
           const saved = JSON.parse(readFileSync(path,'utf8'));
-          if (saved.fixtureHash === modelHash()) sessions.set(id,saved.state);
+          if(campaign && saved.fixtureHash!==modelHash())throw new Error('Идентичность банка изменилась; сохранённый профиль не перезаписан. Используйте прежний банк или отдельную миграцию.');
+          if (saved.fixtureHash === modelHash()) {sessions.set(id,saved.state);telemetry.set(id,saved.telemetry??newTelemetry(id,true));}
         }
       }
       if (!sessions.has(id)) {
-        id = randomUUID(); sessions.set(id, createState(fixture));
+        if (external && sessions.size >= 500) {json({error:'Лимит сессий; обратитесь к ведущему'},503);return;}
+        id = randomUUID(); sessions.set(id, campaign ? await campaign.create() : createState(fixture));
+        if(stateDirectory)telemetry.set(id,newTelemetry(id));
         persist(id,sessions.get(id));
-        res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/`);
+        res.setHeader('Set-Cookie', `${cookieName}=${id}; HttpOnly; SameSite=Strict; Path=/${externalRequest ? '; Secure' : ''}${external || campaign ? '; Max-Age=2592000' : ''}`);
       }
       let state = sessions.get(id);
       if (req.method === 'POST') {
         let body = ''; for await (const chunk of req) {body += chunk; if (body.length > 20000) throw new Error('Слишком большой запрос');}
-        const next = structuredClone(state);
-        act(fixture, next, JSON.parse(body));
-        persist(id,next); sessions.set(id,next); state=next;
+        let releaseMutation;
+        const previousMutation=mutationQueues.get(id)??Promise.resolve();
+        const currentMutation=new Promise(resolve=>{releaseMutation=resolve;});
+        mutationQueues.set(id,currentMutation);
+        await previousMutation;
+        try {
+          // Another tab can finish an action while this request body is arriving.
+          const next = structuredClone(sessions.get(id));
+          const action=JSON.parse(body);
+          const log=telemetry.has(id)?structuredClone(telemetry.get(id)):null;
+          if(path==='/api/events') {
+            recordPage(log,action);persist(id,next,log);telemetry.set(id,log);json({ok:true});return;
+          }
+          try {if(campaign)await campaign.action(next,action);else act(fixture, next, action);} catch(error) {
+            if(log){if(campaign)campaign.record(log,action,sessions.get(id),sessions.get(id),error.message);else recordAction(log,action,sessions.get(id),sessions.get(id),error.message);persist(id,sessions.get(id),log);telemetry.set(id,log);}
+            throw error;
+          }
+          if(log){if(campaign)campaign.record(log,action,sessions.get(id),next);else recordAction(log,action,sessions.get(id),next);}
+          persist(id,next,log); if(log)telemetry.set(id,log); sessions.set(id,next); state=next;
+        } finally {releaseMutation();if(mutationQueues.get(id)===currentMutation)mutationQueues.delete(id);}
       }
-      json(publicView(fixture, state));
-    } catch (error) {json({error: error.message}, 400);}
+      json(campaign ? campaign.view(state) : publicView(fixture, state));
+    } catch (error) {
+      if (external && (error.code || error instanceof SyntaxError || error instanceof TypeError)) {
+        json({error:'Не удалось обработать запрос'}, error.code ? 500 : 400);
+      } else json({error: error.message}, 400);
+    }
   });
   const watchers = [];
-  if (liveReload) {
+  if (liveReload && !campaign) {
     const refresh = () => {
       try {
         const next = JSON.parse(readFileSync(fixturePath, 'utf8')); validate(next);
@@ -86,7 +137,16 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const portArg = args.find(a => a.startsWith('--port='));
   const stateArg = args.find(a => a.startsWith('--state-dir='));
   const port = portArg ? Number(portArg.slice(7)) : 4173;
-  const server = createLab({debug: args.includes('--debug'), liveReload: true,
+  const publicArg = args.find(a => a.startsWith('--public-origin='));
+  const ngrokArg = args.find(a => a.startsWith('--approved-ngrok-origin='));
+  const campaignArg=args.find(a=>a.startsWith('--campaign-bank='));
+  const pythonArg=args.find(a=>a.startsWith('--python='));
+  const campaign=campaignArg?createCampaign({bankPath:resolve(campaignArg.slice(16)),pythonPath:pythonArg?.slice(9)??'python',
+    selectorPath:fileURLToPath(new URL('../TagModelScreen/campaign_bank.py',root)),developer:args.includes('--campaign-developer')}):undefined;
+  if(campaign&&!stateArg)throw new Error('Campaign requires its own durable state directory');
+  const server = createLab({campaign,debug: args.includes('--debug'), liveReload: !publicArg,
+    ...(publicArg ? {publicOrigin:publicArg.slice(16)} : {}),
+    ...(ngrokArg ? {approvedNgrokOrigin:ngrokArg.slice(24)} : {}),
     ...(stateArg ? {stateDirectory:resolve(stateArg.slice(12))} : {}),
     ...(fixtureArg ? {fixturePath: resolve(fixtureArg.slice(10))} : {})});
   server.on('error', e => {console.error(e.message); process.exitCode = 1;});

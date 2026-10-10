@@ -3,7 +3,7 @@
 export function submitBlockReason(view) {
   if(view.state.status!=='playing') return 'Исследование завершено.';
   if(!view.slots.every(s=>view.state.selected[s.id])) return 'Выберите по одному компоненту в каждом столбце.';
-  if(view.state.science<view.submissionCost) return `Не хватает Science: нужно ${view.submissionCost}, в запасе ${view.state.science}.${view.economy?.mode==='sharedScience'?' Пополните запас.':''}`;
+  if(view.state.science<view.submissionCost) return `Не хватает Science: нужно ${view.submissionCost}, в запасе ${view.state.science}.${view.economy?.refillAmount>0?' Пополните запас.':''}`;
   return '';
 }
 export function submissions(view) {return view.state.history.filter(h=>typeof h.success==='boolean');}

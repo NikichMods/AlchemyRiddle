@@ -3,7 +3,33 @@
 Local research harness, not a game mod or published website. Original source is
 MPL-2.0. No third-party packages, game assets or real recipes are included.
 
+For a separate temporary friends instance through Cloudflare Quick Tunnel, see
+[`docs/research/PUZZLE_LAB_FRIENDS_PLAYTEST.md`](../../docs/research/PUZZLE_LAB_FRIENDS_PLAYTEST.md)
+and `playtest.ps1`. Public mode uses a frozen private synthetic fixture and
+separate durable sessions; it never enables facilitator/debug access. Five-task
+friends progression and its guided tutorial remain separate from the isolated campaign slice.
+
 ## Current research state
+
+2026-10-10: isolated browser campaign slice implemented. See
+[CAMPAIGN_BROWSER_SLICE_2026-10-10.md](../../docs/research/CAMPAIGN_BROWSER_SLICE_2026-10-10.md).
+Four normal player investigations and a separate developer mature scenario use
+private renamed-corpus banks, actual mixed knowledge, frozen profiles, cumulative
+Science and per-arity experience. Existing single-fixture mode is retained.
+55 Node / 49 Python tests pass; human slice acceptance is pending. Production
+mod remains BLOCKED. No live friends instance is replaced.
+
+Run server.mjs with --campaign-bank=ABSOLUTE_PRIVATE_BANK,
+--python=ABSOLUTE_PYTHON, --state-dir=ABSOLUTE_NEW_PLAYER_DIRECTORY and --port=4190.
+Use a different port/directory with --campaign-developer for the private sandbox.
+It cannot be combined with a public origin. Player and sandbox cookies are
+distinct. Each created puzzle is saved before play; refresh does not select again.
+Same action IDs are idempotent; stale puzzle/revision actions fail without spending.
+An empty bank envelope or bank identity mismatch preserves old files and reports
+the issue. Never pass existing online session storage to this mode.
+No source/reverse map/hidden bank is a browser asset or Git input.
+
+The dated entries below preserve historical research stages.
 
 2026-10-09: synthetic upper interest/difficulty case 20 is solved on 4183,
 with positive boss-like feedback and answer-order sensitivity. Frozen private fixture, facilitator proof,
@@ -215,6 +241,12 @@ frozen; dated outcomes belong in their checkpoints. See `docs/PAPER_PROTOTYPE_PR
 
 ## Shared Science and durable corpus trial
 
+Opt-in finite shared pool: `economy: {mode:'sharedScience',refillAmount:0}`.
+Server denies refill; UI hides it. Pair tests and submissions use one pool.
+When a paid action leaves less than the final-check cost, the no-refill trial
+ends exhausted (success wins). Historical positive-refill behavior unchanged.
+Recovery: `docs/prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_01_STATE.md`.
+
 Case 11 opts into sharedScience: pair 2, triple 5, initially 20 Science, unlimited
 explicit free +10 Lab refill. Wrong submissions and zero Science do not end play.
 Acquisition in the game is not simulated. Historical fixtures retain finite pools.
@@ -223,3 +255,37 @@ Use `--fixture=PRIVATE_FIXTURE --state-dir=PRIVATE_STATE_DIRECTORY --port=4174`.
 Optional state directory atomically persists actions and restores the cookie's
 session after restart when the fixture hash matches. Keep it outside Git. Without
 this option the historical memory-only behavior above applies.
+
+## Separate ngrok friends playtest
+
+Use `ngrok-playtest.ps1 -Mode Start|Stop|Status -PrivateDirectory PRIVATE_DIR
+-NodePath NODE_EXE` (default port 4184). Private directory must be outside Git,
+with frozen synthetic `fixture.json`, `sessions/`, and `ngrok/ngrok.exe` plus
+locally authenticated `ngrok/ngrok.yml`. Never commit tokens or player data.
+Start discovers the actual HTTPS endpoint and explicitly approves only that
+origin for the public server. Debug and reload are disabled; Host/Origin checks
+and secure durable cookies remain required. Occupied ports and 4183 are rejected.
+Stop terminates only recorded owned processes and preserves sessions. Status
+checks the actual puzzle and full assets, not registration alone.
+
+Visitors may see ngrok's Visit Site screen. Keep computer, network and both
+processes running; sleep/reboot interrupts access. Account dev domain is normally
+reused on restart, but availability and visitor access require separate checks.
+The launcher verifies public responses from this computer; an independent
+visitor network must still be tested. Retain the same browser cookies to resume.
+
+## Private facilitator panel
+
+`panel.ps1 -Mode Start|Stop|Status -PrivateDirectory PRIVATE_DIR -NodePath NODE_EXE`
+starts a separate local panel at http://127.0.0.1:4185. Never expose that port with
+a tunnel. It reads private saved sessions and offers fixed playtest Start/Stop/
+Status controls, animal pseudonyms, owner/test categorization, summaries, action
+timelines and local JSON export. Stopping the panel does not stop the playtest.
+
+Durable sessions include private versioned telemetry: server-accepted/rejected
+actions and earned results; page/help/visibility signals. No timeline or nickname
+is exposed to players. Historical sessions have incomplete coverage and unknown
+timing. Counts represent cookie sessions, not distinct people. Visible-tab time
+is an estimate, not proof of attention. Default summaries exclude untouched
+probes and marked owner/test sessions. Exports contain private trial evidence:
+keep them outside Git. Tests include `telemetry.test.mjs`.

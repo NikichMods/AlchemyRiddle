@@ -4,6 +4,26 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Isolated browser campaign slice implemented — 2026-10-10
+
+Start with research/CAMPAIGN_BROWSER_SLICE_2026-10-10.md. Four player
+investigations (first two of each arity) and a separate explicitly seeded mature
+sandbox are implemented. Private bank v2: 421 packages (192 two-slot / 229
+three-slot); early alternatives 24/12/13/13, mature four. Offline additions retain
+gates and existing three-slot ranking; actual knowledge enters selection.
+Profiles own frozen puzzles, both pair polarities/provenance, solved-formula
+facts, arity experience, Science spending/refills and durable restore. Developer
+UI displays proposed 16/19 ladders and only prepared explicit scenarios.
+55 Node / 49 Python tests pass; all fixtures and 14,766 cross-language clause
+truth values verified privately. Real selector/HTTP four-step technical route
+and exact restart pass; not human difficulty/learning evidence. Local browser
+inspection passes. Production BLOCKED; no campaign online deployment.
+Reused online subtree at cb69e45; sibling now advances independently and its
+newer committed/uncommitted trial is preserved. Private companion locator owns
+paths and launch commands. Next: blind local slice play, then bounded correction
+of teaching/knowledge/difficulty envelope from actual evidence.
+Older handoff below preserves the accepted pre-implementation state.
+
 ### Browser campaign implementation plan accepted; next-chat handoff — 2026-10-10
 
 Start with `research/CAMPAIGN_BROWSER_HANDOFF_2026-10-10.md` and

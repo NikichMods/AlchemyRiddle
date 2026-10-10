@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "bankHash": "6ce6e0e04bf79fdd49e6e5e2895ea1dbf8a829e56aefc18a7e6824a258f57371",
+  "worldId": "world-a87492b34fffdfc6f836b5fc01288633410edfe790018a4b641be95da3a60f1b",
+  "sourceManifestHash": "79a28dcf4a5efd065aace45732a9105a6c423b41c531daad8f59b30c20a35fc1",
+  "sourcePoolHash": "a20422b17987fbdd6b207d30f8c766b68a5a207aafb1bb4024589aa7250963e9",
+  "twoSlotPackages": 192,
+  "threeSlotPackages": 229,
+  "twoSlotVariantsServed": 16,
+  "twoSlotUnserved": 0,
+  "checks": [
+    {
+      "stage": "slice-1",
+      "arity": 2,
+      "packages": 24,
+      "routes": []
+    },
+    {
+      "stage": "slice-2",
+      "arity": 2,
+      "packages": 12,
+      "routes": []
+    },
+    {
+      "stage": "slice-3",
+      "arity": 3,
+      "packages": 13,
+      "routes": [
+        {
+          "observations": 0,
+          "minimum": 3.4375,
+          "maximum": 4.5625
+        },
+        {
+          "observations": 34,
+          "minimum": 3.3125,
+          "maximum": 4.5
+        },
+        {
+          "observations": 171,
+          "minimum": 0,
+          "maximum": 0
+        }
+      ]
+    },
+    {
+      "stage": "slice-4",
+      "arity": 3,
+      "packages": 13,
+      "routes": [
+        {
+          "observations": 0,
+          "minimum": 3.4375,
+          "maximum": 4.125
+        },
+        {
+          "observations": 34,
+          "minimum": 1.6875,
+          "maximum": 4.5
+        },
+        {
+          "observations": 171,
+          "minimum": 0,
+          "maximum": 0
+        }
+      ]
+    },
+    {
+      "stage": "slice-5",
+      "arity": 3,
+      "packages": 4,
+      "routes": [
+        {
+          "observations": 0,
+          "minimum": 2.6875,
+          "maximum": 3.875
+        },
+        {
+          "observations": 34,
+          "minimum": 2.6875,
+          "maximum": 3.875
+        },
+        {
+          "observations": 171,
+          "minimum": 0,
+          "maximum": 0
+        }
+      ]
+    }
+  ],
+  "gates": "Unchanged two-slot compact weakness + unique/necessary; imported three-slot rows independently verified.",
+  "limits": "Authored lab demand; human learning/bands unmeasured; no arbitrary-state completeness claim."
+}

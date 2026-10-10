@@ -34,10 +34,10 @@ function relationJournal(s) {
   const tested = s.history.filter(h => h.type === 'pairTest');
   const groups = document.createDocumentFragment();
   for (const fresh of [false,true]) {
-    const observations = s.knownRelations.filter(r => tested.some(h => pairMatches(h,r.slots,r.tuple)) === fresh);
+    const observations = s.knownRelations.filter(r => (tested.some(h => pairMatches(h,r.slots,r.tuple)) || Boolean(view.campaign && r.source?.includes(view.id+':solved'))) === fresh);
     if (!observations.length) continue;
     const section = document.createElement('section'); section.className = `observation-source ${fresh ? 'new' : 'prior'}`;
-    const heading = document.createElement('h3'); heading.textContent = fresh ? 'Стало известно из текущих опытов' : 'Было известно из предыдущих опытов'; section.append(heading);
+    const heading = document.createElement('h3'); heading.textContent = fresh ? (view.campaign ? 'Стало известно в этом исследовании' : 'Стало известно из текущих опытов') : view.campaign ? 'Было известно в начале исследования' : 'Было известно из предыдущих опытов'; section.append(heading);
     const columns = document.createElement('div'); columns.className = 'relation-columns';
     for (let i=0; i<view.slots.length-1; i++) {
       const slots = [view.slots[i].id,view.slots[i+1].id];
@@ -139,19 +139,48 @@ function render() {
   $('experiment-guide').hidden=true;
   $('experiment-guide').textContent='';
   $('pair-action-guide').textContent='Выберите соседнюю пару, совместимость которой хотите узнать.';
-  $('case-badge').textContent = 'Исследовательский опыт';
+  $('case-badge').textContent = view.campaign ? `${view.campaign.arity} слота · ${view.campaign.band}` : 'Исследовательский опыт';
+  $('campaign-panel').hidden=!view.campaign;
+  if(view.campaign){
+    const c=view.campaign;
+    $('campaign-purpose').textContent=c.purpose;
+    $('campaign-costs').textContent=`Расход: ${c.investigationSpent} Science в этом исследовании · ${c.spent} за серию · пополнений: ${c.refills}`;
+    $('campaign-memory').textContent=`Завершено: ${c.experience.two} двухслотовых, ${c.experience.three} трёхслотовых · известных пар: ${c.knowledge.stable} совместимых, ${c.knowledge.incompatible} несовместимых`;
+    $('campaign-checkpoint').hidden=!c.checkpoint;
+    $('campaign-checkpoint').textContent=c.checkpoint??'';
+    $('campaign-continue').hidden=!c.canContinue;
+    $('campaign-end').hidden=!c.sliceComplete;
+    $('campaign-end').textContent=c.mode==='sandbox'?'Сценарий завершён. Это отдельная песочница; основной профиль не изменён.':'Короткая серия завершена. Знания и расходы сохранены.';
+    $('campaign-developer').hidden=!c.developer;
+    if(c.developer){
+      $('campaign-ladders').textContent='Покрытие лестниц: 16 двухслотовых / 19 трёхслотовых. Наполнены первые два шага каждого типа и отдельный зрелый сценарий; остальные ступени пока не подготовлены.';
+      $('campaign-stage').replaceChildren(...c.stages.map(stage=>{
+        const option=document.createElement('option');option.value=stage.id;option.textContent=`${stage.arity} слота · ступень ${stage.rung} · ${stage.band} · ${stage.title}`;
+        option.selected=view.id.startsWith(stage.id+':');return option;
+      }));
+      $('campaign-ladder-map').replaceChildren(...Object.entries(c.ladders).map(([key,bands])=>{
+        const section=document.createElement('section'),heading=document.createElement('h3');
+        heading.textContent=key==='two'?'Два слота':'Три слота';section.append(heading);
+        const table=document.createElement('table'),head=document.createElement('tr');
+        for(const text of ['Ступень','Сложность','Наполнение']){const th=document.createElement('th');th.textContent=text;head.append(th);}table.append(head);
+        bands.forEach((band,i)=>{const row=document.createElement('tr');for(const text of [String(i+1),band,i<2?'Подготовлено':key==='three'&&i===6?'Отдельный заданный сценарий':'Проект; ещё не наполнено']){const td=document.createElement('td');td.textContent=text;row.append(td);}table.append(row);});
+        section.append(table);return section;
+      }));
+      $('campaign-provenance').textContent=`Исходных известных пар: ${c.startingKnowledge.length}. `+(c.checkpoint??'Только заработанные сведения');
+    }
+  }
   $('title').textContent = view.title;
   $('description').textContent = view.slots.length === 3
     ? 'Найдите смесь из порошка, жидкости и эссенции: её состав должен подходить под условия, а обе соседние пары — быть совместимыми.'
     : 'Найдите смесь из порошка и жидкости, которая подходит под все сведения о составе.';
   if (shared) $('description').textContent = view.description;
   $('economy-help').textContent = shared
-    ? `Пара стоит ${view.pairTestCost} Science, вся смесь — ${view.submissionCost} Science. Запас общий, лимита попыток нет. Кнопка пополнения добавляет ${view.economy.refillAmount} Science. В лаборатории пополнение бесплатно: получение науки в игре здесь не моделируется. Уже изученные пары повторно оплачивать не нужно.`
+    ? `${view.pairTestCost ? `Пара стоит ${view.pairTestCost} Science, ` : ''}вся смесь — ${view.submissionCost} Science. Запас общий. ${view.economy.refillAmount ? `Кнопка пополнения добавляет ${view.economy.refillAmount} Science. В лаборатории пополнение бесплатно: получение науки в игре здесь не моделируется.` : `Запас не пополняется. Сохраните хотя бы ${view.submissionCost} Science для проверки формулы; если останется меньше, исследование завершится.`} Уже изученные пары повторно оплачивать не нужно.`
     : 'Цена каждого опыта указана на кнопке или рядом с ней. Финальный опыт расходует Science и сообщает успех или неудачу. После ошибки можно продолжать, пока остались финальные попытки. Запас опытов в этой загадке не пополняется.';
   $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> '+(view.slots.length === 3 ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией.' : 'Порошок должен быть совместим с жидкостью.')+' Результаты показаны в «Совместимости пар». Кнопка «Исследовать» проверяет одну пару; цена указана на кнопке.';
   setRoleText($('task'), view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.');
   const route = document.createElement('span'); route.className='task-route';
-  route.textContent='Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.';
+  route.textContent=view.pairTestCost?'Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.':'Используйте все «Сведения о составе» вместе, чтобы выбрать компоненты.';
   $('task').append(route);
   decorateRoleText(document.querySelector('.reference'));
   document.body.classList.toggle('three-slot', view.slots.length === 3);
@@ -237,6 +266,8 @@ function render() {
   if(showClueRoles && shared){
     $('lab-supply').append($('refill'));
     $('supply-budget').textContent=`Запас: ${s.science} Science`;
+    document.querySelector('#lab-supply .supply-note').textContent=view.economy.refillAmount
+      ? 'Пополнение в лаборатории' : `Без пополнения · оставьте ${view.submissionCost} Science для смеси`;
   }
   if(showClueRoles){
     if(!$('submit').querySelector('.synthesis-label')){
@@ -249,7 +280,7 @@ function render() {
       ? 'Формула верна, если соблюдены условия состава и обе соседние пары совместимы.'
       : 'Формула верна, если выбранные компоненты соблюдают условия состава.';
   }
-  $('refill').hidden = !shared;
+  $('refill').hidden = !shared || !view.economy.refillAmount;
   $('refill').textContent = `Пополнить запас · +${view.economy?.refillAmount ?? 0} Science`;
   $('refill').disabled = s.status !== 'playing';
   $('submit').disabled = s.status !== 'playing' || s.science < view.submissionCost || !view.slots.every(slot => s.selected[slot.id]);
@@ -287,17 +318,20 @@ function action(body) {
   queue = queue.then(async () => {
     try {
       const before=view;
-      view = await request('/api/action', body);
+      const sent=view.campaign?{...body,revision:view.campaign.revision,puzzleId:view.campaign.puzzleId,actionId:crypto.randomUUID()}:body;
+      view = await request('/api/action', sent);
       if(view.slots.some(slot=>before.state.selected[slot.id]!==view.state.selected[slot.id])){
         const count=before.state.history.filter(h=>typeof h.success==='boolean').length;
         sessionStorage.setItem(`lab-feedback-departed:${view.id}`,String(count));
       }
       await loadSupport(); render(); $('error').textContent = '';
     }
-    catch(e) {$('error').textContent = e.message;}
+    catch(e) {if(view.campaign){try{view=await request('/api/state');render();}catch{}}$('error').textContent = e.message;}
   });
   return queue;
 }
+$('campaign-continue').onclick=()=>action({type:'continue'});
+$('campaign-start').onclick=()=>action({type:'checkpoint',stage:$('campaign-stage').value});
 $('submit').onclick = () => action({type:'submit'});
 $('refill').onclick = () => action({type:'refill'});
 async function loadSupport() {
@@ -306,11 +340,24 @@ async function loadSupport() {
     ({submitBlockReason,submissions:recordedSubmissions,selectedSubmission,compositionReminder,submissionFeedback}=module);
   }
 }
-try {view = await request('/api/state'); await loadSupport(); render();}
+const telemetryTab=crypto.randomUUID();
+let telemetryReady=false;
+function pageEvent(kind){
+  if(!telemetryReady)return;
+  fetch('/api/events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,tab:telemetryTab}),keepalive:true}).catch(()=>{});
+}
+document.addEventListener('visibilitychange',()=>pageEvent(document.hidden?'hidden':'visible'));
+window.addEventListener('pagehide',()=>pageEvent('hidden'));
+document.querySelector('.reference').addEventListener('toggle',e=>pageEvent(e.target.open?'help_open':'help_close'));
+setInterval(()=>{if(!document.hidden)pageEvent('heartbeat');},15000);
+try {view = await request('/api/state'); await loadSupport(); render(); telemetryReady=true;pageEvent(document.hidden?'hidden':'page');}
 catch(e) {$('error').textContent = `Не удалось загрузить опыт: ${e.message}`;}
 // Finite requests keep the embedded browser's navigation from waiting on a
 // permanent stream. Read only public presentation files; never reset sessions.
 const presentationFiles = ['/', '/app.mjs', '/style.css',...(view?.researchSupport?['/support.mjs']:[])];
+// Public dev-domain plans have a monthly request budget. Player actions remain
+// immediate; only the background presentation-update check runs less often.
+const presentationPollMs=location.protocol==='https:'?60000:2000;
 let revision;
 async function checkPresentation() {
   try {
@@ -320,13 +367,14 @@ async function checkPresentation() {
       return r.text();
     }));
     const current = await request('/api/state');
-    const {state: playerState, ...publicFixture} = current;
+    const {state: playerState, campaign:campaignState, ...publicFixture} = current;
+    if(view.campaign && current.campaign.revision!==view.campaign.revision){await queue;view=current;render();}
     const next = JSON.stringify([files, publicFixture]);
     if (revision && revision !== next) {await queue; location.reload(); return;}
     revision = next;
   } catch {
     // Temporary loss of the dev server must not erase the player's board.
   }
-  setTimeout(checkPresentation, 2000);
+  setTimeout(checkPresentation, presentationPollMs);
 }
 checkPresentation();

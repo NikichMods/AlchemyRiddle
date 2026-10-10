@@ -4,6 +4,15 @@
 <body><main>
 <header><span class="eyebrow">ALCHEMY RIDDLE · PUZZLE LAB V0</span><span class="badge" id="case-badge">Синтетический опыт</span></header>
 <h1 id="title">Загрузка исследования…</h1><p id="task"></p>
+<section id="campaign-panel" class="campaign-panel" hidden>
+  <p id="campaign-purpose"></p><p id="campaign-costs"></p><p id="campaign-memory"></p>
+  <p id="campaign-checkpoint" class="campaign-checkpoint" hidden></p>
+  <button id="campaign-continue" hidden>Следующее исследование</button><p id="campaign-end" hidden></p>
+  <details id="campaign-developer" hidden><summary>Частная песочница разработчика</summary>
+    <p id="campaign-ladders"></p><div id="campaign-ladder-map"></div><label>Явный сценарий <select id="campaign-stage"></select></label>
+    <button id="campaign-start">Начать отдельный сценарий</button><p id="campaign-provenance"></p>
+  </details>
+</section>
 <div class="workspace">
   <div class="investigation">
   <section class="board" aria-label="Кандидаты">
