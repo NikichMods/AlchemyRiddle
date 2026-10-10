@@ -134,3 +134,13 @@ evidence; do not infer calibrated difficulty from successful automated routes.
 
 Local paths, launch commands, private QA records and live instance identities are
 in the private companion locator for this chat, outside Git.
+
+## Frozen source and hosted checks
+
+Implementation candidate: `2dae2eac8a9507577fbe6c64335d254e35fa1329`,
+branch `research/rare-opportunity-screen`. Both hosted runs completed successfully:
+[Puzzle Lab checks 38064692641](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38064692641)
+and [Research Python 38064692513](https://github.com/NikichMods/AlchemyRiddle/actions/runs/38064692513).
+These checks cover public-input-free contracts; private corpus QA remains local
+as described above. Subsequent documentation recording does not change the
+candidate's browser source or frozen bank identity.
