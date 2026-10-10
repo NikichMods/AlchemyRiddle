@@ -221,6 +221,12 @@ frozen; dated outcomes belong in their checkpoints. See `docs/PAPER_PROTOTYPE_PR
 
 ## Shared Science and durable corpus trial
 
+Opt-in finite shared pool: `economy: {mode:'sharedScience',refillAmount:0}`.
+Server denies refill; UI hides it. Pair tests and submissions use one pool.
+When a paid action leaves less than the final-check cost, the no-refill trial
+ends exhausted (success wins). Historical positive-refill behavior unchanged.
+Recovery: `docs/prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_01_STATE.md`.
+
 Case 11 opts into sharedScience: pair 2, triple 5, initially 20 Science, unlimited
 explicit free +10 Lab refill. Wrong submissions and zero Science do not end play.
 Acquisition in the game is not simulated. Historical fixtures retain finite pools.

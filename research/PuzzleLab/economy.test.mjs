@@ -43,8 +43,36 @@ test('shared partial/invalid actions do not spend Science or reveal outcomes', (
   assert.throws(()=>act(shared,state,{type:'pairTest',slots:['powder','fluid']}));
   assert.throws(()=>act(shared,state,{type:'submit'}));
   assert.deepEqual(state,before);
-  const broken={...shared,economy:{mode:'sharedScience',refillAmount:0}};
+  const broken={...shared,economy:{mode:'sharedScience',refillAmount:-1}};
   assert.throws(()=>validate(broken));
+});
+
+test('finite shared Science denies refill and ends after unaffordable final check', () => {
+  const f={...shared,economy:{mode:'sharedScience',refillAmount:0}};
+  validate(f);const state=createState(f),before=structuredClone(state);
+  assert.throws(()=>act(f,state,{type:'refill'}),/недоступно/);
+  assert.deepEqual(state,before);
+  state.selected={...f.answer};
+  act(f,state,{type:'pairTest',slots:['powder','fluid']});
+  assert.equal(state.science,5);assert.equal(state.status,'playing');
+  state.selected.essence=f.slots.find(s=>s.id==='essence').cards.find(c=>
+    !state.knownRelations.some(r=>r.tuple.fluid===state.selected.fluid && r.tuple.essence===c.id)).id;
+  act(f,state,{type:'pairTest',slots:['fluid','essence']});
+  assert.equal(state.science,3);assert.equal(state.status,'exhausted');
+  assert.throws(()=>act(f,state,{type:'submit'}));
+});
+
+test('finite shared Science preserves failure observations and permits success on last Science', () => {
+  const f={...shared,science:10,economy:{mode:'sharedScience',refillAmount:0}};
+  const state=createState(f);
+  state.selected={powder:'p1',fluid:'f3',essence:'e2'};
+  act(f,state,{type:'submit'});assert.equal(state.status,'playing');
+  state.selected={...f.answer};act(f,state,{type:'submit'});
+  assert.equal(state.status,'solved');assert.equal(state.science,0);
+  assert.equal(state.history.length,2);
+  const failed=createState({...f,science:5});
+  failed.selected={powder:'p1',fluid:'f3',essence:'e2'};
+  act(f,failed,{type:'submit'});assert.equal(failed.status,'exhausted');
 });
 
 test('persisted HTTP state resumes with cookie and cannot restore under changed fixture', async t => {

@@ -6,6 +6,16 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+2026-10-10 next playtest: user selects one synthetic three-slot medium-high
+candidate, two prior stable pairs and 30 shared Science, explicitly no refill.
+`lab-friends-three-slot-01` derives from positively received case 19 with fresh
+identity/wording, two target-relevant priors and a finite budget. No generator
+weights or production balance changed. Old 2x2 model/session evidence is archived
+privately before replacement at the same assigned ngrok origin. Case 20 untouched.
+Recovery/preflight: `prototypes/PUZZLE_LAB_FRIENDS_THREE_SLOT_01_STATE.md`.
+Archived trial is not mixed into current panel totals. Human difficulty and
+independent-network availability remain separate verification questions.
+
 2026-10-10 follow-up: user accepts action instrumentation and a private local
 facilitator panel together. `research/PuzzleLab/admin.mjs` / `panel.ps1` provide
 loopback-only statistics, per-session animal pseudonyms, earned-action timeline,

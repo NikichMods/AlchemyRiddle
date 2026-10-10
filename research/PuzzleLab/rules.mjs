@@ -65,7 +65,7 @@ export function validate(f) {
       f.propertyVocabulary.some(t => typeof t !== 'string' || !t.trim()) ||
       new Set(f.propertyVocabulary).size !== f.propertyVocabulary.length)) throw new Error('Invalid property vocabulary');
   const shared = f.economy?.mode === 'sharedScience';
-  if (f.economy && (!shared || !Number.isInteger(f.economy.refillAmount) || f.economy.refillAmount < 1)) throw new Error('Invalid economy');
+  if (f.economy && (!shared || !Number.isInteger(f.economy.refillAmount) || f.economy.refillAmount < 0)) throw new Error('Invalid economy');
   if (![2,3].includes(f.slots.length) || new Set(f.slots.map(s => s.id)).size !== f.slots.length) throw new Error('V0 requires two or three distinct slots');
   const ids = f.slots.flatMap(s => s.cards.map(c => c.id));
   if (ids.length !== new Set(ids).size || f.slots.some(s => !s.cards.length)) throw new Error('Invalid cards');
@@ -112,7 +112,7 @@ export function publicView(f, state) {
 export function act(f, state, action) {
   const shared = f.economy?.mode === 'sharedScience';
   if (action.type === 'refill') {
-    if (!shared || state.status !== 'playing') throw new Error('Пополнение недоступно');
+    if (!shared || !f.economy.refillAmount || state.status !== 'playing') throw new Error('Пополнение недоступно');
     state.science += f.economy.refillAmount;
     state.history.push({type:'refill',amount:f.economy.refillAmount});
   } else if (action.type === 'notes') {
@@ -139,12 +139,13 @@ export function act(f, state, action) {
     if (!action.slots.every(id => f.slots.find(s => s.id === id).cards.some(c => c.id === state.selected[id]))) throw new Error('Выберите обе карточки пары');
     const tuple = Object.fromEntries(action.slots.map(id => [id,state.selected[id]]));
     if (state.knownRelations.some(r => pairKey(f,r.tuple,r.slots) === pairKey(f,tuple,action.slots))) return;
-    if ((shared ? state.science : state.research) < f.pairTestCost) throw new Error(shared ? 'Недостаточно Science: пополните запас' : 'Заряды исследования закончились');
+    if ((shared ? state.science : state.research) < f.pairTestCost) throw new Error(shared ? (f.economy.refillAmount ? 'Недостаточно Science: пополните запас' : 'Недостаточно Science; запас не пополняется') : 'Заряды исследования закончились');
     const result = {slots:[...action.slots], tuple, stable:stablePair(f,tuple,action.slots)};
     if (shared) state.science -= f.pairTestCost;
     else state.research -= f.pairTestCost;
     state.knownRelations.push(result);
     state.history.push({type:'pairTest',...result,cost:f.pairTestCost});
+    if (shared && !f.economy.refillAmount && state.science < f.submissionCost) state.status='exhausted';
   } else if (action.type === 'submit') {
     if (state.status !== 'playing' || state.science < f.submissionCost) throw new Error('Проверки закончены');
     if (!f.slots.every(s => s.cards.some(c => c.id === state.selected[s.id]))) throw new Error('Выберите карточку в каждом слоте');
@@ -152,6 +153,6 @@ export function act(f, state, action) {
     const success = f.slots.every(s => state.selected[s.id] === f.answer[s.id]);
     state.history.push({tuple: {...state.selected}, success, cost: f.submissionCost,
       ...(f.researchSupport && !success ? {compositionMismatch:!f.clues.every(c=>satisfies(f,state.selected,c))} : {})});
-    state.status = success ? 'solved' : !shared && state.science < f.submissionCost ? 'exhausted' : 'playing';
+    state.status = success ? 'solved' : (!shared || !f.economy.refillAmount) && state.science < f.submissionCost ? 'exhausted' : 'playing';
   } else throw new Error('Неизвестное действие');
 }
