@@ -1,0 +1,98 @@
+{
+  "complete": true,
+  "seconds": 17.265,
+  "sequences": 72,
+  "orders": 12,
+  "policies": [
+    "balanced",
+    "candidate_first"
+  ],
+  "startingDensities": [
+    0,
+    0.2,
+    0.6
+  ],
+  "verifiedPackages": 181,
+  "servedTargets": 17,
+  "totalTargets": 19,
+  "counters": {
+    "requestedPositions": 1368,
+    "routeEstimationReplays": 91312,
+    "controlReplays": 19584,
+    "completedPositions": 1224,
+    "paidChecks": 2528,
+    "zeroNewPairChecks": 243,
+    "negativeObservationsEarned": 1403,
+    "unservedPositions": 144
+  },
+  "summaries": {
+    "0": {
+      "completed": 408,
+      "meanNewPairChecks": 3.127450980392157,
+      "maxNewPairChecks": 6,
+      "zeroCheckFraction": 0.0024509803921568627,
+      "fixedPackageMixedMean": 3.136795343137255,
+      "fixedPackageStableOnlyMean": 3.528952205882353,
+      "mixedEstimateBetter": 168,
+      "mixedEstimateWorse": 9
+    },
+    "0.2": {
+      "completed": 408,
+      "meanNewPairChecks": 2.3357843137254903,
+      "maxNewPairChecks": 5,
+      "zeroCheckFraction": 0.06862745098039216,
+      "fixedPackageMixedMean": 2.285232843137255,
+      "fixedPackageStableOnlyMean": 3.1403186274509802,
+      "mixedEstimateBetter": 296,
+      "mixedEstimateWorse": 13
+    },
+    "0.6": {
+      "completed": 408,
+      "meanNewPairChecks": 0.7328431372549019,
+      "maxNewPairChecks": 4,
+      "zeroCheckFraction": 0.5245098039215687,
+      "fixedPackageMixedMean": 0.7464767156862745,
+      "fixedPackageStableOnlyMean": 1.8063725490196079,
+      "mixedEstimateBetter": 263,
+      "mixedEstimateWorse": 4
+    }
+  },
+  "twoSlotBoundedCapacity": {
+    "2x2": {
+      "attempts": 1536,
+      "verdicts": {
+        "unique_2": 1506,
+        "none": 30
+      },
+      "targetsWithUnique": 24
+    },
+    "3x3": {
+      "attempts": 1536,
+      "verdicts": {
+        "unique_3": 1456,
+        "residual2_3": 27,
+        "none": 3,
+        "residual2_2": 50
+      },
+      "targetsWithUnique": 24
+    }
+  },
+  "legacyReplay": {
+    "replays": 57600,
+    "packages": 200
+  },
+  "inputHashes": {
+    "ordinary-3.json": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "ordinary-2.json": "dd19d20d42c0f5ed48c9f1f21db2c63451e540a6cd9648a2df19335393b319c8",
+    "campaign-ranking-private-2026-10-10-v1.json": "be9865ea5022339d7407fb2ed582b03552b984d8cf4fc7292a8ef266ac2d9b75",
+    "rare-search-adopted-ranking-private-v1.json": "04f9d830583892f1bd2c38234668af142e12304b3c087e9ee72c4eb3b7a1cbd8"
+  },
+  "privateTraceHash": "a89cb876839fe4ceefeb96cec1180a8e17d0fd4f1684ef3796a16d2754c2a4a7",
+  "caveats": [
+    "Fixed sampled pool, not exhaustive regeneration under every knowledge history.",
+    "Stress-test initial observations are explicit simulated facts, not real player histories.",
+    "Automated public-state policies do not measure human difficulty or interest.",
+    "Two-slot screen is the existing compact/composite capacity diagnostic, not a playable curriculum.",
+    "Incomplete sampled target coverage remains visible; no validity gates relaxed."
+  ]
+}

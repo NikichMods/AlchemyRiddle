@@ -26,3 +26,5 @@ jobs:
           python-version: "3.12"
       - name: Compile research helpers
         run: python -m py_compile research/TagModelScreen/*.py
+      - name: Test research contracts without private corpus
+        run: python -m unittest discover -s research/TagModelScreen -p 'test_*.py'

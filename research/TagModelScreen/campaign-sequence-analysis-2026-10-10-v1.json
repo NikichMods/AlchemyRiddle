@@ -1,0 +1,88 @@
+{
+  "complete": true,
+  "summaries": [
+    {
+      "startingDensity": 0,
+      "selected": 456,
+      "familyCounts": {
+        "xor": 193,
+        "count": 140,
+        "imp_neg": 98,
+        "count_mixed": 153,
+        "literal": 111,
+        "imp_pos": 104,
+        "shared": 48
+      },
+      "minFamiliesPerSequence": 7,
+      "maxFamiliesPerSequence": 7,
+      "adjacentExactSemanticRepeats": 0,
+      "maxSameAbstractPackageInOneSequence": 2,
+      "zeroPairCheckReasons": {
+        "success": 3
+      },
+      "fixedPackageMeanGainWhenBetter": 1.0129405286343611,
+      "fixedPackageMaxLossWhenWorse": 0.5
+    },
+    {
+      "startingDensity": 0.2,
+      "selected": 456,
+      "familyCounts": {
+        "xor": 184,
+        "count": 135,
+        "imp_neg": 110,
+        "count_mixed": 134,
+        "literal": 114,
+        "imp_pos": 108,
+        "shared": 53
+      },
+      "minFamiliesPerSequence": 7,
+      "maxFamiliesPerSequence": 7,
+      "adjacentExactSemanticRepeats": 0,
+      "maxSameAbstractPackageInOneSequence": 2,
+      "zeroPairCheckReasons": {
+        "deduced": 14,
+        "success": 18
+      },
+      "fixedPackageMeanGainWhenBetter": 1.239677177177177,
+      "fixedPackageMaxLossWhenWorse": 0.75
+    },
+    {
+      "startingDensity": 0.6,
+      "selected": 456,
+      "familyCounts": {
+        "xor": 184,
+        "count_mixed": 129,
+        "count": 134,
+        "literal": 111,
+        "imp_pos": 116,
+        "imp_neg": 107,
+        "shared": 49
+      },
+      "minFamiliesPerSequence": 7,
+      "maxFamiliesPerSequence": 7,
+      "adjacentExactSemanticRepeats": 0,
+      "maxSameAbstractPackageInOneSequence": 1,
+      "zeroPairCheckReasons": {
+        "success": 149,
+        "deduced": 79
+      },
+      "fixedPackageMeanGainWhenBetter": 1.6258591065292096,
+      "fixedPackageMaxLossWhenWorse": 0.0625
+    }
+  ],
+  "retainedFamilyCoverage": [
+    "count",
+    "count_mixed",
+    "imp_neg",
+    "imp_pos",
+    "literal",
+    "shared",
+    "xor"
+  ],
+  "hashes": {
+    "pool": "a20422b17987fbdd6b207d30f8c766b68a5a207aafb1bb4024589aa7250963e9",
+    "traces": "b9d6767d88a6516fcecd5a2ee63aa60d6b2f450a84ada88085797f1e3de51e87",
+    "analysis": "1233d64fe12de653f36c8f2e1a77f46921114835082bf55c27da6d4b63f51898"
+  },
+  "caveat": "Post-hoc descriptive metrics. Greedy public-state policies and finite tie samples are not optimal solvers or human-interest measurements."
+}

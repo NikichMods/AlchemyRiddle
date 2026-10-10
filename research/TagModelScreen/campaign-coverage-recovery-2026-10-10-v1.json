@@ -1,0 +1,55 @@
+{
+  "complete": true,
+  "formerlyMissing": 2,
+  "recovered": 2,
+  "totalTargets": 19,
+  "servedTargets": 19,
+  "retained": 205,
+  "perMissingTarget": [
+    {
+      "counters": {
+        "fields": 32,
+        "attempts": 7680,
+        "completeAnswer": 3715,
+        "necessity": 1268,
+        "eligible": 124,
+        "ordinaryQuality": 106,
+        "existingOptionGates": 177,
+        "fieldFloor": 17
+      },
+      "retained": 12
+    },
+    {
+      "counters": {
+        "fields": 32,
+        "fieldFloor": 15,
+        "attempts": 8704,
+        "necessity": 1205,
+        "completeAnswer": 4841,
+        "existingOptionGates": 150,
+        "eligible": 82,
+        "ordinaryQuality": 45
+      },
+      "retained": 12
+    }
+  ],
+  "declaredLimit": {
+    "fieldsPerMissingTarget": 32,
+    "attemptsPerSearchableField": 512,
+    "rareReserve": 64,
+    "retainedPerTarget": 12,
+    "seconds": 120
+  },
+  "seconds": 2.125,
+  "inputHashes": {
+    "corpus": "74b56499c43913bc5dec96ac627a71b917cb42562e43d0850d417602dbe31ffa",
+    "originalPool": "be9865ea5022339d7407fb2ed582b03552b984d8cf4fc7292a8ef266ac2d9b75"
+  },
+  "privatePoolHash": "a20422b17987fbdd6b207d30f8c766b68a5a207aafb1bb4024589aa7250963e9",
+  "sourceHashes": {
+    "campaign_coverage_recovery.py": "9a28c3665fef68140126d13531b7673bb630fe54eca9b7789e2829e909a12582",
+    "reasoning_diversity_screen.py": "a87ff7d3a5087616b5ca4e03f6db98131a545e4f1106159a41937ea5cec7833b",
+    "generator_route_ranking.py": "4fb13c60ab99a41a0ffc70cc3f7a869abefcafda37b9a6dc8a3de290a4e94fe9"
+  },
+  "caveat": "Supplementary research search; default budget, weights and gates unchanged. Not exhaustive capacity proof."
+}

@@ -5,6 +5,11 @@ optional-practice principles were accepted 2026-10-10. Numbered curriculum and
 implementation remain proposed, not implemented merely by being written here. Current research
 generator `29cb7fd` is accepted as working baseline. Production remains BLOCKED.
 
+Foundation follow-up completed: `CAMPAIGN_FOUNDATION_CHECK_2026-10-10.md` records
+the privately renamed real corpus, mixed-polarity research ledger/routes and 72
+complete automatic three-slot sequences. Browser campaign/profile integration
+is still pending; this document's outcome is not already a live campaign.
+
 ## Intended outcome and existing implementation
 
 The user wants to inspect and play an approximate complete alchemy research
@@ -142,7 +147,8 @@ deductions, flat enumeration and abandoned/blocked progression.
 ## Implementation order and acceptance checks
 
 1. Review/tune the explicit ladder/mixed-scenario map; transfer rules are accepted.
-2. Privately transform/verify the renamed real corpus and freeze campaign identity/content.
+2. Corpus transformation/verification is complete; freeze actual playable campaign
+   content and curriculum using the prepared manifest and research evidence.
 3. Integrate the existing Lab/panel work with the accepted research baseline;
    implement profile, one active frozen puzzle, progression and spending ledger.
 4. Add developer selection/checkpoint inspection and run a local campaign.

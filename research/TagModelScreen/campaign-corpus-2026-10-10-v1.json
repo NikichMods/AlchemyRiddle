@@ -1,0 +1,27 @@
+{
+  "complete": true,
+  "exactStructureVerified": true,
+  "namingVersion": 1,
+  "ingredients": 35,
+  "targets": 34,
+  "formulas": 43,
+  "coreTwoSlot": 16,
+  "optionalTwoSlot": 8,
+  "threeSlot": 19,
+  "stablePF": 19,
+  "stableFE": 18,
+  "compatibleChains": 47,
+  "sourceHashes": {
+    "ordinary-2": "b1539a38f7df2dd20ab2507f6067356209d0e58a9108f047125f1818f2f81a77",
+    "core-2": "78a19653785eecfc8c9d7e65def19059259393d4f2dcb144f7f585305cdd93ec",
+    "ordinary-3": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20"
+  },
+  "artifactHashes": {
+    "core-2.json": "3a064f72f2281d2f3f5195c5702aa79933b6b5e26b29d1dc35cfec2df6afe70d",
+    "manifest.json": "79a28dcf4a5efd065aace45732a9105a6c423b41c531daad8f59b30c20a35fc1",
+    "ordinary-2.json": "dd19d20d42c0f5ed48c9f1f21db2c63451e540a6cd9648a2df19335393b319c8",
+    "ordinary-3.json": "74b56499c43913bc5dec96ac627a71b917cb42562e43d0850d417602dbe31ffa",
+    "reverse-mapping.json": "eaf72e13202711bd0b9d9a1a6cf8495efe0986da82f2f9928a7c1a7941b56d58"
+  },
+  "caveat": "Private renamed real corpus, not perfect anti-recognition protection or a playable campaign."
+}

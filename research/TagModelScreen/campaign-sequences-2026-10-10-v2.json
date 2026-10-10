@@ -1,0 +1,104 @@
+{
+  "complete": true,
+  "seconds": 19.203,
+  "sequences": 72,
+  "orders": 12,
+  "policies": [
+    "balanced",
+    "candidate_first"
+  ],
+  "startingDensities": [
+    0,
+    0.2,
+    0.6
+  ],
+  "verifiedPackages": 205,
+  "servedTargets": 19,
+  "totalTargets": 19,
+  "counters": {
+    "requestedPositions": 1368,
+    "routeEstimationReplays": 113264,
+    "controlReplays": 21888,
+    "completedPositions": 1368,
+    "paidChecks": 2801,
+    "zeroNewPairChecks": 263,
+    "negativeObservationsEarned": 1599
+  },
+  "summaries": {
+    "0": {
+      "completed": 456,
+      "meanNewPairChecks": 3.1184210526315788,
+      "maxNewPairChecks": 6,
+      "zeroCheckFraction": 0.006578947368421052,
+      "fixedPackageMixedMean": 3.1012883771929824,
+      "fixedPackageStableOnlyMean": 3.60046600877193,
+      "mixedEstimateBetter": 227,
+      "mixedEstimateWorse": 8
+    },
+    "0.2": {
+      "completed": 456,
+      "meanNewPairChecks": 2.2850877192982457,
+      "maxNewPairChecks": 5,
+      "zeroCheckFraction": 0.07017543859649122,
+      "fixedPackageMixedMean": 2.2982456140350878,
+      "fixedPackageStableOnlyMean": 3.1895559210526314,
+      "mixedEstimateBetter": 333,
+      "mixedEstimateWorse": 20
+    },
+    "0.6": {
+      "completed": 456,
+      "meanNewPairChecks": 0.7390350877192983,
+      "maxNewPairChecks": 4,
+      "zeroCheckFraction": 0.5,
+      "fixedPackageMixedMean": 0.7478070175438597,
+      "fixedPackageStableOnlyMean": 1.784950657894737,
+      "mixedEstimateBetter": 291,
+      "mixedEstimateWorse": 3
+    }
+  },
+  "twoSlotBoundedCapacity": {
+    "2x2": {
+      "attempts": 1536,
+      "verdicts": {
+        "unique_2": 1506,
+        "none": 30
+      },
+      "targetsWithUnique": 24
+    },
+    "3x3": {
+      "attempts": 1536,
+      "verdicts": {
+        "unique_3": 1456,
+        "residual2_3": 27,
+        "none": 3,
+        "residual2_2": 50
+      },
+      "targetsWithUnique": 24
+    }
+  },
+  "legacyReplay": {
+    "replays": 57600,
+    "packages": 200
+  },
+  "inputHashes": {
+    "renamedThree": "74b56499c43913bc5dec96ac627a71b917cb42562e43d0850d417602dbe31ffa",
+    "renamedTwo": "dd19d20d42c0f5ed48c9f1f21db2c63451e540a6cd9648a2df19335393b319c8",
+    "pool": "a20422b17987fbdd6b207d30f8c766b68a5a207aafb1bb4024589aa7250963e9",
+    "originalThree": "92e140826b6b8c857bb994df71b5db83d3da2ed15a9cc4665db474ea8876ea20",
+    "legacyPool": "04f9d830583892f1bd2c38234668af142e12304b3c087e9ee72c4eb3b7a1cbd8"
+  },
+  "sourceHashes": {
+    "campaign_sequence_screen.py": "827f04868f0a232cae34ba7b7994c2bd9789333ca115519f81048482a99b3344",
+    "generator_route_ranking.py": "4fb13c60ab99a41a0ffc70cc3f7a869abefcafda37b9a6dc8a3de290a4e94fe9",
+    "campaign_knowledge.py": "2d5601a0cffdaf817c9f270d4f70d2db4a522f5b113a845cd47635371a8bef5e",
+    "science_route_comparison.py": "bb87d35a57868c1b694d6b95aec33e6b3b299dc04ddf4b77adb2b8124930858e"
+  },
+  "privateTraceHash": "b9d6767d88a6516fcecd5a2ee63aa60d6b2f450a84ada88085797f1e3de51e87",
+  "caveats": [
+    "Fixed sampled pool, not exhaustive regeneration under every knowledge history.",
+    "Stress-test initial observations are explicit simulated facts, not real player histories.",
+    "Automated public-state policies do not measure human difficulty or interest.",
+    "Two-slot screen is the existing compact/composite capacity diagnostic, not a playable curriculum.",
+    "Incomplete sampled target coverage remains visible; no validity gates relaxed."
+  ]
+}

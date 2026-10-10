@@ -27,6 +27,7 @@ See:
 - `AGENTS.md`
 - `docs/PRODUCT_REQUIREMENTS.md`
 - `docs/DESIGN_RESEARCH.md`
+- `docs/CURRENT_ROADMAP.md` — current campaign block, implemented work and next steps
 - `docs/CHATGPT_PROJECT_INSTRUCTIONS.md`
 
 Cross-project Graveyard Keeper research is maintained in `NikichMods/GraveyardKeeperResearch`.

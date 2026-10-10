@@ -4,6 +4,24 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ## Current recovery entry point
 
+### Renamed campaign corpus and earned-knowledge sequences checked — 2026-10-10
+
+Read `research/CAMPAIGN_FOUNDATION_CHECK_2026-10-10.md` before continuing.
+Private renamed corpus preserves 43 formulas / 34 outputs / 35 ingredients,
+16 core + eight optional two-slot variants and 19 three-slot variants. Original
+semantic-name bank/manifest prepared; no game names or played cases changed.
+Mixed-polarity route input and provenance ledger implemented in research only.
+57,600 legacy replays match all 200 prior packages. Main sample serves 17/19;
+bounded unchanged-gate follow-up recovers both gaps, 205 retained candidates.
+72 full three-slot sequences complete all 1,368 positions; no paid re-tests or
+false facts detected. All seven families in every sequence, no adjacent exact
+abstract package repeats. 49 Python tests pass. Primary sequence identity is v2;
+preliminary v1 has colliding basename hash keys and is not authoritative.
+Corpus/reverse mapping/exact traces stay private. Next: isolated browser campaign
+integration with actual profile/actions, saved levels, knowledge and Science.
+No human difficulty/boss calibration claimed. Weights/gates retained; negative
+earned shortcuts receive the existing exemption. Production BLOCKED, sibling untouched.
+
 ### Working generator baseline accepted; campaign simulation requested — 2026-10-10
 
 User accepts the current research generator as the working baseline, not a claim
@@ -16,8 +34,8 @@ User now permits using the accepted real corpus with renamed ingredient/product
 display names and unchanged tags, formulas and identities. Prefer this over an
 independently invented world; reuse the existing derived relation graph. Rename
 masking is not guaranteed anti-recognition protection; source/reverse mapping
-remain private, no bulk recipe publication. Private transformation/verification
-and campaign implementation have not yet been performed.
+remain private, no bulk recipe publication. Transformation/verification is now
+completed above; browser campaign implementation remains pending.
 Two independent 16/19 core ladders and illustrative mixed chronology, not a fixed
 35-investigation natural game route. Read the explicit proposed map and naming
 design in `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. User accepts both

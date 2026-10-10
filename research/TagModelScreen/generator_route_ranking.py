@@ -58,7 +58,8 @@ def selection_score(row, chosen, step, strength, preferred, context,
                     repetition_strength=REPETITION_STRENGTH):
     return (baseline_score(row, chosen, step) + strength*length_penalty(
         row['route'][context]['mean'], preferred,
-        row['route'][context]['observedStablePriors'] > 0)
+        (row['route'][context]['observedStablePriors'] > 0
+         or row['route'][context].get('observedIncompatiblePriors', 0) > 0))
         + repetition_strength*structural_repetition(row))
 
 

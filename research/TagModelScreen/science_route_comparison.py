@@ -7,6 +7,7 @@ import itertools
 import json
 import random
 import time
+from collections.abc import Mapping
 from pathlib import Path
 
 import bounded_quality_diagnostic as bounded
@@ -20,12 +21,18 @@ SEED = 20261007
 class Investigation:
     def __init__(self, triples, priors, oracle, policy, deadline=None, stop_unique=False):
         self.triples = tuple(triples)
-        self.priors = dict.fromkeys(priors, True)
+        # Legacy sequences represent stable observations; mappings preserve both
+        # polarities. Never consult the hidden oracle to manufacture prior facts.
+        self.priors = dict(priors) if isinstance(priors, Mapping) else dict.fromkeys(priors, True)
+        if any(type(value) is not bool for value in self.priors.values()):
+            raise ValueError('Prior outcomes must be explicit booleans')
+        if policy not in ('balanced', 'candidate_first'):
+            raise ValueError('Unknown public-state policy')
         self.oracle = oracle
         self.policy = policy
         self.stop_unique = stop_unique
         self.deadline = deadline or time.monotonic() + 300
-        self.edges = sorted({e for t in triples for e in bounded.edges(t)} - set(priors))
+        self.edges = sorted({e for t in triples for e in bounded.edges(t)} - set(self.priors))
         self.index = {e: i for i, e in enumerate(self.edges)}
         self.outcomes = {}
         self.states = 0
