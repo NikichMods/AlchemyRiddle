@@ -83,3 +83,27 @@ Engine source unchanged from verified `eb893ca7358c2b5ede97daa576c729c611ea87aa`
 (50 tests and hosted CI pass); new fixture independently validated and worst
 policy witness replayed through that engine. Hosted source tests do not prove
 the private fixture's subjective difficulty or external-network reliability.
+
+## External-browser navigation correction (2026-10-10)
+
+A later Yandex Browser screenshot reports HTTP 403, distinct from the earlier
+ERR_NGROK_3200 outage. The live server reproduced 200 for direct navigation and
+403 for a cross-site top-level document GET to `/`. Its blanket Fetch Metadata
+check incorrectly rejected ordinary external-link entry. The exact headers of
+the user's failing browser request were not captured; causal attribution of that
+individual request remains pending browser confirmation.
+
+Source `a2f6a38b29cc57e2a1a32a96ce84aa0ec093374f` permits only GET `/` on the
+selected public host with `Sec-Fetch-Mode: navigate` and
+`Sec-Fetch-Dest: document`. Origin mismatches remain forbidden. Cross-site API,
+POST, script and iframe requests stay blocked; private panel policy is unchanged.
+51 local tests pass, including both approved tunnel families, persistence and
+separation. Hosted CI passes:
+https://github.com/NikichMods/AlchemyRiddle/actions/runs/38059576589
+
+The owned player server/tunnel were restarted with the same assigned origin.
+All five existing session states and the frozen fixture remain unchanged.
+Actual public HTTPS probes now return 200 for cross-site document entry, 403
+for cross-site state API, action POST and iframe entry. This confirms the fix on
+the host's public HTTPS route, not access from an independent visitor network
+or the user's Yandex Browser. Request a fresh HTTPS navigation there next.
