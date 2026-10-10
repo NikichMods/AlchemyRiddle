@@ -151,7 +151,7 @@ function render() {
   $('pair-help').innerHTML = '<strong>Узнайте совместимость.</strong> '+(view.slots.length === 3 ? 'Порошок должен быть совместим с жидкостью, а жидкость — с эссенцией.' : 'Порошок должен быть совместим с жидкостью.')+' Результаты показаны в «Совместимости пар». Кнопка «Исследовать» проверяет одну пару; цена указана на кнопке.';
   setRoleText($('task'), view.slots.length === 3 ? 'Соберите смесь: один порошок, одна жидкость и одна эссенция.' : 'Соберите смесь: один порошок и одна жидкость.');
   const route = document.createElement('span'); route.className='task-route';
-  route.textContent='Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.';
+  route.textContent=view.pairTestCost ? 'Используйте «Сведения о составе», чтобы выбрать компоненты, а «Совместимость пар» — чтобы проверить их сочетания.' : 'Используйте «Сведения о составе», чтобы выбрать компоненты и определить формулу.';
   $('task').append(route);
   decorateRoleText(document.querySelector('.reference'));
   document.body.classList.toggle('three-slot', view.slots.length === 3);
