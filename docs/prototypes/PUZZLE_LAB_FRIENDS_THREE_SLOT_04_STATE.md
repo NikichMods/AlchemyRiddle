@@ -136,3 +136,16 @@ states byte-identical from that observation. Browser QA confirms pair select the
 second-click deselect, free mark persistence after reload, icon return and empty
 final choice at 30 Science. Preview remains classified test. Desktop screenshots
 with marked/unmarked cards kept privately; no independent-network claim added.
+
+## Subsequent user correction — 2026-10-10
+
+The user rejects the implemented block layout, accepts mark/toggle behavior, and
+requests a slashed-circle exclusion icon. It supersedes the cross iteration.
+Repeated reported first-guess success raises a structural generator hypothesis;
+see ../research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md for the soft-penalty
+direction and pending UI proposal. No live fixture, order, sessions or scoring
+changed by this correction.
+
+Icon-only verification: JavaScript syntax and whitespace checks pass; the actual
+public page reload displays ⊘ for exclusion. A private viewport screenshot was
+visually inspected. No process restart or session actions were necessary.

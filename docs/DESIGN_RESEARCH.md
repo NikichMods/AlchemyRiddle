@@ -6,6 +6,14 @@ Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cor
 
 ### Separate friends-access task — 2026-10-09
 
+Latest 2026-10-10: user rejects the implemented mockup layout for lost hierarchy,
+accepts dim/dashed marks and pair toggles, and corrects elimination icon to ⊘.
+New proposal groups selected-pair controls with observations and splits the
+liquid outline into two independent public-knowledge states. User reports repeated
+first-natural-guess successes and selects a soft positional-penalty direction,
+not a hard exclusion; exact scoring/evaluation and replacement layout are open.
+See `research/PUZZLE_LAB_UI_HIERARCHY_2026-10-10.md`. Live model/order unchanged.
+
 Current feedback 2026-10-10: trial 04's returning playtester reports first-synthesis
 success by following the first known pair and first composition-fitting extension,
 with a guessing/boring-clue experience. Frozen-model audit confirms that shortcut;

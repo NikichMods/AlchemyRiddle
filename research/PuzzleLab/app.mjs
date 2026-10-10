@@ -176,7 +176,7 @@ function render() {
       choose.append(text,cardRef(card.id));
       const tags = document.createElement('span'); tags.className = 'tags'; tags.append(...card.tags.map(tagBadge)); choose.append(tags); box.append(choose);
       const mark = document.createElement('button'); mark.className='mark'; mark.id=`mark-${card.id}`;
-      mark.textContent=marked ? '↶' : '×';
+      mark.textContent=marked ? '↶' : '⊘';
       mark.setAttribute('aria-pressed',String(marked));
       mark.setAttribute('aria-label',`${marked ? 'Вернуть' : 'Вычеркнуть'}: ${card.name}`);
       mark.title='Бесплатная личная пометка; не меняет выбор и правила загадки';

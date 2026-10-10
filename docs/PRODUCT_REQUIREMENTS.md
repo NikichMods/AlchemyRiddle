@@ -11,10 +11,12 @@ an exclusion. Keep properties readable. State at the start that the puzzle has
 exactly one solution. Enforce that claim against the complete precommitted model,
 including hidden compatibility where present, not only its composition clues.
 This does not replace prior knowledge or perform deductions for the player.
-Follow-up accepted: use historic compact × / ↶ icons, dim the marked card and
+Follow-up accepted: use compact ⊘ / ↶ icons (slashed circle supersedes the first cross iteration), dim the marked card and
 show a dashed frame. Known/earned journal pair choices toggle: first click selects
 only that pair, second clears its two selected components while preserving an
-unrelated third choice. Desktop grouping follows the reviewed mockup: candidates
+unrelated third choice. The mockup grouping below was implemented, then rejected
+by the user for lost hierarchy on 2026-10-10; replacement is under design:
+candidates
 upper left; chosen research/formula upper right; synthesis, clues and compatibility
 journal below from left to right. A useful research witness alone does not prove
 that players prefer it to guessing; compare human feedback and alternative routes.
