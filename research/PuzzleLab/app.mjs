@@ -237,6 +237,8 @@ function render() {
   if(showClueRoles && shared){
     $('lab-supply').append($('refill'));
     $('supply-budget').textContent=`Запас: ${s.science} Science`;
+    document.querySelector('#lab-supply .supply-note').textContent=view.economy.refillAmount
+      ? 'Пополнение в лаборатории' : `Без пополнения · оставьте ${view.submissionCost} Science для смеси`;
   }
   if(showClueRoles){
     if(!$('submit').querySelector('.synthesis-label')){
