@@ -5,6 +5,12 @@ examples are reviewable proposals, not calibrated difficulty or playable content
 Research only; production remains BLOCKED. Companion:
 `CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
 
+Subsequent user clarification, same date: the campaign world should preserve the
+accepted real corpus structure with renamed ingredients/products and unchanged
+tags, rather than invent independent formulas/relations. See
+`../CURRENT_ROADMAP.md`. Editorial examples below are naming proposals, not
+newly assigned recipe facts; exact alias/world construction is still pending.
+
 ## Accepted clarifications
 
 - Show difficulty in player and developer modes, without a player-facing
@@ -120,7 +126,7 @@ its purpose is to check that it can still encounter the ceiling.
 
 ## Portable naming design
 
-This is for original synthetic stand content and, where appropriate, investigation
+This is for original stand display names on a renamed real corpus and, where appropriate, investigation
 flavour. Vanilla reagent/product names remain canonical in the future mod. No
 runtime text model, network service or automatic renaming of vanilla items is
 implied. The stand's invented titles are not invented evidence about the game.
@@ -185,7 +191,7 @@ punchline. These examples do not refer to any hidden formula.
 
 ## Next concrete implementation boundary
 
-Build a consistent versioned synthetic world/manifest next: persistent reagent
+Build a privately transformed, structurally verified real-corpus world/manifest next: persistent reagent
 identities, tags, curated names, relation graph, target IDs/titles and curriculum
 profiles. Check coverage and that actual earned positive/negative knowledge is
 supported by generation/route estimation. Only then populate playable levels

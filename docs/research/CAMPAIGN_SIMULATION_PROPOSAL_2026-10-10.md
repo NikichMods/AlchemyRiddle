@@ -63,12 +63,17 @@ an unvisited rung cannot silently invent knowledge of all earlier experiments;
 use a named explicit starting-state scenario, or an actual saved checkpoint.
 Developer sandbox experiments must not contaminate player progression/statistics.
 
-## Consistent synthetic world and accepted knowledge rules
+## Consistent renamed real corpus and accepted knowledge rules
 
-Use a coherent synthetic corpus for public play; do not expose unknown vanilla
-formula answers while imitating corpus shape/progression. Recipe counts, arity,
-field sizes, condition grammar and knowledge behavior may mirror accepted real
-corpus evidence. A synthetic campaign is not proof of vanilla corpus behavior.
+User clarification 2026-10-10 supersedes the independently synthetic corpus
+proposal: use the accepted real corpus privately, changing ingredient/product
+display names while preserving tags, formulas, identity sharing, alternate-output
+groups and derived three-slot relations. This gives an exact structural basis
+instead of imitating aggregate shape. Keep source and reverse mapping private;
+do not publish a bulk extracted corpus. Renaming reduces direct spoilers but does
+not guarantee that experienced players cannot recognize signatures/topology.
+The stand remains an approximation of gameplay availability, demand and economy,
+not proof of installed-mod behavior. Navigation: `../CURRENT_ROADMAP.md`.
 
 Before carrying knowledge, define stable global reagent identities, property
 assignments and the three-slot relation graph for that campaign version. Local
@@ -98,7 +103,7 @@ hypotheses. Showing relevant earned facts does not automatically solve compositi
 conditions for the player. Existing route estimator accepts stable priors only;
 negative-prior simulations must be extended/verified rather than claimed supported.
 
-Name the synthetic world through a portable curated semantic catalogue with
+Name the renamed stand world through a portable curated semantic catalogue with
 varied complete phrase forms; proposed examples and anti-answer safeguards are
 in `CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. Target titles must not hint at the
 hidden answer; reagent names normally resonate with visible tags. This synthetic
@@ -137,7 +142,7 @@ deductions, flat enumeration and abandoned/blocked progression.
 ## Implementation order and acceptance checks
 
 1. Review/tune the explicit ladder/mixed-scenario map; transfer rules are accepted.
-2. Establish the consistent synthetic world and freeze campaign identity/content.
+2. Privately transform/verify the renamed real corpus and freeze campaign identity/content.
 3. Integrate the existing Lab/panel work with the accepted research baseline;
    implement profile, one active frozen puzzle, progression and spending ledger.
 4. Add developer selection/checkpoint inspection and run a local campaign.

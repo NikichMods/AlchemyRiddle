@@ -11,6 +11,13 @@ of finished calibration or production readiness. Baseline source: `29cb7fd`.
 Next task is a browser campaign simulation: progression/level inspection,
 cross-investigation knowledge and cumulative Science consumption. Read the
 reviewable proposal in `research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
+One-page navigation/status for this entire block: `CURRENT_ROADMAP.md`.
+User now permits using the accepted real corpus with renamed ingredient/product
+display names and unchanged tags, formulas and identities. Prefer this over an
+independently invented world; reuse the existing derived relation graph. Rename
+masking is not guaranteed anti-recognition protection; source/reverse mapping
+remain private, no bulk recipe publication. Private transformation/verification
+and campaign implementation have not yet been performed.
 Two independent 16/19 core ladders and illustrative mixed chronology, not a fixed
 35-investigation natural game route. Read the explicit proposed map and naming
 design in `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md`. User accepts both

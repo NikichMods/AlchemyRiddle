@@ -244,6 +244,16 @@ Accepted for the browser campaign simulation; production implementation remains
 separately gated. See `research/CAMPAIGN_LADDERS_AND_NAMES_2026-10-10.md` and
 `research/CAMPAIGN_SIMULATION_PROPOSAL_2026-10-10.md`.
 
+Campaign corpus clarification accepted 2026-10-10: prefer a privately transformed
+copy of the accepted real corpus with original display names for ingredients and
+products, preserving tags, formulas, shared identities, alternate-formula groups
+and derived adjacent relations. This supersedes the proposal to construct an
+independently invented campaign world. User permits the real structural basis;
+it does not promise perfect spoiler masking or authorize publishing a bulk game
+recipe dump. Keep source and reverse-name mapping private. Existing invented
+prototypes remain separate historical cases. See `CURRENT_ROADMAP.md` for the
+current block and its implementation/evidence boundaries.
+
 - Show each investigation's difficulty and arity in player mode as well as in
   developer mode. The normal UI label need not say “provisional”; evidence must
   still distinguish intended bands from measured human difficulty. Numbered
