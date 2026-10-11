@@ -26,12 +26,12 @@ decisions continuously; do not turn every completed step into an approval gate.
 
 - Project name: **AlchemyRiddle**
 - Repository: `NikichMods/AlchemyRiddle`
-- Target/runtime: **Graveyard Keeper 1.407**, Windows PC; intended NikichMods BepInEx 5 mod ecosystem
-- Purpose: make vanilla alchemy independently solvable as a deductive puzzle, without revealing unknown formulas, requiring a wiki, or relying on brute-force enumeration.
+- Project framing: independent alchemy-themed logic minigame; future product goal and target platform are not yet defined.
+- Original host/research context: **Graveyard Keeper 1.407**, Windows PC, NikichMods BepInEx 5 ecosystem. Integration remains optional, not a required outcome.
 
 ## Scope and current phase
 
-The project is in **design/research phase**. The main solution-space comparison is complete and the selected puzzle cores are canonical in `docs/PRODUCT_REQUIREMENTS.md` / `docs/DESIGN_RESEARCH.md`. Production implementation is still BLOCKED until the remaining product/generator questions are closed and each runtime behavior change passes the DevRules READY/BLOCKED evidence gate. Do not reopen selected architecture merely because older research notes describe pre-selection candidates.
+The project is in **design/research phase with its future goal undefined**, following the accepted scope change of 2026-10-11. Read the current-status section in `docs/PRODUCT_REQUIREMENTS.md` and Current recovery entry point in `docs/DESIGN_RESEARCH.md` before interpreting older requirements. Preserve the existing prototype, selected puzzle cores and accepted research. Do not infer a standalone web release, replacement recipe-disclosure mechanic or new development roadmap. The original Graveyard Keeper mod goal no longer drives the project; first discuss its future purpose before selecting new implementation work. DevRules evidence and acceptance gates remain applicable.
 
 Canonical product requirements and acceptance envelope: `docs/PRODUCT_REQUIREMENTS.md`.
 
@@ -39,14 +39,14 @@ Canonical design/research status and open questions: `docs/DESIGN_RESEARCH.md`, 
 
 When blind/player-facing paper prototypes are active, `docs/PAPER_PROTOTYPE_PROTOCOL.md` is mandatory execution guidance. Read it before starting or resuming a prototype, including after a chat migration.
 
-Production code must not begin merely because a plausible hook or UI design is found. First establish the vanilla information model, search-space behavior, targetability problem, and solution-family trade study.
+Production work must not begin merely because a plausible hook or UI design is found. Establish the new product goal and acceptance envelope first. Any optional Graveyard Keeper integration must additionally satisfy the relevant host/runtime evidence gates.
 
 ## Mandatory project-specific start-of-work checks
 
 Before substantive work:
 1. inspect current repository state, branches/history and this `AGENTS.md`;
 2. read `docs/PRODUCT_REQUIREMENTS.md` and task-relevant local evidence;
-3. read `NikichMods/GraveyardKeeperResearch/AGENTS.md` and `docs/RESEARCH_INDEX.md`;
+3. when work concerns Graveyard Keeper or its corpus, read `NikichMods/GraveyardKeeperResearch/AGENTS.md` and `docs/RESEARCH_INDEX.md`;
 4. inspect relevant accepted shared research before fresh host-internals work;
 5. verify unfamiliar Graveyard Keeper internals directly before relying on them;
 6. keep research/probes clearly separate from production behavior.
@@ -76,9 +76,9 @@ Report research in abstract/aggregate form where possible: counts, equivalence c
 
 Do not persist copied game assemblies, bulk decompiled source, extracted proprietary assets, or full game-data/recipe dumps. Preserve distilled derived facts, identifiers, bounded evidence, original research tooling, and aggregate test results.
 
-## Product invariants
+## Previous mod-design invariants
 
-Unless separately accepted:
+These constrain any resumed Graveyard Keeper mod direction unless separately accepted otherwise. They do not define the still-open independent-game goal. Preserve existing prototype semantics until changes are authorized:
 - vanilla alchemy recipes remain unchanged;
 - vanilla progression, economy and save state remain unchanged;
 - success must remain the player's deduction, not delayed answer disclosure;
@@ -105,7 +105,7 @@ Original project software source uses MPL-2.0 under `NikichMods/DevRules/LICENSE
 
 This is a public repository. Standard GitHub-hosted runner minutes are not scarce. Use CI when compilation, tests, reproducible research tooling, or artifacts advance the work.
 
-Do not scaffold production build machinery by assumption during the design phase. Establish the actual source/runtime seams first, then derive the smallest compatible build/test setup from verified NikichMods Graveyard Keeper practice.
+Do not scaffold production build machinery by assumption during the design phase. Establish the selected product/platform and actual source/runtime seams first. For optional Graveyard Keeper integration, derive the smallest compatible build/test setup from verified NikichMods Graveyard Keeper practice.
 
 ## Long-lived sources of truth
 

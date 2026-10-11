@@ -1,5 +1,37 @@
 # Product Requirements and Acceptance Envelope
 
+## Current product status — accepted 2026-10-11
+
+AlchemyRiddle is now considered an independent alchemy-themed logic minigame.
+Its future product goal is **OPEN / not yet defined**. Integration into Graveyard
+Keeper is no longer a required outcome; it remains an optional possibility.
+This does not select a standalone web release, audience, platform, distribution
+model, development roadmap, or new mechanics.
+
+The original need was a comprehensible, target-first route to a required alchemical
+product in Graveyard Keeper. The user now distinguishes that need from this
+project: ordinary crafting-style research that reveals recipes may suit that game,
+but it is **not the newly selected architecture for AlchemyRiddle**. No separate
+mod implementation or project has been authorized by this decision.
+
+The user considers the existing minigame successful in its own right. Preserve
+the prototype, selected puzzle cores, generator work and supporting evidence.
+Detachment from Graveyard Keeper neither rejects that work nor automatically
+changes its mechanics. Host-specific progression, economy, UI and runtime
+constraints below are retained as the previous mod-design contract, not mandatory
+requirements for a future independent game. New goals and acceptance criteria
+must be discussed before choosing the next development direction.
+
+Personal recipe spoiler protection remains in force in project discussion.
+This documentation decision authorizes no code, generator, fixture, session,
+deployment or game-runtime changes.
+
+## Previous Graveyard Keeper mod-design contract
+
+The remainder preserves the pre-2026-10-11 requirements and design decisions.
+Use it as evidence for the existing prototype and possible future integration;
+do not read its former goal or implementation agenda as the current project goal.
+
 ## Problem
 
 Accepted generator refinement (2026-10-08): avoid repeated structure within one

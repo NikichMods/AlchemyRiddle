@@ -1,26 +1,26 @@
 # AlchemyRiddle
 
-**AlchemyRiddle** is a production mod project for **Graveyard Keeper 1.407**.
+**AlchemyRiddle** is an alchemy-themed logic minigame prototype, originally developed while exploring a mod for **Graveyard Keeper 1.407**.
 
-Product goal: make vanilla alchemy a self-contained deductive puzzle that can be solved without a wiki, brute-force enumeration, or advance disclosure of recipe formulas.
+The project is now considered independently of that game. Graveyard Keeper integration remains possible, but is no longer a required outcome. The future product goal, target platform and release plan have not yet been selected.
 
-The project is currently in **design/research phase**. The core two-slot and three-slot puzzle architectures are selected and extensively screened/prototyped; production implementation remains blocked pending final product/generator closure and runtime ownership research.
+The project retains its web prototype and extensively researched two-slot and three-slot puzzle cores. Its current phase is discussion of its future purpose.
 
-## Core principle
+## Existing puzzle experience
 
-> Do not make alchemy easier by revealing answers. Make it explainable and solvable.
+The existing prototype supports discovering formulas through logical deduction.
 
-The intended player experience is: **"I worked out this recipe."**
+Its intended player experience is: **"I worked out this recipe."** The scope change preserves existing mechanics and research; it does not announce a standalone release or select a new development roadmap.
 
 ## Current phase
 
-Before production code, the project is now closing the remaining product/generator contract and then must verify the concrete Graveyard Keeper ownership/lifecycle seams needed for implementation.
+The next development direction depends on defining the new product goal. Earlier Graveyard Keeper integration requirements are retained as research context.
 
 Current selected cores:
 - two-slot: fixed reagent properties + logical constraints;
 - three-slot: adaptive knowledge-aware properties + adjacent STABLE/INCOMPATIBLE relations + logical constraints.
 
-The current design also includes target-first journal entry, persistent investigations, early mature difficulty, anti-bruteforce formula submission, theoretical formula knowledge separated from practical reagent acquisition, and a Dark + Organ property model.
+The previous mod design also explored target-first journal entry, persistent investigations, early mature difficulty, anti-bruteforce formula submission, theoretical formula knowledge separated from practical reagent acquisition, and a Dark + Organ property model. These do not automatically define the future independent game.
 
 See:
 
@@ -33,7 +33,7 @@ Cross-project Graveyard Keeper research is maintained in `NikichMods/GraveyardKe
 
 ## Spoiler policy
 
-Technical research may inspect real vanilla recipes internally when necessary, but project discussion and durable design evidence should prefer aggregate/abstract results. Do not expose exact unknown recipe formulas to the player or in user-facing project discussion unless explicitly requested.
+When working with real Graveyard Keeper recipes, prefer aggregate or abstract research evidence. Do not disclose unknown real-game formulas in project discussion unless explicitly requested.
 
 ## License
 

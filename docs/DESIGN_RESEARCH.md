@@ -1,8 +1,31 @@
 # Design / Research Phase
 
-Status: **OPEN — selected two-slot and adaptive knowledge-aware three-slot cores retained; production remains BLOCKED**.
+Status: **OPEN — independent minigame; future product goal undefined. Existing prototype and puzzle research retained; no new implementation direction selected.**
 
 ## Current recovery entry point
+
+### Project detached from mandatory Graveyard Keeper integration — 2026-10-11
+
+Accepted scope change: AlchemyRiddle is considered an independent minigame.
+The original obligation to fix Graveyard Keeper alchemy through this project is
+removed; embedding it in that game remains possible, but is no longer the goal.
+The new product goal, audience, platform and next development step are undefined.
+Read the current-status section in `PRODUCT_REQUIREMENTS.md` first.
+
+The user's original target-first crafting need is distinct from this minigame.
+Recipe disclosure through resource-paid research was discussed as a potentially
+better fit for Graveyard Keeper, not adopted as AlchemyRiddle's replacement
+mechanic or authorized as another implementation project. The user values the
+existing minigame independently; no evidence here establishes that game UI
+constraints make its integration impossible.
+
+Preserve existing cores, generator, Lab and exact player state, including solved
+case 20. This update changes documentation only. Do not automatically resume the
+older generator-calibration or BepInEx transfer agenda: first discuss the future
+purpose of this project. Previous production-readiness claims below belong to
+the former mod-design scope and do not establish an independent release plan.
+
+## Previous recovery checkpoints — retained research history
 
 ### Rare-opportunity preference principle accepted; weights open — 2026-10-09
 
