@@ -2,7 +2,7 @@
 
 Repository: `NikichMods/AlchemyRiddle`. Independent alchemy-themed logic minigame; consult canonical requirements for the current goal and scope. Graveyard Keeper 1.407 / Windows PC / BepInEx 5 is the original research context, not a mandatory target.
 
-Before substantive work, read current DevRules `ENGINEERING_RULES.md` and `GIT_WORKFLOW.md`, this repository's `AGENTS.md`, `docs/PRODUCT_REQUIREMENTS.md`, and the Current recovery entry point in `docs/DESIGN_RESEARCH.md`. Consult other DevRules guidance when relevant; for local Codex execution follow `CODEX_WORKFLOW.md` and inspect the actual checkout/worktree including unpublished changes.
+Start with DevRules `WORKING_RULES.md`, this repository's `AGENTS.md`, current `docs/PRODUCT_REQUIREMENTS.md` and the Current recovery entry point in `docs/DESIGN_RESEARCH.md`. Follow the action-based reading map; for actual local checkout work use `CODEX_WORKFLOW.md` and preserve unpublished changes.
 
 Before fresh host-internals research, read `NikichMods/GraveyardKeeperResearch/AGENTS.md`, `docs/RESEARCH_INDEX.md` and the relevant accepted shared facts. Reusable game facts belong there; product semantics and acceptance belong here.
 

@@ -2,13 +2,7 @@
 
 This repository follows the canonical global development rules in `NikichMods/DevRules`.
 
-For local Codex startup/recovery, follow `DevRules/CODEX_WORKFLOW.md`. Read the engineering/Git contract before substantive technical work; consult CI and new-project bootstrap guidance when relevant. Global policy files:
-- `ENGINEERING_RULES.md`
-- `CI_POLICY.md`
-- `GIT_WORKFLOW.md`
-- `PROJECT_BOOTSTRAP.md`
-- `RUNTIME_TEST_HARNESS.md` when installed-runtime evidence is relevant
-- `LICENSE_POLICY.md` and `CHATGPT_PROJECT_SETUP.md` when their subject is relevant
+Start with `DevRules/WORKING_RULES.md` and its action-based reading map. For actual local checkout work follow `CODEX_WORKFLOW.md`. Read detailed engineering, host-integration, Git, CI, licensing and bootstrap rules when the task enters those subjects.
 
 This file contains only project-specific additions, constraints, verified facts, and explicit exceptions.
 
